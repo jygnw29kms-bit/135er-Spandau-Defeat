@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="180" viewBox="0 0 1200 180">
+<rect width="1200" height="180" rx="8" fill="#0b0e12" stroke="#2b333b"/>
+<text x="40" y="38" fill="#eef2f5" font-family="Arial,sans-serif" font-size="20" font-weight="800" letter-spacing="3">SOURCE 2 PRODUCTION PIPELINE</text>
+<g font-family="Arial,sans-serif" font-size="14" font-weight="700" text-anchor="middle">
+<g fill="#111820" stroke="#22a7ff"><rect x="38" y="72" width="150" height="54" rx="6"/><rect x="225" y="72" width="150" height="54" rx="6"/><rect x="412" y="72" width="150" height="54" rx="6"/></g>
+<g fill="#171313" stroke="#e4192c"><rect x="638" y="72" width="150" height="54" rx="6"/><rect x="825" y="72" width="150" height="54" rx="6"/><rect x="1012" y="72" width="150" height="54" rx="6"/></g>
+<g fill="#dfe6eb"><text x="113" y="104">HAMMER BLOCKOUT</text><text x="300" y="104">GAMEPLAY LANES</text><text x="487" y="104">LANDMARK PASS</text><text x="713" y="104">MATERIAL / LIGHT</text><text x="900" y="104">SERVER TEST</text><text x="1087" y="104">ENGINE CAPTURE</text></g>
+<g stroke="#68737d" stroke-width="2"><path d="M188 99h37"/><path d="M375 99h37"/><path d="M562 99h76"/><path d="M788 99h37"/><path d="M975 99h37"/></g>
+</g>
+<text x="600" y="154" text-anchor="middle" fill="#707b85" font-family="Arial,sans-serif" font-size="12" letter-spacing="2">OPTICAL MASTER GUIDES THE LOOK • SOURCE 2 CAPTURE PROVES THE RESULT</text>
+</svg>
