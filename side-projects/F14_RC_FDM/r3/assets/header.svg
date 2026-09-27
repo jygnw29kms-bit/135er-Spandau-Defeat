@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 460" role="img" aria-label="F-14 R3 naval aviation RC FDM project">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#07111f"/>
+      <stop offset="0.62" stop-color="#15263b"/>
+      <stop offset="1" stop-color="#d66b2d"/>
+    </linearGradient>
+    <linearGradient id="deck" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#10151b"/>
+      <stop offset="1" stop-color="#202a33"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="460" fill="url(#sky)"/>
+  <circle cx="1260" cy="155" r="90" fill="#ffb65a" opacity=".9"/>
+  <path d="M0 330 L1600 290 L1600 460 L0 460Z" fill="url(#deck)"/>
+  <path d="M0 365 L1600 325" stroke="#f3eee0" stroke-width="10" opacity=".85"/>
+  <path d="M880 334 L1180 326" stroke="#f6b13b" stroke-width="8" stroke-dasharray="35 26"/>
+  <g transform="translate(1040 238) scale(1.16)" fill="#070b10" stroke="#070b10">
+    <path d="M-255 8 L-166 -8 L-78 -54 L-22 -43 L0 -14 L22 -43 L78 -54 L166 -8 L255 8 L160 25 L70 18 L54 58 L18 66 L0 40 L-18 66 L-54 58 L-70 18 L-160 25Z"/>
+    <path d="M-35 -42 L-18 -98 L-4 -112 L0 -50 L4 -112 L18 -98 L35 -42Z"/>
+  </g>
+  <g font-family="Arial,Helvetica,sans-serif">
+    <text x="88" y="102" fill="#f4f7fa" font-size="31" font-weight="700" letter-spacing="9">135ER // NAVAL AVIATION LAB</text>
+    <text x="82" y="194" fill="#ffffff" font-size="94" font-weight="900" letter-spacing="2">F-14 R3</text>
+    <text x="87" y="244" fill="#ffb052" font-size="30" font-weight="700" letter-spacing="7">SCALE RC • FDM • TWIN EDF • SWING WING</text>
+    <text x="88" y="293" fill="#cbd5df" font-size="23" letter-spacing="3">P2S / PETG // 41 PRINT PARTS // 22 OPTIMIZED PLATES</text>
+  </g>
+  <g fill="none" stroke="#8fb3d9" stroke-width="2" opacity=".55">
+    <circle cx="1420" cy="90" r="42"/><circle cx="1420" cy="90" r="27"/>
+    <path d="M1370 90 H1470 M1420 40 V140"/>
+    <path d="M70 334 H640"/>
+  </g>
+</svg>
