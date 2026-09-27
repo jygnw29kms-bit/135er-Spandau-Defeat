@@ -1,9 +1,18 @@
-# In-game captures
+# Source 2 in-game captures
 
-This directory is reserved for **real UE5.8 gameplay captures** from 135er – Spandau Defeat.
+This directory is reserved for **real Source 2 / CS2 gameplay or engine captures** from 135er – Spandau Defeat.
 
-Image quality and authenticity requirements are defined in [../../docs/INGAME_CAPTURE_STANDARD.md](../../docs/INGAME_CAPTURE_STANDARD.md).
+Concept art remains under `media/maps/` and must never be presented as captured gameplay.
 
-Concept art stays in `media/maps/`; it must not be mixed with or mislabeled as captured gameplay.
+Image authenticity requirements are defined in [../../docs/INGAME_CAPTURE_STANDARD.md](../../docs/INGAME_CAPTURE_STANDARD.md).
 
-The production capture order is Rathaus Spandau, Zitadelle, Falkenhagener Feld, Freiheit, Fort Hahneberg 1945 and Teufelsberg Cold War.
+Initial capture priority:
+1. Rathaus Spandau
+2. Zitadelle
+3. Falkenhagener Feld
+4. Freiheit
+5. Martin-Buber-Schule
+6. Askanier-Schule
+7. B.-Traven-Schule
+8. Fort Hahneberg 1945
+9. Teufelsberg Cold War
