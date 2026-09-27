@@ -26,7 +26,7 @@ PROFILES={
 def profile_for(n):
     if n.startswith('fuse_'): return 'SHELL'
     if n.startswith(('wing_','taileron_','vstab_','glove_')): return 'WING'
-    if n in {'wing_box','sweep_crank','pivot_doubler_L','pivot_doubler_R','pivot_spacer_L','pivot_spacer_R','sweep_servo_mount_L','sweep_servo_mount_R','taileron_servo_mount_L','taileron_servo_mount_R'}: return 'STRUCT'
+    if n in {'wing_box','sweep_crank','pivot_doubler_L','pivot_doubler_R','pivot_spacer_L','pivot_spacer_R','sweep_servo_mount_L','sweep_servo_mount_R','sweep_servo_adapter_STD_L','sweep_servo_adapter_STD_R','taileron_servo_mount_L','taileron_servo_mount_R'}: return 'STRUCT'
     if n.startswith(('intake_','nacelle_','edf_ring_')): return 'DUCT'
     if n == 'canopy': return 'COSMETIC'
     return 'STRUCT_LIGHT'
@@ -67,7 +67,7 @@ plate_plan=[
  ('06_Fuselage_Tail',['fuse_06','joiner_480','electronics_hatch']),
  ('07_Wingbox_Structural',['wing_box']),
  ('08_Sweep_Hardware',['sweep_crank','pivot_doubler_L','pivot_doubler_R','pivot_spacer_L','pivot_spacer_R']),
- ('09_Sweep_Servo_Mounts',['sweep_servo_mount_L','sweep_servo_mount_R']),
+ ('09_Sweep_Servo_Mounts',['sweep_servo_mount_L','sweep_servo_mount_R','sweep_servo_adapter_STD_L','sweep_servo_adapter_STD_R']),
  ('10_Left_Wing_Root',['wing_L_root']),
  ('11_Right_Wing_Root',['wing_R_root']),
  ('12_Left_Wing_Mid',['wing_L_mid']),
