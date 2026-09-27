@@ -7,6 +7,9 @@ falkenhagener_feld
 lynarstrasse
 wroehmaennerpark
 freiheit
+martin_buber_schule
+askanier_schule
+b_traven_schule
 fort_hahneberg_1945
 teufelsberg_coldwar
 flugplatz_gatow_1945
