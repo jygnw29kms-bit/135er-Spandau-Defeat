@@ -248,18 +248,21 @@ for side in ['L','R']:
 # and longitudinal CG adjustment.
 parts['battery_tray']=tray_with_rails(220,58,5,14,4)
 
-# Dual wing-sweep servo frames. Clear opening 42x22 mm accepts common
-# standard/compact high-torque metal-gear servos; surrounding frame gives
-# material for heat-set inserts and gusseting.
+# Dual wing-sweep servo frames sized around the 23 g metal-gear class used
+# on comparable EDF F-14s (body approx. 28.5 x 13.5 mm). 31 x 16.5 mm clear
+# opening leaves service clearance without allowing the servo to float.
 for side in ['L','R']:
-    frame=rect_frame(62,42,42,22,8)
-    foot1=box([16,50,6],[-31,0,3])
-    foot2=box([16,50,6],[31,0,3])
+    frame=rect_frame(56,38,31,16.5,10)
+    foot1=box([14,46,7],[-28,0,3.5])
+    foot2=box([14,46,7],[28,0,3.5])
     parts[f'sweep_servo_mount_{side}']=concat(frame,foot1,foot2)
+    # Optional adapter for a larger standard servo, kept separate from the
+    # primary compact mount so the wing box remains stiff.
+    parts[f'sweep_servo_adapter_STD_{side}']=rect_frame(62,42,42,22,7)
 
-# Taileron servo frames: generous 32x16 mm opening for 12-17 g MG servos.
+# Taileron servo frames sized for 17 g MG class (approx. 28.3 x 13.3 mm).
 for side in ['L','R']:
-    parts[f'taileron_servo_mount_{side}']=rect_frame(48,30,32,16,7)
+    parts[f'taileron_servo_mount_{side}']=rect_frame(48,30,31,16.5,8)
 
 # ESC trays positioned as separate serviceable components; dimensions allow
 # common 40-50 A ESCs plus tie/heat-shrink clearance.
