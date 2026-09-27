@@ -15,11 +15,11 @@ MARGIN=6.0
 GAP=7.0
 
 PROFILES={
- 'SHELL': dict(layer=0.20,walls=3,top=3,bottom=3,infill=5,flow=7.5,fraction=0.18,desc='light fuselage shell'),
- 'WING': dict(layer=0.20,walls=3,top=4,bottom=4,infill=7,flow=7.0,fraction=0.20,desc='wing/control surface'),
- 'STRUCT': dict(layer=0.16,walls=6,top=6,bottom=6,infill=45,flow=6.5,fraction=0.58,desc='wing box/pivot mechanism'),
- 'STRUCT_LIGHT': dict(layer=0.20,walls=4,top=5,bottom=5,infill=18,flow=7.0,fraction=0.32,desc='mounts/reinforcements'),
- 'DUCT': dict(layer=0.20,walls=3,top=3,bottom=3,infill=8,flow=7.0,fraction=0.22,desc='EDF intake/nacelle'),
+ 'SHELL': dict(layer=0.20,walls=4,top=4,bottom=4,infill=8,flow=7.0,fraction=0.24,desc='strength-first fuselage shell'),
+ 'WING': dict(layer=0.20,walls=4,top=5,bottom=5,infill=12,flow=6.7,fraction=0.28,desc='reinforced wing/control surface'),
+ 'STRUCT': dict(layer=0.16,walls=8,top=8,bottom=8,infill=55,flow=6.0,fraction=0.68,desc='maximum-strength wing box/pivot/servo structure'),
+ 'STRUCT_LIGHT': dict(layer=0.20,walls=5,top=6,bottom=6,infill=25,flow=6.5,fraction=0.40,desc='reinforced electronics mounts and joiners'),
+ 'DUCT': dict(layer=0.20,walls=4,top=4,bottom=4,infill=10,flow=6.8,fraction=0.28,desc='reinforced EDF intake/nacelle'),
  'COSMETIC': dict(layer=0.16,walls=3,top=4,bottom=4,infill=8,flow=6.5,fraction=0.22,desc='canopy/cosmetic'),
 }
 
