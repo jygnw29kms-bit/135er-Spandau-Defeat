@@ -1,41 +1,47 @@
-# In-game image standard
+# In-game image policy
 
-Status: **binding for public screenshots and map showcase images**.
+Status: **binding**.
 
-The repository must not present low-resolution concept thumbnails as if they were final gameplay captures. Public in-game images must be captured from the UE5.8 client build with the live HUD and the same rendering path used in normal play.
+For **135er – Spandau Defeat**, every public project image must be generated directly by the running Unreal Engine 5.8 game client.
+
+## Allowed
+
+- screenshots captured from a running UE5 map
+- captures from actual game geometry, materials, lighting and effects
+- real gameplay HUD/state when HUD is shown
+- engine-generated cinematic shots using the same project content and renderer
+
+## Not allowed
+
+- concept art
+- AI-generated images
+- mockups
+- external renders
+- composited fake gameplay scenes
+- placeholder screenshots
+- images from another engine or unrelated project
+- images that have not been rendered by the actual game project
+
+No image may be presented on GitHub, the project website, documentation, release notes or promotional material unless its source is the running game engine.
 
 ## Capture quality
 
-- native 2560×1440 minimum; 3840×2160 preferred for master captures
-- PNG master files; JPEG/WebP only for derived web previews
-- 100% screen percentage minimum
+- 2560×1440 minimum; 3840×2160 preferred
+- PNG master
+- 100% native screen percentage minimum
 - TSR history at 200% for showcase captures
 - 16× anisotropic filtering
-- no negative texture quality bias
-- full-resolution textures loaded before capture
-- Nanite, Lumen, Virtual Shadow Maps and volumetric effects enabled where the map uses them
-- motion blur, chromatic aberration and gameplay depth-of-field disabled for readability
-- restrained sharpening only; no halo-producing oversharpening
+- full-resolution textures loaded
+- Nanite, Lumen, Virtual Shadow Maps and project volumetrics active where applicable
+- motion blur and chromatic aberration disabled for clear FPS presentation
+- restrained sharpening only
 
-## Gameplay authenticity
+## Authenticity
 
-Every screenshot labeled **in-game** must be captured from a running map. HUD values, weapon state, objectives, tickets and health must be live game state. Concept art remains clearly labeled as concept art.
+If HUD is visible, tickets, objectives, ammo, health and weapon state must come from live game state.
 
-## Required first production set
+Public engine captures are stored under:
 
-1. Rathaus Spandau
-2. Zitadelle Spandau
-3. Falkenhagener Feld
-4. Freiheit / industrial rail
-5. Fort Hahneberg 1945
-6. Teufelsberg Cold War
+`media/ingame/<map>/`
 
-For each map, capture one overview/combat lane frame and one close material/detail frame.
-
-## Repository layout
-
-Final masters: `media/ingame/<map>/<name>-4k.png`
-
-Web previews: `media/ingame/<map>/<name>-1440p.webp`
-
-Do not replace a master with a recompressed thumbnail.
+Derived web previews may be generated only from those engine captures.
