@@ -1,6 +1,8 @@
-# Maps and modes — 0.5.1-sharp-ingame
+# Maps and modes — 0.6.0-source2-migration
 
-All core battlefields use a nominal **1,000 x 1,000 metre** gameplay footprint. The current native Unreal source generates deterministic 3D graybox geometry with blocking collision, spawn areas and three replicated capture zones. Graybox geometry is replaced by final authored environment art without changing map IDs or game rules.
+All active map work now targets **Source 2 / CS2 Hammer**.
+
+The former Unreal graybox pipeline is retired. Map IDs and gameplay identities are retained, but geometry, materials, lighting, nav/gameplay data and runtime integration are rebuilt for Source 2.
 
 ## Core Spandau maps
 
@@ -19,21 +21,31 @@ All core battlefields use a nominal **1,000 x 1,000 metre** gameplay footprint. 
 | `askanier_schule` | Askanier-Schule | dense school complex | street approach → courtyard → sports/building wing |
 | `b_traven_schule` | B.-Traven-Schule | campus / residential edge | outer grounds → central campus → rear access |
 
-The three school maps are modern Spandau locations and use recognizable campus massing, surrounding streets, sports/courtyard spaces and local urban character as gameplay anchors. Their routes and cover are adapted for balanced multiplayer rather than being literal one-to-one replicas.
-
-## Historical / special expansion
+## Historical / special maps
 
 `fort_hahneberg_1945`, `teufelsberg_coldwar`, `flugplatz_gatow_1945`, `gatow_luftbruecke_1948`, `radeland_1945`, `hakenfelde_heeresamt_1944`, `zitadelle_1945`, `britischer_sektor_spandau`.
 
-Each profile carries era/history metadata plus a flag distinguishing documented local combat from historically inspired gameplay. Details are in [HISTORY_MAPS.md](HISTORY_MAPS.md).
+## Source 2 map pipeline
+
+Each map follows:
+1. Hammer blockout with Source 2 grid discipline
+2. spawn and objective placement
+3. core sightline/route validation
+4. recognizable landmark massing
+5. Source 2 material/light pass
+6. props, particles and atmosphere
+7. nav/gameplay validation
+8. dedicated-server test
+9. real Source 2 in-game capture
+10. public preview replacement only after capture validation
 
 ## Modes
 
-Primary production target is objective infantry combat built around:
+Primary production target:
 - A/B/C territory capture
 - attack / defend
 - breakthrough
-- sabotage / demolition where appropriate
+- sabotage / demolition where technically appropriate
 - logistics/objective variants for non-battle historical settings
 
-Map geometry should remain recognizable in composition and landmarks while routes, cover, distances and sightlines are adapted for balanced multiplayer. No copyrighted third-party game maps or assets are copied.
+Map geometry should remain recognizable in composition and landmarks while routes, cover, distances and sightlines are adapted for balanced multiplayer.
