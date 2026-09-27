@@ -22,6 +22,8 @@ WALL=2.8
 PIVOT_SHAFT_D=5.2
 PIVOT_BEARING_D=10.2
 SPAR_CHANNEL_D=6.4
+WING_PIVOT_LOCAL_X=42.0
+WING_PIVOT_LOCAL_Y=24.0
 
 def mesh_from_vertices_faces(v,f,name=None):
     m=trimesh.Trimesh(np.array(v,float),np.array(f,int),process=True)
@@ -186,10 +188,10 @@ def save_wing_csg(name,side,seg,y0,y1):
     sy0=y0-5
     sx1=145+0.22*(y1+5)
     sy1=y1+5
-    root_union = "translate([0,0,0]) cylinder(h=10,d=70,center=true,$fn=96);" if seg=='root' else ""
-    root_cuts = """
-        translate([0,0,-8]) cylinder(h=16,d=10.2,$fn=64);
-        translate([30,18,-8]) cylinder(h=16,d=3.2,$fn=36);
+    root_union = ""
+    root_cuts = f"""
+        translate([{WING_PIVOT_LOCAL_X},{WING_PIVOT_LOCAL_Y},-8]) cylinder(h=16,d=10.2,$fn=64);
+        translate([78,38,-8]) cylinder(h=16,d=3.2,$fn=36);
     """ if seg=='root' else ""
     model=f"""
 $fn=64;
@@ -308,8 +310,7 @@ for side in ['L','R']:
     for seg,(y0,y1) in wing_ranges.items():
         poly=wing_outer_poly(y0,y1)
         if seg=='root':
-            poly=unary_union([poly,Point(0,0).buffer(35,resolution=48)])
-            poly=poly.difference(Point(0,0).buffer(PIVOT_BEARING_D/2,resolution=32))
+            poly=poly.difference(Point(WING_PIVOT_LOCAL_X,WING_PIVOT_LOCAL_Y).buffer(PIVOT_BEARING_D/2,resolution=32))
         m=extrude_shapely(poly,10,z0=-0.5)
         if side=='R':
             m.apply_scale([1,-1,1])
@@ -457,6 +458,8 @@ for side,sy in [('L',1),('R',-1)]:
     T=trimesh.transformations.rotation_matrix(ang,[0,0,1])
     for seg in ['root','mid','tip']:
         w=parts[f'wing_{side}_{seg}'].copy()
+        local_pivot=np.array([WING_PIVOT_LOCAL_X,sy*WING_PIVOT_LOCAL_Y,0.0])
+        w.apply_translation(-local_pivot)
         w.apply_transform(T)
         w.apply_translation([PIVOT_X,sy*PIVOT_Y,0])
         assembled.append(w)
