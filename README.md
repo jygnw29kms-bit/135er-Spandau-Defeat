@@ -4,7 +4,9 @@
 
 135er – Spandau Defeat is a multiplayer FPS project centered on recognizable locations in Berlin-Spandau and selected historical Berlin scenarios. The gameplay target remains fast objective combat with a classic Day-of-Defeat-like immediacy, now implemented on the CS2 / Source 2 toolchain instead of Unreal Engine.
 
-![135er – Spandau Defeat map concepts](media/maps/map-gallery-concept.jpg)
+![135er – Spandau Defeat Source 2 optical masters](media/source2/source2-optical-masters-gallery.jpg)
+
+> **Image status:** the gallery above is AI-generated **optical-master/reference art** created from the current Spandau map brief and the verified Source 2 / CS2 visual/tooling direction. It is **not** presented as an actual engine capture.
 
 ## Current technical baseline
 
@@ -18,7 +20,7 @@
 
 ## Maps
 
-Core Spandau set: Rathaus Spandau, Zitadelle, Staaken, Rodelberg, Kiesteich, Falkenhagener Feld, Lynarstraße, Wröhmännerpark and Freiheit.
+Core Spandau set: Rathaus Spandau, Zitadelle, Staaken, Rodelberg, Kiesteich, Falkenhagener Feld, Lynarstraße, Wröhmännerpark, Freiheit, Martin-Buber-Schule, Askanier-Schule and B.-Traven-Schule.
 
 Historical/special set: Fort Hahneberg 1945, Teufelsberg Cold War, Flugplatz Gatow 1945, Gatow Luftbrücke 1948, Radelandstraße 1945, Hakenfelde/Heeresamt 1944, Zitadelle 1. Mai 1945 and Britischer Sektor Spandau.
 
@@ -26,6 +28,18 @@ Historical material is labeled so documented events are not confused with gamepl
 
 ## Visual direction
 
-Approved concept images remain the art-direction masters. They are not claimed to be in-engine screenshots. Final screenshots must be captured from the actual Source 2 maps after they are built in Hammer/CS2 Workshop Tools.
+The new Source 2 optical masters replace the old Unreal-era concept imagery. Their purpose is to define:
+- cleaner/brighter competitive readability
+- Source 2-like material and lighting targets
+- restrained post-processing
+- sharp environmental detail
+- practical FPS sightlines and cover silhouettes
+- recognizable Spandau landmarks and local urban character
+
+They are art-direction references only. Final screenshots labeled **in-game** must be captured from the actual Source 2 maps after they are built in Hammer / CS2 Workshop Tools.
+
+## Source references used for the visual direction
+
+Valve's current Counter-Strike documentation confirms that CS2 uses Source 2, that the CS2 authoring package includes an updated Hammer editor, and that the Source 2 transition introduced updated lighting, materials and higher-resolution visual effects. These properties are used as guidance for the optical-master images; no official CS2 map is copied.
 
 > This repository is the canonical project source for 135er – Spandau Defeat.
