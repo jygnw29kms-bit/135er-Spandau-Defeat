@@ -1,19 +1,262 @@
 [
- {"id":"rathaus_spandau","name":"Rathaus Spandau","group":"core","era":"1945-inspired","identity":"civic square, Rathaus tower, tram/street cover","objectives":{"A":"west square","B":"Rathaus approach","C":"east street"},"history":"historically inspired gameplay; no claim that depicted combat occurred exactly as shown"},
- {"id":"zitadelle","name":"Zitadelle Spandau","group":"core","era":"multi-era","identity":"fortress, brick/stone, gatehouse, moat and courtyard","objectives":{"A":"outer bridge","B":"gatehouse","C":"inner courtyard"},"history":"location-authentic layout target; gameplay combat may be fictional"},
- {"id":"staaken","name":"Staaken","group":"core","era":"1945-inspired","identity":"rail corridor, suburban streets, crossings","objectives":{"A":"west rail","B":"central crossing","C":"east residential"},"history":"historically inspired gameplay"},
- {"id":"rodelberg","name":"Rodelberg","group":"core","era":"1945-inspired","identity":"wooded elevation, trenches, hill combat","objectives":{"A":"lower slope","B":"crest","C":"east trench"},"history":"fictional combat scenario on a recognizable local landscape"},
- {"id":"kiesteich","name":"Kiesteich","group":"core","era":"1945-inspired","identity":"water edge, reeds, park routes and low cover","objectives":{"A":"west shore","B":"central park","C":"east shore"},"history":"fictional combat scenario"},
- {"id":"falkenhagener_feld","name":"Falkenhagener Feld","group":"core","era":"contemporary conflict","identity":"housing estate, plazas, broad roads and courtyards","objectives":{"A":"west blocks","B":"central plaza","C":"east blocks"},"history":"fictional modern conflict scenario"},
- {"id":"lynarstrasse","name":"Lynarstraße","group":"core","era":"1945-inspired","identity":"dense urban street, shops and rail/street edge","objectives":{"A":"west choke","B":"junction","C":"east block"},"history":"historically inspired gameplay"},
- {"id":"wroehmaennerpark","name":"Wröhmännerpark","group":"core","era":"1945-inspired","identity":"riverside park, tree canopy, stone/iron furniture","objectives":{"A":"west park","B":"river path","C":"east gate"},"history":"fictional combat scenario"},
- {"id":"freiheit","name":"Freiheit","group":"core","era":"1945-inspired","identity":"rail yard, warehouses, cranes and industrial haze","objectives":{"A":"west yard","B":"freight hall","C":"east tracks"},"history":"historically inspired industrial battle scenario"},
- {"id":"fort_hahneberg_1945","name":"Fort Hahneberg 1945","group":"historical","era":"1945","identity":"brick fortification, earthworks and casemate approaches","objectives":{"A":"outer earthworks","B":"gate approach","C":"inner fort"},"history":"historically inspired; do not present the depicted battle as a documented battle inside the fort"},
- {"id":"teufelsberg_coldwar","name":"Teufelsberg – Kalter Krieg","group":"special","era":"Cold War c.1985","identity":"radomes, communications structures and Cold-War equipment","objectives":{"A":"outer perimeter","B":"operations compound","C":"radome ridge"},"history":"fictional combat scenario; Teufelsberg is outside Spandau"},
- {"id":"flugplatz_gatow_1945","name":"Flugplatz Gatow 1945","group":"historical","era":"1945","identity":"hangars, apron, runway and airfield cover","objectives":{"A":"hangars","B":"apron","C":"runway edge"},"history":"Soviet takeover is historical; specific firefight details require separate verification"},
- {"id":"gatow_luftbruecke_1948","name":"Gatow – Luftbrücke 1948","group":"historical","era":"1948 Berlin Airlift","identity":"airfield logistics, cargo, apron and aircraft support","objectives":{"A":"cargo yard","B":"apron","C":"operations"},"history":"logistics/objective scenario, not a ground-battle claim"},
- {"id":"radeland_1945","name":"Radelandstraße 1945","group":"historical","era":"1945 occupation period","identity":"barracks, roads and military infrastructure","objectives":{"A":"west barracks","B":"central road","C":"east compound"},"history":"no documented battle claim"},
- {"id":"hakenfelde_heeresamt_1944","name":"Hakenfelde – Heeresamt 1944","group":"historical","era":"1944","identity":"wartime industrial/armaments warehouses and yards","objectives":{"A":"warehouse west","B":"production yard","C":"rail/warehouse east"},"history":"industrial/armaments context; no specific battle claim"},
- {"id":"zitadelle_1945","name":"Zitadelle Spandau – 1. Mai 1945","group":"historical","era":"1 May 1945","identity":"citadel approaches, gate and surrender-period security routes","objectives":{"A":"outer approach","B":"gate","C":"inner security zone"},"history":"Zitadelle Spandau surrendered without a fight on 1 May 1945; never market this as a Battle of the Citadel"},
- {"id":"britischer_sektor_spandau","name":"Britischer Sektor Spandau","group":"special","era":"Cold War","identity":"British-sector streets, checkpoints and military infrastructure","objectives":{"A":"west checkpoint","B":"central sector","C":"east compound"},"history":"alternate training/conflict scenario, not a claim of real combat"}
+  {
+    "id": "rathaus_spandau",
+    "name": "Rathaus Spandau",
+    "group": "core",
+    "era": "1945-inspired",
+    "identity": "civic square, Rathaus tower, tram/street cover",
+    "objectives": {
+      "A": "west square",
+      "B": "Rathaus approach",
+      "C": "east street"
+    },
+    "history": "historically inspired gameplay; no claim that depicted combat occurred exactly as shown"
+  },
+  {
+    "id": "zitadelle",
+    "name": "Zitadelle Spandau",
+    "group": "core",
+    "era": "multi-era",
+    "identity": "fortress, brick/stone, gatehouse, moat and courtyard",
+    "objectives": {
+      "A": "outer bridge",
+      "B": "gatehouse",
+      "C": "inner courtyard"
+    },
+    "history": "location-authentic layout target; gameplay combat may be fictional"
+  },
+  {
+    "id": "staaken",
+    "name": "Staaken",
+    "group": "core",
+    "era": "1945-inspired",
+    "identity": "rail corridor, suburban streets, crossings",
+    "objectives": {
+      "A": "west rail",
+      "B": "central crossing",
+      "C": "east residential"
+    },
+    "history": "historically inspired gameplay"
+  },
+  {
+    "id": "rodelberg",
+    "name": "Rodelberg",
+    "group": "core",
+    "era": "1945-inspired",
+    "identity": "wooded elevation, trenches, hill combat",
+    "objectives": {
+      "A": "lower slope",
+      "B": "crest",
+      "C": "east trench"
+    },
+    "history": "fictional combat scenario on a recognizable local landscape"
+  },
+  {
+    "id": "kiesteich",
+    "name": "Kiesteich",
+    "group": "core",
+    "era": "1945-inspired",
+    "identity": "water edge, reeds, park routes and low cover",
+    "objectives": {
+      "A": "west shore",
+      "B": "central park",
+      "C": "east shore"
+    },
+    "history": "fictional combat scenario"
+  },
+  {
+    "id": "falkenhagener_feld",
+    "name": "Falkenhagener Feld",
+    "group": "core",
+    "era": "contemporary conflict",
+    "identity": "housing estate, plazas, broad roads and courtyards",
+    "objectives": {
+      "A": "west blocks",
+      "B": "central plaza",
+      "C": "east blocks"
+    },
+    "history": "fictional modern conflict scenario"
+  },
+  {
+    "id": "lynarstrasse",
+    "name": "Lynarstraße",
+    "group": "core",
+    "era": "1945-inspired",
+    "identity": "dense urban street, shops and rail/street edge",
+    "objectives": {
+      "A": "west choke",
+      "B": "junction",
+      "C": "east block"
+    },
+    "history": "historically inspired gameplay"
+  },
+  {
+    "id": "wroehmaennerpark",
+    "name": "Wröhmännerpark",
+    "group": "core",
+    "era": "1945-inspired",
+    "identity": "riverside park, tree canopy, stone/iron furniture",
+    "objectives": {
+      "A": "west park",
+      "B": "river path",
+      "C": "east gate"
+    },
+    "history": "fictional combat scenario"
+  },
+  {
+    "id": "freiheit",
+    "name": "Freiheit",
+    "group": "core",
+    "era": "1945-inspired",
+    "identity": "rail yard, warehouses, cranes and industrial haze",
+    "objectives": {
+      "A": "west yard",
+      "B": "freight hall",
+      "C": "east tracks"
+    },
+    "history": "historically inspired industrial battle scenario"
+  },
+  {
+    "id": "martin_buber_schule",
+    "name": "Martin-Buber-Schule",
+    "group": "core",
+    "era": "contemporary conflict",
+    "identity": "school campus, large courtyard, classroom wings and sports edge",
+    "objectives": {
+      "A": "west perimeter",
+      "B": "central schoolyard",
+      "C": "main building"
+    },
+    "history": "fictional modern conflict scenario"
+  },
+  {
+    "id": "askanier_schule",
+    "name": "Askanier-Schule",
+    "group": "core",
+    "era": "contemporary conflict",
+    "identity": "compact school ensemble, street frontage, courtyard and sports areas",
+    "objectives": {
+      "A": "street approach",
+      "B": "central courtyard",
+      "C": "sports/building wing"
+    },
+    "history": "fictional modern conflict scenario"
+  },
+  {
+    "id": "b_traven_schule",
+    "name": "B.-Traven-Schule",
+    "group": "core",
+    "era": "contemporary conflict",
+    "identity": "broader school campus, residential edge and open grounds",
+    "objectives": {
+      "A": "outer grounds",
+      "B": "central campus",
+      "C": "rear access"
+    },
+    "history": "fictional modern conflict scenario"
+  },
+  {
+    "id": "fort_hahneberg_1945",
+    "name": "Fort Hahneberg 1945",
+    "group": "historical",
+    "era": "1945",
+    "identity": "brick fortification, earthworks and casemate approaches",
+    "objectives": {
+      "A": "outer earthworks",
+      "B": "gate approach",
+      "C": "inner fort"
+    },
+    "history": "historically inspired; do not present the depicted battle as a documented battle inside the fort"
+  },
+  {
+    "id": "teufelsberg_coldwar",
+    "name": "Teufelsberg – Kalter Krieg",
+    "group": "special",
+    "era": "Cold War c.1985",
+    "identity": "radomes, communications structures and Cold-War equipment",
+    "objectives": {
+      "A": "outer perimeter",
+      "B": "operations compound",
+      "C": "radome ridge"
+    },
+    "history": "fictional combat scenario; Teufelsberg is outside Spandau"
+  },
+  {
+    "id": "flugplatz_gatow_1945",
+    "name": "Flugplatz Gatow 1945",
+    "group": "historical",
+    "era": "1945",
+    "identity": "hangars, apron, runway and airfield cover",
+    "objectives": {
+      "A": "hangars",
+      "B": "apron",
+      "C": "runway edge"
+    },
+    "history": "Soviet takeover is historical; specific firefight details require separate verification"
+  },
+  {
+    "id": "gatow_luftbruecke_1948",
+    "name": "Gatow – Luftbrücke 1948",
+    "group": "historical",
+    "era": "1948 Berlin Airlift",
+    "identity": "airfield logistics, cargo, apron and aircraft support",
+    "objectives": {
+      "A": "cargo yard",
+      "B": "apron",
+      "C": "operations"
+    },
+    "history": "logistics/objective scenario, not a ground-battle claim"
+  },
+  {
+    "id": "radeland_1945",
+    "name": "Radelandstraße 1945",
+    "group": "historical",
+    "era": "1945 occupation period",
+    "identity": "barracks, roads and military infrastructure",
+    "objectives": {
+      "A": "west barracks",
+      "B": "central road",
+      "C": "east compound"
+    },
+    "history": "no documented battle claim"
+  },
+  {
+    "id": "hakenfelde_heeresamt_1944",
+    "name": "Hakenfelde – Heeresamt 1944",
+    "group": "historical",
+    "era": "1944",
+    "identity": "wartime industrial/armaments warehouses and yards",
+    "objectives": {
+      "A": "warehouse west",
+      "B": "production yard",
+      "C": "rail/warehouse east"
+    },
+    "history": "industrial/armaments context; no specific battle claim"
+  },
+  {
+    "id": "zitadelle_1945",
+    "name": "Zitadelle Spandau – 1. Mai 1945",
+    "group": "historical",
+    "era": "1 May 1945",
+    "identity": "citadel approaches, gate and surrender-period security routes",
+    "objectives": {
+      "A": "outer approach",
+      "B": "gate",
+      "C": "inner security zone"
+    },
+    "history": "Zitadelle Spandau surrendered without a fight on 1 May 1945; never market this as a Battle of the Citadel"
+  },
+  {
+    "id": "britischer_sektor_spandau",
+    "name": "Britischer Sektor Spandau",
+    "group": "special",
+    "era": "Cold War",
+    "identity": "British-sector streets, checkpoints and military infrastructure",
+    "objectives": {
+      "A": "west checkpoint",
+      "B": "central sector",
+      "C": "east compound"
+    },
+    "history": "alternate training/conflict scenario, not a claim of real combat"
+  }
 ]
