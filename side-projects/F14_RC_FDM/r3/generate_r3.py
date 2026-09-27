@@ -117,6 +117,59 @@ def save(m,name):
     repaired.export(p)
     return p
 
+def save_wingbox_csg():
+    scaddir=ROOT/'scad'/'generated_parts'
+    scaddir.mkdir(parents=True,exist_ok=True)
+    sp=scaddir/'wing_box.scad'
+    p=ROOT/'stl'/'wing_box.stl'
+    scad=r'''
+$fn=72;
+H=26;
+module diagbeam(x2,y2,w=12){
+    hull(){
+        translate([0,0,-H/2]) cylinder(h=H,d=w);
+        translate([x2,y2,-H/2]) cylinder(h=H,d=w);
+    }
+}
+difference(){
+    union(){
+        // 15 mm perimeter frame
+        translate([-85,-114,-H/2]) cube([170,15,H]);
+        translate([-85,99,-H/2]) cube([170,15,H]);
+        translate([-85,-99,-H/2]) cube([15,198,H]);
+        translate([70,-99,-H/2]) cube([15,198,H]);
+
+        // central cross beams
+        translate([-12,-114,-H/2]) cube([24,228,H]);
+        translate([-85,-12,-H/2]) cube([170,24,H]);
+
+        // diagonal truss members
+        diagbeam(72,96);
+        diagbeam(-72,96);
+        diagbeam(72,-96);
+        diagbeam(-72,-96);
+
+        // pivot bosses
+        translate([0,-87,-H/2]) cylinder(h=H,d=76);
+        translate([0,87,-H/2]) cylinder(h=H,d=76);
+    }
+    // M5 pivot bores with printing clearance
+    translate([0,-87,-20]) cylinder(h=40,d=5.2);
+    translate([0,87,-20]) cylinder(h=40,d=5.2);
+}
+'''
+    sp.write_text(scad)
+    subprocess.run(['openscad','-q','-o',str(p),str(sp)],check=True)
+    repaired=trimesh.load_mesh(p,force='mesh',process=True)
+    repaired.merge_vertices()
+    try:
+        trimesh.repair.fix_winding(repaired)
+        trimesh.repair.fix_normals(repaired,multibody=True)
+    except TypeError:
+        trimesh.repair.fix_normals(repaired)
+    repaired.export(p)
+    return p
+
 stations=[
  (0,3,3,0),(42,17,18,0),(90,28,27,1),(145,34,34,4),(205,40,40,8),
  (270,48,43,10),(335,57,42,8),(405,63,39,6),(485,62,33,4),(570,57,28,3),
@@ -311,7 +364,13 @@ parts['bec_tray']=tray_with_rails(58,38,4,9,3.5)
 parts['electronics_hatch']=box([170,82,4.0])
 
 for name,m in parts.items():
-    save(m,name)
+    if name=='wing_box':
+        save_wingbox_csg()
+    else:
+        save(m,name)
+
+# Use the exact OpenSCAD-CGAL export in the assembly reference as well.
+parts['wing_box']=trimesh.load_mesh(ROOT/'stl'/'wing_box.stl',force='mesh',process=True)
 
 assembled=[parts[f'fuse_{i:02d}'].copy() for i in range(1,7)]
 assembled.append(parts['canopy'].copy())
