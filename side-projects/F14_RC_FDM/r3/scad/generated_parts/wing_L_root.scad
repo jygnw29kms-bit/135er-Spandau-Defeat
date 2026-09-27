@@ -1,1 +1,25 @@
-polyhedron(points=[[79.75, 145.0, -5.0], [0.0, 0.0, -5.0], [220.0, 0.0, -5.0], [79.75, 145.0, 5.0], [0.0, 0.0, 5.0], [220.0, 0.0, 5.0], [241.75, 145.0, -5.0], [241.75, 145.0, 5.0]], faces=[[0, 2, 1], [3, 4, 5], [0, 6, 2], [3, 5, 7], [1, 2, 5], [1, 5, 4], [2, 6, 7], [2, 7, 5], [6, 0, 3], [6, 3, 7], [0, 1, 4], [0, 4, 3]], convexity=20);
+
+$fn=64;
+module raw_wing(){
+    union(){
+        linear_extrude(height=10,center=true) polygon(points=[[0.0,0.0],[220.0,0.0],[241.75,145.0],[79.75,145.0]]);
+        
+    }
+}
+module spar_channel(){
+    hull(){
+        translate([143.9,-5,0]) sphere(d=6.4,$fn=36);
+        translate([178.0,150,0]) sphere(d=6.4,$fn=36);
+    }
+}
+module wing(){
+    difference(){
+        raw_wing();
+        spar_channel();
+        
+        translate([42.0,24.0,-8]) cylinder(h=16,d=10.2,$fn=64);
+        translate([78,38,-8]) cylinder(h=16,d=3.2,$fn=36);
+    
+    }
+}
+wing();

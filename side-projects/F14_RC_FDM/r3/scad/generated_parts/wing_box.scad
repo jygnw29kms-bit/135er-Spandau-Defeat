@@ -29,7 +29,7 @@ difference(){
         translate([0,-87,-H/2]) cylinder(h=H,d=76);
         translate([0,87,-H/2]) cylinder(h=H,d=76);
     }
-    // M5 pivot bores with printing clearance
-    translate([0,-87,-20]) cylinder(h=40,d=5.2);
-    translate([0,87,-20]) cylinder(h=40,d=5.2);
+    // Bearing pockets for 5x10x4 bearings around 5 mm steel pivot shafts.
+    translate([0,-87,-20]) cylinder(h=40,d=10.2);
+    translate([0,87,-20]) cylinder(h=40,d=10.2);
 }

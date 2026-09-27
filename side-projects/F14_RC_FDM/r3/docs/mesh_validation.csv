@@ -1,5 +1,5 @@
 file,watertight,winding,x_mm,y_mm,z_mm,fits_256_any_orientation,faces
-F14_R3_assembled_reference.stl,False,True,955.0,767.75,368.0,False,5996
+F14_R3_assembled_reference.stl,False,True,955.0,751.37,368.0,False,8052
 battery_tray.stl,True,True,220.0,58.0,14.0,True,28
 bec_tray.stl,True,True,58.0,38.0,9.0,True,28
 canopy.stl,True,True,200.0,84.0,50.0,True,320
@@ -43,10 +43,10 @@ taileron_servo_mount_L.stl,True,True,48.0,30.0,8.0,True,32
 taileron_servo_mount_R.stl,True,True,48.0,30.0,8.0,True,32
 vstab_L.stl,True,True,148.0,184.0,7.0,True,16
 vstab_R.stl,True,True,148.0,184.0,7.0,True,16
-wing_L_mid.stl,True,True,184.25,135.0,10.0,True,12
-wing_L_root.stl,True,True,241.75,145.0,10.0,True,12
-wing_L_tip.stl,True,True,130.75,125.0,10.0,True,12
-wing_R_mid.stl,True,True,184.25,135.0,10.0,True,12
-wing_R_root.stl,True,True,241.75,145.0,10.0,True,12
-wing_R_tip.stl,True,True,130.75,125.0,10.0,True,12
+wing_L_mid.stl,True,True,184.25,135.0,10.0,True,216
+wing_L_root.stl,True,True,241.75,145.0,10.0,True,648
+wing_L_tip.stl,True,True,130.75,125.0,10.0,True,200
+wing_R_mid.stl,True,True,184.25,135.0,10.0,True,216
+wing_R_root.stl,True,True,241.75,145.0,10.0,True,648
+wing_R_tip.stl,True,True,130.75,125.0,10.0,True,200
 wing_box.stl,True,True,170.0,250.0,26.0,True,1180

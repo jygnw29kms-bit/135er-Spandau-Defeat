@@ -5,15 +5,15 @@ Plate,Name,Parts,Profiles,Estimated hours
 4,04_Fuselage_Center_B,fuse_04; battery_tray,SHELL; STRUCT_LIGHT,2.88
 5,05_Fuselage_Rear,fuse_05; joiner_640,SHELL; STRUCT_LIGHT,1.37
 6,06_Fuselage_Tail,fuse_06; joiner_480; electronics_hatch,SHELL; STRUCT_LIGHT,2.05
-7,07_Wingbox_Structural,wing_box,STRUCT,23.05
-8,08_Sweep_Hardware,sweep_crank; pivot_doubler_L; pivot_doubler_R; pivot_spacer_L; pivot_spacer_R,STRUCT,5.38
+7,07_Wingbox_Structural,wing_box,STRUCT,22.95
+8,08_Sweep_Hardware,sweep_crank; pivot_doubler_L; pivot_doubler_R; pivot_spacer_L; pivot_spacer_R,STRUCT,5.32
 9,09_Sweep_Servo_Mounts,sweep_servo_mount_L; sweep_servo_mount_R; sweep_servo_adapter_STD_L; sweep_servo_adapter_STD_R,STRUCT,2.84
-10,10_Left_Wing_Root,wing_L_root,WING,3.43
-11,11_Right_Wing_Root,wing_R_root,WING,3.43
-12,12_Left_Wing_Mid,wing_L_mid,WING,2.35
-13,13_Left_Wing_Tip,wing_L_tip,WING,1.46
-14,14_Right_Wing_Mid,wing_R_mid,WING,2.35
-15,15_Right_Wing_Tip,wing_R_tip,WING,1.46
+10,10_Left_Wing_Root,wing_L_root,WING,3.37
+11,11_Right_Wing_Root,wing_R_root,WING,3.37
+12,12_Left_Wing_Mid,wing_L_mid,WING,2.3
+13,13_Left_Wing_Tip,wing_L_tip,WING,1.41
+14,14_Right_Wing_Mid,wing_R_mid,WING,2.3
+15,15_Right_Wing_Tip,wing_R_tip,WING,1.41
 16,16_Left_Glove,glove_L,WING,3.9
 17,17_Right_Glove,glove_R,WING,3.9
 18,18_Tailerons,taileron_L; taileron_R,WING,2.26

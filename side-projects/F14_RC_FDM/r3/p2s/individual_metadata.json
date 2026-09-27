@@ -271,8 +271,8 @@
   },
   "pivot_doubler_L": {
     "profile": "STRUCT",
-    "volume_cm3": 53.5,
-    "estimated_hours": 1.88,
+    "volume_cm3": 52.7,
+    "estimated_hours": 1.85,
     "extents_mm": [
       70.0,
       70.0,
@@ -281,8 +281,8 @@
   },
   "pivot_doubler_R": {
     "profile": "STRUCT",
-    "volume_cm3": 53.5,
-    "estimated_hours": 1.88,
+    "volume_cm3": 52.7,
+    "estimated_hours": 1.85,
     "extents_mm": [
       70.0,
       70.0,
@@ -431,8 +431,8 @@
   },
   "wing_L_mid": {
     "profile": "WING",
-    "volume_cm3": 184.9,
-    "estimated_hours": 2.35,
+    "volume_cm3": 180.5,
+    "estimated_hours": 2.3,
     "extents_mm": [
       184.2,
       135.0,
@@ -441,8 +441,8 @@
   },
   "wing_L_root": {
     "profile": "WING",
-    "volume_cm3": 276.9,
-    "estimated_hours": 3.43,
+    "volume_cm3": 271.3,
+    "estimated_hours": 3.37,
     "extents_mm": [
       241.8,
       145.0,
@@ -451,8 +451,8 @@
   },
   "wing_L_tip": {
     "profile": "WING",
-    "volume_cm3": 108.8,
-    "estimated_hours": 1.46,
+    "volume_cm3": 104.7,
+    "estimated_hours": 1.41,
     "extents_mm": [
       130.8,
       125.0,
@@ -461,8 +461,8 @@
   },
   "wing_R_mid": {
     "profile": "WING",
-    "volume_cm3": 184.9,
-    "estimated_hours": 2.35,
+    "volume_cm3": 180.5,
+    "estimated_hours": 2.3,
     "extents_mm": [
       184.2,
       135.0,
@@ -471,8 +471,8 @@
   },
   "wing_R_root": {
     "profile": "WING",
-    "volume_cm3": 276.9,
-    "estimated_hours": 3.43,
+    "volume_cm3": 271.3,
+    "estimated_hours": 3.37,
     "extents_mm": [
       241.8,
       145.0,
@@ -481,8 +481,8 @@
   },
   "wing_R_tip": {
     "profile": "WING",
-    "volume_cm3": 108.8,
-    "estimated_hours": 1.46,
+    "volume_cm3": 104.7,
+    "estimated_hours": 1.41,
     "extents_mm": [
       130.8,
       125.0,
@@ -491,8 +491,8 @@
   },
   "wing_box": {
     "profile": "STRUCT",
-    "volume_cm3": 724.1,
-    "estimated_hours": 23.05,
+    "volume_cm3": 721.0,
+    "estimated_hours": 22.95,
     "extents_mm": [
       170.0,
       250.0,

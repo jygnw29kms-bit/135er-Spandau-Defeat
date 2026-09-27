@@ -88,7 +88,7 @@
     "profiles": [
       "STRUCT"
     ],
-    "estimated_print_hours": 23.05
+    "estimated_print_hours": 22.95
   },
   {
     "plate": 8,
@@ -103,7 +103,7 @@
     "profiles": [
       "STRUCT"
     ],
-    "estimated_print_hours": 5.38
+    "estimated_print_hours": 5.32
   },
   {
     "plate": 9,
@@ -128,7 +128,7 @@
     "profiles": [
       "WING"
     ],
-    "estimated_print_hours": 3.43
+    "estimated_print_hours": 3.37
   },
   {
     "plate": 11,
@@ -139,7 +139,7 @@
     "profiles": [
       "WING"
     ],
-    "estimated_print_hours": 3.43
+    "estimated_print_hours": 3.37
   },
   {
     "plate": 12,
@@ -150,7 +150,7 @@
     "profiles": [
       "WING"
     ],
-    "estimated_print_hours": 2.35
+    "estimated_print_hours": 2.3
   },
   {
     "plate": 13,
@@ -161,7 +161,7 @@
     "profiles": [
       "WING"
     ],
-    "estimated_print_hours": 1.46
+    "estimated_print_hours": 1.41
   },
   {
     "plate": 14,
@@ -172,7 +172,7 @@
     "profiles": [
       "WING"
     ],
-    "estimated_print_hours": 2.35
+    "estimated_print_hours": 2.3
   },
   {
     "plate": 15,
@@ -183,7 +183,7 @@
     "profiles": [
       "WING"
     ],
-    "estimated_print_hours": 1.46
+    "estimated_print_hours": 1.41
   },
   {
     "plate": 16,
