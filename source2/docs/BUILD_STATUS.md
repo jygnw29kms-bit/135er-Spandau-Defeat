@@ -1,10 +1,10 @@
 # Build status
 
-Version: 0.2.0-source2-alpha
+Version: 0.2.1-source2-alpha
 
 Implemented:
 - CS2 / Source 2 technical baseline
-- Linux CS2 dedicated server runtime already present
+- Linux CS2 dedicated server runtime
 - CounterStrikeSharp plugin builds successfully
 - plugin loads successfully on the live CS2 server
 - live commands: css_sd_status, css_sd_tickets, css_sd_point, css_sd_bleed, css_sd_map, css_sd_mode
@@ -12,8 +12,11 @@ Implemented:
 - automatic ticket loss on player death
 - automatic 10-second ticket bleed while one team owns A/B/C
 - managed PufferPanel/JL76 portal profile fields
-- 17-map project roster and historical-context metadata
+- **20-map project roster** with historical-context metadata
+- 20 map IDs in maplist/maps.json
+- map production specs for all 20 maps
 - Source 2 visual-master rules
+- Source 2 optical-master gallery in media/source2/
 
 Pending before playable map alpha:
 - actual Hammer/CS2 Workshop Tools map source for each map
