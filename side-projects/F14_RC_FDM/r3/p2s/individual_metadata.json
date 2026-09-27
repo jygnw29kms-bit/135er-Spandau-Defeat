@@ -491,12 +491,12 @@
   },
   "wing_box": {
     "profile": "STRUCT",
-    "volume_cm3": 1427.6,
-    "estimated_hours": 45.23,
+    "volume_cm3": 724.1,
+    "estimated_hours": 23.05,
     "extents_mm": [
       170.0,
       250.0,
-      34.0
+      26.0
     ]
   }
 }

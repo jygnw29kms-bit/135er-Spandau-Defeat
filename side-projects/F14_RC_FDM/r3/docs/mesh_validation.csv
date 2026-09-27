@@ -1,5 +1,5 @@
 file,watertight,winding,x_mm,y_mm,z_mm,fits_256_any_orientation,faces
-F14_R3_assembled_reference.stl,False,True,955.0,767.75,368.0,False,5748
+F14_R3_assembled_reference.stl,False,True,955.0,767.75,368.0,False,5996
 battery_tray.stl,True,True,220.0,58.0,14.0,True,28
 bec_tray.stl,True,True,58.0,38.0,9.0,True,28
 canopy.stl,True,True,200.0,84.0,50.0,True,320
@@ -49,4 +49,4 @@ wing_L_tip.stl,True,True,130.75,125.0,10.0,True,12
 wing_R_mid.stl,True,True,184.25,135.0,10.0,True,12
 wing_R_root.stl,True,True,241.75,145.0,10.0,True,12
 wing_R_tip.stl,True,True,130.75,125.0,10.0,True,12
-wing_box.stl,True,True,170.0,250.0,34.0,True,932
+wing_box.stl,True,True,170.0,250.0,26.0,True,1180
