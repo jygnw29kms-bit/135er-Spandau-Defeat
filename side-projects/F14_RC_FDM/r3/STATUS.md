@@ -1,50 +1,75 @@
-# F-14 R3 Scale — validation status
+# F-14 R3.1 Scale — validation status
 
-## Geometry and P2S package
+## Final automated geometry gate
 
-Validated local R3 generation:
+GitHub Actions build: **PASS**
 
-- printable STL parts: **41**
-- watertight: **41 / 41**
-- winding-consistent: **41 / 41**
-- P2S 256 mm fit: **41 / 41**
+- printable STL parts: **50**
+- assembled reference STL: **1**
+- total STL in `stl/`: **51**
+- watertight printable parts: **50 / 50**
+- winding-consistent printable parts: **50 / 50**
+- P2S 256 mm fit: **50 / 50**
 - failed individual geometry checks: **0**
-- assembled reference STL generated
-- individual 3MF exports: **41**, plus assembled-reference 3MF
-- optimized P2S plate 3MF files: **22**
-- optimized plate combined STL previews: **22**
-- P2S plate bounds failures after final repack: **0**
-- OpenSCAD polyhedron source generated before each STL export
+- individual 3MF including assembled reference: **51**
+- optimized P2S plate 3MF: **25**
+- combined plate STL previews: **25**
+- P2S plate bound failures: **0**
 
-Two original mid+tip wing plate combinations exceeded the safe 256 mm envelope. They were deliberately split into four plates; the final **22/22** plate set stays inside the P2S XY volume.
+## R3.1 structural changes
 
-## Print planning
+- fuselage wall target increased to 2.8 mm
+- heavy solid wing-box concept replaced by a structural truss wing box
+- wing box: **170 × 250 × 26 mm**
+- wing-box CAD volume reduced to about **721 cm³** while retaining the STRUCT profile
+- pivot moved inboard under the wing glove
+- 10.2 mm bearing pockets added
+- 5 mm steel pivot shaft target retained
+- 6.4 mm continuous CFK spar tunnels added to wing root/mid/tip
+- 3.2 mm sweep-linkage holes added to wing roots
+- dual 23 g-class sweep-servo mounts added
+- standard-servo adapter option added
+- 17 g-class taileron servo frames added
+- dedicated ESC, receiver and BEC trays added
+- battery tray reinforced
+- EDF rings changed to 56 mm housing opening
 
-The final plate plan is component/risk aware:
+## Strength-first P2S profiles
 
-- wing box isolated
-- left/right wing roots isolated
-- paired EDF and taileron parts share identical process conditions where practical
-- fuselage/ducts oriented on cut faces
-- long structural jobs are not used as filler plates
+- SHELL: 4 walls / 8% infill
+- WING: 4 walls / 12% infill
+- STRUCT: 8 walls / 55% infill / 0.16 mm layers
+- STRUCT_LIGHT: 5 walls / 25% infill
+- DUCT: 4 walls / 10% infill
 
-Planning-time estimate: **~46.1 h total**. This is not a Bambu Studio slice result.
+Current geometry/profile planning estimate: **~81.85 h total**.
 
-## GitHub build
+This is not a Bambu Studio/OrcaSlicer time prediction. Slice the generated 3MF files with the real P2S and actual PETG calibration for final time and material usage.
 
-The workflow regenerates:
+## Engineering research
 
-- `r3/scad/generated_parts/*.scad`
-- `r3/stl/*.stl`
-- `r3/docs/mesh_validation.*`
-- `r3/p2s/individual_3mf/*.3mf`
-- `r3/p2s/plates_3mf/*.3mf`
-- `r3/p2s/plate_stl/*.stl`
-- `r3/p2s/plate_manifest.*`
-- `r3/p2s/profiles.json`
+The R3.1 structural approach was cross-checked against public specifications for:
 
-## Flight status
+- a 1050 mm twin-50 mm 3D-printed F-14 using separate sweep-servo mounts, bearings and 6 mm carbon reinforcement
+- Freewing 64 mm and 80 mm F-14 designs using metal-gear servos, rigid wing-box structures and carbon reinforcement
+- other 3D-printed EDF aircraft using reinforced internal load paths
 
-**Geometry/print package validated; physical flight release pending.**
+Details and source URLs: [REFERENCE_RESEARCH.md](REFERENCE_RESEARCH.md).
 
-Still required: real mass/CG, EDF thrust/current, sweep-servo load, cycle/end-stop test, range/failsafe, ground/glide testing and progressive flight/sweep envelope expansion.
+## Flight release
+
+**Geometry and print package: validated.**  
+**Physical flight release: pending.**
+
+Still required:
+
+- real printed airframe mass
+- measured CG
+- EDF static thrust and total current
+- real servo current / BEC load
+- bearing and pivot fit inspection
+- sweep-servo load test
+- repeated sweep cycle/end-stop test
+- receiver range/failsafe test
+- ground/glide testing where appropriate
+- progressive flight and flutter-envelope testing
