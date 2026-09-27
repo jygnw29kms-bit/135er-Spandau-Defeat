@@ -227,7 +227,10 @@ bosses=[Point(0,y).buffer(38,resolution=48) for y in (-87,87)]
 wingbox_2d=unary_union([perimeter,beam_x,beam_y,*braces,*bosses])
 for y in (-87,87):
     wingbox_2d=wingbox_2d.difference(Point(0,y).buffer(2.6,resolution=32))
-parts['wing_box']=extrude_shapely(wingbox_2d,26,z0=-0.5)
+wingbox_2d=wingbox_2d.buffer(0)
+wingbox_mesh=trimesh.creation.extrude_polygon(wingbox_2d,height=26,engine='earcut')
+wingbox_mesh.apply_translation([0,0,-13])
+parts['wing_box']=wingbox_mesh
 
 outer=Point(0,0).buffer(21,resolution=24).union(Polygon([(-68,-8),(68,-8),(68,8),(-68,8)]))
 parts['sweep_crank']=extrude_shapely(outer,10,z0=-0.5)
