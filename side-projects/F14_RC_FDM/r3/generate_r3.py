@@ -2,8 +2,8 @@ from pathlib import Path
 import math, json, csv, subprocess
 import numpy as np
 import trimesh
-from shapely.geometry import Polygon, Point
-from shapely.ops import triangulate
+from shapely.geometry import Polygon, Point, LineString
+from shapely.ops import triangulate, unary_union
 
 ROOT=Path(__file__).resolve().parent
 (ROOT/'stl').mkdir(exist_ok=True)
@@ -208,16 +208,26 @@ parts['pivot_doubler_R']=annulus(35,2.6,14)
 parts['pivot_spacer_L']=annulus(20,2.75,6)
 parts['pivot_spacer_R']=annulus(20,2.75,6)
 
-base=box([170,228,24])
-towers=[]
-for y in [-87,87]:
-    t=annulus(38,2.6,32)
-    t.apply_translation([0,y,4])
-    towers.append(t)
-# Additional longitudinal and transverse reinforcement ribs.
-rib_long=box([170,12,34],[0,0,5])
-rib_cross=box([18,228,34],[0,0,5])
-parts['wing_box']=concat(base,*towers,rib_long,rib_cross)
+# Stability-first wing box: load-bearing truss instead of a near-solid slab.
+# Outer frame + cross beams + diagonal braces + large pivot bosses are made as
+# one watertight 2D structural section, then extruded. Pivot load is carried
+# through the printed boss into M5 steel hardware and CFK-reinforced structure.
+outer_rect=Polygon([(-85,-114),(85,-114),(85,114),(-85,114)])
+inner_rect=Polygon([(-70,-99),(70,-99),(70,99),(-70,99)])
+perimeter=outer_rect.difference(inner_rect)
+beam_x=Polygon([(-12,-114),(12,-114),(12,114),(-12,114)])
+beam_y=Polygon([(-85,-12),(85,-12),(85,12),(-85,12)])
+braces=[
+    LineString([(0,0),(72,96)]).buffer(6,cap_style=2,join_style=2),
+    LineString([(0,0),(-72,96)]).buffer(6,cap_style=2,join_style=2),
+    LineString([(0,0),(72,-96)]).buffer(6,cap_style=2,join_style=2),
+    LineString([(0,0),(-72,-96)]).buffer(6,cap_style=2,join_style=2),
+]
+bosses=[Point(0,y).buffer(38,resolution=48) for y in (-87,87)]
+wingbox_2d=unary_union([perimeter,beam_x,beam_y,*braces,*bosses])
+for y in (-87,87):
+    wingbox_2d=wingbox_2d.difference(Point(0,y).buffer(2.6,resolution=32))
+parts['wing_box']=extrude_shapely(wingbox_2d,26,z0=-0.5)
 
 outer=Point(0,0).buffer(21,resolution=24).union(Polygon([(-68,-8),(68,-8),(68,8),(-68,8)]))
 parts['sweep_crank']=extrude_shapely(outer,10,z0=-0.5)
