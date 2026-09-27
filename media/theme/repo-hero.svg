@@ -1,19 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-label="135er Spandau Defeat">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-label="135er Spandau Defeat Source 2">
 <defs>
-  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#080b0f"/><stop offset=".55" stop-color="#151a20"/><stop offset="1" stop-color="#06080b"/></linearGradient>
-  <linearGradient id="red" x1="0" x2="1"><stop stop-color="#7e1018"/><stop offset="1" stop-color="#ff2538"/></linearGradient>
-  <linearGradient id="blue" x1="0" x2="1"><stop stop-color="#0c486f"/><stop offset="1" stop-color="#22a7ff"/></linearGradient>
-  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#89939d" stroke-opacity=".08"/></pattern>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#07090c"/><stop offset=".52" stop-color="#151a20"/><stop offset="1" stop-color="#05070a"/></linearGradient>
+<pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#89939d" stroke-opacity=".08"/></pattern>
 </defs>
-<rect width="1200" height="360" fill="url(#bg)"/>
-<rect width="1200" height="360" fill="url(#grid)"/>
-<path d="M0 265 L85 220 150 232 225 178 310 215 382 166 450 205 530 148 610 202 690 156 770 212 850 162 925 216 1004 175 1080 225 1200 190V360H0Z" fill="#0b0e12" opacity=".95"/>
-<path d="M0 292H1200" stroke="#3a424a" stroke-opacity=".55"/>
-<path d="M0 294H385" stroke="url(#blue)" stroke-width="4"/><path d="M815 294H1200" stroke="url(#red)" stroke-width="4"/>
-<g opacity=".9"><circle cx="165" cy="95" r="9" fill="#22a7ff"/><path d="M165 72l23 23-23 23-23-23z" fill="none" stroke="#22a7ff" stroke-width="3"/><text x="165" y="101" text-anchor="middle" fill="white" font-family="Arial,sans-serif" font-weight="700" font-size="16">A</text>
-<circle cx="1035" cy="95" r="9" fill="#ff2538"/><path d="M1035 72l23 23-23 23-23-23z" fill="none" stroke="#ff2538" stroke-width="3"/><text x="1035" y="101" text-anchor="middle" fill="white" font-family="Arial,sans-serif" font-weight="700" font-size="16">B</text></g>
-<text x="600" y="128" text-anchor="middle" fill="#eef2f5" font-family="Arial Black,Arial,sans-serif" font-size="88" font-weight="900" letter-spacing="-5">135<tspan fill="#e4192c">er</tspan></text>
-<text x="600" y="190" text-anchor="middle" fill="#f1f3f5" font-family="Arial,Helvetica,sans-serif" font-size="42" font-weight="800" letter-spacing="9">SPANDAU DEFEAT</text>
-<text x="600" y="234" text-anchor="middle" fill="#aeb7c0" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" letter-spacing="4">NATIVE MULTIPLAYER SHOOTER  •  UNREAL ENGINE 5.8</text>
-<text x="600" y="327" text-anchor="middle" fill="#69737d" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" letter-spacing="3">SPANDAU  •  HISTORY  •  URBAN WARFARE</text>
+<rect width="1200" height="360" fill="url(#bg)"/><rect width="1200" height="360" fill="url(#grid)"/>
+<path d="M0 268L90 225 170 237 240 185 318 218 390 171 468 207 540 154 620 204 700 160 780 214 860 165 940 218 1015 180 1090 226 1200 194V360H0Z" fill="#0b0e12"/>
+<path d="M0 294H390" stroke="#22a7ff" stroke-width="4"/><path d="M810 294H1200" stroke="#e4192c" stroke-width="4"/>
+<text x="600" y="124" text-anchor="middle" fill="#eef2f5" font-family="Arial Black,Arial,sans-serif" font-size="86" font-weight="900" letter-spacing="-5">135<tspan fill="#e4192c">er</tspan></text>
+<text x="600" y="184" text-anchor="middle" fill="#f1f3f5" font-family="Arial,Helvetica,sans-serif" font-size="40" font-weight="800" letter-spacing="8">SPANDAU DEFEAT</text>
+<text x="600" y="226" text-anchor="middle" fill="#c2cad1" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700" letter-spacing="4">SOURCE 2 / CS2</text>
+<text x="600" y="254" text-anchor="middle" fill="#7e8993" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" letter-spacing="3">HAMMER • WORKSHOP TOOLS • LINUX DEDICATED SERVER</text>
+<text x="600" y="328" text-anchor="middle" fill="#69737d" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" letter-spacing="3">SPANDAU • HISTORY • URBAN WARFARE</text>
 </svg>
