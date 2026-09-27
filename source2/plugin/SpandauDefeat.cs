@@ -3,13 +3,14 @@ using CounterStrikeSharp.API.Core;
 using CounterStrikeSharp.API.Core.Attributes.Registration;
 using CounterStrikeSharp.API.Modules.Admin;
 using CounterStrikeSharp.API.Modules.Commands;
+using CounterStrikeSharp.API.Modules.Timers;
 
 namespace SpandauDefeat;
 
 public class SpandauDefeatPlugin : BasePlugin
 {
     public override string ModuleName => "135er – Spandau Defeat";
-    public override string ModuleVersion => "0.1.0";
+    public override string ModuleVersion => "0.2.0-source2-alpha";
     public override string ModuleAuthor => "135ER";
     public override string ModuleDescription => "Source 2 / CS2 server rules for the free 135er – Spandau Defeat mod.";
 
@@ -18,11 +19,39 @@ public class SpandauDefeatPlugin : BasePlugin
     private string _pointA = "neutral";
     private string _pointB = "neutral";
     private string _pointC = "neutral";
+    private static readonly string[] MapIds =
+    {
+        "rathaus_spandau","zitadelle","staaken","rodelberg","kiesteich","falkenhagener_feld",
+        "lynarstrasse","wroehmaennerpark","freiheit","fort_hahneberg_1945","teufelsberg_coldwar",
+        "flugplatz_gatow_1945","gatow_luftbruecke_1948","radeland_1945",
+        "hakenfelde_heeresamt_1944","zitadelle_1945","britischer_sektor_spandau"
+    };
 
     public override void Load(bool hotReload)
     {
         ReadTicketDefaults();
-        Server.PrintToConsole($"[SpandauDefeat] loaded v{ModuleVersion}; tickets {_alliesTickets}:{_axisTickets}");
+        RegisterEventHandler<EventPlayerDeath>(OnPlayerDeath);
+        AddTimer(10.0f, ApplyAutomaticBleed, TimerFlags.REPEAT);
+        Server.PrintToConsole($"[SpandauDefeat] loaded v{ModuleVersion}; tickets {_alliesTickets}:{_axisTickets}; maps {MapIds.Length}");
+    }
+
+    private HookResult OnPlayerDeath(EventPlayerDeath ev, GameEventInfo info)
+    {
+        var victim = ev.Userid;
+        if (victim != null)
+        {
+            if (victim.TeamNum == 3) _alliesTickets = Math.Max(0, _alliesTickets - 1);
+            else if (victim.TeamNum == 2) _axisTickets = Math.Max(0, _axisTickets - 1);
+        }
+        return HookResult.Continue;
+    }
+
+    private void ApplyAutomaticBleed()
+    {
+        var alliesOwned = new[] { _pointA, _pointB, _pointC }.Count(x => x == "allies");
+        var axisOwned = new[] { _pointA, _pointB, _pointC }.Count(x => x == "axis");
+        if (alliesOwned == 3) _axisTickets = Math.Max(0, _axisTickets - 1);
+        if (axisOwned == 3) _alliesTickets = Math.Max(0, _alliesTickets - 1);
     }
 
     private void ReadTicketDefaults()
@@ -52,6 +81,22 @@ public class SpandauDefeatPlugin : BasePlugin
     [ConsoleCommand("css_sd_status", "Show Spandau Defeat ticket/objective state")]
     [CommandHelper(whoCanExecute: CommandUsage.CLIENT_AND_SERVER)]
     public void Status(CCSPlayerController? player, CommandInfo info) => PublishState(info);
+
+    [ConsoleCommand("css_sd_info", "Show build and engine information")]
+    [CommandHelper(whoCanExecute: CommandUsage.CLIENT_AND_SERVER)]
+    public void Info(CCSPlayerController? player, CommandInfo info)
+    {
+        info.ReplyToCommand($"[SpandauDefeat] {ModuleName} {ModuleVersion}");
+        info.ReplyToCommand("[SpandauDefeat] Runtime: Counter-Strike 2 / Source 2 · Linux Dedicated Server · CounterStrikeSharp");
+        info.ReplyToCommand($"[SpandauDefeat] Maps registered: {MapIds.Length} · Objectives: A/B/C · Free non-commercial mod.");
+    }
+
+    [ConsoleCommand("css_sd_maps", "List all registered Spandau Defeat map ids")]
+    [CommandHelper(whoCanExecute: CommandUsage.CLIENT_AND_SERVER)]
+    public void Maps(CCSPlayerController? player, CommandInfo info)
+    {
+        info.ReplyToCommand($"[SpandauDefeat] Maps ({MapIds.Length}): {string.Join(", ", MapIds)}");
+    }
 
     [ConsoleCommand("css_sd_tickets", "Set tickets for both teams")]
     [CommandHelper(minArgs: 1, usage: "<count>", whoCanExecute: CommandUsage.CLIENT_AND_SERVER)]
