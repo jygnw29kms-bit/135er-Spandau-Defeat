@@ -1,6 +1,6 @@
 {
   "project": "135er – Spandau Defeat",
-  "version": "0.2.0-source2-alpha",
+  "version": "0.2.1-source2-alpha",
   "engine": "Counter-Strike 2 / Source 2",
   "distribution": "free non-commercial custom game/mod content",
   "runtime": {
@@ -11,8 +11,15 @@
   },
   "gameplay": {
     "inspiration": "fast objective combat in the spirit of classic Day of Defeat gameplay",
-    "teams": ["Allies", "Axis"],
-    "objectives": ["A", "B", "C"],
+    "teams": [
+      "Allies",
+      "Axis"
+    ],
+    "objectives": [
+      "A",
+      "B",
+      "C"
+    ],
     "defaultTicketsPerTeam": 356,
     "defaultRoundMinutes": 30,
     "defaultRespawnSeconds": 5,
@@ -20,14 +27,21 @@
     "serverAuthoritative": true,
     "progression": "minimal; community-server focused"
   },
+  "maps": {
+    "total": 20,
+    "core": 12,
+    "historicalOrSpecial": 8,
+    "specs": 20
+  },
   "network": {
     "defaultGamePort": 27015,
     "serverBrowserBasis": "Counter-Strike 2 / Steam",
     "dedicatedServerOS": "Linux x86_64"
   },
   "visual": {
-    "master": "approved Source 2 concept previews",
-    "rule": "concept images are art-direction targets, not in-engine screenshots",
+    "master": "Source 2 optical-master/reference gallery",
+    "masterPath": "media/source2/source2-optical-masters-gallery.jpg",
+    "rule": "optical masters are art-direction targets, not in-engine screenshots",
     "finalCaptureRule": "only actual Hammer/CS2 rendered captures may be labeled in-engine screenshots",
     "hud": "top-center blue/red tickets + clock, A/B/C objectives, minimap lower-left, ammo/equipment lower-right",
     "priority": "recognizable Spandau identity and gameplay readability before spectacle"
