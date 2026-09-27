@@ -1,0 +1,47 @@
+{
+  "id": "staaken",
+  "name": "Staaken",
+  "era": "1945-inspired",
+  "identity": "rail corridor, suburban streets, crossings",
+  "history": "historically inspired gameplay",
+  "objectives": {
+    "A": "west rail",
+    "B": "central crossing",
+    "C": "east residential"
+  },
+  "layout": {
+    "nominalSizeMeters": 1000,
+    "lanes": [
+      "left",
+      "center",
+      "right"
+    ],
+    "spawnExitsPerTeam": 2,
+    "objectiveApproachesPerPoint": 2,
+    "botAlternateGroundRouteRequired": true,
+    "verticality": "moderate unless map identity requires elevation"
+  },
+  "botNavigation": {
+    "required": true,
+    "targetBotCounts": [
+      10,
+      15
+    ],
+    "mustReach": [
+      "A",
+      "B",
+      "C"
+    ],
+    "mustRotateBetweenObjectives": true,
+    "noJumpRequiredRoutes": true,
+    "noBoostRequiredRoutes": true,
+    "waterSafetyRequired": true,
+    "stuckClusterAcceptance": 0
+  },
+  "source2": {
+    "authoringTool": "CS2 Workshop Tools / Hammer",
+    "compiledMapName": "staaken",
+    "workshopId": null,
+    "status": "design-spec-ready"
+  }
+}

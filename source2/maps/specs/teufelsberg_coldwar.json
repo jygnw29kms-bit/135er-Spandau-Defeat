@@ -1,0 +1,47 @@
+{
+  "id": "teufelsberg_coldwar",
+  "name": "Teufelsberg – Kalter Krieg",
+  "era": "Cold War c.1985",
+  "identity": "radomes, communications structures and Cold-War equipment",
+  "history": "fictional combat scenario; Teufelsberg is outside Spandau",
+  "objectives": {
+    "A": "outer perimeter",
+    "B": "operations compound",
+    "C": "radome ridge"
+  },
+  "layout": {
+    "nominalSizeMeters": 1000,
+    "lanes": [
+      "left",
+      "center",
+      "right"
+    ],
+    "spawnExitsPerTeam": 2,
+    "objectiveApproachesPerPoint": 2,
+    "botAlternateGroundRouteRequired": true,
+    "verticality": "moderate unless map identity requires elevation"
+  },
+  "botNavigation": {
+    "required": true,
+    "targetBotCounts": [
+      10,
+      15
+    ],
+    "mustReach": [
+      "A",
+      "B",
+      "C"
+    ],
+    "mustRotateBetweenObjectives": true,
+    "noJumpRequiredRoutes": true,
+    "noBoostRequiredRoutes": true,
+    "waterSafetyRequired": true,
+    "stuckClusterAcceptance": 0
+  },
+  "source2": {
+    "authoringTool": "CS2 Workshop Tools / Hammer",
+    "compiledMapName": "teufelsberg_coldwar",
+    "workshopId": null,
+    "status": "design-spec-ready"
+  }
+}

@@ -156,6 +156,31 @@ public class SpandauDefeatPlugin : BasePlugin
         Server.ExecuteCommand($"changelevel {map}");
     }
 
+    [ConsoleCommand("css_sd_bots", "Configure Spandau Defeat bots")]
+    [CommandHelper(minArgs: 1, usage: "<0|5|10|15|20> [easy|normal|hard|expert]", whoCanExecute: CommandUsage.CLIENT_AND_SERVER)]
+    [RequiresPermissions("@css/root")]
+    public void Bots(CCSPlayerController? player, CommandInfo info)
+    {
+        if (!int.TryParse(info.ArgByIndex(1), out var count) || count is < 0 or > 20)
+        {
+            info.ReplyToCommand("[SpandauDefeat] Usage: css_sd_bots <0|5|10|15|20> [easy|normal|hard|expert]");
+            return;
+        }
+        var difficulty = info.ArgCount >= 3 ? info.ArgByIndex(2).Trim().ToLowerInvariant() : "normal";
+        var level = difficulty switch { "easy" => 0, "normal" => 1, "hard" => 2, "expert" => 3, _ => 1 };
+        foreach (var c in new[]
+        {
+            "bot_kick",
+            "bot_join_after_player 0",
+            "bot_auto_vacate 1",
+            "bot_join_team any",
+            "bot_quota_mode fill",
+            $"bot_difficulty {level}",
+            $"bot_quota {count}"
+        }) Server.ExecuteCommand(c);
+        info.ReplyToCommand($"[SpandauDefeat] bots={count}, difficulty={difficulty}");
+    }
+
     [ConsoleCommand("css_sd_mode", "Apply Spandau Defeat base CS2 rules")]
     [RequiresPermissions("@css/root")]
     public void Mode(CCSPlayerController? player, CommandInfo info)
