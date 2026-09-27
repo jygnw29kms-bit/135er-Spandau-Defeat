@@ -77,9 +77,14 @@ The same sunset must not be copied onto every map. The requirement is cinematic 
 | Lynarstraße | close urban choke points, shops, tram-street language |
 | Wröhmännerpark | riverside park, stone/iron furniture, tree canopy |
 | Freiheit | rail yard, cranes, warehouses, industrial haze |
+| Martin-Buber-Schule | school campus, large courtyard, classroom wings, sports edge |
+| Askanier-Schule | compact school ensemble, street frontage, courtyard and sports areas |
+| B.-Traven-Schule | broader campus layout, residential edge, open school grounds |
 | Fort Hahneberg 1945 | brick fortification, earthworks, casemate approaches |
 | Teufelsberg Cold War | radomes, communications structures, Cold-War equipment |
 | Flugplatz Gatow 1945 | hangars, apron/runway, aircraft/airfield cover |
+
+The school maps inherit the same photorealistic urban master language while preserving clearly different silhouettes, circulation and landmark composition.
 
 Remaining historical variants inherit the nearest parent master until a dedicated image is approved.
 
