@@ -3,10 +3,10 @@
 ## Identity
 135er – Spandau Defeat is not a generic WWII shooter. Its core identity is **Spandau across time**.
 
-Players should immediately recognize the district through landmarks, architecture, road patterns, residential areas, water, bridges, industrial sites and historic structures.
+Players should recognize the district through landmarks, architecture, road patterns, residential areas, water, bridges, industrial sites and historic structures.
 
 ## Gameplay baseline
-The design target is the direct multiplayer feel associated with Day of Defeat Beta 3.1:
+The design target is the direct multiplayer feel associated with classic Day of Defeat:
 - fast spawn-to-action loop
 - low time-to-kill
 - distinct weapon roles
@@ -16,25 +16,20 @@ The design target is the direct multiplayer feel associated with Day of Defeat B
 - grenades and suppression
 - objective-driven rounds
 - minimal progression friction
-- server-browser/community-server friendly design
+- community-server friendly design
 
 ## Era model
-Maps may represent:
-- pre-1945 historical Spandau
-- WWII / 1945-inspired scenarios
-- post-war and divided-Berlin settings
-- late Cold War / 1980s
-- 1990s / 2000s
-- present-day Spandau
-
-A real place may have multiple era variants with changed cover, routes, vehicles and atmosphere.
+Maps may represent pre-1945, WWII/1945-inspired, post-war, Berlin Airlift, late Cold War and modern Spandau. A real place may have multiple era variants with changed cover, routes, vehicles and atmosphere.
 
 ## Visual target
-Realistic 2026 rendering with competitive readability:
-- recognizable architecture
-- realistic materials and lighting
-- restrained smoke/particles
-- clear silhouettes
-- no excessive cinematic blur
-- consistent minimal HUD
+The approved generated previews are the binding graphical master:
+- photorealistic UE5 rendering
+- realistic materials and physically believable lighting
+- strong landmark readability
+- restrained cinematic smoke/particles
+- clear silhouettes and objective lanes
+- native minimal HUD matching the master previews
+- no browser-game presentation
 - real-place fidelity before spectacle
+
+See [VISUAL_MASTER.md](VISUAL_MASTER.md).
