@@ -1,19 +1,21 @@
 # Media
 
-This directory contains project-owned concept artwork and visual-target material for **135er – Spandau Defeat**.
+This directory contains project-owned visual material for **135er – Spandau Defeat**.
+
+## In-game captures
+
+Real Unreal Engine 5.8 gameplay captures belong in [ingame/](ingame/). They must follow [../docs/INGAME_CAPTURE_STANDARD.md](../docs/INGAME_CAPTURE_STANDARD.md) and use the sharp client baseline from [../game/config/SharpIngame.ini](../game/config/SharpIngame.ini).
+
+Only frames captured from a running map with live HUD/game state may be labeled **in-game**.
 
 ## Map concepts
 
-See [maps/](maps/).
+Concept artwork remains in [maps/](maps/). The existing small JPEGs are **art-direction references**, not final screenshots and not image-quality masters.
 
-The map images are **concept art / art-direction references**, not final Unreal Engine screenshots. They define desired atmosphere, composition, readability and photorealistic target quality while the actual map geometry is still under production.
+Current concept coverage includes:
+- Rathaus / Zitadelle / Falkenhagener Feld / Altstadt overview
+- Zitadelle
+- Falkenhagener Feld
+- Freiheit / industrial rail direction
 
-Current media includes:
-- Rathaus / Zitadelle / Falkenhagener Feld / Altstadt concept gallery
-- Zitadelle concept
-- Falkenhagener Feld concept
-- industrial/rail combat concept for the Freiheit/industrial direction
-- historical urban/outskirts concepts
-- project key art
-
-Final in-engine screenshots will replace or sit alongside these concepts as authored UE5 maps mature.
+Concepts define atmosphere and composition. Production screenshots define actual in-engine sharpness and material quality.
