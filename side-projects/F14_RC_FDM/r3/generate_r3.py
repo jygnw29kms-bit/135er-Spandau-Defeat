@@ -14,7 +14,7 @@ L=955.0
 SPAN=977.5
 PIVOT_X=426.0
 PIVOT_Y=87.0
-WALL=2.0
+WALL=2.8
 
 def mesh_from_vertices_faces(v,f,name=None):
     m=trimesh.Trimesh(np.array(v,float),np.array(f,int),process=True)
@@ -56,6 +56,17 @@ def box(size,center=(0,0,0)):
 
 def concat(*ms):
     return trimesh.util.concatenate([m for m in ms if m is not None])
+
+def rect_frame(outer_x,outer_y,inner_x,inner_y,h):
+    outer=[(-outer_x/2,-outer_y/2),(outer_x/2,-outer_y/2),(outer_x/2,outer_y/2),(-outer_x/2,outer_y/2)]
+    inner=[(-inner_x/2,-inner_y/2),(inner_x/2,-inner_y/2),(inner_x/2,inner_y/2),(-inner_x/2,inner_y/2)]
+    return extrude_shapely(Polygon(outer,[inner]),h,z0=0)
+
+def tray_with_rails(length,width,base_thick,rail_h,rail_thick):
+    base=box([length,width,base_thick],[0,0,base_thick/2])
+    left=box([length,rail_thick,rail_h],[0,-(width-rail_thick)/2,rail_h/2])
+    right=box([length,rail_thick,rail_h],[0,(width-rail_thick)/2,rail_h/2])
+    return concat(base,left,right)
 
 def save(m,name):
     try:
@@ -169,21 +180,24 @@ def annulus(rout,rin,h):
     inner=[(rin*math.cos(a),rin*math.sin(a)) for a in np.linspace(0,2*math.pi,49)[:-1]]
     return extrude_shapely(Polygon(outer,[inner]),h,z0=-0.5)
 
-parts['pivot_doubler_L']=annulus(31,2.6,10)
-parts['pivot_doubler_R']=annulus(31,2.6,10)
-parts['pivot_spacer_L']=annulus(18,2.725,4)
-parts['pivot_spacer_R']=annulus(18,2.725,4)
+parts['pivot_doubler_L']=annulus(35,2.6,14)
+parts['pivot_doubler_R']=annulus(35,2.6,14)
+parts['pivot_spacer_L']=annulus(20,2.75,6)
+parts['pivot_spacer_R']=annulus(20,2.75,6)
 
-base=box([160,220,18])
+base=box([170,228,24])
 towers=[]
 for y in [-87,87]:
-    t=annulus(33,2.6,26)
-    t.apply_translation([0,y,0])
+    t=annulus(38,2.6,32)
+    t.apply_translation([0,y,4])
     towers.append(t)
-parts['wing_box']=concat(base,*towers)
+# Additional longitudinal and transverse reinforcement ribs.
+rib_long=box([170,12,34],[0,0,5])
+rib_cross=box([18,228,34],[0,0,5])
+parts['wing_box']=concat(base,*towers,rib_long,rib_cross)
 
-outer=Point(0,0).buffer(18,resolution=24).union(Polygon([(-65,-6),(65,-6),(65,6),(-65,6)]))
-parts['sweep_crank']=extrude_shapely(outer,8,z0=-0.5)
+outer=Point(0,0).buffer(21,resolution=24).union(Polygon([(-68,-8),(68,-8),(68,8),(-68,8)]))
+parts['sweep_crank']=extrude_shapely(outer,10,z0=-0.5)
 
 for side in ['L','R']:
     poly=Polygon([(0,-18),(160,-35),(228,36),(135,103),(22,72)])
@@ -215,8 +229,9 @@ for side in ['L','R']:
     parts[f'intake_{side}']=tube_shell(145,38,27,36,31)
     parts[f'nacelle_{side}_mid']=tube_shell(175,38,32,36,31)
     parts[f'nacelle_{side}_rear']=tube_shell(175,36,31,31,27)
-parts['edf_ring_L']=annulus(32,25.4,8)
-parts['edf_ring_R']=annulus(32,25.4,8)
+# 56 mm housing clearance target for common 50 mm EDF housings.
+parts['edf_ring_L']=annulus(36,28.0,10)
+parts['edf_ring_R']=annulus(36,28.0,10)
 
 for side in ['L','R']:
     m=extrude_shapely(Polygon([(0,0),(170,20),(151,104),(32,83)]),7,z0=-0.5)
@@ -228,9 +243,33 @@ for side in ['L','R']:
         v.apply_scale([1,-1,1])
     parts[f'vstab_{side}']=v
 
-parts['battery_tray']=box([220,64,6])
-parts['electronics_hatch']=box([170,82,3.2])
-parts['sweep_servo_mount']=box([58,34,18])
+# R3.1 electronics package: stability-first, serviceable and replaceable.
+# Battery tray sized for typical 4S 3300-4000 mAh packs with room for straps
+# and longitudinal CG adjustment.
+parts['battery_tray']=tray_with_rails(220,58,5,14,4)
+
+# Dual wing-sweep servo frames. Clear opening 42x22 mm accepts common
+# standard/compact high-torque metal-gear servos; surrounding frame gives
+# material for heat-set inserts and gusseting.
+for side in ['L','R']:
+    frame=rect_frame(62,42,42,22,8)
+    foot1=box([16,50,6],[-31,0,3])
+    foot2=box([16,50,6],[31,0,3])
+    parts[f'sweep_servo_mount_{side}']=concat(frame,foot1,foot2)
+
+# Taileron servo frames: generous 32x16 mm opening for 12-17 g MG servos.
+for side in ['L','R']:
+    parts[f'taileron_servo_mount_{side}']=rect_frame(48,30,32,16,7)
+
+# ESC trays positioned as separate serviceable components; dimensions allow
+# common 40-50 A ESCs plus tie/heat-shrink clearance.
+for side in ['L','R']:
+    parts[f'esc_tray_{side}']=tray_with_rails(82,40,4,10,3.5)
+
+parts['receiver_tray']=tray_with_rails(62,44,4,9,3.5)
+parts['bec_tray']=tray_with_rails(58,38,4,9,3.5)
+
+parts['electronics_hatch']=box([170,82,4.0])
 
 for name,m in parts.items():
     save(m,name)
