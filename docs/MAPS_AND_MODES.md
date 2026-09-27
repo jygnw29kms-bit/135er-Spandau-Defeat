@@ -1,39 +1,34 @@
-# Map & Mode Roadmap
+# Maps and modes — 0.4.0-history
 
-## Initial showcase rotation
+All core battlefields use a nominal **1,000 x 1,000 metre** gameplay footprint. The current native Unreal source generates deterministic 3D graybox geometry with blocking collision, spawn areas and three replicated capture zones. Graybox geometry is replaced by final authored environment art without changing map IDs or game rules.
 
-| Map | Era | Primary mode | Design focus |
+## Core Spandau maps
+
+| Map ID | Display name | Gameplay character | Primary objective flow |
 |---|---|---|---|
-| Rathaus Spandau | 1945-inspired | Capture / Territory | urban square, Rathaus facade/tower, side streets |
-| Zitadelle Spandau | historical | Attack / Defend | moat, bridge, gate, bastions, elevated defense |
-| Falkenhagener Feld | present day | Breakthrough / Capture | apartment blocks, courtyards, cars, green strips |
-| Altstadt Spandau | 1980s | Territory | pedestrian lanes, compact crossings, shopfronts |
-| Bahnhof Spandau | modern | Territory / Capture | platforms, approaches, transport corridors |
-| Havel crossing | multi-era | Demolition | bridges, water, chokepoints, alternate routes |
-| Siemensstadt / Haselhorst | industrial era variants | Capture / Sabotage | industry, rail, worker districts |
-| Staaken | historical + modern | Breakthrough | wider routes, mixed residential/open terrain |
-| Gatow / Kladow | historical + modern | Attack / Defend | outskirts, waterfront/airfield references |
+| `rathaus_spandau` | Rathaus Spandau | dense civic / urban | square → central crossing → rear streets |
+| `zitadelle` | Zitadelle Spandau | fortress / courtyards | outer approach → courtyard → inner approach |
+| `staaken` | Staaken | suburban / rail corridors | west streets → rail axis → east blocks |
+| `rodelberg` | Rodelberg | hill / open terrain | lower slope → crest → rear slope |
+| `kiesteich` | Kiesteich | shoreline / park | west shore → central crossing → east shore |
+| `falkenhagener_feld` | Falkenhagener Feld | housing estate | estate west → boulevard → estate east |
+| `lynarstrasse` | Lynarstraße | narrow urban | north blocks → street choke → south blocks |
+| `wroehmaennerpark` | Wröhmännerpark | riverside park | west park → central lawn/path → east edge |
+| `freiheit` | Freiheit | industrial | warehouses → yard/rail choke → warehouses |
 
-## Map rules
-- Real landmarks and street character are preserved where they matter for recognition.
-- Dimensions may be compressed for gameplay.
-- Every map should provide at least three meaningful infantry routes.
-- MG and sniper positions require counters and flanking paths.
-- Spawn zones must prevent direct spawn camping.
-- Bot navigation is part of map acceptance criteria, not a later add-on.
+## Historical / special expansion
+
+`fort_hahneberg_1945`, `teufelsberg_coldwar`, `flugplatz_gatow_1945`, `gatow_luftbruecke_1948`, `radeland_1945`, `hakenfelde_heeresamt_1944`, `zitadelle_1945`, `britischer_sektor_spandau`.
+
+Each profile carries era/history metadata plus a flag distinguishing documented local combat from historically inspired gameplay. Details are in [HISTORY_MAPS.md](HISTORY_MAPS.md).
 
 ## Modes
-### Flag Capture
-Classic multi-flag objective control.
 
-### Attack / Defend
-One team attacks sequential or grouped objectives while the other defends.
+Primary production target is objective infantry combat built around:
+- A/B/C territory capture
+- attack / defend
+- breakthrough
+- sabotage / demolition where appropriate
+- logistics/objective variants for non-battle historical settings
 
-### Territory Control
-Sector-based map control with a shifting frontline.
-
-### Demolition / Sabotage
-Teams destroy or defend key infrastructure objectives.
-
-### Breakthrough
-Sequential sectors with advancing spawn lines and a changing frontline.
+Map geometry should remain recognizable in composition and landmarks while routes, cover, distances and sightlines are adapted for balanced multiplayer. No copyrighted third-party game maps or assets are copied.
