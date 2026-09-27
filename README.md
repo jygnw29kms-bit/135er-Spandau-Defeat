@@ -1,45 +1,83 @@
-# 135er – Spandau Defeat
+<p align="center">
+  <img src="media/theme/repo-hero.svg" alt="135er – Spandau Defeat / Source 2" width="100%">
+</p>
 
-**Current engine direction:** Counter-Strike 2 / Source 2 · free, non-commercial custom game/mod content.
+<p align="center"><strong>Counter-Strike 2 / Source 2 multiplayer project · Berlin-Spandau · objective combat</strong></p>
 
-135er – Spandau Defeat is a multiplayer FPS project centered on recognizable locations in Berlin-Spandau and selected historical Berlin scenarios. The gameplay target remains fast objective combat with a classic Day-of-Defeat-like immediacy, now implemented on the CS2 / Source 2 toolchain instead of Unreal Engine.
+<p align="center"><code>0.2.1-source2-alpha</code> · <code>20 maps</code> · <code>20 production specs</code> · <code>Linux Dedicated Server</code> · <code>CounterStrikeSharp</code></p>
 
-![135er – Spandau Defeat Source 2 optical masters](media/source2/source2-optical-masters-gallery.jpg)
+<p align="center"><img src="media/theme/section-divider.svg" alt="" width="100%"></p>
 
-> **Image status:** the gallery above is AI-generated **optical-master/reference art** created from the current Spandau map brief and the verified Source 2 / CS2 visual/tooling direction. It is **not** presented as an actual engine capture.
+## CURRENT SOURCE 2 STATUS
 
-## Current technical baseline
+**135er – Spandau Defeat** is now fully based on the **Counter-Strike 2 / Source 2 toolchain**. The retired Unreal branch and Unreal-era imagery are no longer part of the active project tree.
 
-- CS2 / Source 2 runtime
-- Linux CS2 Dedicated Server
-- CounterStrikeSharp server plugin: `source2/plugin/SpandauDefeat.cs`
-- configurable tickets, objective state, map loading and Spandau game-mode base rules
-- PufferPanel / JL76 portal integration
-- Hammer / CS2 Workshop Tools for authored maps
-- no redistribution of Valve engine binaries as a standalone engine fork
+Implemented:
+- Linux CS2 dedicated-server baseline
+- CounterStrikeSharp plugin builds and loads
+- A/B/C objective state
+- configurable tickets and ticket bleed
+- map / mode / status commands
+- PufferPanel / JL76 integration
+- **20-map roster**
+- **20 / 20 map production specs**
+- bot/navigation production standard
+- Source 2 visual-master and capture rules
 
-## Maps
+Pending before a playable map alpha:
+- authored Hammer `.vmap` sources
+- compiled Source 2 maps
+- map-side objective triggers
+- final class/weapon restrictions
+- final HUD
+- first genuine Source 2 in-engine screenshots
+- Workshop publication
 
-Core Spandau set: Rathaus Spandau, Zitadelle, Staaken, Rodelberg, Kiesteich, Falkenhagener Feld, Lynarstraße, Wröhmännerpark, Freiheit, Martin-Buber-Schule, Askanier-Schule and B.-Traven-Schule.
+<p align="center"><img src="media/theme/source2-pipeline.svg" alt="Source 2 production pipeline" width="100%"></p>
 
-Historical/special set: Fort Hahneberg 1945, Teufelsberg Cold War, Flugplatz Gatow 1945, Gatow Luftbrücke 1948, Radelandstraße 1945, Hakenfelde/Heeresamt 1944, Zitadelle 1. Mai 1945 and Britischer Sektor Spandau.
+## SOURCE 2 OPTICAL MASTER
 
-Historical material is labeled so documented events are not confused with gameplay fiction. See [docs/HISTORY_MAPS.md](docs/HISTORY_MAPS.md).
+<p align="center"><img src="media/source2/source2-optical-masters-gallery.jpg" alt="135er Spandau Defeat Source 2 optical-master gallery" width="100%"></p>
 
-## Visual direction
+> This gallery is **AI-generated optical-master/reference art** built around the current Spandau map definitions and Source 2/CS2 visual direction. It is **not** labeled as genuine engine capture.
 
-The new Source 2 optical masters replace the old Unreal-era concept imagery. Their purpose is to define:
-- cleaner/brighter competitive readability
-- Source 2-like material and lighting targets
-- restrained post-processing
-- sharp environmental detail
-- practical FPS sightlines and cover silhouettes
-- recognizable Spandau landmarks and local urban character
+The optical master defines:
+- competitive Source 2-style readability
+- physically grounded materials and lighting
+- sharp local architecture and landmarks
+- restrained atmospheric effects
+- practical cover silhouettes and sightlines
+- recognizable Spandau identity
 
-They are art-direction references only. Final screenshots labeled **in-game** must be captured from the actual Source 2 maps after they are built in Hammer / CS2 Workshop Tools.
+<p align="center"><img src="media/theme/map-matrix.svg" alt="20-map matrix" width="100%"></p>
 
-## Source references used for the visual direction
+## MAPS — 20 TOTAL
 
-Valve's current Counter-Strike documentation confirms that CS2 uses Source 2, that the CS2 authoring package includes an updated Hammer editor, and that the Source 2 transition introduced updated lighting, materials and higher-resolution visual effects. These properties are used as guidance for the optical-master images; no official CS2 map is copied.
+**12 core maps:** Rathaus Spandau · Zitadelle · Staaken · Rodelberg · Kiesteich · Falkenhagener Feld · Lynarstraße · Wröhmännerpark · Freiheit · Martin-Buber-Schule · Askanier-Schule · B.-Traven-Schule
 
-> This repository is the canonical project source for 135er – Spandau Defeat.
+**8 historical/special maps:** Fort Hahneberg 1945 · Teufelsberg – Kalter Krieg · Flugplatz Gatow 1945 · Gatow – Luftbrücke 1948 · Radelandstraße 1945 · Hakenfelde – Heeresamt 1944 · Zitadelle – 1. Mai 1945 · Britischer Sektor Spandau
+
+## IMAGE RULE
+
+- **Optical master/reference:** may be AI-generated, but must be identified as reference art.
+- **In-game/gameplay:** must come from an actually compiled and running Source 2 / CS2 map.
+- no Unreal screenshots or Unreal reference imagery remain in the active media set.
+
+## PROJECT LINKS
+
+| Area | Path |
+|---|---|
+| Build status | [source2/docs/BUILD_STATUS.md](source2/docs/BUILD_STATUS.md) |
+| Project metadata | [source2/build/project.json](source2/build/project.json) |
+| Map roster | [source2/maps/maps.json](source2/maps/maps.json) |
+| Map list | [source2/maps/maplist.txt](source2/maps/maplist.txt) |
+| 20 map specs | [source2/maps/specs/](source2/maps/specs/) |
+| Bot/nav standard | [source2/maps/nav/BOT_NAV_STANDARD.md](source2/maps/nav/BOT_NAV_STANDARD.md) |
+| Map production pipeline | [source2/docs/MAP_PRODUCTION_PIPELINE.md](source2/docs/MAP_PRODUCTION_PIPELINE.md) |
+| Visual master | [docs/VISUAL_MASTER.md](docs/VISUAL_MASTER.md) |
+| Image/capture policy | [docs/INGAME_CAPTURE_STANDARD.md](docs/INGAME_CAPTURE_STANDARD.md) |
+| Source 2 media | [media/README.md](media/README.md) |
+
+---
+
+<p align="center"><strong>135er – SPANDAU DEFEAT</strong><br><sub>SOURCE 2 · SPANDAU · HISTORY · URBAN WARFARE</sub></p>
