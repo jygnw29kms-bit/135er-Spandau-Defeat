@@ -1,12 +1,22 @@
 {
   "battery_tray": {
     "profile": "STRUCT_LIGHT",
-    "volume_cm3": 84.5,
-    "estimated_hours": 1.27,
+    "volume_cm3": 79.6,
+    "estimated_hours": 1.57,
     "extents_mm": [
       220.0,
-      64.0,
-      6.0
+      58.0,
+      14.0
+    ]
+  },
+  "bec_tray": {
+    "profile": "STRUCT_LIGHT",
+    "volume_cm3": 10.8,
+    "estimated_hours": 0.37,
+    "extents_mm": [
+      58.0,
+      38.0,
+      9.0
     ]
   },
   "canopy": {
@@ -21,38 +31,58 @@
   },
   "edf_ring_L": {
     "profile": "DUCT",
-    "volume_cm3": 9.5,
-    "estimated_hours": 0.27,
+    "volume_cm3": 16.1,
+    "estimated_hours": 0.37,
     "extents_mm": [
-      64.0,
-      64.0,
-      8.0
+      72.0,
+      72.0,
+      10.0
     ]
   },
   "edf_ring_R": {
     "profile": "DUCT",
-    "volume_cm3": 9.5,
-    "estimated_hours": 0.27,
+    "volume_cm3": 16.1,
+    "estimated_hours": 0.37,
     "extents_mm": [
-      64.0,
-      64.0,
-      8.0
+      72.0,
+      72.0,
+      10.0
     ]
   },
   "electronics_hatch": {
     "profile": "STRUCT_LIGHT",
-    "volume_cm3": 44.6,
-    "estimated_hours": 0.76,
+    "volume_cm3": 55.8,
+    "estimated_hours": 1.15,
     "extents_mm": [
       170.0,
       82.0,
-      3.2
+      4.0
+    ]
+  },
+  "esc_tray_L": {
+    "profile": "STRUCT_LIGHT",
+    "volume_cm3": 16.6,
+    "estimated_hours": 0.47,
+    "extents_mm": [
+      82.0,
+      40.0,
+      10.0
+    ]
+  },
+  "esc_tray_R": {
+    "profile": "STRUCT_LIGHT",
+    "volume_cm3": 16.6,
+    "estimated_hours": 0.47,
+    "extents_mm": [
+      82.0,
+      40.0,
+      10.0
     ]
   },
   "fuse_01": {
     "profile": "SHELL",
-    "volume_cm3": 44.4,
-    "estimated_hours": 0.56,
+    "volume_cm3": 60.6,
+    "estimated_hours": 0.84,
     "extents_mm": [
       71.0,
       71.0,
@@ -61,8 +91,8 @@
   },
   "fuse_02": {
     "profile": "SHELL",
-    "volume_cm3": 83.1,
-    "estimated_hours": 0.84,
+    "volume_cm3": 115.2,
+    "estimated_hours": 1.38,
     "extents_mm": [
       86.8,
       109.8,
@@ -71,8 +101,8 @@
   },
   "fuse_03": {
     "profile": "SHELL",
-    "volume_cm3": 97.1,
-    "estimated_hours": 0.94,
+    "volume_cm3": 134.9,
+    "estimated_hours": 1.58,
     "extents_mm": [
       84.7,
       126.0,
@@ -81,8 +111,8 @@
   },
   "fuse_04": {
     "profile": "SHELL",
-    "volume_cm3": 84.0,
-    "estimated_hours": 0.84,
+    "volume_cm3": 116.5,
+    "estimated_hours": 1.39,
     "extents_mm": [
       66.8,
       124.1,
@@ -91,8 +121,8 @@
   },
   "fuse_05": {
     "profile": "SHELL",
-    "volume_cm3": 65.9,
-    "estimated_hours": 0.71,
+    "volume_cm3": 91.1,
+    "estimated_hours": 1.14,
     "extents_mm": [
       53.9,
       103.1,
@@ -101,8 +131,8 @@
   },
   "fuse_06": {
     "profile": "SHELL",
-    "volume_cm3": 35.5,
-    "estimated_hours": 0.49,
+    "volume_cm3": 48.6,
+    "estimated_hours": 0.72,
     "extents_mm": [
       44.1,
       69.8,
@@ -112,7 +142,7 @@
   "glove_L": {
     "profile": "WING",
     "volume_cm3": 317.3,
-    "estimated_hours": 2.73,
+    "estimated_hours": 3.9,
     "extents_mm": [
       228.0,
       138.0,
@@ -122,7 +152,7 @@
   "glove_R": {
     "profile": "WING",
     "volume_cm3": 317.3,
-    "estimated_hours": 2.73,
+    "estimated_hours": 3.9,
     "extents_mm": [
       228.0,
       138.0,
@@ -132,7 +162,7 @@
   "intake_L": {
     "profile": "DUCT",
     "volume_cm3": 57.9,
-    "estimated_hours": 0.77,
+    "estimated_hours": 0.93,
     "extents_mm": [
       62.0,
       76.0,
@@ -142,7 +172,7 @@
   "intake_R": {
     "profile": "DUCT",
     "volume_cm3": 57.9,
-    "estimated_hours": 0.77,
+    "estimated_hours": 0.93,
     "extents_mm": [
       62.0,
       76.0,
@@ -152,7 +182,7 @@
   "joiner_160": {
     "profile": "STRUCT_LIGHT",
     "volume_cm3": 6.6,
-    "estimated_hours": 0.27,
+    "estimated_hours": 0.3,
     "extents_mm": [
       70.0,
       70.0,
@@ -162,7 +192,7 @@
   "joiner_320": {
     "profile": "STRUCT_LIGHT",
     "volume_cm3": 9.3,
-    "estimated_hours": 0.31,
+    "estimated_hours": 0.35,
     "extents_mm": [
       84.0,
       110.0,
@@ -172,7 +202,7 @@
   "joiner_480": {
     "profile": "STRUCT_LIGHT",
     "volume_cm3": 9.2,
-    "estimated_hours": 0.3,
+    "estimated_hours": 0.34,
     "extents_mm": [
       68.0,
       124.0,
@@ -182,7 +212,7 @@
   "joiner_640": {
     "profile": "STRUCT_LIGHT",
     "volume_cm3": 7.4,
-    "estimated_hours": 0.28,
+    "estimated_hours": 0.31,
     "extents_mm": [
       52.0,
       104.0,
@@ -192,7 +222,7 @@
   "joiner_800": {
     "profile": "STRUCT_LIGHT",
     "volume_cm3": 5.3,
-    "estimated_hours": 0.25,
+    "estimated_hours": 0.28,
     "extents_mm": [
       44.0,
       70.0,
@@ -202,7 +232,7 @@
   "nacelle_L_mid": {
     "profile": "DUCT",
     "volume_cm3": 72.7,
-    "estimated_hours": 0.92,
+    "estimated_hours": 1.11,
     "extents_mm": [
       64.0,
       76.0,
@@ -212,7 +242,7 @@
   "nacelle_L_rear": {
     "profile": "DUCT",
     "volume_cm3": 66.1,
-    "estimated_hours": 0.86,
+    "estimated_hours": 1.03,
     "extents_mm": [
       62.0,
       72.0,
@@ -222,7 +252,7 @@
   "nacelle_R_mid": {
     "profile": "DUCT",
     "volume_cm3": 72.7,
-    "estimated_hours": 0.92,
+    "estimated_hours": 1.11,
     "extents_mm": [
       64.0,
       76.0,
@@ -232,7 +262,7 @@
   "nacelle_R_rear": {
     "profile": "DUCT",
     "volume_cm3": 66.1,
-    "estimated_hours": 0.86,
+    "estimated_hours": 1.03,
     "extents_mm": [
       62.0,
       72.0,
@@ -241,68 +271,108 @@
   },
   "pivot_doubler_L": {
     "profile": "STRUCT",
-    "volume_cm3": 29.9,
-    "estimated_hours": 0.93,
+    "volume_cm3": 53.5,
+    "estimated_hours": 1.88,
     "extents_mm": [
-      62.0,
-      62.0,
-      10.0
+      70.0,
+      70.0,
+      14.0
     ]
   },
   "pivot_doubler_R": {
     "profile": "STRUCT",
-    "volume_cm3": 29.9,
-    "estimated_hours": 0.93,
+    "volume_cm3": 53.5,
+    "estimated_hours": 1.88,
     "extents_mm": [
-      62.0,
-      62.0,
-      10.0
+      70.0,
+      70.0,
+      14.0
     ]
   },
   "pivot_spacer_L": {
     "profile": "STRUCT",
-    "volume_cm3": 4.0,
-    "estimated_hours": 0.28,
+    "volume_cm3": 7.4,
+    "estimated_hours": 0.42,
     "extents_mm": [
-      36.0,
-      36.0,
-      4.0
+      40.0,
+      40.0,
+      6.0
     ]
   },
   "pivot_spacer_R": {
     "profile": "STRUCT",
-    "volume_cm3": 4.0,
-    "estimated_hours": 0.28,
+    "volume_cm3": 7.4,
+    "estimated_hours": 0.42,
     "extents_mm": [
-      36.0,
-      36.0,
-      4.0
+      40.0,
+      40.0,
+      6.0
+    ]
+  },
+  "receiver_tray": {
+    "profile": "STRUCT_LIGHT",
+    "volume_cm3": 13.1,
+    "estimated_hours": 0.41,
+    "extents_mm": [
+      62.0,
+      44.0,
+      9.0
     ]
   },
   "sweep_crank": {
     "profile": "STRUCT",
-    "volume_cm3": 17.2,
-    "estimated_hours": 0.61,
+    "volume_cm3": 29.1,
+    "estimated_hours": 1.1,
     "extents_mm": [
-      130.0,
-      36.0,
-      8.0
+      136.0,
+      42.0,
+      10.0
     ]
   },
-  "sweep_servo_mount": {
-    "profile": "STRUCT_LIGHT",
-    "volume_cm3": 35.5,
-    "estimated_hours": 0.64,
+  "sweep_servo_adapter_STD_L": {
+    "profile": "STRUCT",
+    "volume_cm3": 11.8,
+    "estimated_hours": 0.56,
     "extents_mm": [
-      58.0,
-      34.0,
-      18.0
+      62.0,
+      42.0,
+      7.0
+    ]
+  },
+  "sweep_servo_adapter_STD_R": {
+    "profile": "STRUCT",
+    "volume_cm3": 11.8,
+    "estimated_hours": 0.56,
+    "extents_mm": [
+      62.0,
+      42.0,
+      7.0
+    ]
+  },
+  "sweep_servo_mount_L": {
+    "profile": "STRUCT",
+    "volume_cm3": 25.2,
+    "estimated_hours": 0.98,
+    "extents_mm": [
+      70.0,
+      46.0,
+      10.0
+    ]
+  },
+  "sweep_servo_mount_R": {
+    "profile": "STRUCT",
+    "volume_cm3": 25.2,
+    "estimated_hours": 0.98,
+    "extents_mm": [
+      70.0,
+      46.0,
+      10.0
     ]
   },
   "taileron_L": {
     "profile": "WING",
     "volume_cm3": 83.5,
-    "estimated_hours": 0.86,
+    "estimated_hours": 1.17,
     "extents_mm": [
       170.0,
       104.0,
@@ -312,17 +382,37 @@
   "taileron_R": {
     "profile": "WING",
     "volume_cm3": 83.5,
-    "estimated_hours": 0.86,
+    "estimated_hours": 1.17,
     "extents_mm": [
       170.0,
       104.0,
       7.0
     ]
   },
+  "taileron_servo_mount_L": {
+    "profile": "WING",
+    "volume_cm3": 7.4,
+    "estimated_hours": 0.27,
+    "extents_mm": [
+      48.0,
+      30.0,
+      8.0
+    ]
+  },
+  "taileron_servo_mount_R": {
+    "profile": "WING",
+    "volume_cm3": 7.4,
+    "estimated_hours": 0.27,
+    "extents_mm": [
+      48.0,
+      30.0,
+      8.0
+    ]
+  },
   "vstab_L": {
     "profile": "WING",
     "volume_cm3": 106.4,
-    "estimated_hours": 1.05,
+    "estimated_hours": 1.44,
     "extents_mm": [
       148.0,
       184.0,
@@ -332,7 +422,7 @@
   "vstab_R": {
     "profile": "WING",
     "volume_cm3": 106.4,
-    "estimated_hours": 1.05,
+    "estimated_hours": 1.44,
     "extents_mm": [
       148.0,
       184.0,
@@ -342,7 +432,7 @@
   "wing_L_mid": {
     "profile": "WING",
     "volume_cm3": 184.9,
-    "estimated_hours": 1.67,
+    "estimated_hours": 2.35,
     "extents_mm": [
       184.2,
       135.0,
@@ -352,7 +442,7 @@
   "wing_L_root": {
     "profile": "WING",
     "volume_cm3": 276.9,
-    "estimated_hours": 2.42,
+    "estimated_hours": 3.43,
     "extents_mm": [
       241.8,
       145.0,
@@ -362,7 +452,7 @@
   "wing_L_tip": {
     "profile": "WING",
     "volume_cm3": 108.8,
-    "estimated_hours": 1.06,
+    "estimated_hours": 1.46,
     "extents_mm": [
       130.8,
       125.0,
@@ -372,7 +462,7 @@
   "wing_R_mid": {
     "profile": "WING",
     "volume_cm3": 184.9,
-    "estimated_hours": 1.67,
+    "estimated_hours": 2.35,
     "extents_mm": [
       184.2,
       135.0,
@@ -382,7 +472,7 @@
   "wing_R_root": {
     "profile": "WING",
     "volume_cm3": 276.9,
-    "estimated_hours": 2.42,
+    "estimated_hours": 3.43,
     "extents_mm": [
       241.8,
       145.0,
@@ -392,7 +482,7 @@
   "wing_R_tip": {
     "profile": "WING",
     "volume_cm3": 108.8,
-    "estimated_hours": 1.06,
+    "estimated_hours": 1.46,
     "extents_mm": [
       130.8,
       125.0,
@@ -401,12 +491,12 @@
   },
   "wing_box": {
     "profile": "WING",
-    "volume_cm3": 810.1,
-    "estimated_hours": 6.68,
+    "volume_cm3": 1427.6,
+    "estimated_hours": 16.86,
     "extents_mm": [
-      160.0,
-      240.0,
-      26.0
+      170.0,
+      250.0,
+      34.0
     ]
   }
 }

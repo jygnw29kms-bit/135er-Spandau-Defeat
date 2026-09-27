@@ -1,23 +1,26 @@
 Plate,Name,Parts,Profiles,Estimated hours
-1,01_Fuselage_Nose_Service,fuse_01; joiner_160; joiner_800,SHELL; STRUCT_LIGHT,0.92
-2,02_Fuselage_Cockpit,fuse_02; canopy,COSMETIC; SHELL,4.97
-3,03_Fuselage_Center_A,fuse_03; joiner_320,SHELL; STRUCT_LIGHT,1.17
-4,04_Fuselage_Center_B,fuse_04; battery_tray,SHELL; STRUCT_LIGHT,2.03
-5,05_Fuselage_Rear,fuse_05; joiner_640,SHELL; STRUCT_LIGHT,0.91
-6,06_Fuselage_Tail,fuse_06; joiner_480; electronics_hatch,SHELL; STRUCT_LIGHT,1.39
-7,07_Wingbox_Structural,wing_box,WING,6.68
-8,08_Sweep_Hardware,sweep_crank; pivot_doubler_L; pivot_doubler_R; pivot_spacer_L; pivot_spacer_R; sweep_servo_mount,STRUCT; STRUCT_LIGHT,3.27
-9,09_Left_Wing_Root,wing_L_root,WING,2.42
-10,10_Right_Wing_Root,wing_R_root,WING,2.42
-11,11_Left_Wing_Mid,wing_L_mid,WING,1.67
-12,12_Left_Wing_Tip,wing_L_tip,WING,1.06
-13,13_Right_Wing_Mid,wing_R_mid,WING,1.67
-14,14_Right_Wing_Tip,wing_R_tip,WING,1.06
-15,15_Left_Glove,glove_L,WING,2.73
-16,16_Right_Glove,glove_R,WING,2.73
-17,17_Tailerons,taileron_L; taileron_R,WING,1.64
-18,18_Left_VTail,vstab_L,WING,1.05
-19,19_Right_VTail,vstab_R,WING,1.05
-20,20_EDF_Intakes,intake_L; intake_R; edf_ring_L; edf_ring_R,DUCT,1.84
-21,21_EDF_Nacelles_Mid,nacelle_L_mid; nacelle_R_mid,DUCT,1.76
-22,22_EDF_Nacelles_Rear,nacelle_L_rear; nacelle_R_rear,DUCT,1.64
+1,01_Fuselage_Nose_Service,fuse_01; joiner_160; joiner_800,SHELL; STRUCT_LIGHT,1.26
+2,02_Fuselage_Cockpit,fuse_02; canopy,COSMETIC; SHELL,5.51
+3,03_Fuselage_Center_A,fuse_03; joiner_320,SHELL; STRUCT_LIGHT,1.85
+4,04_Fuselage_Center_B,fuse_04; battery_tray,SHELL; STRUCT_LIGHT,2.88
+5,05_Fuselage_Rear,fuse_05; joiner_640,SHELL; STRUCT_LIGHT,1.37
+6,06_Fuselage_Tail,fuse_06; joiner_480; electronics_hatch,SHELL; STRUCT_LIGHT,2.05
+7,07_Wingbox_Structural,wing_box,WING,16.86
+8,08_Sweep_Hardware,sweep_crank; pivot_doubler_L; pivot_doubler_R; pivot_spacer_L; pivot_spacer_R,STRUCT,5.38
+9,09_Sweep_Servo_Mounts,sweep_servo_mount_L; sweep_servo_mount_R; sweep_servo_adapter_STD_L; sweep_servo_adapter_STD_R,STRUCT,2.84
+10,10_Left_Wing_Root,wing_L_root,WING,3.43
+11,11_Right_Wing_Root,wing_R_root,WING,3.43
+12,12_Left_Wing_Mid,wing_L_mid,WING,2.35
+13,13_Left_Wing_Tip,wing_L_tip,WING,1.46
+14,14_Right_Wing_Mid,wing_R_mid,WING,2.35
+15,15_Right_Wing_Tip,wing_R_tip,WING,1.46
+16,16_Left_Glove,glove_L,WING,3.9
+17,17_Right_Glove,glove_R,WING,3.9
+18,18_Tailerons,taileron_L; taileron_R,WING,2.26
+19,19_Taileron_Servo_Mounts,taileron_servo_mount_L; taileron_servo_mount_R,WING,0.46
+20,20_Left_VTail,vstab_L,WING,1.44
+21,21_Right_VTail,vstab_R,WING,1.44
+22,22_EDF_Intakes,intake_L; intake_R; edf_ring_L; edf_ring_R,DUCT,2.36
+23,23_EDF_Nacelles_Mid,nacelle_L_mid; nacelle_R_mid,DUCT,2.14
+24,24_EDF_Nacelles_Rear,nacelle_L_rear; nacelle_R_rear,DUCT,1.98
+25,25_Electronics_Trays,esc_tray_L; esc_tray_R; receiver_tray; bec_tray,STRUCT_LIGHT,1.48

@@ -11,7 +11,7 @@
       "SHELL",
       "STRUCT_LIGHT"
     ],
-    "estimated_print_hours": 0.92
+    "estimated_print_hours": 1.26
   },
   {
     "plate": 2,
@@ -24,7 +24,7 @@
       "COSMETIC",
       "SHELL"
     ],
-    "estimated_print_hours": 4.97
+    "estimated_print_hours": 5.51
   },
   {
     "plate": 3,
@@ -37,7 +37,7 @@
       "SHELL",
       "STRUCT_LIGHT"
     ],
-    "estimated_print_hours": 1.17
+    "estimated_print_hours": 1.85
   },
   {
     "plate": 4,
@@ -50,7 +50,7 @@
       "SHELL",
       "STRUCT_LIGHT"
     ],
-    "estimated_print_hours": 2.03
+    "estimated_print_hours": 2.88
   },
   {
     "plate": 5,
@@ -63,7 +63,7 @@
       "SHELL",
       "STRUCT_LIGHT"
     ],
-    "estimated_print_hours": 0.91
+    "estimated_print_hours": 1.37
   },
   {
     "plate": 6,
@@ -77,7 +77,7 @@
       "SHELL",
       "STRUCT_LIGHT"
     ],
-    "estimated_print_hours": 1.39
+    "estimated_print_hours": 2.05
   },
   {
     "plate": 7,
@@ -88,7 +88,7 @@
     "profiles": [
       "WING"
     ],
-    "estimated_print_hours": 6.68
+    "estimated_print_hours": 16.86
   },
   {
     "plate": 8,
@@ -98,106 +98,118 @@
       "pivot_doubler_L",
       "pivot_doubler_R",
       "pivot_spacer_L",
-      "pivot_spacer_R",
-      "sweep_servo_mount"
+      "pivot_spacer_R"
     ],
     "profiles": [
-      "STRUCT",
-      "STRUCT_LIGHT"
+      "STRUCT"
     ],
-    "estimated_print_hours": 3.27
+    "estimated_print_hours": 5.38
   },
   {
     "plate": 9,
-    "name": "09_Left_Wing_Root",
+    "name": "09_Sweep_Servo_Mounts",
+    "parts": [
+      "sweep_servo_mount_L",
+      "sweep_servo_mount_R",
+      "sweep_servo_adapter_STD_L",
+      "sweep_servo_adapter_STD_R"
+    ],
+    "profiles": [
+      "STRUCT"
+    ],
+    "estimated_print_hours": 2.84
+  },
+  {
+    "plate": 10,
+    "name": "10_Left_Wing_Root",
     "parts": [
       "wing_L_root"
     ],
     "profiles": [
       "WING"
     ],
-    "estimated_print_hours": 2.42
+    "estimated_print_hours": 3.43
   },
   {
-    "plate": 10,
-    "name": "10_Right_Wing_Root",
+    "plate": 11,
+    "name": "11_Right_Wing_Root",
     "parts": [
       "wing_R_root"
     ],
     "profiles": [
       "WING"
     ],
-    "estimated_print_hours": 2.42
+    "estimated_print_hours": 3.43
   },
   {
-    "plate": 11,
-    "name": "11_Left_Wing_Mid",
+    "plate": 12,
+    "name": "12_Left_Wing_Mid",
     "parts": [
       "wing_L_mid"
     ],
     "profiles": [
       "WING"
     ],
-    "estimated_print_hours": 1.67
+    "estimated_print_hours": 2.35
   },
   {
-    "plate": 12,
-    "name": "12_Left_Wing_Tip",
+    "plate": 13,
+    "name": "13_Left_Wing_Tip",
     "parts": [
       "wing_L_tip"
     ],
     "profiles": [
       "WING"
     ],
-    "estimated_print_hours": 1.06
+    "estimated_print_hours": 1.46
   },
   {
-    "plate": 13,
-    "name": "13_Right_Wing_Mid",
+    "plate": 14,
+    "name": "14_Right_Wing_Mid",
     "parts": [
       "wing_R_mid"
     ],
     "profiles": [
       "WING"
     ],
-    "estimated_print_hours": 1.67
+    "estimated_print_hours": 2.35
   },
   {
-    "plate": 14,
-    "name": "14_Right_Wing_Tip",
+    "plate": 15,
+    "name": "15_Right_Wing_Tip",
     "parts": [
       "wing_R_tip"
     ],
     "profiles": [
       "WING"
     ],
-    "estimated_print_hours": 1.06
+    "estimated_print_hours": 1.46
   },
   {
-    "plate": 15,
-    "name": "15_Left_Glove",
+    "plate": 16,
+    "name": "16_Left_Glove",
     "parts": [
       "glove_L"
     ],
     "profiles": [
       "WING"
     ],
-    "estimated_print_hours": 2.73
+    "estimated_print_hours": 3.9
   },
   {
-    "plate": 16,
-    "name": "16_Right_Glove",
+    "plate": 17,
+    "name": "17_Right_Glove",
     "parts": [
       "glove_R"
     ],
     "profiles": [
       "WING"
     ],
-    "estimated_print_hours": 2.73
+    "estimated_print_hours": 3.9
   },
   {
-    "plate": 17,
-    "name": "17_Tailerons",
+    "plate": 18,
+    "name": "18_Tailerons",
     "parts": [
       "taileron_L",
       "taileron_R"
@@ -205,33 +217,45 @@
     "profiles": [
       "WING"
     ],
-    "estimated_print_hours": 1.64
+    "estimated_print_hours": 2.26
   },
   {
-    "plate": 18,
-    "name": "18_Left_VTail",
+    "plate": 19,
+    "name": "19_Taileron_Servo_Mounts",
+    "parts": [
+      "taileron_servo_mount_L",
+      "taileron_servo_mount_R"
+    ],
+    "profiles": [
+      "WING"
+    ],
+    "estimated_print_hours": 0.46
+  },
+  {
+    "plate": 20,
+    "name": "20_Left_VTail",
     "parts": [
       "vstab_L"
     ],
     "profiles": [
       "WING"
     ],
-    "estimated_print_hours": 1.05
+    "estimated_print_hours": 1.44
   },
   {
-    "plate": 19,
-    "name": "19_Right_VTail",
+    "plate": 21,
+    "name": "21_Right_VTail",
     "parts": [
       "vstab_R"
     ],
     "profiles": [
       "WING"
     ],
-    "estimated_print_hours": 1.05
+    "estimated_print_hours": 1.44
   },
   {
-    "plate": 20,
-    "name": "20_EDF_Intakes",
+    "plate": 22,
+    "name": "22_EDF_Intakes",
     "parts": [
       "intake_L",
       "intake_R",
@@ -241,11 +265,11 @@
     "profiles": [
       "DUCT"
     ],
-    "estimated_print_hours": 1.84
+    "estimated_print_hours": 2.36
   },
   {
-    "plate": 21,
-    "name": "21_EDF_Nacelles_Mid",
+    "plate": 23,
+    "name": "23_EDF_Nacelles_Mid",
     "parts": [
       "nacelle_L_mid",
       "nacelle_R_mid"
@@ -253,11 +277,11 @@
     "profiles": [
       "DUCT"
     ],
-    "estimated_print_hours": 1.76
+    "estimated_print_hours": 2.14
   },
   {
-    "plate": 22,
-    "name": "22_EDF_Nacelles_Rear",
+    "plate": 24,
+    "name": "24_EDF_Nacelles_Rear",
     "parts": [
       "nacelle_L_rear",
       "nacelle_R_rear"
@@ -265,6 +289,20 @@
     "profiles": [
       "DUCT"
     ],
-    "estimated_print_hours": 1.64
+    "estimated_print_hours": 1.98
+  },
+  {
+    "plate": 25,
+    "name": "25_Electronics_Trays",
+    "parts": [
+      "esc_tray_L",
+      "esc_tray_R",
+      "receiver_tray",
+      "bec_tray"
+    ],
+    "profiles": [
+      "STRUCT_LIGHT"
+    ],
+    "estimated_print_hours": 1.48
   }
 ]
