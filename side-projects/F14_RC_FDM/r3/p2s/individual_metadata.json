@@ -390,9 +390,9 @@
     ]
   },
   "taileron_servo_mount_L": {
-    "profile": "WING",
+    "profile": "STRUCT",
     "volume_cm3": 7.4,
-    "estimated_hours": 0.27,
+    "estimated_hours": 0.42,
     "extents_mm": [
       48.0,
       30.0,
@@ -400,9 +400,9 @@
     ]
   },
   "taileron_servo_mount_R": {
-    "profile": "WING",
+    "profile": "STRUCT",
     "volume_cm3": 7.4,
-    "estimated_hours": 0.27,
+    "estimated_hours": 0.42,
     "extents_mm": [
       48.0,
       30.0,
@@ -490,9 +490,9 @@
     ]
   },
   "wing_box": {
-    "profile": "WING",
+    "profile": "STRUCT",
     "volume_cm3": 1427.6,
-    "estimated_hours": 16.86,
+    "estimated_hours": 45.23,
     "extents_mm": [
       170.0,
       250.0,

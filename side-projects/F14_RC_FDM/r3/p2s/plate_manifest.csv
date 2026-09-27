@@ -5,7 +5,7 @@ Plate,Name,Parts,Profiles,Estimated hours
 4,04_Fuselage_Center_B,fuse_04; battery_tray,SHELL; STRUCT_LIGHT,2.88
 5,05_Fuselage_Rear,fuse_05; joiner_640,SHELL; STRUCT_LIGHT,1.37
 6,06_Fuselage_Tail,fuse_06; joiner_480; electronics_hatch,SHELL; STRUCT_LIGHT,2.05
-7,07_Wingbox_Structural,wing_box,WING,16.86
+7,07_Wingbox_Structural,wing_box,STRUCT,45.23
 8,08_Sweep_Hardware,sweep_crank; pivot_doubler_L; pivot_doubler_R; pivot_spacer_L; pivot_spacer_R,STRUCT,5.38
 9,09_Sweep_Servo_Mounts,sweep_servo_mount_L; sweep_servo_mount_R; sweep_servo_adapter_STD_L; sweep_servo_adapter_STD_R,STRUCT,2.84
 10,10_Left_Wing_Root,wing_L_root,WING,3.43
@@ -17,7 +17,7 @@ Plate,Name,Parts,Profiles,Estimated hours
 16,16_Left_Glove,glove_L,WING,3.9
 17,17_Right_Glove,glove_R,WING,3.9
 18,18_Tailerons,taileron_L; taileron_R,WING,2.26
-19,19_Taileron_Servo_Mounts,taileron_servo_mount_L; taileron_servo_mount_R,WING,0.46
+19,19_Taileron_Servo_Mounts,taileron_servo_mount_L; taileron_servo_mount_R,STRUCT,0.76
 20,20_Left_VTail,vstab_L,WING,1.44
 21,21_Right_VTail,vstab_R,WING,1.44
 22,22_EDF_Intakes,intake_L; intake_R; edf_ring_L; edf_ring_R,DUCT,2.36

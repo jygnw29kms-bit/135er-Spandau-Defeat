@@ -86,9 +86,9 @@
       "wing_box"
     ],
     "profiles": [
-      "WING"
+      "STRUCT"
     ],
-    "estimated_print_hours": 16.86
+    "estimated_print_hours": 45.23
   },
   {
     "plate": 8,
@@ -227,9 +227,9 @@
       "taileron_servo_mount_R"
     ],
     "profiles": [
-      "WING"
+      "STRUCT"
     ],
-    "estimated_print_hours": 0.46
+    "estimated_print_hours": 0.76
   },
   {
     "plate": 20,
