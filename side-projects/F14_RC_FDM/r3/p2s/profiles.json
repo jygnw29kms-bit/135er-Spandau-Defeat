@@ -1,0 +1,62 @@
+{
+  "SHELL": {
+    "layer": 0.2,
+    "walls": 3,
+    "top": 3,
+    "bottom": 3,
+    "infill": 5,
+    "flow": 7.5,
+    "fraction": 0.18,
+    "desc": "light fuselage shell"
+  },
+  "WING": {
+    "layer": 0.2,
+    "walls": 3,
+    "top": 4,
+    "bottom": 4,
+    "infill": 7,
+    "flow": 7.0,
+    "fraction": 0.2,
+    "desc": "wing/control surface"
+  },
+  "STRUCT": {
+    "layer": 0.16,
+    "walls": 6,
+    "top": 6,
+    "bottom": 6,
+    "infill": 45,
+    "flow": 6.5,
+    "fraction": 0.58,
+    "desc": "wing box/pivot mechanism"
+  },
+  "STRUCT_LIGHT": {
+    "layer": 0.2,
+    "walls": 4,
+    "top": 5,
+    "bottom": 5,
+    "infill": 18,
+    "flow": 7.0,
+    "fraction": 0.32,
+    "desc": "mounts/reinforcements"
+  },
+  "DUCT": {
+    "layer": 0.2,
+    "walls": 3,
+    "top": 3,
+    "bottom": 3,
+    "infill": 8,
+    "flow": 7.0,
+    "fraction": 0.22,
+    "desc": "EDF intake/nacelle"
+  },
+  "COSMETIC": {
+    "layer": 0.16,
+    "walls": 3,
+    "top": 4,
+    "bottom": 4,
+    "infill": 8,
+    "flow": 6.5,
+    "fraction": 0.22,
+    "desc": "canopy/cosmetic"
+  }
+}
