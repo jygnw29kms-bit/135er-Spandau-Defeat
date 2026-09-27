@@ -71,6 +71,16 @@ def save(m,name):
     faces=[[int(i) for i in f] for f in m.faces]
     sp.write_text('polyhedron(points='+repr(pts)+', faces='+repr(faces)+', convexity=20);\n')
     subprocess.run(['openscad','-q','-o',str(p),str(sp)],check=True)
+    # Normalize the OpenSCAD export so validation is deterministic across
+    # trimesh versions. This does not change dimensions or topology intent.
+    repaired=trimesh.load_mesh(p,force='mesh',process=True)
+    repaired.merge_vertices()
+    try:
+        trimesh.repair.fix_winding(repaired)
+        trimesh.repair.fix_normals(repaired,multibody=True)
+    except TypeError:
+        trimesh.repair.fix_normals(repaired)
+    repaired.export(p)
     return p
 
 stations=[
