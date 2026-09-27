@@ -2,46 +2,43 @@
 
 Status: **binding**.
 
-For **135er – Spandau Defeat**, every public project image must be generated directly by the running Unreal Engine 5.8 game client.
+For **135er – Spandau Defeat**, every image labeled **in-game**, **gameplay**, **engine capture** or equivalent must be generated directly by the running **Source 2 / Counter-Strike 2 project**.
 
-## Allowed
+## Allowed as in-game
 
-- screenshots captured from a running UE5 map
-- captures from actual game geometry, materials, lighting and effects
-- real gameplay HUD/state when HUD is shown
-- engine-generated cinematic shots using the same project content and renderer
+- screenshots captured from a running Source 2 map
+- engine-generated cinematic captures using the actual map/assets
+- real Source 2 lighting, materials, particles and geometry
+- live gameplay HUD/state where a HUD is shown
 
-## Not allowed
+## Not allowed to be labeled in-game
 
 - concept art
-- AI-generated images
+- AI-generated imagery
 - mockups
 - external renders
 - composited fake gameplay scenes
 - placeholder screenshots
-- images from another engine or unrelated project
-- images that have not been rendered by the actual game project
+- images from Unreal or another unrelated engine
 
-No image may be presented on GitHub, the project website, documentation, release notes or promotional material unless its source is the running game engine.
+Concept images remain allowed as clearly identified **optical masters**.
 
 ## Capture quality
 
-- 2560×1440 minimum; 3840×2160 preferred
-- PNG master
-- 100% native screen percentage minimum
-- TSR history at 200% for showcase captures
-- 16× anisotropic filtering
-- full-resolution textures loaded
-- Nanite, Lumen, Virtual Shadow Maps and project volumetrics active where applicable
-- motion blur and chromatic aberration disabled for clear FPS presentation
-- restrained sharpening only
+- 2560×1440 minimum; 3840×2160 preferred for masters
+- PNG master where practical
+- native-resolution capture preferred
+- textures fully loaded
+- no deliberately blurred showcase frame
+- no aggressive sharpening halos
+- map/game build identifier recorded with each final capture
 
 ## Authenticity
 
-If HUD is visible, tickets, objectives, ammo, health and weapon state must come from live game state.
+If HUD is visible, objectives, ammo, health, team state and other values must come from live game state.
 
-Public engine captures are stored under:
+Public Source 2 captures are stored under:
 
 `media/ingame/<map>/`
 
-Derived web previews may be generated only from those engine captures.
+Derived web previews may be generated from those Source 2 captures.
