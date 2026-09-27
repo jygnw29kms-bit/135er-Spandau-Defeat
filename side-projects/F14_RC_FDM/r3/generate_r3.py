@@ -9,6 +9,10 @@ ROOT=Path(__file__).resolve().parent
 (ROOT/'stl').mkdir(exist_ok=True)
 (ROOT/'plates').mkdir(exist_ok=True)
 (ROOT/'docs').mkdir(exist_ok=True)
+for stale in (ROOT/'stl').glob('*.stl'):
+    stale.unlink()
+for stale in (ROOT/'scad'/'generated_parts').glob('*.scad') if (ROOT/'scad'/'generated_parts').exists() else []:
+    stale.unlink()
 
 L=955.0
 SPAN=977.5
@@ -62,11 +66,30 @@ def rect_frame(outer_x,outer_y,inner_x,inner_y,h):
     inner=[(-inner_x/2,-inner_y/2),(inner_x/2,-inner_y/2),(inner_x/2,inner_y/2),(-inner_x/2,inner_y/2)]
     return extrude_shapely(Polygon(outer,[inner]),h,z0=0)
 
+def extrude_profile_x(points_yz,length):
+    n=len(points_yz)
+    verts=[]
+    for x in (-length/2,length/2):
+        for y,z in points_yz:
+            verts.append([x,y,z])
+    faces=[]
+    # end caps; profile is simple and convex enough for fan triangulation from vertex 0
+    for i in range(1,n-1):
+        faces.append([0,i+1,i])
+        faces.append([n,n+i,n+i+1])
+    for i in range(n):
+        j=(i+1)%n
+        faces += [[i,n+i,n+j],[i,n+j,j]]
+    return mesh_from_vertices_faces(verts,faces)
+
 def tray_with_rails(length,width,base_thick,rail_h,rail_thick):
-    base=box([length,width,base_thick],[0,0,base_thick/2])
-    left=box([length,rail_thick,rail_h],[0,-(width-rail_thick)/2,rail_h/2])
-    right=box([length,rail_thick,rail_h],[0,(width-rail_thick)/2,rail_h/2])
-    return concat(base,left,right)
+    w=width/2
+    profile=[
+      (-w,0),(w,0),(w,rail_h),(w-rail_thick,rail_h),
+      (w-rail_thick,base_thick),(-w+rail_thick,base_thick),
+      (-w+rail_thick,rail_h),(-w,rail_h)
+    ]
+    return extrude_profile_x(profile,length)
 
 def save(m,name):
     try:
@@ -345,47 +368,4 @@ summary={
 (ROOT/'docs'/'mesh_validation.json').write_text(json.dumps(summary,indent=2))
 print(json.dumps(summary,indent=2))
 
-plate_groups=[
- ['fuse_01','joiner_160','joiner_320'],
- ['fuse_02','canopy'],
- ['fuse_03','electronics_hatch'],
- ['fuse_04','battery_tray'],
- ['fuse_05'],
- ['fuse_06'],
- ['wing_box','sweep_crank','pivot_spacer_L','pivot_spacer_R','pivot_doubler_L','pivot_doubler_R','sweep_servo_mount'],
- ['wing_L_root','wing_R_root'],
- ['wing_L_mid','wing_R_mid'],
- ['wing_L_tip','wing_R_tip'],
- ['glove_L','glove_R'],
- ['intake_L','intake_R'],
- ['nacelle_L_mid','nacelle_R_mid'],
- ['nacelle_L_rear','nacelle_R_rear','edf_ring_L','edf_ring_R'],
- ['taileron_L','taileron_R'],
- ['vstab_L','vstab_R'],
- ['joiner_480','joiner_640','joiner_800']
-]
-
-manifest=[]
-for pi,names in enumerate(plate_groups,1):
-    placed=[]; x=10; y=10; rowh=0
-    for n in names:
-        m=parts[n].copy()
-        b=m.bounds
-        ext=b[1]-b[0]
-        if ext[1]>ext[0]:
-            m.apply_transform(trimesh.transformations.rotation_matrix(math.pi/2,[0,0,1]))
-            b=m.bounds
-            ext=b[1]-b[0]
-        if x+ext[0]>246:
-            x=10
-            y+=rowh+8
-            rowh=0
-        m.apply_translation([x-b[0][0],y-b[0][1],-b[0][2]])
-        placed.append(m)
-        x+=ext[0]+8
-        rowh=max(rowh,ext[1])
-    plate=concat(*placed)
-    plate.export(ROOT/'plates'/f'plate_{pi:02d}.stl')
-    manifest.append({'plate':pi,'parts':names})
-
-(ROOT/'plates'/'manifest.json').write_text(json.dumps(manifest,indent=2))
+# P2S STL/3MF plate generation is handled by make_p2s_r3.py.
