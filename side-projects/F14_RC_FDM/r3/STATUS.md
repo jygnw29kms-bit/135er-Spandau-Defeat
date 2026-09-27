@@ -1,43 +1,50 @@
 # F-14 R3 Scale — validation status
 
-## Local construction/validation run
+## Geometry and P2S package
 
-The R3 generator was executed before committing the automated pipeline.
+Validated local R3 generation:
 
-Result:
-
-- individual printable STL parts: **41**
+- printable STL parts: **41**
 - watertight: **41 / 41**
 - winding-consistent: **41 / 41**
-- fit within 256 mm P2S volume in at least one orientation: **41 / 41**
+- P2S 256 mm fit: **41 / 41**
 - failed individual geometry checks: **0**
 - assembled reference STL generated
-- 17 grouped P2S plate STL layouts generated
-- one OpenSCAD polyhedron source generated per STL before STL export
+- individual 3MF exports: **41**, plus assembled-reference 3MF
+- optimized P2S plate 3MF files: **22**
+- optimized plate combined STL previews: **22**
+- P2S plate bounds failures after final repack: **0**
+- OpenSCAD polyhedron source generated before each STL export
 
-The wing-root and sweep-crank geometry were revised during validation after initial mesh checks exposed defects. Only the corrected geometry is represented by the committed R3 generator.
+Two original mid+tip wing plate combinations exceeded the safe 256 mm envelope. They were deliberately split into four plates; the final **22/22** plate set stays inside the P2S XY volume.
 
-## GitHub generation
+## Print planning
 
-The workflow `.github/workflows/f14-r3-build.yml` regenerates:
+The final plate plan is component/risk aware:
+
+- wing box isolated
+- left/right wing roots isolated
+- paired EDF and taileron parts share identical process conditions where practical
+- fuselage/ducts oriented on cut faces
+- long structural jobs are not used as filler plates
+
+Planning-time estimate: **~46.1 h total**. This is not a Bambu Studio slice result.
+
+## GitHub build
+
+The workflow regenerates:
 
 - `r3/scad/generated_parts/*.scad`
 - `r3/stl/*.stl`
-- `r3/plates/*.stl`
-- `r3/docs/mesh_validation.csv`
-- `r3/docs/mesh_validation.json`
-
-The workflow requires GitHub Actions with repository content-write permission. When Actions are enabled, the generated STL files are committed back to the R3 directory and become directly viewable in GitHub's STL 3D viewer.
+- `r3/docs/mesh_validation.*`
+- `r3/p2s/individual_3mf/*.3mf`
+- `r3/p2s/plates_3mf/*.3mf`
+- `r3/p2s/plate_stl/*.stl`
+- `r3/p2s/plate_manifest.*`
+- `r3/p2s/profiles.json`
 
 ## Flight status
 
-Geometry/printability validation is not a flight release. Physical prototype testing is still required for:
+**Geometry/print package validated; physical flight release pending.**
 
-- final mass and centre of gravity
-- EDF thrust and total current
-- sweep-servo load
-- sweep mechanism cycle test
-- control throw and authority
-- radio range/failsafe
-- flutter envelope
-- progressive sweep testing in flight
+Still required: real mass/CG, EDF thrust/current, sweep-servo load, cycle/end-stop test, range/failsafe, ground/glide testing and progressive flight/sweep envelope expansion.
