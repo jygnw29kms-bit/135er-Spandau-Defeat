@@ -1,42 +1,34 @@
 # F-14 RC FDM
 
-Eigenständiges RC-Modellbau-Nebenprojekt im Repository **135er-Spandau-Defeat**.
+Independent RC side project inside **135er-Spandau-Defeat**.
 
-> **Nicht Bestandteil des Spiels.**  
-> Keine Source-2-, Map-, Server-, Build- oder Deployment-Abhängigkeiten zum eigentlichen Spandau-Strike/Defeat-Projekt.
+> **Not part of the game.** No Source 2, map, server, build or deployment dependency.
 
-## Ziel
+## R2 milestone
 
-Eine **neu konstruierte, FDM-druckfähige RC-F-14** mit funktionsfähigen Schwenkflügeln, die sich optisch an der realen Grumman F-14 orientiert, konstruktiv aber als leichtes RC-Flugmodell ausgelegt wird.
+The F-14 has now been rebuilt as a parametric OpenSCAD RC model.
 
-Der neue Master wird **parametrisch in OpenSCAD** aufgebaut. STL-Dateien gelten erst dann als freigegeben, wenn sie exportiert, auf geschlossene/manifold Meshes, Abmessungen, Druckbett-Tauglichkeit und Montagepassungen geprüft wurden.
+- ~950 mm target length
+- ~900 mm extended target span
+- 20-60 degree model sweep range
+- twin 50 mm EDF / 4S target power system
+- PETG + CFK/metal reinforcement
+- 35 exported STL parts
+- 35/35 current STL parts pass watertight/winding/256 mm checks
+- 17 Bambu Lab P2S plate layouts
+- 3D assembly/exploded views generated from the actual exported STL geometry
 
-## Zielabmessungen R2
+## Files
 
-- Länge: ca. **950 mm**
-- Spannweite ausgefahren: ca. **900 mm**
-- Schwenkbereich im Modell: ca. **20°–60°**
-- Antrieb: **Twin 50 mm EDF**
-- Material: primär **PETG**, P2S-Druckplatten
-- Verstärkungen: CFK-Rohre/-Stäbe an Flügeln und Rumpf
-- Steuerung: Tailerons + optional Seitenruder
-- Einziehfahrwerk: optional, nicht für den Erstflug erforderlich
+- [OpenSCAD R2 master](scad/f14_r2_master.scad)
+- [R2 build plan](docs/BUILD_PLAN_R2.md)
+- [RC hardware BOM](docs/RC_HARDWARE_BOM.md)
+- [P2S PETG profile](docs/P2S_PETG_PROFILE.md)
+- [R2 validation status](docs/STATUS.md)
+- [P2S plates notes](plates/README.md)
 
-## Dokumentation
+## Release status
 
-- [3D-/Montage-Bauplan](docs/BUILD_PLAN.md)
-- [RC-Hardware und Elektronik](docs/RC_HARDWARE.md)
-- [P2S PETG Druckvorgaben](docs/P2S_PETG_PRINTING.md)
-- [Konstruktions- und Prüfstatus](docs/STATUS.md)
+**Geometry/printability validated; not flight validated.**
 
-## Projektstruktur
-
-- `scad/` – parametrische OpenSCAD-Quellen
-- `stl/` – ausschließlich geprüfte Export-STLs
-- `docs/` – Bauplan, Hardware, Druckparameter und Prüfstatus
-- `renders/` – Ansichten aus dem jeweils zugehörigen SCAD/STL-Stand
-- `releases/` – versionierte, freigegebene Druckstände
-
-## Wichtiger Statushinweis
-
-Der bisherige R1-Meshsatz wird **nicht als finale Flugversion** behandelt. Die F-14 wird für R2 neu in OpenSCAD modelliert. Bis zur abgeschlossenen Struktur-, Schwerpunkt- und Flugerprobung ist der Stand als **Prototype / Ground-Test** zu betrachten.
+A real prototype must still establish final mass, CG, EDF thrust/current, sweep loads, control authority and flutter envelope before the design can be called flight-released.
