@@ -87,6 +87,7 @@ plate_plan=[
 ]
 
 def pack(names):
+    local_margin=2.5 if names == ['wing_box'] else MARGIN
     items=[]
     for n in names:
         base=parts[n].copy()
@@ -95,17 +96,17 @@ def pack(names):
             q=base.copy()
             if deg: q.apply_transform(trimesh.transformations.rotation_matrix(math.pi/2,[0,0,1]))
             e=q.extents
-            if e[0] <= BED-2*MARGIN and e[1] <= BED-2*MARGIN:
+            if e[0] <= BED-2*local_margin and e[1] <= BED-2*local_margin:
                 choices.append((e[0],e[1],q,deg))
         if not choices: raise RuntimeError(f'{n} does not fit')
         w,h,q,deg=min(choices,key=lambda x:(x[0],x[0]*x[1]))
         items.append((n,q,w,h,deg))
     items.sort(key=lambda x:max(x[2],x[3]),reverse=True)
-    x=MARGIN; y=MARGIN; rowh=0; placed=[]
+    x=local_margin; y=local_margin; rowh=0; placed=[]
     for n,m,w,h,deg in items:
-        if x+w > BED-MARGIN:
-            x=MARGIN; y+=rowh+GAP; rowh=0
-        if y+h > BED-MARGIN:
+        if x+w > BED-local_margin:
+            x=local_margin; y+=rowh+GAP; rowh=0
+        if y+h > BED-local_margin:
             raise RuntimeError(f'plate overflow: {names}')
         b=m.bounds
         m.apply_translation([x-b[0][0],y-b[0][1],-b[0][2]])
