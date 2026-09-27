@@ -1,0 +1,62 @@
+name: Build F-14 R3 STL set
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "side-projects/F14_RC_FDM/r3/generate_r3.py"
+      - "side-projects/F14_RC_FDM/r3/README.md"
+      - "side-projects/F14_RC_FDM/r3/BUILD_PLAN.md"
+      - ".github/workflows/f14-r3-build.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install OpenSCAD and Python geometry tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y openscad
+          python -m pip install --upgrade pip
+          pip install numpy trimesh shapely
+
+      - name: Generate SCAD, STL, P2S plates and validation
+        working-directory: side-projects/F14_RC_FDM/r3
+        run: python generate_r3.py
+
+      - name: Require all individual STL checks to pass
+        working-directory: side-projects/F14_RC_FDM/r3
+        run: |
+          python - <<'PY'
+          import json, pathlib, sys
+          p=pathlib.Path("docs/mesh_validation.json")
+          d=json.loads(p.read_text())
+          n=d["individual_count"]
+          ok=(d["watertight_individual"]==n and d["winding_individual"]==n and d["fits256_individual"]==n and not d["failures"])
+          print(json.dumps(d,indent=2))
+          if not ok:
+              sys.exit("R3 STL validation failed")
+          PY
+
+      - name: Commit generated R3 geometry
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add side-projects/F14_RC_FDM/r3/stl                   side-projects/F14_RC_FDM/r3/scad/generated_parts                   side-projects/F14_RC_FDM/r3/plates                   side-projects/F14_RC_FDM/r3/docs/mesh_validation.csv                   side-projects/F14_RC_FDM/r3/docs/mesh_validation.json
+          if git diff --cached --quiet; then
+            echo "No generated geometry changes"
+          else
+            git commit -m "Generate F-14 R3 OpenSCAD/STL set [skip ci]"
+            git push
+          fi
