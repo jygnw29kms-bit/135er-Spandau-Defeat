@@ -19,6 +19,9 @@ SPAN=977.5
 PIVOT_X=426.0
 PIVOT_Y=87.0
 WALL=2.8
+PIVOT_SHAFT_D=5.2
+PIVOT_BEARING_D=10.2
+SPAR_CHANNEL_D=6.4
 
 def mesh_from_vertices_faces(v,f,name=None):
     m=trimesh.Trimesh(np.array(v,float),np.array(f,int),process=True)
@@ -153,12 +156,68 @@ difference(){
         translate([0,-87,-H/2]) cylinder(h=H,d=76);
         translate([0,87,-H/2]) cylinder(h=H,d=76);
     }
-    // M5 pivot bores with printing clearance
-    translate([0,-87,-20]) cylinder(h=40,d=5.2);
-    translate([0,87,-20]) cylinder(h=40,d=5.2);
+    // Bearing pockets for 5x10x4 bearings around 5 mm steel pivot shafts.
+    translate([0,-87,-20]) cylinder(h=40,d=10.2);
+    translate([0,87,-20]) cylinder(h=40,d=10.2);
 }
 '''
     sp.write_text(scad)
+    subprocess.run(['openscad','-q','-o',str(p),str(sp)],check=True)
+    repaired=trimesh.load_mesh(p,force='mesh',process=True)
+    repaired.merge_vertices()
+    try:
+        trimesh.repair.fix_winding(repaired)
+        trimesh.repair.fix_normals(repaired,multibody=True)
+    except TypeError:
+        trimesh.repair.fix_normals(repaired)
+    repaired.export(p)
+    return p
+
+
+def save_wing_csg(name,side,seg,y0,y1):
+    scaddir=ROOT/'scad'/'generated_parts'
+    scaddir.mkdir(parents=True,exist_ok=True)
+    sp=scaddir/f'{name}.scad'
+    p=ROOT/'stl'/f'{name}.stl'
+    pts=wing_outer_poly(y0,y1)
+    coords=[(round(float(x),5),round(float(y),5)) for x,y in list(pts.exterior.coords)[:-1]]
+    points_scad='['+','.join(f'[{x},{y}]' for x,y in coords)+']'
+    sx0=145+0.22*(y0-5)
+    sy0=y0-5
+    sx1=145+0.22*(y1+5)
+    sy1=y1+5
+    root_union = "translate([0,0,0]) cylinder(h=10,d=70,center=true,$fn=96);" if seg=='root' else ""
+    root_cuts = """
+        translate([0,0,-8]) cylinder(h=16,d=10.2,$fn=64);
+        translate([30,18,-8]) cylinder(h=16,d=3.2,$fn=36);
+    """ if seg=='root' else ""
+    model=f"""
+$fn=64;
+module raw_wing(){{
+    union(){{
+        linear_extrude(height=10,center=true) polygon(points={points_scad});
+        {root_union}
+    }}
+}}
+module spar_channel(){{
+    hull(){{
+        translate([{sx0},{sy0},0]) sphere(d=6.4,$fn=36);
+        translate([{sx1},{sy1},0]) sphere(d=6.4,$fn=36);
+    }}
+}}
+module wing(){{
+    difference(){{
+        raw_wing();
+        spar_channel();
+        {root_cuts}
+    }}
+}}
+"""
+    if side=='R':
+        model += "mirror([0,1,0]) wing();\n"
+    else:
+        model += "wing();\n"
+    sp.write_text(model)
     subprocess.run(['openscad','-q','-o',str(p),str(sp)],check=True)
     repaired=trimesh.load_mesh(p,force='mesh',process=True)
     repaired.merge_vertices()
@@ -244,9 +303,14 @@ def wing_outer_poly(y0,y1):
     def te(y): return 220+0.15*y
     return Polygon([(le(y0),y0),(te(y0),y0),(te(y1),y1),(le(y1),y1)])
 
+wing_ranges={'root':(0,145),'mid':(140,275),'tip':(270,395)}
 for side in ['L','R']:
-    for seg,(y0,y1) in {'root':(0,145),'mid':(140,275),'tip':(270,395)}.items():
-        m=extrude_shapely(wing_outer_poly(y0,y1),10,z0=-0.5)
+    for seg,(y0,y1) in wing_ranges.items():
+        poly=wing_outer_poly(y0,y1)
+        if seg=='root':
+            poly=unary_union([poly,Point(0,0).buffer(35,resolution=48)])
+            poly=poly.difference(Point(0,0).buffer(PIVOT_BEARING_D/2,resolution=32))
+        m=extrude_shapely(poly,10,z0=-0.5)
         if side=='R':
             m.apply_scale([1,-1,1])
         parts[f'wing_{side}_{seg}']=m
@@ -256,10 +320,12 @@ def annulus(rout,rin,h):
     inner=[(rin*math.cos(a),rin*math.sin(a)) for a in np.linspace(0,2*math.pi,49)[:-1]]
     return extrude_shapely(Polygon(outer,[inner]),h,z0=-0.5)
 
-parts['pivot_doubler_L']=annulus(35,2.6,14)
-parts['pivot_doubler_R']=annulus(35,2.6,14)
-parts['pivot_spacer_L']=annulus(20,2.75,6)
-parts['pivot_spacer_R']=annulus(20,2.75,6)
+# Bearing carriers: 10.2 mm pocket for common 5x10x4 bearings;
+# separate retainers keep the 5 mm steel shaft centered.
+parts['pivot_doubler_L']=annulus(35,PIVOT_BEARING_D/2,14)
+parts['pivot_doubler_R']=annulus(35,PIVOT_BEARING_D/2,14)
+parts['pivot_spacer_L']=annulus(20,PIVOT_SHAFT_D/2,6)
+parts['pivot_spacer_R']=annulus(20,PIVOT_SHAFT_D/2,6)
 
 # Stability-first wing box: load-bearing truss instead of a near-solid slab.
 # Outer frame + cross beams + diagonal braces + large pivot bosses are made as
@@ -366,11 +432,19 @@ parts['electronics_hatch']=box([170,82,4.0])
 for name,m in parts.items():
     if name=='wing_box':
         save_wingbox_csg()
+    elif name.startswith('wing_'):
+        _,side,seg=name.split('_',2)
+        y0,y1=wing_ranges[seg]
+        save_wing_csg(name,side,seg,y0,y1)
     else:
         save(m,name)
 
-# Use the exact OpenSCAD-CGAL export in the assembly reference as well.
+# Use exact OpenSCAD-CGAL exports in the assembly reference as well.
 parts['wing_box']=trimesh.load_mesh(ROOT/'stl'/'wing_box.stl',force='mesh',process=True)
+for side in ['L','R']:
+    for seg in wing_ranges:
+        n=f'wing_{side}_{seg}'
+        parts[n]=trimesh.load_mesh(ROOT/'stl'/f'{n}.stl',force='mesh',process=True)
 
 assembled=[parts[f'fuse_{i:02d}'].copy() for i in range(1,7)]
 assembled.append(parts['canopy'].copy())
