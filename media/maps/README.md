@@ -1,11 +1,11 @@
-# Deprecated media directory
+# Optical-master map references
 
-This directory is no longer used for public project imagery.
+This directory no longer contains the retired Unreal-era images.
 
-135er – Spandau Defeat now accepts **only images generated directly by the running Unreal Engine 5.8 game project**.
+Current visual reference material belongs to:
+- `media/source2/` — Source 2-oriented optical-master/reference imagery
+- `media/ingame/` — genuine captures from compiled/running CS2 / Source 2 maps only
 
-Use:
+Optical masters may be AI-generated/reference art, but must never be labeled **in-game**.
 
-`media/ingame/<map>/`
-
-See [../../docs/INGAME_CAPTURE_STANDARD.md](../../docs/INGAME_CAPTURE_STANDARD.md).
+See [../../docs/VISUAL_MASTER.md](../../docs/VISUAL_MASTER.md) and [../../docs/INGAME_CAPTURE_STANDARD.md](../../docs/INGAME_CAPTURE_STANDARD.md).
