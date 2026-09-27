@@ -1,6 +1,6 @@
 # Map production pipeline
 
-For each of the 17 maps:
+For each of the **20 maps**:
 1. Reference pass — verify location identity, road/building massing and era-specific details.
 2. Gameplay blockout in Hammer — spawns, A/B/C, three strategic lanes, rotations and fallback positions.
 3. Bot-safe geometry pass — stairs, ramps, doors, bridges, water edges, clips and no-trap cover placement.
