@@ -1,8 +1,8 @@
 # Visual Master Standard — 135er Spandau Defeat
 
-Status: **binding art direction**.
+Status: **binding art direction** · current graphics pass: **0.5.1-sharp-ingame**.
 
-The approved generated map-preview images are the master references for final graphical output. They define composition, density, lighting, readability, first-person weapon framing and HUD language. They are targets for authored UE5 production art; they are not presented as captured screenshots of the current procedural graybox.
+The approved map-preview images are master references for final graphical output. They define composition, density, lighting, readability, first-person weapon framing and HUD language. They are targets for authored UE5 production art; they are not presented as captured screenshots of the current procedural graybox.
 
 ## Rendering target
 
@@ -16,6 +16,21 @@ The approved generated map-preview images are the master references for final gr
 - World Partition/HLOD for final authored maps
 - 60 FPS gameplay target on recommended PC hardware
 - dedicated server remains render-free
+
+The production sharpness baseline is stored in [../game/config/SharpIngame.ini](../game/config/SharpIngame.ini). Public screenshots must follow [INGAME_CAPTURE_STANDARD.md](INGAME_CAPTURE_STANDARD.md).
+
+## Sharp first-person presentation
+
+- native 100% screen percentage minimum
+- TSR history resolution 200% for showcase captures
+- 16× anisotropic filtering
+- neutral texture mip bias and fully loaded textures
+- restrained sharpening only
+- no motion blur during normal FPS presentation
+- no chromatic aberration
+- no gameplay depth-of-field that obscures targets
+- increased LOD/view distance for captured production frames
+- no artificial sharpening halos or low-resolution JPEG masters
 
 ## Camera and first-person presentation
 
