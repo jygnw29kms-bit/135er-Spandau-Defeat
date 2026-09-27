@@ -8,7 +8,11 @@ OUT=ROOT/'p2s'
 IND=OUT/'individual_3mf'
 PLATES=OUT/'plates_3mf'
 PREV=OUT/'plate_stl'
-for d in (IND,PLATES,PREV): d.mkdir(parents=True,exist_ok=True)
+for d in (IND,PLATES,PREV):
+    d.mkdir(parents=True,exist_ok=True)
+    for old in d.iterdir():
+        if old.is_file():
+            old.unlink()
 
 BED=256.0
 MARGIN=6.0
@@ -24,11 +28,24 @@ PROFILES={
 }
 
 def profile_for(n):
-    if n.startswith('fuse_'): return 'SHELL'
-    if n.startswith(('wing_','taileron_','vstab_','glove_')): return 'WING'
-    if n in {'wing_box','sweep_crank','pivot_doubler_L','pivot_doubler_R','pivot_spacer_L','pivot_spacer_R','sweep_servo_mount_L','sweep_servo_mount_R','sweep_servo_adapter_STD_L','sweep_servo_adapter_STD_R','taileron_servo_mount_L','taileron_servo_mount_R'}: return 'STRUCT'
-    if n.startswith(('intake_','nacelle_','edf_ring_')): return 'DUCT'
-    if n == 'canopy': return 'COSMETIC'
+    if n in {
+        'wing_box','sweep_crank','pivot_doubler_L','pivot_doubler_R',
+        'pivot_spacer_L','pivot_spacer_R','sweep_servo_mount_L',
+        'sweep_servo_mount_R','sweep_servo_adapter_STD_L',
+        'sweep_servo_adapter_STD_R','taileron_servo_mount_L',
+        'taileron_servo_mount_R'
+    }:
+        return 'STRUCT'
+    if n.startswith(('esc_tray_','receiver_tray','bec_tray','joiner_','battery_tray')):
+        return 'STRUCT_LIGHT'
+    if n.startswith('fuse_'):
+        return 'SHELL'
+    if n.startswith(('wing_','taileron_','vstab_','glove_')):
+        return 'WING'
+    if n.startswith(('intake_','nacelle_','edf_ring_')):
+        return 'DUCT'
+    if n == 'canopy':
+        return 'COSMETIC'
     return 'STRUCT_LIGHT'
 
 def orient(name,m):
