@@ -1,33 +1,42 @@
 # F-14 RC FDM
 
-Separates RC-Modellbau-Nebenprojekt innerhalb dieses Repositories.
+Eigenständiges RC-Modellbau-Nebenprojekt im Repository **135er-Spandau-Defeat**.
 
-> **Nicht Bestandteil von 135er Spandau Defeat / Spandau Strike.**
-> Dieser Bereich wird weder vom Source-2-Spiel noch von dessen Build-, Map-, Server- oder Release-Struktur verwendet.
+> **Nicht Bestandteil des Spiels.**  
+> Keine Source-2-, Map-, Server-, Build- oder Deployment-Abhängigkeiten zum eigentlichen Spandau-Strike/Defeat-Projekt.
 
 ## Ziel
 
-FDM-druckfähiges RC-Flugmodell nach dem Formvorbild der Grumman F-14 mit funktionsfähigen Schwenkflügeln.
+Eine **neu konstruierte, FDM-druckfähige RC-F-14** mit funktionsfähigen Schwenkflügeln, die sich optisch an der realen Grumman F-14 orientiert, konstruktiv aber als leichtes RC-Flugmodell ausgelegt wird.
 
-## Aktueller Konstruktionsstand
+Der neue Master wird **parametrisch in OpenSCAD** aufgebaut. STL-Dateien gelten erst dann als freigegeben, wenn sie exportiert, auf geschlossene/manifold Meshes, Abmessungen, Druckbett-Tauglichkeit und Montagepassungen geprüft wurden.
 
-- ca. 950 mm Rumpflänge
-- ca. 900 mm Spannweite bei ausgefahrenen Flügeln
-- modularer FDM-Aufbau
-- Schwenkflügel mit mechanischer Kopplung / Servo-Anlenkung
-- CFK-Verstärkungen vorgesehen
-- EDF-Antrieb vorgesehen
-- Konstruktion und Flugerprobung noch in Entwicklung
+## Zielabmessungen R2
 
-## Verzeichnisstruktur
+- Länge: ca. **950 mm**
+- Spannweite ausgefahren: ca. **900 mm**
+- Schwenkbereich im Modell: ca. **20°–60°**
+- Antrieb: **Twin 50 mm EDF**
+- Material: primär **PETG**, P2S-Druckplatten
+- Verstärkungen: CFK-Rohre/-Stäbe an Flügeln und Rumpf
+- Steuerung: Tailerons + optional Seitenruder
+- Einziehfahrwerk: optional, nicht für den Erstflug erforderlich
 
-- `stl/` – druckbare Einzelteile und Baugruppen
-- `docs/` – Bauplan, Stückliste, Druck- und Montagehinweise
-- `renders/` – ausschließlich aus dem jeweiligen CAD/STL-Stand abgeleitete Kontroll- und Produktansichten
-- `releases/` – gepackte, versionierte Druckstände
+## Dokumentation
 
-## Trennung zum Spielprojekt
+- [3D-/Montage-Bauplan](docs/BUILD_PLAN.md)
+- [RC-Hardware und Elektronik](docs/RC_HARDWARE.md)
+- [P2S PETG Druckvorgaben](docs/P2S_PETG_PRINTING.md)
+- [Konstruktions- und Prüfstatus](docs/STATUS.md)
 
-Es bestehen bewusst **keine Imports, Build-Abhängigkeiten, Source-2-Pfade oder automatischen Deployments** zwischen diesem Verzeichnis und dem eigentlichen Spielprojekt.
+## Projektstruktur
 
-Der visuelle F-14-Master dient als Formreferenz. Ein Render gilt nur dann als technische Projektansicht, wenn er aus dem dazugehörigen CAD/STL-Stand erzeugt wurde.
+- `scad/` – parametrische OpenSCAD-Quellen
+- `stl/` – ausschließlich geprüfte Export-STLs
+- `docs/` – Bauplan, Hardware, Druckparameter und Prüfstatus
+- `renders/` – Ansichten aus dem jeweils zugehörigen SCAD/STL-Stand
+- `releases/` – versionierte, freigegebene Druckstände
+
+## Wichtiger Statushinweis
+
+Der bisherige R1-Meshsatz wird **nicht als finale Flugversion** behandelt. Die F-14 wird für R2 neu in OpenSCAD modelliert. Bis zur abgeschlossenen Struktur-, Schwerpunkt- und Flugerprobung ist der Stand als **Prototype / Ground-Test** zu betrachten.
