@@ -28,3 +28,5 @@ for i,(slug,name) in enumerate(maps):
     crop=ImageEnhance.Sharpness(crop).enhance(1.08)
     crop.save(OUT/f"{slug}-master-reference.jpg","JPEG",quality=92,optimize=True,progressive=True)
 print(f"Wrote {len(maps)} master references to {OUT}")
+
+# trigger: split all 20 map master references
