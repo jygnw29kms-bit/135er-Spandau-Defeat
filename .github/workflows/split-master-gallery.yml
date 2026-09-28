@@ -1,9 +1,6 @@
 name: Split AI master gallery
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - "tools/split_master_gallery.py"
 permissions:
   contents: write
 jobs:
