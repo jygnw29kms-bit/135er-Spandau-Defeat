@@ -3,6 +3,14 @@
   "name": "Askanier-Schule",
   "era": "contemporary conflict",
   "identity": "compact school ensemble, street frontage, courtyard and sports areas",
+  "real_world_reference": {
+    "address": "Borkzeile 34, 13583 Berlin",
+    "anchor_wgs84": { "lat": 52.539743, "lon": 13.190977 },
+    "capture_radius_m": 190,
+    "geometry_source": "Berlin LoD2 building model",
+    "visual_reference_source": "Berlin 3D Mesh 2025",
+    "source_tile_ids": []
+  },
   "objectives": {
     "A": "street approach",
     "B": "central courtyard",
@@ -18,6 +26,6 @@
     "avoid dead-end classroom routes",
     "provide wide sports-area rotations"
   ],
-  "visual_master": "compact urban school complex with distinct courtyard and sports silhouette",
+  "visual_master": "real Berlin campus geometry first; compact courtyard silhouette retained",
   "history": "fictional modern conflict scenario"
 }
