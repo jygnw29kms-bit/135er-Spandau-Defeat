@@ -1,0 +1,67 @@
+name: Build F-14 R4 Scale Master 900
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "side-projects/F14_RC_FDM/r4/**"
+      - ".github/workflows/f14-r4-build.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: f14-r4-main-build
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Install CAD dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y openscad
+          pip install numpy trimesh shapely networkx lxml mapbox_earcut
+      - name: Generate R4 geometry
+        working-directory: side-projects/F14_RC_FDM/r4
+        run: python generate_r4.py
+      - name: Validate printable STL
+        working-directory: side-projects/F14_RC_FDM/r4
+        run: |
+          python - <<'PY'
+          import json,sys
+          d=json.load(open('docs/mesh_validation.json'))
+          n=d['printable_parts']
+          print(json.dumps(d,indent=2))
+          if d['watertight']!=n or d['winding']!=n or d['fits_p2s']!=n or d['failures']:
+              sys.exit('R4 geometry validation failed')
+          PY
+      - name: Generate 3MF / P2S plates
+        working-directory: side-projects/F14_RC_FDM/r4
+        run: python make_p2s_r4.py
+      - name: Validate plate bounds
+        working-directory: side-projects/F14_RC_FDM/r4
+        run: |
+          python - <<'PY'
+          import pathlib,trimesh,sys
+          bad=[]
+          for f in pathlib.Path('p2s/plates_3mf').glob('*.3mf'):
+              s=trimesh.load(f,force='scene');e=s.extents
+              if e[0]>256.01 or e[1]>256.01:bad.append((f.name,e.tolist()))
+          print('bad plates',bad)
+          if bad:sys.exit(1)
+          PY
+      - name: Commit generated release
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add side-projects/F14_RC_FDM/r4/stl                   side-projects/F14_RC_FDM/r4/scad/generated_parts                   side-projects/F14_RC_FDM/r4/docs                   side-projects/F14_RC_FDM/r4/p2s
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Generate F-14 R4 Scale Master 900 release [skip ci]"
+          git pull --rebase origin main
+          git push
