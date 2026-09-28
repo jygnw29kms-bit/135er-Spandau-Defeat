@@ -220,7 +220,7 @@ parts['edf_ring_L']=annulus(36,28,10); parts['edf_ring_R']=annulus(36,28,10)
 
 # Save all non-wing non-wingbox parts.
 for n,m in list(parts.items()):
-    if n=='wing_box' or n.startswith('wing_'): continue
+    if n=='wing_box' or n.startswith('wing_L_') or n.startswith('wing_R_'): continue
     parts[n]=save(m,n)
 for side in ['L','R']:
     for seg,(a,b) in wing_ranges.items():
