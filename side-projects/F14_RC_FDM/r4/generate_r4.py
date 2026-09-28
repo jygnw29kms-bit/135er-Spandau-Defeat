@@ -182,7 +182,19 @@ difference(){union(){
 } translate([0,-68.5,-20]) cylinder(h=40,d=10.2); translate([0,68.5,-20]) cylinder(h=40,d=10.2);}
 ''')
 subprocess.run(['openscad','-q','-o',str(wb_out),str(wb_scad)],check=True)
-parts['wing_box']=trimesh.load_mesh(wb_out,force='mesh',process=True)
+wb=trimesh.load_mesh(wb_out,force='mesh',process=True)
+wb.merge_vertices()
+try:
+    trimesh.repair.fix_winding(wb)
+    trimesh.repair.fix_normals(wb,multibody=True)
+except TypeError:
+    trimesh.repair.fix_normals(wb)
+try:
+    trimesh.repair.fill_holes(wb)
+except Exception:
+    pass
+wb.export(wb_out)
+parts['wing_box']=wb
 
 # RC equipment carriers.
 def frame(ox,oy,ix,iy,h):
