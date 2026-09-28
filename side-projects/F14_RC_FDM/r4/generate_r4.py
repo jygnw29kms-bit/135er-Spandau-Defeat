@@ -18,7 +18,7 @@ SCALE=900.0/REAL_SPAN
 L=REAL_LENGTH*SCALE
 TARGET_SPAN=900.0
 PIVOT_X=385.0
-PIVOT_Y=68.5
+PIVOT_Y=68.434
 SHELL=2.4
 SPAR_D=6.4
 BEARING_D=10.2
@@ -234,12 +234,17 @@ for side in ['L','R']:
 # Build assembly references for forward and swept wing positions.
 def assemble(sweep_deg,name):
     ms=[parts[f'fuse_{i:02d}'].copy() for i in range(1,7)]
-    for n in ['canopy','beavertail','wing_box','battery_tray','receiver_tray','bec_tray',
+    for n in ['canopy','beavertail','wing_box',
               'intake_L','intake_R','nacelle_mid_L','nacelle_mid_R','nacelle_rear_L','nacelle_rear_R',
               'taileron_L','taileron_R','vstab_L','vstab_R',
               'wing_glove_L_front','wing_glove_L_rear','wing_glove_R_front','wing_glove_R_rear']:
         q=parts[n].copy()
-        if n=='wing_box': q.apply_translation([PIVOT_X,0,0])
+        if n=='wing_box':
+            q.apply_translation([PIVOT_X,0,0])
+        elif n.startswith('wing_glove_L_'):
+            q.apply_translation([PIVOT_X,50,0])
+        elif n.startswith('wing_glove_R_'):
+            q.apply_translation([PIVOT_X,-50,0])
         ms.append(q)
     for side,sgn in [('L',1),('R',-1)]:
         ang=math.radians(sweep_deg)*sgn
