@@ -23,6 +23,7 @@ Implemented:
 - **20 / 20 map production specs**
 - bot/navigation production standard
 - Source 2 visual-master and capture rules
+- **20-map AI master-reference gallery visible directly in this README**
 
 Pending before a playable map alpha:
 - authored Hammer `.vmap` sources
@@ -35,11 +36,13 @@ Pending before a playable map alpha:
 
 <p align="center"><img src="media/theme/source2-pipeline.svg" alt="Source 2 production pipeline" width="100%"></p>
 
-## SOURCE 2 OPTICAL MASTER
+## SOURCE 2 OPTICAL MASTER — ALL 20 MAPS
 
-<p align="center"><img src="media/source2/source2-optical-masters-gallery.jpg" alt="135er Spandau Defeat Source 2 optical-master gallery" width="100%"></p>
+<p align="center">
+  <img src="media/source2/masters/all-maps-master-gallery.jpg" alt="135er Spandau Defeat — AI master references for all 20 maps" width="100%">
+</p>
 
-> This gallery is **AI-generated optical-master/reference art** built around the current Spandau map definitions and Source 2/CS2 visual direction. It is **not** labeled as genuine engine capture.
+> The image above contains the **AI-generated optical-master/reference images for all 20 current maps**. These are the visual targets for Hammer/Source 2 production and are **not genuine in-engine screenshots**.
 
 The optical master defines:
 - competitive Source 2-style readability
@@ -76,6 +79,7 @@ The optical master defines:
 | Map production pipeline | [source2/docs/MAP_PRODUCTION_PIPELINE.md](source2/docs/MAP_PRODUCTION_PIPELINE.md) |
 | Visual master | [docs/VISUAL_MASTER.md](docs/VISUAL_MASTER.md) |
 | Image/capture policy | [docs/INGAME_CAPTURE_STANDARD.md](docs/INGAME_CAPTURE_STANDARD.md) |
+| 20-map master gallery | [media/source2/masters/all-maps-master-gallery.jpg](media/source2/masters/all-maps-master-gallery.jpg) |
 | Source 2 media | [media/README.md](media/README.md) |
 
 ---
