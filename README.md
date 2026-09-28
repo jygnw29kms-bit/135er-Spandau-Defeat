@@ -44,10 +44,23 @@ Pending before a playable map alpha:
 
 > The image above contains the **AI-generated optical-master/reference images for all 20 current maps**. These are the visual targets for Hammer/Source 2 production and are **not genuine in-engine screenshots**.
 
-### MASTER-REFERENCE QUALITY GATE
+### VERIFIED FULL-RESOLUTION MAP MASTER REFERENCES
 
-Individual map masters are published here only after a full-resolution visual check. Crops or upscaled contact-sheet cells are not accepted.
+The images below are individually rendered **1672×941** AI optical-master references. They are not contact-sheet crops and were checked before publication.
 
+| Map | Verified master |
+|---|---|
+| Rathaus Spandau | <img src="media/source2/masters/maps/rathaus-spandau-master-reference.jpg" width="560"> |
+| Zitadelle Spandau | <img src="media/source2/masters/maps/zitadelle-spandau-master-reference.jpg" width="560"> |
+| Staaken | <img src="media/source2/masters/maps/staaken-master-reference.jpg" width="560"> |
+| Rodelberg | <img src="media/source2/masters/maps/rodelberg-master-reference.jpg" width="560"> |
+| Kiesteich | <img src="media/source2/masters/maps/kiesteich-master-reference.jpg" width="560"> |
+| Falkenhagener Feld | <img src="media/source2/masters/maps/falkenhagener-feld-master-reference.jpg" width="560"> |
+| Martin-Buber-Schule | <img src="media/source2/masters/maps/martin-buber-schule-master-reference.jpg" width="560"> |
+| Askanier-Schule | <img src="media/source2/masters/maps/askanier-schule-master-reference.jpg" width="560"> |
+| B.-Traven-Schule | <img src="media/source2/masters/maps/b-traven-schule-master-reference.jpg" width="560"> |
+
+**Quality gate:** no upscaled contact-sheet cells are accepted. The remaining roster entries stay unpublished here until an individual render passes the same gate.
 
 The optical master defines:
 - competitive Source 2-style readability
