@@ -23,7 +23,7 @@ Implemented:
 - **20 / 20 map production specs**
 - bot/navigation production standard
 - Source 2 visual-master and capture rules
-- **20-map AI master-reference gallery visible directly in this README**
+- AI master references are being replaced by individually rendered, full-resolution masters
 
 Pending before a playable map alpha:
 - authored Hammer `.vmap` sources
@@ -44,32 +44,10 @@ Pending before a playable map alpha:
 
 > The image above contains the **AI-generated optical-master/reference images for all 20 current maps**. These are the visual targets for Hammer/Source 2 production and are **not genuine in-engine screenshots**.
 
-### INDIVIDUAL MAP MASTER REFERENCES
+### MASTER-REFERENCE QUALITY GATE
 
-| Map | AI master reference |
-|---|---|
-| Rathaus Spandau | <img src="media/source2/masters/maps/rathaus-spandau-master-reference.jpg" width="420"> |
-| Zitadelle Spandau | <img src="media/source2/masters/maps/zitadelle-spandau-master-reference.jpg" width="420"> |
-| Staaken | <img src="media/source2/masters/maps/staaken-master-reference.jpg" width="420"> |
-| Rodelberg | <img src="media/source2/masters/maps/rodelberg-master-reference.jpg" width="420"> |
-| Kiesteich | <img src="media/source2/masters/maps/kiesteich-master-reference.jpg" width="420"> |
-| Falkenhagener Feld | <img src="media/source2/masters/maps/falkenhagener-feld-master-reference.jpg" width="420"> |
-| Lynarstraße | <img src="media/source2/masters/maps/lynarstrasse-master-reference.jpg" width="420"> |
-| Wröhmännerpark | <img src="media/source2/masters/maps/wroehmaennerpark-master-reference.jpg" width="420"> |
-| Freiheit | <img src="media/source2/masters/maps/freiheit-master-reference.jpg" width="420"> |
-| Martin-Buber-Schule | <img src="media/source2/masters/maps/martin-buber-schule-master-reference.jpg" width="420"> |
-| Askanier-Schule | <img src="media/source2/masters/maps/askanier-schule-master-reference.jpg" width="420"> |
-| B.-Traven-Schule | <img src="media/source2/masters/maps/b-traven-schule-master-reference.jpg" width="420"> |
-| Fort Hahneberg 1945 | <img src="media/source2/masters/maps/fort-hahneberg-1945-master-reference.jpg" width="420"> |
-| Teufelsberg – Kalter Krieg | <img src="media/source2/masters/maps/teufelsberg-kalter-krieg-master-reference.jpg" width="420"> |
-| Flugplatz Gatow 1945 | <img src="media/source2/masters/maps/flugplatz-gatow-1945-master-reference.jpg" width="420"> |
-| Gatow – Luftbrücke 1948 | <img src="media/source2/masters/maps/gatow-luftbruecke-1948-master-reference.jpg" width="420"> |
-| Radelandstraße 1945 | <img src="media/source2/masters/maps/radelandstrasse-1945-master-reference.jpg" width="420"> |
-| Hakenfelde – Heeresamt 1944 | <img src="media/source2/masters/maps/hakenfelde-heeresamt-1944-master-reference.jpg" width="420"> |
-| Zitadelle Spandau – 1. Mai 1945 | <img src="media/source2/masters/maps/zitadelle-1-mai-1945-master-reference.jpg" width="420"> |
-| Britischer Sektor Spandau | <img src="media/source2/masters/maps/britischer-sektor-spandau-master-reference.jpg" width="420"> |
+Individual map masters are published here only after a full-resolution visual check. Crops or upscaled contact-sheet cells are not accepted.
 
-> These 20 files are **AI optical-master/reference art**, not Source 2 in-engine captures. Public gameplay screenshots remain reserved for genuine compiled Source 2 / CS2 captures.
 
 The optical master defines:
 - competitive Source 2-style readability
