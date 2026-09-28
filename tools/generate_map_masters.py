@@ -100,3 +100,5 @@ All 20 images below are individually generated **2048×1152** AI optical-master 
 text=text[:start]+section+text[end+1:]
 readme.write_text(text,encoding="utf-8")
 print("All 20 masters verified; README gallery updated.",flush=True)
+
+# workflow trigger: full-resolution master render
