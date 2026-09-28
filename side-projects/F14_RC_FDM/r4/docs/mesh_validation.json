@@ -1,0 +1,13 @@
+{
+  "scale": 0.04603580562659847,
+  "scale_denominator": 21.72222222222222,
+  "target_span_mm": 900.0,
+  "target_length_mm": 879.2838874680307,
+  "assembled_20deg_length_mm": 879.284,
+  "assembled_20deg_span_mm": 900.002,
+  "printable_parts": 40,
+  "watertight": 40,
+  "winding": 40,
+  "fits_p2s": 40,
+  "failures": []
+}
