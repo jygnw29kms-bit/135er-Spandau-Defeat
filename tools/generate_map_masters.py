@@ -102,3 +102,5 @@ readme.write_text(text,encoding="utf-8")
 print("All 20 masters verified; README gallery updated.",flush=True)
 
 # workflow trigger: full-resolution master render
+
+# render trigger after OPENAI_API_KEY configured
