@@ -56,4 +56,20 @@ The GitHub workflow refuses to publish unless every printable STL is:
 - winding-consistent
 - within the Bambu Lab P2S 256×256-mm print envelope in at least one orientation
 
-See `docs/mesh_validation.json` for the generated result.
+Current generated result:
+
+- target scale: **1:21.7222**
+- target extended span: **900.000 mm**
+- generated 20° assembly span: **900.002 mm**
+- target length: **879.284 mm**
+- generated 20° assembly length: **879.284 mm**
+- printable parts: **40**
+- STL files including both assembled references: **42**
+- individual 3MF files including both assembled references: **42**
+- optimized P2S plate 3MF files: **27**
+- watertight: **40 / 40**
+- winding-consistent: **40 / 40**
+- P2S fit: **40 / 40**
+- failed checks: **0**
+
+See `docs/mesh_validation.json` for the generated validation data.
