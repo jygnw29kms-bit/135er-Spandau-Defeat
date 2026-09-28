@@ -2,7 +2,8 @@ from pathlib import Path
 import math, json, csv, subprocess
 import numpy as np
 import trimesh
-from shapely.geometry import Polygon
+from shapely.geometry import Polygon, Point, LineString
+from shapely.ops import unary_union
 
 ROOT=Path(__file__).resolve().parent
 for d in ['stl','scad/generated_parts','docs']:
@@ -169,32 +170,33 @@ for side in ['L','R']:
         parts[f'wing_{side}_{seg}']=None
 
 # Stability-first truss wing box with 5x10x4 bearing pockets.
-wb_scad=ROOT/'scad'/'generated_parts'/'wing_box.scad'
-wb_out=ROOT/'stl'/'wing_box.stl'
-wb_scad.write_text(r'''$fn=72; H=26;
-module dbeam(x2,y2,w=12){hull(){translate([0,0,-H/2]) cylinder(h=H,d=w); translate([x2,y2,-H/2]) cylinder(h=H,d=w);}}
-difference(){union(){
- translate([-82,-98,-H/2]) cube([164,14,H]); translate([-82,84,-H/2]) cube([164,14,H]);
- translate([-82,-84,-H/2]) cube([14,168,H]); translate([68,-84,-H/2]) cube([14,168,H]);
- translate([-11,-98,-H/2]) cube([22,196,H]); translate([-82,-11,-H/2]) cube([164,22,H]);
- dbeam(66,78); dbeam(-66,78); dbeam(66,-78); dbeam(-66,-78);
- translate([0,-68.5,-H/2]) cylinder(h=H,d=70); translate([0,68.5,-H/2]) cylinder(h=H,d=70);
-} translate([0,-68.5,-20]) cylinder(h=40,d=10.2); translate([0,68.5,-20]) cylinder(h=40,d=10.2);}
-''')
-subprocess.run(['openscad','-q','-o',str(wb_out),str(wb_scad)],check=True)
-wb=trimesh.load_mesh(wb_out,force='mesh',process=True)
+# Built as one watertight 2D structural profile and extruded directly.
+outer=Polygon([(-82,-98),(82,-98),(82,98),(-82,98)])
+inner=Polygon([(-68,-84),(68,-84),(68,84),(-68,84)])
+perimeter=outer.difference(inner)
+cross_x=Polygon([(-11,-98),(11,-98),(11,98),(-11,98)])
+cross_y=Polygon([(-82,-11),(82,-11),(82,11),(-82,11)])
+braces=[
+    LineString([(0,0),(66,78)]).buffer(6,cap_style=2,join_style=2),
+    LineString([(0,0),(-66,78)]).buffer(6,cap_style=2,join_style=2),
+    LineString([(0,0),(66,-78)]).buffer(6,cap_style=2,join_style=2),
+    LineString([(0,0),(-66,-78)]).buffer(6,cap_style=2,join_style=2),
+]
+bosses=[Point(0,y).buffer(35,resolution=48) for y in (-PIVOT_Y,PIVOT_Y)]
+wb2=unary_union([perimeter,cross_x,cross_y,*braces,*bosses])
+for y in (-PIVOT_Y,PIVOT_Y):
+    wb2=wb2.difference(Point(0,y).buffer(BEARING_D/2,resolution=36))
+wb2=wb2.buffer(0)
+wb=trimesh.creation.extrude_polygon(wb2,26,engine='earcut')
+wb.apply_translation([0,0,-13])
 wb.merge_vertices()
-try:
-    trimesh.repair.fix_winding(wb)
-    trimesh.repair.fix_normals(wb,multibody=True)
-except TypeError:
-    trimesh.repair.fix_normals(wb)
-try:
-    trimesh.repair.fill_holes(wb)
-except Exception:
-    pass
+wb_out=ROOT/'stl'/'wing_box.stl'
 wb.export(wb_out)
 parts['wing_box']=wb
+# Human-readable source note for this directly extruded structural part.
+(ROOT/'scad'/'generated_parts'/'wing_box.scad').write_text(
+    '// R4 wing_box is generated from a Shapely truss profile in generate_r4.py and exported directly as a watertight STL.\n'
+)
 
 # RC equipment carriers.
 def frame(ox,oy,ix,iy,h):
