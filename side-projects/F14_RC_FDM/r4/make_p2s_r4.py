@@ -45,7 +45,7 @@ plate_plan=[
  ('Wingbox',['wing_box']),('Sweep_Servos',['sweep_servo_mount_L','sweep_servo_mount_R']),
  ('Wing_L_Root',['wing_L_root']),('Wing_R_Root',['wing_R_root']),('Wing_L_Mid',['wing_L_mid']),
  ('Wing_R_Mid',['wing_R_mid']),('Wing_L_Tip',['wing_L_tip']),('Wing_R_Tip',['wing_R_tip']),
- ('Gloves',['wing_glove_L','wing_glove_R']),('Tailerons',['taileron_L','taileron_R']),
+ ('Glove_L',['wing_glove_L_front','wing_glove_L_rear']),('Glove_R',['wing_glove_R_front','wing_glove_R_rear']),('Tailerons',['taileron_L','taileron_R']),
  ('VTails',['vstab_L','vstab_R']),('Taileron_Servos',['taileron_servo_mount_L','taileron_servo_mount_R']),
  ('Intakes',['intake_L','intake_R','edf_ring_L','edf_ring_R']),
  ('Nacelle_Mid',['nacelle_mid_L','nacelle_mid_R']),('Nacelle_Rear',['nacelle_rear_L','nacelle_rear_R']),
