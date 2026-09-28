@@ -10,7 +10,20 @@ Source 2 / CS2 is the active engine/runtime for 135er – Spandau Defeat. Unreal
 2. CS2 Workshop Tools
 3. Hammer for map authoring
 4. Source 2 material/asset tools
-5. Linux CS2 dedicated server for multiplayer validation
+5. Blender for Berlin geodata cleanup/reference prep
+6. Linux CS2 dedicated server for multiplayer validation
+
+## Geodata baseline
+
+For maps based on real Berlin locations, establish scale and massing from real geodata before gameplay adaptation.
+
+- Berlin LoD2 building model: primary building geometry reference.
+- Berlin 3D Mesh 2025: detailed visual/spatial reference.
+- Terrain and street data: alignment/context.
+- Per-site anchors and capture radii: `source2/geodata/school_sites.json`.
+- Full workflow: `docs/BERLIN_GEODATA_PIPELINE.md`.
+
+Do not ship the dense Berlin mesh directly as game geometry. Rebuild or retopologize optimized Source 2 assets and respect the source license/portal terms.
 
 ## Map production
 
