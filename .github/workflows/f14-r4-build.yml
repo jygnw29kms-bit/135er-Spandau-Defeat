@@ -65,3 +65,5 @@ jobs:
           git commit -m "Generate F-14 R4 Scale Master 900 release [skip ci]"
           git pull --rebase origin main
           git push
+
+# R4 workflow revision: 2026-09-28
