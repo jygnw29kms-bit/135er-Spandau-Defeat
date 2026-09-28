@@ -2,7 +2,7 @@ from pathlib import Path
 import math, json, csv, subprocess
 import numpy as np
 import trimesh
-from shapely.geometry import Polygon, Point, LineString
+from shapely.geometry import Polygon, Point, LineString, box as shapely_box
 from shapely.ops import unary_union
 
 ROOT=Path(__file__).resolve().parent
@@ -114,10 +114,15 @@ can.apply_scale([96,29,18]); can.apply_translation([250,0,37])
 parts['canopy']=can
 
 # Fixed wing gloves / lifting-body shoulders.
+# Each side is split into two P2S-printable sections without changing the outer contour.
 glove_pts=[(-75,-28),(130,-42),(190,22),(105,105),(-30,76)]
 for side,sgn in [('L',1),('R',-1)]:
     pts=[(x,sgn*y) for x,y in glove_pts]
-    parts[f'wing_glove_{side}']=trimesh.creation.extrude_polygon(Polygon(pts),12,engine='earcut')
+    full=Polygon(pts)
+    front=full.intersection(shapely_box(-1000,-1000,60,1000))
+    rear=full.intersection(shapely_box(60,-1000,1000,1000))
+    parts[f'wing_glove_{side}_front']=trimesh.creation.extrude_polygon(front,12,engine='earcut')
+    parts[f'wing_glove_{side}_rear']=trimesh.creation.extrude_polygon(rear,12,engine='earcut')
 
 # Intakes + nacelles: F-14 twin-engine spacing retained as separate RC ducts.
 for side,sgn in [('L',1),('R',-1)]:
@@ -231,7 +236,8 @@ def assemble(sweep_deg,name):
     ms=[parts[f'fuse_{i:02d}'].copy() for i in range(1,7)]
     for n in ['canopy','beavertail','wing_box','battery_tray','receiver_tray','bec_tray',
               'intake_L','intake_R','nacelle_mid_L','nacelle_mid_R','nacelle_rear_L','nacelle_rear_R',
-              'taileron_L','taileron_R','vstab_L','vstab_R','wing_glove_L','wing_glove_R']:
+              'taileron_L','taileron_R','vstab_L','vstab_R',
+              'wing_glove_L_front','wing_glove_L_rear','wing_glove_R_front','wing_glove_R_rear']:
         q=parts[n].copy()
         if n=='wing_box': q.apply_translation([PIVOT_X,0,0])
         ms.append(q)
@@ -257,7 +263,10 @@ for f in sorted((ROOT/'stl').glob('*.stl')):
                  'fits_p2s':bool(sorted(e)[-2] <= 256.0 and sorted(e)[-1] <= 256.0),'faces':len(m.faces)})
 with open(ROOT/'docs'/'mesh_validation.csv','w',newline='') as fp:
     w=csv.DictWriter(fp,fieldnames=rows[0].keys()); w.writeheader(); w.writerows(rows)
+a20_ext=a20.extents
 summary={'scale':SCALE,'scale_denominator':1/SCALE,'target_span_mm':TARGET_SPAN,'target_length_mm':L,
+         'assembled_20deg_length_mm':round(float(a20_ext[0]),3),
+         'assembled_20deg_span_mm':round(float(a20_ext[1]),3),
          'printable_parts':len(rows),'watertight':sum(r['watertight'] for r in rows),
          'winding':sum(r['winding'] for r in rows),'fits_p2s':sum(r['fits_p2s'] for r in rows),
          'failures':[r for r in rows if not(r['watertight'] and r['winding'] and r['fits_p2s'])]}
