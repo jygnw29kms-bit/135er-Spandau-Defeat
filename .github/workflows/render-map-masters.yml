@@ -1,9 +1,6 @@
 name: Render full-resolution map masters
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - "tools/generate_map_masters.py"
 permissions:
   contents: write
 jobs:
