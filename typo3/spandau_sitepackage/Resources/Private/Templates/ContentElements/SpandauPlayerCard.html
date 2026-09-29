@@ -1,0 +1,204 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Inter:wght@400;600;700;800;900&display=swap');
+
+.spandau-card {
+    --sp-bg: #121212;
+    --sp-panel: #191919;
+    --sp-red: #E30613;
+    --sp-white: #fff;
+    --sp-muted: #aaa;
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: minmax(220px, .9fr) minmax(0, 1.25fr);
+    min-height: 390px;
+    background:
+        linear-gradient(135deg, rgba(227,6,19,.13), transparent 42%),
+        var(--sp-panel);
+    color: var(--sp-white);
+    border: 1px solid #343434;
+    border-left: 5px solid var(--sp-red);
+    box-shadow: 0 22px 60px rgba(0,0,0,.45);
+    transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    font-family: Inter, Arial, sans-serif;
+}
+.spandau-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(227,6,19,.8);
+    box-shadow:
+        0 26px 75px rgba(0,0,0,.55),
+        0 0 30px rgba(227,6,19,.28),
+        inset 0 0 30px rgba(227,6,19,.05);
+}
+.spandau-card__media {
+    position: relative;
+    min-height: 300px;
+    background: #0a0a0a;
+}
+.spandau-card__media img {
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: saturate(.82) contrast(1.08);
+}
+.spandau-card__media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        linear-gradient(90deg, transparent 58%, rgba(18,18,18,.82) 100%),
+        linear-gradient(0deg, rgba(0,0,0,.55), transparent 45%);
+}
+.spandau-card__body {
+    position: relative;
+    z-index: 2;
+    padding: clamp(28px, 4vw, 52px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.spandau-card__eyebrow {
+    color: var(--sp-red);
+    font-size: .76rem;
+    font-weight: 900;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+}
+.spandau-card__name {
+    margin: 8px 0 4px;
+    font-family: "UnifrakturMaguntia", Georgia, serif;
+    font-size: clamp(3rem, 6vw, 5.4rem);
+    line-height: .95;
+    font-weight: 400;
+    text-shadow: 0 0 18px rgba(227,6,19,.18);
+}
+.spandau-card__role {
+    margin: 0 0 22px;
+    color: #ddd;
+    font-size: .92rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+}
+.spandau-card__bio {
+    max-width: 62ch;
+    color: #c3c3c3;
+}
+.spandau-card__stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 12px;
+    margin-top: 28px;
+}
+.spandau-card__stat {
+    padding: 16px 18px;
+    background: #0f0f0f;
+    border: 1px solid #303030;
+    border-bottom: 2px solid var(--sp-red);
+}
+.spandau-card__stat-label {
+    display: block;
+    color: var(--sp-muted);
+    font-size: .7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+}
+.spandau-card__stat-value {
+    display: block;
+    margin-top: 3px;
+    font-family: "Arial Black", Arial, sans-serif;
+    font-size: 1.45rem;
+}
+.spandau-card__stamp {
+    position: absolute;
+    right: -15px;
+    bottom: -42px;
+    color: rgba(255,255,255,.035);
+    font-family: Impact, "Arial Black", sans-serif;
+    font-size: 10rem;
+    line-height: 1;
+    transform: rotate(-4deg);
+    pointer-events: none;
+}
+@media (max-width: 760px) {
+    .spandau-card { grid-template-columns: 1fr; }
+    .spandau-card__media { min-height: 280px; max-height: 380px; }
+    .spandau-card__media::after {
+        background: linear-gradient(0deg, rgba(18,18,18,.95), transparent 45%);
+    }
+}
+@media (max-width: 420px) {
+    .spandau-card__stats { grid-template-columns: 1fr; }
+}
+</style>
+
+<article class="spandau-card" aria-labelledby="spandau-player-{data.uid}">
+    <div class="spandau-card__media">
+        <f:if condition="{images}">
+            <f:then>
+                <f:for each="{images}" as="image" iteration="imageIterator">
+                    <f:if condition="{imageIterator.isFirst}">
+                        <f:image
+                            image="{image}"
+                            alt="{f:if(condition: image.alternative, then: image.alternative, else: data.header)}"
+                            title="{image.title}"
+                            loading="lazy"
+                            width="900c"
+                            height="900c"
+                        />
+                    </f:if>
+                </f:for>
+            </f:then>
+            <f:else>
+                <img
+                    src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&amp;fit=crop&amp;w=1200&amp;q=82"
+                    alt="Düstere urbane Stadtszene als Kiez-Hintergrund"
+                    loading="lazy"
+                />
+            </f:else>
+        </f:if>
+    </div>
+
+    <div class="spandau-card__body">
+        <span class="spandau-card__eyebrow">135er Spandau // Kiez-Kader</span>
+
+        <h2 class="spandau-card__name" id="spandau-player-{data.uid}">
+            {data.header}
+        </h2>
+
+        <p class="spandau-card__role">
+            Rolle im Kiez: <f:format.htmlspecialchars>{data.subheader}</f:format.htmlspecialchars>
+        </p>
+
+        <div class="spandau-card__bio">
+            <f:format.html>{data.bodytext}</f:format.html>
+        </div>
+
+        <div class="spandau-card__stats" aria-label="Spielerstatistik">
+            <div class="spandau-card__stat">
+                <span class="spandau-card__stat-label">Abschüsse / K/D</span>
+                <strong class="spandau-card__stat-value">
+                    <f:format.number decimals="2" decimalSeparator="," thousandsSeparator=".">{data.tx_spandau_kd}</f:format.number>
+                </strong>
+            </div>
+
+            <div class="spandau-card__stat">
+                <span class="spandau-card__stat-label">Erfolgsquote / Siege</span>
+                <strong class="spandau-card__stat-value">
+                    {data.tx_spandau_winrate} %
+                </strong>
+            </div>
+        </div>
+
+        <span class="spandau-card__stamp" aria-hidden="true">135</span>
+    </div>
+</article>
+</html>
