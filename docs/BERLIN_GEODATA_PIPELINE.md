@@ -6,7 +6,8 @@ This project uses official/open Berlin geodata to establish real-world scale and
 
 1. **Berlin LoD2 building model** — primary reusable geometry reference. Building footprints follow cadastral building outlines and generalized roof forms. License: Datenlizenz Deutschland – Zero 2.0.
 2. **Berlin 3D Mesh 2025** — high-detail visual and spatial reference. Distributed as tiled OBJ + textures through the Berlin 3D download portal. Keep its original geometry/textures out of distributable game assets unless the portal terms explicitly permit that use.
-3. **Terrain / streets** — use Berlin terrain data and OpenStreetMap context as alignment aids.
+3. **Esri Deutschland Berlin 3D scene** — interactive visual cross-check for building massing, roof orientation, terrain and neighborhood context. Viewer item: https://opendata-esridech.hub.arcgis.com/maps/50e8049abb5841dcb3c113210b2109fb/explore . Treat it as a visualization/reference layer; use the official Berlin LoD2 download as the geometry source of record.
+4. **Terrain / streets** — use Berlin terrain data and OpenStreetMap context as alignment aids.
 
 ## School anchors
 
@@ -20,7 +21,7 @@ The three first targets are:
 
 ## Extraction workflow
 
-1. Open the Berlin 3D download portal and frame the site using the address/anchor in the site manifest.
+1. Open the Berlin 3D download portal and frame the site using the address/anchor in the site manifest. Cross-check the same footprint in the Esri Berlin 3D scene before extraction.
 2. Select all mesh tiles intersecting the configured capture radius.
 3. Download the OBJ tile ZIP archives and keep them under a local raw-data folder that is **not committed** to Git.
 4. Obtain the matching LoD2 building geometry for the same footprint.
@@ -36,6 +37,8 @@ The three first targets are:
 ## Geometry rules
 
 - Keep real-world campus proportions as the baseline.
+- Cross-check LoD2 footprint, roof direction, relative height and surrounding block context against the Esri 3D scene before gameplay edits.
+- LoD2 is a massing model: doors, windows, facade detail and small roof elements must be reconstructed from separate references rather than invented from the LoD2 shell.
 - Gameplay edits are allowed for access, cover, routes and objectives, but should remain recognizable.
 - Do not invent building footprints when LoD2 provides them.
 - Treat 2025 mesh textures as reference material unless redistribution is explicitly allowed.
