@@ -1,0 +1,23 @@
+{
+  "id": "b_traven_schule",
+  "name": "B.-Traven-Schule",
+  "era": "contemporary conflict",
+  "identity": "broader school campus, residential edge and open grounds",
+  "objectives": {
+    "A": "outer grounds",
+    "B": "central campus",
+    "C": "rear access"
+  },
+  "lanes": [
+    "residential/perimeter lane",
+    "central campus lane",
+    "rear grounds flank"
+  ],
+  "bot_notes": [
+    "keep open-ground cover connected",
+    "clip fences/gates cleanly",
+    "avoid long unbroken sightlines"
+  ],
+  "visual_master": "broader campus and residential-edge fighting space",
+  "history": "fictional modern conflict scenario"
+}

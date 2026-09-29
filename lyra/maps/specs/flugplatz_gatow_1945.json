@@ -1,0 +1,47 @@
+{
+  "id": "flugplatz_gatow_1945",
+  "name": "Flugplatz Gatow 1945",
+  "era": "1945",
+  "identity": "hangars, apron, runway and airfield cover",
+  "history": "Soviet takeover is historical; specific firefight details require separate verification",
+  "objectives": {
+    "A": "hangars",
+    "B": "apron",
+    "C": "runway edge"
+  },
+  "layout": {
+    "nominalSizeMeters": 1000,
+    "lanes": [
+      "left",
+      "center",
+      "right"
+    ],
+    "spawnExitsPerTeam": 2,
+    "objectiveApproachesPerPoint": 2,
+    "botAlternateGroundRouteRequired": true,
+    "verticality": "moderate unless map identity requires elevation"
+  },
+  "botNavigation": {
+    "required": true,
+    "targetBotCounts": [
+      10,
+      15
+    ],
+    "mustReach": [
+      "A",
+      "B",
+      "C"
+    ],
+    "mustRotateBetweenObjectives": true,
+    "noJumpRequiredRoutes": true,
+    "noBoostRequiredRoutes": true,
+    "waterSafetyRequired": true,
+    "stuckClusterAcceptance": 0
+  },
+  "source2": {
+    "authoringTool": "CS2 Workshop Tools / Hammer",
+    "compiledMapName": "flugplatz_gatow_1945",
+    "workshopId": null,
+    "status": "design-spec-ready"
+  }
+}

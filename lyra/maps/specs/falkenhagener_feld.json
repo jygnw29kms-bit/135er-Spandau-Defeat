@@ -1,0 +1,47 @@
+{
+  "id": "falkenhagener_feld",
+  "name": "Falkenhagener Feld",
+  "era": "contemporary conflict",
+  "identity": "housing estate, plazas, broad roads and courtyards",
+  "history": "fictional modern conflict scenario",
+  "objectives": {
+    "A": "west blocks",
+    "B": "central plaza",
+    "C": "east blocks"
+  },
+  "layout": {
+    "nominalSizeMeters": 1000,
+    "lanes": [
+      "left",
+      "center",
+      "right"
+    ],
+    "spawnExitsPerTeam": 2,
+    "objectiveApproachesPerPoint": 2,
+    "botAlternateGroundRouteRequired": true,
+    "verticality": "moderate unless map identity requires elevation"
+  },
+  "botNavigation": {
+    "required": true,
+    "targetBotCounts": [
+      10,
+      15
+    ],
+    "mustReach": [
+      "A",
+      "B",
+      "C"
+    ],
+    "mustRotateBetweenObjectives": true,
+    "noJumpRequiredRoutes": true,
+    "noBoostRequiredRoutes": true,
+    "waterSafetyRequired": true,
+    "stuckClusterAcceptance": 0
+  },
+  "source2": {
+    "authoringTool": "CS2 Workshop Tools / Hammer",
+    "compiledMapName": "falkenhagener_feld",
+    "workshopId": null,
+    "status": "design-spec-ready"
+  }
+}

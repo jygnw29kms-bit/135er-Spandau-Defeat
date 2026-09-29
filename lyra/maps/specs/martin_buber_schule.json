@@ -1,0 +1,23 @@
+{
+  "id": "martin_buber_schule",
+  "name": "Martin-Buber-Schule",
+  "era": "contemporary conflict",
+  "identity": "school campus, large courtyard, classroom wings and sports edge",
+  "objectives": {
+    "A": "west perimeter",
+    "B": "central schoolyard",
+    "C": "main building"
+  },
+  "lanes": [
+    "street/perimeter lane",
+    "central schoolyard lane",
+    "sports/building flank"
+  ],
+  "bot_notes": [
+    "avoid narrow decorative gaps",
+    "keep courtyard rotations wide",
+    "clip stairs/planters cleanly"
+  ],
+  "visual_master": "modern Spandau school campus; Source 2 competitive readability",
+  "history": "fictional modern conflict scenario"
+}
