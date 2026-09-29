@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -euo pipefail
+set -eu
 
 ROOT=/var/www/vhosts/dezender.de
 LIVE="$ROOT/httpdocs/135erSpandauStrike"
@@ -20,6 +20,7 @@ cp -a /tmp/135er-Spandau-Defeat/typo3/spandau_sitepackage "$STAGE/packages/spand
 cd "$STAGE"
 COMPOSER_ALLOW_SUPERUSER=1 composer update dezender/spandau-sitepackage in2code/femanager --with-all-dependencies --no-interaction
 
+echo "=== CREDENTIAL FILES ==="
 umask 077
 if [ ! -s "$DB_PASS_FILE" ]; then
   php -r 'echo bin2hex(random_bytes(18));' > "$DB_PASS_FILE"
@@ -30,16 +31,19 @@ fi
 DB_PASS="$(cat "$DB_PASS_FILE")"
 ADMIN_PASS="$(cat "$ADMIN_PASS_FILE")"
 
+echo "=== PLESK DATABASE ==="
 plesk bin database --info "$DB_NAME" >/dev/null 2>&1 ||   plesk bin database --create "$DB_NAME" -domain dezender.de -type mysql
 
 if ! plesk bin database --create-dbuser "$DB_USER" -passwd "$DB_PASS"   -domain dezender.de -server localhost:3306 -database "$DB_NAME" >/dev/null 2>&1; then
   plesk bin database --update-dbuser "$DB_USER" -passwd "$DB_PASS"     -server localhost:3306 >/dev/null
 fi
 
+echo "=== TYPO3 SETUP ==="
 if [ ! -f "$STAGE/config/system/settings.php" ]; then
   TYPO3_DB_DRIVER=mysqli   TYPO3_DB_USERNAME="$DB_USER"   TYPO3_DB_PASSWORD="$DB_PASS"   TYPO3_DB_PORT=3306   TYPO3_DB_HOST=localhost   TYPO3_DB_DBNAME="$DB_NAME"   TYPO3_SETUP_ADMIN_EMAIL=admin@dezender.de   TYPO3_SETUP_ADMIN_USERNAME=spandauadmin   TYPO3_SETUP_ADMIN_PASSWORD="$ADMIN_PASS"   TYPO3_SETUP_CREATE_SITE="https://www.dezender.de/135erSpandauStrike/"   TYPO3_PROJECT_NAME="135er - Spandau Strike"   TYPO3_SERVER_TYPE=apache   php "$STAGE/vendor/bin/typo3" setup --force --no-interaction
 fi
 
+echo "=== EXTENSION SETUP ==="
 php "$STAGE/vendor/bin/typo3" extension:setup
 php "$STAGE/vendor/bin/typo3" cache:flush || true
 
@@ -91,7 +95,7 @@ if [ "$ok" != "1" ]; then
 fi
 
 echo "TYPO3_LIVE=yes"
-php "$STAGE/vendor/bin/typo3" --version | head -1
+php "$STAGE/vendor/bin/typo3" --version
 echo "ROOT_PID=$ROOT_PID"
 echo "BACKEND_USER=spandauadmin"
 echo "ADMIN_PASSWORD_FILE=$ADMIN_PASS_FILE"
