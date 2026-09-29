@@ -36,7 +36,7 @@ if [ ! -f "$STAGE/config/system/settings.php" ] && [[ "$ADMIN_PASS" != *"!" ]]; 
 fi
 
 echo "=== PLESK DATABASE ==="
-plesk bin database --info "$DB_NAME" >/dev/null 2>&1 ||   plesk bin database --create "$DB_NAME" -domain dezender.de -type mysql
+plesk bin database --create "$DB_NAME" -domain dezender.de -type mysql >/dev/null 2>&1 || true
 
 if ! plesk bin database --create-dbuser "$DB_USER" -passwd "$DB_PASS"   -domain dezender.de -server localhost:3306 -database "$DB_NAME" >/dev/null 2>&1; then
   plesk bin database --update-dbuser "$DB_USER" -passwd "$DB_PASS"     -server localhost:3306 >/dev/null
