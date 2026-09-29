@@ -26,10 +26,14 @@ if [ ! -s "$DB_PASS_FILE" ]; then
   php -r 'echo bin2hex(random_bytes(18));' > "$DB_PASS_FILE"
 fi
 if [ ! -s "$ADMIN_PASS_FILE" ]; then
-  php -r 'echo bin2hex(random_bytes(18));' > "$ADMIN_PASS_FILE"
+  printf '%s' "$(php -r 'echo bin2hex(random_bytes(18));')Aa1!" > "$ADMIN_PASS_FILE"
 fi
 DB_PASS="$(cat "$DB_PASS_FILE")"
 ADMIN_PASS="$(cat "$ADMIN_PASS_FILE")"
+if [ ! -f "$STAGE/config/system/settings.php" ] && [[ "$ADMIN_PASS" != *"!" ]]; then
+  ADMIN_PASS="${ADMIN_PASS}Aa1!"
+  printf '%s' "$ADMIN_PASS" > "$ADMIN_PASS_FILE"
+fi
 
 echo "=== PLESK DATABASE ==="
 plesk bin database --info "$DB_NAME" >/dev/null 2>&1 ||   plesk bin database --create "$DB_NAME" -domain dezender.de -type mysql
