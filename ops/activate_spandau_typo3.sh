@@ -22,10 +22,10 @@ COMPOSER_ALLOW_SUPERUSER=1 composer update dezender/spandau-sitepackage in2code/
 
 umask 077
 if [ ! -s "$DB_PASS_FILE" ]; then
-  tr -dc A-Za-z0-9 </dev/urandom | head -c 36 > "$DB_PASS_FILE"
+  php -r 'echo bin2hex(random_bytes(18));' > "$DB_PASS_FILE"
 fi
 if [ ! -s "$ADMIN_PASS_FILE" ]; then
-  tr -dc A-Za-z0-9 </dev/urandom | head -c 36 > "$ADMIN_PASS_FILE"
+  php -r 'echo bin2hex(random_bytes(18));' > "$ADMIN_PASS_FILE"
 fi
 DB_PASS="$(cat "$DB_PASS_FILE")"
 ADMIN_PASS="$(cat "$ADMIN_PASS_FILE")"
