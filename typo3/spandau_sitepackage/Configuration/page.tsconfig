@@ -1,0 +1,15 @@
+# TYPO3 v12 compatibility: explicit New Content Element wizard entry.
+# TYPO3 v13 discovers the CType from TCA automatically.
+mod.wizards.newContentElement.wizardItems.common {
+    elements {
+        spandau_player_card {
+            iconIdentifier = content-card
+            title = 135er – Spielerkarte
+            description = Spielerprofil mit Kiez-Rolle, Bio, FAL-Bild, K/D und Siegesquote.
+            tt_content_defValues {
+                CType = spandau_player_card
+            }
+        }
+    }
+    show := addToList(spandau_player_card)
+}
