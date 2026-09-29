@@ -1,0 +1,7 @@
+spandau.community {
+    # Set these to real page/usergroup UIDs in the TYPO3 backend template.
+    userStoragePid = 0
+    userGroupUid = 0
+    loginRedirectPid = 0
+    logoutRedirectPid = 0
+}
