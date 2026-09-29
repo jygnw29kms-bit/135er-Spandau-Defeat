@@ -8,7 +8,7 @@
     "typo3/cms-core": "^12.4 || ^13.4",
     "typo3/cms-fluid-styled-content": "^12.4 || ^13.4",
     "typo3/cms-felogin": "^12.4 || ^13.4",
-    "in2code/femanager": "^8.0"
+    "in2code/femanager": "^8.0 || ^13.0"
   },
   "extra": {
     "typo3/cms": {
