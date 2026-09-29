@@ -1,27 +1,37 @@
 # Source 2 maps
 
-All 20 current maps are rebuilt for the Source 2 / CS2 toolchain.
+All 20 maps are in active Source 2 / CS2 map production.
 
-Recommended project-side naming:
-- `sd_rathaus_spandau`
-- `sd_zitadelle`
-- `sd_staaken`
-- `sd_rodelberg`
-- `sd_kiesteich`
-- `sd_falkenhagener_feld`
-- `sd_lynarstrasse`
-- `sd_wroehmaennerpark`
-- `sd_freiheit`
-- `sd_martin_buber_schule`
-- `sd_askanier_schule`
-- `sd_b_traven_schule`
-- `sd_fort_hahneberg_1945`
-- `sd_teufelsberg_coldwar`
-- `sd_flugplatz_gatow_1945`
-- `sd_gatow_luftbruecke_1948`
-- `sd_radeland_1945`
-- `sd_hakenfelde_heeresamt_1944`
-- `sd_zitadelle_1945`
-- `sd_britischer_sektor_spandau`
+## Canonical roster
 
-These names define project identity only; actual Hammer content files are added when the authored Source 2 maps are committed.
+- rathaus_spandau
+- zitadelle
+- staaken
+- rodelberg
+- kiesteich
+- falkenhagener_feld
+- lynarstrasse
+- wroehmaennerpark
+- freiheit
+- martin_buber_schule
+- askanier_schule
+- b_traven_schule
+- fort_hahneberg_1945
+- teufelsberg_coldwar
+- flugplatz_gatow_1945
+- gatow_luftbruecke_1948
+- radeland_1945
+- hakenfelde_heeresamt_1944
+- zitadelle_1945
+- britischer_sektor_spandau
+
+## Current technical state
+
+- 20 / 20 VMAP geometry builds exist locally.
+- 20 / 20 exact-LoD2 integration builds exist locally.
+- 20 / 20 DGM terrain-reference VMAPs are generated and Valve-DMX-valid.
+- Rathaus Spandau is the gameplay/reference map.
+- Gameplay v2 + NAV seeds are generated and Valve-DMX-valid for the other 19 maps.
+- The 19 staged gameplay builds are not yet promoted over the active sources because the current command-line runtime compiler is blocked by the Workshop-Tools/Steam graphics context.
+
+Per-map production intent and A/B/C layout notes remain in `specs/`.
