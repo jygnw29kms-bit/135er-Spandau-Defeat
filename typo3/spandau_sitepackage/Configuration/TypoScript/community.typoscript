@@ -1,0 +1,37 @@
+# Community defaults.
+# Replace the numeric page IDs with the real TYPO3 page/storage UIDs during site integration.
+
+plugin.tx_femanager {
+    persistence {
+        storagePid = {$spandau.community.userStoragePid}
+    }
+
+    settings {
+        # Assign every new account to the fixed community usergroup.
+        new {
+            forceValues {
+                beforeAnyConfirmation {
+                    usergroup = TEXT
+                    usergroup.value = {$spandau.community.userGroupUid}
+                }
+            }
+        }
+    }
+
+    _LOCAL_LANG.de {
+        create = Kiez-Mitglied wern!
+        username = Dein Kiezname
+        password = Dein Geheimwort
+        email = Deine Strippenpost
+        submit = Ab dafür, Keule!
+    }
+}
+
+plugin.tx_felogin_login {
+    settings {
+        pid = {$spandau.community.userStoragePid}
+        redirectMode = login,logout
+        redirectPageLogin = {$spandau.community.loginRedirectPid}
+        redirectPageLogout = {$spandau.community.logoutRedirectPid}
+    }
+}
