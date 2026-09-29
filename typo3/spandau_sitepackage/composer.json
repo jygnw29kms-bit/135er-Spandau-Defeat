@@ -1,0 +1,23 @@
+{
+  "name": "dezender/spandau-sitepackage",
+  "type": "typo3-cms-extension",
+  "description": "TYPO3 Sitepackage for 135er - Spandau Strike",
+  "license": "GPL-2.0-or-later",
+  "require": {
+    "php": "^8.1 || ^8.2 || ^8.3",
+    "typo3/cms-core": "^12.4 || ^13.4",
+    "typo3/cms-fluid-styled-content": "^12.4 || ^13.4",
+    "typo3/cms-felogin": "^12.4 || ^13.4",
+    "in2code/femanager": "^8.0"
+  },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "spandau_sitepackage"
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "Dezender\\SpandauSitepackage\\": "Classes/"
+    }
+  }
+}
