@@ -1,0 +1,29 @@
+tt_content.spandau_player_card = FLUIDTEMPLATE
+tt_content.spandau_player_card {
+    file = EXT:spandau_sitepackage/Resources/Private/Templates/ContentElements/SpandauPlayerCard.html
+
+    dataProcessing {
+        10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+        10 {
+            references.fieldName = image
+            references.table = tt_content
+            as = images
+        }
+    }
+}
+
+# Berliner Kiez-Ton für das native TYPO3 Frontend-Login.
+plugin.tx_felogin_login {
+    settings {
+        redirectMode = login,logout
+    }
+
+    _LOCAL_LANG.de {
+        username = Kiezname
+        password = Geheimwort
+        login = Anmelden, Keule!
+        logout = Abmelden, wa!
+        forgot_password = Geheimwort verpeilt?
+        reset_password = Neues Geheimwort klarmachen
+    }
+}
