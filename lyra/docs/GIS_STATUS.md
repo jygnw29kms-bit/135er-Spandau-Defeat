@@ -38,8 +38,20 @@ A 1.8 km x 1.8 km WFS query around that center returned 4,610 matching building 
 5. Add custom landmark replacement layer.
 6. Keep historical reconstruction separate from the modern GIS reference layer.
 
-## Local workstation limitation
-DESKTOP-BNDD1US currently has no Unreal Engine installation registered in:
-C:\ProgramData\Epic\UnrealEngineLauncher\LauncherInstalled.dat
+## Local workstation status
+DESKTOP-BNDD1US has a direct/source Unreal Engine installation at:
+C:\UnrealEngine-5.8
 
-Therefore the importer has been verified against the live Berlin service and its real GML schema, but has not yet been executed inside the UE5 editor on this workstation.
+Verified:
+- UnrealEditor.exe exists at C:\UnrealEngine-5.8\Engine\Binaries\Win64\UnrealEditor.exe
+- engine version: UE 5.8.3
+- Lyra project: C:\UnrealEngine-5.8\Samples\Games\Lyra\Lyra.uproject
+- PythonScriptPlugin enabled
+- EditorScriptingUtilities enabled
+
+A UE5.8 command-line smoke test was started successfully. Lyra currently aborts before Python execution because the local Lyra sample content is incomplete: /Game/DefaultGameData.DefaultGameData is missing. The failure is in Lyra startup, not in the Berlin GIS importer.
+
+There is also an existing Falkenhagener Feld PoC under:
+C:\UnrealEngine-5.8\Samples\Games\Lyra\Design\FalkenhagenerFeldFinal
+with generator:
+C:\UnrealEngine-5.8\Samples\Games\Lyra\Content\Python\create_falkenhagener_feld_final.py

@@ -15,6 +15,8 @@ EPSG = "EPSG:25833"
 UU_PER_M = 100.0
 DEFAULT_HEIGHT_M = 10.0
 ROOT_FOLDER = "Berlin_LoD2_Autonomous_Import"
+LEVEL_ROOT = "/Game/Maps/BerlinSpandau"
+CREATE_PARTITIONED_WORLD = True
 CUBE_MESH = "/Engine/BasicShapes/Cube.Cube"
 GRID_MATERIAL = "/Engine/EngineMaterials/WorldGridMaterial.WorldGridMaterial"
 WFS_BASE_URL = "https://gdi.berlin.de/services/wfs/ua_gebaeudehoehen"
@@ -344,9 +346,18 @@ def main():
     if not mesh:
         raise RuntimeError("Missing engine cube mesh: " + CUBE_MESH)
 
+    level_path = LEVEL_ROOT + "/" + ACTIVE_MAP
+    level_subsystem = unreal.get_editor_subsystem(unreal.LevelEditorSubsystem)
+    if not level_subsystem:
+        raise RuntimeError("LevelEditorSubsystem unavailable")
+
+    if not level_subsystem.new_level(level_path, CREATE_PARTITIONED_WORLD):
+        raise RuntimeError("Failed to create level: " + level_path)
+
+    log("Created World Partition level: " + level_path)
+
     map_root = ROOT_FOLDER + "/" + ACTIVE_MAP
     folder = map_root + "/Buildings"
-    remove_previous(map_root)
 
     created = []
     with unreal.ScopedSlowTask(
@@ -364,10 +375,10 @@ def main():
             except Exception as exc:
                 warn("Building %s failed: %s" % (record["id"], exc))
 
-    try:
-        unreal.EditorLevelLibrary.save_current_level()
-    except Exception as exc:
-        warn("Automatic level save failed: " + str(exc))
+    if not level_subsystem.save_current_level():
+        warn("Automatic level save returned false")
+    else:
+        log("Saved level: " + level_path)
 
     elapsed = time.perf_counter() - started
     log("BBOX: %.0f m x %.0f m" % (
