@@ -1,17 +1,195 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=UnifrakturMaguntia&display=swap');
-:root{--r:#e30613;--bg:#0b0b0b;--p:#151515;--t:#f3f3f3;--m:#aaa}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 85% 0,rgba(227,6,19,.16),transparent 30rem),var(--bg);color:var(--t);font-family:Inter,Arial,sans-serif}a{color:inherit;text-decoration:none}.w{width:min(calc(100% - 28px),1380px);margin:auto}.top{position:sticky;top:0;z-index:20;background:#080808e8;border-bottom:1px solid #292929;backdrop-filter:blur(14px)}.nav{height:74px;display:flex;align-items:center;justify-content:space-between}.brand{font:34px "UnifrakturMaguntia",serif}.brand b{color:var(--r)}.menu{display:flex;gap:24px;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.1em}.hero{min-height:70vh;display:grid;align-items:end;padding:90px 0 60px;position:relative;overflow:hidden}.hero:after{content:"135";position:absolute;right:-4vw;bottom:-8vw;font:35vw/.75 Impact,sans-serif;color:#ffffff08}.heroIn{position:relative;z-index:1;display:grid;grid-template-columns:1.2fr .8fr;gap:42px;align-items:end}.k{color:var(--r);font-size:11px;font-weight:900;letter-spacing:.2em;text-transform:uppercase}.hero h1{font:400 clamp(4rem,10vw,9rem)/.9 "UnifrakturMaguntia",serif;margin:14px 0}.lead{max-width:780px;color:#c7c7c7;border-left:4px solid var(--r);padding-left:18px;font-size:1.08rem}.status{background:linear-gradient(#171717,#0e0e0e);border:1px solid #333;padding:24px;box-shadow:0 24px 70px #0008}.status strong{font-size:24px}.live{color:#72ef93;font-size:11px;font-weight:900;text-transform:uppercase}.sec{padding:78px 0;border-top:1px solid #222}.sec h2{font:400 clamp(3rem,7vw,6rem)/1 "UnifrakturMaguntia",serif;margin:8px 0 24px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:var(--p);border:1px solid #303030;overflow:hidden}.card img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block;filter:saturate(.8) contrast(1.05)}.card div{padding:18px}.card h3{margin:0 0 8px;font-size:18px}.card p{margin:0;color:var(--m);font-size:13px}.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}.btn{padding:13px 18px;border:1px solid #555;font-size:12px;font-weight:900;text-transform:uppercase}.btn.red{background:var(--r);border-color:var(--r)}.content{padding:50px 0}.content .frame{background:#131313;border:1px solid #2d2d2d;padding:28px;margin:0 0 24px}.foot{padding:36px 0;border-top:1px solid #222;color:#777;font-size:12px}.content input,.content select,.content textarea{width:100%;background:#090909!important;color:white!important;border:1px solid #333!important;padding:12px!important}.content input[type=submit],.content button{background:var(--r)!important;border:0!important;color:#fff!important;font-weight:900!important;text-transform:uppercase!important}@media(max-width:900px){.menu{display:none}.heroIn{grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr}}@media(max-width:620px){.grid{grid-template-columns:1fr}.hero h1{font-size:18vw}.hero{min-height:auto;padding-top:70px}}
+:root{
+ --red:#e30613;--red2:#ff3340;--ink:#070809;--panel:#101318;--panel2:#171b21;
+ --line:#2a3038;--text:#f4f6f8;--muted:#929ba6;--grid:rgba(255,255,255,.035);
+ --ok:#6ee7a2;--warn:#e5b94d;--mono:"Arial Narrow","Roboto Condensed",Arial,sans-serif;
+ --display:Impact,"Arial Black",Arial,sans-serif
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:
+ linear-gradient(rgba(5,6,7,.92),rgba(5,6,7,.97)),
+ url('https://raw.githubusercontent.com/jygnw29kms-bit/135er-Spandau-Defeat/main/media/theme/map-matrix.svg') center/1100px auto fixed,
+ #070809;color:var(--text);font-family:Inter,Arial,sans-serif;letter-spacing:.01em}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1000;background:
+ repeating-linear-gradient(0deg,transparent 0,transparent 3px,rgba(255,255,255,.012) 4px)}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+.shell{width:min(calc(100% - 28px),1480px);margin:auto}
+.topbar{position:sticky;top:0;z-index:50;background:rgba(6,7,8,.93);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.topbar:after{content:"";display:block;height:2px;background:linear-gradient(90deg,var(--red),transparent 50%)}
+.nav{min-height:76px;display:flex;align-items:center;gap:24px}
+.brand{display:flex;align-items:center;gap:13px;margin-right:auto}
+.badge135{width:52px;height:52px;display:grid;place-items:center;background:var(--red);clip-path:polygon(8% 0,100% 0,100% 78%,78% 100%,0 100%,0 20%);font:900 19px/1 var(--display)}
+.brandcopy strong{display:block;font:900 22px/1 var(--mono);text-transform:uppercase;letter-spacing:.08em}
+.brandcopy span{display:block;margin-top:4px;color:#7f8995;font:700 9px/1 var(--mono);letter-spacing:.22em;text-transform:uppercase}
+.menu{display:flex;gap:4px;flex-wrap:wrap}
+.menu a{padding:11px 13px;border:1px solid transparent;color:#cbd0d6;font:800 10px/1 var(--mono);text-transform:uppercase;letter-spacing:.14em}
+.menu a:hover{border-color:#3a414b;background:#14181d;color:#fff}
+.menu .hot{border-color:var(--red);color:#fff;background:linear-gradient(180deg,#e30613,#ae000b)}
+.hero{position:relative;min-height:78vh;display:grid;align-items:end;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero:before{content:"";position:absolute;inset:0;background:
+ linear-gradient(90deg,#050607 0%,rgba(5,6,7,.88) 42%,rgba(5,6,7,.22) 72%,#050607 100%),
+ linear-gradient(0deg,#050607 0%,transparent 45%),
+ url('https://raw.githubusercontent.com/jygnw29kms-bit/135er-Spandau-Defeat/main/media/source2/masters/all-maps-master-gallery.jpg') center/cover no-repeat;
+ filter:saturate(.65) contrast(1.15)}
+.hero:after{content:"135";position:absolute;right:-2vw;bottom:-5vw;color:rgba(255,255,255,.035);font:900 min(36vw,540px)/.8 var(--display);letter-spacing:-.06em}
+.heroGrid{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:end;padding:110px 0 58px}
+.eyebrow,.hudLabel{color:var(--red2);font:900 10px/1 var(--mono);letter-spacing:.22em;text-transform:uppercase}
+.hero h1{max-width:950px;margin:14px 0 20px;font:900 clamp(4.2rem,10vw,9.5rem)/.79 var(--display);text-transform:uppercase;letter-spacing:-.045em}
+.hero h1 em{display:block;color:transparent;-webkit-text-stroke:1px #fff;font-style:normal}
+.heroLead{max-width:760px;padding:16px 0 16px 18px;border-left:3px solid var(--red);color:#c5cbd2;font-size:1.05rem;line-height:1.65}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+.btn{position:relative;padding:14px 18px;border:1px solid #424a55;background:#101318;font:900 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase}
+.btn:hover{border-color:#7c8794;background:#171c22}
+.btn.red{background:var(--red);border-color:var(--red)}
+.btn:after{content:"";position:absolute;right:-1px;bottom:-1px;border-style:solid;border-width:0 0 8px 8px;border-color:transparent transparent #050607 transparent}
+.brief{background:linear-gradient(180deg,rgba(22,26,31,.96),rgba(11,13,16,.96));border:1px solid #38404a;box-shadow:0 30px 90px #000a}
+.briefHead{display:flex;justify-content:space-between;gap:20px;padding:14px 16px;border-bottom:1px solid #303741;background:#0b0e11;font:900 10px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase}
+.dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--red);box-shadow:0 0 14px var(--red)}
+.briefBody{padding:20px}
+.briefTitle{font:900 32px/1 var(--display);letter-spacing:.03em;text-transform:uppercase}
+.telemetry{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:18px}
+.telemetry div{padding:12px;border:1px solid #2c333d;background:#0c0f12}
+.telemetry b{display:block;font:900 17px/1 var(--mono)}
+.telemetry span{display:block;margin-top:5px;color:#7f8995;font:700 9px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase}
+.section{position:relative;padding:82px 0;border-bottom:1px solid #20262d}
+.sectionHead{display:flex;justify-content:space-between;gap:24px;align-items:end;margin-bottom:26px}
+.section h2{margin:8px 0 0;font:900 clamp(2.7rem,6vw,5.8rem)/.88 var(--display);text-transform:uppercase;letter-spacing:-.03em}
+.sectionMeta{max-width:520px;color:#8e98a4;font-size:13px;line-height:1.65}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.mapCard{position:relative;overflow:hidden;background:#0c0f12;border:1px solid #303842}
+.mapCard:before{content:"";position:absolute;z-index:2;inset:0;pointer-events:none;background:linear-gradient(180deg,transparent 50%,rgba(5,6,7,.92))}
+.mapCard img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;filter:saturate(.72) contrast(1.12);transition:.25s transform}
+.mapCard:hover img{transform:scale(1.025)}
+.mapInfo{position:absolute;z-index:3;left:16px;right:16px;bottom:15px}
+.mapCode{color:var(--red2);font:900 9px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase}
+.mapInfo h3{margin:7px 0 5px;font:900 24px/1 var(--display);text-transform:uppercase}
+.mapInfo p{margin:0;color:#b6bdc5;font-size:12px}
+.opsGrid{display:grid;grid-template-columns:1.15fr .85fr;gap:14px}
+.panel{position:relative;background:linear-gradient(180deg,#12161b,#0d1014);border:1px solid #303842;padding:22px}
+.panel:before{content:"";position:absolute;top:-1px;left:-1px;width:72px;height:2px;background:var(--red)}
+.panel h3{margin:7px 0 10px;font:900 26px/1 var(--display);text-transform:uppercase}
+.panel p{color:#9ba4ae;line-height:1.65}
+.opsList{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:16px}
+.opsList a{padding:13px;border:1px solid #2c333d;background:#0b0e11;font:800 10px/1.2 var(--mono);letter-spacing:.1em;text-transform:uppercase}
+.opsList a:hover{border-color:var(--red);color:#fff}
+.contentWrap{padding:40px 0 70px}
+.content{position:relative}
+.content:before{content:"TYPO3 // CLAN OPS";display:block;margin:0 0 12px;color:#66717d;font:900 9px/1 var(--mono);letter-spacing:.2em}
+.content .frame{position:relative;background:linear-gradient(180deg,#12161b,#0b0e11);border:1px solid #303842;padding:24px;margin:0 0 16px}
+.content .frame:before{content:"";position:absolute;left:-1px;top:-1px;width:52px;height:2px;background:var(--red)}
+.content h1,.content h2,.content h3{font-family:var(--display);text-transform:uppercase;letter-spacing:.02em}
+.content input,.content select,.content textarea{width:100%;background:#080a0c!important;color:#fff!important;border:1px solid #36404a!important;padding:13px!important;border-radius:0!important;outline:none}
+.content input:focus,.content select:focus,.content textarea:focus{border-color:var(--red)!important;box-shadow:0 0 0 1px var(--red)}
+.content input[type=submit],.content button,.content .btn-primary{width:auto!important;background:var(--red)!important;border:1px solid var(--red)!important;color:#fff!important;font:900 11px/1 var(--mono)!important;letter-spacing:.1em;text-transform:uppercase;padding:14px 18px!important}
+.content label{display:block;margin-bottom:7px;color:#aeb6bf;font:800 10px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase}
+.content table{width:100%;border-collapse:collapse;background:#0b0e11}
+.content th,.content td{padding:11px;border:1px solid #2b323a;text-align:left}
+.content th{font:900 10px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;background:#141920}
+.footer{border-top:1px solid #252b32;background:#050607;padding:26px 0;color:#68727e}
+.footerGrid{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font:800 9px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase}
+@media(max-width:980px){.menu{display:none}.heroGrid,.opsGrid{grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr}.hero{min-height:auto}.heroGrid{padding-top:80px}}
+@media(max-width:640px){.shell{width:min(calc(100% - 20px),1480px)}.grid{grid-template-columns:1fr}.hero h1{font-size:18vw}.telemetry,.opsList{grid-template-columns:1fr}.section{padding:58px 0}.sectionHead{display:block}.brandcopy strong{font-size:17px}}
 </style>
-<header class="top"><div class="w nav"><a class="brand" href="/135erSpandauStrike/">135er <b>Spandau Strike</b></a><nav class="menu"><a href="#maps">Maps</a><a href="#kader">Kader</a><a href="#community">Community</a><a href="/135erSpandauStrike/intern">Intern</a><a href="/135erSpandauStrike/anmelden">Anmelden, Keule!</a></nav></div></header>
-<section class="hero"><div class="w heroIn"><div><div class="k">Berlin-Spandau // 135xx // Source 2</div><h1>Ein Kiez.<br>Ein Team.<br><span style="color:#e30613">Ein Sieg.</span></h1><p class="lead">135er – Spandau Strike is dit Zuhause für unsere Maps, unseren Server und alle Keulen, die lieber zusammen spielen als rumlabern.</p><div class="cta"><a class="btn red" href="/135erSpandauStrike/registrieren">Kiez-Mitglied wern!</a><a class="btn" href="#maps">Maps kieken</a></div></div><aside class="status"><div class="live">● Kiez online</div><strong>135_STRIKE_SQUAD</strong><p style="color:#999">Community · Source 2 · Berlin-Spandau</p></aside></div></section>
-<section class="sec" id="maps"><div class="w"><div class="k">Unsere Maps</div><h2>Spandau im Gefecht</h2><div class="grid">
-<article class="card"><img src="https://raw.githubusercontent.com/jygnw29kms-bit/135er-Spandau-Defeat/main/media/source2/masters/maps/rathaus-spandau-master-reference.jpg" alt="Rathaus Spandau"><div><h3>Rathaus Spandau</h3><p>Altstadt, Rathaus und Bahnhof als urbaner Source-2-Kampfraum.</p></div></article>
-<article class="card"><img src="https://raw.githubusercontent.com/jygnw29kms-bit/135er-Spandau-Defeat/main/media/source2/masters/maps/falkenhagener-feld-master-reference.jpg" alt="Falkenhagener Feld"><div><h3>Falkenhagener Feld</h3><p>Plattenbau, Grünzüge und lange Sichtachsen ausm Kiez.</p></div></article>
-<article class="card"><img src="https://raw.githubusercontent.com/jygnw29kms-bit/135er-Spandau-Defeat/main/media/source2/masters/maps/zitadelle-spandau-master-reference.jpg" alt="Zitadelle Spandau"><div><h3>Zitadelle</h3><p>Festungsmauern, Höfe und enge Rotationen rund um die Zitadelle.</p></div></article>
-</div></div></section>
-<section class="sec" id="kader"><div class="w"><div class="k">135_STRIKE_SQUAD</div><h2>Die Keulen vom Kader</h2><p class="lead">Spielerkarten kommen direkt aus TYPO3: Ingame-Name, Rolle, Bio, FAL-Bild, K/D und Siegesquote. Keen Dummy-Kram.</p></div></section>
-<section class="sec" id="community"><div class="w"><div class="k">Community</div><h2>Komm rin in’n Kiez</h2><div class="cta"><a class="btn red" href="/135erSpandauStrike/registrieren">Kiez-Mitglied wern!</a><a class="btn" href="/135erSpandauStrike/anmelden">Anmelden, Keule!</a></div></div></section>
-<main class="content"><div class="w"><f:format.raw>{content}</f:format.raw></div></main>
-<footer class="foot"><div class="w">© 2026 dezender.de/135erSpandauStrike – Ein Kiez. Ein Team. Ein Sieg.</div></footer>
+</head>
+<body>
+<header class="topbar">
+ <div class="shell nav">
+  <a class="brand" href="/135erSpandauStrike/">
+   <span class="badge135">135</span>
+   <span class="brandcopy"><strong>Spandau Strike</strong><span>Berlin // Clan Operations</span></span>
+  </a>
+  <nav class="menu" aria-label="Hauptnavigation">
+   <a href="/135erSpandauStrike/#maps">Maps</a>
+   <a href="/135erSpandauStrike/#kader">Kader</a>
+   <a href="/135erSpandauStrike/intern">Clanbereich</a>
+   <a href="/135erSpandauStrike/registrieren">Recruiting</a>
+   <a class="hot" href="/135erSpandauStrike/anmelden">Anmelden</a>
+  </nav>
+ </div>
+</header>
+
+<section class="hero">
+ <div class="shell heroGrid">
+  <div>
+   <div class="eyebrow">135xx // Berlin-Spandau // Source 2 Community</div>
+   <h1>Spandau<br><em>Strike</em></h1>
+   <p class="heroLead">Eigene Maps. Eigener Server. Eigener Kiez. 135er Spandau Strike verbindet Source-2-Mapbau, Clanbetrieb und Berliner Community in einem gemeinsamen Einsatzraum.</p>
+   <div class="actions">
+    <a class="btn red" href="/135erSpandauStrike/registrieren">Kiez-Mitglied werden</a>
+    <a class="btn" href="/135erSpandauStrike/intern">Clanbereich öffnen</a>
+    <a class="btn" href="#maps">Operationskarten</a>
+   </div>
+  </div>
+  <aside class="brief">
+   <div class="briefHead"><span><i class="dot"></i> Operations Board</span><span>135_STRIKE_SQUAD</span></div>
+   <div class="briefBody">
+    <div class="hudLabel">Mission Identity</div>
+    <div class="briefTitle">Ein Kiez.<br>Ein Team.<br>Ein Sieg.</div>
+    <div class="telemetry">
+     <div><b>135XX</b><span>Sector</span></div>
+     <div><b>SOURCE 2</b><span>Engine Track</span></div>
+     <div><b>SPANDAU</b><span>Operations Area</span></div>
+     <div><b>CLAN OPS</b><span>Community Core</span></div>
+    </div>
+   </div>
+  </aside>
+ </div>
+</section>
+
+<section class="section" id="maps">
+ <div class="shell">
+  <div class="sectionHead">
+   <div><div class="eyebrow">Operations // Map Select</div><h2>Spandau im Gefecht</h2></div>
+   <p class="sectionMeta">Optische Master und Projektkarten aus dem 135er-Spandau-Strike-Repository. Finale Screenshots werden ausschließlich aus der Engine übernommen.</p>
+  </div>
+  <div class="grid">
+   <article class="mapCard"><img src="https://raw.githubusercontent.com/jygnw29kms-bit/135er-Spandau-Defeat/main/media/source2/masters/maps/rathaus-spandau-master-reference.jpg" alt="Rathaus Spandau Referenz"><div class="mapInfo"><div class="mapCode">OP-01 // URBAN CORE</div><h3>Rathaus Spandau</h3><p>Altstadt · Rathaus · Bahnhof</p></div></article>
+   <article class="mapCard"><img src="https://raw.githubusercontent.com/jygnw29kms-bit/135er-Spandau-Defeat/main/media/source2/masters/maps/falkenhagener-feld-master-reference.jpg" alt="Falkenhagener Feld Referenz"><div class="mapInfo"><div class="mapCode">OP-02 // RESIDENTIAL</div><h3>Falkenhagener Feld</h3><p>Plattenbau · Grünzüge · Sichtachsen</p></div></article>
+   <article class="mapCard"><img src="https://raw.githubusercontent.com/jygnw29kms-bit/135er-Spandau-Defeat/main/media/source2/masters/maps/zitadelle-spandau-master-reference.jpg" alt="Zitadelle Spandau Referenz"><div class="mapInfo"><div class="mapCode">OP-03 // FORTRESS</div><h3>Zitadelle</h3><p>Festung · Höfe · enge Rotationen</p></div></article>
+   <article class="mapCard"><img src="https://raw.githubusercontent.com/jygnw29kms-bit/135er-Spandau-Defeat/main/media/source2/masters/maps/staaken-master-reference.jpg" alt="Staaken Referenz"><div class="mapInfo"><div class="mapCode">OP-04 // WEST SECTOR</div><h3>Staaken</h3><p>Wohngebiet · offene Flanken · Kiezachsen</p></div></article>
+   <article class="mapCard"><img src="https://raw.githubusercontent.com/jygnw29kms-bit/135er-Spandau-Defeat/main/media/source2/masters/maps/martin-buber-schule-master-reference.jpg" alt="Martin-Buber-Schule Referenz"><div class="mapInfo"><div class="mapCode">OP-05 // SCHOOL COMPLEX</div><h3>Martin-Buber</h3><p>Schulcampus · Höfe · Innenbereiche</p></div></article>
+   <article class="mapCard"><img src="https://raw.githubusercontent.com/jygnw29kms-bit/135er-Spandau-Defeat/main/media/source2/masters/maps/askanier-schule-master-reference.jpg" alt="Askanier Schule Referenz"><div class="mapInfo"><div class="mapCode">OP-06 // SCHOOL COMPLEX</div><h3>Askanier</h3><p>Gebäudeflügel · Schulhof · Nahkampf</p></div></article>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="kader">
+ <div class="shell opsGrid">
+  <div class="panel">
+   <div class="eyebrow">Squad // Operator Dossiers</div>
+   <h3>Die Keulen vom Kader</h3>
+   <p>Spielerkarten werden aus echten TYPO3-Inhalten aufgebaut: Ingame-Name, Rolle, Bio, Bild, K/D und Siegesquote. Die Darstellung folgt dem Operator-/Dossier-Stil des 135er-GFX-Themes.</p>
+   <div class="actions"><a class="btn red" href="/135erSpandauStrike/intern/kader">Kader öffnen</a></div>
+  </div>
+  <div class="panel">
+   <div class="eyebrow">Clan Ops // Intern</div>
+   <h3>Einsatzbereich</h3>
+   <p>Der interne Bereich bündelt die normalen Clan-Funktionen hinter dem Mitgliederlogin.</p>
+   <div class="opsList">
+    <a href="/135erSpandauStrike/intern/news">Clan-News</a>
+    <a href="/135erSpandauStrike/intern/termine">Termine & Matches</a>
+    <a href="/135erSpandauStrike/intern/training">Training</a>
+    <a href="/135erSpandauStrike/intern/taktiken-downloads">Taktiken & Downloads</a>
+    <a href="/135erSpandauStrike/intern/gameserver">Gameserver</a>
+    <a href="/135erSpandauStrike/intern/playerstats">Playerstats</a>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="contentWrap">
+ <main class="shell content">
+  <f:format.raw>{content}</f:format.raw>
+ </main>
+</section>
+
+<footer class="footer">
+ <div class="shell footerGrid"><span>© 2026 // 135er Spandau Strike</span><span>Berlin-Spandau // Source 2 // Clan Operations</span></div>
+</footer>
+</body>
 </html>
