@@ -86,3 +86,26 @@ Verified in UE 5.8.3 rendered game mode:
 - real in-engine screenshot: lyra/docs/screenshots/falkenhagener_feld_ingame_01.png
 
 The current visual is still a GIS/gameplay blockout. Building volumes are data-driven proxies and the temporary gameplay ground uses WorldGrid. DGM1 terrain, streets, water, vegetation, final materials and landmark geometry remain production-quality work after the playable milestone.
+
+## Playable ShooterMaps milestone — 2026-09-30
+Playable runtime map:
+- /ShooterMaps/Maps/SpandauStrikeGIS/falkenhagener_feld
+- 8 LyraPlayerStart actors
+- NavMeshBoundsVolume + RecastNavMesh
+- DirectionalLight, SkyLight and fog
+- Lyra ShooterCore runtime verified
+
+Real OSM overlay:
+- 1,096 OSM elements processed
+- 4,805 road/path segments
+- 230 water segments
+- saved as World Partition external actors
+
+Standalone validation:
+- URL option ?NumBots=7 verified
+- ShooterGame.GamePhase.Playing entered
+- Warmup phase ended successfully
+- real 1280x720 in-game screenshots captured
+- r.WarnOfBadDrivers=0 used in project SystemSettings to avoid the development machine driver warning dialog
+
+The map is now playable as a Lyra standalone ShooterMaps level. Visual fidelity remains a production pass: building/road/water materials, terrain elevation, vegetation and landmark-specific geometry should continue to be refined.
