@@ -30,6 +30,8 @@ plugin.tx_femanager {
 plugin.tx_felogin_login {
     settings {
         pid = {$spandau.community.userStoragePid}
+        recursive = 1
+        showForgotPassword = 1
         redirectMode = login,logout
         redirectPageLogin = {$spandau.community.loginRedirectPid}
         redirectPageLogout = {$spandau.community.logoutRedirectPid}
