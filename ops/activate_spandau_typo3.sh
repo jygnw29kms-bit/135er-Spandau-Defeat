@@ -116,7 +116,7 @@ find "$PUBLISH" -type f -exec chmod 0644 {} +
 
 cat > "$PUBLISH/index.php" <<'PHP'
 <?php
-require __DIR__ . '/../../../spandau-strike-typo3-staging/public/index.php';
+require __DIR__ . '/../../spandau-strike-typo3-staging/public/index.php';
 PHP
 
 if [ -f "$STAGE/public/.htaccess" ]; then
