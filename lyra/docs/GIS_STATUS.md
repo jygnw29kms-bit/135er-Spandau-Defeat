@@ -70,3 +70,19 @@ Full Falkenhagener Feld import, 1.8 km x 1.8 km:
 - runtime: 100.40 seconds
 
 The end-to-end chain is therefore verified: Lyra startup -> Python 3.11 -> Berlin WFS -> EPSG:25833 transform -> World Partition level -> actors -> save.
+
+
+## Playable Falkenhagener Feld milestone — 2026-09-30
+Verified in UE 5.8.3 rendered game mode:
+- final gameplay map: /ShooterMaps/Maps/SpandauStrikeGIS/falkenhagener_feld
+- WorldSettings: SpandauStrikeWorldSettings
+- Experience: B_LyraShooterGame_ControlPoints
+- ShooterCore transitions to Active
+- eight LyraPlayerStart actors
+- NavMeshBoundsVolume and runtime navmesh generation
+- Control Points A/B/C
+- Shooter HUD, pawn and weapon active
+- game phase transitions Warmup -> Playing
+- real in-engine screenshot: lyra/docs/screenshots/falkenhagener_feld_ingame_01.png
+
+The current visual is still a GIS/gameplay blockout. Building volumes are data-driven proxies and the temporary gameplay ground uses WorldGrid. DGM1 terrain, streets, water, vegetation, final materials and landmark geometry remain production-quality work after the playable milestone.
