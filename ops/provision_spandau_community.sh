@@ -23,7 +23,7 @@ ensure_page() {
   local uid
   uid="$(value "SELECT uid FROM pages WHERE pid=$parent AND slug='$slug' AND deleted=0 ORDER BY uid LIMIT 1")"
   if [ -z "$uid" ]; then
-    local feSql="NULL"
+    local feSql="''"
     [ -n "$fegroup" ] && feSql="'$fegroup'"
     sql "INSERT INTO pages (pid,title,slug,doktype,hidden,deleted,tstamp,crdate,sorting,fe_group)
          VALUES ($parent,'$title','$slug',$doktype,0,0,$NOW,$NOW,256,$feSql)"
