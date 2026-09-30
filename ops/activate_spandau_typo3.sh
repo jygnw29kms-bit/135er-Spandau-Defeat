@@ -98,6 +98,11 @@ fi
 
 php "$STAGE/vendor/bin/typo3" cache:flush || true
 
+echo "=== COMMUNITY PROVISIONING ==="
+cp /tmp/135er-Spandau-Defeat/ops/provision_spandau_community.sh /tmp/provision_spandau_community.sh
+chmod 700 /tmp/provision_spandau_community.sh
+/tmp/provision_spandau_community.sh
+
 TS="$(date +%Y%m%d-%H%M%S)"
 PREV="$ROOT/httpdocs/135erSpandauStrike-static-$TS"
 PUBLISH="$ROOT/httpdocs/135erSpandauStrike.next"
