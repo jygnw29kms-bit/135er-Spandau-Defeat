@@ -100,6 +100,28 @@ php "$STAGE/vendor/bin/typo3" cache:flush || true
 
 TS="$(date +%Y%m%d-%H%M%S)"
 PREV="$ROOT/httpdocs/135erSpandauStrike-static-$TS"
+PUBLISH="$ROOT/httpdocs/135erSpandauStrike.next"
+
+OWNER="$(stat -c %U "$ROOT/httpdocs")"
+GROUP="$(stat -c %G "$ROOT/httpdocs")"
+chown -R "$OWNER:$GROUP" "$STAGE"
+chmod 600 "$DB_PASS_FILE" "$ADMIN_PASS_FILE"
+
+rm -rf "$PUBLISH"
+mkdir -p "$PUBLISH"
+cp -a "$STAGE/public/." "$PUBLISH/"
+chown -R "$OWNER:$GROUP" "$PUBLISH"
+find "$PUBLISH" -type d -exec chmod 0755 {} +
+find "$PUBLISH" -type f -exec chmod 0644 {} +
+
+cat > "$PUBLISH/index.php" <<'PHP'
+<?php
+require __DIR__ . '/../../../spandau-strike-typo3-staging/public/index.php';
+PHP
+
+if [ -f "$STAGE/public/.htaccess" ]; then
+  cp "$STAGE/public/.htaccess" "$PUBLISH/.htaccess"
+fi
 
 if [ -L "$LIVE" ]; then
   rm -f "$LIVE"
@@ -107,12 +129,7 @@ elif [ -d "$LIVE" ]; then
   mv "$LIVE" "$PREV"
 fi
 
-ln -s ../spandau-strike-typo3-staging/public "$LIVE"
-
-OWNER="$(stat -c %U "$ROOT/httpdocs")"
-GROUP="$(stat -c %G "$ROOT/httpdocs")"
-chown -R "$OWNER:$GROUP" "$STAGE"
-chmod 600 "$DB_PASS_FILE" "$ADMIN_PASS_FILE"
+mv "$PUBLISH" "$LIVE"
 
 ok=0
 for i in 1 2 3 4 5 6; do
@@ -124,7 +141,7 @@ for i in 1 2 3 4 5 6; do
 done
 
 if [ "$ok" != "1" ]; then
-  rm -f "$LIVE"
+  rm -rf "$LIVE"
   if [ -d "$PREV" ]; then mv "$PREV" "$LIVE"; fi
   echo "Live verification failed; rollback completed." >&2
   exit 23
