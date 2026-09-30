@@ -113,6 +113,8 @@ img{max-width:100%}
  </div>
 </header>
 
+<f:if condition="{data.uid} == 1">
+<f:then>
 <section class="hero">
  <div class="shell heroGrid">
   <div>
@@ -181,6 +183,27 @@ img{max-width:100%}
   </div>
  </div>
 </section>
+</f:then>
+<f:else>
+<section class="section" style="padding:42px 0 26px">
+ <div class="shell">
+  <div class="eyebrow">135er // Clan Operations</div>
+  <h2 style="margin:8px 0 18px;font:900 clamp(2.4rem,6vw,5rem)/.9 var(--display);text-transform:uppercase">{data.title}</h2>
+  <div class="opsList" style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr))">
+   <a href="/135erSpandauStrike/intern">Dashboard</a>
+   <a href="/135erSpandauStrike/intern/news">News</a>
+   <a href="/135erSpandauStrike/intern/kader">Kader</a>
+   <a href="/135erSpandauStrike/intern/termine">Matches</a>
+   <a href="/135erSpandauStrike/intern/training">Training</a>
+   <a href="/135erSpandauStrike/intern/taktiken-downloads">Taktiken</a>
+   <a href="/135erSpandauStrike/intern/gameserver">Server</a>
+   <a href="/135erSpandauStrike/intern/playerstats">Stats</a>
+   <a href="/135erSpandauStrike/intern/profil">Profil</a>
+  </div>
+ </div>
+</section>
+</f:else>
+</f:if>
 
 <section class="contentWrap">
  <main class="shell content">
