@@ -141,6 +141,16 @@ for i in 1 2 3 4 5 6; do
 done
 
 if [ "$ok" != "1" ]; then
+  echo "=== TYPO3 LOGS ===" >&2
+  find "$STAGE/var/log" -maxdepth 1 -type f -name "*.log" -print -exec tail -n 120 {} \; 2>/dev/null >&2 || true
+  echo "=== PHP / WEB LOGS ===" >&2
+  for log in     "$ROOT/logs/proxy_error_log"     "$ROOT/logs/error_log"     "$ROOT/logs/php_error.log"     /var/log/apache2/error.log     /var/log/nginx/error.log
+  do
+    if [ -f "$log" ]; then
+      echo "--- $log ---" >&2
+      tail -n 160 "$log" >&2 || true
+    fi
+  done
   rm -rf "$LIVE"
   if [ -d "$PREV" ]; then mv "$PREV" "$LIVE"; fi
   echo "Live verification failed; rollback completed." >&2
