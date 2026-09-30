@@ -51,10 +51,42 @@ echo "=== EXTENSION SETUP ==="
 php "$STAGE/vendor/bin/typo3" extension:setup
 php "$STAGE/vendor/bin/typo3" cache:flush || true
 
-ROOT_PID="$(MYSQL_PWD="$DB_PASS" mysql -N -u "$DB_USER" -h localhost "$DB_NAME"   -e "SELECT uid FROM pages WHERE pid=0 AND deleted=0 ORDER BY uid LIMIT 1")"
+ROOT_PID="$(MYSQL_PWD="$DB_PASS" mysql -N -u "$DB_USER" -h localhost "$DB_NAME" -e "SELECT uid FROM pages WHERE pid=0 AND deleted=0 ORDER BY uid LIMIT 1")"
+
+if [ -z "$ROOT_PID" ]; then
+  NOW="$(date +%s)"
+  MYSQL_PWD="$DB_PASS" mysql -u "$DB_USER" -h localhost "$DB_NAME" -e "
+    INSERT INTO pages
+      (pid, title, slug, doktype, is_siteroot, hidden, deleted, tstamp, crdate, sorting)
+    VALUES
+      (0, '135er - Spandau Strike', '/', 1, 1, 0, 0, $NOW, $NOW, 256);
+  "
+  ROOT_PID="$(MYSQL_PWD="$DB_PASS" mysql -N -u "$DB_USER" -h localhost "$DB_NAME" -e "SELECT uid FROM pages WHERE pid=0 AND deleted=0 ORDER BY uid LIMIT 1")"
+fi
+
 test -n "$ROOT_PID"
 
-TEMPLATE_COUNT="$(MYSQL_PWD="$DB_PASS" mysql -N -u "$DB_USER" -h localhost "$DB_NAME"   -e "SELECT COUNT(*) FROM sys_template WHERE pid=$ROOT_PID AND deleted=0 AND title=\"135er Spandau Strike Root\"")"
+mkdir -p "$STAGE/config/sites/spandau-strike"
+cat > "$STAGE/config/sites/spandau-strike/config.yaml" <<EOF
+base: 'https://www.dezender.de/135erSpandauStrike/'
+baseVariants: {  }
+errorHandling: {  }
+languages:
+  -
+    title: Deutsch
+    enabled: true
+    languageId: 0
+    base: /
+    locale: de_DE.UTF-8
+    navigationTitle: Deutsch
+    flag: de
+    hreflang: de-DE
+rootPageId: $ROOT_PID
+routes: {  }
+websiteTitle: '135er - Spandau Strike'
+EOF
+
+TEMPLATE_COUNT="$(MYSQL_PWD="$DB_PASS" mysql -N -u "$DB_USER" -h localhost "$DB_NAME" -e "SELECT COUNT(*) FROM sys_template WHERE pid=$ROOT_PID AND deleted=0 AND title=\"135er Spandau Strike Root\"")"
 
 if [ "$TEMPLATE_COUNT" = "0" ]; then
   NOW="$(date +%s)"
