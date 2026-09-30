@@ -9,6 +9,9 @@ plugin.tx_femanager {
     settings {
         # Assign every new account to the fixed community usergroup.
         new {
+            # Server-side group enforcement: users cannot craft a request to join
+            # another frontend group.
+            overrideUserGroup = {$spandau.community.userGroupUid}
             forceValues {
                 beforeAnyConfirmation {
                     usergroup = TEXT
