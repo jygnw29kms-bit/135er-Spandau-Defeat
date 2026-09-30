@@ -39,19 +39,34 @@ A 1.8 km x 1.8 km WFS query around that center returned 4,610 matching building 
 6. Keep historical reconstruction separate from the modern GIS reference layer.
 
 ## Local workstation status
-DESKTOP-BNDD1US has a direct/source Unreal Engine installation at:
-C:\UnrealEngine-5.8
+DESKTOP-BNDD1US now has a complete Lyra Starter Game project at:
+C:\Users\dezen\Documents\Unreal Projects\SpandauStrike
 
 Verified:
-- UnrealEditor.exe exists at C:\UnrealEngine-5.8\Engine\Binaries\Win64\UnrealEditor.exe
-- engine version: UE 5.8.3
-- Lyra project: C:\UnrealEngine-5.8\Samples\Games\Lyra\Lyra.uproject
+- launcher engine: UE 5.8.3 at C:\Program Files\Epic Games\UE_5.8
+- project: C:\Users\dezen\Documents\Unreal Projects\SpandauStrike\SpandauStrike.uproject
+- Content\DefaultGameData.uasset is present; the previous Lyra startup blocker is resolved
 - PythonScriptPlugin enabled
 - EditorScriptingUtilities enabled
+- ShooterCore, ShooterMaps, ShooterExplorer, ShooterTests and TopDownArena load successfully
+- production importer installed at Content\Python\berlin_spandau_lyra_import.py
+- all 20 map specs mirrored to Design\BerlinSpandauGIS
 
-A UE5.8 command-line smoke test was started successfully. Lyra currently aborts before Python execution because the local Lyra sample content is incomplete: /Game/DefaultGameData.DefaultGameData is missing. The failure is in Lyra startup, not in the Berlin GIS importer.
+The Epic launcher UE 5.8 Build.bat had a false self-lock loop during ValidatePlatforms. A backup was saved as Build.bat.lockfix-backup and the launcher copy was aligned with the working source-build behavior by calling :Main directly instead of :Lock.
 
-There is also an existing Falkenhagener Feld PoC under:
-C:\UnrealEngine-5.8\Samples\Games\Lyra\Design\FalkenhagenerFeldFinal
-with generator:
-C:\UnrealEngine-5.8\Samples\Games\Lyra\Content\Python\create_falkenhagener_feld_final.py
+## Verified Unreal GIS execution — 2026-09-30
+Smoke test, 240 m x 240 m:
+- WFS features: 142
+- usable buildings: 141
+- UE actors created: 141
+- World Partition map saved at /Game/Maps/BerlinSpandauSmoke/falkenhagener_feld
+- runtime: 4.55 seconds
+
+Full Falkenhagener Feld import, 1.8 km x 1.8 km:
+- WFS features: 4,610
+- usable buildings: 4,560
+- UE actors created: 4,560
+- World Partition map saved at /Game/Maps/BerlinSpandau/falkenhagener_feld
+- runtime: 100.40 seconds
+
+The end-to-end chain is therefore verified: Lyra startup -> Python 3.11 -> Berlin WFS -> EPSG:25833 transform -> World Partition level -> actors -> save.
