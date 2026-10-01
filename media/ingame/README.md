@@ -1,6 +1,6 @@
 # Source 2 in-game captures
 
-This directory is reserved for **real Source 2 / CS2 gameplay or engine captures** from 135er – Spandau Defeat.
+This directory is reserved for **real Source 2 / CS2 gameplay or engine captures** from 135er – Spandau Strike.
 
 Concept art remains under `media/maps/` and must never be presented as captured gameplay.
 

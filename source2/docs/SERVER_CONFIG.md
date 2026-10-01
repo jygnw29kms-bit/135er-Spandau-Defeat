@@ -4,7 +4,7 @@ Portal/PufferPanel fields:
 - hostname
 - server password
 - max players
-- Source 2 / Spandau Defeat preset
+- Source 2 / Spandau Strike preset
 - start map
 - map rotation
 - tickets per team

@@ -1,83 +1,109 @@
 <p align="center">
-  <img src="media/theme/repo-hero.svg" alt="135er – Spandau Defeat / Source 2" width="100%">
+  <img src="media/theme/repo-hero.svg" alt="135er Spandau Strike" width="100%">
 </p>
 
-<p align="center"><strong>Counter-Strike 2 / Source 2 multiplayer project · Berlin-Spandau · objective combat</strong></p>
+<p align="center"><strong>135er – Spandau Strike · Berlin-Spandau · Source 2 + Unreal Engine 5 / Lyra</strong></p>
 
-<p align="center"><code>0.2.1-source2-alpha</code> · <code>20 maps</code> · <code>20 production specs</code> · <code>Linux Dedicated Server</code> · <code>CounterStrikeSharp</code></p>
+<p align="center"><code>20 maps</code> · <code>Berlin GIS</code> · <code>Blender Master Pipeline</code> · <code>Source 2 / CS2</code> · <code>UE 5.8 / Lyra</code></p>
 
-<p align="center"><img src="media/theme/section-divider.svg" alt="" width="100%"></p>
+# Current project status — 2026-10-01
 
-## CURRENT SOURCE 2 STATUS
+The project is now developed in **two active engine targets** from one shared Berlin/Blender data pipeline:
 
-**135er – Spandau Defeat** is now fully based on the **Counter-Strike 2 / Source 2 toolchain**. The retired Unreal branch and Unreal-era imagery are no longer part of the active project tree.
+- **Unreal Engine 5.8 / Lyra** — first playable GIS-based Falkenhagener Feld milestone reached.
+- **Counter-Strike 2 / Source 2** — technical server/plugin baseline is working; native Hammer map production remains in progress.
+- **Blender master** — shared geometry/terrain preparation layer for both engines.
+- **Berlin geodata** — LoD2-derived building heights, OSM roads/water and DGM1 terrain are used as real-world reference/input.
 
+> Project naming: **135er – Spandau Strike**. Older repository/package names may still contain “Spandau Defeat” for compatibility and will be migrated gradually.
+
+## Verified UE5 / Lyra milestone
+
+- UE 5.8.3 Lyra Starter Game project: `C:\Users\dezen\Documents\Unreal Projects\SpandauStrike`
+- playable map: `/ShooterMaps/Maps/SpandauStrikeGIS/falkenhagener_feld`
+- ShooterCore runtime and Control Points A/B/C active
+- 8 LyraPlayerStart actors
+- NavMeshBoundsVolume + RecastNavMesh
+- game phase verified from Warmup to Playing
+- standalone `?NumBots=7` validated
+- real in-engine screenshot committed at `lyra/docs/screenshots/falkenhagener_feld_ingame_01.png`
+- 4,560 usable GIS building actors generated for the 1.8 km × 1.8 km production import
+- 1,096 OSM elements processed
+- 4,805 road/path segments and 230 water segments generated
+
+The current UE map is a **playable GIS/gameplay blockout**, not final art. Building meshes are still proxy geometry; terrain elevation, collision quality, street surfaces, water, vegetation, landmark replacements and final materials are active production work.
+
+## Blender / terrain master
+
+The shared Blender pipeline lives under `tools/blender_pipeline/`.
+
+Current Falkenhagener Feld terrain coverage uses four Berlin DGM1 tiles because the 1.8 × 1.8 km map crosses 2 km tile boundaries:
+
+- `374_5822`
+- `376_5822`
+- `374_5824`
+- `376_5824`
+
+The Blender master is intended to become the common source for optimized terrain/geometry exports to both **UE5** and **Source 2**, avoiding duplicate manual modeling work.
+
+## Source 2 / CS2 status
 Implemented:
 - Linux CS2 dedicated-server baseline
 - CounterStrikeSharp plugin builds and loads
-- A/B/C objective state
-- configurable tickets and ticket bleed
+- A/B/C objective state, tickets and ticket bleed
 - map / mode / status commands
 - PufferPanel / JL76 integration
-- **20-map roster**
-- **20 / 20 map production specs**
-- bot/navigation production standard
-- Source 2 visual-master and capture rules
+- 20-map roster and 20 production specs
+- Source 2 map/nav/capture standards
 
-Pending before a playable map alpha:
-- authored Hammer `.vmap` sources
-- compiled Source 2 maps
+Still required for the first native playable Source 2 map:
+- authored Hammer `.vmap` geometry
+- compiled Source 2 map output
 - map-side objective triggers
-- final class/weapon restrictions
-- final HUD
-- first genuine Source 2 in-engine screenshots
-- Workshop publication
+- validated collision/navmesh
+- final materials/lighting/HUD
+- genuine Source 2 in-engine screenshots
+- Workshop packaging
 
-<p align="center"><img src="media/theme/source2-pipeline.svg" alt="Source 2 production pipeline" width="100%"></p>
-
-## SOURCE 2 OPTICAL MASTER
-
-<p align="center"><img src="media/source2/source2-optical-masters-gallery.jpg" alt="135er Spandau Defeat Source 2 optical-master gallery" width="100%"></p>
-
-> This gallery is **AI-generated optical-master/reference art** built around the current Spandau map definitions and Source 2/CS2 visual direction. It is **not** labeled as genuine engine capture.
-
-The optical master defines:
-- competitive Source 2-style readability
-- physically grounded materials and lighting
-- sharp local architecture and landmarks
-- restrained atmospheric effects
-- practical cover silhouettes and sightlines
-- recognizable Spandau identity
-
-<p align="center"><img src="media/theme/map-matrix.svg" alt="20-map matrix" width="100%"></p>
-
-## MAPS — 20 TOTAL
+## Maps — 20 total
 
 **12 core maps:** Rathaus Spandau · Zitadelle · Staaken · Rodelberg · Kiesteich · Falkenhagener Feld · Lynarstraße · Wröhmännerpark · Freiheit · Martin-Buber-Schule · Askanier-Schule · B.-Traven-Schule
 
 **8 historical/special maps:** Fort Hahneberg 1945 · Teufelsberg – Kalter Krieg · Flugplatz Gatow 1945 · Gatow – Luftbrücke 1948 · Radelandstraße 1945 · Hakenfelde – Heeresamt 1944 · Zitadelle – 1. Mai 1945 · Britischer Sektor Spandau
 
-## IMAGE RULE
+## Production order
 
-- **Optical master/reference:** may be AI-generated, but must be identified as reference art.
-- **In-game/gameplay:** must come from an actually compiled and running Source 2 / CS2 map.
-- no Unreal screenshots or Unreal reference imagery remain in the active media set.
+1. Berlin geodata/reference acquisition
+2. Blender master cleanup and terrain generation
+3. engine-specific export
+4. blockout and landmark architecture
+5. playable collision, spawns, objectives and navigation
+6. materials, roads, water and vegetation
+7. combat readability / sightline pass
+8. compile and standalone/server validation
+9. genuine in-engine screenshots
+10. release packaging
 
-## PROJECT LINKS
+## Image rule
+- **In-game/gameplay screenshots must come from the actual running engine.**
+- AI-generated visuals may only be used as clearly marked optical/reference masters.
+- Unreal screenshots are valid only for the UE/Lyra branch; Source 2 screenshots must come from Source 2/CS2.
+- README preview images are replaced with genuine engine captures as soon as each map reaches that milestone.
+
+## Key project paths
 
 | Area | Path |
 |---|---|
-| Build status | [source2/docs/BUILD_STATUS.md](source2/docs/BUILD_STATUS.md) |
-| Project metadata | [source2/build/project.json](source2/build/project.json) |
-| Map roster | [source2/maps/maps.json](source2/maps/maps.json) |
-| Map list | [source2/maps/maplist.txt](source2/maps/maplist.txt) |
-| 20 map specs | [source2/maps/specs/](source2/maps/specs/) |
-| Bot/nav standard | [source2/maps/nav/BOT_NAV_STANDARD.md](source2/maps/nav/BOT_NAV_STANDARD.md) |
-| Map production pipeline | [source2/docs/MAP_PRODUCTION_PIPELINE.md](source2/docs/MAP_PRODUCTION_PIPELINE.md) |
-| Visual master | [docs/VISUAL_MASTER.md](docs/VISUAL_MASTER.md) |
-| Image/capture policy | [docs/INGAME_CAPTURE_STANDARD.md](docs/INGAME_CAPTURE_STANDARD.md) |
-| Source 2 media | [media/README.md](media/README.md) |
+| Current cross-engine status | [docs/CURRENT_STATUS.md](docs/CURRENT_STATUS.md) |
+| Map roster / modes | [docs/MAPS_AND_MODES.md](docs/MAPS_AND_MODES.md) |
+| UE5/Lyra GIS status | [lyra/docs/GIS_STATUS.md](lyra/docs/GIS_STATUS.md) |
+| UE5/Lyra map definitions | [lyra/maps/maps.json](lyra/maps/maps.json) |
+| Source 2 build status | [source2/docs/BUILD_STATUS.md](source2/docs/BUILD_STATUS.md) |
+| Source 2 map definitions | [source2/maps/maps.json](source2/maps/maps.json) |
+| Source 2 production pipeline | [source2/docs/MAP_PRODUCTION_PIPELINE.md](source2/docs/MAP_PRODUCTION_PIPELINE.md) |
+| Blender master pipeline | [tools/blender_pipeline/README.md](tools/blender_pipeline/README.md) |
+| Capture policy | [docs/INGAME_CAPTURE_STANDARD.md](docs/INGAME_CAPTURE_STANDARD.md) |
 
 ---
 
-<p align="center"><strong>135er – SPANDAU DEFEAT</strong><br><sub>SOURCE 2 · SPANDAU · HISTORY · URBAN WARFARE</sub></p>
+<p align="center"><strong>135er – SPANDAU STRIKE</strong><br><sub>BERLIN GIS · BLENDER · SOURCE 2 · UNREAL ENGINE 5</sub></p>

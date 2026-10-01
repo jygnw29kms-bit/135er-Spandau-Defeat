@@ -1,4 +1,4 @@
-# 135er – Spandau Defeat
+# 135er – Spandau Strike
 Engine basis: Counter-Strike 2 / Source 2
 Distribution model: free, non-commercial custom game/addon content.
 Dedicated server: existing Linux CS2 server stack.

@@ -1,6 +1,6 @@
 # Project Vision
 
-135er – Spandau Defeat is **Spandau across time**, not a generic WWII shooter.
+135er – Spandau Strike is **Spandau across time**, not a generic WWII shooter.
 
 ## Gameplay baseline
 - fast spawn-to-action loop

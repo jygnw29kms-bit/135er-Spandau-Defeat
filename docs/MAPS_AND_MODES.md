@@ -1,8 +1,8 @@
 # Maps and modes — 0.2.1-source2-alpha
 
-All active map work targets **Source 2 / CS2 Hammer**.
+All active map work targets a shared **Blender/Berlin-GIS master** with two engine outputs: **Source 2 / CS2 Hammer** and **Unreal Engine 5.8 / Lyra**.
 
-The retired Unreal graybox pipeline is no longer part of the active tree. Map identities are implemented through Hammer-authored geometry, Source 2 materials/lighting, gameplay entities and dedicated-server validation.
+UE/Lyra has already reached a first playable Falkenhagener Feld GIS milestone. Source 2 remains an active parallel target, with Hammer-authored geometry, Source 2 materials/lighting, gameplay entities and dedicated-server validation. Both engine branches share the same 20-map roster and geographic/reference foundation.
 
 ## Core Spandau maps — 12
 

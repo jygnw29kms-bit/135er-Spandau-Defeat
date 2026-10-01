@@ -1,6 +1,6 @@
 # GitHub visual theme
 
-The repository UI follows the visual language of **135er – Spandau Defeat** while staying within GitHub's supported Markdown/SVG rendering.
+The repository UI follows the visual language of **135er – Spandau Strike** while staying within GitHub's supported Markdown/SVG rendering.
 
 ## Theme language
 

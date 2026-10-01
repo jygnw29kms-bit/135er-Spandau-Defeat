@@ -1,4 +1,4 @@
-# Historical map set — 135er Spandau Defeat
+# Historical map set — 135er Spandau Strike
 
 ## Authenticity rule
 

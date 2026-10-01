@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns:inspire_dls="http://inspire.ec.europa.eu/schemas/inspire_dls/1.0" xmlns:georss="http://www.georss.org/georss" xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
+	<title>ATKIS® DGM (1m-Rasterweite)</title>
+	<subtitle>Das ATKIS DGM ist ein Teil des Amtlichen Topographisch-Kartographischen Informationssystem (ATKIS). Das DGM beschreibt höhenmäßig die Erdoberfläche ohne natürliche (z. B. Vegetation) und künstliche Objekte (z. B. Bauwerke). Das DGM liegt in Form eines gleichmäßigen Rasters mit einer Rasterweite von 1m im Blattschnitt 2km x 2km vor. In das Land Brandenburg reicht ein Buffer von ca. 250m.</subtitle>
+	<link href="https://gdi.berlin.de/data/dgm1/atom" rel="self" type="application/atom+xml"></link>
+	<link href="https://gdi.berlin.de/geonetwork/srv/ger/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ID=fa02f9e1-a0df-3be1-b0aa-bc624c0c7ff5&amp;ELEMENTSETNAME=full" rel="describedby" type="application/xml"></link>
+	<id>https://gdi.berlin.de/data/dgm1/atom</id>
+	<rights>Für die Nutzung der Daten ist die Datenlizenz Deutschland - Zero - Version 2.0 anzuwenden. Die Lizenz ist über https://www.govdata.de/dl-de/zero-2-0 abrufbar.</rights>
+	<updated>2025-12-18T11:54:57Z</updated>
+	<author>
+		<name>Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen Berlin</name>
+		<email>geoportal@senstadt.berlin.de</email>
+		<uri>https://gdi.berlin.de/view/dgm1</uri>
+	</author>
+	<entry>
+		<title>ATKIS® DGM (1m-Rasterweite)</title>
+		<inspire_dls:spatial_dataset_identifier_code>a98210d0-8e08-3112-89f9-44d945ba69b3</inspire_dls:spatial_dataset_identifier_code>
+		<inspire_dls:spatial_dataset_identifier_namespace>http://www.gdi-de.org</inspire_dls:spatial_dataset_identifier_namespace>
+		<link href="https://gdi.berlin.de/geonetwork/srv/ger/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ID=f0e8ff09-2887-3446-9c53-81dbc45af03c&amp;ELEMENTSETNAME=full" rel="describedby" type="application/xml"></link>
+		<link href="https://gdi.berlin.de/data/dgm1/atom/0.atom" rel="alternate" title="Dataset Feed" type="application/atom+xml"></link>
+		<id>https://gdi.berlin.de/data/dgm1/atom/0.atom</id>
+		<rights>Für die Nutzung der Daten ist die Datenlizenz Deutschland - Zero - Version 2.0 anzuwenden. Die Lizenz ist über https://www.govdata.de/dl-de/zero-2-0 abrufbar.</rights>
+		<updated>2025-12-18T11:54:57Z</updated>
+		<georss:polygon>52.6688 13.0703 52.6688 13.7501 52.3272 13.7501 52.3272 13.0703 52.6688 13.0703</georss:polygon>
+		<category term="http://www.opengis.net/def/crs/EPSG/0/25833" label="EPSG/0/25833"></category>
+		<author>
+			<name>Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen Berlin</name>
+			<email>geoportal@senstadt.berlin.de</email>
+			<uri>https://gdi.berlin.de/view/dgm1</uri>
+		</author>
+	</entry>
+</feed>

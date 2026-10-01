@@ -1,4 +1,4 @@
-# Bot / Navigation Standard — 135er Spandau Defeat
+# Bot / Navigation Standard — 135er Spandau Strike
 
 Every map is bot-ready by definition. A map is not considered playable until CS2 bots can traverse the full intended combat space.
 

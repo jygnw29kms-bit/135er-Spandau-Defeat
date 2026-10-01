@@ -1,4 +1,4 @@
-# Lyra GIS status — 2026-09-29
+# Lyra GIS status — 2026-10-01
 
 ## Verified live Berlin services
 - WFS endpoint: https://gdi.berlin.de/services/wfs/ua_gebaeudehoehen
@@ -87,7 +87,7 @@ Verified in UE 5.8.3 rendered game mode:
 
 The current visual is still a GIS/gameplay blockout. Building volumes are data-driven proxies and the temporary gameplay ground uses WorldGrid. DGM1 terrain, streets, water, vegetation, final materials and landmark geometry remain production-quality work after the playable milestone.
 
-## Playable ShooterMaps milestone � 2026-09-30
+## Playable ShooterMaps milestone � 2026-09-30
 Playable runtime map:
 - /ShooterMaps/Maps/SpandauStrikeGIS/falkenhagener_feld
 - 8 LyraPlayerStart actors
