@@ -1,5 +1,5 @@
 {
-  "project": "135er – Spandau Defeat",
+  "project": "135er – Spandau Strike",
   "version": "0.2.1-source2-alpha",
   "engine": "Counter-Strike 2 / Source 2",
   "distribution": "free non-commercial custom game/mod content",
@@ -39,10 +39,9 @@
     "dedicatedServerOS": "Linux x86_64"
   },
   "visual": {
-    "master": "Source 2 optical-master/reference gallery",
-    "masterPath": "media/source2/source2-optical-masters-gallery.jpg",
-    "rule": "optical masters are art-direction targets, not in-engine screenshots",
-    "finalCaptureRule": "only actual Hammer/CS2 rendered captures may be labeled in-engine screenshots",
+    "publicMediaRule": "only reviewed project graphics and genuine target-engine captures are published",
+    "finalCaptureRule": "only actual Hammer/CS2 rendered captures may be labeled Source 2 in-engine screenshots",
+    "qualityGate": "docs/IMAGE_QA.md",
     "hud": "top-center blue/red tickets + clock, A/B/C objectives, minimap lower-left, ammo/equipment lower-right",
     "priority": "recognizable Spandau identity and gameplay readability before spectacle"
   }

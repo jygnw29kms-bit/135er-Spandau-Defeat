@@ -1,24 +1,21 @@
 # Media
 
-The repository now contains **Source 2-oriented** visual material only.
+Public media is restricted to reviewed project graphics and genuine engine captures.
 
-## Source 2 optical masters
+## Allowed public media
 
-Current repository image set:
-- `source2/source2-optical-masters-gallery.jpg` — current AI-generated Source 2 optical-master/reference gallery
-- `theme/repo-hero.svg` — Source 2 project header
-- `theme/map-matrix.svg` — 20-map matrix
-- `theme/source2-pipeline.svg` — Source 2 production pipeline
-- `theme/section-divider.svg` — tactical README divider
+- `theme/` - reviewed repository graphics and diagrams
+- `ingame/` - genuine captures from running game engines
+- UE5/Lyra screenshots under the Lyra documentation tree when they are real runtime captures
 
-These assets are visual/reference material. They are not genuine engine captures.
+## Not published
 
-## Genuine in-game captures
+- failed generations
+- blurry or upscaled contact-sheet images
+- unreviewed AI/reference galleries
+- placeholder gameplay images
+- images presented as coming from the wrong engine
 
-Real gameplay/cinematic captures from compiled/running Source 2 / CS2 maps belong under [ingame/](ingame/).
+Source 2 gameplay captures are added only after the corresponding map runs in Source 2/CS2 and passes visual QA.
 
-Only those captures may be labeled **in-game**, **gameplay** or **engine capture**.
-
-The old Unreal-era map images have been removed from the active repository.
-
-See [../docs/VISUAL_MASTER.md](../docs/VISUAL_MASTER.md) and [../docs/INGAME_CAPTURE_STANDARD.md](../docs/INGAME_CAPTURE_STANDARD.md).
+See [../docs/IMAGE_QA.md](../docs/IMAGE_QA.md) and [../docs/INGAME_CAPTURE_STANDARD.md](../docs/INGAME_CAPTURE_STANDARD.md).

@@ -1,11 +1,7 @@
-# Optical-master map references
+# Map media
 
-This directory no longer contains the retired Unreal-era images.
+This directory does not publish unreviewed optical-master galleries.
 
-Current visual reference material belongs to:
-- `media/source2/` — Source 2-oriented optical-master/reference imagery
-- `media/ingame/` — genuine captures from compiled/running CS2 / Source 2 maps only
+Map imagery added to the public repository must pass the image QA gate. Gameplay screenshots must be genuine captures from the named target engine.
 
-Optical masters may be AI-generated/reference art, but must never be labeled **in-game**.
-
-See [../../docs/VISUAL_MASTER.md](../../docs/VISUAL_MASTER.md) and [../../docs/INGAME_CAPTURE_STANDARD.md](../../docs/INGAME_CAPTURE_STANDARD.md).
+See [../../docs/IMAGE_QA.md](../../docs/IMAGE_QA.md) and [../../docs/INGAME_CAPTURE_STANDARD.md](../../docs/INGAME_CAPTURE_STANDARD.md).

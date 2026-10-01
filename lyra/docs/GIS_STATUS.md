@@ -1,0 +1,111 @@
+# Lyra GIS status — 2026-10-01
+
+## Verified live Berlin services
+- WFS endpoint: https://gdi.berlin.de/services/wfs/ua_gebaeudehoehen
+- Feature type: ua_gebaeudehoehen:gebaeudehoehen
+- Default CRS: EPSG:25833 (ETRS89 / UTM zone 33N)
+- WFS versions: 1.0.0, 1.1.0, 2.0.0
+- Geometry: GML MultiSurface with 2D footprint coordinates
+- Relevant attributes: gisid, gml_id, name, funktion, dachart, hoehe, geschosse, strasse, hnr, dachart_txt
+- hoehe is the building ridge height in metres
+
+## Important freshness distinction
+The Gebäudehöhen layer is explicitly titled "Gebäudehöhen 2022" and is derived from Berlin LoD2 data.
+It is suitable for spatial blockout and height/roof metadata, but it is not a live full CityGML roof mesh.
+The separate ALKIS Berlin building service has newer cadastral maintenance metadata and should be added as a second source when footprint freshness matters.
+
+## Falkenhagener Feld live check
+The runtime geocoder resolves Falkenhagener Feld to approximately:
+- latitude 52.5524034
+- longitude 13.1668941
+- EPSG:25833 approximately E 375716.66 / N 5824059.63
+
+A 1.8 km x 1.8 km WFS query around that center returned 4,610 matching building features.
+
+## Current Lyra branch
+- branch: lyra-ue5-gis
+- 20 map definitions mirrored from Source 2
+- 20 map production specs mirrored from Source 2
+- autonomous UE5 Python building importer created
+- default map: falkenhagener_feld
+- generated hierarchy: Berlin_LoD2_Autonomous_Import/<map>/Buildings
+
+## Known next production layers
+1. Replace per-building StaticMeshActors with HISM/combined geometry for large areas.
+2. Add current ALKIS footprint source as optional override/freshness source.
+3. Add DGM terrain pipeline and Landscape heightmap generation.
+4. Add roads, water and vegetation.
+5. Add custom landmark replacement layer.
+6. Keep historical reconstruction separate from the modern GIS reference layer.
+
+## Local workstation status
+DESKTOP-BNDD1US now has a complete Lyra Starter Game project at:
+C:\Users\dezen\Documents\Unreal Projects\SpandauStrike
+
+Verified:
+- launcher engine: UE 5.8.3 at C:\Program Files\Epic Games\UE_5.8
+- project: C:\Users\dezen\Documents\Unreal Projects\SpandauStrike\SpandauStrike.uproject
+- Content\DefaultGameData.uasset is present; the previous Lyra startup blocker is resolved
+- PythonScriptPlugin enabled
+- EditorScriptingUtilities enabled
+- ShooterCore, ShooterMaps, ShooterExplorer, ShooterTests and TopDownArena load successfully
+- production importer installed at Content\Python\berlin_spandau_lyra_import.py
+- all 20 map specs mirrored to Design\BerlinSpandauGIS
+
+The Epic launcher UE 5.8 Build.bat had a false self-lock loop during ValidatePlatforms. A backup was saved as Build.bat.lockfix-backup and the launcher copy was aligned with the working source-build behavior by calling :Main directly instead of :Lock.
+
+## Verified Unreal GIS execution — 2026-09-30
+Smoke test, 240 m x 240 m:
+- WFS features: 142
+- usable buildings: 141
+- UE actors created: 141
+- World Partition map saved at /Game/Maps/BerlinSpandauSmoke/falkenhagener_feld
+- runtime: 4.55 seconds
+
+Full Falkenhagener Feld import, 1.8 km x 1.8 km:
+- WFS features: 4,610
+- usable buildings: 4,560
+- UE actors created: 4,560
+- World Partition map saved at /Game/Maps/BerlinSpandau/falkenhagener_feld
+- runtime: 100.40 seconds
+
+The end-to-end chain is therefore verified: Lyra startup -> Python 3.11 -> Berlin WFS -> EPSG:25833 transform -> World Partition level -> actors -> save.
+
+
+## Playable Falkenhagener Feld milestone — 2026-09-30
+Verified in UE 5.8.3 rendered game mode:
+- final gameplay map: /ShooterMaps/Maps/SpandauStrikeGIS/falkenhagener_feld
+- WorldSettings: SpandauStrikeWorldSettings
+- Experience: B_LyraShooterGame_ControlPoints
+- ShooterCore transitions to Active
+- eight LyraPlayerStart actors
+- NavMeshBoundsVolume and runtime navmesh generation
+- Control Points A/B/C
+- Shooter HUD, pawn and weapon active
+- game phase transitions Warmup -> Playing
+- real in-engine capture verified during development; current blockout capture is intentionally not published because it does not yet pass the public image QA gate
+
+The current visual is still a GIS/gameplay blockout. Building volumes are data-driven proxies and the temporary gameplay ground uses WorldGrid. DGM1 terrain, streets, water, vegetation, final materials and landmark geometry remain production-quality work after the playable milestone.
+
+## Playable ShooterMaps milestone � 2026-09-30
+Playable runtime map:
+- /ShooterMaps/Maps/SpandauStrikeGIS/falkenhagener_feld
+- 8 LyraPlayerStart actors
+- NavMeshBoundsVolume + RecastNavMesh
+- DirectionalLight, SkyLight and fog
+- Lyra ShooterCore runtime verified
+
+Real OSM overlay:
+- 1,096 OSM elements processed
+- 4,805 road/path segments
+- 230 water segments
+- saved as World Partition external actors
+
+Standalone validation:
+- URL option ?NumBots=7 verified
+- ShooterGame.GamePhase.Playing entered
+- Warmup phase ended successfully
+- real 1280x720 in-game screenshots captured
+- r.WarnOfBadDrivers=0 used in project SystemSettings to avoid the development machine driver warning dialog
+
+The map is now playable as a Lyra standalone ShooterMaps level. Visual fidelity remains a production pass: building/road/water materials, terrain elevation, vegetation and landmark-specific geometry should continue to be refined.

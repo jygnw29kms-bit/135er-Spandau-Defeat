@@ -1,0 +1,6 @@
+{
+  "lod_ratios": [1.0, 0.5, 0.25],
+  "units": "metres",
+  "source_crs": "EPSG:25833",
+  "targets": ["ue5", "source2"]
+}

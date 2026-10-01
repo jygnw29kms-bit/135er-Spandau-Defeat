@@ -2,7 +2,7 @@
 
 ## Decision
 
-Source 2 / CS2 is the active engine/runtime for 135er – Spandau Defeat. Unreal Engine is no longer part of the active project.
+Source 2 / CS2 is one of the two active engine/runtime targets for 135er – Spandau Strike. Unreal Engine 5.8 / Lyra is developed in parallel from the same Berlin GIS / Blender master data, while this document covers only the Source 2 production path.
 
 ## Toolchain
 

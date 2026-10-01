@@ -1,6 +1,6 @@
 # Source 2 / CS2 project
 
-This directory is the active engine workspace for **135er – Spandau Defeat**.
+This directory is the active engine workspace for **135er – Spandau Strike**.
 
 ## Current canonical build state
 

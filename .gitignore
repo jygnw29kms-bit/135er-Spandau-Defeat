@@ -1,0 +1,15 @@
+# Blender working data
+tools/blender_pipeline/*.blend1
+tools/blender_pipeline/terrain_src/
+tools/blender_pipeline/output/
+tools/blender_pipeline/input/
+
+# Generated GIS / terrain intermediates
+*.tmp
+*.cache
+__pycache__/
+*.pyc
+
+# OS/editor noise
+.DS_Store
+Thumbs.db

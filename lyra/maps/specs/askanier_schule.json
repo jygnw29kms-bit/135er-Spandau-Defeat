@@ -1,0 +1,23 @@
+{
+  "id": "askanier_schule",
+  "name": "Askanier-Schule",
+  "era": "contemporary conflict",
+  "identity": "compact school ensemble, street frontage, courtyard and sports areas",
+  "objectives": {
+    "A": "street approach",
+    "B": "central courtyard",
+    "C": "sports/building wing"
+  },
+  "lanes": [
+    "street frontage",
+    "central courtyard",
+    "sports-wing flank"
+  ],
+  "bot_notes": [
+    "keep entrances readable",
+    "avoid dead-end classroom routes",
+    "provide wide sports-area rotations"
+  ],
+  "visual_master": "compact urban school complex with distinct courtyard and sports silhouette",
+  "history": "fictional modern conflict scenario"
+}

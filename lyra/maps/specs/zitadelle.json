@@ -1,0 +1,47 @@
+{
+  "id": "zitadelle",
+  "name": "Zitadelle Spandau",
+  "era": "multi-era",
+  "identity": "fortress, brick/stone, gatehouse, moat and courtyard",
+  "history": "location-authentic layout target; gameplay combat may be fictional",
+  "objectives": {
+    "A": "outer bridge",
+    "B": "gatehouse",
+    "C": "inner courtyard"
+  },
+  "layout": {
+    "nominalSizeMeters": 1000,
+    "lanes": [
+      "left",
+      "center",
+      "right"
+    ],
+    "spawnExitsPerTeam": 2,
+    "objectiveApproachesPerPoint": 2,
+    "botAlternateGroundRouteRequired": true,
+    "verticality": "moderate unless map identity requires elevation"
+  },
+  "botNavigation": {
+    "required": true,
+    "targetBotCounts": [
+      10,
+      15
+    ],
+    "mustReach": [
+      "A",
+      "B",
+      "C"
+    ],
+    "mustRotateBetweenObjectives": true,
+    "noJumpRequiredRoutes": true,
+    "noBoostRequiredRoutes": true,
+    "waterSafetyRequired": true,
+    "stuckClusterAcceptance": 0
+  },
+  "source2": {
+    "authoringTool": "CS2 Workshop Tools / Hammer",
+    "compiledMapName": "zitadelle",
+    "workshopId": null,
+    "status": "design-spec-ready"
+  }
+}
