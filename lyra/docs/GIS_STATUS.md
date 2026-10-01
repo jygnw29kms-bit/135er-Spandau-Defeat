@@ -152,3 +152,32 @@ V7 presentation/runtime:
 - all V7 materials compiled with Nanite usage enabled
 - NavMeshBoundsVolume expanded to full 1.8 x 1.8 km production area
 - remaining optimization: persist generated navigation data so standalone startup no longer rebuilds nav at runtime
+
+## Falkenhagener Feld V8 — 2026-10-01
+
+New safe production map (V7 retained as rollback):
+- /ShooterMaps/Maps/SpandauStrikeGIS/falkenhagener_feld_playable_v8
+- exact Berlin WFS-derived building footprint meshes split into Residential, Public, Industrial and Aux categories
+- DGM10 terrain, OSM roads/water and Berlin tree inventory retained
+- 8 LyraPlayerStart actors and Lyra ControlPoints gameplay verified
+- standalone ?NumBots=7 reaches ShooterGame.GamePhase.Playing and ends Warmup normally
+- category-specific materials and reduced sun/sky/fog exposure pass
+- project renderer config disables default auto exposure for the GIS production pass
+
+Navigation optimization:
+- RecastNavMesh RuntimeGeneration changed to Static
+- bForceRebuildOnLoad=False and bCanSpawnOnRebuild=True
+- level re-saved with persistent RecastNavMesh actor before running WorldPartitionNavigationDataBuilder
+- final clean-start verification is performed after the offline builder completes
+
+### V8 gameplay anchor pass
+- PlayerStarts moved from open terrain into OSM-derived real street corridors:
+  - west: Am Bogen / Paul-Gerhardt-Ring
+  - east: Pionierstrasse corridor
+- three native ShooterCore B_ControlPointVolume actors added for A/B/C
+- ControlPoints experience loads without control-point errors
+- NS_CapturePoint effect loads in standalone runtime
+- ?NumBots=7 reaches ShooterGame.GamePhase.Playing after Warmup
+
+### Remaining navigation performance issue
+WorldPartitionNavigationDataBuilder completes with 0 errors after setting Recast RuntimeGeneration=Static, but a fresh standalone launch still reports SpawnMissingNavigationData and rebuilds the default navmesh at runtime. Gameplay is functional after that rebuild; persistent World Partition nav-data serialization remains an open optimization item and is not marked fixed.
