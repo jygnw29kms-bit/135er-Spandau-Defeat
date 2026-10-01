@@ -131,3 +131,24 @@ OSM layers are now draped onto DGM and merged:
 - active LyraPlayerStart actors remain: 8
 
 Standalone Lyra runtime was revalidated with ?NumBots=7 after the optimization pass and a fresh 1280x720 in-game screenshot was captured.
+
+## V7 playable production milestone — 2026-10-01
+Verified standalone map:
+- /ShooterMaps/Maps/SpandauStrikeGIS/falkenhagener_feld_playable_v7
+- Lyra ControlPoints experience enters ShooterGame.GamePhase.Playing
+- Warmup ends normally
+- 7 bots verified in standalone gameplay
+- combat, health/ammo HUD and kill feed verified
+- real in-game screenshots captured from the running UE5.8 window
+
+Critical collision fix:
+- combined 4,610-building OBB mesh switched to CTF_USE_COMPLEX_AS_SIMPLE
+- DGM terrain switched to CTF_USE_COMPLEX_AS_SIMPLE
+- merged roads use NoCollision; DGM terrain supplies walkable collision
+- this removed the whole-map simple bounding-box collision that previously caused NO PLAYERSTART / origin fallback spawning
+
+V7 presentation/runtime:
+- DGM terrain + exact building OBB + draped OSM roads/water + tree inventory loaded
+- all V7 materials compiled with Nanite usage enabled
+- NavMeshBoundsVolume expanded to full 1.8 x 1.8 km production area
+- remaining optimization: persist generated navigation data so standalone startup no longer rebuilds nav at runtime
