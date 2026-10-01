@@ -109,3 +109,25 @@ Standalone validation:
 - r.WarnOfBadDrivers=0 used in project SystemSettings to avoid the development machine driver warning dialog
 
 The map is now playable as a Lyra standalone ShooterMaps level. Visual fidelity remains a production pass: building/road/water materials, terrain elevation, vegetation and landmark-specific geometry should continue to be refined.
+
+
+## DGM + optimized GIS milestone — 2026-10-01
+Falkenhagener Feld now uses official Berlin DGM1 terrain data for the 1.8 x 1.8 km playable area.
+
+- source tiles: DGM1_374_5822, DGM1_376_5822, DGM1_374_5824, DGM1_376_5824
+- source CRS: EPSG:25833
+- derived terrain grid: 181 x 181 at 10 m spacing (32,761 vertices)
+- source elevation range in crop: 27.92 m to 41.32 m
+- center reference elevation: 33.32 m
+- resulting relative relief: 13.4 m
+- terrain collision: complex-as-simple
+- all 8 LyraPlayerStart actors aligned to DGM elevation
+
+OSM layers are now draped onto DGM and merged:
+- roads: 19,224 vertices / 9,612 triangles
+- water: 696 vertices / 248 triangles
+- former per-segment GIS external actors backed up: 5,039
+- active optimized GIS actors: SS_DGM_Terrain, SS_DGM_Roads, SS_DGM_Water
+- active LyraPlayerStart actors remain: 8
+
+Standalone Lyra runtime was revalidated with ?NumBots=7 after the optimization pass and a fresh 1280x720 in-game screenshot was captured.
