@@ -188,3 +188,11 @@ WorldPartitionNavigationDataBuilder completes with 0 errors after setting Recast
 - daylight pass: DirectionalLight 4.0, SkyLight 1.25, reduced fog, unbound post-process exposure bias
 - engine on-screen warnings hidden for clean runtime capture
 - clean in-game screenshot captured from the actual UE 5.8 game window
+
+## Falkenhagener Feld V8 persistent World Partition navigation — 2026-10-01
+- RecastNavMesh diagnosis: RuntimeGeneration was already Static, but Is World Partitioned was false.
+- Is World Partitioned enabled and saved on RecastNavMesh-Default.
+- WorldPartitionNavigationDataBuilder completed all 4 iterative cells.
+- Navigation data chunk actors were generated and saved for the 1.8 km production world.
+- Fresh standalone validation with ?NumBots=7: no SpawnMissingNavigationData and no runtime RebuildAll building NavData.
+- ShooterGame.GamePhase.Playing reached normally and Warmup ended.
