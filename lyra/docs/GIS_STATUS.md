@@ -181,3 +181,10 @@ Navigation optimization:
 
 ### Remaining navigation performance issue
 WorldPartitionNavigationDataBuilder completes with 0 errors after setting Recast RuntimeGeneration=Static, but a fresh standalone launch still reports SpawnMissingNavigationData and rebuilds the default navmesh at runtime. Gameplay is functional after that rebuild; persistent World Partition nav-data serialization remains an open optimization item and is not marked fixed.
+
+## Falkenhagener Feld V8 daylight/runtime validation — 2026-10-01
+- V8 standalone runtime verified with ?NumBots=7
+- ShooterGame.GamePhase.Playing reached after warmup
+- daylight pass: DirectionalLight 4.0, SkyLight 1.25, reduced fog, unbound post-process exposure bias
+- engine on-screen warnings hidden for clean runtime capture
+- clean in-game screenshot captured from the actual UE 5.8 game window
