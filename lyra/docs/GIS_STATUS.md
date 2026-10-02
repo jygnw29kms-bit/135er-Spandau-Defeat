@@ -237,3 +237,18 @@ Remaining visual production:
 - standalone ?NumBots=7 verified
 - repeated Warmup -> ShooterGame.GamePhase.Playing transitions verified
 - DGM terrain, WFS building geometry, OSM roads/water and daylight pass active
+
+## Staaken playable GIS milestone — 2026-10-02
+- runtime map: /ShooterMaps/Maps/SpandauStrikeGIS/staaken_playable_v1
+- 1.3 x 1.3 km GIS production area
+- DGM terrain + Berlin WFS exact building footprints
+- OSM: 4,061 road/path segments and 76 water segments
+- 1,220 collision-cleared gameplay candidates evaluated
+- 8 LyraPlayerStart actors and native Control Points A/B/C
+- standalone ?NumBots=7 verified
+- Warmup -> ShooterGame.GamePhase.Playing verified
+- Nanite material usage persisted for all four GIS materials
+- RecastNavMesh configured Static + World Partitioned
+- WorldPartitionNavigationDataBuilder completed with exit code 0
+- fresh standalone verification showed no SpawnMissingNavigationData and no runtime RebuildAll
+- clean real UE5.8 in-game capture created after daylight polish
