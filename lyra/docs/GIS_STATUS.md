@@ -227,3 +227,13 @@ Remaining visual production:
 - bespoke Rathaus Spandau landmark facade/roof detailing
 - higher fidelity street furniture, vegetation and materials
 - public screenshots only after the image QA gate passes
+
+## Zitadelle Spandau playable GIS milestone — 2026-10-02
+- runtime map: /ShooterMaps/Maps/SpandauStrikeGIS/zitadelle_spandau_playable_v1
+- World Partition game world verified
+- Lyra ControlPoints experience
+- 8 LyraPlayerStart actors
+- Control Points A/B/C
+- standalone ?NumBots=7 verified
+- repeated Warmup -> ShooterGame.GamePhase.Playing transitions verified
+- DGM terrain, WFS building geometry, OSM roads/water and daylight pass active
