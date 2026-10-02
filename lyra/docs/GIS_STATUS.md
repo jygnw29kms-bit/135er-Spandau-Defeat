@@ -196,3 +196,34 @@ WorldPartitionNavigationDataBuilder completes with 0 errors after setting Recast
 - Navigation data chunk actors were generated and saved for the 1.8 km production world.
 - Fresh standalone validation with ?NumBots=7: no SpawnMissingNavigationData and no runtime RebuildAll building NavData.
 - ShooterGame.GamePhase.Playing reached normally and Warmup ended.
+
+
+## Rathaus Spandau playable GIS milestone — 2026-10-02
+Runtime map:
+- /ShooterMaps/Maps/SpandauStrikeGIS/rathaus_spandau_playable_v1
+- Lyra ControlPoints experience
+- 8 LyraPlayerStart actors
+- Control Points A/B/C
+- standalone ?NumBots=7 verified
+- Warmup -> ShooterGame.GamePhase.Playing verified
+
+Berlin GIS production data:
+- center: 52.5351709, 13.1997742
+- local EPSG:25833 origin: E 377897.897 / N 5822086.918
+- 1.0 x 1.0 km production area
+- 1,717 WFS building features
+- 4,436 OSM road/path segments
+- 193 OSM water segments
+- DGM-derived terrain
+- eight player starts selected from OSM road geometry with 15 m clearance from WFS building polygons
+
+Rathaus V2 runtime polish:
+- safe-spawn positions persisted
+- daylight/post-process pass persisted
+- on-screen debug messages disabled for clean runtime validation
+- newest standalone run reached Playing normally with seven bots
+
+Remaining visual production:
+- bespoke Rathaus Spandau landmark facade/roof detailing
+- higher fidelity street furniture, vegetation and materials
+- public screenshots only after the image QA gate passes
