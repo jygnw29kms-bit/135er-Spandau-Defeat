@@ -252,3 +252,27 @@ Remaining visual production:
 - WorldPartitionNavigationDataBuilder completed with exit code 0
 - fresh standalone verification showed no SpawnMissingNavigationData and no runtime RebuildAll
 - clean real UE5.8 in-game capture created after daylight polish
+
+
+## Twenty-map playable baseline milestone — 2026-10-02
+
+The autonomous UE5.8 GIS pipeline has now produced a playable baseline for all 20 canonical Spandau Strike maps.
+
+Final historical batch completed successfully:
+- `radeland_1945_playable_v1`
+- `hakenfelde_heeresamt_1944_playable_v1`
+- `zitadelle_1945_playable_v1`
+- `britischer_sektor_spandau_playable_v1`
+
+Each baseline uses the established production path: DGM terrain, Berlin WFS building geometry, OSM roads/water, World Partition, eight Lyra PlayerStarts, native ShooterCore A/B/C control points, lighting/environment and navigation configuration.
+
+Runtime QA performed with `?NumBots=7`:
+- Radeland 1945: Warmup -> ShooterGame.GamePhase.Playing verified; visible in-game capture created.
+- Hakenfelde Heeresamt 1944: Warmup -> Playing verified; visible in-game capture created.
+- Zitadelle 1945: Warmup -> Playing verified; in-game capture created.
+- Britischer Sektor Spandau: Warmup -> Playing verified; in-game capture created.
+- Lynarstrasse was re-tested because earlier captures were black; the map reaches Playing and a new visible in-game capture was successfully created.
+
+The four historical labels describe project scenarios. Current GIS geometry is a present-day spatial reference baseline and is not, by itself, proof of period-accurate 1944/1945 reconstruction. Historical detail passes remain separate authored work.
+
+Known import note: the Zitadelle 1945 OBJ import emitted a non-fatal Interchange UV-index ensure; the import continued and the map finalized successfully. This should be cleaned in a later mesh-quality pass.
