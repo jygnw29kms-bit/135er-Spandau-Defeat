@@ -152,3 +152,16 @@ Current authoritative Blender game-build:
 - [Reproducible finalizer](tools/blender_pipeline/finalize_rathaus_integrated_master_v4.py)
 
 This build combines the clean Rathaus game rebuild with the known Berlin3D 2025 / LoD2 measurements, DGM terrain and prepared real road data. Raw Berlin3D shell/roof geometry is retained only as a hidden reference because the direct photogrammetry mesh is too damaged/triangulated for visible game geometry. Gameplay and optical-master set dressing remain separated in dedicated collections so measured data and authored game content are distinguishable.
+
+
+## Rathaus Spandau – master-aligned Blender build v6
+
+The current Rathaus Spandau Blender build now applies the approved optical master on top of the real-data geometry workflow:
+
+- [RathausSpandau_MASTER_Aligned_v6.blend](tools/blender_pipeline/builds/rathaus_spandau/RathausSpandau_MASTER_Aligned_v6.blend)
+- [Blender viewport screenshot](tools/blender_pipeline/builds/rathaus_spandau/RathausSpandau_MASTER_Aligned_v6_Blender.png)
+- [Rendered preview](tools/blender_pipeline/builds/rathaus_spandau/RathausSpandau_MASTER_Aligned_v6_preview.png)
+- [Build metadata](tools/blender_pipeline/builds/rathaus_spandau/RathausSpandau_MASTER_Aligned_v6.json)
+- [Master alignment script](tools/blender_pipeline/masterize_rathaus_v6_final_scene.py)
+
+The real Berlin3D/LoD2/DGM geometry remains authoritative. The master is applied to facade detailing, materials, copper tower crown, wet Rathausplatz, tram/stops, statue, overhead wires, autumn vegetation, A/B cover, lighting and camera composition.

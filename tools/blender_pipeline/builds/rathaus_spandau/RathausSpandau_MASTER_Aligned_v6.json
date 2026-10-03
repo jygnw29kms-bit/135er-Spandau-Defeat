@@ -1,0 +1,17 @@
+{
+  "build": "RathausSpandau_MASTER_Aligned_v6",
+  "base": "RathausSpandau_MASTER_Aligned_v5",
+  "real_geometry_preserved": true,
+  "master_reference": "RathausSpandau_OpticalMaster.png",
+  "master_features": [
+    "historical facade treatment",
+    "copper tower crown",
+    "tram + stops",
+    "statue",
+    "overhead wires",
+    "wet plaza",
+    "autumn vegetation",
+    "foreground A/B cover",
+    "master camera and golden-hour light"
+  ]
+}
