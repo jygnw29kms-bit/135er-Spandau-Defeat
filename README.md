@@ -132,3 +132,10 @@ See [docs/IMAGE_QA.md](docs/IMAGE_QA.md).
 ---
 
 <p align="center"><strong>135er - SPANDAU STRIKE</strong><br><sub>BERLIN GIS | BLENDER | SOURCE 2 | UNREAL ENGINE 5</sub></p>
+
+
+### Rathaus Spandau – current Blender viewport
+
+![Rathaus Spandau current Blender build](tools/blender_pipeline/builds/rathaus_spandau/RathausSpandau_Blender_Screenshot.png)
+
+This screenshot shows the current clean Rathaus Spandau Blender rebuild derived from the measured Berlin3D/LoD2 geometry workflow.
