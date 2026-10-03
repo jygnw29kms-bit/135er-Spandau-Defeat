@@ -1,0 +1,31 @@
+{
+  "build": "RathausSpandau_REAL_Integrated_Master_v4",
+  "status": "current integrated Blender game master",
+  "authoritative_spatial_sources": [
+    "Berlin3D 2025",
+    "LoD2",
+    "DGM terrain",
+    "OSM roads"
+  ],
+  "origin_utm": [
+    377956.8271307037,
+    5822062.184676066
+  ],
+  "gis_center_utm": [
+    377897.8969272321,
+    5822086.91786854
+  ],
+  "transform_m": {
+    "x": -58.93020347162383,
+    "y": 24.73319247364998,
+    "z": 2.450000000000003,
+    "source_gis_y_inverted": true
+  },
+  "visible_architecture": "clean game rebuild derived from measured Berlin3D/LoD2 dimensions",
+  "hidden_reference": [
+    "Rathaus_Shell_REAL.obj",
+    "Rathaus_Roof_REAL.obj"
+  ],
+  "master_layer": "separate MASTER_Optical_SetDressing collection",
+  "policy": "real data -> clean game geometry -> gameplay -> master look"
+}

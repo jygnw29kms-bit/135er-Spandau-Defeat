@@ -139,3 +139,16 @@ See [docs/IMAGE_QA.md](docs/IMAGE_QA.md).
 ![Rathaus Spandau current Blender build](tools/blender_pipeline/builds/rathaus_spandau/RathausSpandau_Blender_Screenshot.png)
 
 This screenshot shows the current clean Rathaus Spandau Blender rebuild derived from the measured Berlin3D/LoD2 geometry workflow.
+
+
+## Rathaus Spandau – current integrated Blender master v4
+
+Current authoritative Blender game-build:
+
+- [RathausSpandau_REAL_Integrated_Master_v4.blend](tools/blender_pipeline/builds/rathaus_spandau/RathausSpandau_REAL_Integrated_Master_v4.blend)
+- [Blender viewport screenshot](tools/blender_pipeline/builds/rathaus_spandau/RathausSpandau_REAL_Integrated_Master_v4_Blender.png)
+- [Rendered preview](tools/blender_pipeline/builds/rathaus_spandau/RathausSpandau_REAL_Integrated_Master_v4_preview.png)
+- [Build provenance / transform metadata](tools/blender_pipeline/builds/rathaus_spandau/RathausSpandau_REAL_Integrated_Master_v4.json)
+- [Reproducible finalizer](tools/blender_pipeline/finalize_rathaus_integrated_master_v4.py)
+
+This build combines the clean Rathaus game rebuild with the known Berlin3D 2025 / LoD2 measurements, DGM terrain and prepared real road data. Raw Berlin3D shell/roof geometry is retained only as a hidden reference because the direct photogrammetry mesh is too damaged/triangulated for visible game geometry. Gameplay and optical-master set dressing remain separated in dedicated collections so measured data and authored game content are distinguishable.
