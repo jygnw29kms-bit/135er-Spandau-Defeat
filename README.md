@@ -6,16 +6,30 @@
 
 <p align="center"><code>20 maps</code> | <code>Berlin GIS</code> | <code>Blender Master Pipeline</code> | <code>Source 2 / CS2</code> | <code>UE 5.8 / Lyra</code></p>
 
-# Current project status - 2026-10-01
+# Current project status - 2026-10-03
 
 The project is developed for two active engine targets from one shared Berlin GIS / Blender data pipeline:
 
-- **Unreal Engine 5.8 / Lyra** - first playable GIS-based Falkenhagener Feld milestone reached.
-- **Counter-Strike 2 / Source 2** - server/plugin baseline works; native Hammer map production is in progress.
-- **Blender master** - shared terrain and geometry preparation layer for both engines.
-- **Berlin geodata** - LoD2-derived building heights, OSM roads/water and DGM1 terrain are used as real-world input.
+- **Unreal Engine 5.8 / Lyra** - Rathaus Spandau is the active production focus; the existing playable GIS baseline remains available for validation.
+- **Counter-Strike 2 / Source 2** - Rathaus Spandau is the active production focus; retail/addon packaging and final runtime validation remain in progress.
+- **Blender master** - Rathaus Spandau now uses Berlin3D 2025 / LoD2 as measured geometry reference; clean game geometry is rebuilt from those real dimensions.
+- **Berlin geodata** - Berlin3D 2025, LoD2, DGM1 and real roads/water are the authoritative spatial basis. Concept/master images are used only for look, atmosphere and set dressing.
 
 > Project name: **135er - Spandau Strike**. Older repository/package identifiers may still contain "Spandau Defeat" for compatibility and will be migrated gradually.
+### Current Rathaus-first production rule
+
+Rathaus Spandau is the current cross-engine reference map. Until this map has passed geometry, gameplay, collision/nav and visual QA, the other maps remain deferred.
+
+For every current and future map the build order is mandatory:
+
+1. measured/known 3D and geodata first (Berlin3D, LoD2, DGM1, roads, water)
+2. clean game geometry derived from that real spatial basis
+3. gameplay layer (spawns, objectives, cover, sightlines, collision, navigation)
+4. master/reference look (materials, weather, wetness, autumn mood, props, branding)
+
+Raw Berlin3D/LoD2 source datasets and generated Blender working files are not redistributed in this repository. The repository contains the reproducible build/analysis pipeline instead.
+
+See [docs/MAP_BUILD_POLICY.md](docs/MAP_BUILD_POLICY.md).
 
 ## Verified UE5 / Lyra milestone
 - UE 5.8.3 Lyra Starter Game project is operational.

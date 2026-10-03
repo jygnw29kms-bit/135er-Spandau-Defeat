@@ -13,3 +13,14 @@ __pycache__/
 # OS/editor noise
 .DS_Store
 Thumbs.db
+
+# Rathaus / Blender generated working artefacts (rebuild from scripts)
+tools/blender_pipeline/rathaus_final/
+tools/blender_pipeline/*.blend
+tools/blender_pipeline/*.blend1
+tools/blender_pipeline/*.bak
+
+# Berlin3D / LoD2 source meshes and textures are local reference inputs.
+# Do not redistribute raw third-party source datasets from this repository.
+**/Berlin3D_2025_*/
+**/LoD2_*/

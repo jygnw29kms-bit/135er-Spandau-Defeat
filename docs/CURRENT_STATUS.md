@@ -1,4 +1,13 @@
-# 135er Spandau Strike — current status
+## 2026-10-03 - Rathaus-first geometry policy
+
+- **Rathaus Spandau is the active cross-engine focus.**
+- Real Berlin3D 2025 / LoD2 geometry, DGM1 terrain, roads and water are the authoritative spatial basis.
+- Clean game geometry must be derived from measured/known 3D data before gameplay or visual styling.
+- Gameplay is layered after geometry: spawns, objectives, cover, sightlines, collision and navigation.
+- Master/reference images are used only for materials, lighting, atmosphere and set dressing.
+- Other maps remain deferred until Rathaus passes the geometry/gameplay/visual milestone.
+- Raw third-party Berlin3D/LoD2 source datasets and generated Blender working artefacts stay local; reproducible scripts are versioned.
+# 135er Spandau Strike â€” current status
 
 Updated: **2026-10-01**
 
@@ -25,7 +34,7 @@ The goal is to create one geographically coherent base, then perform engine-spec
 Verified on DESKTOP-BNDD1US:
 - Lyra Starter Game launches with required game-feature plugins
 - production GIS import works end to end
-- full Falkenhagener Feld 1.8 km × 1.8 km import succeeds
+- full Falkenhagener Feld 1.8 km Ã— 1.8 km import succeeds
 - 4,610 WFS features received; 4,560 usable buildings created
 - playable ShooterMaps level exists at `/ShooterMaps/Maps/SpandauStrikeGIS/falkenhagener_feld`
 - A/B/C control points, player starts, navmesh, HUD, pawn and weapon work
@@ -39,7 +48,7 @@ Verified on DESKTOP-BNDD1US:
 The current map is not yet visually final:
 - proxy building geometry does not yet reproduce individual landmarks such as Rathaus Spandau
 - DGM1 terrain elevation is not yet fully integrated into the final gameplay surface
-- collision must be validated on imported buildings and terrain to prevent fall-through / “walking over a flat 3D picture” behavior
+- collision must be validated on imported buildings and terrain to prevent fall-through / â€œwalking over a flat 3D pictureâ€ behavior
 - roads, water, vegetation and final materials need production passes
 - landmark replacement meshes are still required
 - large-area building rendering should move from thousands of individual actors toward HISM/combined geometry where appropriate
@@ -54,7 +63,7 @@ Current Falkenhagener Feld terrain source:
 - DGM1 tile `374_5824`
 - DGM1 tile `376_5824`
 
-These four 2 km tiles cover the 1.8 km × 1.8 km map extent that crosses DGM tile boundaries.
+These four 2 km tiles cover the 1.8 km Ã— 1.8 km map extent that crosses DGM tile boundaries.
 
 Current tooling includes terrain generation/import scripts and engine export targets for UE5 and Source 2. Large raw terrain archives and generated cache/output data are local working assets and should not be committed as normal Git history.
 
@@ -88,7 +97,7 @@ The active roster contains **20 maps**:
 - 12 core Spandau maps
 - 8 historical/special maps
 
-The three school maps — Martin-Buber-Schule, Askanier-Schule and B.-Traven-Schule — are part of the active core roster in both engine definitions.
+The three school maps â€” Martin-Buber-Schule, Askanier-Schule and B.-Traven-Schule â€” are part of the active core roster in both engine definitions.
 
 ## Media policy
 
