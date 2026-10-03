@@ -1,0 +1,14 @@
+{
+  "source": "SpandauStrike_Rathaus_FULLMAP_v2.blend",
+  "visible_objects": 1147,
+  "collision_objects": 12,
+  "gameplay_objects": 26,
+  "outputs": [
+    "SpandauStrike_Rathaus_FULLMAP_Collision.fbx",
+    "SpandauStrike_Rathaus_FULLMAP_Collision.obj",
+    "SpandauStrike_Rathaus_FULLMAP_GameplayMarkers.fbx",
+    "SpandauStrike_Rathaus_FULLMAP_Visible.fbx",
+    "SpandauStrike_Rathaus_FULLMAP_Visible.mtl",
+    "SpandauStrike_Rathaus_FULLMAP_Visible.obj"
+  ]
+}

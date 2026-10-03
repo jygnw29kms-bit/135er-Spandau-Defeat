@@ -1,0 +1,22 @@
+{
+  "build": "SpandauStrike_Rathaus_FULLMAP_v2",
+  "base": "v1",
+  "status": "full-map playable modeling pass",
+  "added": [
+    "city facade/roof materials",
+    "wet roads",
+    "water material",
+    "center sidewalks",
+    "urban tree belts",
+    "street lamps",
+    "ground collision",
+    "surrounding-building collision proxy",
+    "nav blockers",
+    "spawn rings"
+  ],
+  "extent_m": [
+    1000,
+    1000
+  ],
+  "building_faces": 45150
+}
