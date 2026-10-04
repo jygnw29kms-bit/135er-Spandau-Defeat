@@ -36,6 +36,8 @@ plugin.tx_felogin_login {
 
 page = PAGE
 page {
+    includeCSS >
+    includeCSSLibs >
     10 = FLUIDTEMPLATE
     10 {
         file = EXT:spandau_sitepackage/Resources/Private/Templates/Page.html
