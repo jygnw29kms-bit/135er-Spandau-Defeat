@@ -1,3 +1,5 @@
+@import 'EXT:femanager/Configuration/TypoScript/Main/constants.typoscript'
+
 spandau.community {
     # Set these to real page/usergroup UIDs in the TYPO3 backend template.
     userStoragePid = 0

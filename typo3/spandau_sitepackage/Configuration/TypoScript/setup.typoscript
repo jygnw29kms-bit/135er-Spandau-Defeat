@@ -1,3 +1,6 @@
+@import 'EXT:femanager/Configuration/TypoScript/Main/setup.typoscript'
+@import 'EXT:femanager/Configuration/TypoScript/Layout/setup.typoscript'
+
 tt_content.spandau_player_card = FLUIDTEMPLATE
 tt_content.spandau_player_card {
     file = EXT:spandau_sitepackage/Resources/Private/Templates/ContentElements/SpandauPlayerCard.html
