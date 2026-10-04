@@ -2,119 +2,59 @@
   <img src="media/theme/repo-hero.svg" alt="135er Spandau Strike" width="100%">
 </p>
 
-<p align="center"><strong>135er - Spandau Strike | Berlin-Spandau | Source 2 + Unreal Engine 5 / Lyra</strong></p>
+<p align="center"><strong>135er - Spandau Strike | Berlin-Spandau | Unreal Engine 5 / Lyra</strong></p>
 
-<p align="center"><code>20 maps</code> | <code>Berlin GIS</code> | <code>Blender Master Pipeline</code> | <code>Source 2 / CS2</code> | <code>UE 5.8 / Lyra</code></p>
+<p align="center"><code>Berlin GIS</code> | <code>Blender Master Pipeline</code> | <code>Unreal Engine 5 / Lyra</code></p>
 
-# Current project status - 2026-10-01
+# 135er - Spandau Strike
 
-The project is developed for two active engine targets from one shared Berlin GIS / Blender data pipeline:
+**Unreal Engine 5 / Lyra is the only active and future engine target.**
 
-- **Unreal Engine 5.8 / Lyra** - first playable GIS-based Falkenhagener Feld milestone reached.
-- **Counter-Strike 2 / Source 2** - server/plugin baseline works; native Hammer map production is in progress.
-- **Blender master** - shared terrain and geometry preparation layer for both engines.
-- **Berlin geodata** - LoD2-derived building heights, OSM roads/water and DGM1 terrain are used as real-world input.
 
-> Project name: **135er - Spandau Strike**. Older repository/package identifiers may still contain "Spandau Defeat" for compatibility and will be migrated gradually.
+## Current production focus
 
-## Verified UE5 / Lyra milestone
-- UE 5.8.3 Lyra Starter Game project is operational.
-- Playable map: `/ShooterMaps/Maps/SpandauStrikeGIS/falkenhagener_feld`
-- ShooterCore runtime and Control Points A/B/C active.
-- 8 LyraPlayerStart actors.
-- NavMeshBoundsVolume + RecastNavMesh.
-- Warmup -> Playing transition verified.
-- Standalone `?NumBots=7` verified.
-- 4,560 usable GIS building actors in the 1.8 km x 1.8 km production import.
-- 1,096 OSM elements processed.
-- 4,805 road/path segments and 230 water segments generated.
+- **Engine:** Unreal Engine 5 / Lyra
+- **Current map:** Rathaus Spandau
+- **Master authoring:** Blender
+- **World data:** Berlin GIS / LoD2 / DGM1
+- **Characters:** shared UE-compatible humanoid rig
+- **Modern factions:** CT = Germany / Bundeswehr-inspired, T = United States
+- **Historical factions:** CT = German period-correct forces, T = US period-correct forces
 
-### Engine-capture publication status
+## Rathaus Spandau pipeline
 
-A genuine UE5/Lyra runtime capture exists for development verification, but the current blockout does **not** yet pass the public presentation quality gate and is therefore not shown in the public README.
+1. Berlin geodata / reference acquisition
+2. Blender master modeling
+3. replacement of all visible blockouts with production geometry
+4. architecture and micro-detail pass
+5. street, tram, vegetation and set-dressing pass
+6. UE5-oriented naming, collision and scale validation
+7. FBX export to Unreal Engine 5
+8. UE5 materials, Nanite/LOD, collision, lighting and navigation
+9. gameplay validation
+10. genuine UE5 in-engine screenshots and release packaging
 
-The current UE map is a **playable GIS/gameplay blockout**, not final art. Terrain elevation, collision quality, street surfaces, water, vegetation, landmark replacements and final materials remain active production work.
 
-## Blender / terrain master
+## Maps
 
-The shared Blender pipeline lives under `tools/blender_pipeline/`.
-
-Current Falkenhagener Feld terrain coverage uses four Berlin DGM1 tiles:
-
-- `374_5822`
-- `376_5822`
-- `374_5824`
-- `376_5824`
-
-The Blender master provides common optimized terrain/geometry exports for UE5 and Source 2.
-## Source 2 / CS2 status
-
-Current verified/staged state:
-- Linux CS2 dedicated-server baseline and CounterStrikeSharp plugin are working.
-- 20 / 20 Hammer VMAP sources exist locally.
-- 20 / 20 maps have Berlin LoD2 building integration.
-- 20 / 20 DGM terrain reference VMAPs are generated and pass Valve DMX validation.
-- Rathaus Spandau is the current full gameplay reference.
-- Gameplay v2 and NAV seed data are generated for the other 19 maps.
-- Gameplay v2 + NAV seed VMAP validation: 19 OK / 0 FAIL.
-- Final runtime map compilation is currently blocked by the local Workshop Tools / Steam authentication context and the development machine's Source 2 compile environment.
-
-Next Source 2 milestone:
-- restore authenticated Workshop Tools compile context
-- complete runtime compile for staged maps
-- validate collision/navmesh in the running game
-- capture genuine Source 2 in-engine screenshots
-- package the first playable release
-
-**No Source 2 gameplay screenshot is published until a real Source 2 map is running and the capture has passed visual QA.**
-
-## Maps - 20 total
-
-**12 core maps:** Rathaus Spandau | Zitadelle | Staaken | Rodelberg | Kiesteich | Falkenhagener Feld | Lynarstrasse | Wroehmaennerpark | Freiheit | Martin-Buber-Schule | Askanier-Schule | B.-Traven-Schule
-
-**8 historical/special maps:** Fort Hahneberg 1945 | Teufelsberg - Cold War | Flugplatz Gatow 1945 | Gatow - Airlift 1948 | Radelandstrasse 1945 | Hakenfelde - Heeresamt 1944 | Zitadelle - 1 May 1945 | British Sector Spandau
-
-## Public image quality gate
-
-Public README images must pass all of these checks before commit:
-- manually inspected at full resolution
-- sharp and readable at normal GitHub display size
-- no broken mosaic/contact-sheet enlargement
-- no obvious compression corruption or failed generation
-- no misleading engine label
-- gameplay images must be genuine captures from the named engine
-- reference/concept art is not published in the public README
-- failed or uncertain images stay local and are not committed
-
-See [docs/IMAGE_QA.md](docs/IMAGE_QA.md).
-## Production order
-
-1. Berlin geodata/reference acquisition
-2. Blender master cleanup and terrain generation
-3. engine-specific export
-4. blockout and landmark architecture
-5. playable collision, spawns, objectives and navigation
-6. materials, roads, water and vegetation
-7. combat readability / sightline pass
-8. compile and standalone/server validation
-9. genuine in-engine screenshot + visual QA
-10. release packaging
+The project retains its Spandau map roster, but production is currently focused on **Rathaus Spandau**. Other maps resume after the Rathaus production standard has been established in UE5.
 
 ## Key project paths
 
 | Area | Path |
 |---|---|
-| Current cross-engine status | [docs/CURRENT_STATUS.md](docs/CURRENT_STATUS.md) |
+| Current status | [docs/CURRENT_STATUS.md](docs/CURRENT_STATUS.md) |
 | Map roster / modes | [docs/MAPS_AND_MODES.md](docs/MAPS_AND_MODES.md) |
 | UE5/Lyra GIS status | [lyra/docs/GIS_STATUS.md](lyra/docs/GIS_STATUS.md) |
 | UE5/Lyra map definitions | [lyra/maps/maps.json](lyra/maps/maps.json) |
-| Source 2 build status | [source2/docs/BUILD_STATUS.md](source2/docs/BUILD_STATUS.md) |
-| Source 2 map definitions | [source2/maps/maps.json](source2/maps/maps.json) |
-| Source 2 production pipeline | [source2/docs/MAP_PRODUCTION_PIPELINE.md](source2/docs/MAP_PRODUCTION_PIPELINE.md) |
 | Blender master pipeline | [tools/blender_pipeline/README.md](tools/blender_pipeline/README.md) |
 | Capture policy | [docs/INGAME_CAPTURE_STANDARD.md](docs/INGAME_CAPTURE_STANDARD.md) |
 | Image QA gate | [docs/IMAGE_QA.md](docs/IMAGE_QA.md) |
 
+## Publication rule
+
+Only genuine Unreal Engine 5 captures may be labeled as in-engine/gameplay imagery. Blender renders remain explicitly development/master renders until imported and verified in UE5.
+
 ---
 
-<p align="center"><strong>135er - SPANDAU STRIKE</strong><br><sub>BERLIN GIS | BLENDER | SOURCE 2 | UNREAL ENGINE 5</sub></p>
+<p align="center"><strong>135er - SPANDAU STRIKE</strong><br><sub>BERLIN GIS | BLENDER | UNREAL ENGINE 5 / LYRA</sub></p>

@@ -2,11 +2,11 @@
 
 Status: **binding**.
 
-For **135er – Spandau Strike**, every image labeled **in-game**, **gameplay**, **engine capture** or equivalent must be generated directly by the running target engine. UE/Lyra captures must come from UE/Lyra; Source 2 captures must come from Source 2 / Counter-Strike 2.
+For **135er – Spandau Strike**, every image labeled **in-game**, **gameplay**, **engine capture** or equivalent must be generated directly by the running target engine. UE/Lyra captures must come from UE/Lyra; Unreal Engine 5 captures must come from Unreal Engine 5 / .
 
 ## Allowed as in-game
 
-- screenshots captured from a running UE/Lyra or Source 2 map
+- screenshots captured from a running UE/Lyra or Unreal Engine 5 map
 - engine-generated cinematic captures using the actual map/assets
 - real target-engine lighting, materials, particles and geometry
 - live gameplay HUD/state where a HUD is shown
@@ -37,8 +37,8 @@ Concept images remain allowed as clearly identified **optical masters**.
 
 If HUD is visible, objectives, ammo, health, team state and other values must come from live game state.
 
-Public Source 2 captures are stored under:
+Public Unreal Engine 5 captures are stored under:
 
 `media/ingame/<map>/`
 
-Derived web previews may be generated from those Source 2 captures.
+Derived web previews may be generated from those Unreal Engine 5 captures.

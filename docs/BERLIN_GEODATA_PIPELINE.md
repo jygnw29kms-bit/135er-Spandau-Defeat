@@ -1,4 +1,4 @@
-# Berlin geodata -> Source 2 map pipeline
+# Berlin geodata -> Unreal Engine 5 map pipeline
 
 This project uses official/open Berlin geodata to establish real-world scale and building massing before gameplay adaptation.
 
@@ -11,7 +11,6 @@ This project uses official/open Berlin geodata to establish real-world scale and
 
 ## School anchors
 
-Canonical site definitions are stored in `source2/geodata/school_sites.json`.
 
 The three first targets are:
 
@@ -30,9 +29,9 @@ The three first targets are:
 7. Crop to gameplay context plus a safety margin.
 8. Create a local origin near the campus center, while recording the georeferenced source position in the map spec.
 9. Retopologize/rebuild playable architecture from the LoD2/mesh reference instead of shipping the dense city mesh as-is.
-10. Export optimized geometry for Source 2/Hammer.
+10. Export optimized geometry for Unreal Engine 5/Unreal Editor.
 11. Build collision separately and keep decorative detail out of player collision.
-12. Run Source 2 validation: scale, routes, spawn safety, objectives, nav/bots, visibility and performance.
+12. Run Unreal Engine 5 validation: scale, routes, spawn safety, objectives, nav/bots, visibility and performance.
 
 ## Geometry rules
 
@@ -60,7 +59,7 @@ Do not commit the raw 3D Mesh download archives by default. Commit only derived,
 
 Use the following layers together. No single dataset is authoritative for every visual feature.
 
-| Priority | Dataset | What it contributes to Source 2 reconstruction |
+| Priority | Dataset | What it contributes to Unreal Engine 5 reconstruction |
 |---|---|---|
 | A | Berlin LoD2 building model | cadastral building footprints, generalized roof forms and building massing |
 | A | ALKIS Berlin buildings / parcels | exact present-day building/parcel geometry and cadastral alignment |
@@ -104,4 +103,4 @@ For Cold-War maps, use the closest available historical aerial year (1974/1979/1
 
 ### Accuracy / provenance gate
 
-Each authored Hammer map must eventually carry a small provenance manifest containing: source dataset name, source date/era, tile or feature IDs where available, CRS, extraction date, license, local-origin transform and whether each geometry group is **measured**, **historically reconstructed**, or **gameplay adapted**. This makes later corrections reproducible and prevents AI/reference art from becoming accidental geometry truth.
+Each authored Unreal Editor map must eventually carry a small provenance manifest containing: source dataset name, source date/era, tile or feature IDs where available, CRS, extraction date, license, local-origin transform and whether each geometry group is **measured**, **historically reconstructed**, or **gameplay adapted**. This makes later corrections reproducible and prevents AI/reference art from becoming accidental geometry truth.

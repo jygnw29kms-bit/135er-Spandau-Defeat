@@ -5,7 +5,6 @@ ROOT=Path(__file__).resolve().parent
 MASTER=ROOT/"SpandauStrike_Master.blend"
 OBJ=ROOT/"output"/"master"/"falkenhagener_feld_DGM1_4m.obj"
 UE=ROOT/"output"/"ue5"/"falkenhagener_feld_DGM1_4m_UE5.fbx"
-S2=ROOT/"output"/"source2"/"falkenhagener_feld_DGM1_4m_SOURCE2.fbx"
 
 bpy.ops.wm.open_mainfile(filepath=str(MASTER))
 terrain_col=bpy.data.collections.get("10_TERRAIN")
@@ -42,17 +41,5 @@ terrain.select_set(True)
 bpy.context.view_layer.objects.active=terrain
 bpy.ops.export_scene.fbx(filepath=str(UE),use_selection=True,apply_unit_scale=True,
     object_types={'MESH'},add_leaf_bones=False,axis_forward='-Z',axis_up='Y')
-src=terrain.copy()
-src.data=terrain.data.copy()
-bpy.context.collection.objects.link(src)
-src.name="Terrain_FalkenhagenerFeld_SOURCE2"
-src.scale=(39.37007874,39.37007874,39.37007874)
-bpy.context.view_layer.objects.active=src
-bpy.ops.object.select_all(action="DESELECT")
-src.select_set(True)
-bpy.ops.object.transform_apply(location=False,rotation=False,scale=True)
-bpy.ops.export_scene.fbx(filepath=str(S2),use_selection=True,apply_unit_scale=True,
-    object_types={'MESH'},add_leaf_bones=False,axis_forward='-Z',axis_up='Y')
-bpy.data.objects.remove(src,do_unlink=True)
 bpy.ops.wm.save_as_mainfile(filepath=str(MASTER))
 print("TERRAIN_IMPORT_OK",len(terrain.data.vertices),len(terrain.data.polygons))

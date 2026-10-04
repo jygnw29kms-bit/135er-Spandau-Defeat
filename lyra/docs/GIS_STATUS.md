@@ -24,8 +24,8 @@ A 1.8 km x 1.8 km WFS query around that center returned 4,610 matching building 
 
 ## Current Lyra branch
 - branch: lyra-ue5-gis
-- 20 map definitions mirrored from Source 2
-- 20 map production specs mirrored from Source 2
+- 20 map definitions mirrored from Unreal Engine 5
+- 20 map production specs mirrored from Unreal Engine 5
 - autonomous UE5 Python building importer created
 - default map: falkenhagener_feld
 - generated hierarchy: Berlin_LoD2_Autonomous_Import/<map>/Buildings
@@ -132,7 +132,7 @@ OSM layers are now draped onto DGM and merged:
 
 Standalone Lyra runtime was revalidated with ?NumBots=7 after the optimization pass and a fresh 1280x720 in-game screenshot was captured.
 
-## V7 playable production milestone — 2026-10-01
+## V7 playable production milestone  2026-10-01
 Verified standalone map:
 - /ShooterMaps/Maps/SpandauStrikeGIS/falkenhagener_feld_playable_v7
 - Lyra ControlPoints experience enters ShooterGame.GamePhase.Playing
@@ -182,14 +182,14 @@ Navigation optimization:
 ### Remaining navigation performance issue
 WorldPartitionNavigationDataBuilder completes with 0 errors after setting Recast RuntimeGeneration=Static, but a fresh standalone launch still reports SpawnMissingNavigationData and rebuilds the default navmesh at runtime. Gameplay is functional after that rebuild; persistent World Partition nav-data serialization remains an open optimization item and is not marked fixed.
 
-## Falkenhagener Feld V8 daylight/runtime validation — 2026-10-01
+## Falkenhagener Feld V8 daylight/runtime validation  2026-10-01
 - V8 standalone runtime verified with ?NumBots=7
 - ShooterGame.GamePhase.Playing reached after warmup
 - daylight pass: DirectionalLight 4.0, SkyLight 1.25, reduced fog, unbound post-process exposure bias
 - engine on-screen warnings hidden for clean runtime capture
 - clean in-game screenshot captured from the actual UE 5.8 game window
 
-## Falkenhagener Feld V8 persistent World Partition navigation — 2026-10-01
+## Falkenhagener Feld V8 persistent World Partition navigation  2026-10-01
 - RecastNavMesh diagnosis: RuntimeGeneration was already Static, but Is World Partitioned was false.
 - Is World Partitioned enabled and saved on RecastNavMesh-Default.
 - WorldPartitionNavigationDataBuilder completed all 4 iterative cells.
@@ -228,7 +228,7 @@ Remaining visual production:
 - higher fidelity street furniture, vegetation and materials
 - public screenshots only after the image QA gate passes
 
-## Zitadelle Spandau playable GIS milestone — 2026-10-02
+## Zitadelle Spandau playable GIS milestone  2026-10-02
 - runtime map: /ShooterMaps/Maps/SpandauStrikeGIS/zitadelle_spandau_playable_v1
 - World Partition game world verified
 - Lyra ControlPoints experience
@@ -238,7 +238,7 @@ Remaining visual production:
 - repeated Warmup -> ShooterGame.GamePhase.Playing transitions verified
 - DGM terrain, WFS building geometry, OSM roads/water and daylight pass active
 
-## Staaken playable GIS milestone — 2026-10-02
+## Staaken playable GIS milestone  2026-10-02
 - runtime map: /ShooterMaps/Maps/SpandauStrikeGIS/staaken_playable_v1
 - 1.3 x 1.3 km GIS production area
 - DGM terrain + Berlin WFS exact building footprints

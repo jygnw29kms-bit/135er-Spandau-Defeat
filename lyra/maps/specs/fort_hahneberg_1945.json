@@ -37,11 +37,5 @@
     "noBoostRequiredRoutes": true,
     "waterSafetyRequired": true,
     "stuckClusterAcceptance": 0
-  },
-  "source2": {
-    "authoringTool": "CS2 Workshop Tools / Hammer",
-    "compiledMapName": "fort_hahneberg_1945",
-    "workshopId": null,
-    "status": "design-spec-ready"
   }
 }

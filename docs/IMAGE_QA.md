@@ -20,7 +20,7 @@ Reject an image if any of the following is visible:
 
 A gameplay image must be captured from the actual running target engine:
 - UE5/Lyra image -> UE5/Lyra runtime
-- Source 2 image -> Source 2/CS2 runtime
+- Unreal Engine 5 image -> Unreal Engine 5/CS2 runtime
 
 Reference or concept imagery must not be used as a substitute for gameplay screenshots.
 

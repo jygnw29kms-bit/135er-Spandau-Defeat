@@ -126,8 +126,6 @@ def run(input_path: Path):
     save_master(ROOT/"output"/"master"/f"{stem}_master.blend")
     select_for_export()
     export_fbx(ROOT/"output"/"ue5"/f"{stem}_UE5.fbx")
-    select_for_export()
-    export_fbx(ROOT/"output"/"source2"/f"{stem}_SOURCE2.fbx")
     print(f"PIPELINE_OK::{stem}")
 
 if __name__ == "__main__":
