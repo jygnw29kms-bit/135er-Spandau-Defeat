@@ -48,24 +48,40 @@ a{color:inherit}
 .hs-footer-intern{left:65.8%;top:95.7%;width:5.0%;height:1.7%}
 .hs-footer-contact{left:71.0%;top:95.7%;width:5.4%;height:1.7%}
 .screenreader{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
-.subPage{width:min(941px,100%);margin:0 auto;background:#11130f;min-height:100vh;padding:28px;color:#ddd;font-family:Arial,sans-serif}
-.subPage a{color:#d7b91f}.subPage h1,.subPage h2,.subPage h3{text-transform:uppercase;font-family:Impact,"Arial Black",sans-serif}
+.anchor{position:absolute;left:0;width:1px;height:1px;pointer-events:none}
+#projekt{top:11.4%}#maps{top:48.2%}#fraktionen{top:60.2%}#development{top:60.2%}#medien{top:31.0%}#kontakt{top:94.7%}
+.subWrap{width:min(941px,100%);margin:0 auto;background:#0b0c0a;min-height:100vh;color:#ddd;font-family:Arial,sans-serif}
+.subHeader{position:relative;width:100%;aspect-ratio:941/190;overflow:hidden;background:#0b0c0a}
+.subHeader>img{position:absolute;left:0;top:0;width:100%;height:auto;display:block}
+.subHot{position:absolute;z-index:3;top:76%;height:24%;display:block;background:transparent}
+.subHot.start{left:2.6%;width:10.2%}.subHot.project{left:12.9%;width:11.1%}.subHot.maps{left:24%;width:9.2%}.subHot.factions{left:33.2%;width:13.5%}.subHot.news{left:46.7%;width:8.8%}.subHot.media{left:55.5%;width:9.2%}.subHot.recruit{left:64.7%;width:13.5%}.subHot.intern{left:78.2%;width:9.6%}.subHot.contact{left:87.8%;width:9.8%}
+.subBody{position:relative;margin:0 19px 18px;padding:22px 24px 28px;background:linear-gradient(rgba(18,20,16,.97),rgba(11,12,10,.99)),url("https://raw.githubusercontent.com/jygnw29kms-bit/135er-Spandau-Defeat/main/media/theme/spandau-strike-master-final.png") center 74%/941px auto;border:1px solid #565243;box-shadow:inset 0 0 0 2px #1d1e18,0 8px 26px #0008}
+.subTitleBar{margin:-22px -24px 20px;padding:13px 18px 11px;border-bottom:1px solid #68604a;background:linear-gradient(180deg,#282920,#171812);box-shadow:inset 0 1px #77715b;color:#eee8d7}
+.subTitleBar h1{margin:0;font:900 30px/1 Impact,"Arial Black",sans-serif;letter-spacing:.02em;text-transform:uppercase;text-shadow:1px 1px #000}
+.subTitleBar small{display:block;margin-top:4px;color:#cdbb35;font:900 9px/1.2 "Arial Narrow",Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase}
+.subBody a{color:#e2c529;text-decoration:none}.subBody a:hover{text-decoration:underline}.subBody h2,.subBody h3,.subBody h4{text-transform:uppercase;font-family:Impact,"Arial Black",sans-serif;color:#eee8d7;letter-spacing:.02em}.subBody p,.subBody li,.subBody label,.subBody legend{color:#c9c3ae;line-height:1.5}
+.subBody fieldset{border:1px solid #555142;background:#11130f;padding:16px;margin:14px 0}.subBody legend{padding:0 8px;color:#e3c82d;font:900 11px/1 "Arial Narrow",Arial,sans-serif;text-transform:uppercase;letter-spacing:.08em}
+.subBody input[type=text],.subBody input[type=password],.subBody input[type=email],.subBody input[type=search],.subBody textarea,.subBody select{background:#090a08!important;color:#eee8d7!important;border:1px solid #6a6552!important;box-shadow:inset 0 0 0 1px #1c1e18;padding:9px 10px!important;border-radius:0!important;max-width:100%}
+.subBody input[type=submit],.subBody button,.subBody .btn,.subBody .btn-primary{background:linear-gradient(#e1c83b,#b79b1b)!important;color:#11120e!important;border:1px solid #6f5d0b!important;box-shadow:inset 0 1px #f5dd59;padding:9px 15px!important;border-radius:0!important;font:900 11px/1 "Arial Narrow",Arial,sans-serif!important;text-transform:uppercase;letter-spacing:.06em}
+.subBody table{width:100%;border-collapse:collapse;background:#10120e}.subBody th,.subBody td{border:1px solid #4c493c;padding:9px}.subBody th{background:#24251e;color:#e7dfc7;text-transform:uppercase}
+.subFooter{position:relative;width:100%;aspect-ratio:941/126;overflow:hidden;background:#090a08}
+.subFooter>img{position:absolute;left:0;bottom:0;width:100%;height:auto;display:block}
 @media(max-width:560px){
  .masterPage{width:100vw}
  .hotspot{min-height:10px}
- .subPage{padding:16px}
+ .subBody{margin:0 8px 10px;padding:16px}.subTitleBar{margin:-16px -16px 16px;padding:11px 12px}.subTitleBar h1{font-size:23px}
 }
 </style>
 </head>
 <body>
 <f:if condition="{data.uid} == 1"><f:then>
 <main class="masterPage" aria-label="135er Spandau Strike">
- <span id="projekt" class="screenreader">Projekt</span>
- <span id="maps" class="screenreader">Maps</span>
- <span id="fraktionen" class="screenreader">Fraktionen</span>
- <span id="development" class="screenreader">Entwicklungs-Pipeline</span>
- <span id="medien" class="screenreader">Medien</span>
- <span id="kontakt" class="screenreader">Kontakt</span>
+ <span id="projekt" class="anchor" aria-hidden="true"></span>
+ <span id="maps" class="anchor" aria-hidden="true"></span>
+ <span id="fraktionen" class="anchor" aria-hidden="true"></span>
+ <span id="development" class="anchor" aria-hidden="true"></span>
+ <span id="medien" class="anchor" aria-hidden="true"></span>
+ <span id="kontakt" class="anchor" aria-hidden="true"></span>
  <img src="https://raw.githubusercontent.com/jygnw29kms-bit/135er-Spandau-Defeat/main/media/theme/spandau-strike-master-final.png" alt="135er Spandau Strike – Berlin Tactical Operations">
  <a class="hotspot hs-start" href="/135erSpandauStrike/" aria-label="Start"></a>
  <a class="hotspot hs-project" href="/135erSpandauStrike/#projekt" aria-label="Projekt"></a>
@@ -111,10 +127,24 @@ a{color:inherit}
  </div>
 </main>
 </f:then><f:else>
-<main class="subPage">
- <p><a href="/135erSpandauStrike/">← Startseite</a></p>
- <h1>{data.title}</h1>
- <f:format.raw>{content}</f:format.raw>
-</main>
+<div class="subWrap">
+ <header class="subHeader" aria-label="135er Spandau Strike Navigation">
+  <img src="https://raw.githubusercontent.com/jygnw29kms-bit/135er-Spandau-Defeat/main/media/theme/spandau-strike-master-final.png" alt="">
+  <a class="subHot start" href="/135erSpandauStrike/" aria-label="Start"></a>
+  <a class="subHot project" href="/135erSpandauStrike/#projekt" aria-label="Projekt"></a>
+  <a class="subHot maps" href="/135erSpandauStrike/#maps" aria-label="Maps"></a>
+  <a class="subHot factions" href="/135erSpandauStrike/#fraktionen" aria-label="Fraktionen"></a>
+  <a class="subHot news" href="/135erSpandauStrike/intern/news" aria-label="News"></a>
+  <a class="subHot media" href="/135erSpandauStrike/#medien" aria-label="Medien"></a>
+  <a class="subHot recruit" href="/135erSpandauStrike/registrieren" aria-label="Rekrutierung"></a>
+  <a class="subHot intern" href="/135erSpandauStrike/intern" aria-label="Intern"></a>
+  <a class="subHot contact" href="/135erSpandauStrike/#kontakt" aria-label="Kontakt"></a>
+ </header>
+ <main class="subBody">
+  <div class="subTitleBar"><h1>{data.title}</h1><small>135er Spandau Strike // Berlin Tactical Operations</small></div>
+  <f:format.raw>{content}</f:format.raw>
+ </main>
+ <footer class="subFooter"><img src="https://raw.githubusercontent.com/jygnw29kms-bit/135er-Spandau-Defeat/main/media/theme/spandau-strike-master-final.png" alt=""></footer>
+</div>
 </f:else></f:if>
 </body></html>
