@@ -23,3 +23,15 @@ The raster overlay was inspected visually. All five polygons have unique vertice
 Verify the actual fuselage sections, canopy, inlet ramps, nacelles, nozzles and beavertail against the reference sources. The current rounded/pear/lobed section formulas are engineering guesses and cannot establish original exterior fidelity. Separate those components before designing print shells. Reconcile NASA airframe length with Navy overall-length datum and swept-span discrepancy.
 
 No production STL/3MF is released from this provisional geometry.
+
+## Cross-section source audit
+
+The actual `UPC_F14_Structure_Report.pdf` has 85 PDF pages. The older `UPC_F14_Report.pdf` text extraction contains a server security interstitial and must not be used as engineering evidence.
+
+PDF page 31 (printed page 19), Figure 3.15, contains the three-view drawing with section letters A–F. Its embedded raster is 2113 × 2953 pixels and was extracted at its native resolution for further section tracing. This is a reproduced third-party blueprint, cited as reference [37], rather than an original factory station drawing. Its station marks must be registered to the NASA length and waterline datums before sections are lofted.
+
+PDF pages 42–43 (printed pages 30–31), Figures 5.5–5.11, compare seven source section examples with the thesis CAD sections. They show the transition from a circular nose section through a canopy-bearing forward section to the inlet/glove region, separate engine lobes, and separate aft circles. Those topology changes are not represented by the current single rounded/lobed loft.
+
+PDF page 44 (printed page 32) explicitly explains that the cockpit top was omitted from the structural model. The same passage describes manually fitted spline profiles and reconstructed sections where plan cuts were unavailable. PDF page 62 (printed page 50) notes that the lateral structural representation differs because the skin is absent and crossbeam placement does not follow its shape closely. Consequently the 30 thesis structural sections cannot be accepted directly as the aircraft outer skin.
+
+Next exterior step: trace the available source sections, preserve separate canopy and engine components, and register section-letter stations against the orthographic views. Record any interpolation as provisional, rather than asserting original factory geometry.
