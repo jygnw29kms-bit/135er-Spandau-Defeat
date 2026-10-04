@@ -1,172 +1,127 @@
-<!--
-  135er Spandau Strike Web Master
-  Copyright (c) 2026 JL1976. All rights reserved.
-  UE5-only war/tactical design master.
--->
+<!-- 135er Spandau Strike Web Master | Copyright (c) 2026 JL1976 -->
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#11130f">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#10110e">
 <style>
 :root{
- --black:#090a08;--coal:#11130f;--coal2:#171914;--steel:#252820;--steel2:#33372b;
- --olive:#5f6542;--olive2:#858d58;--sand:#b8aa7a;--paper:#d8d0b4;--rust:#8e3424;
- --warn:#d0a21b;--red:#9c251c;--red2:#d1442e;--text:#e7e2d2;--muted:#a39d89;
- --line:#4a4d3d;--green:#6d8757;--mono:"Arial Narrow","Roboto Condensed",Arial,sans-serif;
- --display:Impact,"Arial Black","Arial Narrow",Arial,sans-serif
+ --bg:#0c0d0b;--panel:#131510;--panel2:#191b15;--edge:#494b3e;--edge2:#2c2e27;
+ --text:#ded9c9;--muted:#9f9a89;--khaki:#b5aa7a;--yellow:#d5b327;--red:#a42c21;--green:#6e8d54;
+ --display:Impact,"Arial Black","Arial Narrow",sans-serif;--cond:"Arial Narrow","Roboto Condensed",Arial,sans-serif;
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:
- radial-gradient(circle at 20% 0%,rgba(104,111,72,.10),transparent 32%),
- linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),
- linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px),
- var(--black);
- background-size:auto,32px 32px,32px 32px,auto;color:var(--text);font-family:Arial,sans-serif}
-body:before{content:"";position:fixed;inset:0;z-index:999;pointer-events:none;background:
- repeating-linear-gradient(0deg,transparent 0 3px,rgba(0,0,0,.12) 4px),
- radial-gradient(circle at 15% 20%,rgba(255,255,255,.025),transparent 18%),
- radial-gradient(circle at 82% 76%,rgba(255,255,255,.02),transparent 15%)}
-a{color:inherit;text-decoration:none}img{max-width:100%;display:block}.shell{width:min(1460px,calc(100% - 32px));margin:auto}
-.top{position:sticky;top:0;z-index:50;background:rgba(11,12,9,.97);border-bottom:2px solid #454938;box-shadow:0 6px 22px #0008}
-.top:before{content:"";display:block;height:7px;background:repeating-linear-gradient(135deg,#1e2119 0 13px,var(--warn) 13px 26px)}
-.nav{min-height:72px;display:flex;align-items:center;gap:18px}
-.brand{display:flex;align-items:center;gap:12px;margin-right:auto}
-.mark{width:54px;height:46px;display:grid;place-items:center;background:#23261e;border:2px solid var(--sand);box-shadow:inset 0 0 0 2px #0b0c0a;font:900 21px/1 var(--display);letter-spacing:.06em;transform:skew(-4deg)}
-.brand strong{display:block;font:900 24px/.95 var(--display);letter-spacing:.06em;text-transform:uppercase}
-.brand small{display:block;margin-top:5px;color:var(--sand);font:900 9px/1 var(--mono);letter-spacing:.22em;text-transform:uppercase}
-.menu{display:flex;gap:2px;align-items:center}.menu a{padding:12px 11px;border-left:1px solid #303328;color:#c9c5b4;font:900 10px/1 var(--mono);letter-spacing:.11em;text-transform:uppercase}
-.menu a:hover{background:#22251d;color:#fff}.menu .hot{background:var(--red);border:1px solid #be4935;color:#fff}
-.navToggle{display:none}.burger{display:none;padding:10px 12px;border:1px solid var(--line);font:900 11px/1 var(--mono);letter-spacing:.13em;text-transform:uppercase}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;color:var(--text);font:14px/1.45 Arial,sans-serif;background:
+linear-gradient(rgba(255,255,255,.012) 1px,transparent 1px),
+linear-gradient(90deg,rgba(255,255,255,.012) 1px,transparent 1px),
+radial-gradient(circle at 50% 0%,#20221a 0,#0c0d0b 42%);
+background-size:24px 24px,24px 24px,auto}
+body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:99;opacity:.28;background:repeating-linear-gradient(0deg,transparent 0 2px,rgba(0,0,0,.18) 3px)}
+a{color:inherit;text-decoration:none}img{display:block;max-width:100%}.wrap{width:min(1180px,calc(100% - 22px));margin:auto}
+.siteTop{background:#0b0c0a;border-bottom:1px solid #555743}
+.mast{height:150px;position:relative;overflow:hidden;background:
+linear-gradient(90deg,rgba(7,8,6,.96) 0,rgba(7,8,6,.82) 42%,rgba(7,8,6,.18) 75%,rgba(7,8,6,.88) 100%),
+url('https://raw.githubusercontent.com/jygnw29kms-bit/135er-Spandau-Defeat/main/media/maps/rathaus-spandau-ue5-production.png') center 44%/cover}
+.mast:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#0b0c0a 0,transparent 36%),repeating-linear-gradient(90deg,transparent 0 79px,rgba(255,255,255,.025) 80px)}
+.mastInner{height:100%;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:2}
+.logoBlock{display:flex;gap:14px;align-items:center}.bars{display:flex;height:84px;gap:4px}.bars i{width:7px;background:#c7c2ae;display:block}.bars i:nth-child(2){background:#9e251d}.bars i:nth-child(3){background:#2a2c26}
+.logoText strong{display:block;font:900 52px/.82 var(--display);letter-spacing:.02em;text-transform:uppercase;text-shadow:3px 3px #000}
+.logoText span{display:block;margin-top:9px;font:900 12px/1 var(--cond);letter-spacing:.28em;color:#b9b29b;text-transform:uppercase}
+.mastIntel{text-align:right;font:900 11px/1.65 var(--cond);letter-spacing:.16em;text-transform:uppercase;color:#b9b29b}.mastIntel b{color:#e3dec9}
+.navbar{background:linear-gradient(#24261e,#151712);border-top:1px solid #585b48;border-bottom:1px solid #050605;box-shadow:0 2px 0 #36382d inset}
+.navin{display:flex;min-height:46px}.navin a{display:flex;align-items:center;padding:0 19px;border-right:1px solid #3d4033;font:900 11px/1 var(--cond);letter-spacing:.08em;text-transform:uppercase;color:#d3cebc}.navin a:first-child{border-left:1px solid #3d4033}.navin a:hover,.navin .active{background:linear-gradient(#d8bd38,#ad8f19);color:#11120e;text-shadow:none}.navToggle,.burger{display:none}
 
-.hero{position:relative;min-height:680px;display:grid;align-items:end;overflow:hidden;border-bottom:1px solid #4c4f3e}
-.hero:before{content:"";position:absolute;inset:0;background:
- linear-gradient(90deg,#0b0c09 0%,rgba(11,12,9,.94) 30%,rgba(11,12,9,.30) 68%,#0b0c09 100%),
- linear-gradient(0deg,#0b0c09 0%,transparent 48%),
- url('https://raw.githubusercontent.com/jygnw29kms-bit/135er-Spandau-Defeat/main/media/maps/rathaus-spandau-ue5-production.png') center 44%/cover no-repeat;
- filter:saturate(.45) sepia(.16) contrast(1.22) brightness(.76)}
-.hero:after{content:"OPERATION 135";position:absolute;right:-18px;top:110px;color:rgba(213,208,180,.055);font:900 clamp(64px,12vw,170px)/.75 var(--display);letter-spacing:.02em;transform:rotate(-6deg);white-space:nowrap}
-.heroGrid{position:relative;z-index:2;display:grid;grid-template-columns:1.12fr .88fr;gap:28px;align-items:end;padding:110px 0 48px}
-.stamp,.kicker,.label{font:900 10px/1 var(--mono);letter-spacing:.20em;text-transform:uppercase}
-.kicker{display:inline-block;padding:8px 10px;border:1px solid var(--olive2);background:#1d2018;color:#d3c99e}
-.hero h1{margin:14px 0 10px;font:900 clamp(4.6rem,9.5vw,9rem)/.76 var(--display);text-transform:uppercase;letter-spacing:.005em;text-shadow:4px 5px 0 #000}
-.hero h1 span{display:block;color:var(--sand);-webkit-text-stroke:1px #2a2b22}
-.lead{max-width:760px;margin:18px 0 0;padding:17px 18px;background:rgba(18,20,15,.92);border-left:6px solid var(--warn);border-top:1px solid #414536;border-bottom:1px solid #414536;color:#d0cbb9;line-height:1.62;font-size:15px}
-.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:22px}
-.btn{position:relative;padding:13px 17px;background:#1a1d16;border:1px solid #5b604a;font:900 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;box-shadow:inset 0 0 0 1px #090a08}
-.btn:hover{background:#292d22;border-color:var(--sand)}.btn.red{background:var(--red);border-color:#cf4f3a}
-.btn:after{content:"";position:absolute;right:5px;bottom:5px;width:4px;height:4px;border-radius:50%;background:#777962}
+.main{padding:14px 0 28px}.frame{border:1px solid #4b4d3f;background:#11130f;box-shadow:0 0 0 1px #060706,0 10px 26px #0007}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) 275px;min-height:475px}
+.heroVisual{position:relative;overflow:hidden;background:#111}
+.heroVisual img{width:100%;height:100%;object-fit:cover;filter:saturate(.65) contrast(1.15) brightness(.82)}
+.heroVisual:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(7,8,6,.98) 0,rgba(7,8,6,.1) 65%),linear-gradient(90deg,transparent 70%,rgba(7,8,6,.6))}
+.heroCopy{position:absolute;z-index:2;left:28px;bottom:25px;right:25px}.eyebrow{font:900 10px/1 var(--cond);letter-spacing:.18em;text-transform:uppercase;color:#c5bfaa}
+.heroCopy h1{margin:6px 0 3px;font:900 66px/.82 var(--display);text-transform:uppercase;letter-spacing:.01em;text-shadow:3px 3px #000}.heroCopy h1 span{display:block;color:#eee9d8}.heroCopy .engineLine{font:900 18px/1 var(--cond);color:var(--yellow);letter-spacing:.08em;text-transform:uppercase}.heroCopy p{max-width:720px;margin:9px 0 0;color:#d0cbb9;font:900 11px/1.5 var(--cond);letter-spacing:.06em;text-transform:uppercase}
+.command{border-left:1px solid #505244;background:#0e100c;padding:14px;position:relative}.boxTitle{padding:9px 10px;border:1px solid #4b4e3e;background:#1b1d17;color:var(--yellow);font:900 18px/1 var(--display);text-transform:uppercase}.statusTable{border:1px solid #3b3e31;border-top:0}.statusTable div{display:grid;grid-template-columns:94px 1fr;border-bottom:1px solid #2d3027}.statusTable span,.statusTable b{padding:9px 8px;font:900 10px/1.25 var(--cond);text-transform:uppercase}.statusTable span{color:#8e8a7b;border-right:1px solid #2d3027}.statusTable b{color:#ddd7c2}.statusTable .live{color:#8ebc65}.miniMap{margin-top:11px;border:1px solid #474a3a;background:#0a0b09;padding:6px}.miniMap img{height:145px;width:100%;object-fit:cover;filter:grayscale(1) contrast(1.25)}.miniCaption{padding:8px 4px 1px;font:900 9px/1.45 var(--cond);letter-spacing:.09em;text-transform:uppercase;color:#a8a28d}.miniCaption b{color:#ddd7c2}
 
-.opsCard{background:#151711;border:1px solid #60634c;box-shadow:0 28px 90px #000b,inset 0 0 0 1px #080906;position:relative}
-.opsCard:before,.panel:before,.engine:before{content:"";position:absolute;width:7px;height:7px;border-radius:50%;background:#71745e;box-shadow:inset 1px 1px 1px #111}
-.opsCard:before{left:8px;top:8px}
-.opsHead{display:flex;justify-content:space-between;padding:15px 17px 15px 28px;border-bottom:1px solid #3d4132;background:#0e100c;color:#bdb79e;font:900 9px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase}
-.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#7e9a61;box-shadow:0 0 12px #7e9a61;margin-right:7px}
-.opsBody{padding:24px}.opsTitle{margin-top:8px;font:900 38px/.95 var(--display);text-transform:uppercase}
-.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:19px}.stats div{padding:13px;border:1px solid #3a3e30;background:#0d0f0b}.stats b{display:block;font:900 18px/1 var(--mono);color:#e5d9ad}.stats span{display:block;margin-top:6px;color:#817d6d;font:900 9px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase}
+.section{margin-top:12px}.sectionBar{height:38px;display:flex;align-items:center;gap:11px;padding:0 12px;border:1px solid #4b4d3f;background:linear-gradient(#20231b,#151712);box-shadow:0 1px 0 #5a5d49 inset}.sectionBar h2{margin:0;font:900 22px/1 var(--display);letter-spacing:.03em;text-transform:uppercase}.sectionBar small{font:900 9px/1 var(--cond);letter-spacing:.14em;text-transform:uppercase;color:#8f8b7d}.sectionBar a{margin-left:auto;color:var(--yellow);font:900 9px/1 var(--cond);text-transform:uppercase}
+.newsGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:8px;border:1px solid #44473a;border-top:0;background:#0d0f0c}.newsCard{border:1px solid #3f4235;background:#151712}.newsCard img{height:138px;width:100%;object-fit:cover;filter:saturate(.65) contrast(1.08)}.newsBody{padding:10px}.meta{color:var(--yellow);font:900 9px/1 var(--cond);letter-spacing:.07em;text-transform:uppercase}.newsBody h3{margin:7px 0 5px;font:900 17px/1 var(--display);text-transform:uppercase}.newsBody p{margin:0;color:#aaa593;font-size:12px;line-height:1.45}.more{display:block;text-align:right;margin-top:8px;color:var(--yellow);font:900 9px/1 var(--cond);text-transform:uppercase}
 
-.ticker{border-bottom:1px solid #484b3c;background:#181a14}.tickerIn{min-height:44px;display:flex;align-items:center;gap:30px;overflow:hidden;font:900 9px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:#a7a18d}.ticker strong{color:#ddd4b7}.ticker i{color:var(--warn);font-style:normal}
+.mapGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;padding:8px;border:1px solid #44473a;border-top:0;background:#0d0f0c}.mapCard{position:relative;height:175px;overflow:hidden;border:1px solid #3f4235}.mapCard img{width:100%;height:100%;object-fit:cover;filter:saturate(.58) contrast(1.12)}.mapCard:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(7,8,6,.96),transparent 62%)}.mapLabel{position:absolute;z-index:2;left:9px;right:9px;bottom:8px}.mapLabel b{display:block;font:900 18px/1 var(--display);text-transform:uppercase}.mapLabel span{font:900 9px/1 var(--cond);letter-spacing:.08em;text-transform:uppercase;color:#b2ac98}
 
-.section{position:relative;padding:64px 0;border-bottom:1px solid #303328}
-.section:nth-of-type(even){background:rgba(26,28,21,.38)}
-.section:before{content:"";position:absolute;left:0;top:0;width:84px;height:8px;background:repeating-linear-gradient(135deg,#22251d 0 10px,var(--warn) 10px 20px)}
-.head{display:flex;justify-content:space-between;gap:28px;align-items:end;margin-bottom:28px}.section h2{margin:9px 0 0;font:900 clamp(2.5rem,5vw,5.2rem)/.86 var(--display);text-transform:uppercase;letter-spacing:.015em}.desc{max-width:560px;color:#a49f8e;font-size:13px;line-height:1.72}
+.lowerGrid{display:grid;grid-template-columns:1.85fr .95fr;gap:8px;margin-top:12px}.factions,.pipeline,.community{border:1px solid #46493b;background:#10120e}.innerPad{padding:8px}
+.factionGrid{display:grid;grid-template-columns:1fr 1fr;gap:7px}.faction{min-height:270px;border:1px solid #3e4134;background:linear-gradient(180deg,#181a15,#10120e);padding:12px;position:relative;overflow:hidden}.flagLine{display:flex;align-items:center;gap:9px;font:900 20px/1 var(--display);text-transform:uppercase}.flagDE,.flagUS{width:36px;height:22px;border:1px solid #555}.flagDE{background:linear-gradient(#111 0 33%,#ae1f22 33% 66%,#d7b622 66%)}.flagUS{background:repeating-linear-gradient(#b22234 0 2px,#eee 2px 4px);position:relative}.flagUS:before{content:"";position:absolute;left:0;top:0;width:15px;height:11px;background:#3c3b6e}.faction .silhouette{height:122px;margin:12px 0 7px;border:1px solid #35382d;background:radial-gradient(circle at 50% 28%,#44483b 0 12%,transparent 13%),linear-gradient(110deg,transparent 0 25%,#30342a 25% 42%,#24271f 42% 60%,#34382d 60% 76%,transparent 76%);opacity:.9}.faction ul{list-style:none;padding:0;margin:8px 0 0}.faction li{padding:3px 0 3px 17px;color:#b8b29e;font:900 10px/1.2 var(--cond);text-transform:uppercase;position:relative}.faction li:before{content:"✓";position:absolute;left:0;color:var(--yellow)}
+.pipelineList{padding:7px}.pipe{display:grid;grid-template-columns:42px 1fr 74px;gap:8px;align-items:center;padding:8px 0;border-bottom:1px solid #32352b}.pipe:last-child{border:0}.num{height:44px;display:grid;place-items:center;background:#2a2d24;border:1px solid #535644;font:900 18px/1 var(--display)}.pipe b{display:block;color:var(--yellow);font:900 12px/1 var(--cond);text-transform:uppercase}.pipe span{display:block;margin-top:4px;color:#918d7f;font-size:10px;line-height:1.3}.thumb{height:44px;border:1px solid #3c3f33;background:#252820}
 
-.feature{display:grid;grid-template-columns:1.6fr .4fr;gap:14px}.featureVisual{position:relative;min-height:480px;border:1px solid #585b46;overflow:hidden;background:#11130f;box-shadow:inset 0 0 0 5px #11130f}
-.featureVisual img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;filter:saturate(.48) sepia(.08) contrast(1.16)}
-.featureVisual:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(8,9,7,.96),transparent 64%),repeating-linear-gradient(90deg,transparent 0 9%,rgba(255,255,255,.016) 9.2% 9.35%)}
-.featureCopy{position:absolute;z-index:2;left:26px;right:26px;bottom:24px}.featureCopy h3{margin:8px 0;font:900 clamp(2.2rem,4vw,4.4rem)/.9 var(--display);text-transform:uppercase}.featureCopy p{max-width:740px;color:#c9c4b2;line-height:1.55}
-.mapCode{color:var(--warn);font:900 9px/1 var(--mono);letter-spacing:.18em;text-transform:uppercase}
+.community{margin-top:8px}.communityGrid{display:grid;grid-template-columns:1fr 1.2fr .9fr;gap:8px;padding:8px}.communityPane{border:1px solid #3f4235;background:#141611;padding:10px;min-height:150px}.communityPane h3{margin:0 0 8px;font:900 15px/1 var(--display);text-transform:uppercase;color:#ddd8c7}.communityPane p{font-size:11px;color:#9f9a89}.roles{list-style:none;padding:0;margin:0}.roles li{padding:4px 0 4px 18px;font:900 10px/1.1 var(--cond);text-transform:uppercase;position:relative}.roles li:before{content:"□";position:absolute;left:0;color:var(--yellow)}.apply{display:inline-block;margin-top:9px;padding:10px 22px;background:linear-gradient(#e0c43a,#b49318);border:1px solid #625414;color:#10110d;font:900 11px/1 var(--cond);text-transform:uppercase}.member{display:grid;grid-template-columns:10px 1fr auto;gap:7px;padding:4px 0;font:900 10px/1 var(--cond);border-bottom:1px solid #2f3229}.member i{width:7px;height:7px;margin-top:2px;border-radius:50%;background:#6f9a52}.member em{font-style:normal;color:#8f8b7e}
+.quote{height:82px;border:1px solid #36392e;background:linear-gradient(135deg,#292c23,#121410);margin-bottom:8px}.quoteText{font:900 11px/1.45 var(--cond);text-transform:uppercase;color:#bbb5a1}
 
-.sideStack{display:grid;gap:14px}.panel{position:relative;background:#161912;border:1px solid #444837;padding:22px}.panel:before{left:8px;top:8px}.panel h3{margin:8px 0 10px;font:900 24px/1 var(--display);text-transform:uppercase}.panel p{margin:0;color:#aaa593;font-size:13px;line-height:1.6}.label{color:var(--sand)}
-.progress{height:8px;margin-top:15px;background:#090a08;border:1px solid #34372c;padding:1px}.progress span{display:block;height:100%;background:repeating-linear-gradient(135deg,var(--warn) 0 7px,#8c6c12 7px 14px)}
+.contentWrap{padding:14px 0 28px}.content .frame{border:1px solid #474a3c;background:#12140f;padding:18px;margin-bottom:10px}.content h1,.content h2,.content h3{font-family:var(--display);text-transform:uppercase}.content input,.content textarea,.content select{width:100%;background:#0a0b09!important;border:1px solid #4a4d3e!important;color:#eee!important;padding:10px!important}.content button,.content input[type=submit]{background:#c2a524!important;color:#111!important;border:1px solid #615414!important;padding:10px 16px!important;font:900 11px/1 var(--cond)!important;text-transform:uppercase}
+.footer{border-top:1px solid #474a3c;background:#080906;padding:22px 0}.foot{display:flex;justify-content:space-between;align-items:center;gap:20px}.footBrand{font:900 22px/1 var(--display);text-transform:uppercase}.footBrand small{display:block;margin-top:5px;font:900 8px/1 var(--cond);letter-spacing:.18em;color:#777568}.footNav{display:flex;gap:16px;font:900 9px/1 var(--cond);text-transform:uppercase;color:#918d7f}
 
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.map{position:relative;min-height:315px;overflow:hidden;background:#0c0e0a;border:1px solid #444837}.map img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.34) sepia(.16) contrast(1.2);transition:.22s}.map:hover img{transform:scale(1.025);filter:saturate(.5) contrast(1.24)}.map:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(7,8,6,.97),rgba(7,8,6,.08) 74%)}.mapInfo{position:absolute;z-index:2;left:17px;right:17px;bottom:16px}.map h3{margin:7px 0 4px;font:900 27px/.95 var(--display);text-transform:uppercase}.map p{margin:0;color:#bbb5a1;font-size:12px}
-
-.engineGrid{display:grid;grid-template-columns:1fr;gap:14px}.engine{position:relative;min-height:270px;padding:28px;border:1px solid #505441;background:
- linear-gradient(135deg,rgba(130,139,86,.08),transparent 42%),#151711}.engine:before{right:8px;top:8px}.engine h3{font:900 38px/.95 var(--display);text-transform:uppercase;margin:8px 0 14px}.engine ul{padding-left:18px;color:#aaa593;line-height:1.75}.engine b{color:#e2d8b6}
-.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}.step{border-top:4px solid #3b3f31;padding:17px 15px;background:#11130f}.step.done{border-color:var(--green)}.step.active{border-color:var(--warn)}.step b{display:block;font:900 13px/1 var(--mono);text-transform:uppercase}.step span{display:block;margin-top:8px;color:#898574;font-size:11px;line-height:1.5}
-.legacy{display:grid;grid-template-columns:1.15fr .85fr;gap:14px}.legacyNames{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.legacyNames span{padding:11px 13px;background:#0d0f0b;border:1px solid #464a39;font:900 11px/1 var(--mono);letter-spacing:.09em}
-
-.contentWrap{padding:46px 0 74px}.content:before{content:"135ER // FIELD COMMAND";display:block;margin-bottom:12px;color:#777362;font:900 9px/1 var(--mono);letter-spacing:.2em}.content .frame{position:relative;background:#141610;border:1px solid #464a39;padding:24px;margin-bottom:16px}.content .frame:before{content:"";position:absolute;left:0;top:0;width:86px;height:5px;background:var(--warn)}
-.content h1,.content h2,.content h3{font-family:var(--display);text-transform:uppercase}.content input,.content select,.content textarea{width:100%;background:#0a0b08!important;color:#fff!important;border:1px solid #4e5240!important;padding:13px!important;border-radius:0!important}.content button,.content input[type=submit],.content .btn-primary{width:auto!important;background:var(--red)!important;border:1px solid #bd4936!important;color:#fff!important;font:900 11px/1 var(--mono)!important;letter-spacing:.1em;text-transform:uppercase;padding:14px 18px!important}.content table{width:100%;border-collapse:collapse}.content td,.content th{padding:11px;border:1px solid #3d4132}.content th{background:#1d2018;font:900 10px/1 var(--mono);text-transform:uppercase}
-.footer{padding:28px 0;background:#070806;border-top:6px solid #22251d;color:#777362}.footer:before{content:"";display:block;height:6px;margin-top:-34px;margin-bottom:24px;background:repeating-linear-gradient(135deg,#1c1f18 0 10px,var(--warn) 10px 20px)}.footerIn{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font:900 9px/1.5 var(--mono);letter-spacing:.12em;text-transform:uppercase}
-
-@media(max-width:1050px){.burger{display:block}.menu{display:none;position:absolute;left:16px;right:16px;top:78px;background:#10120d;border:1px solid #4a4d3d;padding:8px;flex-direction:column;align-items:stretch}.navToggle:checked~.menu{display:flex}.menu a{padding:14px}.heroGrid,.feature,.legacy{grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr}.timeline{grid-template-columns:1fr 1fr}.hero{min-height:auto}.heroGrid{padding:78px 0 34px}}
-@media(max-width:680px){.shell{width:min(100% - 20px,1460px)}.brand strong{font-size:19px}.brand small{font-size:8px}.mark{width:47px;height:42px}.hero h1{font-size:clamp(3.1rem,17vw,5rem);line-height:.80}.lead{font-size:14px;line-height:1.5}.grid,.timeline{grid-template-columns:1fr}.featureVisual{min-height:360px}.head{display:block}.section{padding:48px 0}.section h2{font-size:clamp(2.4rem,13vw,3.8rem)}.stats{grid-template-columns:1fr 1fr}.tickerIn{gap:18px;white-space:nowrap;overflow-x:auto}.footerIn{display:block}.footerIn span{display:block;margin:5px 0}}
+@media(max-width:980px){.mast{height:125px}.logoText strong{font-size:40px}.navin{flex-wrap:wrap}.navin a{padding:0 11px}.hero{grid-template-columns:1fr}.command{border-left:0;border-top:1px solid #4a4d3e}.newsGrid{grid-template-columns:1fr 1fr}.mapGrid{grid-template-columns:1fr 1fr}.lowerGrid{grid-template-columns:1fr}.communityGrid{grid-template-columns:1fr 1fr}.communityPane:last-child{grid-column:1/-1}}
+@media(max-width:650px){.wrap{width:min(100% - 14px,1180px)}.mast{height:108px}.mastIntel{display:none}.logoText strong{font-size:31px}.logoText span{font-size:8px}.bars{height:58px}.navbar{position:relative}.burger{display:flex;height:46px;align-items:center;padding:0 14px;font:900 11px/1 var(--cond);text-transform:uppercase}.navToggle{display:none}.navin{display:none;position:absolute;left:0;right:0;top:46px;background:#171914;z-index:20;border:1px solid #494b3e}.navToggle:checked~.navin{display:flex;flex-direction:column}.navin a{min-height:42px;border-bottom:1px solid #33362b}.heroCopy h1{font-size:43px}.heroCopy{left:16px;bottom:18px}.heroVisual{min-height:430px}.newsGrid,.mapGrid,.factionGrid,.communityGrid{grid-template-columns:1fr}.communityPane:last-child{grid-column:auto}.sectionBar small{display:none}.foot{display:block}.footNav{margin-top:14px;flex-wrap:wrap}}
 </style>
 </head>
 <body>
-<header class="top">
- <div class="shell nav">
-  <a class="brand" href="/135erSpandauStrike/"><span class="mark">135</span><span><strong>Spandau Strike</strong><small>Berlin // Tactical Operations</small></span></a>
+<header class="siteTop">
+ <div class="mast"><div class="wrap mastInner">
+  <div class="logoBlock"><span class="bars"><i></i><i></i><i></i></span><div class="logoText"><strong>135er<br>Spandau Strike</strong><span>Berlin Tactical Operations</span></div></div>
+  <div class="mastIntel"><b>Berlin // Spandau</b><br>52.5347° N<br>13.1972° E<br>Unreal Engine 5</div>
+ </div></div>
+ <div class="navbar"><div class="wrap">
   <input class="navToggle" id="navToggle" type="checkbox"><label class="burger" for="navToggle">Menü</label>
-  <nav class="menu">
-   <a href="/135erSpandauStrike/#rathaus">Rathaus</a><a href="/135erSpandauStrike/#maps">Einsatzkarten</a><a href="/135erSpandauStrike/#development">Entwicklung</a><a href="/135erSpandauStrike/#legacy">Veteranen</a><a href="/135erSpandauStrike/intern">Feldkommando</a><a href="/135erSpandauStrike/typo3/">Administration</a><a class="hot" href="/135erSpandauStrike/anmelden">Anmelden</a>
-  </nav>
- </div>
+  <nav class="navin"><a class="active" href="/135erSpandauStrike/">Start</a><a href="/135erSpandauStrike/#projekt">Projekt</a><a href="/135erSpandauStrike/#maps">Maps</a><a href="/135erSpandauStrike/#fraktionen">Fraktionen</a><a href="/135erSpandauStrike/intern/news">News</a><a href="/135erSpandauStrike/#community">Rekrutierung</a><a href="/135erSpandauStrike/intern">Intern</a><a href="/135erSpandauStrike/#kontakt">Kontakt</a></nav>
+ </div></div>
 </header>
 
 <f:if condition="{data.uid} == 1"><f:then>
-<section class="hero">
- <div class="shell heroGrid">
-  <div>
-   <div class="kicker">OPERATION 135 // BERLIN-SPANDAU // UE5 COMBAT PROJECT</div>
-   <h1>Spandau<span>Strike</span></h1>
-   <p class="lead">Ein taktischer Community-Shooter aus Berlin-Spandau. Reale Geodaten, handgebaute Kampfzonen und ein konsequenter Unreal-Engine-5-Produktionspfad bilden die Grundlage für urbane Gefechte zwischen deutschen und amerikanischen Kräften.</p>
-   <div class="actions"><a class="btn red" href="#rathaus">Primärziel Rathaus</a><a class="btn" href="#development">Operationsstand</a><a class="btn" href="/135erSpandauStrike/registrieren">Einheit beitreten</a></div>
+<main class="main"><div class="wrap">
+ <section class="hero frame" id="projekt">
+  <div class="heroVisual"><img src="https://raw.githubusercontent.com/jygnw29kms-bit/135er-Spandau-Defeat/main/media/maps/rathaus-spandau-ue5-production.png" alt="Rathaus Spandau">
+   <div class="heroCopy"><div class="eyebrow">Urban Terrain // Berlin-Spandau</div><h1><span>Operation</span> Spandau</h1><div class="engineLine">Unreal Engine 5 / Lyra</div><p>Realistische Umgebung. Taktisches Teamplay. Unsere Stadt.</p></div>
   </div>
-  <aside class="opsCard">
-   <div class="opsHead"><span><i class="dot"></i> Feldlage</span><span>UE5 // ACTIVE</span></div>
-   <div class="opsBody"><div class="label">Primäre Operation</div><div class="opsTitle">Rathaus Spandau</div>
-    <div class="stats"><div><b>UE 5.8</b><span>Engine</span></div><div><b>UE5 ONLY</b><span>Production</span></div><div><b>20 MAPS</b><span>Operations</span></div><div><b>BERLIN GIS</b><span>Real Data</span></div></div>
-   </div>
-  </aside>
- </div>
-</section>
+  <aside class="command"><div class="boxTitle">Command Status</div><div class="statusTable">
+   <div><span>Current Focus</span><b>Rathaus Spandau</b></div><div><span>Engine</span><b>Unreal Engine 5</b></div><div><span>Status</span><b class="live">● Active Development</b></div><div><span>Region</span><b>Berlin-Spandau</b></div>
+  </div><div class="miniMap"><img src="https://raw.githubusercontent.com/jygnw29kms-bit/135er-Spandau-Defeat/main/media/theme/map-matrix.svg" alt="Spandau Operationskarte"><div class="miniCaption"><b>Rathaus Spandau</b><br>Koordinaten 52.5347 N / 13.1972 E</div></div></aside>
+ </section>
 
-<div class="ticker"><div class="shell tickerIn"><span><i>▲</i> CURRENT FOCUS <strong>RATHAUS SPANDAU</strong></span><span>PIPELINE <strong>BLENDER + BERLIN3D / LOD2 / DGM1</strong></span><span>ENGINE <strong>UNREAL ENGINE 5 / LYRA</strong></span></div></div>
-
-<section class="section" id="rathaus"><div class="shell">
- <div class="head"><div><div class="kicker">OP-01 // PRIORITY TARGET</div><h2>Rathaus<br>Spandau</h2></div><p class="desc">Die Referenzmap des Projekts. Gebäude, Rathausplatz, Tramtrasse, Deckungen, Sichtachsen, Navigation und Kampfzonen werden hier zuerst auf Produktionsqualität gebracht.</p></div>
- <div class="feature">
-  <article class="featureVisual"><img src="https://raw.githubusercontent.com/jygnw29kms-bit/135er-Spandau-Defeat/main/media/maps/rathaus-spandau-ue5-production.png" alt="Rathaus Spandau aktueller UE5 Produktionsmaster"><div class="featureCopy"><div class="mapCode">FIELD INTEL // RATHAUS MASTER BUILD</div><h3>Urbanes Gefechtsfeld</h3><p>Berlin3D/LoD2 und DGM liefern die räumliche Basis. Architektur, Straßenraum, Tram, Deckung und Set-Dressing werden als echte Produktionsgeometrie für UE5 ausgebaut.</p></div></article>
-  <div class="sideStack">
-   <div class="panel"><div class="label">Geometry</div><h3>Real Data First</h3><p>Keine beliebigen Platzhalter. Vermessene Berliner Daten bilden die Basis der sichtbaren Spielwelt.</p><div class="progress"><span style="width:92%"></span></div></div>
-   <div class="panel"><div class="label">Combat Zone</div><h3>Rathaus First</h3><p>Spawns, Objectives, Deckungen, Sichtlinien, Collision und Navigation werden zuerst an dieser Map finalisiert.</p><div class="progress"><span style="width:72%"></span></div></div>
-   <div class="panel"><div class="label">Rules of Publication</div><h3>Real Captures Only</h3><p>Als Gameplay werden ausschließlich echte UE5-Ingame-Aufnahmen veröffentlicht.</p></div>
+ <section class="section" id="news"><div class="sectionBar"><h2>Aktuelle News</h2><small>Projekt & Entwicklung</small><a href="/135erSpandauStrike/intern/news">Alle News anzeigen →</a></div>
+  <div class="newsGrid">
+   <article class="newsCard"><img src="https://raw.githubusercontent.com/jygnw29kms-bit/135er-Spandau-Defeat/main/media/maps/rathaus-spandau-ue5-production.png" alt="Rathaus"><div class="newsBody"><div class="meta">Entwicklung // Rathaus Spandau</div><h3>Blockout ersetzt</h3><p>Die sichtbaren Platzhalter werden durch detaillierte Produktionsgeometrie ersetzt und für den UE5-Import vorbereitet.</p><a class="more" href="#projekt">Weiter lesen →</a></div></article>
+   <article class="newsCard"><img src="https://raw.githubusercontent.com/jygnw29kms-bit/135er-Spandau-Defeat/main/media/theme/map-matrix.svg" alt="Pipeline"><div class="newsBody"><div class="meta">Technik // Pipeline</div><h3>UE5 Pipeline</h3><p>GIS-Daten, Blender-Master, Materialien und Export werden vollständig auf Unreal Engine 5 ausgerichtet.</p><a class="more" href="#development">Weiter lesen →</a></div></article>
+   <article class="newsCard"><img src="https://raw.githubusercontent.com/jygnw29kms-bit/135er-Spandau-Defeat/main/media/maps/rathaus-spandau-ue5-production.png" alt="Community"><div class="newsBody"><div class="meta">Community // 135er</div><h3>Team wächst</h3><p>Mapbau, 3D, Gameplay, Testing und Community werden als gemeinsames Spandau-Strike-Projekt organisiert.</p><a class="more" href="#community">Weiter lesen →</a></div></article>
   </div>
- </div>
-</div></section>
+ </section>
 
-<section class="section" id="maps"><div class="shell">
- <div class="head"><div><div class="kicker">OPERATION ROSTER // 20 ZONES</div><h2>Einsatzkarten</h2></div><p class="desc">Zwölf Kernmaps und acht historische bzw. spezielle Operationsräume. Bis Rathaus Spandau den Qualitätsstandard setzt, bleiben die übrigen Karten nachgeordnet.</p></div>
- <div class="grid">
-  <article class="map"><img src="https://raw.githubusercontent.com/jygnw29kms-bit/135er-Spandau-Defeat/main/media/maps/rathaus-spandau-ue5-production.png" alt="Rathaus Spandau"><div class="mapInfo"><div class="mapCode">OP-01 // ACTIVE</div><h3>Rathaus Spandau</h3><p>Altstadt · Rathaus · Bahnhof</p></div></article>
-  <article class="map"><img src="https://raw.githubusercontent.com/jygnw29kms-bit/135er-Spandau-Defeat/main/media/theme/map-matrix.svg" alt="Falkenhagener Feld"><div class="mapInfo"><div class="mapCode">CORE // RESERVE</div><h3>Falkenhagener Feld</h3><p>Wohnblöcke · Grünzüge · Sichtachsen</p></div></article>
-  <article class="map"><img src="https://raw.githubusercontent.com/jygnw29kms-bit/135er-Spandau-Defeat/main/media/theme/map-matrix.svg" alt="Zitadelle Spandau"><div class="mapInfo"><div class="mapCode">CORE // RESERVE</div><h3>Zitadelle</h3><p>Festung · Höfe · Rotationen</p></div></article>
-  <article class="map"><img src="https://raw.githubusercontent.com/jygnw29kms-bit/135er-Spandau-Defeat/main/media/theme/map-matrix.svg" alt="Staaken"><div class="mapInfo"><div class="mapCode">CORE // RESERVE</div><h3>Staaken</h3><p>Westsektor · offene Flanken</p></div></article>
-  <article class="map"><img src="https://raw.githubusercontent.com/jygnw29kms-bit/135er-Spandau-Defeat/main/media/theme/map-matrix.svg" alt="Martin Buber Schule"><div class="mapInfo"><div class="mapCode">CORE // SCHOOL</div><h3>Martin-Buber</h3><p>Campus · Innenhöfe · CQC</p></div></article>
-  <article class="map"><img src="https://raw.githubusercontent.com/jygnw29kms-bit/135er-Spandau-Defeat/main/media/theme/map-matrix.svg" alt="Askanier Schule"><div class="mapInfo"><div class="mapCode">CORE // SCHOOL</div><h3>Askanier</h3><p>Gebäudeflügel · Schulhof</p></div></article>
- </div>
-</div></section>
+ <section class="section" id="maps"><div class="sectionBar"><h2>Unsere Maps</h2><small>Real Locations. Berlin-Spandau.</small><a href="#maps">Alle Maps anzeigen →</a></div>
+  <div class="mapGrid">
+   <article class="mapCard"><img src="https://raw.githubusercontent.com/jygnw29kms-bit/135er-Spandau-Defeat/main/media/maps/rathaus-spandau-ue5-production.png" alt="Rathaus Spandau"><div class="mapLabel"><b>Rathaus Spandau</b><span>Urban / Objective</span></div></article>
+   <article class="mapCard"><img src="https://raw.githubusercontent.com/jygnw29kms-bit/135er-Spandau-Defeat/main/media/theme/map-matrix.svg" alt="Falkenhagener Feld"><div class="mapLabel"><b>Falkenhagener Feld</b><span>Wohngebiet / Nahkampf</span></div></article>
+   <article class="mapCard"><img src="https://raw.githubusercontent.com/jygnw29kms-bit/135er-Spandau-Defeat/main/media/theme/map-matrix.svg" alt="Zitadelle"><div class="mapLabel"><b>Zitadelle Spandau</b><span>Historisch / Taktisch</span></div></article>
+   <article class="mapCard"><img src="https://raw.githubusercontent.com/jygnw29kms-bit/135er-Spandau-Defeat/main/media/theme/map-matrix.svg" alt="Martin-Buber-Schule"><div class="mapLabel"><b>Martin-Buber-Schule</b><span>Innenbereich / CQB</span></div></article>
+  </div>
+ </section>
 
-<section class="section" id="development"><div class="shell">
- <div class="head"><div><div class="kicker">PRODUCTION COMMAND // UE5 ONLY</div><h2>Eine Engine.<br>Ein Kriegsschauplatz.</h2></div><p class="desc">Spandau Strike wird ausschließlich für Unreal Engine 5 / Lyra produziert. Blender ist der Modellmaster und sämtliche Karten-, Charakter- und Gameplay-Arbeiten sind vollständig auf UE5 ausgerichtet.</p></div>
- <div class="engineGrid">
-  <article class="engine"><div class="label">Active Production Engine</div><h3>Unreal Engine 5 / Lyra</h3><ul><li><b>UE 5.8.3</b> als Projektbasis</li><li>Berlin-GIS- und DGM-Pipeline</li><li>gemeinsamer Blender-Produktionsmaster</li><li>UE5-orientierte Collisions, LOD/Nanite und Materialien</li><li>Rathaus Spandau als Referenz für alle weiteren Karten</li></ul></article>
+ <div class="lowerGrid" id="fraktionen">
+  <section class="factions"><div class="sectionBar"><h2>Fraktionen</h2><small>Zwei Seiten. Ein Schlachtfeld.</small></div><div class="innerPad factionGrid">
+   <article class="faction"><div class="flagLine"><i class="flagDE"></i> CT – Deutschland</div><div class="silhouette"></div><ul><li>Bundeswehr-inspiriert</li><li>modulare Ausrüstung</li><li>realistische Loadouts</li><li>teamorientiert</li></ul></article>
+   <article class="faction"><div class="flagLine"><i class="flagUS"></i> T – USA</div><div class="silhouette"></div><ul><li>US-Streitkräfte-inspiriert</li><li>moderne Ausrüstung</li><li>realistische Loadouts</li><li>flexibler Spielstil</li></ul></article>
+  </div></section>
+  <section class="pipeline" id="development"><div class="sectionBar"><h2>Entwicklungs-Pipeline</h2></div><div class="pipelineList">
+   <div class="pipe"><div class="num">01</div><div><b>GIS / Blender</b><span>Reale Geodaten als räumliche Basis.</span></div><div class="thumb"></div></div>
+   <div class="pipe"><div class="num">02</div><div><b>Modeling</b><span>Detaillierte 3D-Umgebung.</span></div><div class="thumb"></div></div>
+   <div class="pipe"><div class="num">03</div><div><b>UE5 Import</b><span>Assets, Materialien, LOD/Nanite.</span></div><div class="thumb"></div></div>
+   <div class="pipe"><div class="num">04</div><div><b>Gameplay</b><span>Spawnpunkte, Navigation und Ziele.</span></div><div class="thumb"></div></div>
+   <div class="pipe"><div class="num">05</div><div><b>Ingame Capture</b><span>Nur echte UE5-Aufnahmen.</span></div><div class="thumb"></div></div>
+  </div></section>
  </div>
- <div class="timeline" style="margin-top:14px"><div class="step done"><b>01 // Recon</b><span>Berlin3D, LoD2, DGM1, Straßen und Wasser.</span></div><div class="step done"><b>02 // Build</b><span>Produktionsgeometrie und Detailmodelle in Blender.</span></div><div class="step active"><b>03 // Combat Zone</b><span>Rathaus, Gameplay, Collision/Nav und Materialpass.</span></div><div class="step"><b>04 // Deployment</b><span>UE5 Runtime-QA, Ingame-Captures und Release.</span></div></div>
-</div></section>
 
-<section class="section" id="legacy"><div class="shell legacy">
- <div class="panel"><div class="label">Community // Clan DNA</div><h3>Old School Combat Spirit</h3><p>Optisch lehnt sich Spandau Strike an klassische Day-of-Defeat- und Counter-Strike-Clanseiten an: direkt, rau, militärisch und informationsdicht. Kein Hochglanz-Landingpage-Look.</p><div class="actions"><a class="btn red" href="/135erSpandauStrike/registrieren">Mitglied werden</a><a class="btn" href="/135erSpandauStrike/intern">Feldkommando</a></div></div>
- <div class="panel"><div class="label">Legacy // Day of Defeat Beta 3.1</div><h3>Veteranenliste</h3><p>Die alten Namen bleiben Teil der Projektgeschichte.</p><div class="legacyNames"><span>O.G.Kill@</span><span>Olliwood</span><span>Killerdel@yel</span><span>LarsActionHero</span><span>Hunter</span></div></div>
-</div></section>
+ <section class="community section" id="community"><div class="sectionBar"><h2>Community & Rekrutierung</h2><small>Werde Teil des Projekts.</small></div><div class="communityGrid">
+  <div class="communityPane"><h3>Wir suchen Verstärkung</h3><ul class="roles"><li>3D Modeling</li><li>Level Design</li><li>Gameplay / Scripting</li><li>Testing / Feedback</li><li>Community Support</li></ul><a class="apply" href="/135erSpandauStrike/registrieren">Jetzt bewerben →</a></div>
+  <div class="communityPane"><h3>Aktive Mitglieder</h3><div class="member"><i></i><b>135|Marko</b><em>Mapping / Level Design</em></div><div class="member"><i></i><b>135|Keller</b><em>3D Art / Blender</em></div><div class="member"><i></i><b>135|Fuchs</b><em>Gameplay / Testing</em></div><div class="member"><i></i><b>135|Viper</b><em>Organisation</em></div><div class="member"><i></i><b>135|Nord</b><em>Community / Media</em></div></div>
+  <div class="communityPane"><h3>Veteranen & Supporter</h3><div class="quote"></div><div class="quoteText">„Spandau ist mehr als eine Karte – es ist unsere Heimat im Spiel.“</div></div>
+ </div></section>
+ <div id="kontakt"></div>
+</div></main>
 </f:then><f:else>
-<section class="section" style="padding:44px 0 28px"><div class="shell"><div class="kicker">135er // Field Command</div><h2 style="margin:8px 0 18px">{data.title}</h2><div class="actions"><a class="btn" href="/135erSpandauStrike/">Start</a><a class="btn" href="/135erSpandauStrike/intern">Dashboard</a><a class="btn" href="/135erSpandauStrike/intern/news">News</a><a class="btn" href="/135erSpandauStrike/intern/kader">Kader</a><a class="btn" href="/135erSpandauStrike/intern/termine">Matches</a><a class="btn" href="/135erSpandauStrike/intern/gameserver">Server</a><a class="btn" href="/135erSpandauStrike/intern/playerstats">Stats</a></div></div></section>
+<section class="contentWrap"><div class="wrap"><div class="sectionBar"><h2>{data.title}</h2><a href="/135erSpandauStrike/">Zurück zur Startseite</a></div><main class="content"><f:format.raw>{content}</f:format.raw></main></div></section>
 </f:else></f:if>
 
-<section class="contentWrap"><main class="shell content"><f:format.raw>{content}</f:format.raw></main></section>
-<footer class="footer"><div class="shell footerIn"><span>© 2026 135er Spandau Strike // Copyright by JL1976</span><span>Berlin-Spandau // Unreal Engine 5 / Lyra // UE5 Only</span></div></footer>
+<footer class="footer"><div class="wrap foot"><div class="footBrand">135er Spandau Strike<small>Berlin Tactical Operations</small></div><nav class="footNav"><a href="/135erSpandauStrike/">Start</a><a href="#maps">Maps</a><a href="#fraktionen">Fraktionen</a><a href="/135erSpandauStrike/intern">Intern</a><a href="#kontakt">Kontakt</a></nav></div></footer>
 </body></html>
