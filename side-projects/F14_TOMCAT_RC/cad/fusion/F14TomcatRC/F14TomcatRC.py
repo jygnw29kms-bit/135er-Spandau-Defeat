@@ -60,19 +60,30 @@ def build_model():
     except:
         pass
 
-    # Master scale: full-size F-14A OML scaled from 19.545 m max span to 900 mm.
-    S = 900.0/19545.0
-    L = 19100.0*S
-    span_open = 19545.0*S
-    span_swept = 11646.0*S
-    h = 4880.0*S
+    # Authoritative scale baseline.
+    # US Navy: 64 ft 1 in span, 62 ft 8 in overall length, 48 ft 2 in span fully swept.
+    # NASA CR-163098 Fig.4: 1/72 model = 27.14 cm span and 26.19 cm aerodynamic airframe length.
+    span_full_mm = 19532.6
+    length_full_mm = 19100.8
+    swept_span_full_mm = 14681.2
+    height_full_mm = 4876.8
+    span_open = 900.0
+    S = span_open/span_full_mm
+    L_total = length_full_mm*S
+    L = span_open*(261.9/271.4)  # NASA drawing airframe datum, excludes small length-datum discrepancy
+    span_swept = swept_span_full_mm*S
+    h = height_full_mm*S
+    stabilator_span = span_open*(138.5/271.4)
 
     # User parameters for RC architecture.
     up = design.userParameters
     def addp(n,val,unit,comment):
         try: up.add(n, adsk.core.ValueInput.createByString(str(val)+' '+unit), unit, comment)
         except: pass
-    addp('ScaleLength', round(L,2), 'mm', 'Scale outer-mold-line overall length')
+    addp('ScaleLengthAirframe', round(L,2), 'mm', 'NASA Fig.4 aerodynamic airframe length')
+    addp('ScaleLengthOverall', round(L_total,2), 'mm', 'US Navy scaled overall length')
+    addp('ScaleHeight', round(h,2), 'mm', 'US Navy scaled overall height')
+    addp('ScaleStabilatorSpan', round(stabilator_span,2), 'mm', 'NASA Fig.4 scaled horizontal-tail span')
     addp('ScaleSpan20', round(span_open,2), 'mm', 'Wing span at 20 deg')
     addp('ScaleSpan68', round(span_swept,2), 'mm', 'Wing span at 68 deg')
     addp('EDF_Diameter', 50, 'mm', 'Twin EDF nominal diameter')
@@ -127,7 +138,8 @@ def build_model():
     extrude_poly(root,'OML_Wing_R_20deg',right,-2.8,5.6)
 
     # Horizontal stabilators.
-    stabL=[(0.77*L,-55),(0.89*L,-177),(0.985*L,-150),(0.94*L,-58)]
+    stab_tip = stabilator_span/2.0
+    stabL=[(0.77*L,-62),(0.89*L,-stab_tip),(0.985*L,-0.87*stab_tip),(0.94*L,-64)]
     stabR=[(x,-y) for x,y in stabL]
     extrude_poly(root,'OML_Stabilator_L',stabL,2,4.0)
     extrude_poly(root,'OML_Stabilator_R',stabR,2,4.0)

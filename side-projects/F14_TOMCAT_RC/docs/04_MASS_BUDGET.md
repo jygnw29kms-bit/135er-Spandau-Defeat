@@ -1,19 +1,30 @@
-# 04 - Preliminary mass budget
+# 04 - Mass budget v2
 
-Target AUW: 1150-1350 g.
+Design AUW: 950-1100 g. Redesign threshold: 1200 g.
 
-| Subsystem | Target g |
-|---|---:|
-| Printed airframe shells + frames | 420 |
-| Carbon / metal structure | 95 |
-| 2 x EDF + motors | 190 |
-| 2 x ESC | 70 |
-| 4S battery | 260 |
-| Servos / sweep actuator | 95 |
-| Receiver / BEC / wiring | 45 |
-| Fasteners / hinges / hardware | 50 |
-| Finish / paint / decals | 55 |
-| Margin | 70 |
-| Total target | 1350 |
+| Subsystem | Target g | Hard g |
+|---|---:|---:|
+| printed aerodynamic shells | 250 | 300 |
+| internal printed frames / mounts | 70 | 90 |
+| carbon + metal primary structure | 65 | 80 |
+| 2 x 50 mm EDF incl. motors | 150 | 175 |
+| 2 x ESC | 55 | 70 |
+| 4S battery | 200 | 240 |
+| flight-control servos | 55 | 70 |
+| wing-sweep actuator + linkage | 45 | 60 |
+| receiver / BEC / wiring | 35 | 45 |
+| fasteners / bearings / inserts | 35 | 45 |
+| finish / paint / decals | 40 | 55 |
+| reserve | 50 | 70 |
+| **Total** | **1050** | **1300** |
 
-Any subsystem over budget triggers redesign before final detail is added.
+The hard-column sum is not an acceptable flight target; it is a subsystem warning ceiling. If predicted AUW reaches 1200 g, detail work stops and the structure is redesigned.
+
+## Mass-control procedure
+Every Fusion component receives a material or measured mass override before production release.
+A current mass roll-up is exported after each major design gate:
+- OML freeze
+- wing-box freeze
+- propulsion packaging freeze
+- printable segmentation freeze
+- pre-production release

@@ -1,3 +1,5 @@
+[Reading 35 lines from start (total: 35 lines, 0 remaining)]
+
 # 01 - Reference baseline
 
 ## Geometry authority
@@ -33,3 +35,21 @@ Before OML freeze, exact datum convention (nose probe / airframe reference) must
 - nozzle diameter / spacing
 
 No retired R2/R3/R4 project geometry is admissible as a reference.
+
+[executed on device: DESKTOP-BNDD1US (4c680a27-cb31-48c1-88a7-e6f894348af3)]
+## Additional structural / visual cross-check references
+
+### UPC/ESEIAAT 2023 thesis — Sabina Campos i Fuentes
+Title: *Study of the F-14 Tomcat structure and reproduction of a 1:12 scale model*.
+Use: structural architecture cross-check only. The work explicitly studies primary F-14 structural components, develops a 3D CAD structure model, produces detailed 2D drawings, and builds a 1:12 airframe reproduction. Relevant information may be used to validate frame spacing concepts, stabilator internal construction, wing-box logic, component interfaces and manufacturing segmentation. It does not override the NASA / full-scale OML geometry authority.
+
+### Pinterest F-14 blueprint pin
+Use: visual-only proportion and feature-location cross-check. Source provenance and dimensional authority are insufficient for production dimensions. No dimensions are copied from it unless independently verified against an authoritative reference.
+
+## Reference hierarchy — frozen
+A. Full-scale technical dimensions / NASA / US Navy
+B. UPC structural study and other traceable engineering publications
+C. Proven RC F-14 manuals for packaging / mechanisms / serviceability
+D. Unverified blueprint imagery only for visual discrepancy detection
+
+When sources disagree, the higher tier wins. Every deliberate deviation for RC/FDM packaging is documented separately from the OML master.
