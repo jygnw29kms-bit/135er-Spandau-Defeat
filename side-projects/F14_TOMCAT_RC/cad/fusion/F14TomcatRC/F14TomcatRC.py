@@ -49,6 +49,46 @@ def extrude_poly(comp, name, pts, z0, th):
     f.bodies.item(0).name = name
     return f.bodies.item(0)
 
+
+def add_reference_polyline(comp, plane, name, pts_mm, axes='xy'):
+    sk = comp.sketches.add(plane)
+    sk.name = name
+    lines = sk.sketchCurves.sketchLines
+    ps=[]
+    for a,b in pts_mm:
+        if axes == 'xy':
+            ps.append(adsk.core.Point3D.create(mm(a), mm(b), 0))
+        else:
+            ps.append(adsk.core.Point3D.create(mm(a), mm(b), 0))
+    for i in range(len(ps)-1):
+        ln=lines.addByTwoPoints(ps[i], ps[i+1])
+        ln.isConstruction = True
+    if len(ps)>2:
+        ln=lines.addByTwoPoints(ps[-1], ps[0])
+        ln.isConstruction = True
+    return sk
+
+def nasa_reference_sketches(comp):
+    # Digitized directly from NASA CR-163098 Figure 4 raster. Scan distortion is
+    # corrected independently in longitudinal and lateral/vertical axes using
+    # the printed 26.19 cm, 27.14 cm and 4.09 cm dimensions.
+    plan_px=[(788,37),(740,52),(720,86),(734,74),(720,135),(732,64),(789,42),(757,96),(717,341),(643,312),(668,300),(635,300),(631,318),(442,385),(438,425),(279,434),(172,465),(267,492),(441,499),(444,534),(641,602),(736,847),(805,880),(780,556),(826,556),(972,673),(1018,655),(999,558),(973,543),(1018,527),(976,491),(1014,475),(1020,440),(974,415),(1015,382),(964,364),(996,341),(1012,251),(995,236),(1039,230),(969,234),(820,356),(774,360)]
+    px0=172.0
+    py0=(37.0+880.0)/2.0
+    sx=(900.0*(261.9/271.4))/(1039.0-172.0)
+    sy=900.0/(880.0-37.0)
+    plan=[((x-px0)*sx, -(y-py0)*sy) for x,y in plan_px]
+    add_reference_polyline(comp, comp.xYConstructionPlane, 'REF_NASA_F14_PLAN_20DEG', plan, 'xy')
+
+    side_px=[(1179,329),(1005,329),(1039,215),(1017,207),(977,217),(870,312),(807,315),(728,302),(656,307),(585,295),(580,285),(564,292),(426,277),(372,287),(325,313),(245,331),(196,356),(227,370),(280,375),(290,389),(331,388),(353,376),(486,377),(508,395),(511,377),(571,375),(586,387),(591,379),(612,381),(626,393),(629,382),(796,389),(826,411),(1013,371),(1015,356),(1041,352),(1037,334)]
+    sx2=(900.0*(261.9/271.4))/(1179.0-196.0)
+    waterline_y=329.0
+    tail_top_y=207.0
+    z_tail=900.0*(40.9/271.4)
+    sz=z_tail/(waterline_y-tail_top_y)
+    side=[((x-196.0)*sx2, -(y-waterline_y)*sz) for x,y in side_px]
+    add_reference_polyline(comp, comp.xZConstructionPlane, 'REF_NASA_F14_SIDE', side, 'xz')
+
 def build_model():
     global _app,_ui
     doc = _app.documents.add(adsk.core.DocumentTypes.FusionDesignDocumentType)
@@ -93,6 +133,30 @@ def build_model():
     addp('Skin', 0.8, 'mm', 'Target lightweight FDM skin')
     addp('Carbon_Spar', 6, 'mm', 'Main carbon tube OD')
 
+    # Authoritative NASA master outlines. These are construction-only references
+    # and remain visible for continuous OML comparison while the 3D body is rebuilt.
+    nasa_reference_sketches(root)
+
+    # The retired/free-form scaffold is intentionally not generated anymore.
+    # From this point onward the 3D OML is rebuilt only from the NASA master
+    # outlines and verified cross-sections. Until those sections are frozen,
+    # Fusion shows the calibrated master geometry rather than an inaccurate body.
+    outdir=r'C:\Users\dezen\Desktop\135er-Spandau-Defeat\side-projects\F14_TOMCAT_RC\cad\exports'
+    os.makedirs(outdir,exist_ok=True)
+    try:
+        em=design.exportManager
+        opt=em.createFusionArchiveExportOptions(os.path.join(outdir,'F14_Tomcat_RC_NASA_Master_Ref_v01.f3d'))
+        em.execute(opt)
+    except:
+        pass
+    try:
+        _app.activeViewport.fit()
+    except:
+        pass
+    return
+
+    # Legacy scaffold below retained temporarily as disabled source only and will
+    # be deleted once the true OML surface model replaces it.
     # Longitudinal coordinates: nose x=0, tail x=L.
     # Scale-faithful silhouette scaffold based on F-14 three-view proportions.
     # Nose/cockpit/center-body loft.
