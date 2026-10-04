@@ -1,0 +1,26 @@
+{
+  "warning": "Provisional conservative engineering allowables only. Must be replaced/correlated with coupons printed on the actual Bambu P2S using the final filament, orientation and profile.",
+  "PETG_provisional": {
+    "density_g_cm3": 1.27,
+    "elastic_modulus_MPa_isotropic_model": 1500,
+    "poisson": 0.38,
+    "allowable_XY_tension_MPa": 18,
+    "allowable_Z_tension_MPa": 8,
+    "allowable_XY_shear_MPa": 10,
+    "design_temperature_C": 45
+  },
+  "ASA_provisional": {
+    "density_g_cm3": 1.07,
+    "elastic_modulus_MPa_isotropic_model": 1600,
+    "poisson": 0.35,
+    "allowable_XY_tension_MPa": 16,
+    "allowable_Z_tension_MPa": 7,
+    "allowable_XY_shear_MPa": 9,
+    "design_temperature_C": 55
+  },
+  "policy": [
+    "Use lower layer-normal allowable whenever principal tension crosses layer interfaces.",
+    "Critical pivots, bearings and concentrated fasteners require metal/carbon load paths.",
+    "Coupon tests govern final release values."
+  ]
+}

@@ -132,6 +132,12 @@ def build_model():
     addp('Battery_Height', 38, 'mm', '4S battery envelope')
     addp('Skin', 0.8, 'mm', 'Target lightweight FDM skin')
     addp('Carbon_Spar', 6, 'mm', 'Main carbon tube OD')
+    addp('Design_AUW', 1050, 'g', 'Baseline design all-up mass')
+    addp('Proof_Load_Factor', 6, '', 'Primary proof load factor')
+    addp('Design_Check_Load_Factor', 8, '', 'Structural design check load factor')
+    addp('Wing_Root_Arm', 250, 'mm', 'Conservative half-aircraft lift resultant arm')
+    addp('Battery_Proof_G', 20, '', 'Forward battery restraint proof load')
+    addp('Sweep_Stall_Torque', 2.0, 'N*m', 'Conservative sweep actuator stall torque envelope')
 
     # Authoritative NASA master outlines. These are construction-only references
     # and remain visible for continuous OML comparison while the 3D body is rebuilt.
