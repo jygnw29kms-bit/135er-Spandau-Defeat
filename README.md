@@ -2,23 +2,24 @@
   <img src="media/theme/repo-hero.svg" alt="135er Spandau Strike" width="100%">
 </p>
 
-<p align="center"><strong>135er - Spandau Strike | Berlin-Spandau | Source 2 + Unreal Engine 5 / Lyra</strong></p>
+<p align="center"><strong>135er - Spandau Strike | Berlin-Spandau | Unreal Engine 5 / Lyra</strong></p>
 
-<p align="center"><code>20 maps</code> | <code>Berlin GIS</code> | <code>Blender Master Pipeline</code> | <code>Source 2 / CS2</code> | <code>UE 5.8 / Lyra</code></p>
+<p align="center"><code>20 maps</code> | <code>Berlin GIS</code> | <code>Blender Master Pipeline</code> | <code>UE 5.8 / Lyra</code></p>
 
-# Current project status - 2026-10-03
+# 135er - Spandau Strike
 
-The project is developed for two active engine targets from one shared Berlin GIS / Blender data pipeline:
+**Unreal Engine 5 / Lyra is the only active and future engine target.**
+
+The project is developed for the active Unreal Engine 5 target from one shared Berlin GIS / Blender data pipeline:
 
 - **Unreal Engine 5.8 / Lyra** - Rathaus Spandau is the active production focus; the existing playable GIS baseline remains available for validation.
-- **Counter-Strike 2 / Source 2** - Rathaus Spandau is the active production focus; retail/addon packaging and final runtime validation remain in progress.
 - **Blender master** - Rathaus Spandau now uses Berlin3D 2025 / LoD2 as measured geometry reference; clean game geometry is rebuilt from those real dimensions.
 - **Berlin geodata** - Berlin3D 2025, LoD2, DGM1 and real roads/water are the authoritative spatial basis. Concept/master images are used only for look, atmosphere and set dressing.
 
 > Project name: **135er - Spandau Strike**. Older repository/package identifiers may still contain "Spandau Defeat" for compatibility and will be migrated gradually.
 ### Current Rathaus-first production rule
 
-Rathaus Spandau is the current cross-engine reference map. Until this map has passed geometry, gameplay, collision/nav and visual QA, the other maps remain deferred.
+Rathaus Spandau is the current Unreal Engine 5 reference map. Until this map has passed geometry, gameplay, collision/nav and visual QA, the other maps remain deferred.
 
 For every current and future map the build order is mandatory:
 
@@ -60,28 +61,7 @@ Current Falkenhagener Feld terrain coverage uses four Berlin DGM1 tiles:
 - `374_5824`
 - `376_5824`
 
-The Blender master provides common optimized terrain/geometry exports for UE5 and Source 2.
-## Source 2 / CS2 status
-
-Current verified/staged state:
-- Linux CS2 dedicated-server baseline and CounterStrikeSharp plugin are working.
-- 20 / 20 Hammer VMAP sources exist locally.
-- 20 / 20 maps have Berlin LoD2 building integration.
-- 20 / 20 DGM terrain reference VMAPs are generated and pass Valve DMX validation.
-- Rathaus Spandau is the current full gameplay reference.
-- Gameplay v2 and NAV seed data are generated for the other 19 maps.
-- Gameplay v2 + NAV seed VMAP validation: 19 OK / 0 FAIL.
-- Final runtime map compilation is currently blocked by the local Workshop Tools / Steam authentication context and the development machine's Source 2 compile environment.
-
-Next Source 2 milestone:
-- restore authenticated Workshop Tools compile context
-- complete runtime compile for staged maps
-- validate collision/navmesh in the running game
-- capture genuine Source 2 in-engine screenshots
-- package the first playable release
-
-**No Source 2 gameplay screenshot is published until a real Source 2 map is running and the capture has passed visual QA.**
-
+The Blender master provides common optimized terrain/geometry exports for UE5.
 ## Maps - 20 total
 
 **12 core maps:** Rathaus Spandau | Zitadelle | Staaken | Rodelberg | Kiesteich | Falkenhagener Feld | Lynarstrasse | Wroehmaennerpark | Freiheit | Martin-Buber-Schule | Askanier-Schule | B.-Traven-Schule
@@ -122,16 +102,13 @@ See [docs/IMAGE_QA.md](docs/IMAGE_QA.md).
 | Map roster / modes | [docs/MAPS_AND_MODES.md](docs/MAPS_AND_MODES.md) |
 | UE5/Lyra GIS status | [lyra/docs/GIS_STATUS.md](lyra/docs/GIS_STATUS.md) |
 | UE5/Lyra map definitions | [lyra/maps/maps.json](lyra/maps/maps.json) |
-| Source 2 build status | [source2/docs/BUILD_STATUS.md](source2/docs/BUILD_STATUS.md) |
-| Source 2 map definitions | [source2/maps/maps.json](source2/maps/maps.json) |
-| Source 2 production pipeline | [source2/docs/MAP_PRODUCTION_PIPELINE.md](source2/docs/MAP_PRODUCTION_PIPELINE.md) |
 | Blender master pipeline | [tools/blender_pipeline/README.md](tools/blender_pipeline/README.md) |
 | Capture policy | [docs/INGAME_CAPTURE_STANDARD.md](docs/INGAME_CAPTURE_STANDARD.md) |
 | Image QA gate | [docs/IMAGE_QA.md](docs/IMAGE_QA.md) |
 
 ---
 
-<p align="center"><strong>135er - SPANDAU STRIKE</strong><br><sub>BERLIN GIS | BLENDER | SOURCE 2 | UNREAL ENGINE 5</sub></p>
+<p align="center"><strong>135er - SPANDAU STRIKE</strong><br><sub>BERLIN GIS | BLENDER | UNREAL ENGINE 5 / LYRA</sub></p>
 
 
 ### Rathaus Spandau – current Blender viewport

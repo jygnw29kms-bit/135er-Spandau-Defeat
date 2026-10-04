@@ -1,8 +1,8 @@
 # Berlin-Spandau Lyra / UE5 GIS branch
-This branch mirrors the 20-map roster from `source2/maps/maps.json` and adds a separate Unreal Engine 5 / Lyra automation pipeline.
+This branch mirrors the 20-map roster from `/maps/maps.json` and adds a separate Unreal Engine 5 / Lyra automation pipeline.
 
 ## Goals
-- keep Source 2 untouched
+- keep Unreal Engine 5 untouched
 - reuse the same map IDs, names and historical notes
 - resolve each map location automatically
 - query live Berlin building-height WFS data

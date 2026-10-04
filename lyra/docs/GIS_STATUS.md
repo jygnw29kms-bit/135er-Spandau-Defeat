@@ -24,8 +24,6 @@ A 1.8 km x 1.8 km WFS query around that center returned 4,610 matching building 
 
 ## Current Lyra branch
 - branch: lyra-ue5-gis
-- 20 map definitions mirrored from Source 2
-- 20 map production specs mirrored from Source 2
 - autonomous UE5 Python building importer created
 - default map: falkenhagener_feld
 - generated hierarchy: Berlin_LoD2_Autonomous_Import/<map>/Buildings
