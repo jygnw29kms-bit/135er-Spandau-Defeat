@@ -2,6 +2,19 @@
 
 Clean-sheet restart of the RC/FDM F-14 project.
 
+## Current engineering status - 4 October 2026
+
+The latest Fusion geometry is v04 and remains provisional. The aircraft is not
+print-ready or flight-released. An executed beam FE screen identifies an unsuitable
+full-span tube-spar assumption. Tapered carbon caps are a sizing candidate only.
+The source audit identifies a swept-span conflict and unverified fuselage/tail geometry.
+
+See [engineering audit](docs/09_ENGINEERING_AUDIT_20261004.md),
+[reproducible calculation](analysis/structural_screen.py),
+[results](analysis/structural_screen_results.csv) and
+[summary](analysis/structural_screen_summary.json).
+The inherited 676.46-mm swept-span parameter is not a frozen production dimension.
+
 ## Design target
 - visually scale-faithful Grumman F-14 Tomcat outer mold line
 - 900 mm span at 20 deg wing sweep
