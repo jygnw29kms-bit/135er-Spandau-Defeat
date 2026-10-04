@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+
+
+<html>
+<head>
+    <title>Verificació de seguretat</title>
+    <link rel="stylesheet" href="/.well-known/.git.gammaspectra.live/git/go-away/cmd/go-away/assets/static/upc/style.css?cacheBust=mTW45gxUWR6Xf5Y3-LDOzQ"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="referrer" content="origin"/>
+    
+    <meta content="0; url=/.well-known/.git.gammaspectra.live/git/go-away/cmd/go-away/challenge/meta-refresh/verify-challenge?__goaway_bust=1791109617372&amp;__goaway_challenge=meta-refresh&amp;__goaway_id=38a7c5f927b907697a3616b961adee7b&amp;__goaway_redirect=%2Fbitstream%2Fhandle%2F2117%2F395458%2FReport%2520TFG%2520-%2520Sabina%2520Campos%2520i%2520Fuentes.pdf%3F__goaway_challenge%3Dmeta-refresh%26__goaway_id%3D38a7c5f927b907697a3616b961adee7b%26__goaway_referer%3Dhttps%253A%252F%252Fupcommons.upc.edu%252Fentities%252Fpublication%252Fdd6bc38b-8dd6-420e-8283-417714a54353%26isAllowed%3Dy%26sequence%3D4&amp;__goaway_token=011ba1949458e6bd3527250f6590e1bedbc927975feae8ce231aac043b107d99&amp;isAllowed=y&amp;sequence=4" http-equiv="refresh" />
+    
+    
+    
+</head>
+<body>
+    <div class="header-bar">
+        <div class="logos">
+            <img src="/.well-known/.git.gammaspectra.live/git/go-away/cmd/go-away/assets/static/upc/images/logo-upc.png?cacheBust=mTW45gxUWR6Xf5Y3-LDOzQ" alt="UPC"/>
+            <img src="/.well-known/.git.gammaspectra.live/git/go-away/cmd/go-away/assets/static/upc/images/logo-upcommons.png?cacheBust=mTW45gxUWR6Xf5Y3-LDOzQ" alt="UPCommons"/>
+        </div>
+        <div class="lang">
+            <a href="?lang=ca">CAT</a>
+            &middot;
+            <a href="?lang=es">ESP</a>
+            &middot;
+            <a href="?lang=en">ENG</a>
+        </div>
+    </div>
+
+    <main>
+        <div class="challenge-box">
+            <img class="logo-main" src="/.well-known/.git.gammaspectra.live/git/go-away/cmd/go-away/assets/static/upc/images/logo-upcommons.png?cacheBust=mTW45gxUWR6Xf5Y3-LDOzQ" alt="UPCommons"/>
+
+            <h1 id="title">Verificació de seguretat</h1>
+
+            
+            <p id="status">Carregant el repte <em>meta-refresh</em>...</p>
+            
+
+            <details>
+                <summary>Per què veig això?</summary>
+
+                <p>Esteu veient aquesta pàgina perquè l'administrador ha configurat <a href="https://git.gammaspectra.live/git/go-away">go-away</a> per protegir el servidor contra la recollida massiva de dades per part d'empreses d'intel·ligència artificial.</p> <p>La recollida massiva pot provocar caigudes del servei i fer que els recursos no estiguin disponibles per a tothom.</p>
+
+            </details>
+
+            
+
+            
+
+            <p class="request-id">Si teniu problemes, contacteu amb l'administrador i proporcioneu el siguiente identificador: 38a7c5f927b907697a3616b961adee7b</p>
+        </div>
+
+        
+    </main>
+
+    <div class="footer-bar">
+        <p>&copy; UPC. Servei de Biblioteques, Publicacions i Arxius</p>
+        <p>
+            Protected by <a href="https://git.gammaspectra.live/git/go-away">go-away</a>
+            
+                &middot; <a href="https://upcommons.upc.edu">UPCommons</a>
+            
+                &middot; <a href="mailto:info.biblioteques@upc.edu">Contact</a>
+            
+        </p>
+    </div>
+</body>
+</html>
