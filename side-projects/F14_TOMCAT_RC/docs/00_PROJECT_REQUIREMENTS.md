@@ -31,8 +31,10 @@ Create a flyable FDM RC F-14 Tomcat whose visible outer mold line follows the re
 - Battery, EDFs, ESCs, receiver and sweep mechanism remain serviceable.
 
 ## Weight
-- Target AUW: 1.15-1.35 kg
-- Review threshold: 1.40 kg predicted AUW
+- Target AUW: 950-1100 g; subsystem budget target 1050 g
+- Redesign threshold: 1200 g predicted AUW
+- The 1300 g sum of subsystem warning ceilings is not an acceptable flight target.
+- These values follow [mass budget v2](04_MASS_BUDGET.md); they supersede the older 1.15-1.35 kg range and 1.40 kg threshold.
 - Every subsystem gets a mass budget before detail design.
 
 ## Geometry rule
