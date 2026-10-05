@@ -187,3 +187,11 @@ The new aft_edf_section_packaging.py searches symmetric disk centers inside the 
 Under that scale assumption the best sampled common disk diameter is 56.6053 mm. The assumed 52 mm EDF housing, 0.8 mm skin and interpretation of the existing 3 mm service clearance as radial require 59.6 mm, giving a -2.9947 mm margin. The maximum sampled radial service allowance for a 52 mm housing and that skin is approximately 1.5027 mm. The clearance convention in the original hardware envelope was ambiguous; do not silently reinterpret it or enlarge the original exterior to force a fit.
 
 Actual EDF dimensions, metric section registration, 75 mm axial housing fit, mounts, wiring access and duct transitions remain unverified. A local section result does not establish an EDF installation, swept fan area, airflow or thrust. Candidate remedies must be checked against the full original nacelle before choosing placement or clearance.
+
+## EDF sensitivity with per-section width registration - v16
+
+The new aft_edf_registered_sections.py applies the independent D/E/F isotropic width factors before metric conversion, avoiding a shared raw-pixel scale across separately drawn section views. The sampled symmetric disk search covers 35-85 percent of section half-width and the full vertical extent. These remain provisional cross-source scales and independently optimized section centers.
+
+Available disk diameters are D 51.5003 mm, E 57.4537 mm and F 58.9873 mm. D does not locally accommodate the assumed 52 mm housing plus 0.8 mm skin even without service clearance. Under these assumptions, E permits approximately 1.9269 mm radial service clearance and F approximately 2.6936 mm; neither meets the interpreted 3 mm radial allowance. The F result supersedes the direct raw-pixel metric sensitivity for placement decisions, while v15 remains an audit record.
+
+The output includes 0.5/1/1.5/3 mm radial-clearance sensitivities and a candidate axial-center interval placing an 81 mm service envelope between E and F. No continuous clearance or straight EDF-axis alignment is proved by those endpoints. Station pairing, source-contour accuracy, metric scale and actual hardware remain unverified. No installation or print release is authorized by this screen.
