@@ -1,0 +1,1513 @@
+{
+  "status": "SOURCE_SECTION_PACKAGING_SCREEN_ONLY",
+  "source_sha256": "ae439b784b984b0c95b9df117ae0c5ad5d6adc7025a1f7b115b41a260fce4b18",
+  "assumptions": {
+    "skin_normal_mm": 0.8,
+    "assembly_clearance_normal_mm": 0.2,
+    "cap_thickness_mm": 1.0,
+    "cap_width_root_mm": 16,
+    "cap_width_tip_mm": 8
+  },
+  "checks": "PASS: segment normal distance, endpoint distance, rectangular cap and disk fit",
+  "continuous_span_clearance_verified": false,
+  "straight_tube_alignment_verified": false,
+  "structural_capacity_verified": false,
+  "native_internal_structure_created": false,
+  "limitations": [
+    "Boundary is source polygon; Fusion interpolation requires separate validation",
+    "Mid-ordinate circle centers are not globally optimal disk centers",
+    "Local circles in Y-normal sections do not prove swept tube clearance",
+    "Caps require bend, joint, bond, torsion, buckling and load-path design"
+  ],
+  "cap_option_summary": [
+    {
+      "tip_width_mm": 8,
+      "cap_thickness_mm": 1.0,
+      "chord_fraction": 0.3,
+      "minimum_defining_station_web_gap_mm": -0.2058802044796717,
+      "all_defining_stations_fit": false
+    },
+    {
+      "tip_width_mm": 8,
+      "cap_thickness_mm": 1.0,
+      "chord_fraction": 0.35,
+      "minimum_defining_station_web_gap_mm": -0.04723430677429574,
+      "all_defining_stations_fit": false
+    },
+    {
+      "tip_width_mm": 8,
+      "cap_thickness_mm": 1.0,
+      "chord_fraction": 0.4,
+      "minimum_defining_station_web_gap_mm": 0.028560085149469838,
+      "all_defining_stations_fit": false
+    },
+    {
+      "tip_width_mm": 8,
+      "cap_thickness_mm": 0.8,
+      "chord_fraction": 0.3,
+      "minimum_defining_station_web_gap_mm": 0.1941197955203282,
+      "all_defining_stations_fit": false
+    },
+    {
+      "tip_width_mm": 8,
+      "cap_thickness_mm": 0.8,
+      "chord_fraction": 0.35,
+      "minimum_defining_station_web_gap_mm": 0.35276569322570417,
+      "all_defining_stations_fit": false
+    },
+    {
+      "tip_width_mm": 8,
+      "cap_thickness_mm": 0.8,
+      "chord_fraction": 0.4,
+      "minimum_defining_station_web_gap_mm": 0.42856008514946975,
+      "all_defining_stations_fit": false
+    },
+    {
+      "tip_width_mm": 6,
+      "cap_thickness_mm": 1.0,
+      "chord_fraction": 0.3,
+      "minimum_defining_station_web_gap_mm": -0.01795973669553752,
+      "all_defining_stations_fit": false
+    },
+    {
+      "tip_width_mm": 6,
+      "cap_thickness_mm": 1.0,
+      "chord_fraction": 0.35,
+      "minimum_defining_station_web_gap_mm": 0.1298616736147462,
+      "all_defining_stations_fit": false
+    },
+    {
+      "tip_width_mm": 6,
+      "cap_thickness_mm": 1.0,
+      "chord_fraction": 0.4,
+      "minimum_defining_station_web_gap_mm": 0.19776124498273262,
+      "all_defining_stations_fit": false
+    },
+    {
+      "tip_width_mm": 6,
+      "cap_thickness_mm": 0.8,
+      "chord_fraction": 0.3,
+      "minimum_defining_station_web_gap_mm": 0.3820402633044624,
+      "all_defining_stations_fit": false
+    },
+    {
+      "tip_width_mm": 6,
+      "cap_thickness_mm": 0.8,
+      "chord_fraction": 0.35,
+      "minimum_defining_station_web_gap_mm": 0.5298616736147461,
+      "all_defining_stations_fit": false
+    },
+    {
+      "tip_width_mm": 6,
+      "cap_thickness_mm": 0.8,
+      "chord_fraction": 0.4,
+      "minimum_defining_station_web_gap_mm": 0.5977612449827325,
+      "all_defining_stations_fit": false
+    },
+    {
+      "tip_width_mm": 4,
+      "cap_thickness_mm": 1.0,
+      "chord_fraction": 0.3,
+      "minimum_defining_station_web_gap_mm": 0.15582455609220425,
+      "all_defining_stations_fit": false
+    },
+    {
+      "tip_width_mm": 4,
+      "cap_thickness_mm": 1.0,
+      "chord_fraction": 0.35,
+      "minimum_defining_station_web_gap_mm": 0.2943509272228573,
+      "all_defining_stations_fit": false
+    },
+    {
+      "tip_width_mm": 4,
+      "cap_thickness_mm": 1.0,
+      "chord_fraction": 0.4,
+      "minimum_defining_station_web_gap_mm": 0.35482069788658777,
+      "all_defining_stations_fit": false
+    },
+    {
+      "tip_width_mm": 4,
+      "cap_thickness_mm": 0.8,
+      "chord_fraction": 0.3,
+      "minimum_defining_station_web_gap_mm": 0.5558245560922042,
+      "all_defining_stations_fit": false
+    },
+    {
+      "tip_width_mm": 4,
+      "cap_thickness_mm": 0.8,
+      "chord_fraction": 0.35,
+      "minimum_defining_station_web_gap_mm": 0.6943509272228572,
+      "all_defining_stations_fit": false
+    },
+    {
+      "tip_width_mm": 4,
+      "cap_thickness_mm": 0.8,
+      "chord_fraction": 0.4,
+      "minimum_defining_station_web_gap_mm": 0.7548206978865877,
+      "all_defining_stations_fit": false
+    }
+  ],
+  "sections": [
+    {
+      "wbl_in": 127.23,
+      "model_y_mm": 148.8263775443693,
+      "chord_mm": 147.93117337291054,
+      "spar_fraction_chord": 0.3,
+      "local_circle_center_fs_in": 540.84483,
+      "local_circle_center_wl_in": 162.049728372,
+      "local_max_tube_od_at_30pct_mm": 12.259538463337279,
+      "stock_tube_local_fit": {
+        "4": true,
+        "6": true,
+        "8": true,
+        "10": true,
+        "12": true
+      },
+      "searched_max_tube_od_mm": 12.272578389299087,
+      "searched_max_tube_xc": 0.32,
+      "cap_width_mm": 16.0,
+      "cap_top_outer_relative_wl_mm": 8.466582088609211,
+      "cap_bottom_outer_relative_wl_mm": -3.5237287812591553,
+      "remaining_web_height_mm": 9.990310869868367,
+      "web_height_at_least_0p8mm": true,
+      "alternative_cap_packaging": [
+        {
+          "tip_width_mm": 8,
+          "local_width_mm": 16.0,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.3,
+          "web_gap_mm": 9.990310869868367,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 8,
+          "local_width_mm": 16.0,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.35,
+          "web_gap_mm": 9.89029015855876,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 8,
+          "local_width_mm": 16.0,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.4,
+          "web_gap_mm": 9.397161267833589,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 8,
+          "local_width_mm": 16.0,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.3,
+          "web_gap_mm": 10.390310869868367,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 8,
+          "local_width_mm": 16.0,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.35,
+          "web_gap_mm": 10.29029015855876,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 8,
+          "local_width_mm": 16.0,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.4,
+          "web_gap_mm": 9.797161267833589,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 6,
+          "local_width_mm": 16.0,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.3,
+          "web_gap_mm": 9.990310869868367,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 6,
+          "local_width_mm": 16.0,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.35,
+          "web_gap_mm": 9.89029015855876,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 6,
+          "local_width_mm": 16.0,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.4,
+          "web_gap_mm": 9.397161267833589,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 6,
+          "local_width_mm": 16.0,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.3,
+          "web_gap_mm": 10.390310869868367,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 6,
+          "local_width_mm": 16.0,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.35,
+          "web_gap_mm": 10.29029015855876,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 6,
+          "local_width_mm": 16.0,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.4,
+          "web_gap_mm": 9.797161267833589,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 4,
+          "local_width_mm": 16.0,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.3,
+          "web_gap_mm": 9.990310869868367,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 4,
+          "local_width_mm": 16.0,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.35,
+          "web_gap_mm": 9.89029015855876,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 4,
+          "local_width_mm": 16.0,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.4,
+          "web_gap_mm": 9.397161267833589,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 4,
+          "local_width_mm": 16.0,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.3,
+          "web_gap_mm": 10.390310869868367,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 4,
+          "local_width_mm": 16.0,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.35,
+          "web_gap_mm": 10.29029015855876,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 4,
+          "local_width_mm": 16.0,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.4,
+          "web_gap_mm": 9.797161267833589,
+          "local_packaging_pass": true
+        }
+      ]
+    },
+    {
+      "wbl_in": 164.0146,
+      "model_y_mm": 191.8548988633869,
+      "chord_mm": 134.30224256592706,
+      "spar_fraction_chord": 0.3,
+      "local_circle_center_fs_in": 550.637404,
+      "local_circle_center_wl_in": 161.2362395602,
+      "local_max_tube_od_at_30pct_mm": 10.472714758053453,
+      "stock_tube_local_fit": {
+        "4": true,
+        "6": true,
+        "8": true,
+        "10": true,
+        "12": false
+      },
+      "searched_max_tube_od_mm": 10.53460767263679,
+      "searched_max_tube_xc": 0.33999999999999997,
+      "cap_width_mm": 14.857044093883577,
+      "cap_top_outer_relative_wl_mm": 7.525582567880589,
+      "cap_bottom_outer_relative_wl_mm": -2.5960910547870757,
+      "remaining_web_height_mm": 8.121673622667664,
+      "web_height_at_least_0p8mm": true,
+      "alternative_cap_packaging": [
+        {
+          "tip_width_mm": 8,
+          "local_width_mm": 14.857044093883577,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.3,
+          "web_gap_mm": 8.121673622667664,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 8,
+          "local_width_mm": 14.857044093883577,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.35,
+          "web_gap_mm": 8.166282517016612,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 8,
+          "local_width_mm": 14.857044093883577,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.4,
+          "web_gap_mm": 7.895944416741452,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 8,
+          "local_width_mm": 14.857044093883577,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.3,
+          "web_gap_mm": 8.521673622667665,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 8,
+          "local_width_mm": 14.857044093883577,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.35,
+          "web_gap_mm": 8.566282517016612,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 8,
+          "local_width_mm": 14.857044093883577,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.4,
+          "web_gap_mm": 8.295944416741452,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 6,
+          "local_width_mm": 14.571305117354472,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.3,
+          "web_gap_mm": 8.130960139404861,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 6,
+          "local_width_mm": 14.571305117354472,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.35,
+          "web_gap_mm": 8.175997642218602,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 6,
+          "local_width_mm": 14.571305117354472,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.4,
+          "web_gap_mm": 7.906659628361293,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 6,
+          "local_width_mm": 14.571305117354472,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.3,
+          "web_gap_mm": 8.530960139404861,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 6,
+          "local_width_mm": 14.571305117354472,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.35,
+          "web_gap_mm": 8.575997642218603,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 6,
+          "local_width_mm": 14.571305117354472,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.4,
+          "web_gap_mm": 8.306659628361293,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 4,
+          "local_width_mm": 14.285566140825367,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.3,
+          "web_gap_mm": 8.140246656142057,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 4,
+          "local_width_mm": 14.285566140825367,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.35,
+          "web_gap_mm": 8.185712767420592,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 4,
+          "local_width_mm": 14.285566140825367,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.4,
+          "web_gap_mm": 7.917374839981134,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 4,
+          "local_width_mm": 14.285566140825367,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.3,
+          "web_gap_mm": 8.540246656142058,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 4,
+          "local_width_mm": 14.285566140825367,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.35,
+          "web_gap_mm": 8.585712767420592,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 4,
+          "local_width_mm": 14.285566140825367,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.4,
+          "web_gap_mm": 8.317374839981134,
+          "local_packaging_pass": true
+        }
+      ]
+    },
+    {
+      "wbl_in": 200.79919,
+      "model_y_mm": 234.8834084849764,
+      "chord_mm": 120.5509098714466,
+      "spar_fraction_chord": 0.3,
+      "local_circle_center_fs_in": 560.503466,
+      "local_circle_center_wl_in": 159.9221631266,
+      "local_max_tube_od_at_30pct_mm": 9.109694651079764,
+      "stock_tube_local_fit": {
+        "4": true,
+        "6": true,
+        "8": true,
+        "10": false,
+        "12": false
+      },
+      "searched_max_tube_od_mm": 9.214879148953623,
+      "searched_max_tube_xc": 0.355,
+      "cap_width_mm": 13.714088498483026,
+      "cap_top_outer_relative_wl_mm": 6.488149333568525,
+      "cap_bottom_outer_relative_wl_mm": -2.226260506266179,
+      "remaining_web_height_mm": 6.714409839834705,
+      "web_height_at_least_0p8mm": true,
+      "alternative_cap_packaging": [
+        {
+          "tip_width_mm": 8,
+          "local_width_mm": 13.714088498483026,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.3,
+          "web_gap_mm": 6.714409839834705,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 8,
+          "local_width_mm": 13.714088498483026,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.35,
+          "web_gap_mm": 6.920408786189096,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 8,
+          "local_width_mm": 13.714088498483026,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.4,
+          "web_gap_mm": 6.7212322523173675,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 8,
+          "local_width_mm": 13.714088498483026,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.3,
+          "web_gap_mm": 7.114409839834705,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 8,
+          "local_width_mm": 13.714088498483026,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.35,
+          "web_gap_mm": 7.3204087861890965,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 8,
+          "local_width_mm": 13.714088498483026,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.4,
+          "web_gap_mm": 7.121232252317368,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 6,
+          "local_width_mm": 13.142610623103783,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.3,
+          "web_gap_mm": 6.735554521223737,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 6,
+          "local_width_mm": 13.142610623103783,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.35,
+          "web_gap_mm": 6.938410339263543,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 6,
+          "local_width_mm": 13.142610623103783,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.4,
+          "web_gap_mm": 6.741376847424487,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 6,
+          "local_width_mm": 13.142610623103783,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.3,
+          "web_gap_mm": 7.135554521223737,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 6,
+          "local_width_mm": 13.142610623103783,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.35,
+          "web_gap_mm": 7.338410339263543,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 6,
+          "local_width_mm": 13.142610623103783,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.4,
+          "web_gap_mm": 7.141376847424487,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 4,
+          "local_width_mm": 12.57113274772454,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.3,
+          "web_gap_mm": 6.756699202612769,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 4,
+          "local_width_mm": 12.57113274772454,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.35,
+          "web_gap_mm": 6.956411892337989,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 4,
+          "local_width_mm": 12.57113274772454,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.4,
+          "web_gap_mm": 6.761521442531603,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 4,
+          "local_width_mm": 12.57113274772454,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.3,
+          "web_gap_mm": 7.156699202612769,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 4,
+          "local_width_mm": 12.57113274772454,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.35,
+          "web_gap_mm": 7.35641189233799,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 4,
+          "local_width_mm": 12.57113274772454,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.4,
+          "web_gap_mm": 7.161521442531603,
+          "local_packaging_pass": true
+        }
+      ]
+    },
+    {
+      "wbl_in": 237.58369,
+      "model_y_mm": 277.9118128297131,
+      "chord_mm": 106.79443030860807,
+      "spar_fraction_chord": 0.3,
+      "local_circle_center_fs_in": 570.372608,
+      "local_circle_center_wl_in": 158.3112601824,
+      "local_max_tube_od_at_30pct_mm": 7.973276882264663,
+      "stock_tube_local_fit": {
+        "4": true,
+        "6": true,
+        "8": false,
+        "10": false,
+        "12": false
+      },
+      "searched_max_tube_od_mm": 8.122537934708765,
+      "searched_max_tube_xc": 0.36,
+      "cap_width_mm": 12.571135699525323,
+      "cap_top_outer_relative_wl_mm": 5.393843915436354,
+      "cap_bottom_outer_relative_wl_mm": -2.165893418451123,
+      "remaining_web_height_mm": 5.559737333887477,
+      "web_height_at_least_0p8mm": true,
+      "alternative_cap_packaging": [
+        {
+          "tip_width_mm": 8,
+          "local_width_mm": 12.571135699525323,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.3,
+          "web_gap_mm": 5.559737333887477,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 8,
+          "local_width_mm": 12.571135699525323,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.35,
+          "web_gap_mm": 5.929437527280458,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 8,
+          "local_width_mm": 12.571135699525323,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.4,
+          "web_gap_mm": 5.789261680094512,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 8,
+          "local_width_mm": 12.571135699525323,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.3,
+          "web_gap_mm": 5.959737333887476,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 8,
+          "local_width_mm": 12.571135699525323,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.35,
+          "web_gap_mm": 6.329437527280458,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 8,
+          "local_width_mm": 12.571135699525323,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.4,
+          "web_gap_mm": 6.189261680094512,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 6,
+          "local_width_mm": 11.713919624406653,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.3,
+          "web_gap_mm": 5.594883192967343,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 6,
+          "local_width_mm": 11.713919624406653,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.35,
+          "web_gap_mm": 5.9515108412147635,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 6,
+          "local_width_mm": 11.713919624406653,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.4,
+          "web_gap_mm": 5.813692338235394,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 6,
+          "local_width_mm": 11.713919624406653,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.3,
+          "web_gap_mm": 5.994883192967343,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 6,
+          "local_width_mm": 11.713919624406653,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.35,
+          "web_gap_mm": 6.351510841214763,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 6,
+          "local_width_mm": 11.713919624406653,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.4,
+          "web_gap_mm": 6.2136923382353935,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 4,
+          "local_width_mm": 10.856703549287985,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.3,
+          "web_gap_mm": 5.630029052047208,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 4,
+          "local_width_mm": 10.856703549287985,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.35,
+          "web_gap_mm": 5.973584155149069,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 4,
+          "local_width_mm": 10.856703549287985,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.4,
+          "web_gap_mm": 5.838122996376276,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 4,
+          "local_width_mm": 10.856703549287985,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.3,
+          "web_gap_mm": 6.030029052047208,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 4,
+          "local_width_mm": 10.856703549287985,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.35,
+          "web_gap_mm": 6.37358415514907,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 4,
+          "local_width_mm": 10.856703549287985,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.4,
+          "web_gap_mm": 6.238122996376276,
+          "local_packaging_pass": true
+        }
+      ]
+    },
+    {
+      "wbl_in": 274.36816,
+      "model_y_mm": 320.94018208216556,
+      "chord_mm": 93.03795074576954,
+      "spar_fraction_chord": 0.3,
+      "local_circle_center_fs_in": 580.24175,
+      "local_circle_center_wl_in": 156.6950322115,
+      "local_max_tube_od_at_30pct_mm": 6.782904640047178,
+      "stock_tube_local_fit": {
+        "4": true,
+        "6": true,
+        "8": false,
+        "10": false,
+        "12": false
+      },
+      "searched_max_tube_od_mm": 6.969536566731124,
+      "searched_max_tube_xc": 0.38,
+      "cap_width_mm": 11.428183832715236,
+      "cap_top_outer_relative_wl_mm": 4.265309457139283,
+      "cap_bottom_outer_relative_wl_mm": -2.090292934713606,
+      "remaining_web_height_mm": 4.355602391852889,
+      "web_height_at_least_0p8mm": true,
+      "alternative_cap_packaging": [
+        {
+          "tip_width_mm": 8,
+          "local_width_mm": 11.428183832715236,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.3,
+          "web_gap_mm": 4.355602391852889,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 8,
+          "local_width_mm": 11.428183832715236,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.35,
+          "web_gap_mm": 4.728061727619031,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 8,
+          "local_width_mm": 11.428183832715236,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.4,
+          "web_gap_mm": 4.724879025434028,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 8,
+          "local_width_mm": 11.428183832715236,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.3,
+          "web_gap_mm": 4.755602391852889,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 8,
+          "local_width_mm": 11.428183832715236,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.35,
+          "web_gap_mm": 5.128061727619031,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 8,
+          "local_width_mm": 11.428183832715236,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.4,
+          "web_gap_mm": 5.124879025434028,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 6,
+          "local_width_mm": 10.285229790894045,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.3,
+          "web_gap_mm": 4.41028734532236,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 6,
+          "local_width_mm": 10.285229790894045,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.35,
+          "web_gap_mm": 4.7623503488736665,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 6,
+          "local_width_mm": 10.285229790894045,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.4,
+          "web_gap_mm": 4.756343440777006,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 6,
+          "local_width_mm": 10.285229790894045,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.3,
+          "web_gap_mm": 4.81028734532236,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 6,
+          "local_width_mm": 10.285229790894045,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.35,
+          "web_gap_mm": 5.162350348873666,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 6,
+          "local_width_mm": 10.285229790894045,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.4,
+          "web_gap_mm": 5.156343440777006,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 4,
+          "local_width_mm": 9.142275749072855,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.3,
+          "web_gap_mm": 4.461720277204314,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 4,
+          "local_width_mm": 9.142275749072855,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.35,
+          "web_gap_mm": 4.795970899400285,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 4,
+          "local_width_mm": 9.142275749072855,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.4,
+          "web_gap_mm": 4.785774507353903,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 4,
+          "local_width_mm": 9.142275749072855,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.3,
+          "web_gap_mm": 4.861720277204315,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 4,
+          "local_width_mm": 9.142275749072855,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.35,
+          "web_gap_mm": 5.195970899400285,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 4,
+          "local_width_mm": 9.142275749072855,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.4,
+          "web_gap_mm": 5.185774507353903,
+          "local_packaging_pass": true
+        }
+      ]
+    },
+    {
+      "wbl_in": 311.15283,
+      "model_y_mm": 363.9687852831797,
+      "chord_mm": 79.28149457778724,
+      "spar_fraction_chord": 0.3,
+      "local_circle_center_fs_in": 590.110888,
+      "local_circle_center_wl_in": 155.0759681451,
+      "local_max_tube_od_at_30pct_mm": 5.516914906021037,
+      "stock_tube_local_fit": {
+        "4": true,
+        "6": false,
+        "8": false,
+        "10": false,
+        "12": false
+      },
+      "searched_max_tube_od_mm": 5.723757524665716,
+      "searched_max_tube_xc": 0.38,
+      "cap_width_mm": 10.28522575158771,
+      "cap_top_outer_relative_wl_mm": 3.100659507491715,
+      "cap_bottom_outer_relative_wl_mm": -1.9939129274201481,
+      "remaining_web_height_mm": 3.0945724349118633,
+      "web_height_at_least_0p8mm": true,
+      "alternative_cap_packaging": [
+        {
+          "tip_width_mm": 8,
+          "local_width_mm": 10.28522575158771,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.3,
+          "web_gap_mm": 3.0945724349118633,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 8,
+          "local_width_mm": 10.28522575158771,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.35,
+          "web_gap_mm": 3.3410370500677535,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 8,
+          "local_width_mm": 10.28522575158771,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.4,
+          "web_gap_mm": 3.436002753359274,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 8,
+          "local_width_mm": 10.28522575158771,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.3,
+          "web_gap_mm": 3.494572434911863,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 8,
+          "local_width_mm": 10.28522575158771,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.35,
+          "web_gap_mm": 3.7410370500677534,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 8,
+          "local_width_mm": 10.28522575158771,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.4,
+          "web_gap_mm": 3.8360027533592738,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 6,
+          "local_width_mm": 8.856532189484637,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.3,
+          "web_gap_mm": 3.1713498721801487,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 6,
+          "local_width_mm": 8.856532189484637,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.35,
+          "web_gap_mm": 3.4042567401908146,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 6,
+          "local_width_mm": 8.856532189484637,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.4,
+          "web_gap_mm": 3.4898572535682693,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 6,
+          "local_width_mm": 8.856532189484637,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.3,
+          "web_gap_mm": 3.5713498721801487,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 6,
+          "local_width_mm": 8.856532189484637,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.35,
+          "web_gap_mm": 3.8042567401908145,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 6,
+          "local_width_mm": 8.856532189484637,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.4,
+          "web_gap_mm": 3.889857253568269,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 4,
+          "local_width_mm": 7.427838627381565,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.3,
+          "web_gap_mm": 3.240641509942148,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 4,
+          "local_width_mm": 7.427838627381565,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.35,
+          "web_gap_mm": 3.4644255161049884,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 4,
+          "local_width_mm": 7.427838627381565,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.4,
+          "web_gap_mm": 3.5373613145081952,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 4,
+          "local_width_mm": 7.427838627381565,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.3,
+          "web_gap_mm": 3.640641509942148,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 4,
+          "local_width_mm": 7.427838627381565,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.35,
+          "web_gap_mm": 3.8644255161049883,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 4,
+          "local_width_mm": 7.427838627381565,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.4,
+          "web_gap_mm": 3.937361314508195,
+          "local_packaging_pass": true
+        }
+      ]
+    },
+    {
+      "wbl_in": 347.93726,
+      "model_y_mm": 406.99710774591983,
+      "chord_mm": 65.52530745065079,
+      "spar_fraction_chord": 0.3,
+      "local_circle_center_fs_in": 599.979855,
+      "local_circle_center_wl_in": 153.47173824249998,
+      "local_max_tube_od_at_30pct_mm": 4.111644796102408,
+      "stock_tube_local_fit": {
+        "4": true,
+        "6": false,
+        "8": false,
+        "10": false,
+        "12": false
+      },
+      "searched_max_tube_od_mm": 4.307585397206346,
+      "searched_max_tube_xc": 0.395,
+      "cap_width_mm": 9.14227512764111,
+      "cap_top_outer_relative_wl_mm": 1.8830055464512936,
+      "cap_bottom_outer_relative_wl_mm": -1.680930724269521,
+      "remaining_web_height_mm": 1.5639362707208146,
+      "web_height_at_least_0p8mm": true,
+      "alternative_cap_packaging": [
+        {
+          "tip_width_mm": 8,
+          "local_width_mm": 9.14227512764111,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.3,
+          "web_gap_mm": 1.5639362707208146,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 8,
+          "local_width_mm": 9.14227512764111,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.35,
+          "web_gap_mm": 1.7729537783342844,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 8,
+          "local_width_mm": 9.14227512764111,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.4,
+          "web_gap_mm": 1.859101049033621,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 8,
+          "local_width_mm": 9.14227512764111,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.3,
+          "web_gap_mm": 1.9639362707208146,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 8,
+          "local_width_mm": 9.14227512764111,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.35,
+          "web_gap_mm": 2.1729537783342843,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 8,
+          "local_width_mm": 9.14227512764111,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.4,
+          "web_gap_mm": 2.259101049033621,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 6,
+          "local_width_mm": 7.427843909551388,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.3,
+          "web_gap_mm": 1.6885387282062823,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 6,
+          "local_width_mm": 7.427843909551388,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.35,
+          "web_gap_mm": 1.8813915528784602,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 6,
+          "local_width_mm": 7.427843909551388,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.4,
+          "web_gap_mm": 1.961104694558462,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 6,
+          "local_width_mm": 7.427843909551388,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.3,
+          "web_gap_mm": 2.088538728206282,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 6,
+          "local_width_mm": 7.427843909551388,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.35,
+          "web_gap_mm": 2.28139155287846,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 6,
+          "local_width_mm": 7.427843909551388,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.4,
+          "web_gap_mm": 2.361104694558462,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 4,
+          "local_width_mm": 5.713412691461665,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.3,
+          "web_gap_mm": 1.8029770120137711,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 4,
+          "local_width_mm": 5.713412691461665,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.35,
+          "web_gap_mm": 1.985059501026507,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 4,
+          "local_width_mm": 5.713412691461665,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.4,
+          "web_gap_mm": 2.0536839803353075,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 4,
+          "local_width_mm": 5.713412691461665,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.3,
+          "web_gap_mm": 2.202977012013771,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 4,
+          "local_width_mm": 5.713412691461665,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.35,
+          "web_gap_mm": 2.385059501026507,
+          "local_packaging_pass": true
+        },
+        {
+          "tip_width_mm": 4,
+          "local_width_mm": 5.713412691461665,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.4,
+          "web_gap_mm": 2.4536839803353074,
+          "local_packaging_pass": true
+        }
+      ]
+    },
+    {
+      "wbl_in": 384.69995,
+      "model_y_mm": 449.99999999999994,
+      "chord_mm": 51.776828928623424,
+      "spar_fraction_chord": 0.3,
+      "local_circle_center_fs_in": 609.843239,
+      "local_circle_center_wl_in": 151.92043508199998,
+      "local_max_tube_od_at_30pct_mm": 2.4483619333914266,
+      "stock_tube_local_fit": {
+        "4": false,
+        "6": false,
+        "8": false,
+        "10": false,
+        "12": false
+      },
+      "searched_max_tube_od_mm": 2.625571607702919,
+      "searched_max_tube_xc": 0.4,
+      "cap_width_mm": 8.0,
+      "cap_top_outer_relative_wl_mm": 0.6198305472904242,
+      "cap_bottom_outer_relative_wl_mm": -1.174289248229904,
+      "remaining_web_height_mm": -0.2058802044796717,
+      "web_height_at_least_0p8mm": false,
+      "alternative_cap_packaging": [
+        {
+          "tip_width_mm": 8,
+          "local_width_mm": 8.0,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.3,
+          "web_gap_mm": -0.2058802044796717,
+          "local_packaging_pass": false
+        },
+        {
+          "tip_width_mm": 8,
+          "local_width_mm": 8.0,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.35,
+          "web_gap_mm": -0.04723430677429574,
+          "local_packaging_pass": false
+        },
+        {
+          "tip_width_mm": 8,
+          "local_width_mm": 8.0,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.4,
+          "web_gap_mm": 0.028560085149469838,
+          "local_packaging_pass": false
+        },
+        {
+          "tip_width_mm": 8,
+          "local_width_mm": 8.0,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.3,
+          "web_gap_mm": 0.1941197955203282,
+          "local_packaging_pass": false
+        },
+        {
+          "tip_width_mm": 8,
+          "local_width_mm": 8.0,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.35,
+          "web_gap_mm": 0.35276569322570417,
+          "local_packaging_pass": false
+        },
+        {
+          "tip_width_mm": 8,
+          "local_width_mm": 8.0,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.4,
+          "web_gap_mm": 0.42856008514946975,
+          "local_packaging_pass": false
+        },
+        {
+          "tip_width_mm": 6,
+          "local_width_mm": 6.0,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.3,
+          "web_gap_mm": -0.01795973669553752,
+          "local_packaging_pass": false
+        },
+        {
+          "tip_width_mm": 6,
+          "local_width_mm": 6.0,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.35,
+          "web_gap_mm": 0.1298616736147462,
+          "local_packaging_pass": false
+        },
+        {
+          "tip_width_mm": 6,
+          "local_width_mm": 6.0,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.4,
+          "web_gap_mm": 0.19776124498273262,
+          "local_packaging_pass": false
+        },
+        {
+          "tip_width_mm": 6,
+          "local_width_mm": 6.0,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.3,
+          "web_gap_mm": 0.3820402633044624,
+          "local_packaging_pass": false
+        },
+        {
+          "tip_width_mm": 6,
+          "local_width_mm": 6.0,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.35,
+          "web_gap_mm": 0.5298616736147461,
+          "local_packaging_pass": false
+        },
+        {
+          "tip_width_mm": 6,
+          "local_width_mm": 6.0,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.4,
+          "web_gap_mm": 0.5977612449827325,
+          "local_packaging_pass": false
+        },
+        {
+          "tip_width_mm": 4,
+          "local_width_mm": 4.0,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.3,
+          "web_gap_mm": 0.15582455609220425,
+          "local_packaging_pass": false
+        },
+        {
+          "tip_width_mm": 4,
+          "local_width_mm": 4.0,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.35,
+          "web_gap_mm": 0.2943509272228573,
+          "local_packaging_pass": false
+        },
+        {
+          "tip_width_mm": 4,
+          "local_width_mm": 4.0,
+          "cap_thickness_mm": 1.0,
+          "chord_fraction": 0.4,
+          "web_gap_mm": 0.35482069788658777,
+          "local_packaging_pass": false
+        },
+        {
+          "tip_width_mm": 4,
+          "local_width_mm": 4.0,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.3,
+          "web_gap_mm": 0.5558245560922042,
+          "local_packaging_pass": false
+        },
+        {
+          "tip_width_mm": 4,
+          "local_width_mm": 4.0,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.35,
+          "web_gap_mm": 0.6943509272228572,
+          "local_packaging_pass": false
+        },
+        {
+          "tip_width_mm": 4,
+          "local_width_mm": 4.0,
+          "cap_thickness_mm": 0.8,
+          "chord_fraction": 0.4,
+          "web_gap_mm": 0.7548206978865877,
+          "local_packaging_pass": false
+        }
+      ]
+    }
+  ],
+  "baseline_terminated_spar_candidate": {
+    "last_defining_wbl_in": 347.93726,
+    "last_defining_model_y_mm": 406.99710774591983,
+    "unsupported_tip_span_mm": 43.00289225408011,
+    "all_retained_defining_sections_fit": true,
+    "minimum_retained_web_height_mm": 1.5639362707208146,
+    "load_transfer_and_printed_tip_strength_verified": false,
+    "decision": "Candidate only: terminate before thin tip; design and verify outer-panel load transfer"
+  }
+}
