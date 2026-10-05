@@ -6,6 +6,15 @@ _created = False
 _handlers = []
 _worker_stop = threading.Event()
 _event_id = 'com.jl1976.f14tomcatrc.controlled_build'
+_bridge_revision = 'v23_execution_acknowledgment'
+with open(__file__, 'rb') as _source_stream:
+    _loaded_source_sha256 = hashlib.sha256(_source_stream.read()).hexdigest()
+
+def execution_ack(request_id, status):
+    # Captured at import: an on-disk replacement cannot masquerade as a reload.
+    return dict(request_id=request_id, status=status,
+                bridge_revision=_bridge_revision,
+                loaded_source_sha256=_loaded_source_sha256)
 
 def mm(v): return v/10.0
 
@@ -804,15 +813,19 @@ def build_project_revision():
 class BuildRequestHandler(adsk.core.CustomEventHandler):
     def notify(self,args):
         request=json.loads(args.additionalInfo)
-        response=dict(request_id=request['request_id'],status='failed')
+        response=execution_ack(request['request_id'],'failed')
         try:
-            if request['operation'] in ['build_project_revision','build_source_profiles_v14','build_source_segments_v15']:
+            if request['operation']=='ping':
+                response['active_document_name']=_app.activeDocument.name if _app.activeDocument else None
+                response['geometry_created']=False
+            elif request['operation'] in ['build_project_revision','build_source_profiles_v14','build_source_segments_v15']:
                 path=os.path.join(os.path.dirname(__file__),'F14TomcatRC.py')
                 spec=importlib.util.spec_from_file_location('f14_checked_cad_revision',path)
                 revision=importlib.util.module_from_spec(spec)
                 spec.loader.exec_module(revision)
                 revision._app=_app
                 revision._ui=_ui
+                response['executed_revision_source_sha256']=revision._loaded_source_sha256
                 if request['operation']=='build_source_profiles_v14': revision.build_source_profile_review_v14()
                 elif request['operation']=='build_source_segments_v15': revision.build_source_segment_review_v15()
                 else: revision.build_project_revision()
@@ -872,10 +885,11 @@ def run(context):
                 build_reference_model_v06()
             else:
                 build_model()
-            start_build_requests()
             _created=True
             with open(os.path.join(os.path.dirname(__file__),'F14_build_response.json'),'w',encoding='utf-8') as stream:
-                json.dump(dict(request_id='startup',status='completed'),stream)
+                json.dump(execution_ack('startup','completed'),stream,indent=2)
+            # Publish startup before polling so it cannot overwrite a job result.
+            start_build_requests()
     except:
         try:
             with open(os.path.join(os.path.dirname(__file__),'F14TomcatRC_error.log'),'w',encoding='utf-8') as stream:
