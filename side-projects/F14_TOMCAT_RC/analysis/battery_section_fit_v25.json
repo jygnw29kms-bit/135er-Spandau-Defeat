@@ -1,0 +1,37 @@
+{
+  "status": "LOCAL_CANDIDATE_BATTERY_SECTION_SCREEN",
+  "checks": "PASS: rectangle gap, protrusion and concave edge-crossing rejection",
+  "battery_width_height_mm": [
+    46,
+    40
+  ],
+  "grid_step_mm": 0.5,
+  "sections": [
+    {
+      "section": "A",
+      "candidate_x_mm": 111.04824408990419,
+      "sampled_center_yz_mm": [
+        -3.0,
+        -24.5
+      ],
+      "sampled_boundary_gap_mm": 2.4733431478047367,
+      "passes_assumed_0p8_skin_plus_1mm_service": true
+    },
+    {
+      "section": "B",
+      "candidate_x_mm": 249.44414600957995,
+      "sampled_center_yz_mm": [
+        0.0,
+        -15.5
+      ],
+      "sampled_boundary_gap_mm": 11.153406459572139,
+      "passes_assumed_0p8_skin_plus_1mm_service": true
+    }
+  ],
+  "metric_source_registration_verified": false,
+  "full_155mm_length_fit_verified": false,
+  "adjustment_travel_verified": false,
+  "tray_strap_hatch_cg_verified": false,
+  "native_cad_created": false,
+  "installation_release": false
+}
