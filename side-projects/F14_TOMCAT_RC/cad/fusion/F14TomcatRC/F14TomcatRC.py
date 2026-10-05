@@ -1,4 +1,4 @@
-import adsk.core, adsk.fusion, traceback, math, os, json, threading, importlib.util
+import adsk.core, adsk.fusion, traceback, math, os, json, threading, importlib.util, hashlib
 
 _app = None
 _ui = None
@@ -598,6 +598,15 @@ def build_source_segment_review_v15():
     """Split independent solid envelopes; deliberately no print shell export."""
     with open(os.path.join(os.path.dirname(__file__),'F14_wing_segmentation_v15.json'),encoding='utf-8') as stream:
         plan=json.load(stream)
+    source_path=os.path.join(os.path.dirname(__file__),'NASA_F14_basic_wing_v08.json')
+    with open(source_path,'rb') as stream: raw=stream.read()
+    if hashlib.sha256(raw).hexdigest()!=plan['source_dataset_sha256']:
+        raise RuntimeError('Wing segmentation source dataset changed; regenerate plan')
+    source=json.loads(raw.decode('utf-8'))
+    factor=900/(2*source['sections'][-1]['wbl_in'])
+    matches=[s for s in source['sections'] if abs(s['wbl_in']-plan['split_wbl_in'])<1e-6]
+    if len(matches)!=1 or abs(matches[0]['wbl_in']*factor-plan['split_model_y_mm'])>1e-6:
+        raise RuntimeError('Split plane is not the specified original defining section')
     build_basic_wing_document_v08()
     design=adsk.fusion.Design.cast(_app.activeProduct)
     _app.activeDocument.name='F14_v15_SOLID_ENVELOPE_SEGMENTS_NOT_PRINT_SHELLS'
@@ -620,6 +629,11 @@ def build_source_segment_review_v15():
         center=sum(bounds['y'])/2
         label='R' if center>0 else 'L'
         part='INNER' if abs(center)<plan['split_model_y_mm'] else 'OUTER'
+        observed=sorted(abs(v) for v in bounds['y'])
+        expected=([source['sections'][0]['wbl_in']*factor,plan['split_model_y_mm']] if part=='INNER'
+                  else [plan['split_model_y_mm'],450.0])
+        span_boundaries_verified=all(abs(a-b)<=1e-4 for a,b in zip(observed,expected))
+        if not span_boundaries_verified: raise RuntimeError('Native segment span boundaries mismatch')
         if (label,part) in identities: raise RuntimeError('Duplicate segment classification')
         identities.add((label,part))
         body.name='SOURCE_ENVELOPE_'+label+'_'+part+'_NOT_PRINT_SHELL'
@@ -629,6 +643,7 @@ def build_source_segment_review_v15():
         fits=footprint[0]<=usable[0] and footprint[1]<=usable[1] and size['y']<=usable[2]
         totals[label]+=body.volume
         audit.append(dict(name=body.name,bounds_mm=bounds,volume_cm3=body.volume,
+                          span_boundaries_verified=span_boundaries_verified,expected_abs_y_mm=expected,
                           print_height_mm=size['y'],footprint_with_assumed_brim_mm=footprint,
                           assumed_print_envelope_fit=fits))
     volume_checks={label:dict(original_cm3=original[label],split_sum_cm3=totals[label],

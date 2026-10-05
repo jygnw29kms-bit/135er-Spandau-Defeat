@@ -1,12 +1,14 @@
 """P2S envelope planning from defining wing points, not sliced print geometry."""
 import json
+import hashlib
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
 
 
 def run():
-    source=json.loads((ROOT/'cad/fusion/F14TomcatRC/NASA_F14_basic_wing_v08.json').read_text())
+    source_path=ROOT/'cad/fusion/F14TomcatRC/NASA_F14_basic_wing_v08.json'
+    source=json.loads(source_path.read_text())
     sections=source['sections']
     factor=900/(2*sections[-1]['wbl_in'])
     split=5  # Original defining WBL 311.15283, preserves audited section plane.
@@ -35,6 +37,8 @@ def run():
     assert abs(sum(p['print_height_mm'] for p in parts)-(sections[-1]['wbl_in']-sections[0]['wbl_in'])*factor)<1e-9
     assert all(p['assumed_envelope_fit'] for p in parts)
     result=dict(status='DEFINING_POINT_SEGMENTATION_PLAN_ONLY',
+                source_dataset_sha256=hashlib.sha256(source_path.read_bytes()).hexdigest(),
+                source_pdf_sha256=source['source_sha256'],
                 printer='Bambu Lab P2S',official_build_volume_mm=[256,256,256],
                 primary_source_url='https://blog.bambulab.com/the-icon-redefined-meet-the-p2s-a-completely-reengineered-version-of-the-ultra-productive-p1-series/',
                 design_assumed_usable_envelope_mm=[240,240,250],assumed_brim_per_side_mm=8,

@@ -173,3 +173,9 @@ The candidate carbon cap path should remain continuous across the FDM skin joint
 The installed build_source_segment_review_v15 uses the documented Fusion SplitBodyFeatures API with construction planes at signed model Y=363.9688 mm in a new source-wing review document. It expects four bodies, classifies inner/outer segments on each side, checks source-wing volume conservation to one part per million (minimum tolerance 0.000001 cm3), and records actual native bounds and assumed P2S envelope fit. Original user documents are preserved.
 
 The controlled operation build_source_segments_v15 loads only the fixed installed project module. Dataset installation and Python syntax validation pass; native execution is not yet verified. It exports a clearly labeled solid-envelope review archive and audit, with hollow-shell and slicer checks explicitly false. No STL/3MF print release is generated. The existing v10 spar request is preserved.
+
+## Segmentation source identity and station-boundary gates
+
+The split plan now records the SHA-256 of the exact basic-wing JSON dataset separately from its source-PDF hash. The native builder rejects a changed dataset or a split plane that is not the specified defining WBL. Each resulting body must match the expected inner/outer span boundaries within 0.0001 mm, in addition to the four-body and volume-conservation checks. Installed and repository source-dataset hashes match; regeneration of the analytical plan and Python syntax checks pass.
+
+These are implemented checks, with native execution still pending. They do not establish that the planned split, actual loft bounds or printer fit has passed in Fusion.

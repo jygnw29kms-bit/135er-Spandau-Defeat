@@ -1,5 +1,7 @@
 {
   "status": "DEFINING_POINT_SEGMENTATION_PLAN_ONLY",
+  "source_dataset_sha256": "177867ced9b6f2e075916d048cbf81997918e239ac8f4986a45461d6ecc80342",
+  "source_pdf_sha256": "ae439b784b984b0c95b9df117ae0c5ad5d6adc7025a1f7b115b41a260fce4b18",
   "printer": "Bambu Lab P2S",
   "official_build_volume_mm": [
     256,
