@@ -1,0 +1,73 @@
+{
+  "status": "SOURCE_F_ISOTROPIC_REGISTRATION_CANDIDATE",
+  "source_image_sha256": "63413c7958648165ca381ebda27ef31a4d6aabed725b84d3e2f804da5bafb5b4",
+  "side_upper_skin_pixel_polyline": [
+    [
+      1780.0,
+      2742.5
+    ],
+    [
+      1817.5,
+      2742.5
+    ],
+    [
+      1832.5,
+      2744.5
+    ],
+    [
+      1860.0,
+      2744.5
+    ],
+    [
+      1888.5,
+      2744.5
+    ]
+  ],
+  "side_lower_skin_pixel_polyline": [
+    [
+      1700.0,
+      2887.0
+    ],
+    [
+      1790.0,
+      2880.0
+    ],
+    [
+      1864.5,
+      2873.5
+    ],
+    [
+      1920.0,
+      2870.5
+    ],
+    [
+      1970.0,
+      2863.0
+    ],
+    [
+      2017.5,
+      2849.0
+    ]
+  ],
+  "candidate_F_station_x_pixel": 1864.5967110976192,
+  "side_top_pixel_y": 2744.5,
+  "side_bottom_pixel_y": 2873.4947723731016,
+  "side_skin_height_pixels": 128.99477237310157,
+  "isotropic_section_width_multiplier": 1.0420794523566128,
+  "predicted_section_height_pixels": 127.65473291368507,
+  "height_residual_pixels": -1.3400394594165022,
+  "registered_candidate_section_axis_side_pixel_y": 2792.6340198339044,
+  "independent_vertical_stretch_applied": false,
+  "station_pairing_verified": false,
+  "metric_registration_verified": false,
+  "aircraft_waterline_verified": false,
+  "production_loft_allowed": false,
+  "excluded_projections": [
+    "vertical tail",
+    "horizontal tail",
+    "ventral fin"
+  ],
+  "warning": "Isotropic cross-view pixel fit only; no native CAD or verified aircraft datum",
+  "checks": "PASS: axial monotonicity, positive skin height, no independent vertical stretch",
+  "visual_review": "Overlay inspected at F station; upper/lower body skin excludes tail and ventral-fin silhouettes. Upper line omits local hump away from F; use only within verified local station coverage."
+}

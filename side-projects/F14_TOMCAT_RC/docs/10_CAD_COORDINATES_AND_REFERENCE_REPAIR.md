@@ -121,3 +121,11 @@ The outline broadly follows the raster skin contour, with unquantified manual/ra
 The manually traced upper/lower aft-body edges in upc_aft_component_plan_v11.json exclude stabilators and vertical-fin projections. Their overlay on the UPC original raster was inspected. The partial polylines cover the source F candidate station and stop at the nozzle aft edge; beavertail closure and exhaust openings are not constructed. Axial coordinates increase and projected body width is positive.
 
 At the candidate F station, these body-only plan edges span 397.0323 native pixels. The connected section drawing spans 381 pixels, giving a candidate isotropic width multiplier of 1.04208. This is a cross-view pixel comparison, not verified metric registration. Station pairing, independent vertical-envelope comparison, waterline and source-view scale still require confirmation before a production loft. The full assembly silhouette remains unsuitable as a body-width target.
+
+## Isotropic F cross-view registration candidate - v12
+
+The component-specific side traces in upc_F_registration_v12.json exclude vertical/horizontal tails and ventral-fin projections at the candidate F station. The side overlay was inspected. The local upper line is only a station-envelope aid; it does not reproduce the nearby hump away from F and must not become a full fuselage loft guide. Axial monotonicity and positive skin-height checks pass.
+
+At F the traced side skin height is 128.9948 native pixels. Applying the plan-derived 1.04207945 isotropic width factor to the connected source section predicts 127.6547 pixels: a residual of -1.3400 pixels, approximately one percent. No independent vertical stretching is applied. Center alignment places the candidate section-axis projection at side-image Y=2792.6340 pixels. This gives a consistent provisional cross-view fit within unquantified manual raster precision, not a certified tolerance or verified aircraft waterline.
+
+Station pairing, metric registration, source drawing accuracy and native body construction remain unverified. The result cannot align the absolute-WL wing automatically or authorize a production loft.
