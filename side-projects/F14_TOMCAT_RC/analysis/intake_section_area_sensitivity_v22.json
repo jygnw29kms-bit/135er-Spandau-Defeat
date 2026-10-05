@@ -1,0 +1,122 @@
+{
+  "status": "UNREGISTERED_SOURCE_C_SECTION_AREA_SENSITIVITY",
+  "source_image_sha256": "63413c7958648165ca381ebda27ef31a4d6aabed725b84d3e2f804da5bafb5b4",
+  "source_opening_areas_pixel2": [
+    6071.625,
+    5791.0
+  ],
+  "source_section_area_asymmetry_percent": 4.621909291169992,
+  "checks": "PASS: rectangle, winding reversal, translation invariance, positive two-opening areas",
+  "metric_section_scale_selected": false,
+  "actual_rotor_hub_dimensions_verified": false,
+  "flow_capacity_verified": false,
+  "installation_release": false,
+  "sensitivities": [
+    {
+      "assumed_rotor_diameter_mm": 50,
+      "assumed_hub_diameter_mm": 15,
+      "comparison_area_ratio": 0.8,
+      "one_fan_annular_area_mm2": 1786.780821729195,
+      "required_section_area_mm2_per_duct": 1429.4246573833561,
+      "minimum_isotropic_section_scale_mm_per_source_pixel": [
+        0.4852082364247707,
+        0.4968254701730798
+      ]
+    },
+    {
+      "assumed_rotor_diameter_mm": 50,
+      "assumed_hub_diameter_mm": 15,
+      "comparison_area_ratio": 1,
+      "one_fan_annular_area_mm2": 1786.780821729195,
+      "required_section_area_mm2_per_duct": 1786.780821729195,
+      "minimum_isotropic_section_scale_mm_per_source_pixel": [
+        0.5424792999442883,
+        0.5554677621301503
+      ]
+    },
+    {
+      "assumed_rotor_diameter_mm": 50,
+      "assumed_hub_diameter_mm": 15,
+      "comparison_area_ratio": 1.2,
+      "one_fan_annular_area_mm2": 1786.780821729195,
+      "required_section_area_mm2_per_duct": 2144.1369860750337,
+      "minimum_isotropic_section_scale_mm_per_source_pixel": [
+        0.5942562991181954,
+        0.6084844465711943
+      ]
+    },
+    {
+      "assumed_rotor_diameter_mm": 50,
+      "assumed_hub_diameter_mm": 20,
+      "comparison_area_ratio": 0.8,
+      "one_fan_annular_area_mm2": 1649.3361431346414,
+      "required_section_area_mm2_per_duct": 1319.4689145077132,
+      "minimum_isotropic_section_scale_mm_per_source_pixel": [
+        0.46617299465832457,
+        0.4773344718129579
+      ]
+    },
+    {
+      "assumed_rotor_diameter_mm": 50,
+      "assumed_hub_diameter_mm": 20,
+      "comparison_area_ratio": 1,
+      "one_fan_annular_area_mm2": 1649.3361431346414,
+      "required_section_area_mm2_per_duct": 1649.3361431346414,
+      "minimum_isotropic_section_scale_mm_per_source_pixel": [
+        0.52119725266533,
+        0.5336761634888655
+      ]
+    },
+    {
+      "assumed_rotor_diameter_mm": 50,
+      "assumed_hub_diameter_mm": 20,
+      "comparison_area_ratio": 1.2,
+      "one_fan_annular_area_mm2": 1649.3361431346414,
+      "required_section_area_mm2_per_duct": 1979.2033717615695,
+      "minimum_isotropic_section_scale_mm_per_source_pixel": [
+        0.5709429843890417,
+        0.5846129462913332
+      ]
+    },
+    {
+      "assumed_rotor_diameter_mm": 50,
+      "assumed_hub_diameter_mm": 25,
+      "comparison_area_ratio": 0.8,
+      "one_fan_annular_area_mm2": 1472.6215563702156,
+      "required_section_area_mm2_per_duct": 1178.0972450961724,
+      "minimum_isotropic_section_scale_mm_per_source_pixel": [
+        0.44049207564291737,
+        0.45103868021980614
+      ]
+    },
+    {
+      "assumed_rotor_diameter_mm": 50,
+      "assumed_hub_diameter_mm": 25,
+      "comparison_area_ratio": 1,
+      "one_fan_annular_area_mm2": 1472.6215563702156,
+      "required_section_area_mm2_per_duct": 1472.6215563702156,
+      "minimum_isotropic_section_scale_mm_per_source_pixel": [
+        0.4924851123437713,
+        0.5042765747266381
+      ]
+    },
+    {
+      "assumed_rotor_diameter_mm": 50,
+      "assumed_hub_diameter_mm": 25,
+      "comparison_area_ratio": 1.2,
+      "one_fan_annular_area_mm2": 1472.6215563702156,
+      "required_section_area_mm2_per_duct": 1767.1458676442587,
+      "minimum_isotropic_section_scale_mm_per_source_pixel": [
+        0.539490410532299,
+        0.5524073103984385
+      ]
+    }
+  ],
+  "limitations": [
+    "C inner loops are manual source duct-section candidates, not verified intake mouths",
+    "Area ratios and hub sizes are comparisons, not design recommendations",
+    "Station pairing and isotropic metric scale remain unverified",
+    "No boundary layer, grille, duct losses or minimum area along full duct evaluated",
+    "Area agreement cannot prove airflow, thrust or EDF fit"
+  ]
+}

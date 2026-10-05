@@ -224,3 +224,8 @@ The clearance uncertainty calculation subtracts bounded contour and axis-positio
 
 These are conditional sensitivities, not measured raster, registration or installation tolerances. Scale and skin-thickness errors, intermediate geometry, full axial clearance and actual hardware remain unverified. No installation release follows.
 
+## Source C duct-section area sensitivity - v22
+
+The two manually traced inner C loops have areas 6071.625 and 5791 source pixels squared. The area calculation passes rectangle, reversed-winding and translation checks. For an illustrative 50 mm rotor and 20 mm hub, matching one annular fan area per section requires respective isotropic scales 0.52120 and 0.53368 mm per source pixel. No metric scale is selected from that comparison.
+
+The report includes hub diameters 15/20/25 mm and area ratios 0.8/1/1.2 as sensitivities, not recommended design ratios. These are unregistered duct-section candidates, not verified intake mouths. Full duct minimum area, losses, actual hardware, airflow and thrust remain unverified.
