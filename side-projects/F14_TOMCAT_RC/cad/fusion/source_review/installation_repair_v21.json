@@ -1,0 +1,14 @@
+{
+  "status": "INSTALLED_SOURCE_REPAIRED_NOT_EXECUTED",
+  "observed_at_utc": "2026-10-05T20:31Z",
+  "previous_installed_source_bytes": 27817,
+  "previous_installed_sha256": "8fee0983133802676a75644fe3179e602d690efe7513ee338fc6b62d1b9a783a",
+  "repaired_installed_source_bytes": 47022,
+  "repaired_installed_sha256": "ed114ffc8334a3e5ef2b856e028b5a020585f0724575dbdff06465578cf12012",
+  "repository_source_hash_matches": true,
+  "syntax_check_passed": true,
+  "previous_installation_backed_up_locally": true,
+  "reason_for_previous_source_replacement_known": false,
+  "native_reload_confirmed": false,
+  "native_v10_v14_v15_executed": false
+}
