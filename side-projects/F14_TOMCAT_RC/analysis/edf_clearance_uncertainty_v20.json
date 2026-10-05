@@ -1,0 +1,175 @@
+{
+  "status": "CONDITIONAL_ENDPOINT_ERROR_BUDGET_ONLY",
+  "method": "Subtract bounded boundary and axis positional errors from minimum perpendicular radius",
+  "checks": "PASS: additive error budget and zero-error case",
+  "source_error_measured": false,
+  "axis_error_measured": false,
+  "metric_scale_error_included": false,
+  "skin_thickness_error_included": false,
+  "intermediate_clearance_verified": false,
+  "installation_release": false,
+  "configurations": [
+    {
+      "configuration": "horizontal",
+      "combined_boundary_and_axis_error_budget_mm_by_radial_service": [
+        {
+          "radial_service_mm": 0,
+          "maximum_combined_error_mm": 0.27882242368151533,
+          "nominal_endpoint_fit": true
+        },
+        {
+          "radial_service_mm": 0.5,
+          "maximum_combined_error_mm": -0.22117757631848467,
+          "nominal_endpoint_fit": false
+        },
+        {
+          "radial_service_mm": 1,
+          "maximum_combined_error_mm": -0.7211775763184847,
+          "nominal_endpoint_fit": false
+        },
+        {
+          "radial_service_mm": 1.5,
+          "maximum_combined_error_mm": -1.2211775763184847,
+          "nominal_endpoint_fit": false
+        },
+        {
+          "radial_service_mm": 3,
+          "maximum_combined_error_mm": -2.7211775763184844,
+          "nominal_endpoint_fit": false
+        }
+      ],
+      "margin_for_1mm_service_by_combined_error": [
+        {
+          "combined_error_mm": 0,
+          "remaining_margin_mm": -0.7211775763184847
+        },
+        {
+          "combined_error_mm": 0.25,
+          "remaining_margin_mm": -0.9711775763184847
+        },
+        {
+          "combined_error_mm": 0.5,
+          "remaining_margin_mm": -1.2211775763184847
+        },
+        {
+          "combined_error_mm": 1,
+          "remaining_margin_mm": -1.7211775763184847
+        },
+        {
+          "combined_error_mm": 2,
+          "remaining_margin_mm": -2.7211775763184844
+        }
+      ]
+    },
+    {
+      "configuration": "pitch_only",
+      "combined_boundary_and_axis_error_budget_mm_by_radial_service": [
+        {
+          "radial_service_mm": 0,
+          "maximum_combined_error_mm": 0.9453575969266417,
+          "nominal_endpoint_fit": true
+        },
+        {
+          "radial_service_mm": 0.5,
+          "maximum_combined_error_mm": 0.4453575969266417,
+          "nominal_endpoint_fit": true
+        },
+        {
+          "radial_service_mm": 1,
+          "maximum_combined_error_mm": -0.054642403073358325,
+          "nominal_endpoint_fit": false
+        },
+        {
+          "radial_service_mm": 1.5,
+          "maximum_combined_error_mm": -0.5546424030733583,
+          "nominal_endpoint_fit": false
+        },
+        {
+          "radial_service_mm": 3,
+          "maximum_combined_error_mm": -2.054642403073358,
+          "nominal_endpoint_fit": false
+        }
+      ],
+      "margin_for_1mm_service_by_combined_error": [
+        {
+          "combined_error_mm": 0,
+          "remaining_margin_mm": -0.054642403073358325
+        },
+        {
+          "combined_error_mm": 0.25,
+          "remaining_margin_mm": -0.3046424030733583
+        },
+        {
+          "combined_error_mm": 0.5,
+          "remaining_margin_mm": -0.5546424030733583
+        },
+        {
+          "combined_error_mm": 1,
+          "remaining_margin_mm": -1.0546424030733583
+        },
+        {
+          "combined_error_mm": 2,
+          "remaining_margin_mm": -2.054642403073358
+        }
+      ]
+    },
+    {
+      "configuration": "pitch_and_splay",
+      "combined_boundary_and_axis_error_budget_mm_by_radial_service": [
+        {
+          "radial_service_mm": 0,
+          "maximum_combined_error_mm": 1.9072726481329425,
+          "nominal_endpoint_fit": true
+        },
+        {
+          "radial_service_mm": 0.5,
+          "maximum_combined_error_mm": 1.4072726481329425,
+          "nominal_endpoint_fit": true
+        },
+        {
+          "radial_service_mm": 1,
+          "maximum_combined_error_mm": 0.9072726481329425,
+          "nominal_endpoint_fit": true
+        },
+        {
+          "radial_service_mm": 1.5,
+          "maximum_combined_error_mm": 0.4072726481329425,
+          "nominal_endpoint_fit": true
+        },
+        {
+          "radial_service_mm": 3,
+          "maximum_combined_error_mm": -1.0927273518670575,
+          "nominal_endpoint_fit": false
+        }
+      ],
+      "margin_for_1mm_service_by_combined_error": [
+        {
+          "combined_error_mm": 0,
+          "remaining_margin_mm": 0.9072726481329425
+        },
+        {
+          "combined_error_mm": 0.25,
+          "remaining_margin_mm": 0.6572726481329425
+        },
+        {
+          "combined_error_mm": 0.5,
+          "remaining_margin_mm": 0.4072726481329425
+        },
+        {
+          "combined_error_mm": 1,
+          "remaining_margin_mm": -0.0927273518670575
+        },
+        {
+          "combined_error_mm": 2,
+          "remaining_margin_mm": -1.0927273518670575
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Error values are sensitivities, not measured tolerances",
+    "Only existing provisional E/F endpoint contours are assessed",
+    "A positive budget is conditional on bounded errors and unchanged topology",
+    "Native loft, full axial envelope and actual hardware remain unverified"
+  ]
+}

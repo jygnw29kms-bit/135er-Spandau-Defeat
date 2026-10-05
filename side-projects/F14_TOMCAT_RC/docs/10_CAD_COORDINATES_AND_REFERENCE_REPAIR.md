@@ -217,3 +217,10 @@ Only the E/F endpoint planes are assessed. Intermediate skin, true three-dimensi
 Grumman's W. H. Davis, [Applied Transonics at Grumman](https://ntrs.nasa.gov/api/citations/19890011560/downloads/19890011560.pdf), distinguishes preproduction and production F-14A pancake contours, and F-14A+ aft changes. PDF pages 4-5 describe the differences and simplified CFD geometry; page 16 illustrates them. Preserve the production pancake notches and keep variant contours consistent. The equivalent axisymmetric CFD nacelles and pylon representation cannot supply production exterior coordinates.
 
 The inspected source gives no verified numerical engine-axis pitch or splay. The v18 angles remain packaging sensitivities. No original-axis setting, native EDF mount or aft production loft is selected by this audit. The source hash and page evidence are recorded in grumman_aft_source_audit_v19.json.
+
+## Conditional endpoint error budget - v20
+
+The clearance uncertainty calculation subtracts bounded contour and axis-position errors from the v18 perpendicular radii. With 1 mm radial service clearance, the pitch-and-splay candidate has only 0.9073 mm combined positional-error budget. At 1 mm combined error it fails by 0.0927 mm. Horizontal and pitch-only candidates already fail nominally for that service allowance. Independent arithmetic checks pass.
+
+These are conditional sensitivities, not measured raster, registration or installation tolerances. Scale and skin-thickness errors, intermediate geometry, full axial clearance and actual hardware remain unverified. No installation release follows.
+
