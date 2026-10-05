@@ -594,10 +594,71 @@ def build_basic_wing_document_v08():
         json.dump(dict(status='SOURCE_WING_LOFT_PROVISIONAL',body_datum_registered=False,source_span_full_mm=source_span_in*25.4,bodies=audit),stream,indent=2)
     vp.saveAsImageFile(os.path.join(outdir,'F14_v08_source_wings.png'),1600,1000)
 
+def build_source_spar_review_v10():
+    """Independent material-envelope bodies; no shell cuts or print release."""
+    with open(os.path.join(os.path.dirname(__file__),'F14_source_spar_fit_v10.json'),encoding='utf-8') as stream:
+        fit=json.load(stream)
+    with open(os.path.join(os.path.dirname(__file__),'NASA_F14_basic_wing_v08.json'),encoding='utf-8') as stream:
+        source=json.load(stream)
+    if fit['source_sha256']!=source['source_sha256'] or not fit['baseline_terminated_spar_candidate']['all_retained_defining_sections_fit']:
+        raise RuntimeError('Source spar fit is not applicable to original wing data')
+    build_basic_wing_document_v08()
+    design=adsk.fusion.Design.cast(_app.activeProduct)
+    _app.activeDocument.name='F14_Tomcat_RC_v10_SOURCE_SPAR_PACKAGING_REVIEW'
+    root=design.rootComponent
+    factor=900.0/(2*source['sections'][-1]['wbl_in'])
+    for label,sign in [('R',1),('L',-1)]:
+        for kind in ['UPPER_CAP','LOWER_CAP','WEB']:
+            profiles=[]
+            for st,local in zip(source['sections'][:-1],fit['sections'][:-1]):
+                if abs(st['wbl_in']-local['wbl_in'])>1e-6:
+                    raise RuntimeError('Source spar station mismatch')
+                chord=(st['trailing_edge_fs_in']-st['leading_edge_fs_in'])*factor
+                center=st['leading_edge_fs_in']*factor+0.30*chord
+                reference=st['reference_vertical_wl_in']*factor
+                top=reference+local['cap_top_outer_relative_wl_mm']
+                bottom=reference+local['cap_bottom_outer_relative_wl_mm']
+                width=local['cap_width_mm']
+                if kind=='UPPER_CAP': z0,z1=top-1.0,top
+                elif kind=='LOWER_CAP': z0,z1=bottom,bottom+1.0
+                else: z0,z1=bottom+1.0,top-1.0; width=0.8
+                if z1<=z0:
+                    raise RuntimeError('Source spar has no positive section height')
+                y=sign*local['model_y_mm']
+                sk=root.sketches.add(axis_plane(root,'y',y))
+                sk.name='SOURCE_SPAR_'+label+'_'+kind+'_WBL_'+str(st['wbl_in'])
+                pts=[model_point(sk,x,y,z) for x,z in [(center-width/2,z0),(center+width/2,z0),(center+width/2,z1),(center-width/2,z1)]]
+                for i in range(4): sk.sketchCurves.sketchLines.addByTwoPoints(pts[i],pts[(i+1)%4])
+                if sk.profiles.count!=1: raise RuntimeError('Spar rectangle profile failed')
+                profiles.append(sk.profiles.item(0))
+            inp=root.features.loftFeatures.createInput(adsk.fusion.FeatureOperations.NewBodyFeatureOperation)
+            inp.isSolid=True
+            for profile in profiles: inp.loftSections.add(profile)
+            body=root.features.loftFeatures.add(inp).bodies.item(0)
+            body.name='CANDIDATE_CARBON_'+label+'_'+kind+'_NOT_STRENGTH_VERIFIED'
+    audit=[]
+    for body in root.bRepBodies:
+        bb=body.boundingBox
+        audit.append(dict(name=body.name,volume_cm3=body.volume,bounds_mm={a:[getattr(bb.minPoint,a)*10,getattr(bb.maxPoint,a)*10] for a in ['x','y','z']}))
+    if len(audit)!=8: raise RuntimeError('Expected two source wings and six spar envelopes')
+    root.isSketchFolderLightBulbOn=False
+    root.isConstructionFolderLightBulbOn=False
+    with open(os.path.join(os.path.dirname(__file__),'F14TomcatRC_config.json'),encoding='utf-8') as stream: config=json.load(stream)
+    outdir=os.path.join(config['export_dir'],'source_spar_v10')
+    os.makedirs(outdir,exist_ok=True)
+    target=os.path.join(outdir,'F14_v10_SOURCE_SPAR_PACKAGING_REVIEW.f3d')
+    if not design.exportManager.execute(design.exportManager.createFusionArchiveExportOptions(target)):
+        raise RuntimeError('Source spar archive export failed')
+    with open(os.path.join(outdir,'F14_v10_native_spar_audit.json'),'w',encoding='utf-8') as stream:
+        json.dump(dict(status='LOCAL_PACKAGING_CANDIDATE',bodies=audit,continuous_clearance_verified=False,structural_capacity_verified=False,print_release=False),stream,indent=2)
+    _app.activeViewport.fit()
+    _app.activeViewport.saveAsImageFile(os.path.join(outdir,'F14_v10_spar_review.png'),1600,1000)
+
+
 def build_project_revision():
     # Fixed CAD entry point. Subsequent checked-in revisions can change this
     # implementation without accepting code, paths or shell commands in requests.
-    return build_basic_wing_document_v08()
+    return build_source_spar_review_v10()
 
 class BuildRequestHandler(adsk.core.CustomEventHandler):
     def notify(self,args):
