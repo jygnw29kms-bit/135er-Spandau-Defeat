@@ -211,3 +211,9 @@ The new edf_tilted_axis_sensitivity.py accounts for the elliptical intersection 
 Endpoint minimum cylinder diameters are 54.1576 mm horizontally, 55.4907 mm with approximately 3.396 degrees pitch, and 57.4145 mm with approximately 3.395 degrees pitch plus 1.412 degrees splay. The last case offers roughly 1.9073 mm provisional radial allowance for the assumed 52 mm housing and 0.8 mm skin. These configurations follow provisional packaging centers; they are not verified original engine axes or selected installation settings.
 
 Only the E/F endpoint planes are assessed. Intermediate skin, true three-dimensional wall-normal clearance, complete service envelope, actual EDF dimensions, thrust-vector effects, duct transitions and mount strength remain unverified. No native installation or print release follows from this sensitivity study.
+
+## Original aft configuration source gate - v19
+
+Grumman's W. H. Davis, [Applied Transonics at Grumman](https://ntrs.nasa.gov/api/citations/19890011560/downloads/19890011560.pdf), distinguishes preproduction and production F-14A pancake contours, and F-14A+ aft changes. PDF pages 4-5 describe the differences and simplified CFD geometry; page 16 illustrates them. Preserve the production pancake notches and keep variant contours consistent. The equivalent axisymmetric CFD nacelles and pylon representation cannot supply production exterior coordinates.
+
+The inspected source gives no verified numerical engine-axis pitch or splay. The v18 angles remain packaging sensitivities. No original-axis setting, native EDF mount or aft production loft is selected by this audit. The source hash and page evidence are recorded in grumman_aft_source_audit_v19.json.

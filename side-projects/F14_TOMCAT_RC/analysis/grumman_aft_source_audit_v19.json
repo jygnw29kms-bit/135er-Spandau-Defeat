@@ -1,0 +1,37 @@
+{
+  "revision": "v19",
+  "source": {
+    "title": "Applied Transonics at Grumman",
+    "author": "W. H. Davis",
+    "url": "https://ntrs.nasa.gov/api/citations/19890011560/downloads/19890011560.pdf",
+    "sha256": "cce40bbf4fd4f10a125b863eff7034e79f94ad5d20c886ab5ea115becaa41c08",
+    "pdf_pages": 20
+  },
+  "evidence": [
+    {
+      "pdf_page": 4,
+      "printed_page": 136,
+      "finding": "Production F-14A pancake differs from preproduction; F-14A+ engine upgrade also changes aft contours."
+    },
+    {
+      "pdf_page": 5,
+      "printed_page": 137,
+      "finding": "Analysis converts actual nacelle lines to equivalent axisymmetric shapes and models pancake as a pylon."
+    },
+    {
+      "pdf_page": 16,
+      "printed_page": 148,
+      "figures": [8, 9, 10, 11],
+      "finding": "Component illustration and variant comparisons distinguish production pancake notches and F-14A/A+ aft changes; CFD model is simplified."
+    }
+  ],
+  "construction_constraints": {
+    "do_not_mix_variant_contours": true,
+    "production_F14A_pancake_notches_require_preservation": true,
+    "CFD_figures_are_not_production_OML_coordinates": true,
+    "numeric_original_engine_pitch_verified": false,
+    "numeric_original_engine_splay_verified": false,
+    "v18_packaging_angles_selected_for_CAD": false,
+    "production_aft_loft_ready": false
+  }
+}
