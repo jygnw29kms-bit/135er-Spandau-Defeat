@@ -6,7 +6,7 @@ _created = False
 _handlers = []
 _worker_stop = threading.Event()
 _event_id = 'com.jl1976.f14tomcatrc.controlled_build'
-_bridge_revision = 'v23_execution_acknowledgment'
+_bridge_revision = 'v24_restartable_event_bridge'
 with open(__file__, 'rb') as _source_stream:
     _loaded_source_sha256 = hashlib.sha256(_source_stream.read()).hexdigest()
 
@@ -853,6 +853,10 @@ class BuildRequestHandler(adsk.core.CustomEventHandler):
             json.dump(response,stream,indent=2)
 
 def start_build_requests():
+    global _worker_stop
+    # Each worker retains its own stop token, even if Fusion reuses this module.
+    _worker_stop=threading.Event()
+    shutdown_token=_worker_stop
     event=_app.registerCustomEvent(_event_id)
     handler=BuildRequestHandler()
     event.add(handler)
@@ -860,7 +864,7 @@ def start_build_requests():
     def poll():
         previous=None
         path=os.path.join(os.path.dirname(__file__),'F14_build_request.json')
-        while not _worker_stop.wait(1.0):
+        while not shutdown_token.wait(1.0):
             try:
                 with open(path,encoding='utf-8') as stream: request=json.load(stream)
                 if request['request_id']!=previous:
@@ -900,6 +904,9 @@ def run(context):
             _ui.messageBox('F14TomcatRC error:\n'+traceback.format_exc())
 
 def stop(context):
+    global _created
     _worker_stop.set()
     if _app:
         _app.unregisterCustomEvent(_event_id)
+    _handlers.clear()
+    _created=False
