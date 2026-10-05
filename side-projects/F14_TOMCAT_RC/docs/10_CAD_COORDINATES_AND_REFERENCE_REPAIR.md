@@ -159,3 +159,11 @@ prepare_source_profile_review.py reproducibly collects A/B/D/E source contours, 
 The installed Fusion function build_source_profile_review_v14 creates six editable source sketches in a separate document, requires the expected native profile count (three at C, one elsewhere), records profile-loop counts and requires zero solid bodies before archive/audit export. The controlled operation build_source_profiles_v14 loads only the fixed installed project module. Syntax validation and data preparation pass; native execution remains unverified. The existing v10 spar request is preserved.
 
 This gallery is for checking source-section topology in the native CAD kernel. It does not construct an aircraft exterior, align waterlines, define print walls or release STL/3MF.
+
+## P2S source-wing segmentation candidate - v14
+
+The official [Bambu Lab P2S announcement](https://blog.bambulab.com/the-icon-redefined-meet-the-p2s-a-completely-reengineered-version-of-the-ultra-productive-p1-series/) specifies a 256 x 256 x 256 mm build volume. source_wing_print_segmentation.py uses a deliberately assumed 240 x 240 x 250 mm usable envelope and 8 mm brim on each bed side; these are design allowances, not verified slicer settings or excluded-region clearance.
+
+A split at the original WBL 311.15283 section (model Y=363.9688 mm) gives an inner source panel 215.1424 mm long and an outer panel 86.0312 mm long. With span aligned to printer Z, defining-point footprints including the assumed brim are 173.5050 x 35.0541 mm and 99.1100 x 26.2788 mm respectively. Both pass the assumed envelope, and their spans sum to the original 301.1736 mm panel.
+
+The candidate carbon cap path should remain continuous across the FDM skin joint. Actual native loft bounds and splitting, shell construction, joining lip/ribs, support strategy, layer-strength assessment and slicer collision checks remain open. Defining-point bounds can miss native loft overshoot. No print STL/3MF has been released from this plan.
