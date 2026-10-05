@@ -1,0 +1,74 @@
+{
+  "scale_mm_per_source_inch": 1.1697428086486623,
+  "source_full_span_mm": 19542.75746,
+  "model_span_mm": 900,
+  "root_to_tip_panel_span_mm": 301.1736224556307,
+  "sections": [
+    {
+      "wbl_in": 127.23,
+      "model_y_mm": 148.8263775443693,
+      "model_chord_mm": 147.93117337291054,
+      "max_table_tc": 0.09649,
+      "max_table_thickness_mm": 14.27387891875214,
+      "trailing_edge_thickness_mm": 0.37870380383465113
+    },
+    {
+      "wbl_in": 164.0146,
+      "model_y_mm": 191.8548988633869,
+      "model_chord_mm": 134.30224256592706,
+      "max_table_tc": 0.09335,
+      "max_table_thickness_mm": 12.537114343529291,
+      "trailing_edge_thickness_mm": 0.1531045565251569
+    },
+    {
+      "wbl_in": 200.79919,
+      "model_y_mm": 234.8834084849764,
+      "model_chord_mm": 120.5509098714466,
+      "max_table_tc": 0.09304000000000001,
+      "max_table_thickness_mm": 11.216056654439393,
+      "trailing_edge_thickness_mm": 0.07353605502158246
+    },
+    {
+      "wbl_in": 237.58369,
+      "model_y_mm": 277.9118128297131,
+      "model_chord_mm": 106.79443030860807,
+      "max_table_tc": 0.09479000000000001,
+      "max_table_thickness_mm": 10.123044048952961,
+      "trailing_edge_thickness_mm": 0.07262021260985349
+    },
+    {
+      "wbl_in": 274.36816,
+      "model_y_mm": 320.94018208216556,
+      "model_chord_mm": 93.03795074576954,
+      "max_table_tc": 0.09641,
+      "max_table_thickness_mm": 8.96978883139964,
+      "trailing_edge_thickness_mm": 0.07256960158170024
+    },
+    {
+      "wbl_in": 311.15283,
+      "model_y_mm": 363.9687852831797,
+      "model_chord_mm": 79.28149457778724,
+      "max_table_tc": 0.09745000000000001,
+      "max_table_thickness_mm": 7.7259816466053675,
+      "trailing_edge_thickness_mm": 0.07293897501156432
+    },
+    {
+      "wbl_in": 347.93726,
+      "model_y_mm": 406.99710774591983,
+      "model_chord_mm": 65.52530745065079,
+      "max_table_tc": 0.09634000000000001,
+      "max_table_thickness_mm": 6.312708119795698,
+      "trailing_edge_thickness_mm": 0.07338834434472885
+    },
+    {
+      "wbl_in": 384.69995,
+      "model_y_mm": 449.99999999999994,
+      "model_chord_mm": 51.776828928623424,
+      "max_table_tc": 0.08954,
+      "max_table_thickness_mm": 4.636097262268941,
+      "trailing_edge_thickness_mm": 0.0730053287893591
+    }
+  ],
+  "body_datum_registered": false,
+  "native_CAD_success_required_before_release": true
+}

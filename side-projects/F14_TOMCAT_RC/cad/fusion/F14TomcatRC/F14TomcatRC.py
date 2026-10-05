@@ -1,4 +1,4 @@
-import adsk.core, adsk.fusion, traceback, math, os, json, threading
+import adsk.core, adsk.fusion, traceback, math, os, json, threading, importlib.util
 
 _app = None
 _ui = None
@@ -529,12 +529,92 @@ def build_reference_model_v06():
     if not _app.activeViewport.saveAsImageFile(os.path.join(outdir,'F14_v06_reference_plan.png'),1600,1000):
         raise RuntimeError('Reference viewport export failed')
 
+def build_basic_wing_document_v08():
+    """Source-table wing in aircraft FS/WBL/WL coordinates; not body-integrated."""
+    with open(os.path.join(os.path.dirname(__file__),'NASA_F14_basic_wing_v08.json'),encoding='utf-8') as stream:
+        data=json.load(stream)
+    if len(data['sections'])!=8 or data['experimental_gloves_included']:
+        raise RuntimeError('Invalid original wing source dataset')
+    _app.preferences.generalPreferences.defaultModelingOrientation=adsk.core.DefaultModelingOrientations.ZUpModelingOrientation
+    doc=_app.documents.add(adsk.core.DocumentTypes.FusionDesignDocumentType)
+    doc.name='F14_Tomcat_RC_v08_GRUMMAN_BASIC_WINGS_SOURCE_REVIEW'
+    design=adsk.fusion.Design.cast(_app.activeProduct)
+    design.designType=adsk.fusion.DesignTypes.ParametricDesignType
+    root=design.rootComponent
+    span=900.0
+    source_span_in=2*data['sections'][-1]['wbl_in']
+    factor=span/source_span_in
+    design.userParameters.add('ReviewSpan20',adsk.core.ValueInput.createByReal(mm(span)),'mm','Source wing reference scale; body datum registration pending')
+    design.userParameters.add('SourceSpanFull',adsk.core.ValueInput.createByReal(mm(source_span_in*25.4)),'mm','Grumman basic-wing defining-table tip WBL times two')
+    audit=[]
+    for label,sign in [('R',1),('L',-1)]:
+        sections=[]
+        for index,st in enumerate(data['sections']):
+            lateral=sign*st['wbl_in']*factor
+            plane=axis_plane(root,'y',lateral)
+            sk=root.sketches.add(plane)
+            sk.name='SOURCE_BASIC_'+label+'_WBL_'+str(st['wbl_in'])
+            chord=st['trailing_edge_fs_in']-st['leading_edge_fs_in']
+            rows=st['ordinates_xc_upper_lower']
+            # Keep the published trailing-edge thickness and incidence.
+            contour=[(x,u) for x,u,l in rows]+[(x,l) for x,u,l in rows[:0:-1]]
+            pts=[model_point(sk,(st['leading_edge_fs_in']+x*chord)*factor,lateral,(st['reference_vertical_wl_in']+z*chord)*factor) for x,z in contour]
+            lines=sk.sketchCurves.sketchLines
+            for i in range(len(pts)):
+                lines.addByTwoPoints(pts[i],pts[(i+1)%len(pts)])
+            if sk.profiles.count!=1:
+                raise RuntimeError('Source wing contour must have one profile at WBL '+str(st['wbl_in']))
+            sections.append(sk.profiles.item(0))
+        features=root.features.loftFeatures
+        inp=features.createInput(adsk.fusion.FeatureOperations.NewBodyFeatureOperation)
+        inp.isSolid=True
+        for profile in sections: inp.loftSections.add(profile)
+        feature=features.add(inp)
+        body=feature.bodies.item(0)
+        body.name='SOURCE_GRUMMAN_BASIC_WING_'+label+'_NOT_BODY_REGISTERED'
+        bb=body.boundingBox
+        audit.append(dict(name=body.name,bounds_mm={a:[getattr(bb.minPoint,a)*10,getattr(bb.maxPoint,a)*10] for a in ['x','y','z']}))
+    root.isSketchFolderLightBulbOn=False
+    root.isConstructionFolderLightBulbOn=False
+    vp=_app.activeViewport
+    camera=vp.camera
+    camera.eye=adsk.core.Point3D.create(mm(1200),mm(-1000),mm(1000))
+    camera.target=adsk.core.Point3D.create(mm(680),0,mm(180))
+    camera.upVector=adsk.core.Vector3D.create(0,0,1)
+    camera.isPerspective=False
+    camera.isFitView=True
+    vp.camera=camera
+    vp.fit()
+    with open(os.path.join(os.path.dirname(__file__),'F14TomcatRC_config.json'),encoding='utf-8') as stream: config=json.load(stream)
+    outdir=config['export_dir']
+    os.makedirs(outdir,exist_ok=True)
+    if not design.exportManager.execute(design.exportManager.createFusionArchiveExportOptions(os.path.join(outdir,'F14_v08_GRUMMAN_BASIC_WINGS_SOURCE_REVIEW.f3d'))):
+        raise RuntimeError('Source wing archive export failed')
+    with open(os.path.join(outdir,'F14_v08_source_wing_native_audit.json'),'w',encoding='utf-8') as stream:
+        json.dump(dict(status='SOURCE_WING_LOFT_PROVISIONAL',body_datum_registered=False,source_span_full_mm=source_span_in*25.4,bodies=audit),stream,indent=2)
+    vp.saveAsImageFile(os.path.join(outdir,'F14_v08_source_wings.png'),1600,1000)
+
+def build_project_revision():
+    # Fixed CAD entry point. Subsequent checked-in revisions can change this
+    # implementation without accepting code, paths or shell commands in requests.
+    return build_basic_wing_document_v08()
+
 class BuildRequestHandler(adsk.core.CustomEventHandler):
     def notify(self,args):
         request=json.loads(args.additionalInfo)
         response=dict(request_id=request['request_id'],status='failed')
         try:
-            if request['operation']=='build_reference_v06':
+            if request['operation']=='build_project_revision':
+                path=os.path.join(os.path.dirname(__file__),'F14TomcatRC.py')
+                spec=importlib.util.spec_from_file_location('f14_checked_cad_revision',path)
+                revision=importlib.util.module_from_spec(spec)
+                spec.loader.exec_module(revision)
+                revision._app=_app
+                revision._ui=_ui
+                revision.build_project_revision()
+            elif request['operation']=='build_basic_wings_v08':
+                build_basic_wing_document_v08()
+            elif request['operation']=='build_reference_v06':
                 build_reference_model_v06()
             elif request['operation']=='rebuild':
                 build_model()
@@ -582,7 +662,9 @@ def run(context):
         if not _created:
             with open(os.path.join(os.path.dirname(__file__),'F14TomcatRC_config.json'),encoding='utf-8') as stream:
                 config=json.load(stream)
-            if config.get('startup_mode')=='reference_v06':
+            if config.get('startup_mode')=='basic_wings_v08':
+                build_basic_wing_document_v08()
+            elif config.get('startup_mode')=='reference_v06':
                 build_reference_model_v06()
             else:
                 build_model()
