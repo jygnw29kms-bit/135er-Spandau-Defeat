@@ -203,3 +203,11 @@ The provisional E/F side-image axis translations now place both corrected source
 The sampled common disk diameter is 54.1576 mm at centers Y=+/-64.75 mm, Z=-7.75 mm in this candidate frame. For a 52 mm housing and 0.8 mm skin, the residual radial service allowance is only 0.2788 mm. This is much less generous than independently optimized E/F disks and remains subject to unquantified raster and registration error; it does not establish a reliable mount tolerance.
 
 The output records clearance sensitivities and transformed contours for review. Only two endpoint planes are checked; intermediate skin and the 81 mm axial service envelope remain unverified. Tilted or splayed axes, duct transitions, actual hardware and native CAD installation are not evaluated. No installation or print release is claimed.
+
+## Oblique EDF cylinder endpoint sensitivity - v18
+
+The new edf_tilted_axis_sensitivity.py accounts for the elliptical intersection of a tilted/splayed cylinder with a fuselage section plane. It projects section distances with metric I - u_yz u_yz^T for unit axis direction u; this measures perpendicular distance to the axis rather than incorrectly fitting circular section disks. Independent horizontal and 30-degree-distance checks pass, and the horizontal case reproduces v17.
+
+Endpoint minimum cylinder diameters are 54.1576 mm horizontally, 55.4907 mm with approximately 3.396 degrees pitch, and 57.4145 mm with approximately 3.395 degrees pitch plus 1.412 degrees splay. The last case offers roughly 1.9073 mm provisional radial allowance for the assumed 52 mm housing and 0.8 mm skin. These configurations follow provisional packaging centers; they are not verified original engine axes or selected installation settings.
+
+Only the E/F endpoint planes are assessed. Intermediate skin, true three-dimensional wall-normal clearance, complete service envelope, actual EDF dimensions, thrust-vector effects, duct transitions and mount strength remain unverified. No native installation or print release follows from this sensitivity study.

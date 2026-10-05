@@ -1,0 +1,148 @@
+{
+  "status": "OBLIQUE_CYLINDER_ENDPOINT_SENSITIVITY_ONLY",
+  "checks": "PASS: horizontal metric, 30-degree perpendicular distance, horizontal baseline reproduction",
+  "method": "Projected section metric I - u_yz u_yz^T; oblique cylinder ellipse accounted for",
+  "configurations": [
+    {
+      "configuration": "horizontal",
+      "right_axis_endpoint_yz_mm": [
+        [
+          64.75,
+          -7.75
+        ],
+        [
+          64.75,
+          -7.75
+        ]
+      ],
+      "pitch_deg": 0.0,
+      "splay_deg": 0.0,
+      "minimum_endpoint_cylinder_diameter_mm": 54.15764484736303,
+      "provisional_radial_allowance_for_52mm_housing_and_0p8_skin_mm": 0.27882242368151533,
+      "per_endpoint": [
+        {
+          "section": "E",
+          "side": -1,
+          "perpendicular_radius_mm": 27.226767990217212,
+          "section_ellipse_major_to_minor_ratio": 1.0
+        },
+        {
+          "section": "F",
+          "side": -1,
+          "perpendicular_radius_mm": 27.20495264592824,
+          "section_ellipse_major_to_minor_ratio": 1.0
+        },
+        {
+          "section": "E",
+          "side": 1,
+          "perpendicular_radius_mm": 27.16657186617373,
+          "section_ellipse_major_to_minor_ratio": 1.0
+        },
+        {
+          "section": "F",
+          "side": 1,
+          "perpendicular_radius_mm": 27.078822423681515,
+          "section_ellipse_major_to_minor_ratio": 1.0
+        }
+      ]
+    },
+    {
+      "configuration": "pitch_only",
+      "right_axis_endpoint_yz_mm": [
+        [
+          64.75,
+          -9.52685253963718
+        ],
+        [
+          64.75,
+          -3.232103530909531
+        ]
+      ],
+      "pitch_deg": 3.3960588499544437,
+      "splay_deg": 0.0,
+      "minimum_endpoint_cylinder_diameter_mm": 55.49071519385328,
+      "provisional_radial_allowance_for_52mm_housing_and_0p8_skin_mm": 0.9453575969266417,
+      "per_endpoint": [
+        {
+          "section": "E",
+          "side": -1,
+          "perpendicular_radius_mm": 28.951622194727108,
+          "section_ellipse_major_to_minor_ratio": 1.0017591842816735
+        },
+        {
+          "section": "F",
+          "side": -1,
+          "perpendicular_radius_mm": 28.597942331576572,
+          "section_ellipse_major_to_minor_ratio": 1.0017591842816735
+        },
+        {
+          "section": "E",
+          "side": 1,
+          "perpendicular_radius_mm": 27.74535759692664,
+          "section_ellipse_major_to_minor_ratio": 1.0017591842816735
+        },
+        {
+          "section": "F",
+          "side": 1,
+          "perpendicular_radius_mm": 29.34507410824325,
+          "section_ellipse_major_to_minor_ratio": 1.0017591842816735
+        }
+      ]
+    },
+    {
+      "configuration": "pitch_and_splay",
+      "right_axis_endpoint_yz_mm": [
+        [
+          63.30010360033684,
+          -9.52685253963718
+        ],
+        [
+          65.91567931571684,
+          -3.232103530909531
+        ]
+      ],
+      "pitch_deg": 3.3950293390344743,
+      "splay_deg": 1.4124890843914408,
+      "minimum_endpoint_cylinder_diameter_mm": 57.414545296265885,
+      "provisional_radial_allowance_for_52mm_housing_and_0p8_skin_mm": 1.9072726481329425,
+      "per_endpoint": [
+        {
+          "section": "E",
+          "side": -1,
+          "perpendicular_radius_mm": 28.707272648132943,
+          "section_ellipse_major_to_minor_ratio": 1.0020626026217816
+        },
+        {
+          "section": "F",
+          "side": -1,
+          "perpendicular_radius_mm": 29.482986270314658,
+          "section_ellipse_major_to_minor_ratio": 1.0020626026217816
+        },
+        {
+          "section": "E",
+          "side": 1,
+          "perpendicular_radius_mm": 28.782356826581108,
+          "section_ellipse_major_to_minor_ratio": 1.0020626026217816
+        },
+        {
+          "section": "F",
+          "side": 1,
+          "perpendicular_radius_mm": 29.81641971063279,
+          "section_ellipse_major_to_minor_ratio": 1.0020626026217816
+        }
+      ]
+    }
+  ],
+  "actual_aircraft_engine_axis_verified": false,
+  "intermediate_clearance_verified": false,
+  "actual_mount_wall_normal_clearance_verified": false,
+  "actual_hardware_verified": false,
+  "native_cad_created": false,
+  "installation_release": false,
+  "limitations": [
+    "Axis directions are packaging sensitivities, not original engine alignment",
+    "Only E/F planes checked, using provisional cross-source registrations",
+    "Skin deduction is assumed; true 3D wall-normal clearance remains unverified",
+    "No airflow, thrust-vector, mount, wiring or 81mm housing proof"
+  ]
+}
