@@ -179,3 +179,11 @@ The controlled operation build_source_segments_v15 loads only the fixed installe
 The split plan now records the SHA-256 of the exact basic-wing JSON dataset separately from its source-PDF hash. The native builder rejects a changed dataset or a split plane that is not the specified defining WBL. Each resulting body must match the expected inner/outer span boundaries within 0.0001 mm, in addition to the four-body and volume-conservation checks. Installed and repository source-dataset hashes match; regeneration of the analytical plan and Python syntax checks pass.
 
 These are implemented checks, with native execution still pending. They do not establish that the planned split, actual loft bounds or printer fit has passed in Fusion.
+
+## Twin EDF local packing sensitivity - v15
+
+The new aft_edf_section_packaging.py searches symmetric disk centers inside the corrected connected source F contour and computes true nearest-segment clearance. Independent square-radius and outside-point tests pass. The disks are constrained not to overlap. The one-pixel grid search is a sampled result, not a global optimum proof. Metric conversion uses the NASA length divided by the candidate UPC nose-tail distance and is explicitly unverified.
+
+Under that scale assumption the best sampled common disk diameter is 56.6053 mm. The assumed 52 mm EDF housing, 0.8 mm skin and interpretation of the existing 3 mm service clearance as radial require 59.6 mm, giving a -2.9947 mm margin. The maximum sampled radial service allowance for a 52 mm housing and that skin is approximately 1.5027 mm. The clearance convention in the original hardware envelope was ambiguous; do not silently reinterpret it or enlarge the original exterior to force a fit.
+
+Actual EDF dimensions, metric section registration, 75 mm axial housing fit, mounts, wiring access and duct transitions remain unverified. A local section result does not establish an EDF installation, swept fan area, airflow or thrust. Candidate remedies must be checked against the full original nacelle before choosing placement or clearance.
