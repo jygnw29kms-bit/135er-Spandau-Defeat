@@ -137,3 +137,11 @@ The D/E candidate file records independent body-plan width fits and manually sel
 The D upper side envelope can include the wing-root fairing or projection and requires independent topology verification. E retains an unresolved height discrepancy. The fitted candidate axes occur at different side-image heights; they must not be interpreted as a common aircraft waterline. Station pairing, source axes and metric registration remain unverified, and production lofting stays disabled.
 
 During this run Fusion was absent from the returned desktop windows. A supported launch attempt timed out and a subsequent window listing still showed no Fusion window; the previous failed native request remained unchanged. No new native v10 execution is claimed.
+
+## Intake section C topology candidates - v12
+
+The C source section contains two intake voids within a connected outer contour. upc_C_intake_topology_v12.json records both manually traced interior loops separately from the inherited outer skin. The source overlay was inspected. Unique vertices, proper-crossing checks, containment of both openings and their separation pass. Filling the complete outer section as a solid would conceal these source openings.
+
+The candidate voids approximately follow the raster interiors. The outer glove/canopy trace still has visible raster deviations; wall thickness, metric station registration and three-dimensional duct transitions are unverified. These source-wall outlines are not a specified FDM wall, and no native air duct or print geometry has been created. Production lofting remains disabled. The section does not establish a 50 mm EDF fit or a duct path through subsequent stations.
+
+Fusion remained absent from available windows at this heartbeat, with the previous controlled-request failure unchanged. The installed executable still exists at the recorded path; no new native CAD execution is claimed.
