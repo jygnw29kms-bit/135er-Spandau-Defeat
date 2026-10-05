@@ -594,6 +594,51 @@ def build_basic_wing_document_v08():
         json.dump(dict(status='SOURCE_WING_LOFT_PROVISIONAL',body_datum_registered=False,source_span_full_mm=source_span_in*25.4,bodies=audit),stream,indent=2)
     vp.saveAsImageFile(os.path.join(outdir,'F14_v08_source_wings.png'),1600,1000)
 
+def build_source_profile_review_v14():
+    """Native topology review of independent normalized source sections."""
+    with open(os.path.join(os.path.dirname(__file__),'F14_source_profile_review_v14.json'),encoding='utf-8') as stream:
+        data=json.load(stream)
+    if data['aircraft_coordinates'] or data['loft_allowed']:
+        raise RuntimeError('Source gallery must not be treated as an aircraft loft')
+    _app.preferences.generalPreferences.defaultModelingOrientation=adsk.core.DefaultModelingOrientations.ZUpModelingOrientation
+    doc=_app.documents.add(adsk.core.DocumentTypes.FusionDesignDocumentType)
+    doc.name='F14_SOURCE_SECTION_GALLERY_v14_NOT_AIRCRAFT_GEOMETRY'
+    design=adsk.fusion.Design.cast(_app.activeProduct)
+    design.designType=adsk.fusion.DesignTypes.ParametricDesignType
+    root=design.rootComponent
+    audit=[]
+    for section in data['profiles']:
+        x=section['gallery_plane_x_mm']
+        sk=root.sketches.add(axis_plane(root,'x',x))
+        sk.name='NORMALIZED_SOURCE_'+section['name']+'_NOT_METRIC_REGISTERED'
+        for contour in [section['outer_normalized']]+section['holes_normalized']:
+            points=[model_point(sk,x,y*data['gallery_half_width_mm'],z*data['gallery_half_width_mm']) for y,z in contour]
+            for i in range(len(points)):
+                sk.sketchCurves.sketchLines.addByTwoPoints(points[i],points[(i+1)%len(points)])
+        if sk.profiles.count!=section['expected_native_profile_count']:
+            raise RuntimeError('Native source profile topology mismatch at '+section['name'])
+        audit.append(dict(section=section['name'],profile_count=sk.profiles.count,
+                          profile_loop_counts=[p.profileLoops.count for p in sk.profiles]))
+    if root.bRepBodies.count: raise RuntimeError('Normalized gallery must contain no aircraft solids')
+    with open(os.path.join(os.path.dirname(__file__),'F14TomcatRC_config.json'),encoding='utf-8') as stream: config=json.load(stream)
+    outdir=os.path.join(config['export_dir'],'source_profile_v14')
+    os.makedirs(outdir,exist_ok=True)
+    camera=_app.activeViewport.camera
+    camera.eye=adsk.core.Point3D.create(mm(2000),mm(-1800),mm(1400))
+    camera.target=adsk.core.Point3D.create(mm(625),0,0)
+    camera.upVector=adsk.core.Vector3D.create(0,0,1)
+    camera.isPerspective=False
+    camera.isFitView=True
+    _app.activeViewport.camera=camera
+    _app.activeViewport.fit()
+    target=os.path.join(outdir,'F14_SOURCE_SECTION_GALLERY_v14.f3d')
+    if not design.exportManager.execute(design.exportManager.createFusionArchiveExportOptions(target)):
+        raise RuntimeError('Native source gallery export failed')
+    with open(os.path.join(outdir,'F14_v14_native_profile_audit.json'),'w',encoding='utf-8') as stream:
+        json.dump(dict(status='NORMALIZED_SOURCE_GALLERY',profiles=audit,aircraft_geometry=False,print_release=False),stream,indent=2)
+    _app.activeViewport.saveAsImageFile(os.path.join(outdir,'F14_v14_source_profiles.png'),1600,1000)
+
+
 def build_source_spar_review_v10():
     """Independent material-envelope bodies; no shell cuts or print release."""
     with open(os.path.join(os.path.dirname(__file__),'F14_source_spar_fit_v10.json'),encoding='utf-8') as stream:
@@ -690,14 +735,15 @@ class BuildRequestHandler(adsk.core.CustomEventHandler):
         request=json.loads(args.additionalInfo)
         response=dict(request_id=request['request_id'],status='failed')
         try:
-            if request['operation']=='build_project_revision':
+            if request['operation'] in ['build_project_revision','build_source_profiles_v14']:
                 path=os.path.join(os.path.dirname(__file__),'F14TomcatRC.py')
                 spec=importlib.util.spec_from_file_location('f14_checked_cad_revision',path)
                 revision=importlib.util.module_from_spec(spec)
                 spec.loader.exec_module(revision)
                 revision._app=_app
                 revision._ui=_ui
-                revision.build_project_revision()
+                if request['operation']=='build_source_profiles_v14': revision.build_source_profile_review_v14()
+                else: revision.build_project_revision()
             elif request['operation']=='build_basic_wings_v08':
                 build_basic_wing_document_v08()
             elif request['operation']=='build_reference_v06':

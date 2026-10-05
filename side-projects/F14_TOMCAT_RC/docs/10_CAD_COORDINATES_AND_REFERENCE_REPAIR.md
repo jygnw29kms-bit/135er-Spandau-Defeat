@@ -151,3 +151,11 @@ Fusion remained absent from available windows at this heartbeat, with the previo
 The C glove/canopy upper contour was redigitized against the source raster; its corrected overlay was inspected. The candidate retains both intake openings and records normalized outer/inner loops relative to the original candidate source axis. Finite manual/raster precision remains unquantified; this normalization does not establish aircraft waterline or metric size.
 
 validate_source_contours.py now checks duplicate vertices, non-adjacent segment contacts including touching/collinear cases, strict opening containment and separate non-nested holes. Independent cases cover reversed winding, boundary exclusion, a crossed loop and duplicate vertices. Both C v13 (62 outer vertices, two openings) and connected F v11 (55 outer vertices) pass. The generated report explicitly leaves source fidelity and metric registration unverified. No native fuselage or printable geometry has been produced from these candidates.
+
+## Native source-section review prepared - v14
+
+prepare_source_profile_review.py reproducibly collects A/B/D/E source contours, corrected C with two opening loops and the corrected connected F. All six contours pass the topology validator. Each section is independently normalized to 200 mm width; planes spaced 250 mm apart are a review-gallery layout, not aircraft stations or registered dimensions. The dataset explicitly prohibits an aircraft loft.
+
+The installed Fusion function build_source_profile_review_v14 creates six editable source sketches in a separate document, requires the expected native profile count (three at C, one elsewhere), records profile-loop counts and requires zero solid bodies before archive/audit export. The controlled operation build_source_profiles_v14 loads only the fixed installed project module. Syntax validation and data preparation pass; native execution remains unverified. The existing v10 spar request is preserved.
+
+This gallery is for checking source-section topology in the native CAD kernel. It does not construct an aircraft exterior, align waterlines, define print walls or release STL/3MF.
