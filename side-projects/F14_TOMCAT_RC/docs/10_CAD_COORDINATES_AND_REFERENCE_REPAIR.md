@@ -167,3 +167,9 @@ The official [Bambu Lab P2S announcement](https://blog.bambulab.com/the-icon-red
 A split at the original WBL 311.15283 section (model Y=363.9688 mm) gives an inner source panel 215.1424 mm long and an outer panel 86.0312 mm long. With span aligned to printer Z, defining-point footprints including the assumed brim are 173.5050 x 35.0541 mm and 99.1100 x 26.2788 mm respectively. Both pass the assumed envelope, and their spans sum to the original 301.1736 mm panel.
 
 The candidate carbon cap path should remain continuous across the FDM skin joint. Actual native loft bounds and splitting, shell construction, joining lip/ribs, support strategy, layer-strength assessment and slicer collision checks remain open. Defining-point bounds can miss native loft overshoot. No print STL/3MF has been released from this plan.
+
+## Native wing split and envelope audit prepared - v15
+
+The installed build_source_segment_review_v15 uses the documented Fusion SplitBodyFeatures API with construction planes at signed model Y=363.9688 mm in a new source-wing review document. It expects four bodies, classifies inner/outer segments on each side, checks source-wing volume conservation to one part per million (minimum tolerance 0.000001 cm3), and records actual native bounds and assumed P2S envelope fit. Original user documents are preserved.
+
+The controlled operation build_source_segments_v15 loads only the fixed installed project module. Dataset installation and Python syntax validation pass; native execution is not yet verified. It exports a clearly labeled solid-envelope review archive and audit, with hollow-shell and slicer checks explicitly false. No STL/3MF print release is generated. The existing v10 spar request is preserved.

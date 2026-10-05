@@ -1,0 +1,90 @@
+{
+  "status": "DEFINING_POINT_SEGMENTATION_PLAN_ONLY",
+  "printer": "Bambu Lab P2S",
+  "official_build_volume_mm": [
+    256,
+    256,
+    256
+  ],
+  "primary_source_url": "https://blog.bambulab.com/the-icon-redefined-meet-the-p2s-a-completely-reengineered-version-of-the-ultra-productive-p1-series/",
+  "design_assumed_usable_envelope_mm": [
+    240,
+    240,
+    250
+  ],
+  "assumed_brim_per_side_mm": 8,
+  "split_wbl_in": 311.15283,
+  "split_model_y_mm": 363.9687852831797,
+  "print_shell_joint": "Keep candidate carbon cap load path continuous across FDM shell joint",
+  "native_brep_split_performed": false,
+  "native_loft_bounds_verified": false,
+  "slicer_collision_check_passed": false,
+  "print_release": false,
+  "limitations": [
+    "Bounds of defining points may omit native loft overshoot",
+    "Usable envelope and brim are design assumptions, not verified slicer settings",
+    "No shell, joining lip, rib, adhesive or support geometry yet constructed",
+    "Spanwise build orientation requires layer-strength and support assessment"
+  ],
+  "parts": [
+    {
+      "name": "inner",
+      "first_wbl_in": 127.23,
+      "last_wbl_in": 311.15283,
+      "defining_point_bounds_mm": {
+        "min": [
+          588.2699984754352,
+          148.8263775443693,
+          177.632731132042
+        ],
+        "max": [
+          745.7750137477273,
+          363.9687852831797,
+          196.6867869631904
+        ]
+      },
+      "defining_point_size_xyz_mm": [
+        157.5050152722921,
+        215.14240773881042,
+        19.05405583114839
+      ],
+      "assumed_print_rotation": "90 degrees about X; source span Y maps to printer Z",
+      "bed_footprint_with_8mm_brim_each_side_mm": [
+        173.5050152722921,
+        35.05405583114839
+      ],
+      "print_height_mm": 215.14240773881042,
+      "assumed_envelope_fit": true
+    },
+    {
+      "name": "outer",
+      "first_wbl_in": 311.15283,
+      "last_wbl_in": 384.69995,
+      "defining_point_bounds_mm": {
+        "min": [
+          666.49351916994,
+          363.9687852831797,
+          175.16714742841788
+        ],
+        "max": [
+          749.6035234732939,
+          449.99999999999994,
+          185.4459224226829
+        ]
+      },
+      "defining_point_size_xyz_mm": [
+        83.11000430335389,
+        86.03121471682022,
+        10.278774994265035
+      ],
+      "assumed_print_rotation": "90 degrees about X; source span Y maps to printer Z",
+      "bed_footprint_with_8mm_brim_each_side_mm": [
+        99.11000430335389,
+        26.278774994265035
+      ],
+      "print_height_mm": 86.03121471682022,
+      "assumed_envelope_fit": true
+    }
+  ],
+  "checks": "PASS: two segment spans sum to defining panel span; assumed envelope fit"
+}

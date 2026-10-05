@@ -594,6 +594,62 @@ def build_basic_wing_document_v08():
         json.dump(dict(status='SOURCE_WING_LOFT_PROVISIONAL',body_datum_registered=False,source_span_full_mm=source_span_in*25.4,bodies=audit),stream,indent=2)
     vp.saveAsImageFile(os.path.join(outdir,'F14_v08_source_wings.png'),1600,1000)
 
+def build_source_segment_review_v15():
+    """Split independent solid envelopes; deliberately no print shell export."""
+    with open(os.path.join(os.path.dirname(__file__),'F14_wing_segmentation_v15.json'),encoding='utf-8') as stream:
+        plan=json.load(stream)
+    build_basic_wing_document_v08()
+    design=adsk.fusion.Design.cast(_app.activeProduct)
+    _app.activeDocument.name='F14_v15_SOLID_ENVELOPE_SEGMENTS_NOT_PRINT_SHELLS'
+    root=design.rootComponent
+    original={label:next(b for b in root.bRepBodies if b.name.startswith('SOURCE_GRUMMAN_BASIC_WING_'+label+'_')).volume for label in ['R','L']}
+    for label,sign in [('R',1),('L',-1)]:
+        body=next(b for b in root.bRepBodies if b.name.startswith('SOURCE_GRUMMAN_BASIC_WING_'+label+'_'))
+        plane=axis_plane(root,'y',sign*plan['split_model_y_mm'])
+        plane.name='SOURCE_SEGMENT_SPLIT_'+label+'_WBL_'+str(plan['split_wbl_in'])
+        inp=root.features.splitBodyFeatures.createInput(body,plane,True)
+        if not inp: raise RuntimeError('Native split input failed')
+        root.features.splitBodyFeatures.add(inp)
+    if root.bRepBodies.count!=4: raise RuntimeError('Expected four native wing envelope segments')
+    audit=[]
+    totals={'R':0.0,'L':0.0}
+    identities=set()
+    for body in root.bRepBodies:
+        bb=body.boundingBox
+        bounds={a:[getattr(bb.minPoint,a)*10,getattr(bb.maxPoint,a)*10] for a in ['x','y','z']}
+        center=sum(bounds['y'])/2
+        label='R' if center>0 else 'L'
+        part='INNER' if abs(center)<plan['split_model_y_mm'] else 'OUTER'
+        if (label,part) in identities: raise RuntimeError('Duplicate segment classification')
+        identities.add((label,part))
+        body.name='SOURCE_ENVELOPE_'+label+'_'+part+'_NOT_PRINT_SHELL'
+        size={a:bounds[a][1]-bounds[a][0] for a in ['x','y','z']}
+        footprint=[size['x']+2*plan['assumed_brim_per_side_mm'],size['z']+2*plan['assumed_brim_per_side_mm']]
+        usable=plan['design_assumed_usable_envelope_mm']
+        fits=footprint[0]<=usable[0] and footprint[1]<=usable[1] and size['y']<=usable[2]
+        totals[label]+=body.volume
+        audit.append(dict(name=body.name,bounds_mm=bounds,volume_cm3=body.volume,
+                          print_height_mm=size['y'],footprint_with_assumed_brim_mm=footprint,
+                          assumed_print_envelope_fit=fits))
+    volume_checks={label:dict(original_cm3=original[label],split_sum_cm3=totals[label],
+                              conserved=abs(totals[label]-original[label])<=max(1e-6,original[label]*1e-6)) for label in ['R','L']}
+    if not all(c['conserved'] for c in volume_checks.values()): raise RuntimeError('Split volume conservation failed')
+    with open(os.path.join(os.path.dirname(__file__),'F14TomcatRC_config.json'),encoding='utf-8') as stream: config=json.load(stream)
+    outdir=os.path.join(config['export_dir'],'source_segments_v15')
+    os.makedirs(outdir,exist_ok=True)
+    root.isSketchFolderLightBulbOn=False
+    root.isConstructionFolderLightBulbOn=False
+    target=os.path.join(outdir,'F14_v15_SOLID_ENVELOPE_SEGMENTS_NOT_PRINT_SHELLS.f3d')
+    if not design.exportManager.execute(design.exportManager.createFusionArchiveExportOptions(target)):
+        raise RuntimeError('Native segment archive export failed')
+    with open(os.path.join(outdir,'F14_v15_native_segment_audit.json'),'w',encoding='utf-8') as stream:
+        json.dump(dict(status='NATIVE_SOLID_ENVELOPE_SEGMENTS',segments=audit,volume_checks=volume_checks,
+                       assumptions=plan['design_assumed_usable_envelope_mm'],
+                       hollow_print_shells_created=False,slicer_checked=False,print_release=False),stream,indent=2)
+    _app.activeViewport.fit()
+    _app.activeViewport.saveAsImageFile(os.path.join(outdir,'F14_v15_segment_review.png'),1600,1000)
+
+
 def build_source_profile_review_v14():
     """Native topology review of independent normalized source sections."""
     with open(os.path.join(os.path.dirname(__file__),'F14_source_profile_review_v14.json'),encoding='utf-8') as stream:
@@ -735,7 +791,7 @@ class BuildRequestHandler(adsk.core.CustomEventHandler):
         request=json.loads(args.additionalInfo)
         response=dict(request_id=request['request_id'],status='failed')
         try:
-            if request['operation'] in ['build_project_revision','build_source_profiles_v14']:
+            if request['operation'] in ['build_project_revision','build_source_profiles_v14','build_source_segments_v15']:
                 path=os.path.join(os.path.dirname(__file__),'F14TomcatRC.py')
                 spec=importlib.util.spec_from_file_location('f14_checked_cad_revision',path)
                 revision=importlib.util.module_from_spec(spec)
@@ -743,6 +799,7 @@ class BuildRequestHandler(adsk.core.CustomEventHandler):
                 revision._app=_app
                 revision._ui=_ui
                 if request['operation']=='build_source_profiles_v14': revision.build_source_profile_review_v14()
+                elif request['operation']=='build_source_segments_v15': revision.build_source_segment_review_v15()
                 else: revision.build_project_revision()
             elif request['operation']=='build_basic_wings_v08':
                 build_basic_wing_document_v08()
