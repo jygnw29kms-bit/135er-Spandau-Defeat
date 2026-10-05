@@ -1,0 +1,113 @@
+{
+  "status": "ASSUMED_LOAD_DISTRIBUTION_SENSITIVITY",
+  "checks": "PASS: uniform force/moment closed forms; 4096/8192 interval refinement",
+  "defined_panel_span_mm": 301.1736224556306,
+  "outer_panel_span_mm": 43.00289225408011,
+  "one_defined_panel_plan_area_mm2": 30090.298260593176,
+  "absolute_nonnegative_load_bound": {
+    "assumption": "Entire high-side 8g force concentrated at outer tip",
+    "outer_shear_N": 57.663101999999995,
+    "termination_moment_Nm": 2.479680162342031
+  },
+  "cases": [
+    {
+      "distribution": "uniform",
+      "case": "symmetric_6g",
+      "assigned_panel_force_N": 30.890947500000003,
+      "outer_panel_shear_N": 4.410745124814313,
+      "termination_bending_moment_Nm": 0.09483739868130103,
+      "first_defining_section_moment_Nm": 4.651769279830559,
+      "outer_force_fraction": 0.14278439095512732,
+      "refinement_moment_arm_difference_mm": 3.108624468950438e-14
+    },
+    {
+      "distribution": "uniform",
+      "case": "symmetric_8g",
+      "assigned_panel_force_N": 41.18793,
+      "outer_panel_shear_N": 5.880993499752417,
+      "termination_bending_moment_Nm": 0.12644986490840138,
+      "first_defining_section_moment_Nm": 6.202359039774079,
+      "outer_force_fraction": 0.14278439095512732,
+      "refinement_moment_arm_difference_mm": 3.108624468950438e-14
+    },
+    {
+      "distribution": "uniform",
+      "case": "asymmetric_8g_high_side",
+      "assigned_panel_force_N": 57.663101999999995,
+      "outer_panel_shear_N": 8.233390899653383,
+      "termination_bending_moment_Nm": 0.17702981087176192,
+      "first_defining_section_moment_Nm": 8.683302655683708,
+      "outer_force_fraction": 0.14278439095512732,
+      "refinement_moment_arm_difference_mm": 3.108624468950438e-14
+    },
+    {
+      "distribution": "area_proportional",
+      "case": "symmetric_6g",
+      "assigned_panel_force_N": 30.890947500000003,
+      "outer_panel_shear_N": 2.5892758990939284,
+      "termination_bending_moment_Nm": 0.05349810671990729,
+      "first_defining_section_moment_Nm": 3.9050138948683384,
+      "outer_force_fraction": 0.08381989251362161,
+      "refinement_moment_arm_difference_mm": 1.5428523059135557e-07
+    },
+    {
+      "distribution": "area_proportional",
+      "case": "symmetric_8g",
+      "assigned_panel_force_N": 41.18793,
+      "outer_panel_shear_N": 3.452367865458571,
+      "termination_bending_moment_Nm": 0.07133080895987638,
+      "first_defining_section_moment_Nm": 5.206685193157785,
+      "outer_force_fraction": 0.08381989251362161,
+      "refinement_moment_arm_difference_mm": 1.5428523059135557e-07
+    },
+    {
+      "distribution": "area_proportional",
+      "case": "asymmetric_8g_high_side",
+      "assigned_panel_force_N": 57.663101999999995,
+      "outer_panel_shear_N": 4.833315011641999,
+      "termination_bending_moment_Nm": 0.09986313254382692,
+      "first_defining_section_moment_Nm": 7.289359270420897,
+      "outer_force_fraction": 0.08381989251362161,
+      "refinement_moment_arm_difference_mm": 1.5428523059135557e-07
+    },
+    {
+      "distribution": "elliptic_full_semispan",
+      "case": "symmetric_6g",
+      "assigned_panel_force_N": 30.890947500000003,
+      "outer_panel_shear_N": 1.8400991040543377,
+      "termination_bending_moment_Nm": 0.0317852662884657,
+      "first_defining_section_moment_Nm": 3.854322887265425,
+      "outer_force_fraction": 0.05956758380604343,
+      "refinement_moment_arm_difference_mm": 1.092769020427653e-05
+    },
+    {
+      "distribution": "elliptic_full_semispan",
+      "case": "symmetric_8g",
+      "assigned_panel_force_N": 41.18793,
+      "outer_panel_shear_N": 2.4534654720724505,
+      "termination_bending_moment_Nm": 0.0423803550512876,
+      "first_defining_section_moment_Nm": 5.139097183020566,
+      "outer_force_fraction": 0.05956758380604343,
+      "refinement_moment_arm_difference_mm": 1.092769020427653e-05
+    },
+    {
+      "distribution": "elliptic_full_semispan",
+      "case": "asymmetric_8g_high_side",
+      "assigned_panel_force_N": 57.663101999999995,
+      "outer_panel_shear_N": 3.43485166090143,
+      "termination_bending_moment_Nm": 0.05933249707180264,
+      "first_defining_section_moment_Nm": 7.194736056228792,
+      "outer_force_fraction": 0.05956758380604343,
+      "refinement_moment_arm_difference_mm": 1.092769020427653e-05
+    }
+  ],
+  "limitations": [
+    "No aerodynamic lift distribution established",
+    "Inboard glove/body lift omitted; whole wing-side force assigned to defining panel",
+    "Source-root moment excludes unknown pivot-to-first-section arm",
+    "Nonnegative-load bound excludes self-equilibrated loads and torsion",
+    "No carbon joint, skin, printed rib, bond or buckling capacity checked"
+  ],
+  "print_tip_strength_verified": false,
+  "physical_proof_test_required": true
+}

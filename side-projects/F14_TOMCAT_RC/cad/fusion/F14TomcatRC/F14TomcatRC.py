@@ -1,10 +1,34 @@
-import adsk.core, adsk.fusion, traceback, math, os
+import adsk.core, adsk.fusion, traceback, math, os, json, threading, importlib.util, hashlib
 
 _app = None
 _ui = None
 _created = False
+_handlers = []
+_worker_stop = threading.Event()
+_event_id = 'com.jl1976.f14tomcatrc.controlled_build'
 
 def mm(v): return v/10.0
+
+def model_point(sketch, x, y, z):
+    """Convert explicit aircraft coordinates to Fusion's actual sketch frame."""
+    world = adsk.core.Point3D.create(mm(x), mm(y), mm(z))
+    local = sketch.modelToSketchSpace(world)
+    if abs(local.z) > 1e-6:
+        raise RuntimeError('Point is not on sketch plane: '+sketch.name)
+    restored = sketch.sketchToModelSpace(local)
+    if world.distanceTo(restored) > 1e-6:
+        raise RuntimeError('Sketch coordinate round-trip failed: '+sketch.name)
+    return local
+
+def axis_plane(comp, axis, coordinate):
+    """Offset the matching origin plane using its measured normal, not its name."""
+    for base in [comp.xYConstructionPlane, comp.xZConstructionPlane, comp.yZConstructionPlane]:
+        normal=base.geometry.normal
+        component=getattr(normal,axis)
+        if abs(abs(component)-1.0)<1e-8:
+            origin=getattr(base.geometry.origin,axis)*10.0
+            return offset_plane(comp,base,(coordinate-origin)/component)
+    raise RuntimeError('No origin plane normal to '+axis)
 
 def offset_plane(comp, base_plane, dist_mm):
     planes = comp.constructionPlanes
@@ -31,20 +55,20 @@ def loft_ellipses(comp, name, stations):
     feat.bodies.item(0).name = name
     return feat.bodies.item(0)
 
-def polygon_profile(comp, plane, pts):
+def polygon_profile(comp, plane, pts, z0=0):
     sk = comp.sketches.add(plane)
     lines = sk.sketchCurves.sketchLines
-    ps = [adsk.core.Point3D.create(mm(x),mm(y),0) for x,y in pts]
+    ps = [model_point(sk,x,y,z0) for x,y in pts]
     for i in range(len(ps)):
         lines.addByTwoPoints(ps[i], ps[(i+1)%len(ps)])
     return sk.profiles.item(0)
 
 def extrude_poly(comp, name, pts, z0, th):
-    pl = offset_plane(comp, comp.xYConstructionPlane, z0)
-    prof = polygon_profile(comp, pl, pts)
+    pl = axis_plane(comp, 'z', z0)
+    prof = polygon_profile(comp, pl, pts, z0)
     exts = comp.features.extrudeFeatures
     ei = exts.createInput(prof, adsk.fusion.FeatureOperations.NewBodyFeatureOperation)
-    ei.setDistanceExtent(False, adsk.core.ValueInput.createByReal(mm(th)))
+    ei.setDistanceExtent(False, adsk.core.ValueInput.createByReal(mm(th)*pl.geometry.normal.z))
     f = exts.add(ei)
     f.bodies.item(0).name = name
     return f.bodies.item(0)
@@ -57,9 +81,9 @@ def add_reference_polyline(comp, plane, name, pts_mm, axes='xy'):
     ps=[]
     for a,b in pts_mm:
         if axes == 'xy':
-            ps.append(adsk.core.Point3D.create(mm(a), mm(b), 0))
+            ps.append(model_point(sk,a,b,0))
         else:
-            ps.append(adsk.core.Point3D.create(mm(a), mm(b), 0))
+            ps.append(model_point(sk,a,0,b))
     for i in range(len(ps)-1):
         ln=lines.addByTwoPoints(ps[i], ps[i+1])
         ln.isConstruction = True
@@ -69,32 +93,42 @@ def add_reference_polyline(comp, plane, name, pts_mm, axes='xy'):
     return sk
 
 def nasa_reference_sketches(comp):
-    # Digitized directly from NASA CR-163098 Figure 4 raster. Scan distortion is
-    # corrected independently in longitudinal and lateral/vertical axes using
-    # the printed 26.19 cm, 27.14 cm and 4.09 cm dimensions.
-    plan_px=[(788,37),(740,52),(720,86),(734,74),(720,135),(732,64),(789,42),(757,96),(717,341),(643,312),(668,300),(635,300),(631,318),(442,385),(438,425),(279,434),(172,465),(267,492),(441,499),(444,534),(641,602),(736,847),(805,880),(780,556),(826,556),(972,673),(1018,655),(999,558),(973,543),(1018,527),(976,491),(1014,475),(1020,440),(974,415),(1015,382),(964,364),(996,341),(1012,251),(995,236),(1039,230),(969,234),(820,356),(774,360)]
-    px0=172.0
-    py0=(37.0+880.0)/2.0
-    sx=(900.0*(261.9/271.4))/(1039.0-172.0)
-    sy=900.0/(880.0-37.0)
-    plan=[((x-px0)*sx, -(y-py0)*sy) for x,y in plan_px]
-    add_reference_polyline(comp, comp.xYConstructionPlane, 'REF_NASA_F14_PLAN_20DEG', plan, 'xy')
-
-    side_px=[(1179,329),(1005,329),(1039,215),(1017,207),(977,217),(870,312),(807,315),(728,302),(656,307),(585,295),(580,285),(564,292),(426,277),(372,287),(325,313),(245,331),(196,356),(227,370),(280,375),(290,389),(331,388),(353,376),(486,377),(508,395),(511,377),(571,375),(586,387),(591,379),(612,381),(626,393),(629,382),(796,389),(826,411),(1013,371),(1015,356),(1041,352),(1037,334)]
-    sx2=(900.0*(261.9/271.4))/(1179.0-196.0)
-    waterline_y=329.0
-    tail_top_y=207.0
-    z_tail=900.0*(40.9/271.4)
-    sz=z_tail/(waterline_y-tail_top_y)
-    side=[((x-196.0)*sx2, -(y-waterline_y)*sz) for x,y in side_px]
-    add_reference_polyline(comp, comp.xZConstructionPlane, 'REF_NASA_F14_SIDE', side, 'xz')
+    """Independent manually digitized NASA silhouettes; not 3D section data."""
+    path=os.path.join(os.path.dirname(__file__),'NASA_F14_reference_trace_v06.json')
+    with open(path,encoding='utf-8') as stream:
+        data=json.load(stream)
+    c=data['calibration']
+    length=c['airframe_length_model_mm']
+    ax,ay=c['plan_longitudinal_pixel_vector']
+    bx,by=c['plan_span_pixel_vector']
+    det=ax*by-ay*bx
+    nx,ny=c['plan_nose_pixel']
+    result=[]
+    for name,points in data['traces'].items():
+        if name.startswith('plan_'):
+            mapped=[]
+            for x,y in points:
+                dx,dy=x-nx,y-ny
+                u=(dx*by-dy*bx)/det
+                v=(ax*dy-ay*dx)/det
+                mapped.append((u*length,-v*c['span_model_mm']))
+            plane=comp.xYConstructionPlane
+            axes='xy'
+        else:
+            x0,x1=c['side_length_dimension_pixels']
+            zscale=c['vertical_tail_above_waterline_mm']/(c['side_waterline_pixel_y']-c['side_tail_top_pixel_y'])
+            mapped=[((x-x0)*length/(x1-x0),(c['side_waterline_pixel_y']-y)*zscale) for x,y in points]
+            plane=comp.xZConstructionPlane
+            axes='xz'
+        result.append(add_reference_polyline(comp,plane,'REF_NASA_v06_'+name+'_PROVISIONAL',mapped,axes))
+    return result
 
 
 def _sgn(v):
     return -1.0 if v < 0 else 1.0
 
 def upc_section_profile(comp, x_mm, half_w, ztop, zbot, frac, name):
-    pl = offset_plane(comp, comp.yZConstructionPlane, x_mm)
+    pl = axis_plane(comp, 'x', x_mm)
     sk = comp.sketches.add(pl)
     sk.name = name
     pts = []
@@ -142,7 +176,7 @@ def upc_section_profile(comp, x_mm, half_w, ztop, zbot, frac, name):
             pts.append((u*half_w,z))
 
     lines = sk.sketchCurves.sketchLines
-    p3=[adsk.core.Point3D.create(mm(y),mm(z),0) for y,z in pts]
+    p3=[model_point(sk,x_mm,y,z) for y,z in pts]
     for i in range(len(p3)):
         lines.addByTwoPoints(p3[i], p3[(i+1)%len(p3)])
     if sk.profiles.count < 1:
@@ -240,12 +274,12 @@ def _airfoil_points_64a2(chord, target_tc, base_tc, upper_w, lower_w, x_le, z0, 
     return upper + list(reversed(lower[1:-1]))
 
 def _wing_profile(comp, y_mm, chord, x_le, z0, target_tc, base_tc, upper_w, lower_w, name):
-    pl=offset_plane(comp, comp.xZConstructionPlane, y_mm)
+    pl=axis_plane(comp, 'y', y_mm)
     sk=comp.sketches.add(pl)
     sk.name=name
     pts=_airfoil_points_64a2(chord,target_tc,base_tc,upper_w,lower_w,x_le,z0,1)
     lines=sk.sketchCurves.sketchLines
-    p3=[adsk.core.Point3D.create(mm(x),mm(z),0) for x,z in pts]
+    p3=[model_point(sk,x,y_mm,z) for x,z in pts]
     for i in range(len(p3)):
         lines.addByTwoPoints(p3[i],p3[(i+1)%len(p3)])
     if sk.profiles.count < 1:
@@ -289,14 +323,14 @@ def build_f14_wings_20deg(comp):
 
     # Pivot reference cylinders: 12 mm nominal metallic pivot envelope.
     for sign,label in [(1,'R'),(-1,'L')]:
-        pl=offset_plane(comp,comp.xYConstructionPlane,8.0)
+        pl=axis_plane(comp,'z',8.0)
         sk=comp.sketches.add(pl)
-        c=adsk.core.Point3D.create(mm(x_pivot),mm(sign*y_root),0)
+        c=model_point(sk,x_pivot,sign*y_root,8.0)
         sk.sketchCurves.sketchCircles.addByCenterRadius(c,mm(6.0))
         if sk.profiles.count:
             ex=comp.features.extrudeFeatures
             ei=ex.createInput(sk.profiles.item(0),adsk.fusion.FeatureOperations.NewBodyFeatureOperation)
-            ei.setDistanceExtent(False,adsk.core.ValueInput.createByReal(mm(32.0)))
+            ei.setDistanceExtent(False,adsk.core.ValueInput.createByReal(mm(32.0)*pl.geometry.normal.z))
             f=ex.add(ei)
             f.bodies.item(0).name='REF_WingPivot_'+label+'_12mm'
             f.bodies.item(0).opacity=0.25
@@ -326,17 +360,17 @@ def build_f14_tail_surfaces(comp):
     vtail=[(595.5,18.9),(690.0,124.4),(725.3,135.6),(742.8,-5.6)]
     for side,label in [(-1,'L'),(1,'R')]:
         y=side*78.0
-        pl=offset_plane(comp,comp.xZConstructionPlane,y-2.25)
+        pl=axis_plane(comp,'y',y-2.25)
         sk=comp.sketches.add(pl)
         sk.name='OML_VTail_'+label+'_Profile'
-        p3=[adsk.core.Point3D.create(mm(x),mm(z),0) for x,z in vtail]
+        p3=[model_point(sk,x,y-2.25,z) for x,z in vtail]
         ln=sk.sketchCurves.sketchLines
         for i in range(len(p3)):
             ln.addByTwoPoints(p3[i],p3[(i+1)%len(p3)])
         if sk.profiles.count:
             ex=comp.features.extrudeFeatures
             ei=ex.createInput(sk.profiles.item(0),adsk.fusion.FeatureOperations.NewBodyFeatureOperation)
-            ei.setDistanceExtent(False,adsk.core.ValueInput.createByReal(mm(4.5)))
+            ei.setDistanceExtent(False,adsk.core.ValueInput.createByReal(mm(4.5)*pl.geometry.normal.y))
             f=ex.add(ei)
             f.bodies.item(0).name='OML_VTail_'+label
             bodies.append(f.bodies.item(0))
@@ -352,17 +386,17 @@ def build_f14_tail_surfaces(comp):
         (x0+0.92*vf_len,-31.0-0.25*vf_depth),(x0+vf_len,-31.0)]
     for side,label in [(-1,'L'),(1,'R')]:
         y=side*76.0
-        pl=offset_plane(comp,comp.xZConstructionPlane,y-1.6)
+        pl=axis_plane(comp,'y',y-1.6)
         sk=comp.sketches.add(pl)
         sk.name='OML_VentralFin_'+label+'_Profile'
-        p3=[adsk.core.Point3D.create(mm(x),mm(z),0) for x,z in vf]
+        p3=[model_point(sk,x,y-1.6,z) for x,z in vf]
         ln=sk.sketchCurves.sketchLines
         for i in range(len(p3)):
             ln.addByTwoPoints(p3[i],p3[(i+1)%len(p3)])
         if sk.profiles.count:
             ex=comp.features.extrudeFeatures
             ei=ex.createInput(sk.profiles.item(0),adsk.fusion.FeatureOperations.NewBodyFeatureOperation)
-            ei.setDistanceExtent(False,adsk.core.ValueInput.createByReal(mm(3.2)))
+            ei.setDistanceExtent(False,adsk.core.ValueInput.createByReal(mm(3.2)*pl.geometry.normal.y))
             f=ex.add(ei)
             f.bodies.item(0).name='OML_VentralFin_'+label
             bodies.append(f.bodies.item(0))
@@ -370,12 +404,14 @@ def build_f14_tail_surfaces(comp):
 
 def build_model():
     global _app,_ui
+    # Aircraft coordinates: X longitudinal, Y lateral, Z vertical.
+    _app.preferences.generalPreferences.defaultModelingOrientation = adsk.core.DefaultModelingOrientations.ZUpModelingOrientation
     doc = _app.documents.add(adsk.core.DocumentTypes.FusionDesignDocumentType)
     design = adsk.fusion.Design.cast(_app.activeProduct)
     design.designType = adsk.fusion.DesignTypes.ParametricDesignType
     root = design.rootComponent
     try:
-        doc.name = 'F14_Tomcat_RC_4S_900mm'
+        doc.name = 'F14_Tomcat_RC_OML_v05_COORDINATE_REPAIR_PROVISIONAL'
     except:
         pass
 
@@ -404,7 +440,7 @@ def build_model():
     addp('ScaleHeight', round(h,2), 'mm', 'US Navy scaled overall height')
     addp('ScaleStabilatorSpan', round(stabilator_span,2), 'mm', 'NASA Fig.4 scaled horizontal-tail span')
     addp('ScaleSpan20', round(span_open,2), 'mm', 'Wing span at 20 deg')
-    addp('ScaleSpan68', round(span_swept,2), 'mm', 'Wing span at 68 deg')
+    addp('InheritedSpan68Unverified', round(span_swept,2), 'mm', 'Conflicting legacy Navy figure; NOT a production target')
     addp('EDF_Diameter', 50, 'mm', 'Twin EDF nominal diameter')
     addp('Battery_Length', 150, 'mm', '4S battery envelope')
     addp('Battery_Width', 45, 'mm', '4S battery envelope')
@@ -431,133 +467,396 @@ def build_model():
         try: sk.isVisible = False
         except: pass
 
-    outdir=r'C:\Users\dezen\Desktop\135er-Spandau-Defeat\side-projects\F14_TOMCAT_RC\cad\exports'
+    config_path=os.path.join(os.path.dirname(__file__),'F14TomcatRC_config.json')
+    with open(config_path,encoding='utf-8') as stream:
+        config=json.load(stream)
+    outdir=config['export_dir']
     os.makedirs(outdir,exist_ok=True)
-    try:
-        em=design.exportManager
-        opt=em.createFusionArchiveExportOptions(os.path.join(outdir,'F14_Tomcat_RC_OML_Tails_v04.f3d'))
-        em.execute(opt)
-    except:
-        pass
-    try:
-        _app.activeViewport.fit()
-    except:
-        pass
+    root.isSketchFolderLightBulbOn=False
+    root.isConstructionFolderLightBulbOn=False
+    root.isOriginFolderLightBulbOn=False
+    audit=[]
+    for body in root.bRepBodies:
+        bb=body.boundingBox
+        bounds={a:[getattr(bb.minPoint,a)*10,getattr(bb.maxPoint,a)*10] for a in ['x','y','z']}
+        audit.append(dict(name=body.name,bounds_mm=bounds,volume_cm3=body.volume))
+        if body.name.startswith('OML_Wing_'):
+            if abs((bounds['y'][1]-bounds['y'][0])-319)>0.1 or bounds['z'][1]-bounds['z'][0]>25:
+                raise RuntimeError('Wing axis/orientation validation failed: '+body.name)
+    with open(os.path.join(outdir,'Fusion_v05_geometry_audit.json'),'w',encoding='utf-8') as stream:
+        json.dump(dict(status='PROVISIONAL_OML_COORDINATE_REPAIR',bodies=audit,source_fidelity_verified=False),stream,indent=2)
+    vp=_app.activeViewport
+    camera=vp.camera
+    camera.eye=adsk.core.Point3D.create(mm(1300),mm(-1300),mm(1000))
+    camera.target=adsk.core.Point3D.create(mm(440),0,mm(20))
+    camera.upVector=adsk.core.Vector3D.create(0,0,1)
+    camera.isPerspective=False
+    camera.isFitView=True
+    vp.camera=camera
+    vp.fit()
+    em=design.exportManager
+    opt=em.createFusionArchiveExportOptions(os.path.join(outdir,'F14_Tomcat_RC_OML_v05_PROVISIONAL.f3d'))
+    if not em.execute(opt):
+        raise RuntimeError('Fusion archive export failed')
     return
 
-    # Legacy scaffold below retained temporarily as disabled source only and will
-    # be deleted once the true OML surface model replaces it.
-    # Longitudinal coordinates: nose x=0, tail x=L.
-    # Scale-faithful silhouette scaffold based on F-14 three-view proportions.
-    # Nose/cockpit/center-body loft.
-    center = [
-        (0.0,0,6,1.0,1.0),
-        (0.055*L,0,8,18,16),
-        (0.14*L,0,12,30,27),
-        (0.24*L,0,17,44,34),
-        (0.34*L,0,13,58,34),
-        (0.45*L,0,7,72,29),
-        (0.57*L,0,2,80,24),
-        (0.68*L,0,0,67,20)
-    ]
-    loft_ellipses(root,'OML_Center_Fuselage',center)
-
-    # Twin engine nacelles, spaced and tapered.
-    yeng = 79
-    for side,label in [(-1,'L'),(1,'R')]:
-        st=[
-            (0.39*L, side*yeng, -8, 28, 31),
-            (0.50*L, side*yeng, -9, 31, 34),
-            (0.64*L, side*yeng, -8, 32, 35),
-            (0.78*L, side*yeng, -5, 31, 32),
-            (0.90*L, side*yeng, 0, 27, 27),
-            (0.985*L, side*yeng, 2, 22, 22)
-        ]
-        loft_ellipses(root,'OML_Engine_'+label,st)
-
-    # Fixed gloves / chines.
-    gloveL=[(0.31*L,-42),(0.48*L,-105),(0.64*L,-120),(0.72*L,-72),(0.47*L,-54)]
-    gloveR=[(x,-y) for x,y in gloveL]
-    extrude_poly(root,'OML_Glove_L',gloveL,-8,15)
-    extrude_poly(root,'OML_Glove_R',gloveR,-8,15)
-
-    # Variable-geometry wing planforms at 20 deg; pivot at ~53% length.
-    xp=0.525*L
-    yp=111
-    semi=span_open/2.0
-    # Coordinates chosen to preserve F-14 planform proportions at 20 deg.
-    left=[(xp,-yp),(0.64*L,-semi),(0.75*L,-semi+35),(0.69*L,-150),(0.56*L,-120)]
-    right=[(x,-y) for x,y in left]
-    extrude_poly(root,'OML_Wing_L_20deg',left,-2.8,5.6)
-    extrude_poly(root,'OML_Wing_R_20deg',right,-2.8,5.6)
-
-    # Horizontal stabilators.
-    stab_tip = stabilator_span/2.0
-    stabL=[(0.77*L,-62),(0.89*L,-stab_tip),(0.985*L,-0.87*stab_tip),(0.94*L,-64)]
-    stabR=[(x,-y) for x,y in stabL]
-    extrude_poly(root,'OML_Stabilator_L',stabL,2,4.0)
-    extrude_poly(root,'OML_Stabilator_R',stabR,2,4.0)
-
-    # Vertical tails as side silhouettes extruded laterally.
-    for side,label in [(-1,'L'),(1,'R')]:
-        y = side*83
-        pl = offset_plane(root, root.xZConstructionPlane, y-2.2 if side>0 else -y-2.2)
-        sk=root.sketches.add(pl)
-        p=[(0.70*L,8),(0.79*L,124),(0.89*L,118),(0.92*L,12)]
-        ln=sk.sketchCurves.sketchLines
-        pts=[adsk.core.Point3D.create(mm(x),mm(z),0) for x,z in p]
-        for i in range(len(pts)): ln.addByTwoPoints(pts[i],pts[(i+1)%len(pts)])
-        ex=root.features.extrudeFeatures
-        ei=ex.createInput(sk.profiles.item(0),adsk.fusion.FeatureOperations.NewBodyFeatureOperation)
-        ei.setDistanceExtent(False, adsk.core.ValueInput.createByReal(mm(4.4)))
-        f=ex.add(ei); f.bodies.item(0).name='OML_VTail_'+label
-
-    # RC installation envelopes: intentionally separate bodies, hidden-ready.
-    # Battery bay near target CG range.
-    batt_pts=[(0.42*L,-22),(0.42*L,22),(0.42*L+150,22),(0.42*L+150,-22)]
-    b=extrude_poly(root,'RC_Battery_4S_Envelope',batt_pts,-19,38)
-    b.opacity=0.35
-
-    # EDF cylinder envelopes (50 mm) aligned longitudinally.
-    for side,label in [(-1,'L'),(1,'R')]:
-        pl=offset_plane(root,root.yZConstructionPlane,0.59*L)
-        sk=root.sketches.add(pl)
-        c=adsk.core.Point3D.create(0,mm(side*yeng),mm(-7))
-        sk.sketchCurves.sketchCircles.addByCenterRadius(c,mm(25))
-        prof=sk.profiles.item(0)
-        ex=root.features.extrudeFeatures
-        ei=ex.createInput(prof,adsk.fusion.FeatureOperations.NewBodyFeatureOperation)
-        ei.setDistanceExtent(False,adsk.core.ValueInput.createByReal(mm(0.26*L)))
-        f=ex.add(ei); f.bodies.item(0).name='RC_EDF50_'+label
-        f.bodies.item(0).opacity=0.28
-
-    # Wing pivot and carbon spar reference cylinders.
-    for side,label in [(-1,'L'),(1,'R')]:
-        pl=offset_plane(root,root.xYConstructionPlane,-15)
-        sk=root.sketches.add(pl)
-        c=adsk.core.Point3D.create(mm(xp),mm(side*yp),0)
-        sk.sketchCurves.sketchCircles.addByCenterRadius(c,mm(6))
-        prof=sk.profiles.item(0)
-        ex=root.features.extrudeFeatures
-        ei=ex.createInput(prof,adsk.fusion.FeatureOperations.NewBodyFeatureOperation)
-        ei.setDistanceExtent(False,adsk.core.ValueInput.createByReal(mm(30)))
-        f=ex.add(ei); f.bodies.item(0).name='RC_WingPivot_'+label
-
-    # Save local F3D snapshot for robust handoff.
-    outdir=r'C:\Users\dezen\Desktop\F14_Tomcat_RC'
+def build_reference_model_v06():
+    _app.preferences.generalPreferences.defaultModelingOrientation=adsk.core.DefaultModelingOrientations.ZUpModelingOrientation
+    doc=_app.documents.add(adsk.core.DocumentTypes.FusionDesignDocumentType)
+    doc.name='F14_Tomcat_RC_v06_NASA_REFERENCE_REVIEW'
+    design=adsk.fusion.Design.cast(_app.activeProduct)
+    design.designType=adsk.fusion.DesignTypes.ParametricDesignType
+    root=design.rootComponent
+    sketches=nasa_reference_sketches(root)
+    root.isSketchFolderLightBulbOn=True
+    for sk in sketches:
+        sk.isVisible=True
+    camera=_app.activeViewport.camera
+    camera.eye=adsk.core.Point3D.create(mm(440),0,mm(1200))
+    camera.target=adsk.core.Point3D.create(mm(440),0,0)
+    camera.upVector=adsk.core.Vector3D.create(1,0,0)
+    camera.isPerspective=False
+    camera.isFitView=True
+    _app.activeViewport.camera=camera
+    _app.activeViewport.fit()
+    with open(os.path.join(os.path.dirname(__file__),'F14TomcatRC_config.json'),encoding='utf-8') as stream:
+        config=json.load(stream)
+    outdir=config['export_dir']
     os.makedirs(outdir,exist_ok=True)
-    try:
-        em=design.exportManager
-        opt=em.createFusionArchiveExportOptions(os.path.join(outdir,'F14_Tomcat_RC_4S_900mm_v01.f3d'))
-        em.execute(opt)
-    except:
-        pass
+    export=os.path.join(outdir,'F14_Tomcat_RC_v06_NASA_REFERENCE_REVIEW.f3d')
+    if not design.exportManager.execute(design.exportManager.createFusionArchiveExportOptions(export)):
+        raise RuntimeError('Reference archive export failed')
+    if not _app.activeViewport.saveAsImageFile(os.path.join(outdir,'F14_v06_reference_plan.png'),1600,1000):
+        raise RuntimeError('Reference viewport export failed')
 
-    try:
-        vp=_app.activeViewport
-        vp.fit()
-    except:
-        pass
+def build_basic_wing_document_v08():
+    """Source-table wing in aircraft FS/WBL/WL coordinates; not body-integrated."""
+    with open(os.path.join(os.path.dirname(__file__),'NASA_F14_basic_wing_v08.json'),encoding='utf-8') as stream:
+        data=json.load(stream)
+    if len(data['sections'])!=8 or data['experimental_gloves_included']:
+        raise RuntimeError('Invalid original wing source dataset')
+    _app.preferences.generalPreferences.defaultModelingOrientation=adsk.core.DefaultModelingOrientations.ZUpModelingOrientation
+    doc=_app.documents.add(adsk.core.DocumentTypes.FusionDesignDocumentType)
+    doc.name='F14_Tomcat_RC_v08_GRUMMAN_BASIC_WINGS_SOURCE_REVIEW'
+    design=adsk.fusion.Design.cast(_app.activeProduct)
+    design.designType=adsk.fusion.DesignTypes.ParametricDesignType
+    root=design.rootComponent
+    span=900.0
+    source_span_in=2*data['sections'][-1]['wbl_in']
+    factor=span/source_span_in
+    design.userParameters.add('ReviewSpan20',adsk.core.ValueInput.createByReal(mm(span)),'mm','Source wing reference scale; body datum registration pending')
+    design.userParameters.add('SourceSpanFull',adsk.core.ValueInput.createByReal(mm(source_span_in*25.4)),'mm','Grumman basic-wing defining-table tip WBL times two')
+    audit=[]
+    for label,sign in [('R',1),('L',-1)]:
+        sections=[]
+        for index,st in enumerate(data['sections']):
+            lateral=sign*st['wbl_in']*factor
+            plane=axis_plane(root,'y',lateral)
+            sk=root.sketches.add(plane)
+            sk.name='SOURCE_BASIC_'+label+'_WBL_'+str(st['wbl_in'])
+            chord=st['trailing_edge_fs_in']-st['leading_edge_fs_in']
+            rows=st['ordinates_xc_upper_lower']
+            # Keep the published trailing-edge thickness and incidence.
+            contour=[(x,u) for x,u,l in rows]+[(x,l) for x,u,l in rows[:0:-1]]
+            pts=[model_point(sk,(st['leading_edge_fs_in']+x*chord)*factor,lateral,(st['reference_vertical_wl_in']+z*chord)*factor) for x,z in contour]
+            lines=sk.sketchCurves.sketchLines
+            for i in range(len(pts)):
+                lines.addByTwoPoints(pts[i],pts[(i+1)%len(pts)])
+            if sk.profiles.count!=1:
+                raise RuntimeError('Source wing contour must have one profile at WBL '+str(st['wbl_in']))
+            sections.append(sk.profiles.item(0))
+        features=root.features.loftFeatures
+        inp=features.createInput(adsk.fusion.FeatureOperations.NewBodyFeatureOperation)
+        inp.isSolid=True
+        for profile in sections: inp.loftSections.add(profile)
+        feature=features.add(inp)
+        body=feature.bodies.item(0)
+        body.name='SOURCE_GRUMMAN_BASIC_WING_'+label+'_NOT_BODY_REGISTERED'
+        bb=body.boundingBox
+        audit.append(dict(name=body.name,bounds_mm={a:[getattr(bb.minPoint,a)*10,getattr(bb.maxPoint,a)*10] for a in ['x','y','z']}))
+    root.isSketchFolderLightBulbOn=False
+    root.isConstructionFolderLightBulbOn=False
+    vp=_app.activeViewport
+    camera=vp.camera
+    camera.eye=adsk.core.Point3D.create(mm(1200),mm(-1000),mm(1000))
+    camera.target=adsk.core.Point3D.create(mm(680),0,mm(180))
+    camera.upVector=adsk.core.Vector3D.create(0,0,1)
+    camera.isPerspective=False
+    camera.isFitView=True
+    vp.camera=camera
+    vp.fit()
+    with open(os.path.join(os.path.dirname(__file__),'F14TomcatRC_config.json'),encoding='utf-8') as stream: config=json.load(stream)
+    outdir=config['export_dir']
+    os.makedirs(outdir,exist_ok=True)
+    if not design.exportManager.execute(design.exportManager.createFusionArchiveExportOptions(os.path.join(outdir,'F14_v08_GRUMMAN_BASIC_WINGS_SOURCE_REVIEW.f3d'))):
+        raise RuntimeError('Source wing archive export failed')
+    with open(os.path.join(outdir,'F14_v08_source_wing_native_audit.json'),'w',encoding='utf-8') as stream:
+        json.dump(dict(status='SOURCE_WING_LOFT_PROVISIONAL',body_datum_registered=False,source_span_full_mm=source_span_in*25.4,bodies=audit),stream,indent=2)
+    vp.saveAsImageFile(os.path.join(outdir,'F14_v08_source_wings.png'),1600,1000)
+
+def build_source_segment_review_v15():
+    """Split independent solid envelopes; deliberately no print shell export."""
+    with open(os.path.join(os.path.dirname(__file__),'F14_wing_segmentation_v15.json'),encoding='utf-8') as stream:
+        plan=json.load(stream)
+    source_path=os.path.join(os.path.dirname(__file__),'NASA_F14_basic_wing_v08.json')
+    with open(source_path,'rb') as stream: raw=stream.read()
+    if hashlib.sha256(raw).hexdigest()!=plan['source_dataset_sha256']:
+        raise RuntimeError('Wing segmentation source dataset changed; regenerate plan')
+    source=json.loads(raw.decode('utf-8'))
+    factor=900/(2*source['sections'][-1]['wbl_in'])
+    matches=[s for s in source['sections'] if abs(s['wbl_in']-plan['split_wbl_in'])<1e-6]
+    if len(matches)!=1 or abs(matches[0]['wbl_in']*factor-plan['split_model_y_mm'])>1e-6:
+        raise RuntimeError('Split plane is not the specified original defining section')
+    build_basic_wing_document_v08()
+    design=adsk.fusion.Design.cast(_app.activeProduct)
+    _app.activeDocument.name='F14_v15_SOLID_ENVELOPE_SEGMENTS_NOT_PRINT_SHELLS'
+    root=design.rootComponent
+    original={label:next(b for b in root.bRepBodies if b.name.startswith('SOURCE_GRUMMAN_BASIC_WING_'+label+'_')).volume for label in ['R','L']}
+    for label,sign in [('R',1),('L',-1)]:
+        body=next(b for b in root.bRepBodies if b.name.startswith('SOURCE_GRUMMAN_BASIC_WING_'+label+'_'))
+        plane=axis_plane(root,'y',sign*plan['split_model_y_mm'])
+        plane.name='SOURCE_SEGMENT_SPLIT_'+label+'_WBL_'+str(plan['split_wbl_in'])
+        inp=root.features.splitBodyFeatures.createInput(body,plane,True)
+        if not inp: raise RuntimeError('Native split input failed')
+        root.features.splitBodyFeatures.add(inp)
+    if root.bRepBodies.count!=4: raise RuntimeError('Expected four native wing envelope segments')
+    audit=[]
+    totals={'R':0.0,'L':0.0}
+    identities=set()
+    for body in root.bRepBodies:
+        bb=body.boundingBox
+        bounds={a:[getattr(bb.minPoint,a)*10,getattr(bb.maxPoint,a)*10] for a in ['x','y','z']}
+        center=sum(bounds['y'])/2
+        label='R' if center>0 else 'L'
+        part='INNER' if abs(center)<plan['split_model_y_mm'] else 'OUTER'
+        observed=sorted(abs(v) for v in bounds['y'])
+        expected=([source['sections'][0]['wbl_in']*factor,plan['split_model_y_mm']] if part=='INNER'
+                  else [plan['split_model_y_mm'],450.0])
+        span_boundaries_verified=all(abs(a-b)<=1e-4 for a,b in zip(observed,expected))
+        if not span_boundaries_verified: raise RuntimeError('Native segment span boundaries mismatch')
+        if (label,part) in identities: raise RuntimeError('Duplicate segment classification')
+        identities.add((label,part))
+        body.name='SOURCE_ENVELOPE_'+label+'_'+part+'_NOT_PRINT_SHELL'
+        size={a:bounds[a][1]-bounds[a][0] for a in ['x','y','z']}
+        footprint=[size['x']+2*plan['assumed_brim_per_side_mm'],size['z']+2*plan['assumed_brim_per_side_mm']]
+        usable=plan['design_assumed_usable_envelope_mm']
+        fits=footprint[0]<=usable[0] and footprint[1]<=usable[1] and size['y']<=usable[2]
+        totals[label]+=body.volume
+        audit.append(dict(name=body.name,bounds_mm=bounds,volume_cm3=body.volume,
+                          span_boundaries_verified=span_boundaries_verified,expected_abs_y_mm=expected,
+                          print_height_mm=size['y'],footprint_with_assumed_brim_mm=footprint,
+                          assumed_print_envelope_fit=fits))
+    volume_checks={label:dict(original_cm3=original[label],split_sum_cm3=totals[label],
+                              conserved=abs(totals[label]-original[label])<=max(1e-6,original[label]*1e-6)) for label in ['R','L']}
+    if not all(c['conserved'] for c in volume_checks.values()): raise RuntimeError('Split volume conservation failed')
+    with open(os.path.join(os.path.dirname(__file__),'F14TomcatRC_config.json'),encoding='utf-8') as stream: config=json.load(stream)
+    outdir=os.path.join(config['export_dir'],'source_segments_v15')
+    os.makedirs(outdir,exist_ok=True)
+    root.isSketchFolderLightBulbOn=False
+    root.isConstructionFolderLightBulbOn=False
+    target=os.path.join(outdir,'F14_v15_SOLID_ENVELOPE_SEGMENTS_NOT_PRINT_SHELLS.f3d')
+    if not design.exportManager.execute(design.exportManager.createFusionArchiveExportOptions(target)):
+        raise RuntimeError('Native segment archive export failed')
+    with open(os.path.join(outdir,'F14_v15_native_segment_audit.json'),'w',encoding='utf-8') as stream:
+        json.dump(dict(status='NATIVE_SOLID_ENVELOPE_SEGMENTS',segments=audit,volume_checks=volume_checks,
+                       assumptions=plan['design_assumed_usable_envelope_mm'],
+                       hollow_print_shells_created=False,slicer_checked=False,print_release=False),stream,indent=2)
+    _app.activeViewport.fit()
+    _app.activeViewport.saveAsImageFile(os.path.join(outdir,'F14_v15_segment_review.png'),1600,1000)
+
+
+def build_source_profile_review_v14():
+    """Native topology review of independent normalized source sections."""
+    with open(os.path.join(os.path.dirname(__file__),'F14_source_profile_review_v14.json'),encoding='utf-8') as stream:
+        data=json.load(stream)
+    if data['aircraft_coordinates'] or data['loft_allowed']:
+        raise RuntimeError('Source gallery must not be treated as an aircraft loft')
+    _app.preferences.generalPreferences.defaultModelingOrientation=adsk.core.DefaultModelingOrientations.ZUpModelingOrientation
+    doc=_app.documents.add(adsk.core.DocumentTypes.FusionDesignDocumentType)
+    doc.name='F14_SOURCE_SECTION_GALLERY_v14_NOT_AIRCRAFT_GEOMETRY'
+    design=adsk.fusion.Design.cast(_app.activeProduct)
+    design.designType=adsk.fusion.DesignTypes.ParametricDesignType
+    root=design.rootComponent
+    audit=[]
+    for section in data['profiles']:
+        x=section['gallery_plane_x_mm']
+        sk=root.sketches.add(axis_plane(root,'x',x))
+        sk.name='NORMALIZED_SOURCE_'+section['name']+'_NOT_METRIC_REGISTERED'
+        for contour in [section['outer_normalized']]+section['holes_normalized']:
+            points=[model_point(sk,x,y*data['gallery_half_width_mm'],z*data['gallery_half_width_mm']) for y,z in contour]
+            for i in range(len(points)):
+                sk.sketchCurves.sketchLines.addByTwoPoints(points[i],points[(i+1)%len(points)])
+        if sk.profiles.count!=section['expected_native_profile_count']:
+            raise RuntimeError('Native source profile topology mismatch at '+section['name'])
+        audit.append(dict(section=section['name'],profile_count=sk.profiles.count,
+                          profile_loop_counts=[p.profileLoops.count for p in sk.profiles]))
+    if root.bRepBodies.count: raise RuntimeError('Normalized gallery must contain no aircraft solids')
+    with open(os.path.join(os.path.dirname(__file__),'F14TomcatRC_config.json'),encoding='utf-8') as stream: config=json.load(stream)
+    outdir=os.path.join(config['export_dir'],'source_profile_v14')
+    os.makedirs(outdir,exist_ok=True)
+    camera=_app.activeViewport.camera
+    camera.eye=adsk.core.Point3D.create(mm(2000),mm(-1800),mm(1400))
+    camera.target=adsk.core.Point3D.create(mm(625),0,0)
+    camera.upVector=adsk.core.Vector3D.create(0,0,1)
+    camera.isPerspective=False
+    camera.isFitView=True
+    _app.activeViewport.camera=camera
+    _app.activeViewport.fit()
+    target=os.path.join(outdir,'F14_SOURCE_SECTION_GALLERY_v14.f3d')
+    if not design.exportManager.execute(design.exportManager.createFusionArchiveExportOptions(target)):
+        raise RuntimeError('Native source gallery export failed')
+    with open(os.path.join(outdir,'F14_v14_native_profile_audit.json'),'w',encoding='utf-8') as stream:
+        json.dump(dict(status='NORMALIZED_SOURCE_GALLERY',profiles=audit,aircraft_geometry=False,print_release=False),stream,indent=2)
+    _app.activeViewport.saveAsImageFile(os.path.join(outdir,'F14_v14_source_profiles.png'),1600,1000)
+
+
+def build_source_spar_review_v10():
+    """Independent material-envelope bodies; no shell cuts or print release."""
+    with open(os.path.join(os.path.dirname(__file__),'F14_source_spar_fit_v10.json'),encoding='utf-8') as stream:
+        fit=json.load(stream)
+    with open(os.path.join(os.path.dirname(__file__),'NASA_F14_basic_wing_v08.json'),encoding='utf-8') as stream:
+        source=json.load(stream)
+    if fit['source_sha256']!=source['source_sha256'] or not fit['baseline_terminated_spar_candidate']['all_retained_defining_sections_fit']:
+        raise RuntimeError('Source spar fit is not applicable to original wing data')
+    build_basic_wing_document_v08()
+    design=adsk.fusion.Design.cast(_app.activeProduct)
+    _app.activeDocument.name='F14_Tomcat_RC_v10_SOURCE_SPAR_PACKAGING_REVIEW'
+    root=design.rootComponent
+    factor=900.0/(2*source['sections'][-1]['wbl_in'])
+    for label,sign in [('R',1),('L',-1)]:
+        for kind in ['UPPER_CAP','LOWER_CAP','WEB']:
+            profiles=[]
+            for st,local in zip(source['sections'][:-1],fit['sections'][:-1]):
+                if abs(st['wbl_in']-local['wbl_in'])>1e-6:
+                    raise RuntimeError('Source spar station mismatch')
+                chord=(st['trailing_edge_fs_in']-st['leading_edge_fs_in'])*factor
+                center=st['leading_edge_fs_in']*factor+0.30*chord
+                reference=st['reference_vertical_wl_in']*factor
+                top=reference+local['cap_top_outer_relative_wl_mm']
+                bottom=reference+local['cap_bottom_outer_relative_wl_mm']
+                width=local['cap_width_mm']
+                if kind=='UPPER_CAP': z0,z1=top-1.0,top
+                elif kind=='LOWER_CAP': z0,z1=bottom,bottom+1.0
+                else: z0,z1=bottom+1.0,top-1.0; width=0.8
+                if z1<=z0:
+                    raise RuntimeError('Source spar has no positive section height')
+                y=sign*local['model_y_mm']
+                sk=root.sketches.add(axis_plane(root,'y',y))
+                sk.name='SOURCE_SPAR_'+label+'_'+kind+'_WBL_'+str(st['wbl_in'])
+                pts=[model_point(sk,x,y,z) for x,z in [(center-width/2,z0),(center+width/2,z0),(center+width/2,z1),(center-width/2,z1)]]
+                for i in range(4): sk.sketchCurves.sketchLines.addByTwoPoints(pts[i],pts[(i+1)%4])
+                if sk.profiles.count!=1: raise RuntimeError('Spar rectangle profile failed')
+                profiles.append(sk.profiles.item(0))
+            inp=root.features.loftFeatures.createInput(adsk.fusion.FeatureOperations.NewBodyFeatureOperation)
+            inp.isSolid=True
+            for profile in profiles: inp.loftSections.add(profile)
+            body=root.features.loftFeatures.add(inp).bodies.item(0)
+            body.name='CANDIDATE_CARBON_'+label+'_'+kind+'_NOT_STRENGTH_VERIFIED'
+    audit=[]
+    for body in root.bRepBodies:
+        bb=body.boundingBox
+        audit.append(dict(name=body.name,volume_cm3=body.volume,bounds_mm={a:[getattr(bb.minPoint,a)*10,getattr(bb.maxPoint,a)*10] for a in ['x','y','z']}))
+    if len(audit)!=8: raise RuntimeError('Expected two source wings and six spar envelopes')
+    # Use transient BRep copies: this never cuts the document's wing or spar.
+    # Intersection volume tests continuous native loft containment, not skin gap.
+    temporary=adsk.fusion.TemporaryBRepManager.get()
+    containment=[]
+    for label in ['R','L']:
+        wing=next(b for b in root.bRepBodies if b.name.startswith('SOURCE_GRUMMAN_BASIC_WING_'+label+'_'))
+        for body in root.bRepBodies:
+            if not body.name.startswith('CANDIDATE_CARBON_'+label+'_'): continue
+            target=temporary.copy(body)
+            tool=temporary.copy(wing)
+            succeeded=temporary.booleanOperation(target,tool,adsk.fusion.BooleanTypes.IntersectionBooleanType)
+            total=body.volume
+            inside=target.volume if succeeded and target.isValid else None
+            outside=max(0.0,total-inside) if inside is not None else None
+            tolerance=max(1e-6,total*1e-6)
+            volume_consistent=inside is not None and -tolerance<=inside<=total+tolerance
+            containment.append(dict(body=body.name,boolean_succeeded=succeeded,
+                                    volume_cm3=total,intersection_volume_cm3=inside,
+                                    outside_volume_cm3=outside,tolerance_cm3=tolerance,
+                                    intersection_volume_consistent=volume_consistent,
+                                    entire_native_loft_inside_outer_solid=(outside<=tolerance and volume_consistent if outside is not None else None)))
+    root.isSketchFolderLightBulbOn=False
+    root.isConstructionFolderLightBulbOn=False
+    with open(os.path.join(os.path.dirname(__file__),'F14TomcatRC_config.json'),encoding='utf-8') as stream: config=json.load(stream)
+    outdir=os.path.join(config['export_dir'],'source_spar_v10')
+    os.makedirs(outdir,exist_ok=True)
+    target=os.path.join(outdir,'F14_v10_SOURCE_SPAR_PACKAGING_REVIEW.f3d')
+    if not design.exportManager.execute(design.exportManager.createFusionArchiveExportOptions(target)):
+        raise RuntimeError('Source spar archive export failed')
+    with open(os.path.join(outdir,'F14_v10_native_spar_audit.json'),'w',encoding='utf-8') as stream:
+        json.dump(dict(status='LOCAL_PACKAGING_CANDIDATE',bodies=audit,
+                       native_outer_solid_containment=containment,
+                       entire_native_spar_inside_outer_solid=all(c['entire_native_loft_inside_outer_solid'] is True for c in containment),
+                       containment_method='Temporary BRep intersection volumes; source document bodies preserved',
+                       continuous_skin_clearance_verified=False,structural_capacity_verified=False,print_release=False),stream,indent=2)
+    _app.activeViewport.fit()
+    _app.activeViewport.saveAsImageFile(os.path.join(outdir,'F14_v10_spar_review.png'),1600,1000)
+
+
+def build_project_revision():
+    # Fixed CAD entry point. Subsequent checked-in revisions can change this
+    # implementation without accepting code, paths or shell commands in requests.
+    return build_source_spar_review_v10()
+
+class BuildRequestHandler(adsk.core.CustomEventHandler):
+    def notify(self,args):
+        request=json.loads(args.additionalInfo)
+        response=dict(request_id=request['request_id'],status='failed')
+        try:
+            if request['operation'] in ['build_project_revision','build_source_profiles_v14','build_source_segments_v15']:
+                path=os.path.join(os.path.dirname(__file__),'F14TomcatRC.py')
+                spec=importlib.util.spec_from_file_location('f14_checked_cad_revision',path)
+                revision=importlib.util.module_from_spec(spec)
+                spec.loader.exec_module(revision)
+                revision._app=_app
+                revision._ui=_ui
+                if request['operation']=='build_source_profiles_v14': revision.build_source_profile_review_v14()
+                elif request['operation']=='build_source_segments_v15': revision.build_source_segment_review_v15()
+                else: revision.build_project_revision()
+            elif request['operation']=='build_basic_wings_v08':
+                build_basic_wing_document_v08()
+            elif request['operation']=='build_reference_v06':
+                build_reference_model_v06()
+            elif request['operation']=='rebuild':
+                build_model()
+            elif request['operation']=='export_active':
+                design=adsk.fusion.Design.cast(_app.activeProduct)
+                if not design or not _app.activeDocument.name.startswith('F14_'):
+                    raise RuntimeError('Active document is not the F-14 project')
+                with open(os.path.join(os.path.dirname(__file__),'F14TomcatRC_config.json'),encoding='utf-8') as stream:
+                    config=json.load(stream)
+                export=os.path.join(config['export_dir'],'F14_active_snapshot.f3d')
+                if not design.exportManager.execute(design.exportManager.createFusionArchiveExportOptions(export)):
+                    raise RuntimeError('Snapshot export failed')
+            else:
+                raise RuntimeError('Unsupported controlled CAD operation')
+            response['status']='completed'
+        except:
+            response['error']=traceback.format_exc()
+        with open(os.path.join(os.path.dirname(__file__),'F14_build_response.json'),'w',encoding='utf-8') as stream:
+            json.dump(response,stream,indent=2)
+
+def start_build_requests():
+    event=_app.registerCustomEvent(_event_id)
+    handler=BuildRequestHandler()
+    event.add(handler)
+    _handlers.append(handler)
+    def poll():
+        previous=None
+        path=os.path.join(os.path.dirname(__file__),'F14_build_request.json')
+        while not _worker_stop.wait(1.0):
+            try:
+                with open(path,encoding='utf-8') as stream: request=json.load(stream)
+                if request['request_id']!=previous:
+                    previous=request['request_id']
+                    _app.fireCustomEvent(_event_id,json.dumps(request))
+            except (FileNotFoundError,ValueError,KeyError):
+                continue
+    threading.Thread(target=poll,daemon=True).start()
+
 
 def run(context):
     global _app,_ui,_created
@@ -565,11 +864,28 @@ def run(context):
         _app=adsk.core.Application.get()
         _ui=_app.userInterface
         if not _created:
-            build_model()
+            with open(os.path.join(os.path.dirname(__file__),'F14TomcatRC_config.json'),encoding='utf-8') as stream:
+                config=json.load(stream)
+            if config.get('startup_mode')=='basic_wings_v08':
+                build_basic_wing_document_v08()
+            elif config.get('startup_mode')=='reference_v06':
+                build_reference_model_v06()
+            else:
+                build_model()
+            start_build_requests()
             _created=True
+            with open(os.path.join(os.path.dirname(__file__),'F14_build_response.json'),'w',encoding='utf-8') as stream:
+                json.dump(dict(request_id='startup',status='completed'),stream)
     except:
+        try:
+            with open(os.path.join(os.path.dirname(__file__),'F14TomcatRC_error.log'),'w',encoding='utf-8') as stream:
+                stream.write(traceback.format_exc())
+        except:
+            pass
         if _ui:
             _ui.messageBox('F14TomcatRC error:\n'+traceback.format_exc())
 
 def stop(context):
-    pass
+    _worker_stop.set()
+    if _app:
+        _app.unregisterCustomEvent(_event_id)

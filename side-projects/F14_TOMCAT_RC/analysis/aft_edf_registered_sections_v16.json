@@ -1,0 +1,170 @@
+{
+  "status": "ISOTROPIC_REGISTERED_SECTION_PACKAGING_SENSITIVITY",
+  "common_scale_assumed_mm_per_plan_pixel": 0.5271165518029974,
+  "grid_step_source_pixels": 1,
+  "offset_search_fraction_of_half_width": [
+    0.35,
+    0.85
+  ],
+  "housing_assumed_diameter_mm": 52,
+  "housing_assumed_length_mm": 75,
+  "assumed_axial_service_each_end_mm": 3,
+  "required_axial_envelope_mm": 81,
+  "individual_section_scale_fits_used": true,
+  "common_vertical_axes_verified": false,
+  "metric_station_registration_verified": false,
+  "continuous_81mm_clearance_verified": false,
+  "actual_edf_dimensions_verified": false,
+  "native_installation_created": false,
+  "installation_release": false,
+  "source_station_gaps_mm": [
+    53.03796343773024,
+    106.0759268754606
+  ],
+  "limitations": [
+    "Independent optimal section centers cannot define a straight installed EDF axis",
+    "One-pixel sampled search is not a global maximum proof",
+    "Manual source outlines and cross-source length pairing remain unverified",
+    "Radial clearance alternatives are sensitivities, not selected mount tolerances",
+    "V15 used direct raw-pixel scale; these results include separately drawn section width factors"
+  ],
+  "sections": [
+    {
+      "section": "D",
+      "candidate_model_x_mm": 595.8483908511422,
+      "isotropic_source_width_factor": 0.9191392053908701,
+      "sampled_symmetric_centers_pixels": [
+        [
+          382.9508928571429,
+          1671
+        ],
+        [
+          616.9508928571429,
+          1671
+        ]
+      ],
+      "sampled_disk_radius_pixels": 53.14859417987632,
+      "available_disk_diameter_mm": 51.50029561387346,
+      "maximum_radial_service_for_52mm_housing_and_0p8_skin_mm": -1.0498521930632692,
+      "clearance_sensitivity": [
+        {
+          "assumed_radial_service_mm": 0.5,
+          "required_outer_diameter_mm": 54.6,
+          "diameter_margin_mm": -3.0997043861265396,
+          "provisional_local_fit": false
+        },
+        {
+          "assumed_radial_service_mm": 1.0,
+          "required_outer_diameter_mm": 55.6,
+          "diameter_margin_mm": -4.09970438612654,
+          "provisional_local_fit": false
+        },
+        {
+          "assumed_radial_service_mm": 1.5,
+          "required_outer_diameter_mm": 56.6,
+          "diameter_margin_mm": -5.09970438612654,
+          "provisional_local_fit": false
+        },
+        {
+          "assumed_radial_service_mm": 3.0,
+          "required_outer_diameter_mm": 59.6,
+          "diameter_margin_mm": -8.09970438612654,
+          "provisional_local_fit": false
+        }
+      ]
+    },
+    {
+      "section": "E",
+      "candidate_model_x_mm": 648.8863542888724,
+      "isotropic_source_width_factor": 1.0176905925267656,
+      "sampled_symmetric_centers_pixels": [
+        [
+          946.3608630952381,
+          1686
+        ],
+        [
+          1182.360863095238,
+          1686
+        ]
+      ],
+      "sampled_disk_radius_pixels": 53.550763046320746,
+      "available_disk_diameter_mm": 57.453709300155815,
+      "maximum_radial_service_for_52mm_housing_and_0p8_skin_mm": 1.9268546500779073,
+      "clearance_sensitivity": [
+        {
+          "assumed_radial_service_mm": 0.5,
+          "required_outer_diameter_mm": 54.6,
+          "diameter_margin_mm": 2.8537093001558134,
+          "provisional_local_fit": true
+        },
+        {
+          "assumed_radial_service_mm": 1.0,
+          "required_outer_diameter_mm": 55.6,
+          "diameter_margin_mm": 1.8537093001558134,
+          "provisional_local_fit": true
+        },
+        {
+          "assumed_radial_service_mm": 1.5,
+          "required_outer_diameter_mm": 56.6,
+          "diameter_margin_mm": 0.8537093001558134,
+          "provisional_local_fit": true
+        },
+        {
+          "assumed_radial_service_mm": 3.0,
+          "required_outer_diameter_mm": 59.6,
+          "diameter_margin_mm": -2.1462906998441866,
+          "provisional_local_fit": false
+        }
+      ]
+    },
+    {
+      "section": "F",
+      "candidate_model_x_mm": 754.962281164333,
+      "isotropic_source_width_factor": 1.0420794523566128,
+      "sampled_symmetric_centers_pixels": [
+        [
+          1375.9222470238096,
+          2587
+        ],
+        [
+          1615.9222470238096,
+          2587
+        ]
+      ],
+      "sampled_disk_radius_pixels": 53.693389754484876,
+      "available_disk_diameter_mm": 58.987271007173696,
+      "maximum_radial_service_for_52mm_housing_and_0p8_skin_mm": 2.6936355035868482,
+      "clearance_sensitivity": [
+        {
+          "assumed_radial_service_mm": 0.5,
+          "required_outer_diameter_mm": 54.6,
+          "diameter_margin_mm": 4.387271007173695,
+          "provisional_local_fit": true
+        },
+        {
+          "assumed_radial_service_mm": 1.0,
+          "required_outer_diameter_mm": 55.6,
+          "diameter_margin_mm": 3.3872710071736947,
+          "provisional_local_fit": true
+        },
+        {
+          "assumed_radial_service_mm": 1.5,
+          "required_outer_diameter_mm": 56.6,
+          "diameter_margin_mm": 2.3872710071736947,
+          "provisional_local_fit": true
+        },
+        {
+          "assumed_radial_service_mm": 3.0,
+          "required_outer_diameter_mm": 59.6,
+          "diameter_margin_mm": -0.6127289928263053,
+          "provisional_local_fit": false
+        }
+      ]
+    }
+  ],
+  "candidate_center_x_interval_between_E_F_mm": [
+    689.3863542888724,
+    714.462281164333
+  ],
+  "candidate_interval_continuous_clearance_proven": false
+}

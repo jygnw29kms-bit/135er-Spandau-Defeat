@@ -1,0 +1,373 @@
+{
+  "status": "PROJECTED_ENVELOPE_DIAGNOSTIC_ONLY",
+  "coordinate_frame": "NASA v06 nose X=0, raster waterline Z=0; not aircraft WL",
+  "geometry_checks": "PASS: rectangle, vertex convention, disconnected intervals",
+  "source_length_mm": 868.496683861459,
+  "digitization_uncertainty_pixels": 3,
+  "uncertainty_note": "No certified envelope tolerance; horizontal station uncertainty and contour slopes must also be propagated.",
+  "production_loft_allowed": false,
+  "profiles": [
+    {
+      "section": "A",
+      "nasa_view_candidate_x_mm": 111.04824408990419,
+      "projected_y_intersections_mm": [
+        -30.96856335483871,
+        31.098424913659393
+      ],
+      "projected_z_intersections_mm": [
+        -52.44313162108928,
+        12.655603398686878
+      ],
+      "assembly_projected_width_mm": 62.06698826849811,
+      "assembly_projected_height_mm": 65.09873501977616,
+      "section_contour_height_to_width": 1.04855605,
+      "assembly_height_to_width": 1.0488463648044737,
+      "diagnostic_candidate": {
+        "status": "FRONT_SECTION_ISOTROPIC_FIT_CANDIDATE",
+        "points_xyz_mm": [
+          [
+            111.04824408990419,
+            -30.96856335483871,
+            -10.38202453752388
+          ],
+          [
+            111.04824408990419,
+            -27.96502386524838,
+            -0.3698031489194058
+          ],
+          [
+            111.04824408990419,
+            -22.959550909250602,
+            6.638878750094737
+          ],
+          [
+            111.04824408990419,
+            -12.949238080535382,
+            11.64499099607168
+          ],
+          [
+            111.04824408990419,
+            -1.9373223319866886,
+            12.646593915905157
+          ],
+          [
+            111.04824408990419,
+            10.075560149765728,
+            9.642418239685071
+          ],
+          [
+            111.04824408990419,
+            18.084572595353844,
+            2.633736340670927
+          ],
+          [
+            111.04824408990419,
+            25.09198212110848,
+            -7.378488151282961
+          ],
+          [
+            111.04824408990419,
+            29.096488343902536,
+            -19.393279192924634
+          ],
+          [
+            111.04824408990419,
+            31.098424913659393,
+            -36.41418558389266
+          ],
+          [
+            111.04824408990419,
+            27.093918690865337,
+            -47.428009892330614
+          ],
+          [
+            111.04824408990419,
+            19.085539328557566,
+            -52.43412213830756
+          ],
+          [
+            111.04824408990419,
+            -17.954077953252824,
+            -52.43412213830756
+          ],
+          [
+            111.04824408990419,
+            -27.96502386524838,
+            -46.42640697249714
+          ],
+          [
+            111.04824408990419,
+            -30.96856335483871,
+            -37.415152317096386
+          ]
+        ],
+        "height_mismatch_mm": -0.01801896556344218,
+        "source_section_axis_in_nasa_frame_mm": [
+          0.06505491338687648,
+          -10.382061777716842
+        ],
+        "independent_vertical_stretch_applied": false,
+        "production_registration_verified": false
+      },
+      "fitting_permitted": false,
+      "blocking_reasons": [
+        "Unverified station pairing between source views",
+        "Plan assembly can include glove/stabilator projections",
+        "Side assembly can include canopy/ventral-fin projections",
+        "Source section axis is not a verified aircraft waterline"
+      ]
+    },
+    {
+      "section": "B",
+      "nasa_view_candidate_x_mm": 249.44414600957995,
+      "projected_y_intersections_mm": [
+        -38.902423935620305,
+        38.65462594015185
+      ],
+      "projected_z_intersections_mm": [
+        -51.269227348827066,
+        55.58609275523395
+      ],
+      "assembly_projected_width_mm": 77.55704987577215,
+      "assembly_projected_height_mm": 106.85532010406101,
+      "section_contour_height_to_width": 1.3857613500000001,
+      "assembly_height_to_width": 1.377764113967946,
+      "diagnostic_candidate": {
+        "status": "FRONT_SECTION_ISOTROPIC_FIT_CANDIDATE",
+        "points_xyz_mm": [
+          [
+            249.44414600957995,
+            -38.9024239356203,
+            -16.06560295377476
+          ],
+          [
+            249.44414600957995,
+            -37.03377988732342,
+            -2.0472049672538812
+          ],
+          [
+            249.44414600957995,
+            -32.361576455149674,
+            11.971786330698546
+          ],
+          [
+            249.44414600957995,
+            -22.082847566653744,
+            27.859421676947857
+          ],
+          [
+            249.44414600957995,
+            -22.082847566653744,
+            40.00857842588782
+          ],
+          [
+            249.44414600957995,
+            -16.476318232479063,
+            50.289095004383384
+          ],
+          [
+            249.44414600957995,
+            -8.066826703711556,
+            54.96189174798867
+          ],
+          [
+            249.44414600957995,
+            0.3432620143399935,
+            55.896213772137116
+          ],
+          [
+            249.44414600957995,
+            10.621990902835927,
+            52.157739052680256
+          ],
+          [
+            249.44414600957995,
+            19.031482431603436,
+            44.6813790473456
+          ],
+          [
+            249.44414600957995,
+            21.835045693332795,
+            31.597303084973166
+          ],
+          [
+            249.44414600957995,
+            30.2445372221003,
+            16.644586952156335
+          ],
+          [
+            249.44414600957995,
+            36.78598189185497,
+            -0.17796760752545282
+          ],
+          [
+            249.44414600957995,
+            38.654625940151845,
+            -18.869162337651627
+          ],
+          [
+            249.44414600957995,
+            35.85106267842249,
+            -38.495272403357795
+          ],
+          [
+            249.44414600957995,
+            26.50724912550654,
+            -47.84086976842087
+          ],
+          [
+            249.44414600957995,
+            0.3432620143399935,
+            -51.579348365730226
+          ],
+          [
+            249.44414600957995,
+            -27.689373022975925,
+            -47.84086976842087
+          ],
+          [
+            249.44414600957995,
+            -35.16513583902654,
+            -40.36451364093872
+          ]
+        ],
+        "height_mismatch_mm": 0.620242033806349,
+        "source_section_axis_in_nasa_frame_mm": [
+          -0.591242268875654,
+          -16.065587442364784
+        ],
+        "independent_vertical_stretch_applied": false,
+        "production_registration_verified": false
+      },
+      "fitting_permitted": false,
+      "blocking_reasons": [
+        "Unverified station pairing between source views",
+        "Plan assembly can include glove/stabilator projections",
+        "Side assembly can include canopy/ventral-fin projections",
+        "Source section axis is not a verified aircraft waterline"
+      ]
+    },
+    {
+      "section": "C",
+      "nasa_view_candidate_x_mm": 403.58580595799555,
+      "projected_y_intersections_mm": [
+        -117.40814397537653,
+        120.57658749379303
+      ],
+      "projected_z_intersections_mm": [
+        -53.983837405213,
+        35.61062949356403
+      ],
+      "assembly_projected_width_mm": 237.98473146916956,
+      "assembly_projected_height_mm": 89.59446689877703,
+      "section_contour_height_to_width": 0.30942265,
+      "assembly_height_to_width": 0.3764714918712498,
+      "diagnostic_candidate": null,
+      "fitting_permitted": false,
+      "blocking_reasons": [
+        "Unverified station pairing between source views",
+        "Plan assembly can include glove/stabilator projections",
+        "Side assembly can include canopy/ventral-fin projections",
+        "Source section axis is not a verified aircraft waterline"
+      ]
+    },
+    {
+      "section": "D",
+      "nasa_view_candidate_x_mm": 595.8483908511422,
+      "projected_y_intersections_mm": [
+        -103.90300154946365,
+        106.69035261264568
+      ],
+      "projected_z_intersections_mm": [
+        -66.70331130628074,
+        20.519600743690326
+      ],
+      "assembly_projected_width_mm": 210.59335416210934,
+      "assembly_projected_height_mm": 87.22291204997106,
+      "section_contour_height_to_width": 0.33098815000000004,
+      "assembly_height_to_width": 0.41417694493259793,
+      "diagnostic_candidate": null,
+      "fitting_permitted": false,
+      "blocking_reasons": [
+        "Unverified station pairing between source views",
+        "Plan assembly can include glove/stabilator projections",
+        "Side assembly can include canopy/ventral-fin projections",
+        "Source section axis is not a verified aircraft waterline"
+      ]
+    },
+    {
+      "section": "E",
+      "nasa_view_candidate_x_mm": 648.8863542888724,
+      "projected_y_intersections_mm": [
+        -103.00779338046164,
+        105.23523754408261
+      ],
+      "projected_z_intersections_mm": [
+        -88.903128035527,
+        12.748036799951334
+      ],
+      "assembly_projected_width_mm": 208.24303092454426,
+      "assembly_projected_height_mm": 101.65116483547834,
+      "section_contour_height_to_width": 0.3333857,
+      "assembly_height_to_width": 0.4881371750313752,
+      "diagnostic_candidate": null,
+      "fitting_permitted": false,
+      "blocking_reasons": [
+        "Unverified station pairing between source views",
+        "Plan assembly can include glove/stabilator projections",
+        "Side assembly can include canopy/ventral-fin projections",
+        "Source section axis is not a verified aircraft waterline"
+      ]
+    },
+    {
+      "section": "F_R",
+      "nasa_view_candidate_x_mm": 754.962281164333,
+      "projected_y_intersections_mm": [
+        -180.10109062244845,
+        177.3345292341425
+      ],
+      "projected_z_intersections_mm": [
+        -69.7779969378855,
+        13.127900235273414
+      ],
+      "assembly_projected_width_mm": 357.43561985659096,
+      "assembly_projected_height_mm": 82.90589717315892,
+      "section_contour_height_to_width": 0.9748314230716469,
+      "assembly_height_to_width": 0.23194637738237203,
+      "diagnostic_candidate": null,
+      "fitting_permitted": false,
+      "blocking_reasons": [
+        "Unverified station pairing between source views",
+        "Plan assembly can include glove/stabilator projections",
+        "Side assembly can include canopy/ventral-fin projections",
+        "Source section axis is not a verified aircraft waterline",
+        "Individual nacelle cannot be scaled to full assembly width"
+      ]
+    },
+    {
+      "section": "F_L",
+      "nasa_view_candidate_x_mm": 754.962281164333,
+      "projected_y_intersections_mm": [
+        -180.10109062244845,
+        177.3345292341425
+      ],
+      "projected_z_intersections_mm": [
+        -69.7779969378855,
+        13.127900235273414
+      ],
+      "assembly_projected_width_mm": 357.43561985659096,
+      "assembly_projected_height_mm": 82.90589717315892,
+      "section_contour_height_to_width": 0.9391706548102281,
+      "assembly_height_to_width": 0.23194637738237203,
+      "diagnostic_candidate": null,
+      "fitting_permitted": false,
+      "blocking_reasons": [
+        "Unverified station pairing between source views",
+        "Plan assembly can include glove/stabilator projections",
+        "Side assembly can include canopy/ventral-fin projections",
+        "Source section axis is not a verified aircraft waterline",
+        "Individual nacelle cannot be scaled to full assembly width"
+      ]
+    }
+  ]
+}

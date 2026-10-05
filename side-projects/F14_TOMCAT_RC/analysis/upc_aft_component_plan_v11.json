@@ -1,0 +1,104 @@
+{
+  "status": "MANUAL_COMPONENT_PLAN_TRACE_CANDIDATE",
+  "source_image_sha256": "63413c7958648165ca381ebda27ef31a4d6aabed725b84d3e2f804da5bafb5b4",
+  "upper_outer_skin_pixel_polyline": [
+    [
+      1570,
+      1098
+    ],
+    [
+      1654,
+      1105
+    ],
+    [
+      1701,
+      1102
+    ],
+    [
+      1772,
+      1094
+    ],
+    [
+      1814,
+      1094
+    ],
+    [
+      1860,
+      1096
+    ],
+    [
+      1917,
+      1102
+    ],
+    [
+      1958,
+      1112
+    ],
+    [
+      1990,
+      1123
+    ],
+    [
+      2020,
+      1133
+    ]
+  ],
+  "lower_outer_skin_pixel_polyline": [
+    [
+      1570,
+      1497
+    ],
+    [
+      1654,
+      1493
+    ],
+    [
+      1701,
+      1494
+    ],
+    [
+      1772,
+      1498
+    ],
+    [
+      1814,
+      1496
+    ],
+    [
+      1860,
+      1494
+    ],
+    [
+      1917,
+      1488
+    ],
+    [
+      1958,
+      1478
+    ],
+    [
+      1990,
+      1466
+    ],
+    [
+      2020,
+      1455
+    ]
+  ],
+  "excluded_projections": [
+    "swept stabilators",
+    "vertical-fin plan projection"
+  ],
+  "coordinate_frame": "native UPC image pixels",
+  "candidate_F_station_x_pixel": 1864.5967110976192,
+  "F_projected_body_width_pixels": 397.0322713478695,
+  "F_section_drawing_width_pixels": 381.0,
+  "candidate_section_width_multiplier": 1.0420794523566128,
+  "station_pairing_verified": false,
+  "metric_scale_verified": false,
+  "waterline_registration_verified": false,
+  "production_loft_allowed": false,
+  "warning": "Partial aft-body outer edges only; no aft closure, beavertail, nozzle opening or exhaust interior constructed",
+  "visual_review": "Overlay inspected: aft outer skin polylines separated from stabilator and fin plan projections; finite manual precision unquantified",
+  "checks": "PASS: increasing axial coordinate and positive projected body width"
+}

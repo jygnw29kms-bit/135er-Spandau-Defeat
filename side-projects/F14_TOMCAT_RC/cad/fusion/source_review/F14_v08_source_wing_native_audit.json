@@ -1,0 +1,41 @@
+{
+  "status": "SOURCE_WING_LOFT_PROVISIONAL",
+  "body_datum_registered": false,
+  "source_span_full_mm": 19542.75746,
+  "bodies": [
+    {
+      "name": "SOURCE_GRUMMAN_BASIC_WING_R_NOT_BODY_REGISTERED",
+      "bounds_mm": {
+        "x": [
+          588.2699984754352,
+          749.6035234732939
+        ],
+        "y": [
+          148.8263775443693,
+          449.99999999999994
+        ],
+        "z": [
+          175.16714742841788,
+          196.6867869631904
+        ]
+      }
+    },
+    {
+      "name": "SOURCE_GRUMMAN_BASIC_WING_L_NOT_BODY_REGISTERED",
+      "bounds_mm": {
+        "x": [
+          588.2699984754352,
+          749.6035234732939
+        ],
+        "y": [
+          -449.99999999999994,
+          -148.8263775443693
+        ],
+        "z": [
+          175.16714742841788,
+          196.6867869631904
+        ]
+      }
+    }
+  ]
+}

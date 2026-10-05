@@ -1,0 +1,51 @@
+{
+  "status": "UNVERIFIED_METRIC_F_SECTION_EDF_PACKAGING",
+  "source_image_sha256": "63413c7958648165ca381ebda27ef31a4d6aabed725b84d3e2f804da5bafb5b4",
+  "sampled_symmetric_centers_native_pixels": [
+    [
+      1375.9222470238096,
+      2587
+    ],
+    [
+      1615.9222470238096,
+      2587
+    ]
+  ],
+  "sampled_max_common_disk_radius_pixels": 53.693389754484876,
+  "search_grid": {
+    "offset_pixels": [
+      110,
+      155
+    ],
+    "vertical_pixels": [
+      2550,
+      2630
+    ],
+    "step_pixels": 1
+  },
+  "assumed_scale_mm_per_native_pixel": 0.5271165518029974,
+  "assumed_scale_basis": "NASA 868.4967 mm length / UPC candidate nose-tail pixel distance; cross-source pairing unverified",
+  "housing_diameter_mm": 52,
+  "skin_normal_mm": 0.8,
+  "service_clearance_assumed_radial_mm": 3,
+  "required_outer_disk_diameter_mm": 59.6,
+  "available_sampled_disk_diameter_mm": 56.60534892399692,
+  "provisional_diameter_margin_mm": -2.9946510760030804,
+  "provisional_local_fit": false,
+  "required_service_length_mm": 81,
+  "rotor_nominal_full_disk_area_mm2": 1963.4954084936207,
+  "source_station_metric_registration_verified": false,
+  "actual_edf_dimensions_verified": false,
+  "axial_75mm_housing_fit_verified": false,
+  "duct_path_verified": false,
+  "native_cad_created": false,
+  "installation_release": false,
+  "limitations": [
+    "Grid search is not a global optimum proof",
+    "Manual source contour accuracy and cross-source scale remain unverified",
+    "No hub subtraction, intake/outlet area ratio, airflow or thrust calculation",
+    "A single source section cannot prove clearance over the EDF housing length"
+  ],
+  "checks": "PASS: square disk radius and outside-point rejection; symmetric disk separation included",
+  "maximum_sampled_radial_service_clearance_mm": 1.5026744619984604
+}

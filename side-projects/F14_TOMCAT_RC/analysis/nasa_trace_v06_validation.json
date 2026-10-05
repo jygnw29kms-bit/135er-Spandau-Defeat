@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "trace_vertex_counts": {
+    "plan_airframe_without_wings": 60,
+    "plan_wing_upper": 14,
+    "plan_wing_lower": 13,
+    "side_airframe_without_vertical_tail": 61,
+    "side_vertical_tail": 9
+  },
+  "self_intersections": [],
+  "side_axial_scale_mm_per_pixel": 1.0326952245677277,
+  "old_side_length_scale_error_percent": 16.884661117717002,
+  "source_sha256": "406f766516f84fcad69065f0b8cef2d92d2ccef54912b5fe6848c992683f660f",
+  "limitations": "Manual raster traces with 3 pixel uncertainty; no original 3D cross-section certification; source scaling applies to 900 mm span."
+}

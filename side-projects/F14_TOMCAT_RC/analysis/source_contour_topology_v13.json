@@ -1,0 +1,25 @@
+{
+  "independent_checks": "PASS: interior, reversed winding, boundary, crossed loop, duplicate vertex",
+  "contours": {
+    "upc_C_intake_topology_v13.json": {
+      "vertices": [
+        62,
+        11,
+        10
+      ],
+      "opening_count": 2,
+      "status": "PASS",
+      "source_fidelity_verified": false,
+      "metric_registration_verified": false
+    },
+    "upc_F_connected_section_v11.json": {
+      "vertices": [
+        55
+      ],
+      "opening_count": 0,
+      "status": "PASS",
+      "source_fidelity_verified": false,
+      "metric_registration_verified": false
+    }
+  }
+}

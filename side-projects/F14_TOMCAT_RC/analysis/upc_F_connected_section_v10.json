@@ -1,0 +1,161 @@
+{
+  "status": "MANUAL_SOURCE_F_BRIDGE_CONTOUR_CANDIDATE",
+  "source_image_sha256": "63413c7958648165ca381ebda27ef31a4d6aabed725b84d3e2f804da5bafb5b4",
+  "source_section_axis_pixel": [
+    1495.9222470238096,
+    2574.0473908413205
+  ],
+  "pixel_outline": [
+    [
+      1304.903,
+      2561.468
+    ],
+    [
+      1306.475,
+      2550.461
+    ],
+    [
+      1322.197,
+      2541.027
+    ],
+    [
+      1347.352,
+      2533.165
+    ],
+    [
+      1374.079,
+      2530.02
+    ],
+    [
+      1399.234,
+      2539.454
+    ],
+    [
+      1419.672,
+      2555.178
+    ],
+    [
+      1424,
+      2561.468
+    ],
+    [
+      1558.023,
+      2561.468
+    ],
+    [
+      1565.884,
+      2545.744
+    ],
+    [
+      1583.178,
+      2534.737
+    ],
+    [
+      1608.333,
+      2530.02
+    ],
+    [
+      1635.06,
+      2534.737
+    ],
+    [
+      1661.786,
+      2544.171
+    ],
+    [
+      1680.653,
+      2552.034
+    ],
+    [
+      1686.941,
+      2567.758
+    ],
+    [
+      1680.653,
+      2594.489
+    ],
+    [
+      1664.931,
+      2618.075
+    ],
+    [
+      1647.637,
+      2641.661
+    ],
+    [
+      1630.343,
+      2651.096
+    ],
+    [
+      1608.333,
+      2644.806
+    ],
+    [
+      1589.467,
+      2633.799
+    ],
+    [
+      1572.173,
+      2616.503
+    ],
+    [
+      1562.74,
+      2591.344
+    ],
+    [
+      1558.023,
+      2586.627
+    ],
+    [
+      1430,
+      2586.627
+    ],
+    [
+      1422.816,
+      2596.061
+    ],
+    [
+      1407.094,
+      2622.792
+    ],
+    [
+      1391.373,
+      2640.089
+    ],
+    [
+      1375.651,
+      2651.096
+    ],
+    [
+      1353.641,
+      2644.806
+    ],
+    [
+      1334.775,
+      2630.654
+    ],
+    [
+      1320.625,
+      2611.785
+    ],
+    [
+      1308.048,
+      2589.772
+    ]
+  ],
+  "bridge_top_pixel_y": 2561.468,
+  "bridge_bottom_pixel_y": 2586.627,
+  "digitization_uncertainty_native_pixels": null,
+  "excluded_projections": [
+    "horizontal tail thin projection",
+    "central and nacelle ventral fin thin projections"
+  ],
+  "scale_verified": false,
+  "waterline_registered": false,
+  "native_cad_created": false,
+  "warning": "Combined skin contour candidate only; bridge connections manually digitized and require registration. Does not model exhaust openings.",
+  "proper_edge_crossings": [],
+  "visual_review": "Bridge top/bottom aligns provisionally; inherited nacelle inner flanks visibly deviate and require redigitization before loft",
+  "uncertainty_note": "Previously assumed 5 px does not cover all inherited nacelle deviations; no certified contour tolerance",
+  "production_loft_allowed": false
+}
