@@ -145,3 +145,9 @@ The C source section contains two intake voids within a connected outer contour.
 The candidate voids approximately follow the raster interiors. The outer glove/canopy trace still has visible raster deviations; wall thickness, metric station registration and three-dimensional duct transitions are unverified. These source-wall outlines are not a specified FDM wall, and no native air duct or print geometry has been created. Production lofting remains disabled. The section does not establish a 50 mm EDF fit or a duct path through subsequent stations.
 
 Fusion remained absent from available windows at this heartbeat, with the previous controlled-request failure unchanged. The installed executable still exists at the recorded path; no new native CAD execution is claimed.
+
+## Corrected C contour and reproducible topology checks - v13
+
+The C glove/canopy upper contour was redigitized against the source raster; its corrected overlay was inspected. The candidate retains both intake openings and records normalized outer/inner loops relative to the original candidate source axis. Finite manual/raster precision remains unquantified; this normalization does not establish aircraft waterline or metric size.
+
+validate_source_contours.py now checks duplicate vertices, non-adjacent segment contacts including touching/collinear cases, strict opening containment and separate non-nested holes. Independent cases cover reversed winding, boundary exclusion, a crossed loop and duplicate vertices. Both C v13 (62 outer vertices, two openings) and connected F v11 (55 outer vertices) pass. The generated report explicitly leaves source fidelity and metric registration unverified. No native fuselage or printable geometry has been produced from these candidates.
