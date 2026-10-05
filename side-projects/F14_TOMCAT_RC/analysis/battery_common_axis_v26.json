@@ -1,0 +1,36 @@
+{
+  "status": "COMMON_FRONT_SECTION_BATTERY_AXIS_SENSITIVITY",
+  "checks": "PASS: independent axial coverage interval",
+  "grid_step_mm": 0.5,
+  "sampled_common_center_yz_mm": [
+    -3.0,
+    -24.5
+  ],
+  "sampled_min_boundary_gap_mm": 2.4733431478047367,
+  "per_section_gap_mm": [
+    2.4733431478047367,
+    3.534871459598855
+  ],
+  "candidate_station_x_mm": [
+    111.04824408990419,
+    249.44414600957995
+  ],
+  "stationary_center_interval_covering_both_planes_mm": [
+    171.94414600957995,
+    188.5482440899042
+  ],
+  "interval_width_mm": 16.604098080324235,
+  "target_adjustment_travel_mm": 55,
+  "both_planes_remain_under_battery_for_full_travel": false,
+  "minimum_axial_body_region_for_length_plus_travel_mm": 210,
+  "metric_frame_verified": false,
+  "continuous_body_fit_verified": false,
+  "tray_strap_hatch_cg_verified": false,
+  "installation_release": false,
+  "limitations": [
+    "Only two candidate section planes constrain this screen",
+    "Coverage of a plane is not clearance of the intervening or outboard body",
+    "Failure to cover both planes during travel does not itself prove a collision",
+    "No metric registration, continuous loft or hatch access verified"
+  ]
+}
