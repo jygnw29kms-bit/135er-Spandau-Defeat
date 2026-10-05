@@ -129,3 +129,11 @@ The component-specific side traces in upc_F_registration_v12.json exclude vertic
 At F the traced side skin height is 128.9948 native pixels. Applying the plan-derived 1.04207945 isotropic width factor to the connected source section predicts 127.6547 pixels: a residual of -1.3400 pixels, approximately one percent. No independent vertical stretching is applied. Center alignment places the candidate section-axis projection at side-image Y=2792.6340 pixels. This gives a consistent provisional cross-view fit within unquantified manual raster precision, not a certified tolerance or verified aircraft waterline.
 
 Station pairing, metric registration, source drawing accuracy and native body construction remain unverified. The result cannot align the absolute-WL wing automatically or authorize a production loft.
+
+## D/E cross-view registration candidates - v12
+
+The D/E candidate file records independent body-plan width fits and manually selected side bounds. The overlay was inspected. D requires an isotropic factor of 0.9191392 and predicts 132.9654 pixels height against a 134-pixel side envelope (residual -1.0346). E requires 1.0176906 and predicts 129.6192 against 125 pixels (residual +4.6192). No vertical stretching is used to force agreement. Positive dimensions pass, but this is not a geometric fidelity certification.
+
+The D upper side envelope can include the wing-root fairing or projection and requires independent topology verification. E retains an unresolved height discrepancy. The fitted candidate axes occur at different side-image heights; they must not be interpreted as a common aircraft waterline. Station pairing, source axes and metric registration remain unverified, and production lofting stays disabled.
+
+During this run Fusion was absent from the returned desktop windows. A supported launch attempt timed out and a subsequent window listing still showed no Fusion window; the previous failed native request remained unchanged. No new native v10 execution is claimed.

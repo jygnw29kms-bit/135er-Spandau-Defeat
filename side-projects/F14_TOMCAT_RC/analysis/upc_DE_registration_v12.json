@@ -1,0 +1,150 @@
+{
+  "status": "D_E_ISOTROPIC_REGISTRATION_CANDIDATES",
+  "source_image_sha256": "63413c7958648165ca381ebda27ef31a4d6aabed725b84d3e2f804da5bafb5b4",
+  "plan_upper_skin_pixels": [
+    [
+      1562,
+      1095
+    ],
+    [
+      1570,
+      1098
+    ],
+    [
+      1654,
+      1105
+    ],
+    [
+      1701,
+      1102
+    ],
+    [
+      1772,
+      1094
+    ],
+    [
+      1814,
+      1094
+    ],
+    [
+      1860,
+      1096
+    ],
+    [
+      1917,
+      1102
+    ],
+    [
+      1958,
+      1112
+    ],
+    [
+      1990,
+      1123
+    ],
+    [
+      2020,
+      1133
+    ]
+  ],
+  "plan_lower_skin_pixels": [
+    [
+      1562,
+      1497
+    ],
+    [
+      1570,
+      1497
+    ],
+    [
+      1654,
+      1493
+    ],
+    [
+      1701,
+      1494
+    ],
+    [
+      1772,
+      1498
+    ],
+    [
+      1814,
+      1496
+    ],
+    [
+      1860,
+      1494
+    ],
+    [
+      1917,
+      1488
+    ],
+    [
+      1958,
+      1478
+    ],
+    [
+      1990,
+      1466
+    ],
+    [
+      2020,
+      1455
+    ]
+  ],
+  "manual_side_bounds_display_crop": [
+    1500,
+    2640,
+    2113,
+    2953
+  ],
+  "manual_side_bounds_display_scale": 2,
+  "manual_side_bounds_display_y": {
+    "D": [
+      235,
+      503
+    ],
+    "E": [
+      248,
+      498
+    ]
+  },
+  "sections": [
+    {
+      "name": "D",
+      "candidate_station_x_pixel": 1562.7395795601192,
+      "plan_body_width_pixels": 401.72265766495525,
+      "section_width_pixels": 437.06399999999996,
+      "isotropic_multiplier": 0.9191392053908701,
+      "side_body_top_pixel_y": 2757.5,
+      "side_body_bottom_pixel_y": 2891.5,
+      "side_body_height_pixels": 134.0,
+      "predicted_section_height_pixels": 132.96543486945944,
+      "height_residual_pixels": -1.0345651305405568,
+      "candidate_section_axis_side_pixel_y": 2805.711504029412,
+      "independent_vertical_stretch_applied": false
+    },
+    {
+      "name": "E",
+      "candidate_station_x_pixel": 1663.3586234059521,
+      "plan_body_width_pixels": 388.79647858774047,
+      "section_width_pixels": 382.038,
+      "isotropic_multiplier": 1.0176905925267656,
+      "side_body_top_pixel_y": 2764.0,
+      "side_body_bottom_pixel_y": 2889.0,
+      "side_body_height_pixels": 125.0,
+      "predicted_section_height_pixels": 129.61918000776402,
+      "height_residual_pixels": 4.619180007764015,
+      "candidate_section_axis_side_pixel_y": 2796.8954782056257,
+      "independent_vertical_stretch_applied": false
+    }
+  ],
+  "source_station_pairing_verified": false,
+  "metric_registration_verified": false,
+  "waterline_verified": false,
+  "production_loft_allowed": false,
+  "checks": "PASS: positive widths/heights and no independent vertical stretching",
+  "visual_review": "D/E side overlays inspected; D upper bound may include wing-root fairing/projection and needs independent topology verification",
+  "warning": "Candidate per-section axis translations differ; never treat these as a common aircraft WL. D upper projected skin is ambiguous; E height discrepancy remains unresolved."
+}
