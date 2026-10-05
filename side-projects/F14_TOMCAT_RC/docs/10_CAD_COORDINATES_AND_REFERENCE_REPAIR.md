@@ -110,3 +110,8 @@ This checks the full native loft, including interpolation between defining stati
 
 The source F section includes a bridge joining both nacelles. The new upc_F_connected_section_v10.json restores that connected topology while excluding thin stabilator and ventral-fin projections. Its source-image overlay was inspected and proper edge crossings pass. The bridge top/bottom align provisionally, but the inherited nacelle inner flanks visibly deviate from the raster and require redigitization. The previous five-pixel assumption does not cover all those deviations; the connected candidate therefore records unknown contour tolerance and explicitly prohibits production lofting. It remains unscaled, without waterline registration, exhaust openings or native CAD execution.
 
+## Redigitized connected section F - v11
+
+The new upc_F_connected_section_v11.json replaces the visibly inaccurate inherited inner flanks with a manual source-image trace of the complete connected section. Both nacelle skin contours and the intervening bridge are retained; thin stabilator and ventral-fin projections remain excluded. The corrected overlay was inspected, and unique-vertex and proper-crossing checks pass. Raw source pixels, the display crop transformation and normalized coordinates relative to the original candidate section axis are recorded for reproducibility.
+
+The outline broadly follows the raster skin contour, with unquantified manual/raster precision. No metric scale, aircraft waterline, exhaust opening topology or native body loft has been verified. Production lofting remains prohibited until component-specific station envelopes and datum pairing have been checked. The older v10 candidate is retained as an audit record.
