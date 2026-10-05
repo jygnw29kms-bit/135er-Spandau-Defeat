@@ -195,3 +195,11 @@ The new aft_edf_registered_sections.py applies the independent D/E/F isotropic w
 Available disk diameters are D 51.5003 mm, E 57.4537 mm and F 58.9873 mm. D does not locally accommodate the assumed 52 mm housing plus 0.8 mm skin even without service clearance. Under these assumptions, E permits approximately 1.9269 mm radial service clearance and F approximately 2.6936 mm; neither meets the interpreted 3 mm radial allowance. The F result supersedes the direct raw-pixel metric sensitivity for placement decisions, while v15 remains an audit record.
 
 The output includes 0.5/1/1.5/3 mm radial-clearance sensitivities and a candidate axial-center interval placing an 81 mm service envelope between E and F. No continuous clearance or straight EDF-axis alignment is proved by those endpoints. Station pairing, source-contour accuracy, metric scale and actual hardware remain unverified. No installation or print release is authorized by this screen.
+
+## Common horizontal EDF axes at E/F - v17
+
+The provisional E/F side-image axis translations now place both corrected source contours into one shared Y/Z frame. Side-image Y=2800 is an arbitrary vertical translation, explicitly not an aircraft waterline. The search uses two symmetric constant-axis centers and checks all four section/side clearances on a 0.25 mm grid. The limiting section distance agrees with the reported common radius.
+
+The sampled common disk diameter is 54.1576 mm at centers Y=+/-64.75 mm, Z=-7.75 mm in this candidate frame. For a 52 mm housing and 0.8 mm skin, the residual radial service allowance is only 0.2788 mm. This is much less generous than independently optimized E/F disks and remains subject to unquantified raster and registration error; it does not establish a reliable mount tolerance.
+
+The output records clearance sensitivities and transformed contours for review. Only two endpoint planes are checked; intermediate skin and the 81 mm axial service envelope remain unverified. Tilted or splayed axes, duct transitions, actual hardware and native CAD installation are not evaluated. No installation or print release is claimed.
