@@ -146,7 +146,9 @@
           -1.000004,
           -0.871094
         ]
-      ]
+      ],
+      "candidate_aircraft_fs_in": 189.15268,
+      "candidate_model_x_from_nose_mm": 112.4739
     },
     {
       "name": "B",
@@ -312,7 +314,9 @@
           -0.8915732,
           -0.6266078
         ]
-      ]
+      ],
+      "candidate_aircraft_fs_in": 308.9847,
+      "candidate_model_x_from_nose_mm": 252.64655
     },
     {
       "name": "C",
@@ -646,7 +650,9 @@
           -0.968749,
           0.1375207
         ]
-      ]
+      ],
+      "candidate_aircraft_fs_in": 442.45041,
+      "candidate_model_x_from_nose_mm": 408.76711
     },
     {
       "name": "D",
@@ -940,7 +946,9 @@
           -1.007193,
           0.1079297
         ]
-      ]
+      ],
+      "candidate_aircraft_fs_in": 608.92366,
+      "candidate_model_x_from_nose_mm": 603.49799
     },
     {
       "name": "E",
@@ -1186,7 +1194,9 @@
           -0.9958845,
           -0.0905507
         ]
-      ]
+      ],
+      "candidate_aircraft_fs_in": 654.84732,
+      "candidate_model_x_from_nose_mm": 657.21687
     },
     {
       "name": "F_R",
@@ -1328,7 +1338,9 @@
           -0.9835371,
           -0.0823196
         ]
-      ]
+      ],
+      "candidate_aircraft_fs_in": 746.69465,
+      "candidate_model_x_from_nose_mm": 764.65462
     },
     {
       "name": "F_L",
@@ -1470,7 +1482,18 @@
           0.3497964,
           -0.0905492
         ]
-      ]
+      ],
+      "candidate_aircraft_fs_in": 746.69465,
+      "candidate_model_x_from_nose_mm": 764.65462
     }
-  ]
+  ],
+  "longitudinal_registration_candidate": {
+    "nose_fs_in": 93,
+    "nose_fs_authority": "US Navy Airman NAVEDTRA14014, Chapter4 page4-7 Figure4-7; reproduced at https://navyaviation.tpub.com/14014/css/Fuselage-Station-Diagram-Of-An-F-14-Aircraft-79.htm",
+    "length_in": 752,
+    "length_authority": "US Navy museum overall62ft8in baseline; pairing with blueprint aft datum remains provisional",
+    "scale_mm_per_source_inch": 1.1697428086486623,
+    "tail_datum_pairing_verified": false,
+    "section_size_and_wl_registration_verified": false
+  }
 }

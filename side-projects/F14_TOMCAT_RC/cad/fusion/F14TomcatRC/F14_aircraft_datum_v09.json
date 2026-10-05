@@ -1,0 +1,19 @@
+{
+  "status": "LONGITUDINAL_DATUM_VERIFIED_VERTICAL_REGISTRATION_PENDING",
+  "aircraft_nose_fs_in": 93.0,
+  "aircraft_centerline_bl_in": 0.0,
+  "source": "US Navy Airman NAVEDTRA 14014, Chapter 4, page 4-7, Figure 4-7",
+  "reproduced_primary_document_url": "https://navyaviation.tpub.com/14014/css/Fuselage-Station-Diagram-Of-An-F-14-Aircraft-79.htm",
+  "cross_check": "NASA CR-172559 Table 1 starts its nose model at aircraft FS 93.0",
+  "model_span_mm": 900.0,
+  "source_tip_wbl_in": 384.69995,
+  "scale_mm_per_source_inch": 1.1697428086486623,
+  "mapping_model_x_mm": "(FS_in - 93.0) * scale_mm_per_source_inch",
+  "mapping_model_y_mm": "BL_in * scale_mm_per_source_inch",
+  "vertical_reference_wl_in": null,
+  "mapping_model_z_mm": "Pending verified WL reference; preserve original absolute WL until registered",
+  "nose_translation_mm": 108.7860812043256,
+  "source_root_le_x_from_nose_mm": 479.48391727110953,
+  "source_tip_le_x_from_nose_mm": 589.0406133403449,
+  "production_outer_skin_from_transonic_body_model_allowed": false
+}
