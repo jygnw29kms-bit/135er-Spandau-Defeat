@@ -368,6 +368,50 @@ def build_f14_tail_surfaces(comp):
             bodies.append(f.bodies.item(0))
     return bodies
 
+
+def _box_body(comp,name,x0,x1,y0,y1,z0,th):
+    return extrude_poly(comp,name,[(x0,y0),(x1,y0),(x1,y1),(x0,y1)],z0,th)
+
+def build_rc_primary_structure(comp):
+    """Engineered internal structure pass. External OML is not modified."""
+    bodies=[]
+    bodies.append(_box_body(comp,'STR_WingBox_CenterPlate',425.0,500.0,-155.0,155.0,6.0,6.0))
+    bodies.append(_box_body(comp,'STR_WingBox_FrontWeb',425.0,435.0,-150.0,150.0,-8.0,28.0))
+    bodies.append(_box_body(comp,'STR_WingBox_RearWeb',490.0,500.0,-150.0,150.0,-8.0,28.0))
+    x_pivot=456.5; y_root=131.0
+    for side,label in [(1,'R'),(-1,'L')]:
+        pl=offset_plane(comp,comp.xYConstructionPlane,-10.0)
+        sk=comp.sketches.add(pl); sk.name='STR_PivotBoss_'+label
+        c=adsk.core.Point3D.create(mm(x_pivot),mm(side*y_root),0)
+        sk.sketchCurves.sketchCircles.addByCenterRadius(c,mm(12.0))
+        if sk.profiles.count:
+            ex=comp.features.extrudeFeatures
+            ei=ex.createInput(sk.profiles.item(0),adsk.fusion.FeatureOperations.NewBodyFeatureOperation)
+            ei.setDistanceExtent(False,adsk.core.ValueInput.createByReal(mm(34.0)))
+            f=ex.add(ei); f.bodies.item(0).name='STR_PivotBoss_'+label+'_24OD'
+            bodies.append(f.bodies.item(0))
+        y0=min(side*(y_root-14.0),side*(y_root+14.0)); y1=max(side*(y_root-14.0),side*(y_root+14.0))
+        bodies.append(_box_body(comp,'STR_CarbonSocket_'+label,438.0,492.0,y0,y1,-3.0,14.0))
+    tray=_box_body(comp,'RC_SweepServo_Tray',405.0,447.0,-26.0,26.0,-18.0,4.0); bodies.append(tray)
+    servo=_box_body(comp,'RC_SweepServo_Envelope',408.0,450.0,-21.0,21.0,-14.0,40.0); servo.opacity=0.25; bodies.append(servo)
+    batt=_box_body(comp,'RC_Battery_4S_Adjustable_Envelope',330.0,540.0,-23.0,23.0,-25.0,40.0); batt.opacity=0.22; bodies.append(batt)
+    bodies.append(_box_body(comp,'STR_Battery_Stop_Fwd',326.0,332.0,-27.0,27.0,-27.0,44.0))
+    bodies.append(_box_body(comp,'STR_Battery_Stop_Aft',538.0,544.0,-27.0,27.0,-27.0,44.0))
+    for side,label in [(1,'R'),(-1,'L')]:
+        y=side*79.0
+        pl=offset_plane(comp,comp.yZConstructionPlane,535.0)
+        sk=comp.sketches.add(pl); sk.name='RC_EDF50_'+label+'_Envelope'
+        c=adsk.core.Point3D.create(0,mm(y),mm(-8.0))
+        sk.sketchCurves.sketchCircles.addByCenterRadius(c,mm(26.0))
+        if sk.profiles.count:
+            ex=comp.features.extrudeFeatures
+            ei=ex.createInput(sk.profiles.item(0),adsk.fusion.FeatureOperations.NewBodyFeatureOperation)
+            ei.setDistanceExtent(False,adsk.core.ValueInput.createByReal(mm(85.0)))
+            f=ex.add(ei); f.bodies.item(0).name='RC_EDF50_'+label+'_ServiceEnvelope'; f.bodies.item(0).opacity=0.20
+            bodies.append(f.bodies.item(0))
+        y0,y1=y-15.0,y+15.0
+        esc=_box_body(comp,'RC_ESC50_'+label+'_Envelope',515.0,585.0,y0,y1,22.0,15.0); esc.opacity=0.22; bodies.append(esc)
+    return bodies
 def build_model():
     global _app,_ui
     doc = _app.documents.add(adsk.core.DocumentTypes.FusionDesignDocumentType)
@@ -435,7 +479,7 @@ def build_model():
     os.makedirs(outdir,exist_ok=True)
     try:
         em=design.exportManager
-        opt=em.createFusionArchiveExportOptions(os.path.join(outdir,'F14_Tomcat_RC_OML_Tails_v04.f3d'))
+        opt=em.createFusionArchiveExportOptions(os.path.join(outdir,'F14_Tomcat_RC_OML_Structure_v05.f3d'))
         em.execute(opt)
     except:
         pass
