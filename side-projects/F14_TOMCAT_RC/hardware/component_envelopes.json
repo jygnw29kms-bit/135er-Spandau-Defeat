@@ -1,6 +1,21 @@
 {
   "design_note": "Maximum packaging envelopes for common market RC component classes; final parts must fit inside these volumes.",
-  "edf_50mm": {"diameter_mm": 52, "length_mm": 75, "count": 2, "service_clearance_mm": 3},
+  "edf_50mm": {
+    "diameter_mm": 52,
+    "length_mm": 75,
+    "count": 2,
+    "service_clearance_mm": 3,
+    "dimension_status": "ASSUMED_ENVELOPE_NOT_MEASURED_HARDWARE",
+    "selected_part_number": null,
+    "measured_housing_diameter_mm": null,
+    "measured_housing_length_mm": null,
+    "legacy_service_clearance_convention": "UNSPECIFIED_RADIAL_OR_AXIAL",
+    "selected_radial_service_clearance_mm": null,
+    "selected_axial_service_clearance_each_end_mm": null,
+    "analysis_radial_service_sensitivities_mm": [0, 0.5, 1, 1.5, 3],
+    "analysis_axial_service_assumption_each_end_mm": 3,
+    "installation_verified": false
+  },
   "esc_50a": {"length_mm": 70, "width_mm": 30, "height_mm": 15, "count": 2, "airflow_required": true},
   "battery_4s": {"length_mm": 155, "width_mm": 46, "height_mm": 40, "mass_target_g": 200, "longitudinal_adjustment_mm": 55},
   "micro_servo": {"length_mm": 24, "width_mm": 13, "height_mm": 27, "count_allowance": 6},
