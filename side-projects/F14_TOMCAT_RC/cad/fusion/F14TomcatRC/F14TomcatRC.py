@@ -641,6 +641,27 @@ def build_source_spar_review_v10():
         bb=body.boundingBox
         audit.append(dict(name=body.name,volume_cm3=body.volume,bounds_mm={a:[getattr(bb.minPoint,a)*10,getattr(bb.maxPoint,a)*10] for a in ['x','y','z']}))
     if len(audit)!=8: raise RuntimeError('Expected two source wings and six spar envelopes')
+    # Use transient BRep copies: this never cuts the document's wing or spar.
+    # Intersection volume tests continuous native loft containment, not skin gap.
+    temporary=adsk.fusion.TemporaryBRepManager.get()
+    containment=[]
+    for label in ['R','L']:
+        wing=next(b for b in root.bRepBodies if b.name.startswith('SOURCE_GRUMMAN_BASIC_WING_'+label+'_'))
+        for body in root.bRepBodies:
+            if not body.name.startswith('CANDIDATE_CARBON_'+label+'_'): continue
+            target=temporary.copy(body)
+            tool=temporary.copy(wing)
+            succeeded=temporary.booleanOperation(target,tool,adsk.fusion.BooleanTypes.IntersectionBooleanType)
+            total=body.volume
+            inside=target.volume if succeeded and target.isValid else None
+            outside=max(0.0,total-inside) if inside is not None else None
+            tolerance=max(1e-6,total*1e-6)
+            volume_consistent=inside is not None and -tolerance<=inside<=total+tolerance
+            containment.append(dict(body=body.name,boolean_succeeded=succeeded,
+                                    volume_cm3=total,intersection_volume_cm3=inside,
+                                    outside_volume_cm3=outside,tolerance_cm3=tolerance,
+                                    intersection_volume_consistent=volume_consistent,
+                                    entire_native_loft_inside_outer_solid=(outside<=tolerance and volume_consistent if outside is not None else None)))
     root.isSketchFolderLightBulbOn=False
     root.isConstructionFolderLightBulbOn=False
     with open(os.path.join(os.path.dirname(__file__),'F14TomcatRC_config.json'),encoding='utf-8') as stream: config=json.load(stream)
@@ -650,7 +671,11 @@ def build_source_spar_review_v10():
     if not design.exportManager.execute(design.exportManager.createFusionArchiveExportOptions(target)):
         raise RuntimeError('Source spar archive export failed')
     with open(os.path.join(outdir,'F14_v10_native_spar_audit.json'),'w',encoding='utf-8') as stream:
-        json.dump(dict(status='LOCAL_PACKAGING_CANDIDATE',bodies=audit,continuous_clearance_verified=False,structural_capacity_verified=False,print_release=False),stream,indent=2)
+        json.dump(dict(status='LOCAL_PACKAGING_CANDIDATE',bodies=audit,
+                       native_outer_solid_containment=containment,
+                       entire_native_spar_inside_outer_solid=all(c['entire_native_loft_inside_outer_solid'] is True for c in containment),
+                       containment_method='Temporary BRep intersection volumes; source document bodies preserved',
+                       continuous_skin_clearance_verified=False,structural_capacity_verified=False,print_release=False),stream,indent=2)
     _app.activeViewport.fit()
     _app.activeViewport.saveAsImageFile(os.path.join(outdir,'F14_v10_spar_review.png'),1600,1000)
 
