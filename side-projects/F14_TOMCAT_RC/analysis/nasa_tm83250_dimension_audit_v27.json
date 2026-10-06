@@ -1,0 +1,31 @@
+{
+  "status": "EXPERIMENTAL_MODEL_DIMENSION_CORROBORATION_ONLY",
+  "source_url": "https://ntrs.nasa.gov/api/citations/19820011307/downloads/19820011307.pdf",
+  "source_sha256": "e7a619ab1831a2500c9c3328a1e646ceaa93b833499266c57ec1ce09f544e830",
+  "pdf_page": 19,
+  "printed_page": 15,
+  "figure": "2(a)",
+  "units": "model centimeters",
+  "visually_checked_dimensions": {
+    "wing_span_20_deg_cm": 162.885,
+    "length_top_view_cm": 156.808,
+    "length_side_view_cm": 156.845,
+    "swept_span_cm": 97.028,
+    "horizontal_tail_span_cm": 83.079,
+    "nose_WL_cm": 27.767,
+    "moment_reference_FS_cm": 92.933,
+    "moment_reference_WL_cm": 31.749
+  },
+  "comparison_at_900mm_span": {
+    "top_view_length_mm": 866.4223224974676,
+    "side_view_length_mm": 866.626761211898,
+    "swept_span_mm": 536.1156644258219,
+    "horizontal_tail_span_mm": 459.04226908555114
+  },
+  "configuration": "Wind-tunnel model with maximum-afterburning type-A experimental nozzles",
+  "aircraft_station_registration_verified": false,
+  "production_nozzle_geometry_selected": false,
+  "engine_pitch_splay_verified": false,
+  "production_geometry_release": false,
+  "warning": "Model FS starts at nose. Do not combine model FS/WL values directly with original aircraft inch coordinates."
+}
