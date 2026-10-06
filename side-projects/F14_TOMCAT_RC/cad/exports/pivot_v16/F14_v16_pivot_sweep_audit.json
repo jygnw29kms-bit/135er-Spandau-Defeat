@@ -1,0 +1,51 @@
+{
+  "status": "SOURCE_PIVOT_PLANFORM_KINEMATIC_REVIEW",
+  "source_wing_sha256": "ae439b784b984b0c95b9df117ae0c5ad5d6adc7025a1f7b115b41a260fce4b18",
+  "source_report": "NADC-81293-60 / AD-A124468, F-14 Rotary Balance Tests for an Angle-of-Attack Range of 0 to 90 Degrees",
+  "source_table": "Table I - Dimensional Characteristics of the 1/12-Scale F-14 Model",
+  "scale_mm_per_fullscale_in": 1.1697428086486623,
+  "pivot_fullscale_fs_in": 524.16,
+  "pivot_fullscale_bl_in": 107.04,
+  "pivot_model_x_mm": 613.1323905812828,
+  "pivot_model_y_mm": 125.20927023775282,
+  "pivot_waterline_verified": false,
+  "sweep_results": [
+    {
+      "sweep_deg": 20,
+      "semi_span_mm": 449.99999999999994,
+      "span_mm": 899.9999999999999
+    },
+    {
+      "sweep_deg": 30,
+      "semi_span_mm": 430.35868747209537,
+      "span_mm": 860.7173749441907
+    },
+    {
+      "sweep_deg": 40,
+      "semi_span_mm": 401.44556431458096,
+      "span_mm": 802.8911286291619
+    },
+    {
+      "sweep_deg": 50,
+      "semi_span_mm": 364.1391411438516,
+      "span_mm": 728.2782822877032
+    },
+    {
+      "sweep_deg": 60,
+      "semi_span_mm": 319.57295474998875,
+      "span_mm": 639.1459094999775
+    },
+    {
+      "sweep_deg": 68,
+      "semi_span_mm": 279.5965544455002,
+      "span_mm": 559.1931088910004
+    }
+  ],
+  "reference_68deg_span_mm_from_38_2ft_spec": 536.2101034845468,
+  "span68_discrepancy_mm": 22.98300540645357,
+  "body_glove_collision_checked": false,
+  "mechanical_pivot_created": false,
+  "note": "FS/BL source-backed. No physical pivot/wingbox is released until pivot WL and fixed glove/body datum are registered.",
+  "print_release": false,
+  "flight_release": false
+}

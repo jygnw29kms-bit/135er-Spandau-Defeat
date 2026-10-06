@@ -66,37 +66,37 @@
       {
         "case": "3g",
         "force_N": 15.445473750000001,
-        "tip_deflection_mm": 2.388459165911718,
+        "tip_deflection_mm": 2.3884591659216357,
         "stress_MPa": 21.923799502061144,
         "provisional_factor": 15.964386098636558,
-        "mesh_relative_change": 0.00011354198763640032,
+        "mesh_relative_change": 0.00011353724895928481,
         "independent_tip_deflection_mm": 2.388368691413783
       },
       {
         "case": "6g",
         "force_N": 30.890947500000003,
-        "tip_deflection_mm": 4.776918331823436,
+        "tip_deflection_mm": 4.776918331843271,
         "stress_MPa": 43.84759900412229,
         "provisional_factor": 7.982193049318279,
-        "mesh_relative_change": 0.00011354198763640032,
+        "mesh_relative_change": 0.00011353724895928481,
         "independent_tip_deflection_mm": 4.776737382827566
       },
       {
         "case": "8g",
         "force_N": 41.18793,
-        "tip_deflection_mm": 6.369224442431245,
+        "tip_deflection_mm": 6.369224442457685,
         "stress_MPa": 58.463465338829714,
         "provisional_factor": 5.98664478698871,
-        "mesh_relative_change": 0.00011354198763680891,
+        "mesh_relative_change": 0.00011353724896082837,
         "independent_tip_deflection_mm": 6.368983177103422
       },
       {
         "case": "8g_70percent",
         "force_N": 57.663101999999995,
-        "tip_deflection_mm": 8.916914219403736,
+        "tip_deflection_mm": 8.916914219440763,
         "stress_MPa": 81.84885147436158,
         "provisional_factor": 4.276174847849079,
-        "mesh_relative_change": 0.0001135419876375677,
+        "mesh_relative_change": 0.00011353724896020578,
         "independent_tip_deflection_mm": 8.916576447944788
       }
     ],

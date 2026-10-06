@@ -1,0 +1,51 @@
+{
+  "status": "NORMALIZED_SOURCE_GALLERY",
+  "profiles": [
+    {
+      "section": "A",
+      "profile_count": 1,
+      "profile_loop_counts": [
+        1
+      ]
+    },
+    {
+      "section": "B",
+      "profile_count": 1,
+      "profile_loop_counts": [
+        1
+      ]
+    },
+    {
+      "section": "C",
+      "profile_count": 3,
+      "profile_loop_counts": [
+        3,
+        1,
+        1
+      ]
+    },
+    {
+      "section": "D",
+      "profile_count": 1,
+      "profile_loop_counts": [
+        1
+      ]
+    },
+    {
+      "section": "E",
+      "profile_count": 1,
+      "profile_loop_counts": [
+        1
+      ]
+    },
+    {
+      "section": "F",
+      "profile_count": 1,
+      "profile_loop_counts": [
+        1
+      ]
+    }
+  ],
+  "aircraft_geometry": false,
+  "print_release": false
+}

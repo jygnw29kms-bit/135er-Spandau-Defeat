@@ -2,18 +2,26 @@
 
 Clean-sheet restart of the RC/FDM F-14 project.
 
-## Current engineering status - 4 October 2026
+## Current engineering status - 6 October 2026
 
-The latest Fusion geometry is v04 and remains provisional. The aircraft is not
-print-ready or flight-released. An executed beam FE screen identifies an unsuitable
-full-span tube-spar assumption. Tapered carbon caps are a sizing candidate only.
-The source audit identifies a swept-span conflict and unverified fuselage/tail geometry.
+The aircraft remains **not print-ready and not flight-released**, but the native Fusion
+source-geometry workflow has advanced substantially beyond the older v04 scaffold.
+Validated development artifacts now include the v08 Grumman/NASA source-wing loft,
+v10 carbon-cap/shear-web packaging review, v14 source-section gallery, v15 native
+wing-envelope segmentation and v16 source-pivot/sweep datum review.
 
-See [engineering audit](docs/09_ENGINEERING_AUDIT_20261004.md),
-[reproducible calculation](analysis/structural_screen.py),
-[results](analysis/structural_screen_results.csv) and
-[summary](analysis/structural_screen_summary.json).
-The inherited 676.46-mm swept-span parameter is not a frozen production dimension.
+The candidate carbon load path is fully contained by both native wing solids, and the
+four v15 solid-envelope segments pass defining-section boundary checks and the assumed
+240 x 240 x 250 mm P2S packaging envelope. They are **not yet hollow printable shells**.
+A source-backed pivot review has also retired the old provisional `(456.5, +/-131 mm)`
+pivot, but a remaining 68-degree swept-span/source-datum conflict prevents release of
+the mechanical pivot and wing box.
+
+See [4 Oct engineering audit](docs/09_ENGINEERING_AUDIT_20261004.md),
+[6 Oct continuation](docs/10_ENGINEERING_CONTINUATION_20261006.md),
+[reproducible structure calculation](analysis/structural_screen.py),
+[structure summary](analysis/structural_screen_summary.json) and
+[propulsion benchmark](analysis/propulsion_baseline_v17.json).
 
 ## Design target
 - visually scale-faithful Grumman F-14 Tomcat outer mold line
