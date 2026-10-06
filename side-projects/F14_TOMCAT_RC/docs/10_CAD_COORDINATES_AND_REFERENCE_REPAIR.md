@@ -229,3 +229,13 @@ These are conditional sensitivities, not measured raster, registration or instal
 The two manually traced inner C loops have areas 6071.625 and 5791 source pixels squared. The area calculation passes rectangle, reversed-winding and translation checks. For an illustrative 50 mm rotor and 20 mm hub, matching one annular fan area per section requires respective isotropic scales 0.52120 and 0.53368 mm per source pixel. No metric scale is selected from that comparison.
 
 The report includes hub diameters 15/20/25 mm and area ratios 0.8/1/1.2 as sensitivities, not recommended design ratios. These are unregistered duct-section candidates, not verified intake mouths. Full duct minimum area, losses, actual hardware, airflow and thrust remain unverified.
+
+## Dimensioned tail reference and model-coordinate separation - v27-v29
+
+[NASA TM 83250](https://ntrs.nasa.gov/api/citations/19820011307/downloads/19820011307.pdf) provides dimensioned drawings of an experimental F-14 wind-tunnel model. Its coordinates use model centimeters and FS zero at the nose. They cannot be combined directly with the aircraft-inch FS/WBL/WL coordinates in the original Grumman wing dataset. Its experimental F101 nozzle configurations also require a variant check before production exterior use.
+
+Figure 3(c), PDF page 22, labels horizontal-tail sections NACA 65A004.643 and 65A003.16, 3.5-degree dihedral and a 9.49-degree oblique-axis angle. The axis interpretation, original production equivalence and airfoil coordinates remain unverified. Four-digit NACA profiles are not substitutes for the labeled six-series sections.
+
+Figure 3(f), PDF page 23, dimensions the vertical tail with 26.033 cm root chord, 9.312 cm tip chord and 21.591 cm vertical height, with a 5-degree cant and NACA 65A004.5 label. The v29 dataset derives symmetric reference corners, not a complete surface: tip rounding and thickness coordinates are missing. The height versus true-span projection differs by 0.002465 cm, consistent with a small drawing-rounding residual; this does not validate production geometry.
+
+The source datasets are [model dimensions](../analysis/nasa_tm83250_dimension_audit_v27.json), [horizontal tail labels](../analysis/nasa_tail_reference_v28.json) and [vertical tail corners](../analysis/nasa_vertical_tail_reference_v29.json). None records native tail execution or a production geometry release.
