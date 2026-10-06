@@ -1,0 +1,93 @@
+{
+  "status": "DIMENSIONED_MODEL_FIN_CORNER_REFERENCE_NOT_COMPLETE_SURFACE",
+  "source_url": "https://ntrs.nasa.gov/api/citations/19820011307/downloads/19820011307.pdf",
+  "source_sha256": "e7a619ab1831a2500c9c3328a1e646ceaa93b833499266c57ec1ce09f544e830",
+  "pdf_page": 23,
+  "printed_page": 19,
+  "figure": "3(f)",
+  "model_dimensions_cm": {
+    "root_chord": 26.033,
+    "tip_chord": 9.312,
+    "axial_extent": 32.387,
+    "vertical_height": 21.591,
+    "true_span_label": 21.671,
+    "tip_FS": 156.808,
+    "tip_WL": 56.304,
+    "root_BL": 11.644
+  },
+  "outward_cant_deg": 5,
+  "airfoil_label": "NACA 65A004.5",
+  "source_model_corner_xz_cm": [
+    [
+      124.42099999999999,
+      34.713
+    ],
+    [
+      150.454,
+      34.713
+    ],
+    [
+      156.808,
+      56.304
+    ],
+    [
+      147.49599999999998,
+      56.304
+    ]
+  ],
+  "comparison_scale_mm_per_model_cm": 5.525370660281794,
+  "candidate_symmetric_corner_xyz_mm": {
+    "-1": [
+      [
+        687.4721429229211,
+        -64.33741596832121,
+        191.80219173036193
+      ],
+      [
+        831.3141173220371,
+        -64.33741596832121,
+        191.80219173036193
+      ],
+      [
+        866.4223224974676,
+        -74.77466286502381,
+        311.10046965650616
+      ],
+      [
+        814.9700709089234,
+        -74.77466286502381,
+        311.10046965650616
+      ]
+    ],
+    "1": [
+      [
+        687.4721429229211,
+        64.33741596832121,
+        191.80219173036193
+      ],
+      [
+        831.3141173220371,
+        64.33741596832121,
+        191.80219173036193
+      ],
+      [
+        866.4223224974676,
+        74.77466286502381,
+        311.10046965650616
+      ],
+      [
+        814.9700709089234,
+        74.77466286502381,
+        311.10046965650616
+      ]
+    ]
+  },
+  "span_projection_residual_cm": -0.0024646976537852083,
+  "dimension_corner_checks": "PASS: root chord, mirrored coordinates, source dimension arithmetic",
+  "exact_tip_rounding_reconstructed": false,
+  "airfoil_coordinates_available": false,
+  "production_variant_equivalence_verified": false,
+  "aircraft_WL_registration_verified": false,
+  "native_cad_created": false,
+  "production_geometry_release": false
+}
