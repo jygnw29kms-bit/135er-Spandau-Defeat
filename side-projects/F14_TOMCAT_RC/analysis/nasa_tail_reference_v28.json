@@ -1,0 +1,32 @@
+{
+  "status": "EXPERIMENTAL_MODEL_TAIL_DIMENSION_CANDIDATE",
+  "source_url": "https://ntrs.nasa.gov/api/citations/19820011307/downloads/19820011307.pdf",
+  "source_sha256": "e7a619ab1831a2500c9c3328a1e646ceaa93b833499266c57ec1ce09f544e830",
+  "pdf_page": 22,
+  "printed_page": 18,
+  "figure": "3(c)",
+  "units": "model centimeters unless angle specified",
+  "visually_checked_labels": {
+    "reference_FS_cm": 122.02,
+    "root_reference_BL_cm": 19.051,
+    "reference_WL_cm": 29.845,
+    "root_chord_dimension_cm": 31.456,
+    "maximum_axial_extent_cm": 36.257,
+    "span_dimension_cm": 22.488,
+    "maximum_lateral_extent_cm": 24.171,
+    "dihedral_deg": 3.5,
+    "oblique_axis_label_deg": 9.49,
+    "root_airfoil_label": "NACA 65A004.643",
+    "outer_airfoil_label": "NACA 65A003.16"
+  },
+  "airfoil_coordinate_table_available": false,
+  "aircraft_variant_tail_equivalence_verified": false,
+  "common_aircraft_FS_WL_registration_verified": false,
+  "native_tail_created": false,
+  "production_geometry_release": false,
+  "warnings": [
+    "Do not replace these six-series sections with similarly thick four-digit NACA sections",
+    "Exact oblique-axis interpretation and pivot registration need original figure and independent corroboration",
+    "Experimental nozzle study does not by itself establish production tail equivalence"
+  ]
+}
