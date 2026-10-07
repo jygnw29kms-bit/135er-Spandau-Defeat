@@ -1,0 +1,380 @@
+{
+  "status": "REGISTERED_SWEEP_COLLISION_KEEPOUT_REVIEW",
+  "registration_inherited_from": "v22",
+  "pivot_waterline_original_aircraft_verified": false,
+  "keepout_margin_mm": 2.0,
+  "intersection_records": [
+    {
+      "sweep_deg": 20,
+      "side": "R",
+      "kind": "outer_wing",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 20,
+      "side": "R",
+      "kind": "root_lug",
+      "intersection_volume_cm3": 0.0022047261302368957,
+      "positive_overlap": true,
+      "intersection_bounds_mm": {
+        "x": [
+          593.1323905812828,
+          593.8649835977877
+        ],
+        "y": [
+          125.20927023775285,
+          125.59797263183876
+        ],
+        "z": [
+          180.06184041387712,
+          195.59240693460868
+        ]
+      }
+    },
+    {
+      "sweep_deg": 20,
+      "side": "L",
+      "kind": "outer_wing",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 20,
+      "side": "L",
+      "kind": "root_lug",
+      "intersection_volume_cm3": 0.002204726127631121,
+      "positive_overlap": true,
+      "intersection_bounds_mm": {
+        "x": [
+          593.1323905812828,
+          593.8649835977878
+        ],
+        "y": [
+          -125.59797263183873,
+          -125.20927023775285
+        ],
+        "z": [
+          180.06184041387712,
+          195.59240693460868
+        ]
+      }
+    },
+    {
+      "sweep_deg": 30,
+      "side": "R",
+      "kind": "outer_wing",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 30,
+      "side": "R",
+      "kind": "root_lug",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 30,
+      "side": "L",
+      "kind": "outer_wing",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 30,
+      "side": "L",
+      "kind": "root_lug",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 40,
+      "side": "R",
+      "kind": "outer_wing",
+      "intersection_volume_cm3": 0.21239337302383918,
+      "positive_overlap": true,
+      "intersection_bounds_mm": {
+        "x": [
+          714.2394006133212,
+          740.2436161721943
+        ],
+        "y": [
+          105.31008949021312,
+          113.66365182300663
+        ],
+        "z": [
+          184.5725398111105,
+          189.6319192860425
+        ]
+      }
+    },
+    {
+      "sweep_deg": 40,
+      "side": "R",
+      "kind": "root_lug",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 40,
+      "side": "L",
+      "kind": "outer_wing",
+      "intersection_volume_cm3": 0.21239337317961568,
+      "positive_overlap": true,
+      "intersection_bounds_mm": {
+        "x": [
+          714.2394006133212,
+          740.2436161721942
+        ],
+        "y": [
+          -113.66365182300663,
+          -105.31008949021312
+        ],
+        "z": [
+          184.5725398111105,
+          189.6319192860425
+        ]
+      }
+    },
+    {
+      "sweep_deg": 40,
+      "side": "L",
+      "kind": "root_lug",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 50,
+      "side": "R",
+      "kind": "outer_wing",
+      "intersection_volume_cm3": 4.035861782012818,
+      "positive_overlap": true,
+      "intersection_bounds_mm": {
+        "x": [
+          682.7837546927016,
+          749.9770081779265
+        ],
+        "y": [
+          84.12789449565437,
+          113.66365182300663
+        ],
+        "z": [
+          183.17837363795542,
+          193.74550598324515
+        ]
+      }
+    },
+    {
+      "sweep_deg": 50,
+      "side": "R",
+      "kind": "root_lug",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 50,
+      "side": "L",
+      "kind": "outer_wing",
+      "intersection_volume_cm3": 4.035914861590788,
+      "positive_overlap": true,
+      "intersection_bounds_mm": {
+        "x": [
+          682.7837546927015,
+          749.9770081779266
+        ],
+        "y": [
+          -113.66365182300663,
+          -84.12789449565437
+        ],
+        "z": [
+          183.17837363795542,
+          193.74550598324515
+        ]
+      }
+    },
+    {
+      "sweep_deg": 50,
+      "side": "L",
+      "kind": "root_lug",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 60,
+      "side": "R",
+      "kind": "outer_wing",
+      "intersection_volume_cm3": 12.332829874802774,
+      "positive_overlap": true,
+      "intersection_bounds_mm": {
+        "x": [
+          667.6634565850776,
+          762.6329683036374
+        ],
+        "y": [
+          64.19393631484006,
+          113.66365182300663
+        ],
+        "z": [
+          182.7039567325233,
+          195.2477371516921
+        ]
+      }
+    },
+    {
+      "sweep_deg": 60,
+      "side": "R",
+      "kind": "root_lug",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 60,
+      "side": "L",
+      "kind": "outer_wing",
+      "intersection_volume_cm3": 12.33282989021463,
+      "positive_overlap": true,
+      "intersection_bounds_mm": {
+        "x": [
+          667.6634565850776,
+          762.6329683036374
+        ],
+        "y": [
+          -113.66365182300663,
+          -64.19393631484006
+        ],
+        "z": [
+          182.7039567325233,
+          195.2477371516921
+        ]
+      }
+    },
+    {
+      "sweep_deg": 60,
+      "side": "L",
+      "kind": "root_lug",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 68,
+      "side": "R",
+      "kind": "outer_wing",
+      "intersection_volume_cm3": 22.430696170015757,
+      "positive_overlap": true,
+      "intersection_bounds_mm": {
+        "x": [
+          659.3357483114858,
+          778.2964050888808
+        ],
+        "y": [
+          49.55427159384435,
+          113.66365182300663
+        ],
+        "z": [
+          182.52540389622953,
+          195.88436179546602
+        ]
+      }
+    },
+    {
+      "sweep_deg": 68,
+      "side": "R",
+      "kind": "root_lug",
+      "intersection_volume_cm3": 0.001442647430381234,
+      "positive_overlap": true,
+      "intersection_bounds_mm": {
+        "x": [
+          626.1578357167575,
+          626.7668523281288
+        ],
+        "y": [
+          110.34637372820498,
+          110.74304785907364
+        ],
+        "z": [
+          179.59240693460868,
+          195.59240693460868
+        ]
+      }
+    },
+    {
+      "sweep_deg": 68,
+      "side": "L",
+      "kind": "outer_wing",
+      "intersection_volume_cm3": 22.431034225457477,
+      "positive_overlap": true,
+      "intersection_bounds_mm": {
+        "x": [
+          659.3357483114856,
+          778.2964050888808
+        ],
+        "y": [
+          -113.66365182300666,
+          -49.55427159384435
+        ],
+        "z": [
+          182.52540389622953,
+          195.88436179546602
+        ]
+      }
+    },
+    {
+      "sweep_deg": 68,
+      "side": "L",
+      "kind": "root_lug",
+      "intersection_volume_cm3": 0.001442647671115867,
+      "positive_overlap": true,
+      "intersection_bounds_mm": {
+        "x": [
+          626.1578357167575,
+          626.7668523281288
+        ],
+        "y": [
+          -110.74304785907356,
+          -110.34637372820498
+        ],
+        "z": [
+          179.59240693460868,
+          195.59240693460868
+        ]
+      }
+    }
+  ],
+  "conservative_keepout_bounds_mm": {
+    "R": {
+      "x": [
+        591.1323905812828,
+        780.2964050888808
+      ],
+      "y": [
+        47.55427159384435,
+        127.59797263183876
+      ],
+      "z": [
+        177.59240693460868,
+        197.88436179546602
+      ]
+    },
+    "L": {
+      "x": [
+        591.1323905812828,
+        780.2964050888808
+      ],
+      "y": [
+        -127.59797263183873,
+        -47.55427159384435
+      ],
+      "z": [
+        177.59240693460868,
+        197.88436179546602
+      ]
+    }
+  },
+  "exact_cut_geometry_created": false,
+  "note": "Keepout boxes bound exact sampled BRep intersections plus 2 mm margin; they are packaging envelopes, not final glove cut geometry.",
+  "clearance_release": false,
+  "mechanical_detail_release": false,
+  "print_release": false,
+  "flight_release": false
+}

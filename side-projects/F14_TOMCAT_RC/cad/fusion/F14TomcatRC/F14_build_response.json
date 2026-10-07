@@ -1,0 +1,7 @@
+{
+  "request_id": "pivot-v16-20261006-172310",
+  "status": "completed",
+  "bridge_revision": "v24_restartable_event_bridge",
+  "loaded_source_sha256": "e6adfc56426e3f30c53cc3bc540871156386cdb5a1011c2bef398976cc43ae56",
+  "executed_revision_source_sha256": "d0646ae8fcfe079247d4f498b89d32601c3362efacbf2795beb556b7a465fdde"
+}

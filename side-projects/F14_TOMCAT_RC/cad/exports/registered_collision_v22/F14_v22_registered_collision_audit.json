@@ -1,0 +1,269 @@
+{
+  "status": "ENGINEERING_WATERLINE_REGISTERED_FUSELAGE_COLLISION_REVIEW",
+  "fuselage_source": "UPC Figure 5.3 extracted guide stations",
+  "wing_source": "NASA/Grumman basic outer-wing dataset",
+  "registration_method": "UPC local drawing waterline z=0 translated to extrapolated source-wing pivot waterline",
+  "registration_z_shift_mm": 187.59240693460868,
+  "pivot_waterline_original_aircraft_verified": false,
+  "source_registration_frozen": false,
+  "fuselage_bounds_mm": {
+    "x": [
+      0.5,
+      879.0000000000002
+    ],
+    "y": [
+      -159.74617977313787,
+      159.74617977313778
+    ],
+    "z": [
+      147.9100551728246,
+      277.95781522839957
+    ]
+  },
+  "pivot_model_mm": {
+    "x": 613.1323905812828,
+    "y": 125.20927023775282,
+    "z": 187.59240693460868
+  },
+  "sweep_collision_results": [
+    {
+      "sweep_deg": 20,
+      "sides": [
+        {
+          "side": "R",
+          "checks": [
+            {
+              "kind": "outer_wing_to_registered_fuselage",
+              "intersection_succeeded": true,
+              "intersection_volume_cm3": 0.0,
+              "positive_overlap": false
+            },
+            {
+              "kind": "root_lug_to_registered_fuselage",
+              "intersection_succeeded": true,
+              "intersection_volume_cm3": 0.0022047261302368957,
+              "positive_overlap": true
+            }
+          ]
+        },
+        {
+          "side": "L",
+          "checks": [
+            {
+              "kind": "outer_wing_to_registered_fuselage",
+              "intersection_succeeded": true,
+              "intersection_volume_cm3": 0.0,
+              "positive_overlap": false
+            },
+            {
+              "kind": "root_lug_to_registered_fuselage",
+              "intersection_succeeded": true,
+              "intersection_volume_cm3": 0.002204726127631121,
+              "positive_overlap": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sweep_deg": 30,
+      "sides": [
+        {
+          "side": "R",
+          "checks": [
+            {
+              "kind": "outer_wing_to_registered_fuselage",
+              "intersection_succeeded": true,
+              "intersection_volume_cm3": 0.0,
+              "positive_overlap": false
+            },
+            {
+              "kind": "root_lug_to_registered_fuselage",
+              "intersection_succeeded": true,
+              "intersection_volume_cm3": 0.0,
+              "positive_overlap": false
+            }
+          ]
+        },
+        {
+          "side": "L",
+          "checks": [
+            {
+              "kind": "outer_wing_to_registered_fuselage",
+              "intersection_succeeded": true,
+              "intersection_volume_cm3": 0.0,
+              "positive_overlap": false
+            },
+            {
+              "kind": "root_lug_to_registered_fuselage",
+              "intersection_succeeded": true,
+              "intersection_volume_cm3": 0.0,
+              "positive_overlap": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sweep_deg": 40,
+      "sides": [
+        {
+          "side": "R",
+          "checks": [
+            {
+              "kind": "outer_wing_to_registered_fuselage",
+              "intersection_succeeded": true,
+              "intersection_volume_cm3": 0.21239337302383918,
+              "positive_overlap": true
+            },
+            {
+              "kind": "root_lug_to_registered_fuselage",
+              "intersection_succeeded": true,
+              "intersection_volume_cm3": 0.0,
+              "positive_overlap": false
+            }
+          ]
+        },
+        {
+          "side": "L",
+          "checks": [
+            {
+              "kind": "outer_wing_to_registered_fuselage",
+              "intersection_succeeded": true,
+              "intersection_volume_cm3": 0.21239337317961568,
+              "positive_overlap": true
+            },
+            {
+              "kind": "root_lug_to_registered_fuselage",
+              "intersection_succeeded": true,
+              "intersection_volume_cm3": 0.0,
+              "positive_overlap": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sweep_deg": 50,
+      "sides": [
+        {
+          "side": "R",
+          "checks": [
+            {
+              "kind": "outer_wing_to_registered_fuselage",
+              "intersection_succeeded": true,
+              "intersection_volume_cm3": 4.035861782012818,
+              "positive_overlap": true
+            },
+            {
+              "kind": "root_lug_to_registered_fuselage",
+              "intersection_succeeded": true,
+              "intersection_volume_cm3": 0.0,
+              "positive_overlap": false
+            }
+          ]
+        },
+        {
+          "side": "L",
+          "checks": [
+            {
+              "kind": "outer_wing_to_registered_fuselage",
+              "intersection_succeeded": true,
+              "intersection_volume_cm3": 4.035914861590788,
+              "positive_overlap": true
+            },
+            {
+              "kind": "root_lug_to_registered_fuselage",
+              "intersection_succeeded": true,
+              "intersection_volume_cm3": 0.0,
+              "positive_overlap": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sweep_deg": 60,
+      "sides": [
+        {
+          "side": "R",
+          "checks": [
+            {
+              "kind": "outer_wing_to_registered_fuselage",
+              "intersection_succeeded": true,
+              "intersection_volume_cm3": 12.332829874802774,
+              "positive_overlap": true
+            },
+            {
+              "kind": "root_lug_to_registered_fuselage",
+              "intersection_succeeded": true,
+              "intersection_volume_cm3": 0.0,
+              "positive_overlap": false
+            }
+          ]
+        },
+        {
+          "side": "L",
+          "checks": [
+            {
+              "kind": "outer_wing_to_registered_fuselage",
+              "intersection_succeeded": true,
+              "intersection_volume_cm3": 12.33282989021463,
+              "positive_overlap": true
+            },
+            {
+              "kind": "root_lug_to_registered_fuselage",
+              "intersection_succeeded": true,
+              "intersection_volume_cm3": 0.0,
+              "positive_overlap": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sweep_deg": 68,
+      "sides": [
+        {
+          "side": "R",
+          "checks": [
+            {
+              "kind": "outer_wing_to_registered_fuselage",
+              "intersection_succeeded": true,
+              "intersection_volume_cm3": 22.430696170015757,
+              "positive_overlap": true
+            },
+            {
+              "kind": "root_lug_to_registered_fuselage",
+              "intersection_succeeded": true,
+              "intersection_volume_cm3": 0.001442647430381234,
+              "positive_overlap": true
+            }
+          ]
+        },
+        {
+          "side": "L",
+          "checks": [
+            {
+              "kind": "outer_wing_to_registered_fuselage",
+              "intersection_succeeded": true,
+              "intersection_volume_cm3": 22.431034225457477,
+              "positive_overlap": true
+            },
+            {
+              "kind": "root_lug_to_registered_fuselage",
+              "intersection_succeeded": true,
+              "intersection_volume_cm3": 0.001442647671115867,
+              "positive_overlap": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "all_sweeps_collision_free": false,
+  "clearance_release": false,
+  "mechanical_detail_release": false,
+  "print_release": false,
+  "flight_release": false
+}

@@ -553,8 +553,10 @@ def build_basic_wing_document_v08():
     span=900.0
     source_span_in=2*data['sections'][-1]['wbl_in']
     factor=span/source_span_in
-    design.userParameters.add('ReviewSpan20',adsk.core.ValueInput.createByReal(mm(span)),'mm','Source wing reference scale; body datum registration pending')
-    design.userParameters.add('SourceSpanFull',adsk.core.ValueInput.createByReal(mm(source_span_in*25.4)),'mm','Grumman basic-wing defining-table tip WBL times two')
+    if not design.userParameters.itemByName('ReviewSpan20'):
+        design.userParameters.add('ReviewSpan20',adsk.core.ValueInput.createByReal(mm(span)),'mm','Source wing reference scale; body datum registration pending')
+    if not design.userParameters.itemByName('SourceSpanFull'):
+        design.userParameters.add('SourceSpanFull',adsk.core.ValueInput.createByReal(mm(source_span_in*25.4)),'mm','Grumman basic-wing defining-table tip WBL times two')
     audit=[]
     for label,sign in [('R',1),('L',-1)]:
         sections=[]
@@ -1166,10 +1168,187 @@ def build_sweep_envelope_review_v20():
     _app.activeViewport.fit(); _app.activeViewport.saveAsImageFile(os.path.join(outdir,'F14_v20_sweep_envelope_review.png'),1600,1000)
     return audit
 
+
+def build_fuselage_sweep_collision_review_v21():
+    """Cross-source UPC fuselage vs NASA/Grumman moving wing BRep intersection review."""
+    build_root_lug_review_v19()
+    design=adsk.fusion.Design.cast(_app.activeProduct)
+    root=design.rootComponent
+    _app.activeDocument.name='F14_v21_UPC_FUSELAGE_SWEEP_COLLISION_REVIEW'
+    base=os.path.dirname(__file__)
+    with open(os.path.join(base,'NASA_F14_basic_wing_v08.json'),encoding='utf-8') as stream: data=json.load(stream)
+    with open(os.path.join(base,'F14_pivot_datum_v16.json'),encoding='utf-8') as stream: pivot=json.load(stream)
+    factor=900.0/(2.0*data['sections'][-1]['wbl_in'])
+    full_length_from_scale_mm=748.5*factor
+    px=pivot['derived_full_scale_pivot_fs_in']*factor
+    py=pivot['derived_full_scale_pivot_bl_in']*factor
+    s0,s1=data['sections'][0],data['sections'][1]
+    dz=(s1['reference_vertical_wl_in']-s0['reference_vertical_wl_in'])/(s1['wbl_in']-s0['wbl_in'])
+    pz=(s0['reference_vertical_wl_in']+(pivot['derived_full_scale_pivot_bl_in']-s0['wbl_in'])*dz)*factor
+    fus=build_upc_fuselage_oml(root)
+    fus.name='UPC_FUSELAGE_OML_CROSS_SOURCE_v21'
+    temporary=adsk.fusion.TemporaryBRepManager.get()
+    results=[]
+    for sweep in [20,30,40,50,60,68]:
+        sides=[]
+        for sign,label in [(1,'R'),(-1,'L')]:
+            wing=next(b for b in root.bRepBodies if b.name.startswith('SOURCE_GRUMMAN_BASIC_WING_'+label+'_'))
+            lug=next(b for b in root.bRepBodies if b.name=='ENG_ROOT_LUG_'+label+'_v19')
+            angle=-sign*math.radians(sweep-20.0)
+            tr=adsk.core.Matrix3D.create(); tr.setToRotation(angle,adsk.core.Vector3D.create(0,0,1),adsk.core.Point3D.create(mm(px),mm(sign*py),mm(pz)))
+            checks=[]
+            for body,kind in [(wing,'outer_wing_to_fuselage'),(lug,'root_lug_to_fuselage')]:
+                moving=temporary.copy(body)
+                if not temporary.transform(moving,tr): raise RuntimeError('v21 transform failed')
+                fixed=temporary.copy(fus)
+                ok=temporary.booleanOperation(moving,fixed,adsk.fusion.BooleanTypes.IntersectionBooleanType)
+                iv=moving.volume if ok and moving.isValid else 0.0
+                checks.append(dict(kind=kind,intersection_succeeded=bool(ok),intersection_volume_cm3=iv,positive_overlap=iv>1e-4))
+            sides.append(dict(side=label,checks=checks))
+        results.append(dict(sweep_deg=sweep,sides=sides))
+    bb=fus.boundingBox
+    audit=dict(status='CROSS_SOURCE_FUSELAGE_SWEEP_COLLISION_REVIEW',
+      fuselage_source='UPC Figure 5.3 extracted fuselage guide stations; section shaping uses documented UPC examples',
+      wing_source='NASA/Grumman basic outer-wing source dataset',
+      source_registration_frozen=False,
+      registration_note='Longitudinal/scale consistency is close, but final common aircraft datum registration remains required before clearance release.',
+      wing_scale_implied_full_length_mm=full_length_from_scale_mm,upc_fuselage_length_mm=879.0,
+      length_scale_difference_mm=879.0-full_length_from_scale_mm,
+      fuselage_bounds_mm={a:[getattr(bb.minPoint,a)*10,getattr(bb.maxPoint,a)*10] for a in ['x','y','z']},
+      pivot_model_mm=dict(x=px,y=py,z=pz),sweep_collision_results=results,
+      body_glove_collision_checked=True,clearance_release=False,mechanical_detail_release=False,print_release=False,flight_release=False)
+    with open(os.path.join(base,'F14TomcatRC_config.json'),encoding='utf-8') as stream: config=json.load(stream)
+    outdir=os.path.join(config['export_dir'],'fuselage_collision_v21'); os.makedirs(outdir,exist_ok=True)
+    target=os.path.join(outdir,'F14_v21_UPC_FUSELAGE_SWEEP_COLLISION_REVIEW.f3d')
+    if not design.exportManager.execute(design.exportManager.createFusionArchiveExportOptions(target)): raise RuntimeError('v21 export failed')
+    with open(os.path.join(outdir,'F14_v21_fuselage_sweep_collision_audit.json'),'w',encoding='utf-8') as stream: json.dump(audit,stream,indent=2)
+    _app.activeViewport.fit(); _app.activeViewport.saveAsImageFile(os.path.join(outdir,'F14_v21_fuselage_sweep_collision_review.png'),1600,1000)
+    return audit
+
+
+def build_registered_fuselage_collision_review_v22():
+    """Register UPC fuselage waterline to engineering pivot WL, then re-run moving-wing collisions."""
+    build_root_lug_review_v19()
+    design=adsk.fusion.Design.cast(_app.activeProduct)
+    root=design.rootComponent
+    _app.activeDocument.name='F14_v22_REGISTERED_FUSELAGE_SWEEP_COLLISION_REVIEW'
+    base=os.path.dirname(__file__)
+    with open(os.path.join(base,'NASA_F14_basic_wing_v08.json'),encoding='utf-8') as stream: data=json.load(stream)
+    with open(os.path.join(base,'F14_pivot_datum_v16.json'),encoding='utf-8') as stream: pivot=json.load(stream)
+    factor=900.0/(2.0*data['sections'][-1]['wbl_in'])
+    px=pivot['derived_full_scale_pivot_fs_in']*factor
+    py=pivot['derived_full_scale_pivot_bl_in']*factor
+    s0,s1=data['sections'][0],data['sections'][1]
+    dz=(s1['reference_vertical_wl_in']-s0['reference_vertical_wl_in'])/(s1['wbl_in']-s0['wbl_in'])
+    pivot_wl_in=s0['reference_vertical_wl_in']+(pivot['derived_full_scale_pivot_bl_in']-s0['wbl_in'])*dz
+    pz=pivot_wl_in*factor
+    fus=build_upc_fuselage_oml(root)
+    fus.name='UPC_FUSELAGE_OML_WL_REGISTERED_v22'
+    move=root.features.moveFeatures
+    coll=adsk.core.ObjectCollection.create(); coll.add(fus)
+    tr=adsk.core.Matrix3D.create(); tr.translation=adsk.core.Vector3D.create(0,0,mm(pz))
+    mi=move.createInput2(coll); mi.defineAsFreeMove(tr); move.add(mi)
+    temporary=adsk.fusion.TemporaryBRepManager.get()
+    results=[]
+    for sweep in [20,30,40,50,60,68]:
+        sides=[]
+        for sign,label in [(1,'R'),(-1,'L')]:
+            wing=next(b for b in root.bRepBodies if b.name.startswith('SOURCE_GRUMMAN_BASIC_WING_'+label+'_'))
+            lug=next(b for b in root.bRepBodies if b.name=='ENG_ROOT_LUG_'+label+'_v19')
+            angle=-sign*math.radians(sweep-20.0)
+            rot=adsk.core.Matrix3D.create(); rot.setToRotation(angle,adsk.core.Vector3D.create(0,0,1),adsk.core.Point3D.create(mm(px),mm(sign*py),mm(pz)))
+            checks=[]
+            for body,kind in [(wing,'outer_wing_to_registered_fuselage'),(lug,'root_lug_to_registered_fuselage')]:
+                moving=temporary.copy(body)
+                if not temporary.transform(moving,rot): raise RuntimeError('v22 moving body transform failed')
+                fixed=temporary.copy(fus)
+                ok=temporary.booleanOperation(moving,fixed,adsk.fusion.BooleanTypes.IntersectionBooleanType)
+                iv=moving.volume if ok and moving.isValid else 0.0
+                checks.append(dict(kind=kind,intersection_succeeded=bool(ok),intersection_volume_cm3=iv,positive_overlap=iv>1e-4))
+            sides.append(dict(side=label,checks=checks))
+        results.append(dict(sweep_deg=sweep,sides=sides))
+    bb=fus.boundingBox
+    audit=dict(status='ENGINEERING_WATERLINE_REGISTERED_FUSELAGE_COLLISION_REVIEW',
+      fuselage_source='UPC Figure 5.3 extracted guide stations',wing_source='NASA/Grumman basic outer-wing dataset',
+      registration_method='UPC local drawing waterline z=0 translated to extrapolated source-wing pivot waterline',
+      registration_z_shift_mm=pz,pivot_waterline_original_aircraft_verified=False,source_registration_frozen=False,
+      fuselage_bounds_mm={a:[getattr(bb.minPoint,a)*10,getattr(bb.maxPoint,a)*10] for a in ['x','y','z']},
+      pivot_model_mm=dict(x=px,y=py,z=pz),sweep_collision_results=results,
+      all_sweeps_collision_free=all(not c['positive_overlap'] for r in results for sd in r['sides'] for c in sd['checks']),
+      clearance_release=False,mechanical_detail_release=False,print_release=False,flight_release=False)
+    with open(os.path.join(base,'F14TomcatRC_config.json'),encoding='utf-8') as stream: config=json.load(stream)
+    outdir=os.path.join(config['export_dir'],'registered_collision_v22'); os.makedirs(outdir,exist_ok=True)
+    target=os.path.join(outdir,'F14_v22_REGISTERED_FUSELAGE_SWEEP_COLLISION_REVIEW.f3d')
+    if not design.exportManager.execute(design.exportManager.createFusionArchiveExportOptions(target)): raise RuntimeError('v22 export failed')
+    with open(os.path.join(outdir,'F14_v22_registered_collision_audit.json'),'w',encoding='utf-8') as stream: json.dump(audit,stream,indent=2)
+    _app.activeViewport.fit(); _app.activeViewport.saveAsImageFile(os.path.join(outdir,'F14_v22_registered_collision_review.png'),1600,1000)
+    return audit
+
+
+
+def build_registered_clearance_keepout_review_v23():
+    """Derive conservative fixed-body keepout envelopes from exact v22 BRep intersections."""
+    build_registered_fuselage_collision_review_v22()
+    design=adsk.fusion.Design.cast(_app.activeProduct)
+    root=design.rootComponent
+    _app.activeDocument.name='F14_v23_REGISTERED_SWEEP_KEEPOUT_REVIEW'
+    base=os.path.dirname(__file__)
+    with open(os.path.join(base,'NASA_F14_basic_wing_v08.json'),encoding='utf-8') as stream: data=json.load(stream)
+    with open(os.path.join(base,'F14_pivot_datum_v16.json'),encoding='utf-8') as stream: pivot=json.load(stream)
+    factor=900.0/(2.0*data['sections'][-1]['wbl_in'])
+    px=pivot['derived_full_scale_pivot_fs_in']*factor
+    py=pivot['derived_full_scale_pivot_bl_in']*factor
+    s0,s1=data['sections'][0],data['sections'][1]
+    dz=(s1['reference_vertical_wl_in']-s0['reference_vertical_wl_in'])/(s1['wbl_in']-s0['wbl_in'])
+    pivot_wl_in=s0['reference_vertical_wl_in']+(pivot['derived_full_scale_pivot_bl_in']-s0['wbl_in'])*dz
+    pz=pivot_wl_in*factor
+    fus=next(b for b in root.bRepBodies if b.name=='UPC_FUSELAGE_OML_WL_REGISTERED_v22')
+    temporary=adsk.fusion.TemporaryBRepManager.get()
+    records=[]; per_side={'R':[],'L':[]}
+    for sweep in [20,30,40,50,60,68]:
+        for sign,label in [(1,'R'),(-1,'L')]:
+            angle=-sign*math.radians(sweep-20.0)
+            rot=adsk.core.Matrix3D.create(); rot.setToRotation(angle,adsk.core.Vector3D.create(0,0,1),adsk.core.Point3D.create(mm(px),mm(sign*py),mm(pz)))
+            wing=next(b for b in root.bRepBodies if b.name.startswith('SOURCE_GRUMMAN_BASIC_WING_'+label+'_'))
+            lug=next(b for b in root.bRepBodies if b.name=='ENG_ROOT_LUG_'+label+'_v19')
+            for body,kind in [(wing,'outer_wing'),(lug,'root_lug')]:
+                moving=temporary.copy(body)
+                if not temporary.transform(moving,rot): raise RuntimeError('v23 moving body transform failed')
+                fixed=temporary.copy(fus)
+                ok=temporary.booleanOperation(moving,fixed,adsk.fusion.BooleanTypes.IntersectionBooleanType)
+                iv=moving.volume if ok and moving.isValid else 0.0
+                rec=dict(sweep_deg=sweep,side=label,kind=kind,intersection_volume_cm3=iv,positive_overlap=iv>1e-4)
+                if iv>1e-4:
+                    bb=moving.boundingBox
+                    bounds={a:[getattr(bb.minPoint,a)*10,getattr(bb.maxPoint,a)*10] for a in ['x','y','z']}
+                    rec['intersection_bounds_mm']=bounds
+                    per_side[label].append(bounds)
+                records.append(rec)
+    margin=2.0; keepouts={}
+    for label in ['R','L']:
+        bs=per_side[label]
+        if not bs: continue
+        agg={a:[min(v[a][0] for v in bs)-margin,max(v[a][1] for v in bs)+margin] for a in ['x','y','z']}
+        keepouts[label]=agg
+        body=extrude_poly(root,'ENG_SWEEP_KEEPOUT_'+label+'_v23_NOT_CUT_GEOMETRY',[(agg['x'][0],agg['y'][0]),(agg['x'][1],agg['y'][0]),(agg['x'][1],agg['y'][1]),(agg['x'][0],agg['y'][1])],agg['z'][0],agg['z'][1]-agg['z'][0])
+        body.opacity=0.25
+    audit=dict(status='REGISTERED_SWEEP_COLLISION_KEEPOUT_REVIEW',registration_inherited_from='v22',
+      pivot_waterline_original_aircraft_verified=False,keepout_margin_mm=margin,intersection_records=records,
+      conservative_keepout_bounds_mm=keepouts,exact_cut_geometry_created=False,
+      note='Keepout boxes bound exact sampled BRep intersections plus 2 mm margin; they are packaging envelopes, not final glove cut geometry.',
+      clearance_release=False,mechanical_detail_release=False,print_release=False,flight_release=False)
+    with open(os.path.join(base,'F14TomcatRC_config.json'),encoding='utf-8') as stream: config=json.load(stream)
+    outdir=os.path.join(config['export_dir'],'registered_keepout_v23'); os.makedirs(outdir,exist_ok=True)
+    target=os.path.join(outdir,'F14_v23_REGISTERED_SWEEP_KEEPOUT_REVIEW.f3d')
+    if not design.exportManager.execute(design.exportManager.createFusionArchiveExportOptions(target)): raise RuntimeError('v23 export failed')
+    with open(os.path.join(outdir,'F14_v23_registered_keepout_audit.json'),'w',encoding='utf-8') as stream: json.dump(audit,stream,indent=2)
+    _app.activeViewport.fit(); _app.activeViewport.saveAsImageFile(os.path.join(outdir,'F14_v23_registered_keepout_review.png'),1600,1000)
+    return audit
+
 def build_project_revision():
     # Fixed CAD entry point. Subsequent checked-in revisions can change this
     # implementation without accepting code, paths or shell commands in requests.
-    return build_sweep_envelope_review_v20()
+    return build_registered_clearance_keepout_review_v23()
 
 class BuildRequestHandler(adsk.core.CustomEventHandler):
     def notify(self,args):
