@@ -1,0 +1,70 @@
+{
+  "status": "ENGINEERING_ROOT_LUG_PIVOT_INTERFACE_REVIEW",
+  "source_pivot_fs_bl_verified": true,
+  "pivot_waterline_original_aircraft_verified": false,
+  "pivot_fullscale_wl_in": 160.37064348471915,
+  "pivot_model_mm": {
+    "x": 613.1323905812828,
+    "y": 125.20927023775282,
+    "z": 187.59240693460868
+  },
+  "first_source_section_mm": {
+    "y": 148.8263775443693,
+    "leading_edge_x": 588.2699984754352,
+    "trailing_edge_x": 736.2011718483457,
+    "reference_z": 187.07717794088612,
+    "chord": 147.9311733729105
+  },
+  "pivot_to_first_source_section_lateral_gap_mm": 23.61710730661649,
+  "root_lug_overlap_depth_mm": 8.0,
+  "checks": [
+    {
+      "side": "R",
+      "kind": "lug_to_wing",
+      "intersection_succeeded": true,
+      "intersection_volume_cm3": 3.658894651104627,
+      "positive_overlap": true
+    },
+    {
+      "side": "R",
+      "kind": "boss_to_wing",
+      "intersection_succeeded": true,
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "side": "R",
+      "kind": "lug_to_boss",
+      "intersection_succeeded": true,
+      "intersection_volume_cm3": 3.619114736935462,
+      "positive_overlap": true
+    },
+    {
+      "side": "L",
+      "kind": "lug_to_wing",
+      "intersection_succeeded": true,
+      "intersection_volume_cm3": 3.6588946511145664,
+      "positive_overlap": true
+    },
+    {
+      "side": "L",
+      "kind": "boss_to_wing",
+      "intersection_succeeded": true,
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "side": "L",
+      "kind": "lug_to_boss",
+      "intersection_succeeded": true,
+      "intersection_volume_cm3": 3.6191147369354617,
+      "positive_overlap": true
+    }
+  ],
+  "root_lug_engages_wing_both_sides": true,
+  "root_lug_engages_boss_both_sides": true,
+  "boss_directly_engages_outer_wing": false,
+  "mechanical_detail_release": false,
+  "print_release": false,
+  "flight_release": false
+}
