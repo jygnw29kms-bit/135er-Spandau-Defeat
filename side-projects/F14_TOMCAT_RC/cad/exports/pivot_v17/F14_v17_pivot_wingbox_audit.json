@@ -1,0 +1,45 @@
+{
+  "status": "ENGINEERING_PIVOT_WINGBOX_DATUM_REVIEW",
+  "source_pivot_fs_bl_verified": true,
+  "pivot_waterline_method": "linear extrapolation from two inboard Grumman source reference-WL stations",
+  "pivot_waterline_original_aircraft_verified": false,
+  "pivot_fullscale_wl_in": 160.37064348471915,
+  "pivot_model_mm": {
+    "x": 613.1323905812828,
+    "y": 125.20927023775282,
+    "z": 187.59240693460868
+  },
+  "pivot_boss_od_mm": 24.0,
+  "wingbox_bounds_mm": {
+    "x": [
+      575.1323905812828,
+      658.1323905812828
+    ],
+    "y": [
+      -153.20927023775283,
+      153.20927023775283
+    ],
+    "z": [
+      174.59240693460868,
+      200.59240693460868
+    ]
+  },
+  "pivot_wing_intersection": [
+    {
+      "side": "R",
+      "intersection_succeeded": true,
+      "intersection_volume_cm3": 0.0,
+      "pivot_engages_source_wing": false
+    },
+    {
+      "side": "L",
+      "intersection_succeeded": true,
+      "intersection_volume_cm3": 0.0,
+      "pivot_engages_source_wing": false
+    }
+  ],
+  "mechanical_detail_release": false,
+  "body_glove_collision_checked": false,
+  "print_release": false,
+  "flight_release": false
+}

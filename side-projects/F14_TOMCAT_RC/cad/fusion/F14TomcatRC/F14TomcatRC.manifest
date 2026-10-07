@@ -1,10 +1,10 @@
 {
-  "autodeskProduct": "Fusion360",
-  "type": "addin",
-  "id": "com.jl1976.f14tomcatrc",
-  "author": "JL1976",
-  "description": "Parametric 4S FDM RC F-14 Tomcat scale airframe",
-  "version": "0.1.0",
-  "runOnStartup": true,
-  "supportedOS": "windows|mac"
+    "autodeskProduct":  "Fusion360",
+    "type":  "addin",
+    "id":  "com.jl1976.f14tomcatrc",
+    "author":  "JL1976",
+    "description":  "Parametric 4S FDM RC F-14 Tomcat scale airframe",
+    "version":  "0.1.2",
+    "runOnStartup":  true,
+    "supportedOS":  "windows|mac"
 }
