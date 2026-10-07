@@ -1,0 +1,175 @@
+[
+  {
+    "page": 7,
+    "terms": [
+      "wing pivot mechanism",
+      "horizontal stabilizer design",
+      "vertical stabilizer design",
+      "wing beam design",
+      "fuselage sections"
+    ],
+    "text": "CONTENTS CONTENTS 5.1 Fuselage design . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 27 5.1.1 Introduction of the main views . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 27 5.1.2 Creation of the guide sketch and planes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 28 5.1.3 Design of fuselage sections . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 30 5.2 Wing design . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 33 5.2.1 Wing rib design . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 33 5.2.2 Wing beam design . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 34 5.2.3 Wing pivot mechanism . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 36 5.3 Horizontal stabilizer design . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 39 5.3.1 Horizontal stabilizer fuselage connection system . . . . . . . . . . . . . . . . . . . . . . . . 41 5.4 Vertical stabilizer design . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 42 5.4.1 Ventral fins design . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 44 5.5 Fuselage connecting elements and beams . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 45 5.6 Final design and assembly . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 48 5.7 Drawings . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 51 6 Manufacturing and assembly 52 6.1 Post laser cut processes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 52 6.2 Assembly . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 52 6.3 Final results of the model . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 60 7 Budget summary 63 8 Analysis and assessment of environmental and social impact 64 9 Lessons learned 67 10 Conclusions 69 V"
+  },
+  {
+    "page": 8,
+    "terms": [
+      "cross-section",
+      "cross section"
+    ],
+    "text": "Study of the F-14 Tomcat structure and reproduction of a 1:12 scale model List of Figures 3.1 F-14A from VF-1 in 1973 [1]. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6 3.2 F-14A from VF-154 over Connie [5]. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7 3.3 Davis-Monthan Air Force Base ”boneyard”, Tucson, Ariz. [11]. . . . . . . . . . . . . . . . . . . . . 9 3.4 Iranian Air Force F-14 Tomcat Air Superiority Fighter [13]. . . . . . . . . . . . . . . . . . . . . . . . 9 3.5 Schematic of the distribution of materials on the F-14 Tomcat structure [17]. . . . . . . . . . . . . . . 11 3.6 The F-14 used by NASA to explore laminar flow on variable sweep aircraft at high subsonic speeds [20]. 12 3.7 Approximate wing-planform shape of Grumman F-14A [24]. . . . . . . . . . . . . . . . . . . . . . . 13 3.8 Schematic drawing of the basic layout of the F-14’s wing sweep mechanism [27]. . . . . . . . . . . . 14 3.9 Closeup of one of the vertical stabilizers of an F-14A [30]. . . . . . . . . . . . . . . . . . . . . . . . 14 3.10 Schematic drawing of the horizontal stabilizer [31]. . . . . . . . . . . . . . . . . . . . . . . . . . . . 15 3.11 A technician services the vertical stabilizer on an F-14A Tomcat aircraft during exercise Gallant Eagle ’88 [34]. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16 3.12 Closeup of one of the ventral fins of the F-14 from VF-101 [35]. . . . . . . . . . . . . . . . . . . . . 16 3.13 Closeup of the landing gear of an F-14A [30]. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17 3.14 Main dimensions representation drawing [36]. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 18 3.15 Three main views and some cross sections of the plain [37]. . . . . . . . . . . . . . . . . . . . . . . . 19 3.16 Detaild Grumman F-14A cutaway drawings [38]. . . . . . . . . . . . . . . . . . . . . . . . . . . . . 20 3.17 Detaild Grumman F-14A cutaway drawings with the structure colored in yellow [39]. . . . . . . . . . 21 5.1 Cutouts of the main views introduced to SolidWorks. . . . . . . . . . . . . . . . . . . . . . . . . . . 27 5"
+  },
+  {
+    "page": 9,
+    "terms": [
+      "fuselage sections",
+      "cross-section",
+      "cross section"
+    ],
+    "text": "LIST OF FIGURES LIST OF FIGURES 5.12 Image of the thirty fuselage cross-sections. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 32 5.13 Iamge showing the wing solid obtained after lofted boss/base extrusion. . . . . . . . . . . . . . . . . 33 5.14 Image of the extrusion of the sixteen wing ribs. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 33 5.15 Image showing the final result of the 16 ribs. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 34 5.16 Planes where the wing beams will be placed and the slots in the ribs will be made. . . . . . . . . . . . 34 5.17 Image of one of the sketches that has been made to design the beams. . . . . . . . . . . . . . . . . . 35 5.18 Wing rear beam. Corresponds to the one generated from Plane 2 shown in Figure 5.16. . . . . . . . . 35 5.19 Wing front beam. Corresponds to the one generated from Plane 3 shown in Figure 5.16. . . . . . . . . 35 5.20 Imagen that shows the assembly between the ribs and the wing beams. . . . . . . . . . . . . . . . . . 35 5.21 Wing sweep mechanism main piece. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 36 5.22 Connection pieces between wing beams and wing sweep mechanism. . . . . . . . . . . . . . . . . . 37 5.23 Image of the wing assembly. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 37 5.24 Pivot mechanism. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 38 5.25 Three main views of the central pivot mechanism. . . . . . . . . . . . . . . . . . . . . . . . . . . . . 38 5.26 Image showing the central piece of the pivot mechanism assembled with the fuselage. . . . . . . . . . 39 5.27 Side by side of the pivoting mechanism connection systems. . . . . . . . . . . . . . . . . . . . . . . 39 5.28 Image of the sketch of the horizontal stabilizer to determine the dimensions of the outer bars. . . . . . 40 5.29 Image of the six beams that generate the outer casing of the horizontal stabilizer. . . . . . . . . . . . 40 5.30 Image . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 41 5.31 Image showing a close-up of "
+  },
+  {
+    "page": 31,
+    "terms": [
+      "cross section"
+    ],
+    "text": "3.6. DRAWINGS AND CUTAWAYS CHAPTER 3. STATE OF THE ART 3.6 Drawings and cutaways In order to make an accurate 3D model as close to reality as possible, it is necessary to obtain quality plans with the maximum detail available. For this purpose, an extensive search of portals and sources was carried out to obtain at least one plan containing the three main views (front, lateral and top vew). In addition to that, in this section we’ve searched for multiple cutaways showing the internal structure of the aircraft. These images together with the measures previously searched will be crucial to extract the dimensions that may be missing and the construction of the scale model. Below are some of the drawings and cut-outs that have been worked on. However, many more have been used to obtain the final results. Figure 3.15: Three main views and some cross sections of the plain [37]. 19"
+  },
+  {
+    "page": 41,
+    "terms": [
+      "fuselage sections",
+      "cross-section",
+      "cross section"
+    ],
+    "text": "5.1. FUSELAGE DESIGN CHAPTER 5. DESIGN PROCESS the different cuts of the structure that will give the shape to the fuselage. This will be done for the top and side views. (a) Top contour. (b) Profile contour. Figure 5.3: Contour guide sketches. To continue with the design, the different planes on which the different fuselage sections will be designed will have to be defined. But before that, we have to determine how many sections we will work with. Looking at Figures 3.16, 3.17, and other cutaways we can see that there are approximately 18 to 20 fuselage cross sections, at least that are clearly identifiable. However, as we not only want to show the aircraft from a structural point of view but also take into account the aesthetics so that the scale model is easily recognizable as a faithful representation of an F-14, it was decided to add cross sections. Thus, it was determined that 30 planes would be made. To determine the positioning of these cross-sections, multiple references have been taken. Primarily, the placement of the original cross-sections visible in the cutaways served as the main reference. Additionally, as the decision to incorporate additional elements was made, these have been placed mainly according to the cross sections found in the drawings, to take advantage of the information provided by the plans themselves. The remaining ones have been added depending on the distance between one section and another since if there is too much distance between them, information concerning the shape of the aircraft may be lost. Figure 5.4: Image of the planes created in SolidWorks. 29"
+  },
+  {
+    "page": 42,
+    "terms": [
+      "fuselage sections",
+      "cross-section",
+      "cross section"
+    ],
+    "text": "5.1. FUSELAGE DESIGN CHAPTER 5. DESIGN PROCESS 5.1.3 Design of fuselage sections Now that we have all the reference sketches and the drawings where our cross sections will be defined, we can start designing them. To do that, we will have to generate the sketch on the 30 surfaces and then make the corresponding shape extrusion. We will start with the most straightforward sections, which correspond to those cuts defined in the drawings as cross sections. To do this we will follow a process very similar to the one followed in 5.1.1. From the drawings, we will make a cutout of that section, adjust it to the edges and insert it into the drawing in the same way as before. This time we will adjust the image size to the croquis that has been made from the profile and the floor plan, to maintain the desired scale. Below you can see several examples of the comparison of various sections that have been designed from the plan cuts. (a) Example of cross section 1 [37]. (b) SolidWorks representation of cross-section 1. Figure 5.5: First fuselage cross-section example. (a) Example of cross-section 2 [37]. (b) SolidWorks representation of cross-section 2. Figure 5.6: Second fuselage cross-section example. (a) Example of cross section 3 [37]. (b) SolidWorks representation of cross-section 3. Figure 5.7: Third fuselage cross-section example. 30"
+  },
+  {
+    "page": 43,
+    "terms": [
+      "cross-section",
+      "cross section"
+    ],
+    "text": "5.1. FUSELAGE DESIGN CHAPTER 5. DESIGN PROCESS (a) Example of cross section 4 [37]. (b) SolidWorks representation of cross-section 4. Figure 5.8: Fourth fuselage cross-section example. (a) Example of cross section 5 [37]. (b) SolidWorks representation of cross-section 5. Figure 5.9: Fifth fuselage cross-section example. (a) Example of cross section 6 [37]. (b) SolidWorks representation of cross-section 6. Figure 5.10: Sixth fuselage cross-section example. (a) Example of cross section 7 [37]. (b) SolidWorks representation of cross-section 7. Figure 5.11: Seventh fuselage cross-section example. For the examples shown above and for all the cross-sections that have been generated in this way, several things should be mentioned. First of all, for some of them, we had more than one cross-section from different planes and they did not match one hundred percent. Therefore, some of the drawings do not perfectly match only one of them. It is worth mentioning that at all times we have tried to be as faithful as possible to the drawings in the face of inconsistencies between them. In addition, it must be taken into account that in some of these cuts, the image quality obtained was limited, so to some extent this may have affected the final result obtained from the sketch. Not only this but as can be appreciated when 31"
+  },
+  {
+    "page": 44,
+    "terms": [
+      "fuselage sections",
+      "cross-section",
+      "cross section"
+    ],
+    "text": "5.1. FUSELAGE DESIGN CHAPTER 5. DESIGN PROCESS observing the fuselage sections, the stabilizers, wings, and ventral fins have been omitted. This is because some of them already correspond to separate structural elements and will be designed later. Also, you can see in 5.7b that the top of the cockpit has not been drawn. This is because it is not part of the main structural elements of the fuselage as can be seen in 3.17. Finally, it should be noted that most of these elements had to be made with the sketch spline design tool since most of them do not have any exact geometry. However, all the sketches have been kept centered from the same point and are limited in size by the previously made sketches. Those sections that could not be generated by one of these drawing cuts of the plans have been made from the front and rear view of the aircraft and the cutaways. Therefore, the same process has been followed as for the other sections but we have had to proceed much more carefully so that these views really fit the model and were as close to reality as possible. The final result obtained from the 30 sections can be seen below. However, it should be mentioned that these sections will certainly undergo some modifications later on, as they will have to be joined by crossbars and attach other structural elements. Figure 5.12: Image of the thirty fuselage cross-sections. One very important thing that can be observed in the cutaways is that the great majority of fuselage cross sections are not solid, but have interior gaps. This has several reasons, the main ones are to reduce weight and to be able to put other elements inside the aircraft such as electronics or hydraulics. However, in this model, these will not be done in order to obtain a result that resembles the original model and meets the specifications of the supplier. Likewise, and not representing these cuts we will ensure that the model retains its integrity perfectly. 32"
+  },
+  {
+    "page": 46,
+    "terms": [
+      "wing beam design"
+    ],
+    "text": "5.2. WING DESIGN CHAPTER 5. DESIGN PROCESS However, these airfoils will undergo many more changes since they must be joined by beams and the fuselage attachment piece. Thus, in Figure 5.15 you can see the final pieces with their cuts and slots. The outer slots will be for the placement of the crossbars while the inner holes will be for the connecting piece. Figure 5.15: Image showing the final result of the 16 ribs. 5.2.2 Wing beam design As can be seen in 3.6, the wing of the F-14 consists of two main beams that cross all the ribs, so they will also be designed and added to the model. The design has been carried out as follows. First of all, two planes have been placed on the piece of the ribs where these two beams will be placed. Thus, it will be possible to make a section cut and make a sketch both of how these beams will be and of the cuts that will have to be made to the ribs. Figure 5.16: Planes where the wing beams will be placed and the slots in the ribs will be made. 34"
+  },
+  {
+    "page": 48,
+    "terms": [
+      "wing pivot mechanism"
+    ],
+    "text": "5.2. WING DESIGN CHAPTER 5. DESIGN PROCESS 5.2.3 Wing pivot mechanism One of the main features of the F-14 that makes this model stand out is its variable geometry wing. For this reason, and since this feature adds elements to the main structure of the aircraft, it has been decided to reproduce it in the model. The intended design will strive to closely replicate reality, while considering the limitations found when working with laser cutting technology. Thus, to obtain this hinge-like mechanism we will have to design two main parts. The central piece, which will be attached to the fuselage and on which the wing will pivot, this can be seen in Figure 3.16 and Figure 3.17. And the wing sweep mechanism, which is clearly represented in Figure 3.8. We will start with the second one, the wing sweep mechanism in order to complete the wing assembly. The only part of this joint for which we have a minimum of structural and construction information is the hinge. We have not been able to find data on exactly how it is attached to the wing structure. So, all the part of this mechanism that is inside the ribs is not true to reality, but it has been decided to design this way to make sure of its resistance. Actually, if we look at the information obtained in 3.6, it becomes apparent that the majority of the ribs are intersected with hydraulic components rather than structural elements of the hinging mechanism. Thus, the design of this piece has been made only taking into account that the hinge part has to be at the correct distance and angle from the structural part of the wing. Initially, the wing sweep mechanism was designed in SolidWorks as a three-dimensional part to facilitate its creation. However, it will be created in the same way as the others, by laser cutting. Therefore, the design of the same piece has been made as a set of surfaces with the thickness of the material to be used. The result of this final piece can be seen in 5.21. (a) Image of the 3D model wing sweep mechanism piece. (b) Image of the wing sweep mechanism set of parts. Figure 5.21: Wing sweep mechanism main piece. To finish this wing sweep mechanism two extra pieces have been added. These have the "
+  },
+  {
+    "page": 50,
+    "terms": [
+      "cross section"
+    ],
+    "text": "5.2. WING DESIGN CHAPTER 5. DESIGN PROCESS (a) Image showing the 3D model central piece of the pivot mechanism. (b) Image showing the central set of pieces of the pivot mechanism. Figure 5.24: Pivot mechanism. Figure 5.25 shows the three main views of the obtained part. As we can see, especially from the later and top view, two projections have been added to allow the union of the piece to the fuselage cross sections. (a) Top view of the central pivot mechanism. (b) Front view of the central pivot mechanism. (c) Top view of the central pivot mechanism. Figure 5.25: Three main views of the central pivot mechanism. The pertinent cuts have been added to these fuselage cross sections pieces to assure the fit between them. This can be seen in Figure 5.26. 38"
+  },
+  {
+    "page": 51,
+    "terms": [
+      "horizontal stabilizer design"
+    ],
+    "text": "5.3. HORIZONTAL STABILIZER DESIGN CHAPTER 5. DESIGN PROCESS Figure 5.26: Image showing the central piece of the pivot mechanism assembled with the fuselage. Finally, each and every part needed for the wing and the mechanism has been designed. Below, a comparison between the original and the modeled mechanism is depicted. (a) Close-up of the pivoting mechanism connection systems from Figure 3.16. (b) Close-up of the SolidWorks assembly for the pivoting mechanism connection systems. Figure 5.27: Side by side of the pivoting mechanism connection systems. 5.3 Horizontal stabilizer design Just by looking at Figure 3.16 and 3.17 we realize how many structural elements the horizontal stabilizer contains. For this reason, it has been decided to design separately the system of attachment of the stabilizer to the fuselage in order to divide the process into several steps. If we only look at the structure of the stabilizer we can distinguish eight bars that go from the beginning of the stabilizer to the tip and the other five transversal bars that hold the stabilizer in place. To follow an order in the process of creating the stabilizer it has been decided to start making the design of the outer elements creating a carcass and then add the inner elements. 39"
+  },
+  {
+    "page": 52,
+    "terms": [
+      "horizontal stabilizer design"
+    ],
+    "text": "5.3. HORIZONTAL STABILIZER DESIGN CHAPTER 5. DESIGN PROCESS To define the dimensions of this outer casing we have followed a process very similar to that of 5.1.1, introducing an image of the stabilizer and adjusting it to the dimensions that it should have. Finally, we make a sketch of it to obtain the information we need. Thus, we will know the size that these outer bars will have as well as the angles between them. Figure 5.28: Image of the sketch of the horizontal stabilizer to determine the dimensions of the outer bars. As we are working in 2D, the stabilizer tip curve will be lost and will be represented as if it was a corner. In addition, the curved bar that is closer to the fuselage has been divided in two to fit more closely to the reality of the model. Thus, the design of the six bars and their respective attachments can be made. The result of the obtained outer casing can be seen in 5.29. Figure 5.29: Image of the six beams that generate the outer casing of the horizontal stabilizer. Finally, the design, sizing, and placement of the eight inner bars can proceed. In this way, we will obtain the whole main structure of the horizontal stabilizer and we will only need to design the attachment system. This final structure can be seen in 5.30. 40"
+  },
+  {
+    "page": 53,
+    "terms": [
+      "horizontal stabilizer design",
+      "cross section"
+    ],
+    "text": "5.3. HORIZONTAL STABILIZER DESIGN CHAPTER 5. DESIGN PROCESS Figure 5.30: Image . 5.3.1 Horizontal stabilizer fuselage connection system When making the connection system between the horizontal stabilizer and the fuselage, we have tried to be as accurate as possible with the information available. Between Figure 3.10, Figure 3.16, and Figure 3.17 it will be possible to obtain something quite close to the actual structure. A total of eight pieces have been designed to make this connection. Six of them will be connected to the interior of the horizontal stabilizer while the remaining two will be used to join this system to the fuselage. To get everything in place and as expected, slots will have to be made in both the stabilizer rods and the fuselage cross sections. Figure 5.31: Image showing a close-up of the horizontal stabilizer fuselage connection system. 41"
+  },
+  {
+    "page": 54,
+    "terms": [
+      "vertical stabilizer design"
+    ],
+    "text": "5.4. VERTICAL STABILIZER DESIGN CHAPTER 5. DESIGN PROCESS Figure 5.32: Image showing the additional pieces and modifications done in the fuselage. The similarity between the designed system and the real one can be seen in Figure 5.33. (a) Close-up of the horizontal stabilizer fuselage connection system from Figure 3.16. (b) Close-up of the SolidWorks assembly for the horizontal stabilizer fuselage connection system. Figure 5.33: Side by side of the horizontal stabilizer fuselage connection systems. It should be noted that, as mentioned in 3.4.4, the F-14 has a fully movable horizontal stabilizer. However, to simplify the design and since it is not a feature for which the model is recognized as the variable wing, this has been designed static. 5.4 Vertical stabilizer design To start with the design of this part we take as reference Figure 3.16 and Figure 3.17. What we can observe in both images is that it is formed by what looks like four bars that go from the bottom to the top progressively getting thinner and then has a base that looks more sturdy formed by a horizontal bar. These initial observations together with the measurements extracted from 3.6 allow us to start with the design. As this structure contains fewer parts and is less complex than the horizontal stabilizer it will not be necessary to introduce a guide image for the sketch. To simplify the stabilizer and accommodate the constraints of laser cutting, which involves working in two dimensions, the design that has been carried out is the following. It has been decided to make an extruded profile that includes the front and rear bar and the part corresponding to the robust base. And then to this profile, we have added three vertical 42"
+  },
+  {
+    "page": 55,
+    "terms": [
+      "vertical stabilizer design",
+      "fuselage sections",
+      "cross section"
+    ],
+    "text": "5.4. VERTICAL STABILIZER DESIGN CHAPTER 5. DESIGN PROCESS pieces that represent the two central bars and that give the volume to the stabilizer. In this way, both the side view and the front view will show great similarity with the real model and the final assembly of the part can be adapted to the cross sections without any problem. As expected, in the piece corresponding to the profile, the necessary slots have been made to insert the three vertical bars. And in the same way, the necessary holes have also been made so that it can fit with the fuselage cross sections. Figure 5.34: Image of the final assembly of the vertical stabilizer. Likewise, indentations have been made in the main piece of the vertical stabilizer to fit the fuselage. Sections will also be made in the fuselage to secure the attachment of these parts. Not only that, but these slots will have to be made at a certain angle as these stabilizers are not completely straight as shown in Figure 18. Figure 5.35: Image of the slots made in the fuselage sections. Finally, in Figure 5.36 we can see how the union between the vertical stabilizer and the different cross sections will be. 43"
+  },
+  {
+    "page": 56,
+    "terms": [
+      "vertical stabilizer design",
+      "fuselage sections",
+      "cross section"
+    ],
+    "text": "5.4. VERTICAL STABILIZER DESIGN CHAPTER 5. DESIGN PROCESS Figure 5.36: Image of the vertical stabilizer assembly and fuselage sections. 5.4.1 Ventral fins design As mentioned in 3.4.5 the vertical stabilizer is not the only system that the F-14 has to maintain the longitudinal stability. This aircraft also includes the ventral fins, a very characteristic feature of the aircraft. For this reason, and although they do not belong to the main structural elements, they have been added for aesthetic reasons and to facilitate the recognition of the aircraft in the model. They have probably been the easiest part of the whole model to design. This is because they have been generated as a single piece that is attached to the fuselage. This has been done because we had no information about its internal structure. Therefore, we just took the measurements and shapes from the plans and created the part. Slots have also been added to this part at the required distances so that it can be incorporated into the model. It has also been hollowed out to reduce weight although it does not make a significant difference. Figure 5.37: Image of the final extrusion of the ventral fin. To ensure that this part is well integrated into the fuselage, small slots have also been added to three of the fuselage cross sections, which can be seen below. 44"
+  },
+  {
+    "page": 57,
+    "terms": [
+      "cross section"
+    ],
+    "text": "5.5. FUSELAGE CONNECTING ELEMENTS AND BEAMS CHAPTER 5. DESIGN PROCESS Figure 5.38: Image of the slots made in the fuselage to incorporate the ventral fins. We see how it all comes together in Figure 5.39. Figure 5.39: Image of the cross sections attached to the ventral fins. 5.5 Fuselage connecting elements and beams Throughout the design process, we have tried to remain as faithful as possible to the model of the original structure with the information available. So for this section, it has not been any different. Therefore, we have tried to position all the beams where they are observed in the cutaways. The design process has been very similar to the one carried out in 5.2.2. Planes have been generated on the piece that contains all the cross sections. In these planes, sketches have been made of both the beams to be designed and the slots that will have to be made in each section. 45"
+  },
+  {
+    "page": 58,
+    "terms": [
+      "cross section"
+    ],
+    "text": "5.5. FUSELAGE CONNECTING ELEMENTS AND BEAMS CHAPTER 5. DESIGN PROCESS Figure 5.40: General view showing all the beams attached to the fuselage. . In figure 5.43 we can see a general view of all the beams that join the different parts of the fuselage. We note that the first eighteen sections are joined together by three beams. And then, the last seven of this group have two more that join the widest part of the profiles. This can be seen in 5.41 Figure 5.41: Image showing the connection of the cross sections from twelve to eighteen by means of the beams. Then, to ensure the correct separation between the front part of the aircraft (the part in front of the pivot mechanism) and the rear part (all the sections behind the pivot mechanism), two beams have been added at the bottom, connecting the eighteenth and nineteenth sections. The fuselage connections in this part of the aircraft are not very clear in the cutaways so it has been decided to make this solution. 46"
+  },
+  {
+    "page": 59,
+    "terms": [
+      "cross-section"
+    ],
+    "text": "5.5. FUSELAGE CONNECTING ELEMENTS AND BEAMS CHAPTER 5. DESIGN PROCESS Figure 5.42: Image showing the two joining beams between sections eighteen and nineteen. At the rear, there are ten beams. Four of these beams go from the nineteenth to the twenty-ninth cross-section, these are the ones that are more in the center. Then we find two at the top a little farther away that only join from cross-section twenty-two to cross-section twenty-nine. And finally, the four at the end that simply join the twenty-ninth section with the thirtieth, otherwise the last section would not be joined to the model. These last beams do not really exist, nor are shown in the blueprints, but they are necessary to maintain this last section joined. Figure 5.43: Image of the beams joining the last two pieces of the fuselage. 47"
+  },
+  {
+    "page": 67,
+    "terms": [
+      "fuselage sections"
+    ],
+    "text": "6.2. ASSEMBLY CHAPTER 6. MANUFACTURING AND ASSEMBLY Finally, to finish the assembly of the wing components, the ribs were glued to the wing sweep mechanism. Once this was glued, the last two pieces of the wing were added. These are the ones that join the two cross beams. The final result of the wing can be seen in Figure 6.4. Figure 6.4: Assembly of the wing. In parallel to the assembly of the wing, the assembly of the fuselage was carried out. As expected and because of the way the design was made, the assembly of the front and rear fuselage was started separately. The mounting of these parts was very similar to the assembly of the wing ribs and cross beams. That is to say, the glue had to be added to each slot, both in the fuselage sections and in the fuselage beams, for their subsequent joining. Admittedly, the rear part of the fuselage was much easier to join due to the position of the beams. These were at ninety degrees to the sections and were positioned perpendicularly. However, the front part was more complex as only the lower beam was perpendicularly positioned. In addition, the two upper beams of the front part were narrower which made the whole process a bit more complicated and slow. However, during the design phase, the decision was made to keep the position of these beams as close to reality as possible. Although this complicated the assembly part, it is reflected in a positive way in the aesthetics of the model. The partial results of the fuselage assembly can be seen in Figure 6.5 and Figure 6.6. 55"
+  },
+  {
+    "page": 79,
+    "terms": [
+      "cross-section"
+    ],
+    "text": "Study of the F-14 Tomcat structure and reproduction of a 1:12 scale model Chapter 9 Lessons learned Throughout the journey of carrying out this thesis, as with any complex project, several challenges, setbacks, and unexpected obstacles inevitably arose. These unforeseen obstacles played an important role in the development of the project and required a careful, persevering, and adaptive approach to overcome them. The first obstacle was found in the initial phase of the project. We encountered the difficulty to find such detailed information about the main structural elements of the aircraft and its detailed dimensions. However, in the scope of the project we had already taken into account the possible difficulty that this would entail and had defined as part of the thesis the estimation of some parts or values of the fighter. As expected, this first obstacle was dragged into the design process. Detailed information and measurements were a crucial part of this phase. However, between the estimations made, the cutaways, and the drawings with several cross-sections, it was possible to obtain a result that was close to reality. As a possible improvement for this part of the project, it would be to find much better blueprints since all the ones that were used were found on a platform that distributes them for free. However, the phase in which most setbacks were encountered was the fabrication and construction of the scale model. As we had never worked with these cutting techniques before, we started from a lack of knowledge and encountered several problems. One of these was that both the grain of the wood and the gluing between the different boards affected the pieces that we wanted to obtain. This point was a little out of our control as this was done by the supplier. However, the laser-cutting provider made sure that all these factors were taken into account to get the best possible result. Another thing that stood out was that some of the pieces had sections that were too thin. So, since we were working with a material such as balsa wood, they broke very easily. Even though they were complying with the requirements of the minimum distance between lines for laser c"
+  }
+]

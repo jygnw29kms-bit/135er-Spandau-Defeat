@@ -1,0 +1,17 @@
+{
+  "status": "SOURCE_PIVOT_DATUM_PLANFORM_ONLY",
+  "report": "NADC-81293-60 / AD-A124468, F-14 Rotary Balance Tests for an Angle-of-Attack Range of 0 to 90 Degrees",
+  "table": "Table I - Dimensional Characteristics of the 1/12-Scale F-14 Model",
+  "source_model_scale": 12,
+  "source_model_pivot_fs_in": 43.68,
+  "source_model_pivot_bl_in": 8.92,
+  "derived_full_scale_pivot_fs_in": 524.16,
+  "derived_full_scale_pivot_bl_in": 107.04,
+  "pivot_waterline_verified": false,
+  "wing_baseline": "NASA CR-3992 / Grumman basic outer-wing 20-degree definition",
+  "notes": [
+    "FS and BL are source-backed; no pivot WL value is asserted.",
+    "Use only for planform sweep kinematics until the fixed glove/body datum and pivot WL are registered.",
+    "NADC test model lists a 22-68 degree sweep range; the NASA/Boeing source wing used by this CAD project is the 20-degree definition."
+  ]
+}

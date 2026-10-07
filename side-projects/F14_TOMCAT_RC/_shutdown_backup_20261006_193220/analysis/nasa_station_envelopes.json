@@ -1,0 +1,219 @@
+[
+  {
+    "f": 0.02,
+    "x_mm": 17.37,
+    "half_width_mm": 15.053,
+    "z_top_mm": -17.176,
+    "z_bottom_mm": -41.745
+  },
+  {
+    "f": 0.052,
+    "x_mm": 45.162,
+    "half_width_mm": 22.687,
+    "z_top_mm": -2.724,
+    "z_bottom_mm": -47.304
+  },
+  {
+    "f": 0.084,
+    "x_mm": 72.954,
+    "half_width_mm": 31.068,
+    "z_top_mm": 7.337,
+    "z_bottom_mm": -50.695
+  },
+  {
+    "f": 0.116,
+    "x_mm": 100.746,
+    "half_width_mm": 35.391,
+    "z_top_mm": 14.675,
+    "z_bottom_mm": -61.367
+  },
+  {
+    "f": 0.148,
+    "x_mm": 128.538,
+    "half_width_mm": 38.594,
+    "z_top_mm": 26.125,
+    "z_bottom_mm": -60.589
+  },
+  {
+    "f": 0.18,
+    "x_mm": 156.329,
+    "half_width_mm": 38.808,
+    "z_top_mm": 45.191,
+    "z_bottom_mm": -50.75
+  },
+  {
+    "f": 0.212,
+    "x_mm": 184.121,
+    "half_width_mm": 39.502,
+    "z_top_mm": 49.916,
+    "z_bottom_mm": -47.693
+  },
+  {
+    "f": 0.244,
+    "x_mm": 211.913,
+    "half_width_mm": 39.128,
+    "z_top_mm": 55.642,
+    "z_bottom_mm": -47.86
+  },
+  {
+    "f": 0.276,
+    "x_mm": 239.705,
+    "half_width_mm": 39.075,
+    "z_top_mm": 54.975,
+    "z_bottom_mm": -52.751
+  },
+  {
+    "f": 0.308,
+    "x_mm": 267.497,
+    "half_width_mm": 40.089,
+    "z_top_mm": 50.861,
+    "z_bottom_mm": -63.09
+  },
+  {
+    "f": 0.34,
+    "x_mm": 295.289,
+    "half_width_mm": 73.025,
+    "z_top_mm": 45.581,
+    "z_bottom_mm": -50.027
+  },
+  {
+    "f": 0.372,
+    "x_mm": 323.081,
+    "half_width_mm": 86.53,
+    "z_top_mm": 40.578,
+    "z_bottom_mm": -49.472
+  },
+  {
+    "f": 0.404,
+    "x_mm": 350.873,
+    "half_width_mm": 100.196,
+    "z_top_mm": 35.353,
+    "z_bottom_mm": -54.252
+  },
+  {
+    "f": 0.436,
+    "x_mm": 378.665,
+    "half_width_mm": 111.673,
+    "z_top_mm": 29.127,
+    "z_bottom_mm": -68.037
+  },
+  {
+    "f": 0.468,
+    "x_mm": 406.456,
+    "half_width_mm": 124.804,
+    "z_top_mm": 22.957,
+    "z_bottom_mm": -60.756
+  },
+  {
+    "f": 0.5,
+    "x_mm": 434.248,
+    "half_width_mm": 135.16,
+    "z_top_mm": 27.237,
+    "z_bottom_mm": -62.812
+  },
+  {
+    "f": 0.532,
+    "x_mm": 462.04,
+    "half_width_mm": 353.915,
+    "z_top_mm": 28.349,
+    "z_bottom_mm": -65.036
+  },
+  {
+    "f": 0.564,
+    "x_mm": 489.832,
+    "half_width_mm": 219.288,
+    "z_top_mm": 24.958,
+    "z_bottom_mm": -66.092
+  },
+  {
+    "f": 0.596,
+    "x_mm": 517.624,
+    "half_width_mm": 301.281,
+    "z_top_mm": 20.289,
+    "z_bottom_mm": -65.87
+  },
+  {
+    "f": 0.628,
+    "x_mm": 545.416,
+    "half_width_mm": 355.409,
+    "z_top_mm": 14.119,
+    "z_bottom_mm": -84.157
+  },
+  {
+    "f": 0.66,
+    "x_mm": 573.208,
+    "half_width_mm": 403.719,
+    "z_top_mm": 15.119,
+    "z_bottom_mm": -85.158
+  },
+  {
+    "f": 0.692,
+    "x_mm": 601.0,
+    "half_width_mm": 386.797,
+    "z_top_mm": 23.513,
+    "z_bottom_mm": -77.987
+  },
+  {
+    "f": 0.724,
+    "x_mm": 628.792,
+    "half_width_mm": 421.068,
+    "z_top_mm": 54.586,
+    "z_bottom_mm": -71.261
+  },
+  {
+    "f": 0.756,
+    "x_mm": 656.583,
+    "half_width_mm": 114.395,
+    "z_top_mm": 84.435,
+    "z_bottom_mm": -65.536
+  },
+  {
+    "f": 0.788,
+    "x_mm": 684.375,
+    "half_width_mm": 137.402,
+    "z_top_mm": 115.897,
+    "z_bottom_mm": -54.752
+  },
+  {
+    "f": 0.82,
+    "x_mm": 712.167,
+    "half_width_mm": 161.423,
+    "z_top_mm": 124.457,
+    "z_bottom_mm": -44.413
+  },
+  {
+    "f": 0.852,
+    "x_mm": 739.959,
+    "half_width_mm": 185.765,
+    "z_top_mm": 171.761,
+    "z_bottom_mm": -23.902
+  },
+  {
+    "f": 0.884,
+    "x_mm": 767.751,
+    "half_width_mm": 207.918,
+    "z_top_mm": 136.242,
+    "z_bottom_mm": -5.058
+  },
+  {
+    "f": 0.916,
+    "x_mm": 795.543,
+    "half_width_mm": 214.004,
+    "z_top_mm": 137.409,
+    "z_bottom_mm": -4.002
+  },
+  {
+    "f": 0.948,
+    "x_mm": 823.335,
+    "half_width_mm": 239.199,
+    "z_top_mm": 137.409,
+    "z_bottom_mm": -4.002
+  },
+  {
+    "f": 0.98,
+    "x_mm": 851.127,
+    "half_width_mm": 243.523,
+    "z_top_mm": 137.409,
+    "z_bottom_mm": -4.002
+  }
+]

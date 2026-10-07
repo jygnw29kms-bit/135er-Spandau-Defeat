@@ -1,0 +1,216 @@
+{
+  "status": "LOCAL_PACKAGING_CANDIDATE",
+  "bodies": [
+    {
+      "name": "SOURCE_GRUMMAN_BASIC_WING_R_NOT_BODY_REGISTERED",
+      "volume_cm3": 210.42537866532868,
+      "bounds_mm": {
+        "x": [
+          588.2699984754352,
+          749.6035234732939
+        ],
+        "y": [
+          148.8263775443693,
+          449.99999999999994
+        ],
+        "z": [
+          175.16714742841788,
+          196.6867869631904
+        ]
+      }
+    },
+    {
+      "name": "SOURCE_GRUMMAN_BASIC_WING_L_NOT_BODY_REGISTERED",
+      "volume_cm3": 210.42537866532868,
+      "bounds_mm": {
+        "x": [
+          588.2699984754352,
+          749.6035234732939
+        ],
+        "y": [
+          -449.99999999999994,
+          -148.8263775443693
+        ],
+        "z": [
+          175.16714742841788,
+          196.6867869631904
+        ]
+      }
+    },
+    {
+      "name": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+      "volume_cm3": 3.2454972841625853,
+      "bounds_mm": {
+        "x": [
+          624.6493504873083,
+          706.3932582841378
+        ],
+        "y": [
+          148.8263775443693,
+          406.99710774591983
+        ],
+        "z": [
+          180.14009019125044,
+          195.54376002949533
+        ]
+      }
+    },
+    {
+      "name": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+      "volume_cm3": 3.245497533591763,
+      "bounds_mm": {
+        "x": [
+          624.6493504873083,
+          706.3932582841378
+        ],
+        "y": [
+          148.8263775443693,
+          406.99710774591983
+        ],
+        "z": [
+          177.57615392052963,
+          184.65428246663694
+        ]
+      }
+    },
+    {
+      "name": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+      "volume_cm3": 1.1561752189969212,
+      "bounds_mm": {
+        "x": [
+          632.2493504873083,
+          702.2221207203171
+        ],
+        "y": [
+          148.8263775443693,
+          406.99710774591983
+        ],
+        "z": [
+          178.5761539205296,
+          194.54376002949533
+        ]
+      }
+    },
+    {
+      "name": "CANDIDATE_CARBON_L_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+      "volume_cm3": 3.2454972841625818,
+      "bounds_mm": {
+        "x": [
+          624.6493504873083,
+          706.3932582841378
+        ],
+        "y": [
+          -406.99710774591983,
+          -148.8263775443693
+        ],
+        "z": [
+          180.14009019125044,
+          195.54376002949533
+        ]
+      }
+    },
+    {
+      "name": "CANDIDATE_CARBON_L_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+      "volume_cm3": 3.2454975335917577,
+      "bounds_mm": {
+        "x": [
+          624.6493504873083,
+          706.3932582841378
+        ],
+        "y": [
+          -406.99710774591983,
+          -148.8263775443693
+        ],
+        "z": [
+          177.57615392052963,
+          184.65428246663694
+        ]
+      }
+    },
+    {
+      "name": "CANDIDATE_CARBON_L_WEB_NOT_STRENGTH_VERIFIED",
+      "volume_cm3": 1.1561752189969212,
+      "bounds_mm": {
+        "x": [
+          632.2493504873083,
+          702.2221207203171
+        ],
+        "y": [
+          -406.99710774591983,
+          -148.8263775443693
+        ],
+        "z": [
+          178.5761539205296,
+          194.54376002949533
+        ]
+      }
+    }
+  ],
+  "native_outer_solid_containment": [
+    {
+      "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+      "boolean_succeeded": true,
+      "volume_cm3": 3.2454972841625853,
+      "intersection_volume_cm3": 3.2454972841625853,
+      "outside_volume_cm3": 0.0,
+      "tolerance_cm3": 3.245497284162585e-06,
+      "intersection_volume_consistent": true,
+      "entire_native_loft_inside_outer_solid": true
+    },
+    {
+      "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+      "boolean_succeeded": true,
+      "volume_cm3": 3.245497533591763,
+      "intersection_volume_cm3": 3.245497533591763,
+      "outside_volume_cm3": 0.0,
+      "tolerance_cm3": 3.245497533591763e-06,
+      "intersection_volume_consistent": true,
+      "entire_native_loft_inside_outer_solid": true
+    },
+    {
+      "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+      "boolean_succeeded": true,
+      "volume_cm3": 1.1561752189969212,
+      "intersection_volume_cm3": 1.1561752189969212,
+      "outside_volume_cm3": 0.0,
+      "tolerance_cm3": 1.156175218996921e-06,
+      "intersection_volume_consistent": true,
+      "entire_native_loft_inside_outer_solid": true
+    },
+    {
+      "body": "CANDIDATE_CARBON_L_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+      "boolean_succeeded": true,
+      "volume_cm3": 3.2454972841625818,
+      "intersection_volume_cm3": 3.2454972841625818,
+      "outside_volume_cm3": 0.0,
+      "tolerance_cm3": 3.2454972841625816e-06,
+      "intersection_volume_consistent": true,
+      "entire_native_loft_inside_outer_solid": true
+    },
+    {
+      "body": "CANDIDATE_CARBON_L_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+      "boolean_succeeded": true,
+      "volume_cm3": 3.2454975335917577,
+      "intersection_volume_cm3": 3.2454975335917577,
+      "outside_volume_cm3": 0.0,
+      "tolerance_cm3": 3.2454975335917575e-06,
+      "intersection_volume_consistent": true,
+      "entire_native_loft_inside_outer_solid": true
+    },
+    {
+      "body": "CANDIDATE_CARBON_L_WEB_NOT_STRENGTH_VERIFIED",
+      "boolean_succeeded": true,
+      "volume_cm3": 1.1561752189969212,
+      "intersection_volume_cm3": 1.1561752189969212,
+      "outside_volume_cm3": 0.0,
+      "tolerance_cm3": 1.156175218996921e-06,
+      "intersection_volume_consistent": true,
+      "entire_native_loft_inside_outer_solid": true
+    }
+  ],
+  "entire_native_spar_inside_outer_solid": true,
+  "containment_method": "Temporary BRep intersection volumes; source document bodies preserved",
+  "continuous_skin_clearance_verified": false,
+  "structural_capacity_verified": false,
+  "print_release": false
+}

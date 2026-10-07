@@ -1,0 +1,8 @@
+case,load_factor_g,total_vertical_N,per_side_vertical_N,root_bending_moment_Nm,notes
+LC_MANEUVER_3G,3,30.891,15.445,3.861,"Symmetric positive maneuver, conservative half-aircraft load per wing side"
+LC_MANEUVER_6G,6,61.782,30.891,7.723,"Symmetric positive maneuver, conservative half-aircraft load per wing side"
+LC_MANEUVER_8G,8,82.376,41.188,10.297,"Symmetric positive maneuver, conservative half-aircraft load per wing side"
+LC_ASYMMETRIC_8G_70_30,8,82.376,57.663,14.416,70/30 asymmetric distribution; reported side is high-load wing
+LC_BATTERY_20G_FORWARD,20,43.149,0,0,Battery restraint forward inertial proof load
+LC_EDF_THRUST,0,10.0,5.0,0,Twin EDF axial mount load; vibration handled as separate bench test
+LC_SWEEP_JAM,0,0,0,2.0,Actuator stall torque into hard stop / linkage; aerodynamic load superposed in Fusion study

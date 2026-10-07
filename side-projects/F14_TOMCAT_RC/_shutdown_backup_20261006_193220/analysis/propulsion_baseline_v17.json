@@ -1,0 +1,47 @@
+{
+  "status": "PROVISIONAL_BENCHMARK_NOT_HARDWARE_FROZEN",
+  "date": "2026-10-06",
+  "design_auw_g": 1050,
+  "redesign_threshold_g": 1200,
+  "edf": {
+    "candidate": "QX-MOTOR QF2611 50mm 12-blade 4000KV 4S CW/CCW",
+    "quantity": 2,
+    "unit_mass_g": 76,
+    "pair_mass_g": 152,
+    "test_voltage_V": 16.2,
+    "unit_current_A": 34,
+    "pair_current_A": 68,
+    "unit_power_W": 550.8,
+    "pair_power_W": 1101.6,
+    "unit_static_thrust_g_claimed": 950,
+    "pair_static_thrust_g_claimed": 1900,
+    "recommended_esc_A_each": 40,
+    "source": "QX-MOTOR published QF2611 50mm EDF data",
+    "bench_verification_required": true
+  },
+  "battery": {
+    "candidate": "Tattu Classic 1800mAh 4S 75C XT60",
+    "mass_g": 202,
+    "nominal_voltage_V": 14.8,
+    "capacity_mAh": 1800,
+    "dimensions_mm": [106, 36, 25],
+    "published_discharge_C": 75,
+    "source": "Tattu published product specification",
+    "bench_verification_required": true
+  },
+  "derived": {
+    "claimed_static_thrust_to_weight_at_1050g": 1.8095,
+    "claimed_static_thrust_to_weight_at_1200g": 1.5833,
+    "ideal_full_power_time_minutes_at_68A": 1.5882,
+    "ideal_80pct_capacity_full_power_minutes": 1.2706,
+    "battery_20g_restraint_N_at_202g": 39.62,
+    "existing_220g_20g_restraint_gate_N": 43.149
+  },
+  "release_gates": [
+    "Measure installed thrust with final inlet and exhaust ducts.",
+    "Measure pair current and battery voltage sag at full throttle.",
+    "Verify ESC temperature and cooling with enclosed nacelles.",
+    "Verify fan vibration and rotor/shroud clearance after printed mount installation.",
+    "Do not use published static thrust as flight-performance evidence."
+  ]
+}

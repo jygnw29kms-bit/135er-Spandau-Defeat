@@ -1,0 +1,109 @@
+{
+  "status": "PRELIMINARY_SCREENING_NOT_RELEASED",
+  "mass_kg": 1.05,
+  "carbon_assumptions": {
+    "E_GPa": 70,
+    "allowable_MPa": 350,
+    "density_kg_m3": 1600
+  },
+  "span_m": 0.319,
+  "load_arm_m": 0.25,
+  "model": "clamped Euler-Bernoulli beam; concentrated wing resultant",
+  "verification": "16/32/64 elements; closed-form deflection and force/moment equilibrium passed",
+  "excluded": [
+    "pivot compliance",
+    "bearing/contact",
+    "bond failure",
+    "carbon compression/buckling",
+    "skin stiffness",
+    "torsion",
+    "dynamic loads",
+    "aerodynamics",
+    "flight stability"
+  ],
+  "sweep_planform_only": [
+    {
+      "sweep_deg": 20,
+      "span_mm": 900.0
+    },
+    {
+      "sweep_deg": 30,
+      "span_mm": 857.069
+    },
+    {
+      "sweep_deg": 40,
+      "span_mm": 796.057
+    },
+    {
+      "sweep_deg": 50,
+      "span_mm": 718.818
+    },
+    {
+      "sweep_deg": 60,
+      "span_mm": 627.698
+    },
+    {
+      "sweep_deg": 68,
+      "span_mm": 546.658
+    }
+  ],
+  "reference_swept_span_mm": 536.489,
+  "inherited_swept_span_mm": 676.463,
+  "nominal_tip_thickness_mm": 4.903173,
+  "skin_mm": 0.8,
+  "nominal_tip_internal_height_mm": 3.3031729999999997,
+  "root_8g_required_section_modulus_mm3": 41.187929999999994,
+  "battery_20g_forward_N": 43.14926,
+  "note": "Span discrepancy is an OML gate; no reference body changed or printable aircraft released.",
+  "candidate_tapered_cap_spar": {
+    "width_mm": 16,
+    "cap_thickness_mm": 1,
+    "cap_mass_two_wings_g": 32.6656,
+    "assumed_cap_centroid_separation_root_mm": 11.889475000000001,
+    "assumed_cap_centroid_separation_tip_mm": 2.3031729999999997,
+    "status": "CANDIDATE_ONLY_NOT_CAD_VALIDATED",
+    "results": [
+      {
+        "case": "3g",
+        "force_N": 15.445473750000001,
+        "tip_deflection_mm": 2.3884591659216357,
+        "stress_MPa": 21.923799502061144,
+        "provisional_factor": 15.964386098636558,
+        "mesh_relative_change": 0.00011353724895928481,
+        "independent_tip_deflection_mm": 2.388368691413783
+      },
+      {
+        "case": "6g",
+        "force_N": 30.890947500000003,
+        "tip_deflection_mm": 4.776918331843271,
+        "stress_MPa": 43.84759900412229,
+        "provisional_factor": 7.982193049318279,
+        "mesh_relative_change": 0.00011353724895928481,
+        "independent_tip_deflection_mm": 4.776737382827566
+      },
+      {
+        "case": "8g",
+        "force_N": 41.18793,
+        "tip_deflection_mm": 6.369224442457685,
+        "stress_MPa": 58.463465338829714,
+        "provisional_factor": 5.98664478698871,
+        "mesh_relative_change": 0.00011353724896082837,
+        "independent_tip_deflection_mm": 6.368983177103422
+      },
+      {
+        "case": "8g_70percent",
+        "force_N": 57.663101999999995,
+        "tip_deflection_mm": 8.916914219440763,
+        "stress_MPa": 81.84885147436158,
+        "provisional_factor": 4.276174847849079,
+        "mesh_relative_change": 0.00011353724896020578,
+        "independent_tip_deflection_mm": 8.916576447944788
+      }
+    ],
+    "limitations": [
+      "cap location must use actual airfoil ordinate, not nominal maximum thickness",
+      "full shear transfer assumed; web, bonded joints and buckling need separate analysis",
+      "pivot fitting, print joints and sweep envelope unresolved"
+    ]
+  }
+}
