@@ -1,0 +1,1776 @@
+{
+  "status": "WINGBOX_FORK_HARDPOINT_PACKAGING_REVIEW",
+  "source_revision": "v29",
+  "engineering_screen": {
+    "status": "PRELIMINARY_PIVOT_CASSETTE_SCREEN_NOT_RELEASED",
+    "review_mass_kg": 1.4,
+    "load_factor_g": 8.0,
+    "asymmetric_high_side_fraction": 0.7,
+    "per_high_side_vertical_N": 76.88413599999998,
+    "root_bending_moment_Nm": 19.221033999999996,
+    "mechanical_concept": {
+      "pivot_shaft_d_mm": 6.0,
+      "bearing_class": "generic 6x13x5 radial bearing pair per pivot",
+      "pivot_boss_od_mm": 24.0,
+      "moving_lug_chord_mm": 40.0,
+      "moving_lug_height_mm": 16.0,
+      "thrust_washer_od_mm": 16.0,
+      "thrust_washer_id_mm": 6.0,
+      "hardpoint_plate_thickness_mm": 2.0,
+      "hardpoint_material_class": "G10/CF or metal; final coupon/datasheet required",
+      "sweep_servo_envelope_mm": [
+        42,
+        21,
+        40
+      ],
+      "servo_stall_screen_Nm": 2.0,
+      "servo_horn_radius_mm": 15.0
+    },
+    "screen": {
+      "root_moment_fore_aft_contact_couple_N": 480.5258499999999,
+      "assumed_hardpad_area_mm2": 192.0,
+      "hardpad_bearing_pressure_MPa": 2.5027388020833325,
+      "servo_stall_link_force_N": 133.33333333333334,
+      "shaft_resultant_transverse_screen_N": 153.9121442454892,
+      "M6_double_shear_stress_MPa": 2.721764284282491,
+      "thrust_washer_axial_pressure_MPa": 0.4449632832636197,
+      "shaft_simple_span_bending_stress_MPa": 32.661171411389894
+    },
+    "load_path_policy": [
+      "Wing root bending moment is reacted by fore/aft hardpoint contact across the 40 mm lug chord, not by printed skin.",
+      "6 mm metal shaft locates the sweep pivot and carries transverse/linkage loads; it is not the sole bending-moment path.",
+      "Upper/lower hard plates and thrust faces carry vertical/axial pivot reactions into the central wing box.",
+      "Bearing dynamic/static ratings and actual shaft alloy must be checked against selected purchased hardware before release."
+    ],
+    "release": {
+      "mechanical_detail_release": false,
+      "print_release": false,
+      "flight_release": false
+    }
+  },
+  "geometry": {
+    "pivot_model_mm": {
+      "x": 613.1323905812828,
+      "y": 125.20927023775282,
+      "z": 187.59240693460868
+    },
+    "fork_inboard_abs_y_mm": 70.0,
+    "plate_thickness_mm": 2.0,
+    "pad_planform_mm": [
+      44,
+      32
+    ],
+    "strap_width_mm": 12
+  },
+  "segment_containment": [
+    {
+      "side": "R",
+      "plate": "LOWER",
+      "segment": "PAD",
+      "volume_cm3": 2.81599999999999,
+      "inside_fuselage_volume_cm3": 0.19607981059731422,
+      "inside_fraction": 0.06963061455870558
+    },
+    {
+      "side": "R",
+      "plate": "LOWER",
+      "segment": "FRONT_STRAP",
+      "volume_cm3": 0.8450224857060618,
+      "inside_fuselage_volume_cm3": 0.8450047650246773,
+      "inside_fraction": 0.9999790293374623
+    },
+    {
+      "side": "R",
+      "plate": "LOWER",
+      "segment": "REAR_STRAP",
+      "volume_cm3": 0.8450224857060668,
+      "inside_fuselage_volume_cm3": 0.8134949770082159,
+      "inside_fraction": 0.9626903316406927
+    },
+    {
+      "side": "R",
+      "plate": "UPPER",
+      "segment": "PAD",
+      "volume_cm3": 2.81599999999999,
+      "inside_fuselage_volume_cm3": 0.9749982941485142,
+      "inside_fraction": 0.3462351896834225
+    },
+    {
+      "side": "R",
+      "plate": "UPPER",
+      "segment": "FRONT_STRAP",
+      "volume_cm3": 0.8450224857060618,
+      "inside_fuselage_volume_cm3": 0.8450224857060618,
+      "inside_fraction": 1.0
+    },
+    {
+      "side": "R",
+      "plate": "UPPER",
+      "segment": "REAR_STRAP",
+      "volume_cm3": 0.8450224857060668,
+      "inside_fuselage_volume_cm3": 0.8450224857060668,
+      "inside_fraction": 1.0
+    },
+    {
+      "side": "L",
+      "plate": "LOWER",
+      "segment": "PAD",
+      "volume_cm3": 2.81599999999999,
+      "inside_fuselage_volume_cm3": 0.19609253459285914,
+      "inside_fraction": 0.0696351330230326
+    },
+    {
+      "side": "L",
+      "plate": "LOWER",
+      "segment": "FRONT_STRAP",
+      "volume_cm3": 0.8450224857060618,
+      "inside_fuselage_volume_cm3": 0.8450047650246768,
+      "inside_fraction": 0.9999790293374617
+    },
+    {
+      "side": "L",
+      "plate": "LOWER",
+      "segment": "REAR_STRAP",
+      "volume_cm3": 0.8450224857060668,
+      "inside_fuselage_volume_cm3": 0.813494134178691,
+      "inside_fraction": 0.9626893342358435
+    },
+    {
+      "side": "L",
+      "plate": "UPPER",
+      "segment": "PAD",
+      "volume_cm3": 2.81599999999999,
+      "inside_fuselage_volume_cm3": 0.9744560521070458,
+      "inside_fraction": 0.34604263214028735
+    },
+    {
+      "side": "L",
+      "plate": "UPPER",
+      "segment": "FRONT_STRAP",
+      "volume_cm3": 0.8450224857060618,
+      "inside_fuselage_volume_cm3": 0.8450224857060618,
+      "inside_fraction": 1.0
+    },
+    {
+      "side": "L",
+      "plate": "UPPER",
+      "segment": "REAR_STRAP",
+      "volume_cm3": 0.8450224857060668,
+      "inside_fuselage_volume_cm3": 0.8450224857060668,
+      "inside_fraction": 1.0
+    }
+  ],
+  "min_inboard_strap_inside_fraction": 0.9626893342358435,
+  "fixed_fork_sweep_collision_records": [
+    {
+      "sweep_deg": 20,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_LOWER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 20,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_UPPER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 20,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_LOWER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 20,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_UPPER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 20,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_LOWER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 20,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_UPPER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 20,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_LOWER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 20,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_UPPER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 22,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_LOWER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 22,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_UPPER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 22,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_LOWER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 22,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_UPPER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 22,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_LOWER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 22,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_UPPER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 22,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_LOWER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 22,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_UPPER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 24,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_LOWER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 24,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_UPPER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 24,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_LOWER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 24,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_UPPER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 24,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_LOWER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 24,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_UPPER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 24,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_LOWER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 24,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_UPPER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 26,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_LOWER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 26,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_UPPER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 26,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_LOWER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 26,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_UPPER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 26,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_LOWER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 26,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_UPPER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 26,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_LOWER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 26,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_UPPER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 28,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_LOWER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 28,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_UPPER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 28,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_LOWER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 28,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_UPPER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 28,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_LOWER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 28,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_UPPER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 28,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_LOWER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 28,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_UPPER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 30,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_LOWER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 30,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_UPPER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 30,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_LOWER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 30,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_UPPER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 30,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_LOWER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 30,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_UPPER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 30,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_LOWER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 30,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_UPPER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 32,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_LOWER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 32,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_UPPER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 32,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_LOWER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 32,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_UPPER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 32,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_LOWER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 32,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_UPPER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 32,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_LOWER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 32,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_UPPER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 34,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_LOWER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 34,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_UPPER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 34,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_LOWER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 34,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_UPPER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 34,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_LOWER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 34,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_UPPER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 34,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_LOWER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 34,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_UPPER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 36,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_LOWER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 36,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_UPPER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 36,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_LOWER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 36,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_UPPER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 36,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_LOWER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 36,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_UPPER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 36,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_LOWER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 36,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_UPPER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 38,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_LOWER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 38,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_UPPER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 38,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_LOWER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 38,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_UPPER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 38,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_LOWER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 38,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_UPPER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 38,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_LOWER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 38,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_UPPER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 40,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_LOWER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 40,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_UPPER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 40,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_LOWER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 40,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_UPPER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 40,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_LOWER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 40,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_UPPER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 40,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_LOWER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 40,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_UPPER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 42,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_LOWER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 42,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_UPPER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 42,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_LOWER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 42,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_UPPER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 42,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_LOWER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 42,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_UPPER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 42,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_LOWER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 42,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_UPPER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 44,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_LOWER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 44,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_UPPER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 44,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_LOWER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 44,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_UPPER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 44,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_LOWER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 44,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_UPPER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 44,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_LOWER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 44,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_UPPER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 46,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_LOWER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 46,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_UPPER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 46,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_LOWER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 46,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_UPPER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 46,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_LOWER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 46,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_UPPER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 46,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_LOWER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 46,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_UPPER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 48,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_LOWER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 48,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_UPPER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 48,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_LOWER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 48,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_UPPER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 48,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_LOWER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 48,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_UPPER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 48,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_LOWER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 48,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_UPPER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 50,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_LOWER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 50,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_UPPER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 50,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_LOWER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 50,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_UPPER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 50,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_LOWER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 50,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_UPPER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 50,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_LOWER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 50,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_UPPER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 52,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_LOWER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 52,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_UPPER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 52,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_LOWER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 52,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_UPPER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 52,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_LOWER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 52,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_UPPER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 52,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_LOWER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 52,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_UPPER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 54,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_LOWER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 54,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_UPPER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 54,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_LOWER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 54,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_UPPER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 54,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_LOWER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 54,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_UPPER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 54,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_LOWER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 54,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_UPPER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 56,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_LOWER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 56,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_UPPER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 56,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_LOWER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 56,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_UPPER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 56,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_LOWER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 56,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_UPPER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 56,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_LOWER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 56,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_UPPER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 58,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_LOWER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 58,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_UPPER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 58,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_LOWER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 58,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_UPPER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 58,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_LOWER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 58,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_UPPER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 58,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_LOWER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 58,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_UPPER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 60,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_LOWER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 60,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_UPPER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 60,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_LOWER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 60,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_UPPER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 60,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_LOWER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 60,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_UPPER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 60,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_LOWER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 60,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_UPPER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 62,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_LOWER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 62,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_UPPER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 62,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_LOWER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 62,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_UPPER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 62,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_LOWER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 62,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_UPPER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 62,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_LOWER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 62,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_UPPER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 64,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_LOWER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 64,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_UPPER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 64,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_LOWER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 64,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_UPPER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 64,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_LOWER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 64,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_UPPER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 64,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_LOWER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 64,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_UPPER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 66,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_LOWER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 66,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_UPPER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 66,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_LOWER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 66,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_UPPER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 66,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_LOWER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 66,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_UPPER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 66,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_LOWER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 66,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_UPPER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 68,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_LOWER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 68,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_UPPER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 68,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_LOWER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 68,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_UPPER_R_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 68,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_LOWER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 68,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "plate": "ENG_WINGBOX_FORK_UPPER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 68,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_LOWER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 68,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "plate": "ENG_WINGBOX_FORK_UPPER_L_v31",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    }
+  ],
+  "residual_positive_overlaps": [],
+  "dense_fork_clearance_pass": true,
+  "hardpoint_plate_total_volume_cm3": 17.78265424244048,
+  "hardpoint_mass_estimate_g_at_1p60": 28.45224678790477,
+  "bearing_ratings_verified": false,
+  "shaft_alloy_verified": false,
+  "hardpoint_material_verified": false,
+  "mechanical_detail_release": false,
+  "print_release": false,
+  "flight_release": false
+}
