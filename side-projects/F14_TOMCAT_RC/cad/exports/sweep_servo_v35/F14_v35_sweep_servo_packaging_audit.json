@@ -1,0 +1,601 @@
+{
+  "status": "SWEEP_SERVO_PACKAGING_SCAN",
+  "source_revision": "v34",
+  "servo_envelope_mm": [
+    42,
+    21,
+    40
+  ],
+  "candidate_count": 20,
+  "candidate_results": [
+    {
+      "x_center_mm": 521.1323905812828,
+      "z_center_mm": 179.59240693460868,
+      "bounds_mm": {
+        "x": [
+          500.13239058128283,
+          542.1323905812828
+        ],
+        "y": [
+          -10.5,
+          10.5
+        ],
+        "z": [
+          159.59240693460868,
+          199.59240693460868
+        ]
+      },
+      "volume_cm3": 35.279999999999966,
+      "inside_fuselage_volume_cm3": 13.808122130695283,
+      "inside_fraction": 0.39138668170905033,
+      "structural_intersection_volume_cm3": 0.0,
+      "structural_hits": [],
+      "moving_max_intersection_cm3": 0.0,
+      "moving_hits": [],
+      "fully_packaged": false,
+      "body_name": "REF_SWEEP_SERVO_X521_Z180_v35"
+    },
+    {
+      "x_center_mm": 521.1323905812828,
+      "z_center_mm": 189.59240693460868,
+      "bounds_mm": {
+        "x": [
+          500.13239058128283,
+          542.1323905812828
+        ],
+        "y": [
+          -10.5,
+          10.5
+        ],
+        "z": [
+          169.59240693460868,
+          209.59240693460868
+        ]
+      },
+      "volume_cm3": 35.279999999999966,
+      "inside_fuselage_volume_cm3": 22.627582021643793,
+      "inside_fraction": 0.641371372495573,
+      "structural_intersection_volume_cm3": 0.0,
+      "structural_hits": [],
+      "moving_max_intersection_cm3": 0.0,
+      "moving_hits": [],
+      "fully_packaged": false,
+      "body_name": "REF_SWEEP_SERVO_X521_Z190_v35"
+    },
+    {
+      "x_center_mm": 521.1323905812828,
+      "z_center_mm": 199.59240693460868,
+      "bounds_mm": {
+        "x": [
+          500.13239058128283,
+          542.1323905812828
+        ],
+        "y": [
+          -10.5,
+          10.5
+        ],
+        "z": [
+          179.59240693460868,
+          219.59240693460868
+        ]
+      },
+      "volume_cm3": 35.279999999999966,
+      "inside_fuselage_volume_cm3": 31.44758202164379,
+      "inside_fraction": 0.8913713724955732,
+      "structural_intersection_volume_cm3": 0.0,
+      "structural_hits": [],
+      "moving_max_intersection_cm3": 0.0,
+      "moving_hits": [],
+      "fully_packaged": false,
+      "body_name": "REF_SWEEP_SERVO_X521_Z200_v35"
+    },
+    {
+      "x_center_mm": 521.1323905812828,
+      "z_center_mm": 209.59240693460868,
+      "bounds_mm": {
+        "x": [
+          500.13239058128283,
+          542.1323905812828
+        ],
+        "y": [
+          -10.5,
+          10.5
+        ],
+        "z": [
+          189.59240693460868,
+          229.59240693460868
+        ]
+      },
+      "volume_cm3": 35.279999999999966,
+      "inside_fuselage_volume_cm3": 35.279999999999966,
+      "inside_fraction": 1.0,
+      "structural_intersection_volume_cm3": 0.0,
+      "structural_hits": [],
+      "moving_max_intersection_cm3": 0.0,
+      "moving_hits": [],
+      "fully_packaged": true,
+      "body_name": "REF_SWEEP_SERVO_X521_Z210_v35"
+    },
+    {
+      "x_center_mm": 531.1323905812828,
+      "z_center_mm": 179.59240693460868,
+      "bounds_mm": {
+        "x": [
+          510.13239058128283,
+          552.1323905812828
+        ],
+        "y": [
+          -10.5,
+          10.5
+        ],
+        "z": [
+          159.59240693460868,
+          199.59240693460868
+        ]
+      },
+      "volume_cm3": 35.279999999999966,
+      "inside_fuselage_volume_cm3": 14.129886855519713,
+      "inside_fraction": 0.400506997038541,
+      "structural_intersection_volume_cm3": 0.0,
+      "structural_hits": [],
+      "moving_max_intersection_cm3": 0.0,
+      "moving_hits": [],
+      "fully_packaged": false,
+      "body_name": "REF_SWEEP_SERVO_X531_Z180_v35"
+    },
+    {
+      "x_center_mm": 531.1323905812828,
+      "z_center_mm": 189.59240693460868,
+      "bounds_mm": {
+        "x": [
+          510.13239058128283,
+          552.1323905812828
+        ],
+        "y": [
+          -10.5,
+          10.5
+        ],
+        "z": [
+          169.59240693460868,
+          209.59240693460868
+        ]
+      },
+      "volume_cm3": 35.279999999999966,
+      "inside_fuselage_volume_cm3": 22.951698503092352,
+      "inside_fraction": 0.6505583475933213,
+      "structural_intersection_volume_cm3": 0.0,
+      "structural_hits": [],
+      "moving_max_intersection_cm3": 0.0,
+      "moving_hits": [],
+      "fully_packaged": false,
+      "body_name": "REF_SWEEP_SERVO_X531_Z190_v35"
+    },
+    {
+      "x_center_mm": 531.1323905812828,
+      "z_center_mm": 199.59240693460868,
+      "bounds_mm": {
+        "x": [
+          510.13239058128283,
+          552.1323905812828
+        ],
+        "y": [
+          -10.5,
+          10.5
+        ],
+        "z": [
+          179.59240693460868,
+          219.59240693460868
+        ]
+      },
+      "volume_cm3": 35.279999999999966,
+      "inside_fuselage_volume_cm3": 31.771698503092345,
+      "inside_fraction": 0.9005583475933213,
+      "structural_intersection_volume_cm3": 0.0,
+      "structural_hits": [],
+      "moving_max_intersection_cm3": 0.0,
+      "moving_hits": [],
+      "fully_packaged": false,
+      "body_name": "REF_SWEEP_SERVO_X531_Z200_v35"
+    },
+    {
+      "x_center_mm": 531.1323905812828,
+      "z_center_mm": 209.59240693460868,
+      "bounds_mm": {
+        "x": [
+          510.13239058128283,
+          552.1323905812828
+        ],
+        "y": [
+          -10.5,
+          10.5
+        ],
+        "z": [
+          189.59240693460868,
+          229.59240693460868
+        ]
+      },
+      "volume_cm3": 35.279999999999966,
+      "inside_fuselage_volume_cm3": 35.279999999999966,
+      "inside_fraction": 1.0,
+      "structural_intersection_volume_cm3": 0.0,
+      "structural_hits": [],
+      "moving_max_intersection_cm3": 0.0,
+      "moving_hits": [],
+      "fully_packaged": true,
+      "body_name": "REF_SWEEP_SERVO_X531_Z210_v35"
+    },
+    {
+      "x_center_mm": 541.1323905812828,
+      "z_center_mm": 179.59240693460868,
+      "bounds_mm": {
+        "x": [
+          520.1323905812828,
+          562.1323905812828
+        ],
+        "y": [
+          -10.5,
+          10.5
+        ],
+        "z": [
+          159.59240693460868,
+          199.59240693460868
+        ]
+      },
+      "volume_cm3": 35.279999999999966,
+      "inside_fuselage_volume_cm3": 14.446877105376462,
+      "inside_fraction": 0.40949198144491145,
+      "structural_intersection_volume_cm3": 0.0,
+      "structural_hits": [],
+      "moving_max_intersection_cm3": 0.0,
+      "moving_hits": [],
+      "fully_packaged": false,
+      "body_name": "REF_SWEEP_SERVO_X541_Z180_v35"
+    },
+    {
+      "x_center_mm": 541.1323905812828,
+      "z_center_mm": 189.59240693460868,
+      "bounds_mm": {
+        "x": [
+          520.1323905812828,
+          562.1323905812828
+        ],
+        "y": [
+          -10.5,
+          10.5
+        ],
+        "z": [
+          169.59240693460868,
+          209.59240693460868
+        ]
+      },
+      "volume_cm3": 35.279999999999966,
+      "inside_fuselage_volume_cm3": 23.266544240510786,
+      "inside_fraction": 0.6594825464997395,
+      "structural_intersection_volume_cm3": 0.0,
+      "structural_hits": [],
+      "moving_max_intersection_cm3": 0.0,
+      "moving_hits": [],
+      "fully_packaged": false,
+      "body_name": "REF_SWEEP_SERVO_X541_Z190_v35"
+    },
+    {
+      "x_center_mm": 541.1323905812828,
+      "z_center_mm": 199.59240693460868,
+      "bounds_mm": {
+        "x": [
+          520.1323905812828,
+          562.1323905812828
+        ],
+        "y": [
+          -10.5,
+          10.5
+        ],
+        "z": [
+          179.59240693460868,
+          219.59240693460868
+        ]
+      },
+      "volume_cm3": 35.279999999999966,
+      "inside_fuselage_volume_cm3": 32.08654424051078,
+      "inside_fraction": 0.9094825464997396,
+      "structural_intersection_volume_cm3": 0.0,
+      "structural_hits": [],
+      "moving_max_intersection_cm3": 0.0,
+      "moving_hits": [],
+      "fully_packaged": false,
+      "body_name": "REF_SWEEP_SERVO_X541_Z200_v35"
+    },
+    {
+      "x_center_mm": 541.1323905812828,
+      "z_center_mm": 209.59240693460868,
+      "bounds_mm": {
+        "x": [
+          520.1323905812828,
+          562.1323905812828
+        ],
+        "y": [
+          -10.5,
+          10.5
+        ],
+        "z": [
+          189.59240693460868,
+          229.59240693460868
+        ]
+      },
+      "volume_cm3": 35.279999999999966,
+      "inside_fuselage_volume_cm3": 35.279999999999966,
+      "inside_fraction": 1.0,
+      "structural_intersection_volume_cm3": 0.0,
+      "structural_hits": [],
+      "moving_max_intersection_cm3": 0.0,
+      "moving_hits": [],
+      "fully_packaged": true,
+      "body_name": "REF_SWEEP_SERVO_X541_Z210_v35"
+    },
+    {
+      "x_center_mm": 551.1323905812828,
+      "z_center_mm": 179.59240693460868,
+      "bounds_mm": {
+        "x": [
+          530.1323905812828,
+          572.1323905812828
+        ],
+        "y": [
+          -10.5,
+          10.5
+        ],
+        "z": [
+          159.59240693460868,
+          199.59240693460868
+        ]
+      },
+      "volume_cm3": 35.279999999999966,
+      "inside_fuselage_volume_cm3": 14.782781434767067,
+      "inside_fraction": 0.419013079216754,
+      "structural_intersection_volume_cm3": 0.0,
+      "structural_hits": [],
+      "moving_max_intersection_cm3": 0.0,
+      "moving_hits": [],
+      "fully_packaged": false,
+      "body_name": "REF_SWEEP_SERVO_X551_Z180_v35"
+    },
+    {
+      "x_center_mm": 551.1323905812828,
+      "z_center_mm": 189.59240693460868,
+      "bounds_mm": {
+        "x": [
+          530.1323905812828,
+          572.1323905812828
+        ],
+        "y": [
+          -10.5,
+          10.5
+        ],
+        "z": [
+          169.59240693460868,
+          209.59240693460868
+        ]
+      },
+      "volume_cm3": 35.279999999999966,
+      "inside_fuselage_volume_cm3": 23.60274369224886,
+      "inside_fraction": 0.6690120094174854,
+      "structural_intersection_volume_cm3": 0.0,
+      "structural_hits": [],
+      "moving_max_intersection_cm3": 0.0,
+      "moving_hits": [],
+      "fully_packaged": false,
+      "body_name": "REF_SWEEP_SERVO_X551_Z190_v35"
+    },
+    {
+      "x_center_mm": 551.1323905812828,
+      "z_center_mm": 199.59240693460868,
+      "bounds_mm": {
+        "x": [
+          530.1323905812828,
+          572.1323905812828
+        ],
+        "y": [
+          -10.5,
+          10.5
+        ],
+        "z": [
+          179.59240693460868,
+          219.59240693460868
+        ]
+      },
+      "volume_cm3": 35.279999999999966,
+      "inside_fuselage_volume_cm3": 32.42274369224888,
+      "inside_fraction": 0.9190120094174862,
+      "structural_intersection_volume_cm3": 0.0,
+      "structural_hits": [],
+      "moving_max_intersection_cm3": 0.0,
+      "moving_hits": [],
+      "fully_packaged": false,
+      "body_name": "REF_SWEEP_SERVO_X551_Z200_v35"
+    },
+    {
+      "x_center_mm": 551.1323905812828,
+      "z_center_mm": 209.59240693460868,
+      "bounds_mm": {
+        "x": [
+          530.1323905812828,
+          572.1323905812828
+        ],
+        "y": [
+          -10.5,
+          10.5
+        ],
+        "z": [
+          189.59240693460868,
+          229.59240693460868
+        ]
+      },
+      "volume_cm3": 35.279999999999966,
+      "inside_fuselage_volume_cm3": 35.279999999999966,
+      "inside_fraction": 1.0,
+      "structural_intersection_volume_cm3": 0.0,
+      "structural_hits": [],
+      "moving_max_intersection_cm3": 0.0,
+      "moving_hits": [],
+      "fully_packaged": true,
+      "body_name": "REF_SWEEP_SERVO_X551_Z210_v35"
+    },
+    {
+      "x_center_mm": 561.1323905812828,
+      "z_center_mm": 179.59240693460868,
+      "bounds_mm": {
+        "x": [
+          540.1323905812828,
+          582.1323905812828
+        ],
+        "y": [
+          -10.5,
+          10.5
+        ],
+        "z": [
+          159.59240693460868,
+          199.59240693460868
+        ]
+      },
+      "volume_cm3": 35.279999999999966,
+      "inside_fuselage_volume_cm3": 15.1624586515819,
+      "inside_fraction": 0.42977490509019034,
+      "structural_intersection_volume_cm3": 0.0,
+      "structural_hits": [],
+      "moving_max_intersection_cm3": 0.0,
+      "moving_hits": [],
+      "fully_packaged": false,
+      "body_name": "REF_SWEEP_SERVO_X561_Z180_v35"
+    },
+    {
+      "x_center_mm": 561.1323905812828,
+      "z_center_mm": 189.59240693460868,
+      "bounds_mm": {
+        "x": [
+          540.1323905812828,
+          582.1323905812828
+        ],
+        "y": [
+          -10.5,
+          10.5
+        ],
+        "z": [
+          169.59240693460868,
+          209.59240693460868
+        ]
+      },
+      "volume_cm3": 35.279999999999966,
+      "inside_fuselage_volume_cm3": 23.9825081159056,
+      "inside_fraction": 0.679776307140182,
+      "structural_intersection_volume_cm3": 0.0,
+      "structural_hits": [],
+      "moving_max_intersection_cm3": 0.0,
+      "moving_hits": [],
+      "fully_packaged": false,
+      "body_name": "REF_SWEEP_SERVO_X561_Z190_v35"
+    },
+    {
+      "x_center_mm": 561.1323905812828,
+      "z_center_mm": 199.59240693460868,
+      "bounds_mm": {
+        "x": [
+          540.1323905812828,
+          582.1323905812828
+        ],
+        "y": [
+          -10.5,
+          10.5
+        ],
+        "z": [
+          179.59240693460868,
+          219.59240693460868
+        ]
+      },
+      "volume_cm3": 35.279999999999966,
+      "inside_fuselage_volume_cm3": 32.80250811590559,
+      "inside_fraction": 0.929776307140182,
+      "structural_intersection_volume_cm3": 0.0,
+      "structural_hits": [],
+      "moving_max_intersection_cm3": 0.0,
+      "moving_hits": [],
+      "fully_packaged": false,
+      "body_name": "REF_SWEEP_SERVO_X561_Z200_v35"
+    },
+    {
+      "x_center_mm": 561.1323905812828,
+      "z_center_mm": 209.59240693460868,
+      "bounds_mm": {
+        "x": [
+          540.1323905812828,
+          582.1323905812828
+        ],
+        "y": [
+          -10.5,
+          10.5
+        ],
+        "z": [
+          189.59240693460868,
+          229.59240693460868
+        ]
+      },
+      "volume_cm3": 35.279999999999966,
+      "inside_fuselage_volume_cm3": 35.279999999999966,
+      "inside_fraction": 1.0,
+      "structural_intersection_volume_cm3": 0.0,
+      "structural_hits": [],
+      "moving_max_intersection_cm3": 0.0,
+      "moving_hits": [],
+      "fully_packaged": true,
+      "body_name": "REF_SWEEP_SERVO_X561_Z210_v35"
+    }
+  ],
+  "chosen_candidate": {
+    "x_center_mm": 541.1323905812828,
+    "z_center_mm": 209.59240693460868,
+    "bounds_mm": {
+      "x": [
+        520.1323905812828,
+        562.1323905812828
+      ],
+      "y": [
+        -10.5,
+        10.5
+      ],
+      "z": [
+        189.59240693460868,
+        229.59240693460868
+      ]
+    },
+    "volume_cm3": 35.279999999999966,
+    "inside_fuselage_volume_cm3": 35.279999999999966,
+    "inside_fraction": 1.0,
+    "structural_intersection_volume_cm3": 0.0,
+    "structural_hits": [],
+    "moving_max_intersection_cm3": 0.0,
+    "moving_hits": [],
+    "fully_packaged": true,
+    "body_name": "REF_SWEEP_SERVO_X541_Z210_v35"
+  },
+  "chosen_fully_packaged": true,
+  "service_envelope_bounds_mm": {
+    "x": [
+      517.1323905812828,
+      565.1323905812828
+    ],
+    "y": [
+      -13.5,
+      13.5
+    ],
+    "z": [
+      187.59240693460868,
+      231.59240693460868
+    ]
+  },
+  "service_inside_fraction": 1.0,
+  "linkage_kinematics_verified": false,
+  "servo_torque_verified": false,
+  "servo_model_selected": false,
+  "mechanical_detail_release": false,
+  "print_release": false,
+  "flight_release": false
+}
