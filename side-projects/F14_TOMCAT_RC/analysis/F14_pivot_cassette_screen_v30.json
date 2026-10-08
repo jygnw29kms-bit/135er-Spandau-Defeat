@@ -1,0 +1,47 @@
+{
+  "status": "PRELIMINARY_PIVOT_CASSETTE_SCREEN_NOT_RELEASED",
+  "review_mass_kg": 1.4,
+  "load_factor_g": 8.0,
+  "asymmetric_high_side_fraction": 0.7,
+  "per_high_side_vertical_N": 76.88413599999998,
+  "root_bending_moment_Nm": 19.221033999999996,
+  "mechanical_concept": {
+    "pivot_shaft_d_mm": 6.0,
+    "bearing_class": "generic 6x13x5 radial bearing pair per pivot",
+    "pivot_boss_od_mm": 24.0,
+    "moving_lug_chord_mm": 40.0,
+    "moving_lug_height_mm": 16.0,
+    "thrust_washer_od_mm": 16.0,
+    "thrust_washer_id_mm": 6.0,
+    "hardpoint_plate_thickness_mm": 2.0,
+    "hardpoint_material_class": "G10/CF or metal; final coupon/datasheet required",
+    "sweep_servo_envelope_mm": [
+      42,
+      21,
+      40
+    ],
+    "servo_stall_screen_Nm": 2.0,
+    "servo_horn_radius_mm": 15.0
+  },
+  "screen": {
+    "root_moment_fore_aft_contact_couple_N": 480.5258499999999,
+    "assumed_hardpad_area_mm2": 192.0,
+    "hardpad_bearing_pressure_MPa": 2.5027388020833325,
+    "servo_stall_link_force_N": 133.33333333333334,
+    "shaft_resultant_transverse_screen_N": 153.9121442454892,
+    "M6_double_shear_stress_MPa": 2.721764284282491,
+    "thrust_washer_axial_pressure_MPa": 0.4449632832636197,
+    "shaft_simple_span_bending_stress_MPa": 32.661171411389894
+  },
+  "load_path_policy": [
+    "Wing root bending moment is reacted by fore/aft hardpoint contact across the 40 mm lug chord, not by printed skin.",
+    "6 mm metal shaft locates the sweep pivot and carries transverse/linkage loads; it is not the sole bending-moment path.",
+    "Upper/lower hard plates and thrust faces carry vertical/axial pivot reactions into the central wing box.",
+    "Bearing dynamic/static ratings and actual shaft alloy must be checked against selected purchased hardware before release."
+  ],
+  "release": {
+    "mechanical_detail_release": false,
+    "print_release": false,
+    "flight_release": false
+  }
+}
