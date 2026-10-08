@@ -1,0 +1,1798 @@
+{
+  "status": "LOWER_CROSSTIE_VERTICAL_ROUTING_REVIEW",
+  "source_revision": "v31",
+  "v32_lower_z_center_mm": 176.09240693460868,
+  "candidate_routes": [
+    {
+      "foreaft": "FRONT",
+      "x_center_mm": 597.1323905812828,
+      "z_center_mm": 176.09240693460868,
+      "z_shift_from_v32_mm": 0.0,
+      "envelope_volume_cm3": 5.184000000000024,
+      "inside_fuselage_volume_cm3": 3.378615002277317,
+      "inside_fraction": 0.6517390050689238,
+      "body_name": "REF_ROUTE_FRONT_Z+176.1_v33"
+    },
+    {
+      "foreaft": "FRONT",
+      "x_center_mm": 597.1323905812828,
+      "z_center_mm": 177.09240693460868,
+      "z_shift_from_v32_mm": 1.0,
+      "envelope_volume_cm3": 5.184000000000024,
+      "inside_fuselage_volume_cm3": 3.6205239121783634,
+      "inside_fraction": 0.6984035324418106,
+      "body_name": "REF_ROUTE_FRONT_Z+177.1_v33"
+    },
+    {
+      "foreaft": "FRONT",
+      "x_center_mm": 597.1323905812828,
+      "z_center_mm": 178.09240693460868,
+      "z_shift_from_v32_mm": 2.0,
+      "envelope_volume_cm3": 5.184000000000024,
+      "inside_fuselage_volume_cm3": 3.95565163377897,
+      "inside_fraction": 0.7630500836764953,
+      "body_name": "REF_ROUTE_FRONT_Z+178.1_v33"
+    },
+    {
+      "foreaft": "FRONT",
+      "x_center_mm": 597.1323905812828,
+      "z_center_mm": 179.09240693460868,
+      "z_shift_from_v32_mm": 3.0,
+      "envelope_volume_cm3": 5.184000000000024,
+      "inside_fuselage_volume_cm3": 4.271403098900922,
+      "inside_fraction": 0.8239589311151432,
+      "body_name": "REF_ROUTE_FRONT_Z+179.1_v33"
+    },
+    {
+      "foreaft": "FRONT",
+      "x_center_mm": 597.1323905812828,
+      "z_center_mm": 180.09240693460868,
+      "z_shift_from_v32_mm": 4.0,
+      "envelope_volume_cm3": 5.184000000000024,
+      "inside_fuselage_volume_cm3": 4.557630832187075,
+      "inside_fraction": 0.8791726142336138,
+      "body_name": "REF_ROUTE_FRONT_Z+180.1_v33"
+    },
+    {
+      "foreaft": "FRONT",
+      "x_center_mm": 597.1323905812828,
+      "z_center_mm": 181.09240693460868,
+      "z_shift_from_v32_mm": 5.0,
+      "envelope_volume_cm3": 5.184000000000024,
+      "inside_fuselage_volume_cm3": 4.814334833637527,
+      "inside_fraction": 0.928691133031926,
+      "body_name": "REF_ROUTE_FRONT_Z+181.1_v33"
+    },
+    {
+      "foreaft": "FRONT",
+      "x_center_mm": 597.1323905812828,
+      "z_center_mm": 182.09240693460868,
+      "z_shift_from_v32_mm": 6.0,
+      "envelope_volume_cm3": 5.184000000000024,
+      "inside_fuselage_volume_cm3": 5.040962505750642,
+      "inside_fraction": 0.9724078907697952,
+      "body_name": "REF_ROUTE_FRONT_Z+182.1_v33"
+    },
+    {
+      "foreaft": "FRONT",
+      "x_center_mm": 597.1323905812828,
+      "z_center_mm": 183.09240693460868,
+      "z_shift_from_v32_mm": 7.0,
+      "envelope_volume_cm3": 5.184000000000024,
+      "inside_fuselage_volume_cm3": 5.173852524643005,
+      "inside_fraction": 0.9980425394758836,
+      "body_name": "REF_ROUTE_FRONT_Z+183.1_v33"
+    },
+    {
+      "foreaft": "REAR",
+      "x_center_mm": 629.1323905812828,
+      "z_center_mm": 176.09240693460868,
+      "z_shift_from_v32_mm": 0.0,
+      "envelope_volume_cm3": 5.183999999999964,
+      "inside_fuselage_volume_cm3": 4.117415995184455,
+      "inside_fraction": 0.7942546287007106,
+      "body_name": "REF_ROUTE_REAR_Z+176.1_v33"
+    },
+    {
+      "foreaft": "REAR",
+      "x_center_mm": 629.1323905812828,
+      "z_center_mm": 177.09240693460868,
+      "z_shift_from_v32_mm": 1.0,
+      "envelope_volume_cm3": 5.183999999999964,
+      "inside_fuselage_volume_cm3": 4.399953351217603,
+      "inside_fraction": 0.8487564334910558,
+      "body_name": "REF_ROUTE_REAR_Z+177.1_v33"
+    },
+    {
+      "foreaft": "REAR",
+      "x_center_mm": 629.1323905812828,
+      "z_center_mm": 178.09240693460868,
+      "z_shift_from_v32_mm": 2.0,
+      "envelope_volume_cm3": 5.183999999999964,
+      "inside_fuselage_volume_cm3": 4.6550011188118825,
+      "inside_fraction": 0.8979554627337799,
+      "body_name": "REF_ROUTE_REAR_Z+178.1_v33"
+    },
+    {
+      "foreaft": "REAR",
+      "x_center_mm": 629.1323905812828,
+      "z_center_mm": 179.09240693460868,
+      "z_shift_from_v32_mm": 3.0,
+      "envelope_volume_cm3": 5.183999999999964,
+      "inside_fuselage_volume_cm3": 4.882559295930721,
+      "inside_fraction": 0.9418517160360254,
+      "body_name": "REF_ROUTE_REAR_Z+179.1_v33"
+    },
+    {
+      "foreaft": "REAR",
+      "x_center_mm": 629.1323905812828,
+      "z_center_mm": 180.09240693460868,
+      "z_shift_from_v32_mm": 4.0,
+      "envelope_volume_cm3": 5.183999999999964,
+      "inside_fuselage_volume_cm3": 5.082085631676467,
+      "inside_fraction": 0.9803405925301895,
+      "body_name": "REF_ROUTE_REAR_Z+180.1_v33"
+    },
+    {
+      "foreaft": "REAR",
+      "x_center_mm": 629.1323905812828,
+      "z_center_mm": 181.09240693460868,
+      "z_shift_from_v32_mm": 5.0,
+      "envelope_volume_cm3": 5.183999999999964,
+      "inside_fuselage_volume_cm3": 5.181992116954868,
+      "inside_fraction": 0.999612676881733,
+      "body_name": "REF_ROUTE_REAR_Z+181.1_v33"
+    },
+    {
+      "foreaft": "REAR",
+      "x_center_mm": 629.1323905812828,
+      "z_center_mm": 182.09240693460868,
+      "z_shift_from_v32_mm": 6.0,
+      "envelope_volume_cm3": 5.183999999999964,
+      "inside_fuselage_volume_cm3": 5.183999999999964,
+      "inside_fraction": 1.0,
+      "body_name": "REF_ROUTE_REAR_Z+182.1_v33"
+    },
+    {
+      "foreaft": "REAR",
+      "x_center_mm": 629.1323905812828,
+      "z_center_mm": 183.09240693460868,
+      "z_shift_from_v32_mm": 7.0,
+      "envelope_volume_cm3": 5.183999999999964,
+      "inside_fuselage_volume_cm3": 5.183999999999964,
+      "inside_fraction": 1.0,
+      "body_name": "REF_ROUTE_REAR_Z+183.1_v33"
+    }
+  ],
+  "chosen_routes": {
+    "FRONT": {
+      "foreaft": "FRONT",
+      "x_center_mm": 597.1323905812828,
+      "z_center_mm": 183.09240693460868,
+      "z_shift_from_v32_mm": 7.0,
+      "envelope_volume_cm3": 5.184000000000024,
+      "inside_fuselage_volume_cm3": 5.173852524643005,
+      "inside_fraction": 0.9980425394758836,
+      "body_name": "REF_ROUTE_FRONT_Z+183.1_v33"
+    },
+    "REAR": {
+      "foreaft": "REAR",
+      "x_center_mm": 629.1323905812828,
+      "z_center_mm": 182.09240693460868,
+      "z_shift_from_v32_mm": 6.0,
+      "envelope_volume_cm3": 5.183999999999964,
+      "inside_fuselage_volume_cm3": 5.183999999999964,
+      "inside_fraction": 1.0,
+      "body_name": "REF_ROUTE_REAR_Z+182.1_v33"
+    }
+  },
+  "min_chosen_inside_fraction": 0.9980425394758836,
+  "chosen_route_sweep_collision_records": [
+    {
+      "sweep_deg": 20,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 20,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 20,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 20,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 20,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 20,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 20,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 20,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 22,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 22,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 22,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 22,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 22,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 22,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 22,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 22,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 24,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 24,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 24,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 24,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 24,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 24,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 24,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 24,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 26,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 26,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 26,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 26,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 26,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 26,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 26,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 26,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 28,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 28,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 28,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 28,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 28,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 28,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 28,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 28,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 30,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 30,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 30,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 30,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 30,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 30,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 30,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 30,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 32,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 32,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 32,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 32,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 32,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 32,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 32,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 32,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 34,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 34,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 34,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 34,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 34,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 34,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 34,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 34,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 36,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 36,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 36,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 36,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 36,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 36,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 36,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 36,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 38,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 38,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 38,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 38,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 38,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 38,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 38,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 38,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 40,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 40,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 40,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 40,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 40,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 40,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 40,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 40,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 42,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 42,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 42,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 42,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 42,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 42,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 42,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 42,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 44,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 44,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 44,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 44,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 44,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 44,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 44,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 44,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 46,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 46,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 46,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 46,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 46,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 46,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 46,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 46,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 48,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 48,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 48,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 48,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 48,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 48,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 48,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 48,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 50,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 50,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 50,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 50,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 50,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 50,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 50,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 50,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 52,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 52,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 52,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 52,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 52,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 52,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 52,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 52,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 54,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 54,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 54,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 54,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 54,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 54,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 54,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 54,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 56,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 56,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 56,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 56,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 56,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 56,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 56,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 56,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 58,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 58,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 58,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 58,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 58,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 58,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 58,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 58,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 60,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 60,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 60,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 60,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 60,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 60,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 60,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 60,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 62,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 62,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 62,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 62,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 62,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 62,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 62,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 62,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 64,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 64,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 64,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 64,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 64,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 64,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 64,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 64,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 66,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 66,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 66,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 66,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 66,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 66,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 66,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 66,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 68,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 68,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 68,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 68,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 68,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 68,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 68,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 68,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_ROUTED_v33",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    }
+  ],
+  "residual_positive_overlaps": [],
+  "dense_chosen_route_clearance_pass": true,
+  "riser_required": true,
+  "mechanical_detail_release": false,
+  "print_release": false,
+  "flight_release": false
+}
