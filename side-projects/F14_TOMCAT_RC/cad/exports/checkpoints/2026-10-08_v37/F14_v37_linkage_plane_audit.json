@@ -1,0 +1,77 @@
+{
+  "status": "SWEEP_LINKAGE_PLANE_PACKAGING_SCAN",
+  "source_revision": "v35",
+  "kinematics_source": "v36",
+  "candidate_results": [
+    {
+      "z_center_mm": 184.0,
+      "slider_inside_fraction": 0.8989328874939648,
+      "slider_structural_intersection_cm3": 0.0,
+      "structural_hits": [],
+      "min_rod_outer_oml_inside_fraction": 0.7655836081179987,
+      "rod_structural_hits": [],
+      "opposite_moving_hits": [],
+      "fully_packaged": false
+    },
+    {
+      "z_center_mm": 236.0,
+      "slider_inside_fraction": 1.0,
+      "slider_structural_intersection_cm3": 0.0,
+      "structural_hits": [],
+      "min_rod_outer_oml_inside_fraction": 0.4362748219258979,
+      "rod_structural_hits": [],
+      "opposite_moving_hits": [],
+      "fully_packaged": false
+    },
+    {
+      "z_center_mm": 240.0,
+      "slider_inside_fraction": 0.9956623921094776,
+      "slider_structural_intersection_cm3": 0.0,
+      "structural_hits": [],
+      "min_rod_outer_oml_inside_fraction": 0.1682083204247215,
+      "rod_structural_hits": [],
+      "opposite_moving_hits": [],
+      "fully_packaged": false
+    },
+    {
+      "z_center_mm": 244.0,
+      "slider_inside_fraction": 0.5667885126302322,
+      "slider_structural_intersection_cm3": 0.0,
+      "structural_hits": [],
+      "min_rod_outer_oml_inside_fraction": 0.0,
+      "rod_structural_hits": [],
+      "opposite_moving_hits": [],
+      "fully_packaged": false
+    },
+    {
+      "z_center_mm": 248.0,
+      "slider_inside_fraction": 0.01045755092191767,
+      "slider_structural_intersection_cm3": 0.0,
+      "structural_hits": [],
+      "min_rod_outer_oml_inside_fraction": 0.0,
+      "rod_structural_hits": [],
+      "opposite_moving_hits": [],
+      "fully_packaged": false
+    }
+  ],
+  "chosen_candidate": {
+    "z_center_mm": 184.0,
+    "slider_inside_fraction": 0.8989328874939648,
+    "slider_structural_intersection_cm3": 0.0,
+    "structural_hits": [],
+    "min_rod_outer_oml_inside_fraction": 0.7655836081179987,
+    "rod_structural_hits": [],
+    "opposite_moving_hits": [],
+    "fully_packaged": false
+  },
+  "chosen_fully_packaged": false,
+  "linkage_plane_z_mm": 184.0,
+  "slider_travel_mm": 28.693464785763013,
+  "rod_length_mm": 100.00809914734306,
+  "vertical_wing_bellcrank_required": true,
+  "wing_bellcrank_geometry_verified": false,
+  "slider_guide_geometry_verified": false,
+  "mechanical_detail_release": false,
+  "print_release": false,
+  "flight_release": false
+}
