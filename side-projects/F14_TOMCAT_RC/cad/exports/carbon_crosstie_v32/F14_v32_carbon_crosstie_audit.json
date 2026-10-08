@@ -1,0 +1,3312 @@
+{
+  "status": "CARBON_CROSSTIE_WINGBOX_PACKAGING_REVIEW",
+  "source_revision": "v31",
+  "geometry": {
+    "tie_length_mm": 144.0,
+    "tube_od_mm": 6.0,
+    "tube_id_mm": 4.0,
+    "front_x_mm": 597.1323905812828,
+    "rear_x_mm": 629.1323905812828,
+    "lower_z_mm": 176.09240693460868,
+    "upper_z_mm": 199.09240693460868,
+    "count": 4
+  },
+  "tie_containment": [
+    {
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "envelope_volume_cm3": 5.184000000000024,
+      "inside_fuselage_volume_cm3": 3.378615002277317,
+      "inside_fraction": 0.6517390050689238
+    },
+    {
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "envelope_volume_cm3": 5.184000000000024,
+      "inside_fuselage_volume_cm3": 5.184000000000024,
+      "inside_fraction": 1.0
+    },
+    {
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "envelope_volume_cm3": 5.183999999999964,
+      "inside_fuselage_volume_cm3": 4.117415995184455,
+      "inside_fraction": 0.7942546287007106
+    },
+    {
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "envelope_volume_cm3": 5.183999999999964,
+      "inside_fuselage_volume_cm3": 5.183999999999964,
+      "inside_fraction": 1.0
+    }
+  ],
+  "min_tie_inside_fraction": 0.6517390050689238,
+  "fork_overlap": [
+    {
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "side": "R",
+      "fork": "ENG_WINGBOX_FORK_LOWER_R_v31",
+      "intersection_volume_cm3": 0.02399999999999999,
+      "positive_overlap": true
+    },
+    {
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "side": "L",
+      "fork": "ENG_WINGBOX_FORK_LOWER_L_v31",
+      "intersection_volume_cm3": 0.023999999999999997,
+      "positive_overlap": true
+    },
+    {
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "side": "R",
+      "fork": "ENG_WINGBOX_FORK_UPPER_R_v31",
+      "intersection_volume_cm3": 0.02399999999999999,
+      "positive_overlap": true
+    },
+    {
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "side": "L",
+      "fork": "ENG_WINGBOX_FORK_UPPER_L_v31",
+      "intersection_volume_cm3": 0.023999999999999997,
+      "positive_overlap": true
+    },
+    {
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "side": "R",
+      "fork": "ENG_WINGBOX_FORK_LOWER_R_v31",
+      "intersection_volume_cm3": 0.02399999999999971,
+      "positive_overlap": true
+    },
+    {
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "side": "L",
+      "fork": "ENG_WINGBOX_FORK_LOWER_L_v31",
+      "intersection_volume_cm3": 0.023999999999999713,
+      "positive_overlap": true
+    },
+    {
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "side": "R",
+      "fork": "ENG_WINGBOX_FORK_UPPER_R_v31",
+      "intersection_volume_cm3": 0.02399999999999971,
+      "positive_overlap": true
+    },
+    {
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "side": "L",
+      "fork": "ENG_WINGBOX_FORK_UPPER_L_v31",
+      "intersection_volume_cm3": 0.023999999999999713,
+      "positive_overlap": true
+    }
+  ],
+  "all_ties_overlap_both_forks": true,
+  "fixed_tie_sweep_collision_records": [
+    {
+      "sweep_deg": 20,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 20,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 20,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 20,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 20,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 20,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 20,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 20,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 20,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 20,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 20,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 20,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 20,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 20,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 20,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 20,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 22,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 22,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 22,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 22,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 22,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 22,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 22,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 22,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 22,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 22,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 22,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 22,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 22,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 22,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 22,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 22,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 24,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 24,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 24,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 24,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 24,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 24,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 24,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 24,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 24,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 24,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 24,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 24,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 24,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 24,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 24,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 24,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 26,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 26,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 26,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 26,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 26,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 26,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 26,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 26,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 26,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 26,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 26,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 26,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 26,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 26,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 26,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 26,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 28,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 28,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 28,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 28,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 28,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 28,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 28,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 28,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 28,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 28,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 28,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 28,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 28,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 28,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 28,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 28,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 30,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 30,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 30,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 30,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 30,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 30,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 30,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 30,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 30,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 30,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 30,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 30,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 30,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 30,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 30,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 30,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 32,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 32,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 32,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 32,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 32,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 32,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 32,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 32,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 32,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 32,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 32,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 32,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 32,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 32,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 32,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 32,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 34,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 34,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 34,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 34,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 34,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 34,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 34,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 34,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 34,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 34,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 34,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 34,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 34,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 34,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 34,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 34,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 36,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 36,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 36,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 36,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 36,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 36,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 36,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 36,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 36,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 36,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 36,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 36,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 36,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 36,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 36,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 36,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 38,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 38,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 38,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 38,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 38,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 38,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 38,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 38,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 38,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 38,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 38,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 38,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 38,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 38,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 38,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 38,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 40,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 40,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 40,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 40,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 40,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 40,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 40,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 40,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 40,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 40,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 40,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 40,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 40,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 40,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 40,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 40,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 42,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 42,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 42,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 42,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 42,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 42,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 42,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 42,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 42,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 42,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 42,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 42,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 42,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 42,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 42,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 42,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 44,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 44,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 44,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 44,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 44,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 44,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 44,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 44,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 44,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 44,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 44,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 44,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 44,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 44,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 44,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 44,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 46,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 46,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 46,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 46,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 46,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 46,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 46,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 46,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 46,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 46,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 46,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 46,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 46,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 46,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 46,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 46,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 48,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 48,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 48,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 48,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 48,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 48,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 48,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 48,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 48,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 48,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 48,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 48,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 48,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 48,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 48,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 48,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 50,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 50,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 50,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 50,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 50,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 50,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 50,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 50,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 50,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 50,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 50,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 50,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 50,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 50,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 50,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 50,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 52,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 52,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 52,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 52,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 52,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 52,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 52,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 52,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 52,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 52,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 52,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 52,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 52,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 52,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 52,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 52,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 54,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 54,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 54,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 54,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 54,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 54,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 54,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 54,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 54,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 54,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 54,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 54,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 54,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 54,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 54,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 54,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 56,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 56,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 56,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 56,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 56,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 56,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 56,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 56,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 56,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 56,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 56,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 56,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 56,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 56,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 56,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 56,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 58,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 58,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 58,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 58,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 58,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 58,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 58,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 58,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 58,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 58,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 58,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 58,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 58,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 58,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 58,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 58,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 60,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 60,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 60,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 60,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 60,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 60,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 60,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 60,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 60,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 60,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 60,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 60,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 60,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 60,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 60,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 60,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 62,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 62,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 62,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 62,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 62,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 62,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 62,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 62,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 62,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 62,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 62,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 62,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 62,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 62,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 62,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 62,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 64,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 64,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 64,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 64,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 64,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 64,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 64,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 64,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 64,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 64,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 64,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 64,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 64,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 64,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 64,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 64,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 66,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 66,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 66,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 66,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 66,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 66,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 66,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 66,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 66,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 66,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 66,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 66,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 66,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 66,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 66,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 66,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 68,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 68,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 68,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 68,
+      "side": "R",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 68,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 68,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 68,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 68,
+      "side": "R",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 68,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 68,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 68,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 68,
+      "side": "L",
+      "moving_kind": "outer_wing",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 68,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 68,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_FRONT_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 68,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_LOWER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    },
+    {
+      "sweep_deg": 68,
+      "side": "L",
+      "moving_kind": "root_lug",
+      "tie": "REF_CF6x4_REAR_UPPER_v32",
+      "intersection_volume_cm3": 0.0,
+      "positive_overlap": false
+    }
+  ],
+  "residual_positive_overlaps": [],
+  "dense_tie_clearance_pass": true,
+  "carbon_tube_mass_estimate_g_each": 3.619114736935442,
+  "carbon_crosstie_total_mass_estimate_g": 14.476458947741769,
+  "v31_hardpoint_mass_estimate_g": 28.45224678790477,
+  "combined_fork_plus_crosstie_mass_estimate_g": 42.92870573564654,
+  "carbon_tube_datasheet_verified": false,
+  "mechanical_detail_release": false,
+  "print_release": false,
+  "flight_release": false
+}
