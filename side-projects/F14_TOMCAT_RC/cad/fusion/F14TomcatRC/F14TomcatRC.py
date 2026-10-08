@@ -1535,10 +1535,194 @@ def build_dense_sweep_clearance_review_v26():
     _app.activeViewport.fit(); _app.activeViewport.saveAsImageFile(os.path.join(outdir,'F14_v26_dense_sweep_clearance_review.png'),1600,1000)
     return audit
 
+
+
+def build_vertical_datum_sensitivity_review_v27():
+    """Stress v25 clearance against +/-1 mm common-WL registration uncertainty."""
+    build_segmented_clearance_pockets_review_v25()
+    design=adsk.fusion.Design.cast(_app.activeProduct)
+    root=design.rootComponent
+    _app.activeDocument.name='F14_v27_VERTICAL_DATUM_SENSITIVITY_REVIEW'
+    base=os.path.dirname(__file__)
+    with open(os.path.join(base,'NASA_F14_basic_wing_v08.json'),encoding='utf-8') as stream: data=json.load(stream)
+    with open(os.path.join(base,'F14_pivot_datum_v16.json'),encoding='utf-8') as stream: pivot=json.load(stream)
+    with open(os.path.join(base,'F14TomcatRC_config.json'),encoding='utf-8') as stream: config=json.load(stream)
+    factor=900.0/(2.0*data['sections'][-1]['wbl_in'])
+    px=pivot['derived_full_scale_pivot_fs_in']*factor
+    py=pivot['derived_full_scale_pivot_bl_in']*factor
+    s0,s1=data['sections'][0],data['sections'][1]
+    dz=(s1['reference_vertical_wl_in']-s0['reference_vertical_wl_in'])/(s1['wbl_in']-s0['wbl_in'])
+    pivot_wl_in=s0['reference_vertical_wl_in']+(pivot['derived_full_scale_pivot_bl_in']-s0['wbl_in'])*dz
+    pz=pivot_wl_in*factor
+    # Sensitivity of linear regression choice across retained Grumman stations.
+    fit_values=[]
+    xs=[float(s['wbl_in']) for s in data['sections']]
+    zs=[float(s['reference_vertical_wl_in']) for s in data['sections']]
+    for n in [2,3,4,5,8]:
+        xm=sum(xs[:n])/n; zm=sum(zs[:n])/n
+        slope=sum((x-xm)*(z-zm) for x,z in zip(xs[:n],zs[:n]))/sum((x-xm)**2 for x in xs[:n])
+        wl=zm+slope*(pivot['derived_full_scale_pivot_bl_in']-xm)
+        fit_values.append(dict(first_n=n,pivot_wl_fullscale_in=wl,pivot_wl_model_mm=wl*factor))
+    fit_spread=max(v['pivot_wl_model_mm'] for v in fit_values)-min(v['pivot_wl_model_mm'] for v in fit_values)
+    fus=next(b for b in root.bRepBodies if b.name=='UPC_FUSELAGE_SEGMENTED_CLEARANCE_CUT_v25')
+    temporary=adsk.fusion.TemporaryBRepManager.get()
+    shifts=[-1.0,-0.5,0.0,0.5,1.0]
+    sweeps=list(range(20,69,4))
+    records=[]
+    for zshift in shifts:
+        fuscopy=temporary.copy(fus)
+        tm=adsk.core.Matrix3D.create(); tm.translation=adsk.core.Vector3D.create(0,0,mm(zshift))
+        if not temporary.transform(fuscopy,tm): raise RuntimeError('v27 fuselage datum shift failed')
+        for sweep in sweeps:
+            for sign,label in [(1,'R'),(-1,'L')]:
+                angle=-sign*math.radians(sweep-20.0)
+                rot=adsk.core.Matrix3D.create(); rot.setToRotation(angle,adsk.core.Vector3D.create(0,0,1),adsk.core.Point3D.create(mm(px),mm(sign*py),mm(pz)))
+                wing=next(b for b in root.bRepBodies if b.name.startswith('SOURCE_GRUMMAN_BASIC_WING_'+label+'_'))
+                lug=next(b for b in root.bRepBodies if b.name=='ENG_ROOT_LUG_'+label+'_v19')
+                for body,kind in [(wing,'outer_wing'),(lug,'root_lug')]:
+                    moving=temporary.copy(body)
+                    if not temporary.transform(moving,rot): raise RuntimeError('v27 moving body transform failed')
+                    fixed=temporary.copy(fuscopy)
+                    ok=temporary.booleanOperation(moving,fixed,adsk.fusion.BooleanTypes.IntersectionBooleanType)
+                    iv=moving.volume if ok and moving.isValid else 0.0
+                    records.append(dict(z_shift_mm=zshift,sweep_deg=sweep,side=label,kind=kind,intersection_volume_cm3=iv,positive_overlap=iv>1e-4))
+    residual=[r for r in records if r['positive_overlap']]
+    audit=dict(status='VERTICAL_DATUM_REGISTRATION_SENSITIVITY_REVIEW',source_revision='v25',
+      pivot_waterline_original_aircraft_verified=False,
+      two_station_engineering_pivot_wl_model_mm=pz,linear_fit_variants=fit_values,
+      linear_fit_spread_model_mm=fit_spread,tested_vertical_shifts_mm=shifts,
+      tested_sweep_angles_deg=sweeps,sweep_step_deg=4,
+      residual_collision_records=records,residual_positive_overlaps=residual,
+      max_residual_intersection_volume_cm3=max((r['intersection_volume_cm3'] for r in records),default=0.0),
+      clearance_robust_within_plusminus_1mm=(len(residual)==0),
+      note='The Grumman/NASA wing vertical references are airplane-coordinate values, but no explicit pivot WL has been found. This test deliberately exceeds the observed 0.546 mm model-scale extrapolation spread with +/-1 mm datum shifts.',
+      source_registration_release=False,clearance_release=False,mechanical_detail_release=False,print_release=False,flight_release=False)
+    outdir=os.path.join(config['export_dir'],'datum_sensitivity_v27'); os.makedirs(outdir,exist_ok=True)
+    target=os.path.join(outdir,'F14_v27_VERTICAL_DATUM_SENSITIVITY_REVIEW.f3d')
+    if not design.exportManager.execute(design.exportManager.createFusionArchiveExportOptions(target)): raise RuntimeError('v27 export failed')
+    with open(os.path.join(outdir,'F14_v27_vertical_datum_sensitivity_audit.json'),'w',encoding='utf-8') as stream: json.dump(audit,stream,indent=2)
+    _app.activeViewport.fit(); _app.activeViewport.saveAsImageFile(os.path.join(outdir,'F14_v27_vertical_datum_sensitivity_review.png'),1600,1000)
+    return audit
+
+
+
+def build_robust_datum_clearance_review_v28():
+    """Refine only the 68-deg outer-wing pocket in Z, then test dense sweep at +/-1 mm WL uncertainty."""
+    build_registered_clearance_keepout_review_v23()
+    design=adsk.fusion.Design.cast(_app.activeProduct)
+    root=design.rootComponent
+    _app.activeDocument.name='F14_v28_ROBUST_DATUM_CLEARANCE_REVIEW'
+    base=os.path.dirname(__file__)
+    with open(os.path.join(base,'NASA_F14_basic_wing_v08.json'),encoding='utf-8') as stream: data=json.load(stream)
+    with open(os.path.join(base,'F14_pivot_datum_v16.json'),encoding='utf-8') as stream: pivot=json.load(stream)
+    with open(os.path.join(base,'F14TomcatRC_config.json'),encoding='utf-8') as stream: config=json.load(stream)
+    with open(os.path.join(config['export_dir'],'registered_keepout_v23','F14_v23_registered_keepout_audit.json'),encoding='utf-8') as stream: v23=json.load(stream)
+    factor=900.0/(2.0*data['sections'][-1]['wbl_in'])
+    px=pivot['derived_full_scale_pivot_fs_in']*factor
+    py=pivot['derived_full_scale_pivot_bl_in']*factor
+    s0,s1=data['sections'][0],data['sections'][1]
+    dz=(s1['reference_vertical_wl_in']-s0['reference_vertical_wl_in'])/(s1['wbl_in']-s0['wbl_in'])
+    pz=(s0['reference_vertical_wl_in']+(pivot['derived_full_scale_pivot_bl_in']-s0['wbl_in'])*dz)*factor
+    fus=next(b for b in root.bRepBodies if b.name=='UPC_FUSELAGE_OML_WL_REGISTERED_v22')
+    before=fus.volume
+    tools=adsk.core.ObjectCollection.create(); pocket_defs=[]; idx=0
+    for rec in v23['intersection_records']:
+        if not rec.get('positive_overlap') or 'intersection_bounds_mm' not in rec: continue
+        b=rec['intersection_bounds_mm']; mxy=2.0
+        mz=3.0 if rec['sweep_deg']==68 and rec['kind']=='outer_wing' else 2.0
+        x0,x1=b['x'][0]-mxy,b['x'][1]+mxy; y0,y1=b['y'][0]-mxy,b['y'][1]+mxy; z0,z1=b['z'][0]-mz,b['z'][1]+mz
+        idx+=1
+        name='ENG_ROBUST_CLEARANCE_%02d_%s_%02d_%s_v28'%(idx,rec['side'],rec['sweep_deg'],rec['kind'])
+        body=extrude_poly(root,name,[(x0,y0),(x1,y0),(x1,y1),(x0,y1)],z0,z1-z0); body.opacity=0.2; tools.add(body)
+        pocket_defs.append(dict(name=name,source_record=rec,margin_xy_mm=mxy,margin_z_mm=mz,bounds_mm=dict(x=[x0,x1],y=[y0,y1],z=[z0,z1])))
+    ci=root.features.combineFeatures.createInput(fus,tools); ci.operation=adsk.fusion.FeatureOperations.CutFeatureOperation; ci.isKeepToolBodies=True; root.features.combineFeatures.add(ci)
+    fus.name='UPC_FUSELAGE_ROBUST_CLEARANCE_CUT_v28'; after=fus.volume
+    temporary=adsk.fusion.TemporaryBRepManager.get(); shifts=[-1.0,-0.5,0.0,0.5,1.0]; sweeps=list(range(20,69,2)); records=[]
+    for zshift in shifts:
+        fuscopy=temporary.copy(fus); tm=adsk.core.Matrix3D.create(); tm.translation=adsk.core.Vector3D.create(0,0,mm(zshift)); temporary.transform(fuscopy,tm)
+        for sweep in sweeps:
+            for sign,label in [(1,'R'),(-1,'L')]:
+                angle=-sign*math.radians(sweep-20.0); rot=adsk.core.Matrix3D.create(); rot.setToRotation(angle,adsk.core.Vector3D.create(0,0,1),adsk.core.Point3D.create(mm(px),mm(sign*py),mm(pz)))
+                wing=next(b for b in root.bRepBodies if b.name.startswith('SOURCE_GRUMMAN_BASIC_WING_'+label+'_')); lug=next(b for b in root.bRepBodies if b.name=='ENG_ROOT_LUG_'+label+'_v19')
+                for body,kind in [(wing,'outer_wing'),(lug,'root_lug')]:
+                    moving=temporary.copy(body); temporary.transform(moving,rot); fixed=temporary.copy(fuscopy)
+                    ok=temporary.booleanOperation(moving,fixed,adsk.fusion.BooleanTypes.IntersectionBooleanType); iv=moving.volume if ok and moving.isValid else 0.0
+                    records.append(dict(z_shift_mm=zshift,sweep_deg=sweep,side=label,kind=kind,intersection_volume_cm3=iv,positive_overlap=iv>1e-4))
+    residual=[r for r in records if r['positive_overlap']]
+    audit=dict(status='ROBUST_DENSE_DATUM_CLEARANCE_REVIEW',source_revision='v23',targeted_extra_z_margin_mm=1.0,
+      tested_vertical_shifts_mm=shifts,tested_sweep_angles_deg=sweeps,sweep_step_deg=2,pocket_count=len(pocket_defs),pockets=pocket_defs,
+      fuselage_volume_before_cm3=before,fuselage_volume_after_cm3=after,removed_volume_cm3=before-after,
+      residual_positive_overlaps=residual,max_residual_intersection_volume_cm3=max((r['intersection_volume_cm3'] for r in records),default=0.0),
+      robust_dense_clearance_pass=(len(residual)==0),pivot_waterline_original_aircraft_verified=False,source_registration_release=False,
+      clearance_release=False,mechanical_detail_release=False,print_release=False,flight_release=False)
+    outdir=os.path.join(config['export_dir'],'robust_clearance_v28'); os.makedirs(outdir,exist_ok=True)
+    target=os.path.join(outdir,'F14_v28_ROBUST_DATUM_CLEARANCE_REVIEW.f3d')
+    if not design.exportManager.execute(design.exportManager.createFusionArchiveExportOptions(target)): raise RuntimeError('v28 export failed')
+    with open(os.path.join(outdir,'F14_v28_robust_datum_clearance_audit.json'),'w',encoding='utf-8') as stream: json.dump(audit,stream,indent=2)
+    _app.activeViewport.fit(); _app.activeViewport.saveAsImageFile(os.path.join(outdir,'F14_v28_robust_datum_clearance_review.png'),1600,1000)
+    return audit
+
+def build_robust_datum_clearance_review_v29():
+    """Refine only the 68-deg outer-wing pocket in Z, then test dense sweep at +/-1 mm WL uncertainty."""
+    build_registered_clearance_keepout_review_v23()
+    design=adsk.fusion.Design.cast(_app.activeProduct)
+    root=design.rootComponent
+    _app.activeDocument.name='F14_v29_ROBUST_DATUM_CLEARANCE_REVIEW'
+    base=os.path.dirname(__file__)
+    with open(os.path.join(base,'NASA_F14_basic_wing_v08.json'),encoding='utf-8') as stream: data=json.load(stream)
+    with open(os.path.join(base,'F14_pivot_datum_v16.json'),encoding='utf-8') as stream: pivot=json.load(stream)
+    with open(os.path.join(base,'F14TomcatRC_config.json'),encoding='utf-8') as stream: config=json.load(stream)
+    with open(os.path.join(config['export_dir'],'registered_keepout_v23','F14_v23_registered_keepout_audit.json'),encoding='utf-8') as stream: v23=json.load(stream)
+    factor=900.0/(2.0*data['sections'][-1]['wbl_in'])
+    px=pivot['derived_full_scale_pivot_fs_in']*factor
+    py=pivot['derived_full_scale_pivot_bl_in']*factor
+    s0,s1=data['sections'][0],data['sections'][1]
+    dz=(s1['reference_vertical_wl_in']-s0['reference_vertical_wl_in'])/(s1['wbl_in']-s0['wbl_in'])
+    pz=(s0['reference_vertical_wl_in']+(pivot['derived_full_scale_pivot_bl_in']-s0['wbl_in'])*dz)*factor
+    fus=next(b for b in root.bRepBodies if b.name=='UPC_FUSELAGE_OML_WL_REGISTERED_v22')
+    before=fus.volume
+    tools=adsk.core.ObjectCollection.create(); pocket_defs=[]; idx=0
+    for rec in v23['intersection_records']:
+        if not rec.get('positive_overlap') or 'intersection_bounds_mm' not in rec: continue
+        b=rec['intersection_bounds_mm']; mxy=3.0 if rec['sweep_deg']==68 and rec['kind']=='outer_wing' else 2.0
+        mz=3.0 if rec['sweep_deg']==68 and rec['kind']=='outer_wing' else 2.0
+        x0,x1=b['x'][0]-mxy,b['x'][1]+mxy; y0,y1=b['y'][0]-mxy,b['y'][1]+mxy; z0,z1=b['z'][0]-mz,b['z'][1]+mz
+        idx+=1
+        name='ENG_ROBUST_CLEARANCE_%02d_%s_%02d_%s_v29'%(idx,rec['side'],rec['sweep_deg'],rec['kind'])
+        body=extrude_poly(root,name,[(x0,y0),(x1,y0),(x1,y1),(x0,y1)],z0,z1-z0); body.opacity=0.2; tools.add(body)
+        pocket_defs.append(dict(name=name,source_record=rec,margin_xy_mm=mxy,margin_z_mm=mz,bounds_mm=dict(x=[x0,x1],y=[y0,y1],z=[z0,z1])))
+    ci=root.features.combineFeatures.createInput(fus,tools); ci.operation=adsk.fusion.FeatureOperations.CutFeatureOperation; ci.isKeepToolBodies=True; root.features.combineFeatures.add(ci)
+    fus.name='UPC_FUSELAGE_ROBUST_CLEARANCE_CUT_v29'; after=fus.volume
+    temporary=adsk.fusion.TemporaryBRepManager.get(); shifts=[-1.0,-0.5,0.0,0.5,1.0]; sweeps=list(range(20,69,2)); records=[]
+    for zshift in shifts:
+        fuscopy=temporary.copy(fus); tm=adsk.core.Matrix3D.create(); tm.translation=adsk.core.Vector3D.create(0,0,mm(zshift)); temporary.transform(fuscopy,tm)
+        for sweep in sweeps:
+            for sign,label in [(1,'R'),(-1,'L')]:
+                angle=-sign*math.radians(sweep-20.0); rot=adsk.core.Matrix3D.create(); rot.setToRotation(angle,adsk.core.Vector3D.create(0,0,1),adsk.core.Point3D.create(mm(px),mm(sign*py),mm(pz)))
+                wing=next(b for b in root.bRepBodies if b.name.startswith('SOURCE_GRUMMAN_BASIC_WING_'+label+'_')); lug=next(b for b in root.bRepBodies if b.name=='ENG_ROOT_LUG_'+label+'_v19')
+                for body,kind in [(wing,'outer_wing'),(lug,'root_lug')]:
+                    moving=temporary.copy(body); temporary.transform(moving,rot); fixed=temporary.copy(fuscopy)
+                    ok=temporary.booleanOperation(moving,fixed,adsk.fusion.BooleanTypes.IntersectionBooleanType); iv=moving.volume if ok and moving.isValid else 0.0
+                    records.append(dict(z_shift_mm=zshift,sweep_deg=sweep,side=label,kind=kind,intersection_volume_cm3=iv,positive_overlap=iv>1e-4))
+    residual=[r for r in records if r['positive_overlap']]
+    audit=dict(status='ROBUST_DENSE_DATUM_CLEARANCE_REVIEW',source_revision='v23',targeted_extra_xyz_margin_mm=1.0,
+      tested_vertical_shifts_mm=shifts,tested_sweep_angles_deg=sweeps,sweep_step_deg=2,pocket_count=len(pocket_defs),pockets=pocket_defs,
+      fuselage_volume_before_cm3=before,fuselage_volume_after_cm3=after,removed_volume_cm3=before-after,
+      residual_positive_overlaps=residual,max_residual_intersection_volume_cm3=max((r['intersection_volume_cm3'] for r in records),default=0.0),
+      robust_dense_clearance_pass=(len(residual)==0),pivot_waterline_original_aircraft_verified=False,source_registration_release=False,
+      clearance_release=False,mechanical_detail_release=False,print_release=False,flight_release=False)
+    outdir=os.path.join(config['export_dir'],'robust_clearance_v29'); os.makedirs(outdir,exist_ok=True)
+    target=os.path.join(outdir,'F14_v29_ROBUST_DATUM_CLEARANCE_REVIEW.f3d')
+    if not design.exportManager.execute(design.exportManager.createFusionArchiveExportOptions(target)): raise RuntimeError('v28 export failed')
+    with open(os.path.join(outdir,'F14_v29_robust_datum_clearance_audit.json'),'w',encoding='utf-8') as stream: json.dump(audit,stream,indent=2)
+    _app.activeViewport.fit(); _app.activeViewport.saveAsImageFile(os.path.join(outdir,'F14_v29_robust_datum_clearance_review.png'),1600,1000)
+    return audit
+
+
 def build_project_revision():
     # Fixed CAD entry point. Subsequent checked-in revisions can change this
     # implementation without accepting code, paths or shell commands in requests.
-    return build_dense_sweep_clearance_review_v26()
+    return build_robust_datum_clearance_review_v29()
 
 class BuildRequestHandler(adsk.core.CustomEventHandler):
     def notify(self,args):

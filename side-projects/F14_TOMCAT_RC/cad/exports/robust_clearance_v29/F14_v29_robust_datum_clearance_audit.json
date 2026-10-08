@@ -1,0 +1,535 @@
+{
+  "status": "ROBUST_DENSE_DATUM_CLEARANCE_REVIEW",
+  "source_revision": "v23",
+  "targeted_extra_xyz_margin_mm": 1.0,
+  "tested_vertical_shifts_mm": [
+    -1.0,
+    -0.5,
+    0.0,
+    0.5,
+    1.0
+  ],
+  "tested_sweep_angles_deg": [
+    20,
+    22,
+    24,
+    26,
+    28,
+    30,
+    32,
+    34,
+    36,
+    38,
+    40,
+    42,
+    44,
+    46,
+    48,
+    50,
+    52,
+    54,
+    56,
+    58,
+    60,
+    62,
+    64,
+    66,
+    68
+  ],
+  "sweep_step_deg": 2,
+  "pocket_count": 12,
+  "pockets": [
+    {
+      "name": "ENG_ROBUST_CLEARANCE_01_R_20_root_lug_v29",
+      "source_record": {
+        "sweep_deg": 20,
+        "side": "R",
+        "kind": "root_lug",
+        "intersection_volume_cm3": 0.0022047261302368957,
+        "positive_overlap": true,
+        "intersection_bounds_mm": {
+          "x": [
+            593.1323905812828,
+            593.8649835977877
+          ],
+          "y": [
+            125.20927023775285,
+            125.59797263183876
+          ],
+          "z": [
+            180.06184041387712,
+            195.59240693460868
+          ]
+        }
+      },
+      "margin_xy_mm": 2.0,
+      "margin_z_mm": 2.0,
+      "bounds_mm": {
+        "x": [
+          591.1323905812828,
+          595.8649835977877
+        ],
+        "y": [
+          123.20927023775285,
+          127.59797263183876
+        ],
+        "z": [
+          178.06184041387712,
+          197.59240693460868
+        ]
+      }
+    },
+    {
+      "name": "ENG_ROBUST_CLEARANCE_02_L_20_root_lug_v29",
+      "source_record": {
+        "sweep_deg": 20,
+        "side": "L",
+        "kind": "root_lug",
+        "intersection_volume_cm3": 0.002204726127631121,
+        "positive_overlap": true,
+        "intersection_bounds_mm": {
+          "x": [
+            593.1323905812828,
+            593.8649835977878
+          ],
+          "y": [
+            -125.59797263183873,
+            -125.20927023775285
+          ],
+          "z": [
+            180.06184041387712,
+            195.59240693460868
+          ]
+        }
+      },
+      "margin_xy_mm": 2.0,
+      "margin_z_mm": 2.0,
+      "bounds_mm": {
+        "x": [
+          591.1323905812828,
+          595.8649835977878
+        ],
+        "y": [
+          -127.59797263183873,
+          -123.20927023775285
+        ],
+        "z": [
+          178.06184041387712,
+          197.59240693460868
+        ]
+      }
+    },
+    {
+      "name": "ENG_ROBUST_CLEARANCE_03_R_40_outer_wing_v29",
+      "source_record": {
+        "sweep_deg": 40,
+        "side": "R",
+        "kind": "outer_wing",
+        "intersection_volume_cm3": 0.21239337302383918,
+        "positive_overlap": true,
+        "intersection_bounds_mm": {
+          "x": [
+            714.2394006133212,
+            740.2436161721943
+          ],
+          "y": [
+            105.31008949021312,
+            113.66365182300663
+          ],
+          "z": [
+            184.5725398111105,
+            189.6319192860425
+          ]
+        }
+      },
+      "margin_xy_mm": 2.0,
+      "margin_z_mm": 2.0,
+      "bounds_mm": {
+        "x": [
+          712.2394006133212,
+          742.2436161721943
+        ],
+        "y": [
+          103.31008949021312,
+          115.66365182300663
+        ],
+        "z": [
+          182.5725398111105,
+          191.6319192860425
+        ]
+      }
+    },
+    {
+      "name": "ENG_ROBUST_CLEARANCE_04_L_40_outer_wing_v29",
+      "source_record": {
+        "sweep_deg": 40,
+        "side": "L",
+        "kind": "outer_wing",
+        "intersection_volume_cm3": 0.21239337317961568,
+        "positive_overlap": true,
+        "intersection_bounds_mm": {
+          "x": [
+            714.2394006133212,
+            740.2436161721942
+          ],
+          "y": [
+            -113.66365182300663,
+            -105.31008949021312
+          ],
+          "z": [
+            184.5725398111105,
+            189.6319192860425
+          ]
+        }
+      },
+      "margin_xy_mm": 2.0,
+      "margin_z_mm": 2.0,
+      "bounds_mm": {
+        "x": [
+          712.2394006133212,
+          742.2436161721942
+        ],
+        "y": [
+          -115.66365182300663,
+          -103.31008949021312
+        ],
+        "z": [
+          182.5725398111105,
+          191.6319192860425
+        ]
+      }
+    },
+    {
+      "name": "ENG_ROBUST_CLEARANCE_05_R_50_outer_wing_v29",
+      "source_record": {
+        "sweep_deg": 50,
+        "side": "R",
+        "kind": "outer_wing",
+        "intersection_volume_cm3": 4.035861782012818,
+        "positive_overlap": true,
+        "intersection_bounds_mm": {
+          "x": [
+            682.7837546927016,
+            749.9770081779265
+          ],
+          "y": [
+            84.12789449565437,
+            113.66365182300663
+          ],
+          "z": [
+            183.17837363795542,
+            193.74550598324515
+          ]
+        }
+      },
+      "margin_xy_mm": 2.0,
+      "margin_z_mm": 2.0,
+      "bounds_mm": {
+        "x": [
+          680.7837546927016,
+          751.9770081779265
+        ],
+        "y": [
+          82.12789449565437,
+          115.66365182300663
+        ],
+        "z": [
+          181.17837363795542,
+          195.74550598324515
+        ]
+      }
+    },
+    {
+      "name": "ENG_ROBUST_CLEARANCE_06_L_50_outer_wing_v29",
+      "source_record": {
+        "sweep_deg": 50,
+        "side": "L",
+        "kind": "outer_wing",
+        "intersection_volume_cm3": 4.035914861590788,
+        "positive_overlap": true,
+        "intersection_bounds_mm": {
+          "x": [
+            682.7837546927015,
+            749.9770081779266
+          ],
+          "y": [
+            -113.66365182300663,
+            -84.12789449565437
+          ],
+          "z": [
+            183.17837363795542,
+            193.74550598324515
+          ]
+        }
+      },
+      "margin_xy_mm": 2.0,
+      "margin_z_mm": 2.0,
+      "bounds_mm": {
+        "x": [
+          680.7837546927015,
+          751.9770081779266
+        ],
+        "y": [
+          -115.66365182300663,
+          -82.12789449565437
+        ],
+        "z": [
+          181.17837363795542,
+          195.74550598324515
+        ]
+      }
+    },
+    {
+      "name": "ENG_ROBUST_CLEARANCE_07_R_60_outer_wing_v29",
+      "source_record": {
+        "sweep_deg": 60,
+        "side": "R",
+        "kind": "outer_wing",
+        "intersection_volume_cm3": 12.332829874802774,
+        "positive_overlap": true,
+        "intersection_bounds_mm": {
+          "x": [
+            667.6634565850776,
+            762.6329683036374
+          ],
+          "y": [
+            64.19393631484006,
+            113.66365182300663
+          ],
+          "z": [
+            182.7039567325233,
+            195.2477371516921
+          ]
+        }
+      },
+      "margin_xy_mm": 2.0,
+      "margin_z_mm": 2.0,
+      "bounds_mm": {
+        "x": [
+          665.6634565850776,
+          764.6329683036374
+        ],
+        "y": [
+          62.19393631484006,
+          115.66365182300663
+        ],
+        "z": [
+          180.7039567325233,
+          197.2477371516921
+        ]
+      }
+    },
+    {
+      "name": "ENG_ROBUST_CLEARANCE_08_L_60_outer_wing_v29",
+      "source_record": {
+        "sweep_deg": 60,
+        "side": "L",
+        "kind": "outer_wing",
+        "intersection_volume_cm3": 12.33282989021463,
+        "positive_overlap": true,
+        "intersection_bounds_mm": {
+          "x": [
+            667.6634565850776,
+            762.6329683036374
+          ],
+          "y": [
+            -113.66365182300663,
+            -64.19393631484006
+          ],
+          "z": [
+            182.7039567325233,
+            195.2477371516921
+          ]
+        }
+      },
+      "margin_xy_mm": 2.0,
+      "margin_z_mm": 2.0,
+      "bounds_mm": {
+        "x": [
+          665.6634565850776,
+          764.6329683036374
+        ],
+        "y": [
+          -115.66365182300663,
+          -62.19393631484006
+        ],
+        "z": [
+          180.7039567325233,
+          197.2477371516921
+        ]
+      }
+    },
+    {
+      "name": "ENG_ROBUST_CLEARANCE_09_R_68_outer_wing_v29",
+      "source_record": {
+        "sweep_deg": 68,
+        "side": "R",
+        "kind": "outer_wing",
+        "intersection_volume_cm3": 22.430696170015757,
+        "positive_overlap": true,
+        "intersection_bounds_mm": {
+          "x": [
+            659.3357483114858,
+            778.2964050888808
+          ],
+          "y": [
+            49.55427159384435,
+            113.66365182300663
+          ],
+          "z": [
+            182.52540389622953,
+            195.88436179546602
+          ]
+        }
+      },
+      "margin_xy_mm": 3.0,
+      "margin_z_mm": 3.0,
+      "bounds_mm": {
+        "x": [
+          656.3357483114858,
+          781.2964050888808
+        ],
+        "y": [
+          46.55427159384435,
+          116.66365182300663
+        ],
+        "z": [
+          179.52540389622953,
+          198.88436179546602
+        ]
+      }
+    },
+    {
+      "name": "ENG_ROBUST_CLEARANCE_10_R_68_root_lug_v29",
+      "source_record": {
+        "sweep_deg": 68,
+        "side": "R",
+        "kind": "root_lug",
+        "intersection_volume_cm3": 0.001442647430381234,
+        "positive_overlap": true,
+        "intersection_bounds_mm": {
+          "x": [
+            626.1578357167575,
+            626.7668523281288
+          ],
+          "y": [
+            110.34637372820498,
+            110.74304785907364
+          ],
+          "z": [
+            179.59240693460868,
+            195.59240693460868
+          ]
+        }
+      },
+      "margin_xy_mm": 2.0,
+      "margin_z_mm": 2.0,
+      "bounds_mm": {
+        "x": [
+          624.1578357167575,
+          628.7668523281288
+        ],
+        "y": [
+          108.34637372820498,
+          112.74304785907364
+        ],
+        "z": [
+          177.59240693460868,
+          197.59240693460868
+        ]
+      }
+    },
+    {
+      "name": "ENG_ROBUST_CLEARANCE_11_L_68_outer_wing_v29",
+      "source_record": {
+        "sweep_deg": 68,
+        "side": "L",
+        "kind": "outer_wing",
+        "intersection_volume_cm3": 22.431034225457477,
+        "positive_overlap": true,
+        "intersection_bounds_mm": {
+          "x": [
+            659.3357483114856,
+            778.2964050888808
+          ],
+          "y": [
+            -113.66365182300666,
+            -49.55427159384435
+          ],
+          "z": [
+            182.52540389622953,
+            195.88436179546602
+          ]
+        }
+      },
+      "margin_xy_mm": 3.0,
+      "margin_z_mm": 3.0,
+      "bounds_mm": {
+        "x": [
+          656.3357483114856,
+          781.2964050888808
+        ],
+        "y": [
+          -116.66365182300666,
+          -46.55427159384435
+        ],
+        "z": [
+          179.52540389622953,
+          198.88436179546602
+        ]
+      }
+    },
+    {
+      "name": "ENG_ROBUST_CLEARANCE_12_L_68_root_lug_v29",
+      "source_record": {
+        "sweep_deg": 68,
+        "side": "L",
+        "kind": "root_lug",
+        "intersection_volume_cm3": 0.001442647671115867,
+        "positive_overlap": true,
+        "intersection_bounds_mm": {
+          "x": [
+            626.1578357167575,
+            626.7668523281288
+          ],
+          "y": [
+            -110.74304785907356,
+            -110.34637372820498
+          ],
+          "z": [
+            179.59240693460868,
+            195.59240693460868
+          ]
+        }
+      },
+      "margin_xy_mm": 2.0,
+      "margin_z_mm": 2.0,
+      "bounds_mm": {
+        "x": [
+          624.1578357167575,
+          628.7668523281288
+        ],
+        "y": [
+          -112.74304785907356,
+          -108.34637372820498
+        ],
+        "z": [
+          177.59240693460868,
+          197.59240693460868
+        ]
+      }
+    }
+  ],
+  "fuselage_volume_before_cm3": 10951.11845412946,
+  "fuselage_volume_after_cm3": 10637.850782231286,
+  "removed_volume_cm3": 313.26767189817474,
+  "residual_positive_overlaps": [],
+  "max_residual_intersection_volume_cm3": 5.167685488209758e-06,
+  "robust_dense_clearance_pass": true,
+  "pivot_waterline_original_aircraft_verified": false,
+  "source_registration_release": false,
+  "clearance_release": false,
+  "mechanical_detail_release": false,
+  "print_release": false,
+  "flight_release": false
+}
