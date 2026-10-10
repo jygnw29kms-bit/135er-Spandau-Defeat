@@ -1,4 +1,4 @@
-<!-- 135er Spandau Strike FINAL MASTER | Copyright (c) 2026 JL1976 -->
+﻿<!-- 135er Spandau Strike FINAL MASTER | Copyright (c) 2026 JL1976 -->
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 <head>
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
@@ -47,6 +47,18 @@ a{color:inherit}
 .hs-footer-recruit{left:58.2%;top:95.7%;width:7.3%;height:1.7%}
 .hs-footer-intern{left:65.8%;top:95.7%;width:5.0%;height:1.7%}
 .hs-footer-contact{left:71.0%;top:95.7%;width:5.4%;height:1.7%}
+
+/* Live project status overlays — content only; approved master artwork/layout remains unchanged */
+.liveOverlay{position:absolute;z-index:6;pointer-events:none;line-height:1.15;color:#d9d5c5}
+.liveStatus{left:82.0%;top:14.45%;width:14.0%;height:7.15%;background:#11130f;font-family:"Arial Narrow",Arial,sans-serif;font-weight:700;font-size:min(1.05vw,10px);letter-spacing:.01em}
+.liveStatus .lsRow{height:25%;display:flex;align-items:center;padding:0 3%;border-bottom:1px solid rgba(90,87,72,.34)}
+.liveStatus .lsRow:last-child{border-bottom:0}.liveStatus .active{color:#9fcf54}.liveStatus .warn{color:#e2c529}
+.liveNews{top:41.18%;height:6.75%;background:#12140f;padding:.45% .75%;font-family:Arial,sans-serif;overflow:hidden}
+.liveNews.n1{left:3.0%;width:30.0%}.liveNews.n2{left:35.2%;width:29.7%}.liveNews.n3{left:66.6%;width:30.0%}
+.liveNews .date{color:#e2c529;font:900 min(.92vw,8.7px)/1.1 "Arial Narrow",Arial,sans-serif;letter-spacing:.05em;text-transform:uppercase;margin-bottom:1.7%}
+.liveNews .title{color:#eee8d7;font:900 min(1.28vw,12px)/1 Impact,"Arial Black",sans-serif;letter-spacing:.01em;text-transform:uppercase;margin-bottom:1.8%}
+.liveNews .copy{color:#c9c3ae;font:min(1.02vw,9.6px)/1.25 Arial,sans-serif}
+.liveNews .more{position:absolute;right:3%;bottom:4%;color:#e2c529;font:900 min(.9vw,8.5px)/1 "Arial Narrow",Arial,sans-serif;text-transform:uppercase}
 .screenreader{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
 .anchor{position:absolute;left:0;width:1px;height:1px;pointer-events:none}
 #projekt{top:11.4%}#maps{top:48.2%}#fraktionen{top:60.2%}#development{top:60.2%}#medien{top:31.0%}#kontakt{top:94.7%}
@@ -83,6 +95,31 @@ a{color:inherit}
  <span id="medien" class="anchor" aria-hidden="true"></span>
  <span id="kontakt" class="anchor" aria-hidden="true"></span>
  <img src="https://raw.githubusercontent.com/jygnw29kms-bit/135er-Spandau-Defeat/main/media/theme/spandau-strike-master-final.png" alt="135er Spandau Strike – Berlin Tactical Operations">
+
+ <div class="liveOverlay liveStatus" aria-hidden="true">
+  <div class="lsRow">Rathaus Spandau</div>
+  <div class="lsRow">Unreal Engine 5 / Lyra</div>
+  <div class="lsRow warn">Integration / Playtest</div>
+  <div class="lsRow">Berlin-Spandau</div>
+ </div>
+ <div class="liveOverlay liveNews n1" aria-hidden="true">
+  <div class="date">10.10.2026 &nbsp;//&nbsp; TECHNIK</div>
+  <div class="title">NAVMESH &amp; GELÄNDEPROXY</div>
+  <div class="copy">1216 NAV-Hilfskacheln und Spawn-Pads entfernt. Der v73-TerrainProxy übernimmt Collision und Navigation; Recast wurde neu gebaut und gespeichert.</div>
+  <div class="more">WEITER LESEN →</div>
+ </div>
+ <div class="liveOverlay liveNews n2" aria-hidden="true">
+  <div class="date">10.10.2026 &nbsp;//&nbsp; GAMEPLAY</div>
+  <div class="title">LYRA SHOOTER LÄDT</div>
+  <div class="copy">B_LyraGameMode und die Control-Points-Experience laden sauber. HUD, Waffen und Bots erscheinen im aktuellen Laufzeit-Test.</div>
+  <div class="more">WEITER LESEN →</div>
+ </div>
+ <div class="liveOverlay liveNews n3" aria-hidden="true">
+  <div class="date">10.10.2026 &nbsp;//&nbsp; STATUS</div>
+  <div class="title">PLAYTEST — NOCH NICHT FINAL</div>
+  <div class="copy">Aktueller Blocker: Standalone startet noch als Spectator und wartet auf weitere Spieler. Detail-, Licht-, Performance- und Packaging-Pass folgen.</div>
+  <div class="more">WEITER LESEN →</div>
+ </div>
  <a class="hotspot hs-start" href="/135erSpandauStrike/" aria-label="Start"></a>
  <a class="hotspot hs-project" href="/135erSpandauStrike/#projekt" aria-label="Projekt"></a>
  <a class="hotspot hs-maps" href="/135erSpandauStrike/#maps" aria-label="Maps"></a>
@@ -122,7 +159,9 @@ a{color:inherit}
 
  <div class="screenreader">
   <h1>135er Spandau Strike</h1>
-  <p>Berlin Tactical Operations. Unreal Engine 5 / Lyra. Aktueller Fokus: Rathaus Spandau.</p>
+  <p>Berlin Tactical Operations. Unreal Engine 5 / Lyra. Aktueller Fokus: Rathaus Spandau. Status: Integration und Playtest, noch nicht final.</p>
+  <h2>Aktueller Entwicklungsstand 10. Oktober 2026</h2>
+  <p>1216 provisorische NAV-Hilfskacheln und die Spawn-Safety-Pads wurden entfernt. Ein unsichtbarer v73-TerrainProxy übernimmt Collision und Navigation. Das Recast-Navmesh wurde neu gebaut und im FINAL-Level gespeichert. Lyra GameMode und Control-Points-Experience laden, HUD, Waffen und Bots werden erzeugt. Aktueller Gameplay-Blocker: Der lokale Standalone-Spieler bleibt im Control-Points-Wartezustand als Spectator, bis das Matchstart-Setup angepasst ist. Danach folgen Detailierung, Materialien, Beleuchtung, Performance und Packaging.</p>
   <h2>Fraktionen</h2><p>CT Deutschland, T USA.</p>
  </div>
 </main>
