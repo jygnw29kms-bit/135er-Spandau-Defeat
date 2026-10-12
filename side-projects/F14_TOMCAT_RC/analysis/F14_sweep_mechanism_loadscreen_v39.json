@@ -1,0 +1,151 @@
+{
+  "status": "PRELIMINARY_V39_LOAD_SCREEN",
+  "selected_candidate": {
+    "crank_vector_at_20deg_mm": [
+      -20,
+      -30
+    ],
+    "slider_attach_y_mm": 40.0,
+    "rod_length_mm": 87.69313637056037,
+    "slider_x_min_mm": 523.3999635996308,
+    "slider_x_max_mm": 541.5337634280526,
+    "slider_travel_mm": 18.13379982842173,
+    "min_rod_outer_oml_inside_fraction": 1.0,
+    "slider_inside_fraction": 1.0,
+    "rod_structural_hits": [],
+    "slider_structural_hits": [],
+    "fully_packaged": true,
+    "samples": [
+      {
+        "sweep_deg": 20,
+        "slider_x_mm": 525.0,
+        "crank_pin_mm": [
+          593.1323905812828,
+          95.20927023775282
+        ]
+      },
+      {
+        "sweep_deg": 24,
+        "slider_x_mm": 524.1724260125955,
+        "crank_pin_mm": [
+          591.0884153637626,
+          96.6774782048406
+        ]
+      },
+      {
+        "sweep_deg": 28,
+        "slider_x_mm": 523.6309917431283,
+        "crank_pin_mm": [
+          589.1518361776494,
+          98.28469019470703
+        ]
+      },
+      {
+        "sweep_deg": 32,
+        "slider_x_mm": 523.3999635996308,
+        "crank_pin_mm": [
+          587.332087842074,
+          100.02307603209383
+        ]
+      },
+      {
+        "sweep_deg": 36,
+        "slider_x_mm": 523.5056281312088,
+        "crank_pin_mm": [
+          585.6380359880064,
+          101.88416647594323
+        ]
+      },
+      {
+        "sweep_deg": 40,
+        "slider_x_mm": 523.9769541548953,
+        "crank_pin_mm": [
+          584.0779338657946,
+          103.85889448068895
+        ]
+      },
+      {
+        "sweep_deg": 44,
+        "slider_x_mm": 524.8466337079881,
+        "crank_pin_mm": [
+          582.6593821361569,
+          105.93763936999079
+        ]
+      },
+      {
+        "sweep_deg": 48,
+        "slider_x_mm": 526.1527388889946,
+        "crank_pin_mm": [
+          581.3892918405276,
+          108.11027370770282
+        ]
+      },
+      {
+        "sweep_deg": 52,
+        "slider_x_mm": 527.9414297521103,
+        "crank_pin_mm": [
+          580.2738507311582,
+          110.36621263772413
+        ]
+      },
+      {
+        "sweep_deg": 56,
+        "slider_x_mm": 530.271568052155,
+        "crank_pin_mm": [
+          579.3184931250097,
+          112.69446545235385
+        ]
+      },
+      {
+        "sweep_deg": 60,
+        "slider_x_mm": 533.2230636180149,
+        "crank_pin_mm": [
+          578.5278734283071,
+          115.08368913791426
+        ]
+      },
+      {
+        "sweep_deg": 64,
+        "slider_x_mm": 536.9133086766299,
+        "crank_pin_mm": [
+          577.9058434607399,
+          117.52224363677323
+        ]
+      },
+      {
+        "sweep_deg": 68,
+        "slider_x_mm": 541.5337634280526,
+        "crank_pin_mm": [
+          577.4554336897838,
+          119.99824855653496
+        ]
+      }
+    ]
+  },
+  "selection_reason": "closest packaged v38 candidate to 18 mm useful slider stroke",
+  "servo_screen": {
+    "stall_torque_Nm": 2.0,
+    "horn_radius_mm": 17.0,
+    "tangential_force_N": 117.6470588235294,
+    "estimated_total_servo_sweep_deg": 64.46376393689158
+  },
+  "design_load": {
+    "dynamic_factor": 2.5,
+    "rod_force_N": 294.11764705882354
+  },
+  "linkage": {
+    "min_moment_arm_mm": 0.7023738314438681,
+    "max_moment_arm_mm": 30.411792449959545,
+    "theoretical_min_wing_torque_at_servo_stall_Nm": 0.08263221546398448
+  },
+  "hardware_screen": {
+    "m3_single_shear_stress_MPa": 41.60913544886153,
+    "crank_net_section_stress_MPa": 5.497526113249038
+  },
+  "release": {
+    "servo_model_selected": false,
+    "material_coupon_verified": false,
+    "physical_proof_test_verified": false,
+    "flight_release": false
+  }
+}

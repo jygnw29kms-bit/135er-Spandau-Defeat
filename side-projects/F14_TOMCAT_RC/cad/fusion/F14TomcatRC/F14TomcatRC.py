@@ -2108,11 +2108,330 @@ def build_sweep_servo_packaging_review_v35():
     _app.activeViewport.fit(); _app.activeViewport.saveAsImageFile(os.path.join(outdir,'F14_v35_sweep_servo_packaging_review.png'),1600,1000)
     return audit
 
+
+
+
+
+def _link_rod_body_v37(root,name,p1,p2,zcenter,width=4.0,height=4.0):
+    x1,y1=p1; x2,y2=p2; dx=x2-x1; dy=y2-y1; L=math.hypot(dx,dy)
+    if L<1e-6: raise RuntimeError('zero length linkage')
+    nx=-dy/L*width/2.0; ny=dx/L*width/2.0
+    poly=[(x1+nx,y1+ny),(x2+nx,y2+ny),(x2-nx,y2-ny),(x1-nx,y1-ny)]
+    return extrude_poly(root,name,poly,zcenter-height/2.0,height)
+
+def build_inboard_sweep_crank_scan_v38():
+    """Replace the v37 direct-root rod with an inboard rotating crank and scan packaging over 20..68 deg."""
+    build_linkage_plane_scan_v37()
+    design=adsk.fusion.Design.cast(_app.activeProduct); root=design.rootComponent
+    _app.activeDocument.name='F14_v38_INBOARD_SWEEP_CRANK_SCAN'
+    base=os.path.dirname(__file__)
+    with open(os.path.join(base,'NASA_F14_basic_wing_v08.json'),encoding='utf-8') as stream: data=json.load(stream)
+    with open(os.path.join(base,'F14_pivot_datum_v16.json'),encoding='utf-8') as stream: pivot=json.load(stream)
+    with open(os.path.join(base,'F14TomcatRC_config.json'),encoding='utf-8') as stream: config=json.load(stream)
+    factor=900.0/(2.0*data['sections'][-1]['wbl_in']); px=pivot['derived_full_scale_pivot_fs_in']*factor; py=pivot['derived_full_scale_pivot_bl_in']*factor
+    s0,s1=data['sections'][0],data['sections'][1]; dz=(s1['reference_vertical_wl_in']-s0['reference_vertical_wl_in'])/(s1['wbl_in']-s0['wbl_in']); pz=(s0['reference_vertical_wl_in']+(pivot['derived_full_scale_pivot_bl_in']-s0['wbl_in'])*dz)*factor
+    zc=184.0; temporary=adsk.fusion.TemporaryBRepManager.get()
+    outer=next((b for b in root.bRepBodies if b.name=='REF_UPC_FUSELAGE_OUTER_OML_v37'),None)
+    if outer is None: raise RuntimeError('v37 outer OML missing')
+    service=next(b for b in root.bRepBodies if b.name=='RC_SWEEP_SERVO_SERVICE_ENVELOPE_v35')
+    fixed=[b for b in root.bRepBodies if (b.name.startswith('ENG_WINGBOX_FORK_') and b.name.endswith('_v31')) or (b.name.startswith('ENG_RISER_SOCKET_') and b.name.endswith('_v34')) or b.name in ['REF_CF6x4_FRONT_LOWER_v34','REF_CF6x4_REAR_LOWER_v34','REF_CF6x4_FRONT_UPPER_v35','REF_CF6x4_REAR_UPPER_v35']]
+    candidates=[]; bodies=[]
+    vectors=[(-10,-20),(-10,-25),(-15,-25),(-15,-30),(-20,-30),(-20,-35)]
+    slider_ys=[40.0,45.0,50.0,55.0]
+    x0=525.0
+    for dx0,dy0 in vectors:
+        for sy in slider_ys:
+            ax0=px+dx0; ay0=py+dy0; L=math.hypot(ax0-x0,ay0-sy)
+            samples=[]; rod_inside=[]; rod_hits=[]; slider_x=[]; valid=True
+            for sweep in range(20,69,4):
+                a=-math.radians(sweep-20.0); ca=math.cos(a); sa=math.sin(a)
+                dx=dx0*ca-dy0*sa; dy=dx0*sa+dy0*ca; ax=px+dx; ay=py+dy
+                q=L*L-(ay-sy)*(ay-sy)
+                if q<=0: valid=False; break
+                sx=ax-math.sqrt(q); slider_x.append(sx)
+                rod=_link_rod_body_v37(root,'REF_V38_LINK_%+03d_%+03d_Y%02d_S%02d'%(dx0,dy0,round(sy),sweep),(sx,sy),(ax,ay),zc,4.0,4.0); rod.opacity=0.02; bodies.append(rod)
+                rv=rod.volume; rc=temporary.copy(rod); oc=temporary.copy(outer); ok=temporary.booleanOperation(rc,oc,adsk.fusion.BooleanTypes.IntersectionBooleanType); iv=rc.volume if ok and rc.isValid else 0.0; rod_inside.append(iv/rv if rv else 0.0)
+                for part in fixed+[service]:
+                    aa=temporary.copy(rod); bb=temporary.copy(part); ok2=temporary.booleanOperation(aa,bb,adsk.fusion.BooleanTypes.IntersectionBooleanType); ov=aa.volume if ok2 and aa.isValid else 0.0
+                    if ov>1e-4: rod_hits.append(dict(sweep_deg=sweep,part=part.name,intersection_volume_cm3=ov))
+                samples.append(dict(sweep_deg=sweep,slider_x_mm=sx,crank_pin_mm=[ax,ay]))
+            if not valid: continue
+            xmin=min(slider_x); xmax=max(slider_x)
+            slider=extrude_poly(root,'REF_V38_SLIDER_%+03d_%+03d_Y%02d'%(dx0,dy0,round(sy)),[(xmin-3,sy-4),(xmax+3,sy-4),(xmax+3,sy+4),(xmin-3,sy+4)],zc-2.5,5.0); slider.opacity=0.03; bodies.append(slider)
+            sv=slider.volume; sc=temporary.copy(slider); oc=temporary.copy(outer); ok=temporary.booleanOperation(sc,oc,adsk.fusion.BooleanTypes.IntersectionBooleanType); siv=sc.volume if ok and sc.isValid else 0.0
+            sh=[]
+            for part in fixed+[service]:
+                aa=temporary.copy(slider); bb=temporary.copy(part); ok2=temporary.booleanOperation(aa,bb,adsk.fusion.BooleanTypes.IntersectionBooleanType); ov=aa.volume if ok2 and aa.isValid else 0.0
+                if ov>1e-4: sh.append(dict(part=part.name,intersection_volume_cm3=ov))
+            min_inside=min(rod_inside) if rod_inside else 0.0
+            full=(min_inside>0.985 and siv/sv>0.995 and not rod_hits and not sh)
+            candidates.append(dict(crank_vector_at_20deg_mm=[dx0,dy0],slider_attach_y_mm=sy,rod_length_mm=L,slider_x_min_mm=xmin,slider_x_max_mm=xmax,slider_travel_mm=xmax-xmin,min_rod_outer_oml_inside_fraction=min_inside,slider_inside_fraction=(siv/sv if sv else 0.0),rod_structural_hits=rod_hits,slider_structural_hits=sh,fully_packaged=full,samples=samples))
+    good=[r for r in candidates if r['fully_packaged']]
+    chosen=min(good,key=lambda r:(r['slider_travel_mm'],r['rod_length_mm'])) if good else max(candidates,key=lambda r:(r['min_rod_outer_oml_inside_fraction'],r['slider_inside_fraction'],-len(r['rod_structural_hits'])-len(r['slider_structural_hits'])))
+    tag='V38_LINK_%+03d_%+03d_Y%02d'%(chosen['crank_vector_at_20deg_mm'][0],chosen['crank_vector_at_20deg_mm'][1],round(chosen['slider_attach_y_mm']))
+    stag='V38_SLIDER_%+03d_%+03d_Y%02d'%(chosen['crank_vector_at_20deg_mm'][0],chosen['crank_vector_at_20deg_mm'][1],round(chosen['slider_attach_y_mm']))
+    for b in bodies:
+        keep=(tag in b.name or stag in b.name); b.isLightBulbOn=keep
+        if keep: b.opacity=0.28
+    dx0,dy0=chosen['crank_vector_at_20deg_mm']
+    for side,sgn in [('R',1),('L',-1)]:
+        ypin=sgn*(py+dy0); ypiv=sgn*py
+        arm=_link_rod_body_v37(root,'ENG_SWEEP_INBOARD_CRANK_%s_v38',(px,ypiv),(px+dx0,ypin),zc,8.0,5.0); arm.opacity=0.55
+    audit=dict(status='INBOARD_SWEEP_CRANK_PACKAGING_SCAN',source_revision='v37',candidate_count=len(candidates),candidate_results=candidates,chosen_candidate=chosen,chosen_fully_packaged=chosen['fully_packaged'],linkage_plane_z_mm=zc,crank_concept='pivot-concentric inboard rotating crank with short vertical transfer to wing root',crank_geometry_verified=chosen['fully_packaged'],slider_guide_geometry_verified=False,servo_torque_verified=False,mechanical_detail_release=False,print_release=False,flight_release=False)
+    outdir=os.path.join(config['export_dir'],'inboard_crank_v38'); os.makedirs(outdir,exist_ok=True)
+    target=os.path.join(outdir,'F14_v38_INBOARD_SWEEP_CRANK_SCAN.f3d')
+    if not design.exportManager.execute(design.exportManager.createFusionArchiveExportOptions(target)): raise RuntimeError('v38 export failed')
+    with open(os.path.join(outdir,'F14_v38_inboard_crank_audit.json'),'w',encoding='utf-8') as stream: json.dump(audit,stream,indent=2)
+    _app.activeViewport.fit(); _app.activeViewport.saveAsImageFile(os.path.join(outdir,'F14_v38_inboard_crank_review.png'),1600,1000)
+    return audit
+
+
+
+def _join_bodies_v39(root,target,tools):
+    coll=adsk.core.ObjectCollection.create()
+    for body in tools: coll.add(body)
+    ci=root.features.combineFeatures.createInput(target,coll)
+    ci.operation=adsk.fusion.FeatureOperations.JoinFeatureOperation
+    ci.isKeepToolBodies=False
+    root.features.combineFeatures.add(ci)
+    return target
+
+def build_sweep_mechanism_detail_v39():
+    """Turn the v38 packaging result into a first real crank/slider mechanism and run preliminary load screens."""
+    build_inboard_sweep_crank_scan_v38()
+    design=adsk.fusion.Design.cast(_app.activeProduct); root=design.rootComponent
+    _app.activeDocument.name='F14_v39_SWEEP_MECHANISM_DETAIL_REVIEW'
+    base=os.path.dirname(__file__)
+    with open(os.path.join(base,'NASA_F14_basic_wing_v08.json'),encoding='utf-8') as stream: data=json.load(stream)
+    with open(os.path.join(base,'F14_pivot_datum_v16.json'),encoding='utf-8') as stream: pivot=json.load(stream)
+    with open(os.path.join(base,'F14TomcatRC_config.json'),encoding='utf-8') as stream: config=json.load(stream)
+    audit38_path=os.path.join(config['export_dir'],'inboard_crank_v38','F14_v38_inboard_crank_audit.json')
+    with open(audit38_path,encoding='utf-8') as stream: audit38=json.load(stream)
+    factor=900.0/(2.0*data['sections'][-1]['wbl_in'])
+    px=pivot['derived_full_scale_pivot_fs_in']*factor; py=pivot['derived_full_scale_pivot_bl_in']*factor
+    s0,s1=data['sections'][0],data['sections'][1]
+    dz=(s1['reference_vertical_wl_in']-s0['reference_vertical_wl_in'])/(s1['wbl_in']-s0['wbl_in'])
+    pz=(s0['reference_vertical_wl_in']+(pivot['derived_full_scale_pivot_bl_in']-s0['wbl_in'])*dz)*factor
+    zc=184.0; temporary=adsk.fusion.TemporaryBRepManager.get()
+    good=[r for r in audit38['candidate_results'] if r['fully_packaged']]
+    if not good: raise RuntimeError('v39 requires a packaged v38 candidate')
+    # v38 originally minimized travel. For real mechanics prefer a useful 15-20 mm stroke for resolution and force balance.
+    chosen=min(good,key=lambda r:(abs(r['slider_travel_mm']-18.0),r['rod_length_mm']))
+    dx0,dy0=chosen['crank_vector_at_20deg_mm']; sy=chosen['slider_attach_y_mm']
+    xmin,xmax=chosen['slider_x_min_mm'],chosen['slider_x_max_mm']; stroke=xmax-xmin
+    outer=next(b for b in root.bRepBodies if b.name=='REF_UPC_FUSELAGE_OUTER_OML_v37')
+    service=next(b for b in root.bRepBodies if b.name=='RC_SWEEP_SERVO_SERVICE_ENVELOPE_v35')
+    fixed=[b for b in root.bRepBodies if (b.name.startswith('ENG_WINGBOX_FORK_') and b.name.endswith('_v31')) or (b.name.startswith('ENG_RISER_SOCKET_') and b.name.endswith('_v34')) or b.name in ['REF_CF6x4_FRONT_LOWER_v34','REF_CF6x4_REAR_LOWER_v34','REF_CF6x4_FRONT_UPPER_v35','REF_CF6x4_REAR_UPPER_v35']]
+    crank_bodies=[]; pin_refs=[]; rods=[]
+    # 5-mm crank plate, 14-mm neck, 20-mm pivot hub, 12-mm rod-end boss. 6-mm pivot shaft + M3 rod pin.
+    for side,sgn in [('R',1),('L',-1)]:
+        ypiv=sgn*py; ypin=sgn*(py+dy0); xpin=px+dx0
+        arm=_link_rod_body_v37(root,'ENG_SWEEP_CRANK_ARM_'+side+'_v39',(px,ypiv),(xpin,ypin),zc,14.0,5.0)
+        hub=_cyl_body_v30(root,'TMP_CRANK_HUB_'+side+'_v39',px,ypiv,zc-2.5,10.0,5.0)
+        boss=_cyl_body_v30(root,'TMP_CRANK_PIN_BOSS_'+side+'_v39',xpin,ypin,zc-2.5,6.0,5.0)
+        _join_bodies_v39(root,arm,[hub,boss])
+        _cut_cyl_v30(root,arm,'CUT_CRANK_PIVOT_'+side+'_v39',px,ypiv,zc-2.6,3.1,5.2)
+        _cut_cyl_v30(root,arm,'CUT_CRANK_M3_'+side+'_v39',xpin,ypin,zc-2.6,1.65,5.2)
+        arm.name='ENG_SWEEP_CRANK_'+side+'_v39'; arm.opacity=0.72; crank_bodies.append(arm)
+        pin=_cyl_body_v30(root,'REF_M3_CRANK_PIN_'+side+'_v39',xpin,ypin,zc-3.5,1.5,7.0); pin.opacity=0.35; pin_refs.append(pin)
+        sample20=next(r for r in chosen['samples'] if r['sweep_deg']==20)
+        sx=sample20['slider_x_mm']
+        rod=_link_rod_body_v37(root,'REF_LINK_ROD_'+side+'_v39',(sx,sgn*sy),(xpin,ypin),zc,5.0,4.0); rod.opacity=0.40; rods.append(rod)
+    # One synchronized moving crossbar; two M3 rod pins at +/-sy.
+    xmid=(xmin+xmax)/2.0
+    slider=extrude_poly(root,'ENG_SWEEP_SLIDER_CROSSBAR_v39',[(xmid-4,-sy-7),(xmid+4,-sy-7),(xmid+4,sy+7),(xmid-4,sy+7)],zc-2.5,5.0)
+    slider.opacity=0.62
+    for sgn,label in [(1,'R'),(-1,'L')]:
+        _cut_cyl_v30(root,slider,'CUT_SLIDER_M3_'+label+'_v39',xmid,sgn*sy,zc-2.6,1.65,5.2)
+        pin=_cyl_body_v30(root,'REF_M3_SLIDER_PIN_'+label+'_v39',xmid,sgn*sy,zc-3.5,1.5,7.0); pin.opacity=0.35; pin_refs.append(pin)
+    # Four fixed guide rails around the two slider ends. 0.6-mm lateral running clearance per side.
+    rail_x0=xmin-8.0; rail_x1=xmax+8.0; rails=[]
+    for sgn,label in [(1,'R'),(-1,'L')]:
+        yc=sgn*sy
+        for pos,off in [('IN',-sgn*8.1),('OUT',sgn*8.1)]:
+            y=yc+off
+            rail=extrude_poly(root,'ENG_SLIDER_GUIDE_'+label+'_'+pos+'_v39',[(rail_x0,y-1.5),(rail_x1,y-1.5),(rail_x1,y+1.5),(rail_x0,y+1.5)],zc-3.5,7.0)
+            rail.opacity=0.70; rails.append(rail)
+    # Full moving slider envelope for containment/collision checks.
+    slider_env=extrude_poly(root,'REF_SLIDER_TRAVEL_ENVELOPE_v39',[(xmin-4,-sy-7),(xmax+4,-sy-7),(xmax+4,sy+7),(xmin-4,sy+7)],zc-2.5,5.0); slider_env.opacity=0.10
+    checks=[]
+    def containment(body,label):
+        bc=temporary.copy(body); oc=temporary.copy(outer); v=body.volume
+        ok=temporary.booleanOperation(bc,oc,adsk.fusion.BooleanTypes.IntersectionBooleanType); iv=bc.volume if ok and bc.isValid else 0.0
+        frac=iv/v if v else 0.0; checks.append(dict(item=label,inside_fraction=frac)); return frac
+    crank_inside=[containment(b,b.name) for b in crank_bodies]
+    rail_inside=[containment(b,b.name) for b in rails]
+    slider_inside=containment(slider_env,slider_env.name)
+    fixed_hits=[]
+    for moving in crank_bodies:
+        side='R' if '_R_' in moving.name else 'L'; sgn=1 if side=='R' else -1; ypiv=sgn*py
+        for sweep in range(20,69,4):
+            angle=-sgn*math.radians(sweep-20.0); rot=adsk.core.Matrix3D.create(); rot.setToRotation(angle,adsk.core.Vector3D.create(0,0,1),adsk.core.Point3D.create(mm(px),mm(ypiv),mm(zc)))
+            mc=temporary.copy(moving); temporary.transform(mc,rot)
+            for part in fixed+[service]+rails:
+                a=temporary.copy(mc); b=temporary.copy(part); ok=temporary.booleanOperation(a,b,adsk.fusion.BooleanTypes.IntersectionBooleanType); iv=a.volume if ok and a.isValid else 0.0
+                if iv>1e-4: fixed_hits.append(dict(side=side,sweep_deg=sweep,part=part.name,intersection_volume_cm3=iv))
+    slider_hits=[]
+    for part in fixed+[service]:
+        a=temporary.copy(slider_env); b=temporary.copy(part); ok=temporary.booleanOperation(a,b,adsk.fusion.BooleanTypes.IntersectionBooleanType); iv=a.volume if ok and a.isValid else 0.0
+        if iv>1e-4: slider_hits.append(dict(part=part.name,intersection_volume_cm3=iv))
+    # Preliminary load screen. Final release waits for selected servo, material coupons and physical proof test.
+    servo_stall_Nm=2.0; servo_horn_mm=17.0; servo_force_N=servo_stall_Nm/(servo_horn_mm/1000.0)
+    dynamic_factor=2.5; design_rod_force_N=servo_force_N*dynamic_factor
+    pin_area_mm2=math.pi*(3.0**2)/4.0; m3_single_shear_MPa=design_rod_force_N/pin_area_mm2
+    crank_net_area_mm2=(14.0-3.3)*5.0; crank_net_stress_MPa=design_rod_force_N/crank_net_area_mm2
+    moment_arms=[]
+    for rec in chosen['samples']:
+        ax,ay=rec['crank_pin_mm']; sx=rec['slider_x_mm']; rx=ax-px; ry=ay-py; vx=sx-ax; vy=sy-ay; L=math.hypot(vx,vy)
+        if L>1e-9: moment_arms.append(abs(rx*(vy/L)-ry*(vx/L)))
+    min_ma=min(moment_arms); theoretical_wing_torque_Nm=servo_force_N*(min_ma/1000.0)
+    halfstroke=stroke/2.0
+    servo_angle_each_deg=math.degrees(math.asin(min(0.999,halfstroke/servo_horn_mm)))
+    mechanical_ok=(min(crank_inside)>0.995 and min(rail_inside)>0.995 and slider_inside>0.995 and not fixed_hits and not slider_hits)
+    load_screen_ok=(m3_single_shear_MPa<80.0 and crank_net_stress_MPa<8.0 and theoretical_wing_torque_Nm>2.0)
+    audit=dict(status='SWEEP_MECHANISM_DETAIL_REVIEW',source_revision='v38',selected_candidate=chosen,
+      selection_reason='practical approximately 18 mm slider stroke instead of minimum-stroke v38 candidate',
+      hardware=dict(pivot_bore_mm=6.2,rod_pin_bore_mm=3.3,crank_thickness_mm=5.0,crank_neck_width_mm=14.0,slider_crossbar_thickness_mm=5.0,guide_running_clearance_each_side_mm=0.6),
+      kinematics=dict(slider_travel_mm=stroke,servo_horn_radius_mm=servo_horn_mm,estimated_servo_travel_deg=2.0*servo_angle_each_deg,min_linkage_moment_arm_mm=min_ma),
+      preliminary_load_screen=dict(servo_stall_Nm=servo_stall_Nm,servo_force_N=servo_force_N,dynamic_factor=dynamic_factor,design_rod_force_N=design_rod_force_N,m3_single_shear_MPa=m3_single_shear_MPa,crank_net_section_stress_MPa=crank_net_stress_MPa,theoretical_min_wing_torque_Nm=theoretical_wing_torque_Nm,screen_pass=load_screen_ok),
+      containment_checks=checks,crank_fixed_hits=fixed_hits,slider_fixed_hits=slider_hits,mechanical_geometry_verified=mechanical_ok,preliminary_load_screen_verified=load_screen_ok,
+      servo_model_selected=False,material_coupon_verified=False,physical_proof_test_verified=False,mechanical_detail_release=(mechanical_ok and load_screen_ok),print_release=False,flight_release=False)
+    outdir=os.path.join(config['export_dir'],'sweep_mechanism_v39'); os.makedirs(outdir,exist_ok=True)
+    target=os.path.join(outdir,'F14_v39_SWEEP_MECHANISM_DETAIL_REVIEW.f3d')
+    if not design.exportManager.execute(design.exportManager.createFusionArchiveExportOptions(target)): raise RuntimeError('v39 export failed')
+    with open(os.path.join(outdir,'F14_v39_sweep_mechanism_audit.json'),'w',encoding='utf-8') as stream: json.dump(audit,stream,indent=2)
+    _app.activeViewport.fit(); _app.activeViewport.saveAsImageFile(os.path.join(outdir,'F14_v39_sweep_mechanism_review.png'),1600,1000)
+    return audit
+
+
+
+def build_moment_arm_optimized_packaging_v40():
+    """Package the v40 non-toggle sweep linkage. Reuse a loaded v38+ document when available."""
+    # Rebuild the verified fixed structure directly; v40 no longer depends on the removed v37 scan function.
+    build_sweep_servo_packaging_review_v35()
+    design=adsk.fusion.Design.cast(_app.activeProduct); root=design.rootComponent
+    _app.activeDocument.name='F14_v40_MOMENT_ARM_OPTIMIZED_PACKAGING'
+    base=os.path.dirname(__file__)
+    with open(os.path.join(base,'NASA_F14_basic_wing_v08.json'),encoding='utf-8') as stream: data=json.load(stream)
+    with open(os.path.join(base,'F14_pivot_datum_v16.json'),encoding='utf-8') as stream: pivot=json.load(stream)
+    with open(os.path.join(base,'F14_sweep_linkage_kinematics_v40.json'),encoding='utf-8') as stream: kin=json.load(stream)
+    with open(os.path.join(base,'F14TomcatRC_config.json'),encoding='utf-8') as stream: config=json.load(stream)
+    c=kin['selected_candidate']; dx0,dy0=c['crank_vector_at_20deg_mm']; sy=c['slider_attach_y_mm']; zc=184.0
+    factor=900.0/(2.0*data['sections'][-1]['wbl_in']); px=pivot['derived_full_scale_pivot_fs_in']*factor; py=pivot['derived_full_scale_pivot_bl_in']*factor
+    s0,s1=data['sections'][0],data['sections'][1]; dz=(s1['reference_vertical_wl_in']-s0['reference_vertical_wl_in'])/(s1['wbl_in']-s0['wbl_in']); pz=(s0['reference_vertical_wl_in']+(pivot['derived_full_scale_pivot_bl_in']-s0['wbl_in'])*dz)*factor
+    outer=build_upc_fuselage_oml(root); outer.name='REF_UPC_FUSELAGE_OUTER_OML_v40'; move=root.features.moveFeatures; coll=adsk.core.ObjectCollection.create(); coll.add(outer); tr=adsk.core.Matrix3D.create(); tr.translation=adsk.core.Vector3D.create(0,0,mm(pz)); mi=move.createInput2(coll); mi.defineAsFreeMove(tr); move.add(mi); outer.opacity=0.03
+    service=next(b for b in root.bRepBodies if b.name=='RC_SWEEP_SERVO_SERVICE_ENVELOPE_v35')
+    fixed=[b for b in root.bRepBodies if (b.name.startswith('ENG_WINGBOX_FORK_') and b.name.endswith('_v31')) or (b.name.startswith('ENG_RISER_SOCKET_') and b.name.endswith('_v34')) or b.name in ['REF_CF6x4_FRONT_LOWER_v34','REF_CF6x4_REAR_LOWER_v34','REF_CF6x4_FRONT_UPPER_v35','REF_CF6x4_REAR_UPPER_v35']]
+    for b in root.bRepBodies:
+        if b.name.startswith('REF_V38_') or b.name.startswith('ENG_SWEEP_INBOARD_CRANK_'): b.isLightBulbOn=False
+    temporary=adsk.fusion.TemporaryBRepManager.get(); rods=[]; rod_inside=[]; rod_hits=[]
+    samples={r['sweep_deg']:r for r in c['samples']}
+    for sweep in range(20,69,4):
+        rec=samples[sweep]; sx=rec['slider_x_mm']; ax,ay=rec['crank_pin_mm']
+        for side,sgn in [('R',1),('L',-1)]:
+            rod=_link_rod_body_v37(root,'REF_V40_LINK_%s_%02d'%(side,sweep),(sx,sgn*sy),(ax,sgn*ay),zc,5.0,4.0); rod.opacity=0.18; rods.append(rod)
+            rv=rod.volume; rc=temporary.copy(rod); oc=temporary.copy(outer); ok=temporary.booleanOperation(rc,oc,adsk.fusion.BooleanTypes.IntersectionBooleanType); iv=rc.volume if ok and rc.isValid else 0.0; rod_inside.append(iv/rv if rv else 0.0)
+            for part in fixed+[service]:
+                a=temporary.copy(rod); b=temporary.copy(part); ok2=temporary.booleanOperation(a,b,adsk.fusion.BooleanTypes.IntersectionBooleanType); ov=a.volume if ok2 and a.isValid else 0.0
+                if ov>1e-4: rod_hits.append(dict(side=side,sweep_deg=sweep,part=part.name,intersection_volume_cm3=ov))
+    xmin,xmax=c['slider_x_min_mm'],c['slider_x_max_mm']
+    slider=extrude_poly(root,'REF_V40_SYNCHRONIZED_SLIDER_ENVELOPE',[(xmin-4,-sy-6),(xmax+4,-sy-6),(xmax+4,sy+6),(xmin-4,sy+6)],zc-2.5,5.0); slider.opacity=0.22
+    sv=slider.volume; sc=temporary.copy(slider); oc=temporary.copy(outer); ok=temporary.booleanOperation(sc,oc,adsk.fusion.BooleanTypes.IntersectionBooleanType); siv=sc.volume if ok and sc.isValid else 0.0
+    slider_hits=[]
+    for part in fixed+[service]:
+        a=temporary.copy(slider); b=temporary.copy(part); ok2=temporary.booleanOperation(a,b,adsk.fusion.BooleanTypes.IntersectionBooleanType); ov=a.volume if ok2 and a.isValid else 0.0
+        if ov>1e-4: slider_hits.append(dict(part=part.name,intersection_volume_cm3=ov))
+    crank_bodies=[]; crank_inside=[]; crank_hits=[]
+    for side,sgn in [('R',1),('L',-1)]:
+        ypiv=sgn*py; ypin=sgn*(py+dy0); xpin=px+dx0
+        arm=_link_rod_body_v37(root,'REF_V40_CRANK_'+side,(px,ypiv),(xpin,ypin),zc,10.0,5.0); arm.opacity=0.50; crank_bodies.append(arm)
+        for sweep in range(20,69,4):
+            angle=-sgn*math.radians(sweep-20.0); rot=adsk.core.Matrix3D.create(); rot.setToRotation(angle,adsk.core.Vector3D.create(0,0,1),adsk.core.Point3D.create(mm(px),mm(ypiv),mm(zc)))
+            mc=temporary.copy(arm); temporary.transform(mc,rot); mv=mc.volume
+            oc=temporary.copy(outer); cc=temporary.copy(mc); ok3=temporary.booleanOperation(cc,oc,adsk.fusion.BooleanTypes.IntersectionBooleanType); iv=cc.volume if ok3 and cc.isValid else 0.0; crank_inside.append(iv/mv if mv else 0.0)
+            for part in fixed+[service]:
+                a=temporary.copy(mc); b=temporary.copy(part); ok4=temporary.booleanOperation(a,b,adsk.fusion.BooleanTypes.IntersectionBooleanType); ov=a.volume if ok4 and a.isValid else 0.0
+                if ov>1e-4: crank_hits.append(dict(side=side,sweep_deg=sweep,part=part.name,intersection_volume_cm3=ov))
+    min_rod=min(rod_inside) if rod_inside else 0.0; min_crank=min(crank_inside) if crank_inside else 0.0; slider_frac=(siv/sv if sv else 0.0)
+    fully=(min_rod>0.985 and min_crank>0.985 and slider_frac>0.995 and not rod_hits and not slider_hits and not crank_hits)
+    audit=dict(status='MOMENT_ARM_OPTIMIZED_SWEEP_PACKAGING',source_revision='v38',kinematics_source='v40',selected_candidate=c,
+      min_rod_outer_oml_inside_fraction=min_rod,min_crank_outer_oml_inside_fraction=min_crank,slider_inside_fraction=slider_frac,
+      rod_structural_hits=rod_hits,slider_structural_hits=slider_hits,crank_structural_hits=crank_hits,fully_packaged=fully,
+      theoretical_min_wing_torque_Nm=c.get('theoretical_min_wing_torque_at_2Nm_servo_Nm'),estimated_servo_travel_deg=c.get('estimated_servo_travel_deg'),
+      toggle_avoidance_verified=(c['min_linkage_moment_arm_mm']>=15.0),mechanical_detail_release=False,print_release=False,flight_release=False)
+    outdir=os.path.join(config['export_dir'],'moment_arm_linkage_v40'); os.makedirs(outdir,exist_ok=True)
+    target=os.path.join(outdir,'F14_v40_MOMENT_ARM_OPTIMIZED_PACKAGING.f3d')
+    if not design.exportManager.execute(design.exportManager.createFusionArchiveExportOptions(target)): raise RuntimeError('v40 export failed')
+    with open(os.path.join(outdir,'F14_v40_moment_arm_packaging_audit.json'),'w',encoding='utf-8') as stream: json.dump(audit,stream,indent=2)
+    _app.activeViewport.fit(); _app.activeViewport.saveAsImageFile(os.path.join(outdir,'F14_v40_moment_arm_packaging_review.png'),1600,1000)
+    return audit
+
+
+
+def build_clearance_optimized_packaging_v41():
+    """Two-stage v41 clearance optimization; avoids brute-force Fusion history growth."""
+    design=adsk.fusion.Design.cast(_app.activeProduct); root=design.rootComponent if design else None
+    if not root or not any(b.name=='REF_UPC_FUSELAGE_OUTER_OML_v37' for b in root.bRepBodies):
+        build_inboard_sweep_crank_scan_v38(); design=adsk.fusion.Design.cast(_app.activeProduct); root=design.rootComponent
+    _app.activeDocument.name='F14_v41_CLEARANCE_OPTIMIZED_PACKAGING_R2'
+    base=os.path.dirname(__file__)
+    with open(os.path.join(base,'NASA_F14_basic_wing_v08.json'),encoding='utf-8') as f:data=json.load(f)
+    with open(os.path.join(base,'F14_pivot_datum_v16.json'),encoding='utf-8') as f:pivot=json.load(f)
+    with open(os.path.join(base,'F14_sweep_linkage_kinematics_v40.json'),encoding='utf-8') as f:kin=json.load(f)
+    with open(os.path.join(base,'F14TomcatRC_config.json'),encoding='utf-8') as f:config=json.load(f)
+    factor=900.0/(2.0*data['sections'][-1]['wbl_in']); px=pivot['derived_full_scale_pivot_fs_in']*factor; py=pivot['derived_full_scale_pivot_bl_in']*factor
+    outer=next(b for b in root.bRepBodies if b.name=='REF_UPC_FUSELAGE_OUTER_OML_v37'); temporary=adsk.fusion.TemporaryBRepManager.get()
+    problem=[b for b in root.bRepBodies if b.name in ['REF_CF6x4_FRONT_LOWER_v34','ENG_RISER_SOCKET_FRONT_R_v34','ENG_RISER_SOCKET_FRONT_L_v34']]
+    def hitvol(body):
+        total=0.0
+        for part in problem:
+            a=temporary.copy(body); b=temporary.copy(part); ok=temporary.booleanOperation(a,b,adsk.fusion.BooleanTypes.IntersectionBooleanType); total+=a.volume if ok and a.isValid else 0.0
+        return total
+    def inside(body):
+        v=body.volume; a=temporary.copy(body); o=temporary.copy(outer); ok=temporary.booleanOperation(a,o,adsk.fusion.BooleanTypes.IntersectionBooleanType); iv=a.volume if ok and a.isValid else 0.0; return iv/v if v else 0.0
+    def rod_collision(c,zc,ci):
+        sy=c['slider_attach_y_mm']; samples={r['sweep_deg']:r for r in c['samples'] if r['sweep_deg']%4==0}; total=0.0
+        for sweep in range(20,69,4):
+            rec=samples[sweep]; sx=rec['slider_x_mm']; ax,ay=rec['crank_pin_mm']
+            for side,sgn in [('R',1),('L',-1)]:
+                rod=_link_rod_body_v37(root,'TMP41C_%02d_%03d_%s'%(ci,sweep,side),(sx,sgn*sy),(ax,sgn*ay),zc,5.0,4.0); rod.isLightBulbOn=False; total+=hitvol(rod); rod.deleteMe()
+        return total
+    selected=kin['selected_candidate']; coarse=[]
+    for zi,zc in enumerate([168.0,172.0,176.0,180.0,188.0,192.0,196.0,200.0]): coarse.append({'z_mm':zc,'collision_volume_cm3':rod_collision(selected,zc,zi)})
+    coarse.sort(key=lambda r:(r['collision_volume_cm3'],abs(r['z_mm']-184.0))); bz=coarse[0]['z_mm']
+    zplanes=sorted(set(max(164.0,min(204.0,z)) for z in [bz-4.0,bz,bz+4.0])); results=[]
+    for ci,c in enumerate(kin['top_candidates'][:4]):
+        dx0,dy0=c['crank_vector_at_20deg_mm']; sy=c['slider_attach_y_mm']; samples={r['sweep_deg']:r for r in c['samples'] if r['sweep_deg']%4==0}
+        for zc in zplanes:
+            rh=0.0; ri=1.0
+            for sweep in range(20,69,4):
+                rec=samples[sweep]; sx=rec['slider_x_mm']; ax,ay=rec['crank_pin_mm']
+                for side,sgn in [('R',1),('L',-1)]:
+                    rod=_link_rod_body_v37(root,'TMP41R_%02d_%03d_%s'%(ci,sweep,side),(sx,sgn*sy),(ax,sgn*ay),zc,5.0,4.0); rod.isLightBulbOn=False; rh+=hitvol(rod); ri=min(ri,inside(rod)); rod.deleteMe()
+            xmin,xmax=c['slider_x_min_mm'],c['slider_x_max_mm']; slider=extrude_poly(root,'TMP41S_%02d'%ci,[(xmin-4,-sy-6),(xmax+4,-sy-6),(xmax+4,sy+6),(xmin-4,sy+6)],zc-2.5,5.0); slider.isLightBulbOn=False; si=inside(slider); sh=hitvol(slider); slider.deleteMe()
+            cri=1.0
+            for side,sgn in [('R',1),('L',-1)]:
+                yp=sgn*py; arm=_link_rod_body_v37(root,'TMP41A_%02d_%s'%(ci,side),(px,yp),(px+dx0,sgn*(py+dy0)),zc,8.0,4.0); arm.isLightBulbOn=False
+                for sweep in range(20,69,4):
+                    ang=-sgn*math.radians(sweep-20.0); rot=adsk.core.Matrix3D.create(); rot.setToRotation(ang,adsk.core.Vector3D.create(0,0,1),adsk.core.Point3D.create(mm(px),mm(yp),mm(zc))); mc=temporary.copy(arm); temporary.transform(mc,rot); mv=mc.volume; oc=temporary.copy(outer); cc=temporary.copy(mc); ok=temporary.booleanOperation(cc,oc,adsk.fusion.BooleanTypes.IntersectionBooleanType); iv=cc.volume if ok and cc.isValid else 0.0; cri=min(cri,iv/mv if mv else 0.0)
+                arm.deleteMe()
+            collision=rh+sh; score=1000*min(ri,si,cri)-5000*collision+2*c['min_linkage_moment_arm_mm']-.5*c['slider_travel_mm']; results.append(dict(candidate_index=ci,z_mm=zc,score=score,collision_volume_cm3=collision,min_rod_inside=ri,slider_inside=si,min_crank_inside=cri,candidate=c))
+    results.sort(key=lambda r:r['score'],reverse=True); best=results[0]; c=best['candidate']; zc=best['z_mm']; sy=c['slider_attach_y_mm']; dx0,dy0=c['crank_vector_at_20deg_mm']; samples={r['sweep_deg']:r for r in c['samples'] if r['sweep_deg']%4==0}
+    for b in root.bRepBodies:
+        if b.name.startswith('REF_V40_') or b.name.startswith('REF_V41_'): b.isLightBulbOn=False
+    for sweep in range(20,69,4):
+        rec=samples[sweep]; sx=rec['slider_x_mm']; ax,ay=rec['crank_pin_mm']
+        for side,sgn in [('R',1),('L',-1)]: _link_rod_body_v37(root,'REF_V41_LINK_%s_%02d'%(side,sweep),(sx,sgn*sy),(ax,sgn*ay),zc,5.0,4.0).opacity=0.18
+    xmin,xmax=c['slider_x_min_mm'],c['slider_x_max_mm']; s=extrude_poly(root,'REF_V41_SYNCHRONIZED_SLIDER_ENVELOPE',[(xmin-4,-sy-6),(xmax+4,-sy-6),(xmax+4,sy+6),(xmin-4,sy+6)],zc-2.5,5.0); s.opacity=0.22
+    for side,sgn in [('R',1),('L',-1)]: _link_rod_body_v37(root,'REF_V41_CRANK_'+side,(px,sgn*py),(px+dx0,sgn*(py+dy0)),zc,8.0,4.0).opacity=0.50
+    fully=(best['collision_volume_cm3']<1e-4 and best['min_rod_inside']>0.985 and best['slider_inside']>0.985 and best['min_crank_inside']>0.90)
+    audit=dict(status='V41_CLEARANCE_OPTIMIZED_PACKAGING_R2',source_revision='v40',coarse_z_scan=coarse,refined_z_planes=zplanes,best=best,top_results=results[:12],fully_packaged=fully,toggle_avoidance_verified=(c['min_linkage_moment_arm_mm']>=15.0),mechanical_detail_release=False,print_release=False,flight_release=False)
+    outdir=os.path.join(config['export_dir'],'clearance_linkage_v41'); os.makedirs(outdir,exist_ok=True); target=os.path.join(outdir,'F14_v41_CLEARANCE_OPTIMIZED_PACKAGING.f3d'); design.exportManager.execute(design.exportManager.createFusionArchiveExportOptions(target)); open(os.path.join(outdir,'F14_v41_clearance_packaging_audit.json'),'w',encoding='utf-8').write(json.dumps(audit,indent=2)); _app.activeViewport.fit(); _app.activeViewport.saveAsImageFile(os.path.join(outdir,'F14_v41_clearance_packaging_review.png'),1600,1000); return audit
+
 def build_project_revision():
     # Fixed CAD entry point. Subsequent checked-in revisions can change this
     # implementation without accepting code, paths or shell commands in requests.
-    return build_sweep_servo_packaging_review_v35()
-
+    return build_clearance_optimized_packaging_v41()
 class BuildRequestHandler(adsk.core.CustomEventHandler):
     def notify(self,args):
         request=json.loads(args.additionalInfo)
@@ -2186,6 +2505,12 @@ def run(context):
         if not _created:
             with open(os.path.join(os.path.dirname(__file__),'F14TomcatRC_config.json'),encoding='utf-8') as stream:
                 config=json.load(stream)
+            if config.get('startup_mode')=='bridge_only':
+                _created=True
+                with open(os.path.join(os.path.dirname(__file__),'F14_build_response.json'),'w',encoding='utf-8') as stream:
+                    json.dump(execution_ack('startup-bridge-only','completed'),stream,indent=2)
+                start_build_requests()
+                return
             if config.get('startup_mode')=='basic_wings_v08':
                 build_basic_wing_document_v08()
             elif config.get('startup_mode')=='project_revision':

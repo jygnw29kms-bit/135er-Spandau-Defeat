@@ -1,0 +1,44 @@
+{
+  "status": "V40_PRELIMINARY_LOAD_SCREEN_NOT_RELEASED",
+  "kinematics_source": "F14_sweep_linkage_kinematics_v40.json",
+  "selected_candidate_summary": {
+    "crank_vector_at_20deg_mm": [
+      25,
+      -20
+    ],
+    "crank_radius_mm": 32.01562118716424,
+    "slider_attach_y_mm": 65.0,
+    "rod_length_mm": 70.68352175540956,
+    "slider_travel_mm": 29.795825533799757,
+    "min_linkage_moment_arm_mm": 30.04343579737031,
+    "max_linkage_moment_arm_mm": 32.0136817132782,
+    "theoretical_min_wing_torque_at_2Nm_servo_Nm": 3.5345218585141542,
+    "estimated_servo_travel_deg": 122.40978402694549
+  },
+  "servo_assumption": {
+    "stall_torque_Nm": 2.0,
+    "horn_radius_mm": 17.0,
+    "tangential_force_N": 117.6470588235294
+  },
+  "design_screen": {
+    "dynamic_factor": 2.5,
+    "design_rod_force_N": 294.11764705882354,
+    "M3_single_shear_stress_MPa": 41.60913544886153,
+    "5mm_crank_14mm_neck_net_section_stress_MPa": 5.497526113249038
+  },
+  "interpretation": {
+    "toggle_margin_pass": true,
+    "servo_travel_within_130deg_screen": true,
+    "minimum_theoretical_wing_torque_over_3Nm": true
+  },
+  "required_before_release": [
+    "Fusion packaging and collision verification",
+    "actual servo selection and torque-speed verification at operating voltage",
+    "rod-end/pin bearing stress verification",
+    "material coupon properties for printed crank/guide parts",
+    "physical proof-load and full-cycle endurance test"
+  ],
+  "mechanical_detail_release": false,
+  "print_release": false,
+  "flight_release": false
+}
