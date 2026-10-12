@@ -1,0 +1,2 @@
+ue5/SpandauStrike/Content/**/*.uasset filter=lfs diff=lfs merge=lfs -text
+ue5/SpandauStrike/Content/**/*.umap filter=lfs diff=lfs merge=lfs -text
