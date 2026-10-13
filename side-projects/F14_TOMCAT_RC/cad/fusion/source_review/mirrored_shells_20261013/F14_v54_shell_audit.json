@@ -1,0 +1,36 @@
+{
+  "status": "NATIVE_INSIDE_SHELL_FEASIBILITY",
+  "attempts": [
+    {
+      "side": "R",
+      "original_name": "SOURCE_GRUMMAN_BASIC_WING_R_NOT_BODY_REGISTERED",
+      "original_volume_cm3": 210.42537866532868,
+      "inside_thickness_mm": 0.8,
+      "root_opening_y_mm": 148.8263775443693,
+      "success": true,
+      "shell_volume_cm3": 47.05515595052731,
+      "material_volume_fraction": 0.22361920529256238,
+      "outer_bounds_max_change_mm": 5.3290705182007514e-14,
+      "outer_bounds_preserved": true,
+      "native_feature_message": ""
+    },
+    {
+      "side": "L",
+      "success": true,
+      "method": "mirror successful right shell",
+      "outer_bounds_preserved": true,
+      "symmetry_bounds_max_error_mm": 1.7763568394002505e-14,
+      "shell_volume_cm3": 47.05515595052736,
+      "volume_relative_error": 1.0570146989949491e-15,
+      "inside_original_left_solid": true,
+      "outside_volume_cm3": 0.0
+    }
+  ],
+  "study_source_sha256": "a2b6dbaeae6cdca3563929bcd8d11e1749d6d7c05d882bc83cee6af21338fbe3",
+  "all_shells_valid": true,
+  "spar_skin_clearance_verified": false,
+  "joints_created": false,
+  "slicer_checked": false,
+  "structural_capacity_verified": false,
+  "print_release": false
+}
