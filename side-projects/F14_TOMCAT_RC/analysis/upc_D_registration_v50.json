@@ -1,0 +1,21 @@
+{
+  "status": "CORRECTED_D_ISOTROPIC_REGISTRATION_CANDIDATE",
+  "contour_sha256": "2f46597112bdd2a4c2ea150682760403af44f35e37e0dcb4792f404b8e0192c1",
+  "source_image_sha256": "63413c7958648165ca381ebda27ef31a4d6aabed725b84d3e2f804da5bafb5b4",
+  "source_width_pixels": 432.5,
+  "source_height_pixels": 145.5,
+  "isotropic_multiplier": 0.9288385148322664,
+  "predicted_height_pixels": 135.14600390809477,
+  "side_height_pixels": 134.0,
+  "height_residual_pixels": 1.1460039080947695,
+  "candidate_axis_side_pixel_y": 2805.4031691611044,
+  "checks": "PASS: width reproduction and axis transform round-trip",
+  "independent_vertical_stretch_applied": false,
+  "metric_registration_verified": false,
+  "production_loft_allowed": false,
+  "legacy_D_dependent_reports_require_regeneration": [
+    "v12 D fit",
+    "v16 local D EDF packing",
+    "v45 local D EDF packing"
+  ]
+}
