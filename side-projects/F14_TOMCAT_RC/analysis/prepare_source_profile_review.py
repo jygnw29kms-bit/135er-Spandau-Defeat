@@ -12,11 +12,14 @@ def run():
     corrected_c=json.loads((folder/'upc_C_intake_topology_v13.json').read_text())
     corrected_f=json.loads((folder/'upc_F_connected_section_v11.json').read_text())
     corrected_e=json.loads((folder/'upc_E_source_contour_v43.json').read_text())
+    corrected_d=json.loads((folder/'upc_D_source_contour_v49.json').read_text())
     profiles=[]
     for index,name in enumerate(['A','B','C','D','E','F']):
         base=next(s for s in original['profiles'] if s['name']==('F_R' if name=='F' else name))
         if name=='C':
             outer=corrected_c['outer_skin_pixel_outline']; holes=corrected_c['inner_opening_pixel_loops']
+        elif name=='D':
+            outer=corrected_d['pixel_outline']; holes=[]
         elif name=='E':
             outer=corrected_e['pixel_outline']; holes=[]
         elif name=='F':
