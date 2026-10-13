@@ -10,10 +10,12 @@ wing dataset contains eight defining sections; the native review has two wing
 bodies, not a complete aircraft. The fuselage, tail, sweep mechanism and RC
 installation remain unfinished. No print-ready aircraft or flight release exists.
 
-Prepared native spar, source-profile and wing-segmentation reviews (v10/v14/v15)
-have not executed. Fusion window capture times out and the installed event bridge
-has not confirmed a reload. The installed add-in includes revision fingerprints
-and a restart lifecycle correction; installing code does not prove native execution.
+The corrected original-section gallery and wing segmentation reviews were executed
+in Fusion on 13 October. Their native archives, viewports and audits are stored in
+[cad/fusion/source_review](cad/fusion/source_review). The gallery contains six
+independently normalized sketches; the segmentation has four solid wing envelopes
+that fit the assumed print volume. Neither is a registered fuselage or a lightweight
+print shell. The native source-spar review remains pending.
 
 Source contour, EDF and battery calculations are provisional geometry screens.
 Metric body registration, continuous clearance, actual hardware, mass properties,
