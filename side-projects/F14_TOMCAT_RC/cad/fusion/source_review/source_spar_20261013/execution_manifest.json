@@ -1,0 +1,17 @@
+{
+  "status": "NATIVE_SOURCE_SPAR_ENVELOPES_EXECUTED",
+  "execution": {
+    "request_id": "original-source-spar-20261013-1630",
+    "status": "completed",
+    "bridge_revision": "v24_restartable_event_bridge",
+    "loaded_source_sha256": "f5c5b9efe1e9a82802c517329edabe87dc417515750b5c31d4018a2033d85b31",
+    "executed_revision_source_sha256": "841e13671fc3fed4f34c05e892cda745c192fffff96b981218a66fac5fec48fd"
+  },
+  "fit_dataset_sha256": "6d8300e9fc2c6d765a9add32680a9ead542b007dfc0340d8a986d856be6a04b7",
+  "body_count": 8,
+  "six_internal_envelopes_contained": true,
+  "viewport_visually_reviewed": true,
+  "continuous_skin_clearance_verified": false,
+  "structural_capacity_verified": false,
+  "print_release": false
+}
