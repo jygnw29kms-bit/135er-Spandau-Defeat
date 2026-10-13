@@ -1,0 +1,33 @@
+{
+  "status": "NATIVE_INSIDE_SHELL_FEASIBILITY",
+  "attempts": [
+    {
+      "side": "R",
+      "original_name": "SOURCE_GRUMMAN_BASIC_WING_R_NOT_BODY_REGISTERED",
+      "original_volume_cm3": 210.42537866532868,
+      "inside_thickness_mm": 0.8,
+      "root_opening_y_mm": 148.8263775443693,
+      "success": true,
+      "shell_volume_cm3": 47.05515595052731,
+      "material_volume_fraction": 0.22361920529256238,
+      "outer_bounds_max_change_mm": 5.3290705182007514e-14,
+      "outer_bounds_preserved": true,
+      "native_feature_message": ""
+    },
+    {
+      "side": "L",
+      "original_name": "SOURCE_GRUMMAN_BASIC_WING_L_NOT_BODY_REGISTERED",
+      "original_volume_cm3": 210.42537866532868,
+      "inside_thickness_mm": 0.8,
+      "root_opening_y_mm": -148.8263775443693,
+      "success": false,
+      "error": "Traceback (most recent call last):\n  File \"C:/Users/dezen/AppData/Roaming/Autodesk/Autodesk Fusion 360/API/AddIns/F14TomcatRC\\F14WingShellStudy_v53.py\", line 24, in run_review\n    feature=root.features.shellFeatures.add(inp)\n  File \"C:\\Users/dezen/AppData/Local/Autodesk/webdeploy/production/736d2b4c5e6b95e77c11721da222cf21c6a1fc1f/Api/Python/packages\\adsk\\fusion.py\", line 68099, in add\n    return _fusion.ShellFeatures_add(self, input)\n           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\nRuntimeError: 3 : Schale2 / Berechnung fehlgeschlagen // ASM_LOP_TWK_NO_VERT -   Durch den Vorgang konnte kein g\u00fcltiges Ergebnis erreicht werden.\n    Passen Sie die Werte an, oder \u00e4ndern Sie die Eingaben.\n"
+    }
+  ],
+  "all_shells_valid": false,
+  "spar_skin_clearance_verified": false,
+  "joints_created": false,
+  "slicer_checked": false,
+  "structural_capacity_verified": false,
+  "print_release": false
+}
