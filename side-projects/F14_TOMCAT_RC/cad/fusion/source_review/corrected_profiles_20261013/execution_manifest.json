@@ -1,0 +1,18 @@
+{
+  "status": "NATIVE_CORRECTED_SOURCE_GALLERY_EXECUTED",
+  "request": {
+    "request_id": "original-profiles-D49-E43-20261013-1430",
+    "status": "completed",
+    "bridge_revision": "v24_restartable_event_bridge",
+    "loaded_source_sha256": "f5c5b9efe1e9a82802c517329edabe87dc417515750b5c31d4018a2033d85b31",
+    "executed_revision_source_sha256": "f5c5b9efe1e9a82802c517329edabe87dc417515750b5c31d4018a2033d85b31"
+  },
+  "gallery_dataset_sha256": "0b12a94f0b9c11f6feb2557373d767697917c9c58216e5c55248be817997944d",
+  "corrected_D": "v49",
+  "corrected_E": "v43",
+  "native_archive_bytes": 246642,
+  "viewport_visually_reviewed": true,
+  "aircraft_metric_registration": false,
+  "aircraft_loft_created": false,
+  "print_release": false
+}
