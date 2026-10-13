@@ -239,3 +239,13 @@ Figure 3(c), PDF page 22, labels horizontal-tail sections NACA 65A004.643 and 65
 Figure 3(f), PDF page 23, dimensions the vertical tail with 26.033 cm root chord, 9.312 cm tip chord and 21.591 cm vertical height, with a 5-degree cant and NACA 65A004.5 label. The v29 dataset derives symmetric reference corners, not a complete surface: tip rounding and thickness coordinates are missing. The height versus true-span projection differs by 0.002465 cm, consistent with a small drawing-rounding residual; this does not validate production geometry.
 
 The source datasets are [model dimensions](../analysis/nasa_tm83250_dimension_audit_v27.json), [horizontal tail labels](../analysis/nasa_tail_reference_v28.json) and [vertical tail corners](../analysis/nasa_vertical_tail_reference_v29.json). None records native tail execution or a production geometry release.
+
+## Corrected original E contour and dependent screens - v43-v48
+
+The original UPC section E was redigitized from the raster source. The corrected contour removes an unsupported upper-center hump and restores the small lower bridge notch. Its topology passes; the overlay was visually reviewed. The normalized gallery uses this contour, with no aircraft-scale or loft claim.
+
+The new isotropic registration reproduces the plan width but predicts 129.7685 pixels height versus 125 pixels in the side envelope. The 4.7685-pixel discrepancy remains open. No independent vertical stretch is applied.
+
+The current calculation chain is E contour v43, registration v44, local EDF screen v45, common horizontal axes v46, oblique axes v47 and conditional error budget v48. Earlier v16-v20 outputs retain the old E contour and are historical audit records only. The corrected chain records the contour hash.
+
+At the assumed metric scale, the sampled common horizontal endpoint diameter is 54.5440 mm. The pitch-and-splay sensitivity gives 57.6045 mm, with a conditional combined positional-error budget of 1.00225 mm for the assumed 52 mm housing, 0.8 mm skin and 1 mm radial service. These angles are not verified original engine alignment. Intermediate geometry, complete axial fit, actual hardware and measured errors remain unverified; none of these results releases an installation or printable aircraft.

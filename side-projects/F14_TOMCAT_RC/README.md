@@ -29,6 +29,12 @@ The inherited 676.46-mm swept-span parameter is not a frozen production dimensio
 See the [current source and CAD audit](docs/10_CAD_COORDINATES_AND_REFERENCE_REPAIR.md)
 and [archived native source review](cad/fusion/source_review/README.md).
 
+## Update - 13 October 2026
+
+A newer external Fusion v42 run completed, but its audit reports incomplete mechanism packaging. Its reference fuselage was generated from the retired analytic section scaffold; it is not a validated original exterior. See the [v41/v42 provenance gate](docs/11_V41_SOURCE_PROVENANCE_GATE.md). Preserve the external native archives and installed code while reconstructing the source-based body.
+
+Original section E has been redigitized to remove a false upper-center hump and restore the lower bridge notch. The normalized source gallery and EDF screens now use that corrected contour. The isotropic side-height discrepancy remains unresolved; a complete source-registered fuselage and print-ready aircraft do not exist.
+
 ## Design target
 - visually scale-faithful Grumman F-14 Tomcat outer mold line
 - 900 mm span at 20 deg wing sweep
