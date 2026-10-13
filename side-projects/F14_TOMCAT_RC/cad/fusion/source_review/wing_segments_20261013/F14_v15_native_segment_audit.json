@@ -1,0 +1,147 @@
+{
+  "status": "NATIVE_SOLID_ENVELOPE_SEGMENTS",
+  "segments": [
+    {
+      "name": "SOURCE_ENVELOPE_R_INNER_NOT_PRINT_SHELL",
+      "bounds_mm": {
+        "x": [
+          588.2699984754352,
+          745.7750137477273
+        ],
+        "y": [
+          148.8263775443693,
+          363.9687852915898
+        ],
+        "z": [
+          177.632731132042,
+          196.6867869631904
+        ]
+      },
+      "volume_cm3": 185.30707292563142,
+      "span_boundaries_verified": true,
+      "expected_abs_y_mm": [
+        148.8263775443693,
+        363.9687852831797
+      ],
+      "print_height_mm": 215.14240774722052,
+      "footprint_with_assumed_brim_mm": [
+        173.5050152722921,
+        35.05405583114839
+      ],
+      "assumed_print_envelope_fit": true
+    },
+    {
+      "name": "SOURCE_ENVELOPE_L_OUTER_NOT_PRINT_SHELL",
+      "bounds_mm": {
+        "x": [
+          666.4935191699399,
+          749.6035234732939
+        ],
+        "y": [
+          -449.99999999999994,
+          -363.9687852915898
+        ],
+        "z": [
+          175.16714742841788,
+          185.44592242268288
+        ]
+      },
+      "volume_cm3": 25.119144960103288,
+      "span_boundaries_verified": true,
+      "expected_abs_y_mm": [
+        363.9687852831797,
+        450.0
+      ],
+      "print_height_mm": 86.03121470841012,
+      "footprint_with_assumed_brim_mm": [
+        99.110004303354,
+        26.278774994265007
+      ],
+      "assumed_print_envelope_fit": true
+    },
+    {
+      "name": "SOURCE_ENVELOPE_R_OUTER_NOT_PRINT_SHELL",
+      "bounds_mm": {
+        "x": [
+          666.4935191699399,
+          749.6035234732939
+        ],
+        "y": [
+          363.9687852915898,
+          449.99999999999994
+        ],
+        "z": [
+          175.16714742841788,
+          185.44592242268288
+        ]
+      },
+      "volume_cm3": 25.119144960103288,
+      "span_boundaries_verified": true,
+      "expected_abs_y_mm": [
+        363.9687852831797,
+        450.0
+      ],
+      "print_height_mm": 86.03121470841012,
+      "footprint_with_assumed_brim_mm": [
+        99.110004303354,
+        26.278774994265007
+      ],
+      "assumed_print_envelope_fit": true
+    },
+    {
+      "name": "SOURCE_ENVELOPE_L_INNER_NOT_PRINT_SHELL",
+      "bounds_mm": {
+        "x": [
+          588.2699984754352,
+          745.7750137477273
+        ],
+        "y": [
+          -363.9687852915898,
+          -148.8263775443693
+        ],
+        "z": [
+          177.632731132042,
+          196.6867869631904
+        ]
+      },
+      "volume_cm3": 185.30707292563142,
+      "span_boundaries_verified": true,
+      "expected_abs_y_mm": [
+        148.8263775443693,
+        363.9687852831797
+      ],
+      "print_height_mm": 215.14240774722052,
+      "footprint_with_assumed_brim_mm": [
+        173.5050152722921,
+        35.05405583114839
+      ],
+      "assumed_print_envelope_fit": true
+    }
+  ],
+  "volume_checks": {
+    "R": {
+      "original_cm3": 210.42537866532868,
+      "split_sum_cm3": 210.4262178857347,
+      "delta_cm3": 0.0008392204060214681,
+      "relative_error": 3.9882090807887165e-06,
+      "tolerance_cm3": 0.002104253786653287,
+      "conserved": true
+    },
+    "L": {
+      "original_cm3": 210.42537866532868,
+      "split_sum_cm3": 210.4262178857347,
+      "delta_cm3": 0.0008392204060214681,
+      "relative_error": 3.9882090807887165e-06,
+      "tolerance_cm3": 0.002104253786653287,
+      "conserved": true
+    }
+  },
+  "assumptions": [
+    240,
+    240,
+    250
+  ],
+  "hollow_print_shells_created": false,
+  "slicer_checked": false,
+  "print_release": false
+}

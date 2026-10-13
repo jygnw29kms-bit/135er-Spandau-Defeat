@@ -1,0 +1,17 @@
+{
+  "status": "NATIVE_FOUR_SOURCE_WING_ENVELOPE_SEGMENTS_EXECUTED",
+  "execution": {
+    "request_id": "original-wing-segments-20261013-1500",
+    "status": "completed",
+    "bridge_revision": "v24_restartable_event_bridge",
+    "loaded_source_sha256": "f5c5b9efe1e9a82802c517329edabe87dc417515750b5c31d4018a2033d85b31",
+    "executed_revision_source_sha256": "f5c5b9efe1e9a82802c517329edabe87dc417515750b5c31d4018a2033d85b31"
+  },
+  "source_dataset_sha256": "177867ced9b6f2e075916d048cbf81997918e239ac8f4986a45461d6ecc80342",
+  "viewport_visually_reviewed": true,
+  "volume_relative_error": 3.9882090807887165e-06,
+  "native_volume_tolerance_relative": 1e-05,
+  "hollow_shells_created": false,
+  "slicer_checked": false,
+  "print_release": false
+}
