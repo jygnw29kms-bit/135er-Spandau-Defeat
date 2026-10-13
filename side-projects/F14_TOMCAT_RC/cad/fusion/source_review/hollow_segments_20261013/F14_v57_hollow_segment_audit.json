@@ -1,0 +1,134 @@
+{
+  "status": "NATIVE_EXISTING_HOLLOW_SEGMENT_CHECKPOINT",
+  "segments": [
+    {
+      "name": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+      "bounds_mm": {
+        "x": [
+          588.2699984754352,
+          745.7750137477273
+        ],
+        "y": [
+          148.82637754436934,
+          363.96878530000004
+        ],
+        "z": [
+          177.632731132042,
+          196.6867869631904
+        ]
+      },
+      "volume_cm3": 38.33612952124518,
+      "print_height_mm": 215.1424077556307,
+      "footprint_with_brim_mm": [
+        173.5050152722921,
+        35.05405583114839
+      ],
+      "assumed_envelope_fit": true
+    },
+    {
+      "name": "CANDIDATE_HOLLOW_WING_L_OUTER_NO_JOINTS",
+      "bounds_mm": {
+        "x": [
+          666.4935191699399,
+          749.6035234732939
+        ],
+        "y": [
+          -449.99999999999994,
+          -363.96878530000004
+        ],
+        "z": [
+          175.16714742841788,
+          185.44592242268288
+        ]
+      },
+      "volume_cm3": 8.72040361916248,
+      "print_height_mm": 86.03121469999991,
+      "footprint_with_brim_mm": [
+        99.110004303354,
+        26.278774994265007
+      ],
+      "assumed_envelope_fit": true
+    },
+    {
+      "name": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+      "bounds_mm": {
+        "x": [
+          666.4935191699399,
+          749.6035234732939
+        ],
+        "y": [
+          363.96878530000004,
+          449.99999999999994
+        ],
+        "z": [
+          175.16714742841788,
+          185.44592242268288
+        ]
+      },
+      "volume_cm3": 8.720403619127566,
+      "print_height_mm": 86.03121469999991,
+      "footprint_with_brim_mm": [
+        99.110004303354,
+        26.278774994265007
+      ],
+      "assumed_envelope_fit": true
+    },
+    {
+      "name": "CANDIDATE_HOLLOW_WING_L_INNER_NO_JOINTS",
+      "bounds_mm": {
+        "x": [
+          588.2699984754352,
+          745.7750137477273
+        ],
+        "y": [
+          -363.96878530000004,
+          -148.82637754436934
+        ],
+        "z": [
+          177.632731132042,
+          196.6867869631904
+        ]
+      },
+      "volume_cm3": 38.33612952128284,
+      "print_height_mm": 215.1424077556307,
+      "footprint_with_brim_mm": [
+        173.5050152722921,
+        35.05405583114839
+      ],
+      "assumed_envelope_fit": true
+    }
+  ],
+  "volume_checks": {
+    "R": {
+      "original_cm3": 47.057039018174535,
+      "split_sum_cm3": 47.05653314037274,
+      "relative_error": 1.0750310949169215e-05,
+      "strict_10ppm_pass": false,
+      "documented_combined_200ppm_measurement_consistency": true
+    },
+    "L": {
+      "original_cm3": 47.05703901817458,
+      "split_sum_cm3": 47.056533140445325,
+      "relative_error": 1.0750309407650458e-05,
+      "strict_10ppm_pass": false,
+      "documented_combined_200ppm_measurement_consistency": true
+    }
+  },
+  "reference_provenance": {
+    "source_failed_request": "hollow-split-high-accuracy-20261013-1830",
+    "source_failure_sha256": "7cd6501081eb106205c53f58b1cab6bcc0ca7d5f6c60a8acd7605b1ef483cb34",
+    "original_volume_cm3": {
+      "L": 47.05703901817458,
+      "R": 47.057039018174535
+    }
+  },
+  "physical_property_accuracy": "VeryHigh: documented +/-0.01 percent per measurement",
+  "four_segments_fit": true,
+  "exact_volume_conservation_proved": false,
+  "joints_created": false,
+  "spar_skin_clearance_verified": false,
+  "slicer_checked": false,
+  "structural_capacity_verified": false,
+  "print_release": false,
+  "study_source_sha256": "1d77564231ed9632e1aefb3dcdf579c230115140244081cf9bc1448a9d32f077"
+}
