@@ -1,6 +1,6 @@
-# Project Vision
+﻿# Project Vision
 
-135er – Spandau Strike is **Spandau across time**, not a generic WWII shooter.
+135er â€“ Spandau Strike is **Spandau across time**, not a generic WWII shooter.
 
 ## Gameplay baseline
 - fast spawn-to-action loop
@@ -13,7 +13,7 @@
 - community-server friendly design
 
 ## Engine direction
-The production target is / Unreal Engine 5. Authored levels are built with the official CS2 Workshop Tools / Unreal Editor pipeline. The Linux dedicated server uses the CS2 server runtime plus supported server-side extensions such as CounterStrikeSharp.
+The production target is Unreal Engine 5. Authored levels are built with the Unreal Editor / Lyra pipeline.
 
 ## Era model
 Maps may represent WWII/1945-inspired, Berlin Airlift, late Cold War and modern Spandau. Real locations can have multiple era variants with changed routes, props, vehicles, cover and atmosphere.
@@ -25,3 +25,4 @@ Maps may represent WWII/1945-inspired, Berlin Airlift, late Cold War and modern 
 - competitive visibility before spectacle
 - recognizable Spandau identity before generic war dressing
 - approved previews are visual references, not fake claims of in-engine screenshots
+

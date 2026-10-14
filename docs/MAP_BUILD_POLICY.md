@@ -1,10 +1,10 @@
-# 135er Spandau Strike – verbindliche Map-Bau-Regel
+# 135er Spandau Strike - verbindliche Map-Bau-Regel
 
-Gilt ab sofort für JEDE Map des Projekts, in Source 2 und Unreal Engine.
+Gilt für jede Map des Projekts in **Unreal Engine 5**.
 
 ## Reihenfolge
 1. Reale Geometrie zuerst
-   - vorhandene/ bekannte 3D-Modelle
+   - vorhandene/bekannte 3D-Modelle
    - Berlin LoD2 / 3D-Stadtmodell
    - DGM1 / Terrain
    - reale Straßen-/Platzstruktur
@@ -15,26 +15,20 @@ Gilt ab sofort für JEDE Map des Projekts, in Source 2 und Unreal Engine.
    - Cover
    - Laufwege
    - Sichtachsen
-   - Navmesh / Collision
+   - Navigation / Collision
 3. Master-Look
    - Materialien
    - Licht / Wetter
-   - Nässe / Herbststimmung
    - Props / Setdressing
    - Branding / visuelle Referenzen
 
 ## Verbot
 - Keine frei erfundenen Blockouts als finale Architektur.
 - Keine KI-/Konzeptreferenz darf reale Geometrie ersetzen.
-- Masterbilder sind Stil- und Szenenreferenz, nicht Vermessungsgrundlage.
+- Referenzbilder sind Stil- und Szenenreferenz, nicht Vermessungsgrundlage.
 
 ## Rathaus Spandau
-Primärquelle für Geometrie: vorhandene Rathaus-/Berlin-3D-Modelle und GIS-Daten.
-Optical Master wird nur für Look, Props, Kampfplatzaufbau und Atmosphäre verwendet.
+Primärquelle für Geometrie sind der Blender World Master sowie verifizierte Rathaus-/Berlin3D-/GIS-Daten.
 
 ## Qualitätsziel
-Eine Map gilt erst als fertig, wenn sie:
-- real räumlich wiedererkennbar ist,
-- spielbar ist,
-- Collision/Nav/Spawns funktionieren,
-- und optisch dem jeweiligen Master entspricht.
+Eine Map gilt erst als fertig, wenn sie räumlich wiedererkennbar, spielbar und technisch stabil ist und Collision, Navigation und Spawns funktionieren.

@@ -2,7 +2,7 @@
 
 Updated: **2026-10-14**
 
-**135er Spandau Strike uses Unreal Engine 5 / Lyra as its sole engine target. Source/Source2 are no longer part of active production.**
+**135er Spandau Strike uses Unreal Engine 5 / Lyra as its sole engine target.**
 
 ## Rathaus Spandau - active production focus
 

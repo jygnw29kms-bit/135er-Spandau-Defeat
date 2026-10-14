@@ -7,7 +7,6 @@ Current production target: **Rathaus Spandau in Unreal Engine 5 only**.
 Primary project: `C:\Users\dezen\Documents\Unreal Projects\SpandauStrike\SpandauStrike.uproject`
 Primary map: `/Game/SpandauStrike/Maps/Rathaus/LV_RathausSpandau_REAL_FINAL`
 
-Source / Source 2 is retired from active Spandau Strike production and must not be compiled, tested or resumed.
 
 ## Current Rathaus FINAL state
 - Lyra runtime test works with `B_ShooterGame_Elimination`; local player receives a real Shooter pawn.

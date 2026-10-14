@@ -1,4 +1,4 @@
-<p align="center">
+﻿<p align="center">
   <img src="media/theme/repo-hero.svg" alt="135er Spandau Strike" width="100%">
 </p>
 
@@ -16,7 +16,7 @@ The project is developed for the active Unreal Engine 5 target from one shared B
 - **Blender master** - Rathaus Spandau now uses Berlin3D 2025 / LoD2 as measured geometry reference; clean game geometry is rebuilt from those real dimensions.
 - **Berlin geodata** - Berlin3D 2025, LoD2, DGM1 and real roads/water are the authoritative spatial basis. Concept/master images are used only for look, atmosphere and set dressing.
 
-> Project name: **135er - Spandau Strike**. Older repository/package identifiers may still contain "Spandau Defeat" for compatibility and will be migrated gradually.
+> Project name: **135er Spandau Strike**.
 ### Current Rathaus-first production rule
 
 Rathaus Spandau is the current Unreal Engine 5 reference map. Until this map has passed geometry, gameplay, collision/nav and visual QA, the other maps remain deferred.
@@ -111,14 +111,14 @@ See [docs/IMAGE_QA.md](docs/IMAGE_QA.md).
 <p align="center"><strong>135er - SPANDAU STRIKE</strong><br><sub>BERLIN GIS | BLENDER | UNREAL ENGINE 5 / LYRA</sub></p>
 
 
-### Rathaus Spandau – current Blender viewport
+### Rathaus Spandau â€“ current Blender viewport
 
 ![Rathaus Spandau current Blender build](tools/blender_pipeline/builds/rathaus_spandau/RathausSpandau_Blender_Screenshot.png)
 
 This screenshot shows the current clean Rathaus Spandau Blender rebuild derived from the measured Berlin3D/LoD2 geometry workflow.
 
 
-## Rathaus Spandau – current integrated Blender master v4
+## Rathaus Spandau â€“ current integrated Blender master v4
 
 Current authoritative Blender game-build:
 
@@ -131,7 +131,7 @@ Current authoritative Blender game-build:
 This build combines the clean Rathaus game rebuild with the known Berlin3D 2025 / LoD2 measurements, DGM terrain and prepared real road data. Raw Berlin3D shell/roof geometry is retained only as a hidden reference because the direct photogrammetry mesh is too damaged/triangulated for visible game geometry. Gameplay and optical-master set dressing remain separated in dedicated collections so measured data and authored game content are distinguishable.
 
 
-## Rathaus Spandau – master-aligned Blender build v6
+## Rathaus Spandau â€“ master-aligned Blender build v6
 
 The current Rathaus Spandau Blender build now applies the approved optical master on top of the real-data geometry workflow:
 
@@ -142,3 +142,4 @@ The current Rathaus Spandau Blender build now applies the approved optical maste
 - [Master alignment script](tools/blender_pipeline/masterize_rathaus_v6_final_scene.py)
 
 The real Berlin3D/LoD2/DGM geometry remains authoritative. The master is applied to facade detailing, materials, copper tower crown, wet Rathausplatz, tram/stops, statue, overhead wires, autumn vegetation, A/B cover, lighting and camera composition.
+

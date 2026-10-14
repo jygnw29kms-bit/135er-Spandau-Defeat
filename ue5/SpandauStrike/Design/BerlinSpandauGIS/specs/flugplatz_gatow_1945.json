@@ -1,4 +1,4 @@
-﻿{
+{
   "id": "flugplatz_gatow_1945",
   "name": "Flugplatz Gatow 1945",
   "era": "1945",
@@ -37,11 +37,5 @@
     "noBoostRequiredRoutes": true,
     "waterSafetyRequired": true,
     "stuckClusterAcceptance": 0
-  },
-  "source2": {
-    "authoringTool": "CS2 Workshop Tools / Hammer",
-    "compiledMapName": "flugplatz_gatow_1945",
-    "workshopId": null,
-    "status": "design-spec-ready"
   }
 }

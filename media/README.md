@@ -1,4 +1,4 @@
-# Media
+﻿# Media
 
 Public media is restricted to reviewed project graphics and genuine engine captures.
 
@@ -16,6 +16,7 @@ Public media is restricted to reviewed project graphics and genuine engine captu
 - placeholder gameplay images
 - images presented as coming from the wrong engine
 
-Unreal Engine 5 gameplay captures are added only after the corresponding map runs in Unreal Engine 5/CS2 and passes visual QA.
+Unreal Engine 5 gameplay captures are added only after the corresponding map runs in Unreal Engine 5 and passes visual QA.
 
 See [../docs/IMAGE_QA.md](../docs/IMAGE_QA.md) and [../docs/INGAME_CAPTURE_STANDARD.md](../docs/INGAME_CAPTURE_STANDARD.md).
+

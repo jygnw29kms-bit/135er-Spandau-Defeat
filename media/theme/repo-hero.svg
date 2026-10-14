@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-label="135er Spandau Defeat Source 2">
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-label="135er Spandau Strike Unreal Engine 5">
 <defs>
 <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#07090c"/><stop offset=".52" stop-color="#151a20"/><stop offset="1" stop-color="#05070a"/></linearGradient>
 <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#89939d" stroke-opacity=".08"/></pattern>
@@ -7,8 +7,8 @@
 <path d="M0 268L90 225 170 237 240 185 318 218 390 171 468 207 540 154 620 204 700 160 780 214 860 165 940 218 1015 180 1090 226 1200 194V360H0Z" fill="#0b0e12"/>
 <path d="M0 294H390" stroke="#22a7ff" stroke-width="4"/><path d="M810 294H1200" stroke="#e4192c" stroke-width="4"/>
 <text x="600" y="124" text-anchor="middle" fill="#eef2f5" font-family="Arial Black,Arial,sans-serif" font-size="86" font-weight="900" letter-spacing="-5">135<tspan fill="#e4192c">er</tspan></text>
-<text x="600" y="184" text-anchor="middle" fill="#f1f3f5" font-family="Arial,Helvetica,sans-serif" font-size="40" font-weight="800" letter-spacing="8">SPANDAU DEFEAT</text>
-<text x="600" y="226" text-anchor="middle" fill="#c2cad1" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700" letter-spacing="4">SOURCE 2 / CS2</text>
-<text x="600" y="254" text-anchor="middle" fill="#7e8993" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" letter-spacing="3">HAMMER • WORKSHOP TOOLS • LINUX DEDICATED SERVER</text>
-<text x="600" y="328" text-anchor="middle" fill="#69737d" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" letter-spacing="3">SPANDAU • HISTORY • URBAN WARFARE</text>
+<text x="600" y="184" text-anchor="middle" fill="#f1f3f5" font-family="Arial,Helvetica,sans-serif" font-size="40" font-weight="800" letter-spacing="8">SPANDAU STRIKE</text>
+<text x="600" y="226" text-anchor="middle" fill="#c2cad1" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700" letter-spacing="4">UNREAL ENGINE 5</text>
+<text x="600" y="254" text-anchor="middle" fill="#7e8993" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" letter-spacing="3">HAMMER â€¢ WORKSHOP TOOLS â€¢ LINUX DEDICATED SERVER</text>
+<text x="600" y="328" text-anchor="middle" fill="#69737d" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" letter-spacing="3">SPANDAU â€¢ HISTORY â€¢ URBAN WARFARE</text>
 </svg>

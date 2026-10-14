@@ -1,4 +1,4 @@
-# Public image QA gate
+﻿# Public image QA gate
 
 Status: **binding for public repository media**.
 
@@ -20,7 +20,7 @@ Reject an image if any of the following is visible:
 
 A gameplay image must be captured from the actual running target engine:
 - UE5/Lyra image -> UE5/Lyra runtime
-- Unreal Engine 5 image -> Unreal Engine 5/CS2 runtime
+- Unreal Engine 5 image -> Unreal Engine 5 runtime
 
 Reference or concept imagery must not be used as a substitute for gameplay screenshots.
 
@@ -34,3 +34,4 @@ Reference or concept imagery must not be used as a substitute for gameplay scree
 6. Only then stage and commit.
 
 If there is any doubt, the image stays unpublished.
+

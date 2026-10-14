@@ -1,4 +1,4 @@
-﻿{
+{
   "id": "staaken",
   "name": "Staaken",
   "era": "1945-inspired",
@@ -37,11 +37,5 @@
     "noBoostRequiredRoutes": true,
     "waterSafetyRequired": true,
     "stuckClusterAcceptance": 0
-  },
-  "source2": {
-    "authoringTool": "CS2 Workshop Tools / Hammer",
-    "compiledMapName": "staaken",
-    "workshopId": null,
-    "status": "design-spec-ready"
   }
 }

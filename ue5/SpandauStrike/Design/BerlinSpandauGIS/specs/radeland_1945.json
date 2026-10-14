@@ -1,4 +1,4 @@
-﻿{
+{
   "id": "radeland_1945",
   "name": "Radelandstra├ƒe 1945",
   "era": "1945 occupation period",
@@ -37,11 +37,5 @@
     "noBoostRequiredRoutes": true,
     "waterSafetyRequired": true,
     "stuckClusterAcceptance": 0
-  },
-  "source2": {
-    "authoringTool": "CS2 Workshop Tools / Hammer",
-    "compiledMapName": "radeland_1945",
-    "workshopId": null,
-    "status": "design-spec-ready"
   }
 }
