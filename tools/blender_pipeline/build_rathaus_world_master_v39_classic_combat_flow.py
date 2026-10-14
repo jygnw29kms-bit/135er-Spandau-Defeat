@@ -3,7 +3,7 @@ from pathlib import Path
 from mathutils import Vector
 from mathutils.bvhtree import BVHTree
 SRC=Path(r"C:\Users\dezen\Desktop\135er-Spandau-Defeat\tools\blender_pipeline\builds\rathaus_spandau\SpandauStrike_Rathaus_WORLD_MASTER_v38_TERRITORIAL_FLOW.blend")
-OUT=SRC.with_name('SpandauStrike_Rathaus_WORLD_MASTER_v39_DODS_COMBAT_FLOW.blend');REP=OUT.with_suffix('.json')
+OUT=SRC.with_name('SpandauStrike_Rathaus_WORLD_MASTER_v39_CLASSIC_COMBAT_FLOW.blend');REP=OUT.with_suffix('.json')
 bpy.ops.wm.open_mainfile(filepath=str(SRC));sc=bpy.context.scene
 COL=bpy.data.collections.get('GAMEPLAY_COMBAT_V39') or bpy.data.collections.new('GAMEPLAY_COMBAT_V39')
 if COL.name not in sc.collection.children:sc.collection.children.link(COL)
@@ -47,7 +47,7 @@ for rid,p,lane in risks:
  # offset sniper candidate ~18m back/side to avoid exact overlap
  sx=p[0]-18 if p[0]>0 else p[0]+18; sy=p[1]+14
  o=marker(f'SNIPER_POS_{rid}',sx,sy,'sniper_candidate',M_SN,2.0,ss_lane=lane,ss_weapon_role='Sniper',ss_counterplay='smoke+alternate_lane',ss_exposed=True);made.append(o.name)
-# tag 5 flags with DoD:S capture semantics
+# tag 5 flags with classic territorial capture semantics
 for o in sc.objects:
  if o.name.startswith('FLAG_'):
   o['ss_capture_rule']='contested_stops_progress';o['ss_capture_decay']='hold_then_slow_decay';o['ss_frontline_mode']='linear_adjacent';o['ss_backcap_allowed']=False
@@ -57,5 +57,6 @@ for o in sc.objects:
   o['ss_spawn_role']='team_anchor';o['ss_frontline_side']='west';o['ss_spawn_safety']='los_distance_check'
  if o.name.startswith('SM_SPAWN_EAST_') and 'RING' not in o.name:
   o['ss_spawn_role']='team_anchor';o['ss_frontline_side']='east';o['ss_spawn_safety']='los_distance_check'
-sc['ss_master_version']='v39_DODS_COMBAT_FLOW';sc['ss_combat_design']='DoD:S lane control: MG/sniper power positions always paired with smoke/flank counterplay; legacy A/B retired';sc['ss_runtime_objectives']=5
+sc['ss_master_version']='v39_CLASSIC_COMBAT_FLOW';sc['ss_combat_design']='classic lane control: MG/sniper power positions always paired with smoke/flank counterplay; legacy A/B retired';sc['ss_runtime_objectives']=5
 bpy.ops.wm.save_as_mainfile(filepath=str(OUT));REP.write_text(json.dumps({'source':str(SRC),'output':str(OUT),'retired':ret,'created':made,'rules':{'flags':5,'center_players':2,'contested':'stop','backcap':False,'mg_counterplay':'smoke+flank'}},indent=2),encoding='utf-8');print('V39_READY',len(made),'retired',ret,flush=True)
+

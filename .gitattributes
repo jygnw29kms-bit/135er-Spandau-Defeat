@@ -1,4 +1,4 @@
-ue5/SpandauStrike/Content/**/*.uasset filter=lfs diff=lfs merge=lfs -text
+﻿ue5/SpandauStrike/Content/**/*.uasset filter=lfs diff=lfs merge=lfs -text
 ue5/SpandauStrike/Content/**/*.umap filter=lfs diff=lfs merge=lfs -text
 tools/blender_pipeline/builds/rathaus_spandau/SpandauStrike_Rathaus_WORLD_MASTER_v15_OPTIMIZED.blend filter=lfs diff=lfs merge=lfs -text
 tools/blender_pipeline/builds/rathaus_spandau/SpandauStrike_Rathaus_WORLD_MASTER_v17_GAMEPLAY_TAGGED.blend filter=lfs diff=lfs merge=lfs -text
@@ -9,4 +9,5 @@ tools/blender_pipeline/builds/rathaus_spandau/SpandauStrike_Rathaus_WORLD_MASTER
 tools/blender_pipeline/builds/rathaus_spandau/SpandauStrike_Rathaus_WORLD_MASTER_v3[3-6]_*.blend filter=lfs diff=lfs merge=lfs -text
 tools/blender_pipeline/builds/rathaus_spandau/SpandauStrike_Rathaus_WORLD_MASTER_v37_*.blend filter=lfs diff=lfs merge=lfs -text
 tools/blender_pipeline/builds/rathaus_spandau/SpandauStrike_Rathaus_WORLD_MASTER_v38_TERRITORIAL_FLOW.blend filter=lfs diff=lfs merge=lfs -text
-tools/blender_pipeline/builds/rathaus_spandau/SpandauStrike_Rathaus_WORLD_MASTER_v39_DODS_COMBAT_FLOW.blend filter=lfs diff=lfs merge=lfs -text
+tools/blender_pipeline/builds/rathaus_spandau/SpandauStrike_Rathaus_WORLD_MASTER_v39_CLASSIC_COMBAT_FLOW.blend filter=lfs diff=lfs merge=lfs -text
+tools/blender_pipeline/builds/rathaus_spandau/SpandauStrike_Rathaus_WORLD_MASTER_v40_COVER_CHAINS.blend filter=lfs diff=lfs merge=lfs -text

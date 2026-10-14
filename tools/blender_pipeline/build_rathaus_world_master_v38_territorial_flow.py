@@ -72,8 +72,9 @@ for n in ['SIGHTLINE_RISK_00','SIGHTLINE_RISK_01','SIGHTLINE_RISK_02']:
 for o in sc.objects:
  if o.name.startswith('COVER_ZONE_'):
   y=o.location.y; lane='north' if y>25 else 'south' if y<-45 else 'mid'
-  tag(o,'gameplay_planning','cover_candidate',False,ss_lane=lane,ss_runtime=False,ss_cover_intent='dod_lane_break')
-sc['ss_master_version']='v38_TERRITORIAL_FLOW';sc['ss_gameplay_basis']='Day of Defeat Source territorial control';sc['ss_territorial_flags']=5;sc['ss_primary_lanes']=3;sc['ss_crosslinks']=3;sc['ss_center_capture_players']=2;sc['ss_policy']='Blender world master -> DoD:S-like tagged territorial layout -> UE5 Lyra'
+  tag(o,'gameplay_planning','cover_candidate',False,ss_lane=lane,ss_runtime=False,ss_cover_intent='classic_lane_break')
+sc['ss_master_version']='v38_TERRITORIAL_FLOW';sc['ss_gameplay_basis']='classic class-based territorial control';sc['ss_territorial_flags']=5;sc['ss_primary_lanes']=3;sc['ss_crosslinks']=3;sc['ss_center_capture_players']=2;sc['ss_policy']='Blender world master -> classic class-based tagged territorial layout -> UE5 Lyra'
 bpy.ops.wm.save_as_mainfile(filepath=str(OUT))
 REP.write_text(json.dumps({'source':str(SRC),'output':str(OUT),'flags':[{'name':n,'x':x,'y':y,'z':z_at(x,y),'required_players':r,'side':s,'zone':zn} for n,x,y,r,s,zn in flags],'crosslinks':cross,'created':created,'design':'5-flag linear frontline, 3 primary lanes, 3 crosslinks, central 2-player Rathaus capture'},indent=2),encoding='utf-8')
 print('V38_READY',len(created),str(OUT),flush=True)
+

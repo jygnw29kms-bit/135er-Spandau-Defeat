@@ -1,10 +1,10 @@
 {
-  "file": "C:\\Users\\dezen\\Desktop\\135er-Spandau-Defeat\\tools\\blender_pipeline\\builds\\rathaus_spandau\\SpandauStrike_Rathaus_WORLD_MASTER_v39_DODS_COMBAT_FLOW.blend",
-  "objects_total": 10737,
+  "file": "C:\\Users\\dezen\\Desktop\\135er-Spandau-Defeat\\tools\\blender_pipeline\\builds\\rathaus_spandau\\SpandauStrike_Rathaus_WORLD_MASTER_v40_COVER_CHAINS.blend",
+  "objects_total": 10757,
   "types": {
     "LIGHT": 3,
     "CAMERA": 1,
-    "MESH": 10698,
+    "MESH": 10718,
     "FONT": 14,
     "CURVE": 6,
     "EMPTY": 15
@@ -44,6 +44,11 @@
       "direct": 14,
       "recursive": 14,
       "mesh_recursive": 14
+    },
+    "GAMEPLAY_COVER_V40": {
+      "direct": 20,
+      "recursive": 20,
+      "mesh_recursive": 20
     },
     "GAMEPLAY_Layer": {
       "direct": 20,
@@ -11280,9 +11285,9 @@
     ]
   },
   "shared_mesh_data_count": 782,
-  "mesh_objects": 10698,
-  "vertices": 719189,
-  "polygons": 1085267,
+  "mesh_objects": 10718,
+  "vertices": 719349,
+  "polygons": 1085387,
   "bounds_min": [
     -1255.1239013671875,
     -3227.75537109375,
@@ -12709,7 +12714,7 @@
     ],
     "veget": []
   },
-  "custom_props_count": 10737,
+  "custom_props_count": 10757,
   "custom_props_sample": {
     "Sun": {
       "ss_role": "setdressing",
@@ -13201,7 +13206,7 @@
       "ss_tag": "replaced_v30_legacy_rathaus_detail"
     }
   },
-  "materials": 151,
+  "materials": 153,
   "images": 7,
   "missing_images": [],
   "top_complexity": [

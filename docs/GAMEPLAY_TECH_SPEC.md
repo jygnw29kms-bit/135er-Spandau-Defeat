@@ -1,7 +1,7 @@
-﻿# 135er Spandau Strike – DoD:S Gameplay Technical Specification
+﻿# 135er Spandau Strike – Gameplay Technical Specification
 
 ## Status
-Verbindliche Gameplay-Basis für 135er Spandau Strike. Engine: Unreal Engine 5 / Lyra. World Master: Blender. Day of Defeat: Source dient als funktionale Referenz für Movement, Gunplay, Klassenrollen und Territorial Control.
+Verbindliche Gameplay-Basis für 135er Spandau Strike. Engine: Unreal Engine 5 / Lyra. World Master: Blender. Die Gameplay-Ausrichtung orientiert sich an klassischen klassenbasierten Territorial-Shootern mit schwerem Movement, hoher Letalität und klaren Rollen.
 
 ## Core Pillars
 - hohe Letalität, geringe TTK, kein Shield-Gameplay
@@ -100,3 +100,4 @@ Exportmanifest muss diese Metadaten vollständig an UE5-Importtools weitergeben.
 
 ## Current Production Policy
 Blender World Master -> Gameplay/Architecture QA -> tagged modular export -> UE5/Lyra. UE5-FINAL wird erst mit geprüften Masterständen aktualisiert; kaputte ältere Rathaus-v70/v77-Geometrie gilt nicht als Produktionsbasis.
+

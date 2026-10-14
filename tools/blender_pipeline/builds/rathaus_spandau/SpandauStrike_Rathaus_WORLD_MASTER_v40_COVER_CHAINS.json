@@ -1,0 +1,167 @@
+{
+  "source": "C:\\Users\\dezen\\Desktop\\135er-Spandau-Defeat\\tools\\blender_pipeline\\builds\\rathaus_spandau\\SpandauStrike_Rathaus_WORLD_MASTER_v39_CLASSIC_COMBAT_FLOW.blend",
+  "output": "C:\\Users\\dezen\\Desktop\\135er-Spandau-Defeat\\tools\\blender_pipeline\\builds\\rathaus_spandau\\SpandauStrike_Rathaus_WORLD_MASTER_v40_COVER_CHAINS.blend",
+  "created": [
+    {
+      "name": "V40_COVER_NORTH_00",
+      "lane": "north",
+      "class": "low",
+      "x": -122.0,
+      "y": -10.3,
+      "z": 1.6015548706054688
+    },
+    {
+      "name": "V40_COVER_NORTH_01",
+      "lane": "north",
+      "class": "high",
+      "x": -23.6,
+      "y": 103.0,
+      "z": 2.7306747436523438
+    },
+    {
+      "name": "V40_COVER_NORTH_02",
+      "lane": "north",
+      "class": "low",
+      "x": 96.7,
+      "y": 123.6,
+      "z": 3.8271713256835938
+    },
+    {
+      "name": "V40_COVER_NORTH_03",
+      "lane": "north",
+      "class": "high",
+      "x": 198.2,
+      "y": 48.2,
+      "z": 3.1814727783203125
+    },
+    {
+      "name": "V40_COVER_MID_00",
+      "lane": "mid",
+      "class": "low",
+      "x": -244.1,
+      "y": -53.9,
+      "z": 5.620246887207031
+    },
+    {
+      "name": "V40_COVER_MID_01",
+      "lane": "mid",
+      "class": "high",
+      "x": -184.9,
+      "y": -69.9,
+      "z": 5.710700988769531
+    },
+    {
+      "name": "V40_COVER_MID_02",
+      "lane": "mid",
+      "class": "low",
+      "x": -40.9,
+      "y": -84.6,
+      "z": 1.434295654296875
+    },
+    {
+      "name": "V40_COVER_MID_03",
+      "lane": "mid",
+      "class": "high",
+      "x": 10.0,
+      "y": -49.8,
+      "z": 2.0380630493164062
+    },
+    {
+      "name": "V40_COVER_MID_04",
+      "lane": "mid",
+      "class": "low",
+      "x": 80.7,
+      "y": 48.1,
+      "z": 3.3220596313476562
+    },
+    {
+      "name": "V40_COVER_MID_05",
+      "lane": "mid",
+      "class": "high",
+      "x": 172.3,
+      "y": 39.3,
+      "z": 3.2822647094726562
+    },
+    {
+      "name": "V40_COVER_SOUTH_00",
+      "lane": "south",
+      "class": "low",
+      "x": -281.9,
+      "y": -61.0,
+      "z": 2.1949081420898438
+    },
+    {
+      "name": "V40_COVER_SOUTH_01",
+      "lane": "south",
+      "class": "high",
+      "x": -201.2,
+      "y": -100.2,
+      "z": 1.0366592407226562
+    },
+    {
+      "name": "V40_COVER_SOUTH_02",
+      "lane": "south",
+      "class": "low",
+      "x": -120.5,
+      "y": -139.4,
+      "z": 2.01507568359375
+    },
+    {
+      "name": "V40_COVER_SOUTH_03",
+      "lane": "south",
+      "class": "high",
+      "x": -39.8,
+      "y": -178.6,
+      "z": 2.2246170043945312
+    },
+    {
+      "name": "V40_COVER_SOUTH_04",
+      "lane": "south",
+      "class": "low",
+      "x": 38.0,
+      "y": -156.9,
+      "z": 1.9300613403320312
+    },
+    {
+      "name": "V40_COVER_SOUTH_05",
+      "lane": "south",
+      "class": "high",
+      "x": 129.4,
+      "y": -77.9,
+      "z": 2.4611053466796875
+    },
+    {
+      "name": "V40_COVER_SOUTH_06",
+      "lane": "south",
+      "class": "low",
+      "x": 174.7,
+      "y": 2.7,
+      "z": 2.8282852172851562
+    },
+    {
+      "name": "V40_COVER_CROSS_00",
+      "lane": "cross",
+      "class": "low",
+      "x": -88.9,
+      "y": -91.5,
+      "z": 1.26593017578125
+    },
+    {
+      "name": "V40_COVER_CROSS_01",
+      "lane": "cross",
+      "class": "high",
+      "x": -49.0,
+      "y": 44.9,
+      "z": 2.4409103393554688
+    },
+    {
+      "name": "V40_COVER_CROSS_02",
+      "lane": "cross",
+      "class": "low",
+      "x": 83.4,
+      "y": 96.5,
+      "z": 3.5140228271484375
+    }
+  ],
+  "count": 20
+}

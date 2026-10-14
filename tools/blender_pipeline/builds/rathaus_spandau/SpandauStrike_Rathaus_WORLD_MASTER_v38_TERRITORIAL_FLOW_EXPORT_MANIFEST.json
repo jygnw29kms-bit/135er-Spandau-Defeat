@@ -2,7 +2,7 @@
   "master_file": "C:\\Users\\dezen\\Desktop\\135er-Spandau-Defeat\\tools\\blender_pipeline\\builds\\rathaus_spandau\\SpandauStrike_Rathaus_WORLD_MASTER_v38_TERRITORIAL_FLOW.blend",
   "master_version": "v38_TERRITORIAL_FLOW",
   "engine": "UE5 only",
-  "policy": "Blender world master -> DoD:S-like tagged territorial layout -> UE5 Lyra",
+  "policy": "Blender world master -> classic class-based tagged territorial layout -> UE5 Lyra",
   "object_count": 10723,
   "role_counts": {
     "setdressing": 1952,
@@ -2756,7 +2756,7 @@
       "metadata": {
         "ss_lane": "south",
         "ss_runtime": false,
-        "ss_cover_intent": "dod_lane_break"
+        "ss_cover_intent": "classic_lane_break"
       }
     },
     {
@@ -2786,7 +2786,7 @@
       "metadata": {
         "ss_lane": "south",
         "ss_runtime": false,
-        "ss_cover_intent": "dod_lane_break"
+        "ss_cover_intent": "classic_lane_break"
       }
     },
     {
@@ -2816,7 +2816,7 @@
       "metadata": {
         "ss_lane": "south",
         "ss_runtime": false,
-        "ss_cover_intent": "dod_lane_break"
+        "ss_cover_intent": "classic_lane_break"
       }
     },
     {
@@ -2846,7 +2846,7 @@
       "metadata": {
         "ss_lane": "mid",
         "ss_runtime": false,
-        "ss_cover_intent": "dod_lane_break"
+        "ss_cover_intent": "classic_lane_break"
       }
     },
     {
@@ -2876,7 +2876,7 @@
       "metadata": {
         "ss_lane": "south",
         "ss_runtime": false,
-        "ss_cover_intent": "dod_lane_break"
+        "ss_cover_intent": "classic_lane_break"
       }
     },
     {
@@ -2906,7 +2906,7 @@
       "metadata": {
         "ss_lane": "north",
         "ss_runtime": false,
-        "ss_cover_intent": "dod_lane_break"
+        "ss_cover_intent": "classic_lane_break"
       }
     },
     {
@@ -2936,7 +2936,7 @@
       "metadata": {
         "ss_lane": "mid",
         "ss_runtime": false,
-        "ss_cover_intent": "dod_lane_break"
+        "ss_cover_intent": "classic_lane_break"
       }
     },
     {
@@ -2966,7 +2966,7 @@
       "metadata": {
         "ss_lane": "north",
         "ss_runtime": false,
-        "ss_cover_intent": "dod_lane_break"
+        "ss_cover_intent": "classic_lane_break"
       }
     },
     {
