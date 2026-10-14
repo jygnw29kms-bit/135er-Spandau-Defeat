@@ -15,7 +15,7 @@ in Fusion on 13 October. Their native archives, viewports and audits are stored 
 [cad/fusion/source_review](cad/fusion/source_review). The gallery contains six
 independently normalized sketches; the segmentation has four solid wing envelopes
 that fit the assumed print volume. Neither is a registered fuselage or a lightweight
-print shell. The native source-spar review remains pending.
+print shell. Subsequent native spar, hollow-shell and clearance reviews are summarized in the [wing structure status](docs/12_SOURCE_WING_STRUCTURE_STATUS.md).
 
 Source contour, EDF and battery calculations are provisional geometry screens.
 Metric body registration, continuous clearance, actual hardware, mass properties,
