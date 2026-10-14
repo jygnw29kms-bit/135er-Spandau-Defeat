@@ -1,0 +1,11 @@
+{
+  "source": "C:\\Users\\dezen\\Desktop\\135er-Spandau-Defeat\\tools\\blender_pipeline\\builds\\rathaus_spandau\\SpandauStrike_Rathaus_WORLD_MASTER_v31_FENESTRATION.blend",
+  "output": "C:\\Users\\dezen\\Desktop\\135er-Spandau-Defeat\\tools\\blender_pipeline\\builds\\rathaus_spandau\\SpandauStrike_Rathaus_WORLD_MASTER_v32_TOWER_ACCURACY.blend",
+  "created_count": 98,
+  "retired": [
+    "P_CopperCap",
+    "P_CopperCap_Rim",
+    "P_CopperCapTop",
+    "P_CopperCapTop_Rim"
+  ]
+}

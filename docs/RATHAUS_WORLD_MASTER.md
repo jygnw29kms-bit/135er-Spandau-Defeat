@@ -1,4 +1,4 @@
-﻿# Rathaus World Master
+# Rathaus World Master
 
 Updated: 2026-10-14
 
@@ -64,6 +64,26 @@ Already present in the recovered master:
   - obsolete blockout/reference collections excluded from production export
   - Berlin3D texture paths repaired and images packed where available
   - exact duplicate mesh datablocks deduplicated where safe
+
+## Current production master - v32
+
+`SpandauStrike_Rathaus_WORLD_MASTER_v32_TOWER_ACCURACY.blend` is the current production master.
+
+Production cleanup from v24 through v32 established a clean separation between historic/reference detail generations and current export geometry:
+- v24: facade/tower profile pass
+- v25: broad round pediment, six-order risalit and open tower upper stage
+- v26-v30: removal of overlapping legacy central/wing/detail generations and false-geoframe geometry
+- v31: instanced facade fenestration on measured 5 m / 4.2 m rhythm
+- v32: four-sided clock/tower detail and retirement of old copper-cap geometry
+
+The misleading dark geometry visible in early QA renders was traced to collision/helper meshes being rendered by the QA script. Collision remains valid gameplay data but is now excluded from architecture renders.
+
+Verified v32 technical state:
+- world bounds unchanged (~1.855 km x 4.201 km)
+- 2,997 production-export meshes
+- road-to-DGM offset consistently +0.03 m with no >0.05 m mismatches
+- building-to-DGM grounding error below 0.000001 m for in-bounds samples
+- full master contains 10,538 objects, 657,077 vertices and 1,028,835 polygons
 
 ## Gameplay metadata policy
 

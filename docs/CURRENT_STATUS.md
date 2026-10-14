@@ -50,22 +50,34 @@ The v83 DGM test surface is only about **358 m x 358 m** and was intentionally b
 6. UE5 handles gameplay systems, lighting, final runtime materials, navigation, AI, Nanite/LOD policy, effects and runtime optimization.
 
 Current tracked files:
-- `tools/blender_pipeline/builds/rathaus_spandau/SpandauStrike_Rathaus_WORLD_MASTER_v15_OPTIMIZED.blend` - production-cleaned world master
-- `tools/blender_pipeline/builds/rathaus_spandau/SpandauStrike_Rathaus_WORLD_MASTER_v15_OPTIMIZED_AUDIT.json`
-- `tools/blender_pipeline/builds/rathaus_spandau/SpandauStrike_Rathaus_WORLD_MASTER_v15_OPTIMIZED_EXPORT_MANIFEST.json`
+- `tools/blender_pipeline/builds/rathaus_spandau/SpandauStrike_Rathaus_WORLD_MASTER_v32_TOWER_ACCURACY.blend` - current production world master
+- `tools/blender_pipeline/builds/rathaus_spandau/SpandauStrike_Rathaus_WORLD_MASTER_v32_TOWER_ACCURACY_AUDIT.json`
+- `tools/blender_pipeline/builds/rathaus_spandau/SpandauStrike_Rathaus_WORLD_MASTER_v32_TOWER_ACCURACY_EXPORT_MANIFEST.json`
 - `docs/RATHAUS_WORLD_MASTER.md`
 
-The v14 recovery checkpoint is archived locally outside Git at `Documents/SpandauStrike/Blender/archive/Rathaus_WORLD_MASTER_recovery_2026-10-14/`.
+Intermediate v24-v31 Blender builds are archived locally outside Git under `Documents/SpandauStrike/local_repo_archive_2026-10-14/worldmaster_v24-v31_diagnostics/`.
 
-## v15 verified cleanup
+## v32 verified production cleanup and rebuild
 
-- 8,690 mesh objects safely reassigned to identical shared mesh datablocks
-- unique mesh datablocks reduced from 10,100 to 1,410
-- all seven Berlin3D image references repaired and packed
-- zero missing image references after validation
-- all 10,118 scene objects carry semantic/export metadata
-- 2,439 blockout objects and two photo-reference objects remain preserved but excluded from production export
-- geometry bounds, vertex count and polygon count remain unchanged
+- legacy Rathaus detail generations are preserved as reference but excluded from production export
+- 3,955 obsolete/overlapping Rathaus-detail objects were retired from export in the production-clean pass
+- clean architecture layers now use the verified 47.5-degree geoframe
+- the front facade uses a new instanced 5 m horizontal / 4.2 m vertical window rhythm
+- 76 facade window instances share one window mesh
+- central risalit uses five window axes and a broad round pediment matching Rathaus Spandau reference proportions
+- tower now has four clock faces, four levels of small shaft windows, corner articulation, an open upper stage and a low green copper roof
+- old `P_CopperCap*` geometry is reference-only
+- QA renderer explicitly excludes collision/nav/gameplay helper meshes, avoiding false visual blockers
+
+## v32 technical QA
+
+- 10,538 total scene objects / 10,502 mesh objects
+- 657,077 vertices / 1,028,835 polygons across the full master scene
+- 2,997 meshes currently marked for production export
+- full world bounds remain approximately 1.855 km x 4.201 km
+- road mesh: 15,381 sampled vertices inside DGM; median road offset +0.03 m; zero points above 0.05 m mismatch
+- building grounding: maximum terrain error below 0.000001 m for in-terrain samples
+- zero missing material assignments in the world audit
 
 ## Gameplay metadata already present
 
@@ -81,9 +93,9 @@ Recovered data already contains:
 
 ## Immediate production priority
 
-- complete Rathaus landmark geometry to production quality
-- classify routes, choke points, cover heights and playable interiors in the Blender master
+- continue Rathaus facade sculpt/detail pass: stone reliefs, portal, pediment crest/inscription zone and side elevations
+- complete tower architectural detailing while preserving the verified v32 silhouette
+- classify routes, choke points, cover heights and playable interiors in the Blender world master
 - keep terrain/roads/buildings aligned to verified spatial data
-- build tagged modular UE5 export/import packages
-- validate scale, terrain, collision and navigation in UE5
+- produce a tagged modular UE5 handoff only after the Blender landmark and immediate Rathaus environment pass are visually approved
 - only then designate a new Rathaus UE level as FINAL
