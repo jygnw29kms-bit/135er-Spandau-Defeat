@@ -11,6 +11,7 @@
     "core_tuning": "ue5/SpandauStrike/Design/Gameplay/core_gameplay_tuning_v1.json",
     "weapon_archetypes": "ue5/SpandauStrike/Design/Gameplay/weapon_archetypes_v1.json",
     "class_loadouts": "ue5/SpandauStrike/Design/Gameplay/class_loadouts_v1.json",
+    "ability_contracts": "ue5/SpandauStrike/Design/Gameplay/ability_contracts_v1.json",
     "lane_flow": "ue5/SpandauStrike/Design/Gameplay/rathaus_lane_flow_v1.json",
     "combat_flow": "ue5/SpandauStrike/Design/Gameplay/rathaus_combat_flow_v1.json"
   },
