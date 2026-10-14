@@ -1,0 +1,94 @@
+{
+  "schema": "SpandauStrike.AttributeContracts.v1",
+  "attribute_sets": {
+    "StaminaSet": {
+      "planned_cpp_class": "USpandauStaminaSet",
+      "attributes": {
+        "Stamina": {
+          "initial": 100.0,
+          "clamp_min": 0.0,
+          "clamp_max_source": "core_gameplay_tuning_v1.stamina.max",
+          "replication": "owner_and_server",
+          "prediction": "local_cost_prediction_reconciled"
+        },
+        "MaxStamina": {
+          "source": "core_gameplay_tuning_v1.stamina.max",
+          "replication": "owner_and_server",
+          "prediction": "none"
+        },
+        "StaminaRegenRate": {
+          "source": "core_gameplay_tuning_v1.stamina.regen_per_s",
+          "replication": "owner_and_server",
+          "prediction": "none"
+        },
+        "SprintDrainRate": {
+          "source": "core_gameplay_tuning_v1.stamina.sprint_drain_per_s",
+          "replication": "owner_and_server",
+          "prediction": "local_cost_prediction_reconciled"
+        },
+        "JumpStaminaCost": {
+          "source": "core_gameplay_tuning_v1.stamina.jump_cost",
+          "replication": "owner_and_server",
+          "prediction": "local_cost_prediction_reconciled"
+        }
+      }
+    },
+    "MovementProfileSet": {
+      "planned_cpp_class": "USpandauMovementProfileSet",
+      "attributes": {
+        "ClassSpeedMultiplier": {
+          "source_pattern": "core_gameplay_tuning_v1.classes.<Class>.speed_multiplier",
+          "replication": "all_clients",
+          "prediction": "movement_prediction_input"
+        },
+        "ClassAccelerationMultiplier": {
+          "source_pattern": "core_gameplay_tuning_v1.classes.<Class>.acceleration_multiplier",
+          "replication": "all_clients",
+          "prediction": "movement_prediction_input"
+        },
+        "ClassStaminaDrainMultiplier": {
+          "source_pattern": "core_gameplay_tuning_v1.classes.<Class>.stamina_drain_multiplier",
+          "replication": "owner_and_server",
+          "prediction": "local_cost_prediction_reconciled"
+        }
+      }
+    },
+    "WeaponHandlingSet": {
+      "planned_cpp_class": "USpandauWeaponHandlingSet",
+      "attributes": {
+        "SpreadMultiplier": {
+          "initial": 1.0,
+          "replication": "owner_and_server",
+          "prediction": "client_visual_server_hit_authority"
+        },
+        "RecoilMultiplier": {
+          "initial": 1.0,
+          "replication": "owner_and_server",
+          "prediction": "client_visual_server_weapon_authority"
+        },
+        "SwayMultiplier": {
+          "initial": 1.0,
+          "replication": "owner_and_server",
+          "prediction": "client_visual"
+        }
+      },
+      "modifier_sources": [
+        "core_gameplay_tuning_v1.stance_weapon_multipliers",
+        "core_gameplay_tuning_v1.stamina",
+        "core_gameplay_tuning_v1.bipod"
+      ]
+    }
+  },
+  "existing_lyra_contracts": {
+    "health": "reuse Lyra health attributes; baseline health remains 100",
+    "shield": "disabled for Spandau Strike territorial gameplay",
+    "team": "reuse Lyra team system rather than creating a duplicate team attribute set"
+  },
+  "authority_rules": {
+    "server_owns_final_stamina": true,
+    "server_owns_damage": true,
+    "server_owns_hit_confirmation": true,
+    "movement_prediction_must_use_character_network_prediction": true,
+    "blueprint_velocity_hacks_forbidden": true
+  }
+}
