@@ -1,0 +1,61 @@
+{
+  "schema": "SpandauStrike.DamageContract.v1",
+  "health_baseline": 100.0,
+  "hit_zones": {
+    "Head": {
+      "gameplay_tag": "SpandauStrike.HitZone.Head",
+      "default_multiplier": 2.5
+    },
+    "UpperTorso": {
+      "gameplay_tag": "SpandauStrike.HitZone.UpperTorso",
+      "default_multiplier": 1.0
+    },
+    "LowerTorso": {
+      "gameplay_tag": "SpandauStrike.HitZone.LowerTorso",
+      "default_multiplier": 1.0
+    },
+    "Arm": {
+      "gameplay_tag": "SpandauStrike.HitZone.Arm",
+      "default_multiplier": 0.75
+    },
+    "Leg": {
+      "gameplay_tag": "SpandauStrike.HitZone.Leg",
+      "default_multiplier": 0.65
+    }
+  },
+  "weapon_damage_policy": {
+    "BoltRifle": {
+      "upper_torso_must_be_lethal": true,
+      "head_must_be_lethal": true,
+      "limb_one_shot_forbidden": true
+    },
+    "ScopedRifle": {
+      "upper_torso_must_be_lethal": true,
+      "head_must_be_lethal": true,
+      "limb_one_shot_forbidden": true
+    },
+    "AssaultSMG": {
+      "upper_torso_must_be_lethal": false,
+      "limb_one_shot_forbidden": true
+    },
+    "SupportAutomatic": {
+      "upper_torso_must_be_lethal": false,
+      "limb_one_shot_forbidden": true
+    },
+    "HeavyMG": {
+      "upper_torso_must_be_lethal": false,
+      "limb_one_shot_forbidden": true
+    },
+    "RocketLauncher": {
+      "uses_radial_damage": true,
+      "direct_hit_uses_direct_damage": true
+    }
+  },
+  "authority": {
+    "server_owns_final_damage": true,
+    "server_resolves_hit_zone": true,
+    "client_hitmarker_is_feedback_only": true,
+    "damage_numbers_disabled": true,
+    "shield_damage_disabled": true
+  }
+}
