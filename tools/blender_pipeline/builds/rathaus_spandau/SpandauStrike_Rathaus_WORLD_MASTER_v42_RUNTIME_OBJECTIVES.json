@@ -1,0 +1,11 @@
+{
+  "source": "C:\\Users\\dezen\\Desktop\\135er-Spandau-Defeat\\tools\\blender_pipeline\\builds\\rathaus_spandau\\SpandauStrike_Rathaus_WORLD_MASTER_v41_URBAN_COVER.blend",
+  "output": "C:\\Users\\dezen\\Desktop\\135er-Spandau-Defeat\\tools\\blender_pipeline\\builds\\rathaus_spandau\\SpandauStrike_Rathaus_WORLD_MASTER_v42_RUNTIME_OBJECTIVES.blend",
+  "created": [
+    "OBJ_RUNTIME_1_1_WEST_HOME",
+    "OBJ_RUNTIME_2_2_WEST_STREET",
+    "OBJ_RUNTIME_3_3_RATHAUS",
+    "OBJ_RUNTIME_4_4_EAST_STREET",
+    "OBJ_RUNTIME_5_5_EAST_HOME"
+  ]
+}
