@@ -1,4 +1,4 @@
-import bpy, json, os
+﻿import bpy, json, os
 
 scene = bpy.context.scene
 src = bpy.data.filepath
@@ -6,9 +6,9 @@ out = os.path.splitext(src)[0] + '_EXPORT_MANIFEST.json'
 
 items = []
 for o in scene.objects:
-    role = o.get('ss_role', 'untagged')
-    export = bool(o.get('ss_export', True))
-    tag = o.get('ss_tag', '')
+    role = o.get('ss_role', o.get('spandau_role', 'untagged'))
+    export = bool(o.get('ss_export', o.get('ue_export', True)))
+    tag = o.get('ss_tag', o.get('spandau_tag', ''))
     loc = o.matrix_world.translation
     rot = o.matrix_world.to_euler('XYZ')
     scl = o.matrix_world.to_scale()
@@ -36,12 +36,13 @@ for x in items:
 
 manifest = {
     'master_file': src,
-    'master_version': scene.get('ss_master_version', ''),
+    'master_version': scene.get('ss_master_version', scene.get('spandau_master_version', '')),
     'engine': scene.get('ss_engine', 'UE5 only'),
-    'policy': scene.get('ss_policy', ''),
+    'policy': scene.get('ss_policy', scene.get('spandau_master_policy', '')),
     'object_count': len(items),
     'role_counts': roles,
     'gameplay': [x for x in items if x['role'] == 'gameplay'],
+    'gameplay_planning': [x for x in items if x['role'] == 'gameplay_planning'],
     'collision': [x for x in items if x['role'] == 'collision'],
     'landmarks': [x for x in items if x['role'] == 'landmark'],
     'world': [x for x in items if x['role'] == 'world'],
@@ -53,3 +54,4 @@ with open(out, 'w', encoding='utf-8') as f:
     json.dump(manifest, f, indent=2, ensure_ascii=False)
 print('MANIFEST=' + out)
 print('ROLES=' + json.dumps(roles, sort_keys=True))
+

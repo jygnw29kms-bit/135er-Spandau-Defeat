@@ -24,3 +24,4 @@ tools/blender_pipeline/*.bak
 # Do not redistribute raw third-party source datasets from this repository.
 **/Berlin3D_2025_*/
 **/LoD2_*/
+tools/blender_pipeline/builds/rathaus_spandau/SpandauStrike_Rathaus_WORLD_MASTER_v16_ARCH_DETAIL*

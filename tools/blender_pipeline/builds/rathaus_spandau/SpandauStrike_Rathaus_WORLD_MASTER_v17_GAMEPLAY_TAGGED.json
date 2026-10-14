@@ -1,0 +1,103 @@
+{
+  "source": "C:\\Users\\dezen\\Desktop\\135er-Spandau-Defeat\\tools\\blender_pipeline\\builds\\rathaus_spandau\\SpandauStrike_Rathaus_WORLD_MASTER_v16_ARCH_DETAIL.blend",
+  "output": "C:\\Users\\dezen\\Desktop\\135er-Spandau-Defeat\\tools\\blender_pipeline\\builds\\rathaus_spandau\\SpandauStrike_Rathaus_WORLD_MASTER_v17_GAMEPLAY_TAGGED.blend",
+  "west_spawn_count": 4,
+  "east_spawn_count": 4,
+  "west_centroid_m": [
+    -362.66,
+    -21.86,
+    3.27
+  ],
+  "east_centroid_m": [
+    274.21,
+    -8.28,
+    2.98
+  ],
+  "routes": {
+    "NORTH_REAR": [
+      [
+        -362.66,
+        -21.86,
+        3.27
+      ],
+      [
+        -156.63,
+        -59.92,
+        2.0
+      ],
+      [
+        -70.04,
+        64.18,
+        2.0
+      ],
+      [
+        46.04,
+        161.26,
+        2.0
+      ],
+      [
+        274.21,
+        -8.28,
+        2.98
+      ]
+    ],
+    "CENTER_RATHAUS": [
+      [
+        -362.66,
+        -21.86,
+        3.27
+      ],
+      [
+        -66.33,
+        -101.99,
+        2.0
+      ],
+      [
+        35.39,
+        -32.43,
+        2.0
+      ],
+      [
+        95.82,
+        74.96,
+        2.0
+      ],
+      [
+        274.21,
+        -8.28,
+        2.98
+      ]
+    ],
+    "SOUTH_PLAZA": [
+      [
+        -362.66,
+        -21.86,
+        3.27
+      ],
+      [
+        -12.87,
+        -191.66,
+        2.0
+      ],
+      [
+        114.28,
+        -104.72,
+        2.0
+      ],
+      [
+        189.81,
+        29.52,
+        2.0
+      ],
+      [
+        274.21,
+        -8.28,
+        2.98
+      ]
+    ]
+  },
+  "chokes": 4,
+  "cover_candidates": 8,
+  "sightline_risks": 3,
+  "planning_collection": "GAMEPLAY_PLANNING_V17"
+}
