@@ -1,0 +1,74 @@
+{
+  "schema": "SpandauStrike.AbilityContracts.v1",
+  "abilities": {
+    "Sprint": {
+      "ability_tag": "SpandauStrike.Ability.Sprint",
+      "owned_state_tag": "SpandauStrike.State.Movement.Sprinting",
+      "blocked_by": ["SpandauStrike.State.Movement.Prone", "SpandauStrike.State.Movement.ProneTransition", "SpandauStrike.State.Exhausted", "SpandauStrike.State.Weapon.Deployed"],
+      "resource": "Stamina",
+      "resource_mode": "continuous_drain",
+      "cancels_on": ["Prone", "BipodDeploy"]
+    },
+    "Prone": {
+      "ability_tag": "SpandauStrike.Ability.Prone",
+      "owned_state_tag": "SpandauStrike.State.Movement.Prone",
+      "transition_state_tag": "SpandauStrike.State.Movement.ProneTransition",
+      "blocked_by": ["SpandauStrike.State.Weapon.Deployed"],
+      "requires_clearance_sweep": true,
+      "cancels_on": ["Sprint"]
+    },
+    "BipodDeploy": {
+      "ability_tag": "SpandauStrike.Ability.BipodDeploy",
+      "owned_state_tag": "SpandauStrike.State.Weapon.Deployed",
+      "blocked_by": ["SpandauStrike.State.Movement.Sprinting", "SpandauStrike.State.Movement.ProneTransition"],
+      "requires_weapon_archetype": "HeavyMG",
+      "surface_tags_any": ["SpandauStrike.Surface.Bipod.Valid", "SpandauStrike.Surface.Bipod.WindowSill", "SpandauStrike.Surface.Bipod.WallTop", "SpandauStrike.Surface.Bipod.Ground"],
+      "prone_ground_support_allowed": true,
+      "cancels_on": ["BipodUndeploy"]
+    },
+    "BipodUndeploy": {
+      "ability_tag": "SpandauStrike.Ability.BipodUndeploy",
+      "requires_state_tag": "SpandauStrike.State.Weapon.Deployed",
+      "removes_state_tag": "SpandauStrike.State.Weapon.Deployed"
+    },
+    "BoltCycle": {
+      "ability_tag": "SpandauStrike.Ability.BoltCycle",
+      "owned_state_tag": "SpandauStrike.State.Weapon.BoltCycling",
+      "valid_weapon_archetypes": ["BoltRifle", "ScopedRifle"],
+      "blocks_fire": true,
+      "blocks_reload": true
+    },
+    "Scope": {
+      "ability_tag": "SpandauStrike.Ability.Scope",
+      "blocked_by": ["SpandauStrike.State.Movement.Sprinting", "SpandauStrike.State.Weapon.BoltCycling"],
+      "requires_weapon_archetype": "ScopedRifle",
+      "movement_multiplier_source": "weapon_archetypes_v1.ScopedRifle.scope_move_speed_multiplier"
+    },
+    "Grenade": {
+      "ability_tag": "SpandauStrike.Ability.Grenade",
+      "blocked_by": ["SpandauStrike.State.Weapon.Deployed", "SpandauStrike.State.Weapon.BoltCycling"],
+      "inventory_cost": 1
+    },
+    "RocketReload": {
+      "ability_tag": "SpandauStrike.Ability.RocketReload",
+      "requires_weapon_archetype": "RocketLauncher",
+      "blocked_by": ["SpandauStrike.State.Movement.Sprinting"],
+      "duration_source": "weapon_archetypes_v1.RocketLauncher.reload_s"
+    },
+    "Capture": {
+      "ability_tag": "SpandauStrike.Ability.Capture",
+      "requires_objective_tag": "SpandauStrike.Objective.Active",
+      "blocked_by": ["SpandauStrike.Objective.Locked"],
+      "contested_state_tag": "SpandauStrike.Objective.Contested",
+      "capture_state_tag": "SpandauStrike.Objective.Capturing",
+      "server_authoritative": true
+    }
+  },
+  "network_policy": {
+    "movement_prediction": "client_predicted_server_authoritative",
+    "stamina_authority": "server",
+    "capture_authority": "server",
+    "weapon_state_authority": "server",
+    "camera_feedback": "client"
+  }
+}
