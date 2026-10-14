@@ -15,6 +15,7 @@
     "attribute_contracts": "ue5/SpandauStrike/Design/Gameplay/attribute_contracts_v1.json",
     "movement_contract": "ue5/SpandauStrike/Design/Gameplay/movement_contract_v1.json",
     "objective_state_machine": "ue5/SpandauStrike/Design/Gameplay/objective_state_machine_v1.json",
+    "spawn_policy": "ue5/SpandauStrike/Design/Gameplay/spawn_policy_v1.json",
     "lane_flow": "ue5/SpandauStrike/Design/Gameplay/rathaus_lane_flow_v1.json",
     "combat_flow": "ue5/SpandauStrike/Design/Gameplay/rathaus_combat_flow_v1.json"
   },
@@ -31,6 +32,7 @@
     "movement_contract": "tools/gameplay/validate_movement_contract.py",
     "objective_state_machine": "tools/gameplay/validate_objective_state_machine.py",
     "frontline_flow": "tools/gameplay/validate_frontline_flow.py",
+    "spawn_policy": "tools/gameplay/validate_spawn_policy.py",
     "bundle": "tools/gameplay/validate_gameplay_bundle.py",
     "repo_scope": "tools/repo/validate_spandau_scope.py",
     "ue_dry_run": "ue5/SpandauStrike/Content/Python/validate_rathaus_runtime_handoff.py"
