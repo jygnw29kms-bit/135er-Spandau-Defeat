@@ -5,12 +5,14 @@ on:
     branches: [ main ]
     paths:
       - 'tools/gameplay/**'
+      - 'tools/repo/validate_spandau_scope.py'
       - 'ue5/SpandauStrike/Design/Gameplay/**'
       - 'tools/blender_pipeline/builds/rathaus_spandau/SpandauStrike_Rathaus_WORLD_MASTER_v42_RUNTIME_OBJECTIVES_EXPORT_MANIFEST.json'
       - '.github/workflows/validate-rathaus-runtime-gameplay.yml'
   pull_request:
     paths:
       - 'tools/gameplay/**'
+      - 'tools/repo/validate_spandau_scope.py'
       - 'ue5/SpandauStrike/Design/Gameplay/**'
       - 'tools/blender_pipeline/builds/rathaus_spandau/SpandauStrike_Rathaus_WORLD_MASTER_v42_RUNTIME_OBJECTIVES_EXPORT_MANIFEST.json'
       - '.github/workflows/validate-rathaus-runtime-gameplay.yml'
@@ -26,6 +28,10 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+
+      - name: Validate repository scope
+        run: |
+          python tools/repo/validate_spandau_scope.py
 
       - name: Validate core gameplay configuration
         run: |
