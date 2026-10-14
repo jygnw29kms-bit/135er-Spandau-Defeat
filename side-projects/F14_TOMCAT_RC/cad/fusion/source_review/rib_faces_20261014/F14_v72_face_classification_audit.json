@@ -1,0 +1,1893 @@
+{
+  "status": "V72_RIB_FACE_CONTACT_CLASSIFICATION",
+  "source": {
+    "path": "C:\\Users\\dezen\\Desktop\\F14-RC-Model\\workspace\\RC-F14-Tomcat\\Fusion\\Exports\\Current\\source_shell_v53\\F14_RIB_OFFSET_CLEARANCE_REVIEW_v71.f3d",
+    "sha256": "1e1ef185a634612e5bcc218a938713e380740ddab91a5b5732f3a70c53c5f966"
+  },
+  "source_revision": "v71_offset_clearance",
+  "contact_epsilon_mm": 0.105,
+  "totals": {
+    "skin_only": 179,
+    "spar_only": 24,
+    "skin_and_spar": 1,
+    "free": 0,
+    "end": 4
+  },
+  "ribs": [
+    {
+      "rib": "CANDIDATE_RIB_ZERO_CLEARANCE_-3",
+      "face_count": 104,
+      "faces": [
+        {
+          "index": 0,
+          "class": "skin_only",
+          "area_mm2": 0.017865269381561154,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.09999999999982517,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 17.135354133852168
+        },
+        {
+          "index": 1,
+          "class": "skin_only",
+          "area_mm2": 0.02243880910655249,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.09999999999982517,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 17.149015605538384
+        },
+        {
+          "index": 2,
+          "class": "skin_only",
+          "area_mm2": 0.18264019911561694,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.09999999999993278,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 16.949062026870724
+        },
+        {
+          "index": 3,
+          "class": "skin_only",
+          "area_mm2": 1.290363648677942,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.09999999999997622,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 36.73678570508058
+        },
+        {
+          "index": 4,
+          "class": "skin_only",
+          "area_mm2": 1.2896548834868693,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.09999999999997622,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 35.18870558040037
+        },
+        {
+          "index": 5,
+          "class": "skin_only",
+          "area_mm2": 1.2888409080252956,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.10000000000003194,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 33.64133754743178
+        },
+        {
+          "index": 6,
+          "class": "skin_only",
+          "area_mm2": 1.2881372030940978,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.10000000000000663,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 32.094222189305725
+        },
+        {
+          "index": 7,
+          "class": "skin_only",
+          "area_mm2": 1.2877286014509788,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.1000000000001025,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 30.54711065966061
+        },
+        {
+          "index": 8,
+          "class": "skin_only",
+          "area_mm2": 1.2868991235500746,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.10000000000005924,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 29.000453373235175
+        },
+        {
+          "index": 9,
+          "class": "skin_only",
+          "area_mm2": 1.2858189414449428,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.10000000000004464,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 27.454484343541456
+        },
+        {
+          "index": 10,
+          "class": "skin_only",
+          "area_mm2": 1.285190201103318,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.09999999999997693,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 25.908551922019555
+        },
+        {
+          "index": 11,
+          "class": "skin_only",
+          "area_mm2": 1.2836293959680383,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.09999999999995252,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 24.364177047557426
+        },
+        {
+          "index": 12,
+          "class": "skin_only",
+          "area_mm2": 2.5670152627024643,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.10000173126655271,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 21.27572087883435
+        },
+        {
+          "index": 13,
+          "class": "skin_only",
+          "area_mm2": 2.562967638768283,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.10000173126655271,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 18.19222257814014
+        },
+        {
+          "index": 14,
+          "class": "skin_only",
+          "area_mm2": 2.560067212592639,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.10000000000003574,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 15.112657439822275
+        },
+        {
+          "index": 15,
+          "class": "skin_only",
+          "area_mm2": 2.5587892840746465,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.10000000000007711,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 12.035754416592265
+        },
+        {
+          "index": 16,
+          "class": "skin_only",
+          "area_mm2": 1.2763657565189959,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.10000082843744645,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 10.501795586232316
+        },
+        {
+          "index": 17,
+          "class": "skin_only",
+          "area_mm2": 1.2772340012926315,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.10000082843744645,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 8.967833442314447
+        },
+        {
+          "index": 18,
+          "class": "skin_only",
+          "area_mm2": 1.2770746229695755,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.10000094358712544,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 7.4357856557790285
+        },
+        {
+          "index": 19,
+          "class": "skin_only",
+          "area_mm2": 1.2768337137733288,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.10000083531695146,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 5.907377292927317
+        },
+        {
+          "index": 20,
+          "class": "skin_only",
+          "area_mm2": 1.2764945040818634,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.09999999999999142,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 4.386062734597654
+        },
+        {
+          "index": 21,
+          "class": "skin_only",
+          "area_mm2": 1.2764840151330836,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.09999999999999146,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 2.882264732478594
+        },
+        {
+          "index": 22,
+          "class": "skin_only",
+          "area_mm2": 1.276777597192374,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.09999999999996609,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 1.4509811495076683
+        },
+        {
+          "index": 23,
+          "class": "skin_only",
+          "area_mm2": 1.2769937461484118,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.09999999999998262,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 0.7317969588946327
+        },
+        {
+          "index": 24,
+          "class": "skin_only",
+          "area_mm2": 1.2772098786158603,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.10000000000000774,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 0.6798583403815566
+        },
+        {
+          "index": 25,
+          "class": "skin_only",
+          "area_mm2": 1.2777551624713528,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.10000000000001574,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 0.6119354572368025
+        },
+        {
+          "index": 26,
+          "class": "skin_only",
+          "area_mm2": 1.2786845634485213,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.09999999999997927,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 0.5272278069078863
+        },
+        {
+          "index": 27,
+          "class": "skin_only",
+          "area_mm2": 1.279542324658104,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.10000000000003059,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 0.4265065098456344
+        },
+        {
+          "index": 28,
+          "class": "skin_only",
+          "area_mm2": 1.2804802318707316,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.10000000000001603,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 0.3082421514199144
+        },
+        {
+          "index": 29,
+          "class": "skin_only",
+          "area_mm2": 1.28175914957988,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.10000000000002263,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 0.17243067513300853
+        },
+        {
+          "index": 30,
+          "class": "skin_only",
+          "area_mm2": 1.2831343097655652,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.10000000000000912,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 0.12593810799849844
+        },
+        {
+          "index": 31,
+          "class": "skin_only",
+          "area_mm2": 1.2849708743017705,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.10000000000005493,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 1.069696521624182
+        },
+        {
+          "index": 32,
+          "class": "skin_only",
+          "area_mm2": 1.286443270336872,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.09999999999994816,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 2.5978259301745177
+        },
+        {
+          "index": 33,
+          "class": "skin_only",
+          "area_mm2": 1.2883499999259973,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.10000000000001841,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 4.125045787364236
+        },
+        {
+          "index": 34,
+          "class": "skin_only",
+          "area_mm2": 1.2906581630029632,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.09999999999996215,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 5.651144608021422
+        },
+        {
+          "index": 35,
+          "class": "skin_only",
+          "area_mm2": 1.2930322601750304,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.09999999999996347,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 7.1761386755840215
+        },
+        {
+          "index": 36,
+          "class": "skin_only",
+          "area_mm2": 1.2950109014900133,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.09999999999999618,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 8.701585699778407
+        },
+        {
+          "index": 37,
+          "class": "skin_only",
+          "area_mm2": 1.297503460384215,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.09999999999993042,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 10.231874772835132
+        },
+        {
+          "index": 38,
+          "class": "skin_only",
+          "area_mm2": 1.2991482532096164,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.10000000000008588,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 11.764948299513557
+        },
+        {
+          "index": 39,
+          "class": "skin_only",
+          "area_mm2": 1.3019665946940353,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.09999999999995109,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 13.297032584966285
+        },
+        {
+          "index": 40,
+          "class": "skin_only",
+          "area_mm2": 1.3054257746008449,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.10000000000001774,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 14.792311429811825
+        },
+        {
+          "index": 41,
+          "class": "skin_only",
+          "area_mm2": 0.6407272713846186,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.1000000000001511,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 16.181173945375807
+        },
+        {
+          "index": 42,
+          "class": "skin_only",
+          "area_mm2": 0.27976332126693715,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.09999999999996256,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 16.82284703484712
+        },
+        {
+          "index": 43,
+          "class": "skin_only",
+          "area_mm2": 0.08556796142255145,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.10000000000003198,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 17.07490809859009
+        },
+        {
+          "index": 44,
+          "class": "skin_only",
+          "area_mm2": 0.06446955776847949,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.09999999999990963,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 17.136406249594177
+        },
+        {
+          "index": 45,
+          "class": "skin_only",
+          "area_mm2": 0.5481322338360135,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.09999999999997505,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 16.330991843894335
+        },
+        {
+          "index": 46,
+          "class": "skin_only",
+          "area_mm2": 1.2124566581664238,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.09999999999999216,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 14.903606866526866
+        },
+        {
+          "index": 47,
+          "class": "skin_only",
+          "area_mm2": 1.1755772687677581,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.09999999999994327,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 13.462970767492147
+        },
+        {
+          "index": 48,
+          "class": "skin_only",
+          "area_mm2": 0.5531736437849115,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.09995941727498642,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 41.38635974526444
+        },
+        {
+          "index": 49,
+          "class": "skin_only",
+          "area_mm2": 1.2899654474466482,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.0999999229487065,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 39.8366882432689
+        },
+        {
+          "index": 50,
+          "class": "skin_only",
+          "area_mm2": 1.2911429354193633,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.0999999229487065,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 38.286083197751026
+        },
+        {
+          "index": 51,
+          "class": "end",
+          "area_mm2": 264.018982780072
+        },
+        {
+          "index": 52,
+          "class": "spar_only",
+          "area_mm2": 2.4168163376427376,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 1.3643273679458958,
+          "nearest_spar": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 0.09999999999999326
+        },
+        {
+          "index": 53,
+          "class": "spar_only",
+          "area_mm2": 2.416816340591516,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 1.3635901573275868,
+          "nearest_spar": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 0.0999999999999384
+        },
+        {
+          "index": 54,
+          "class": "spar_only",
+          "area_mm2": 3.8235592400253635,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 1.3247855304557037,
+          "nearest_spar": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 0.09999999999995682
+        },
+        {
+          "index": 55,
+          "class": "spar_only",
+          "area_mm2": 3.828958414789528,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 1.3067640365396658,
+          "nearest_spar": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 0.09999999999997988
+        },
+        {
+          "index": 56,
+          "class": "spar_only",
+          "area_mm2": 8.452555073118337,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.12523975258208636,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 0.09999999999999448
+        },
+        {
+          "index": 57,
+          "class": "spar_only",
+          "area_mm2": 0.9907908595648813,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.13127492013240408,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 0.1000000000000189
+        },
+        {
+          "index": 58,
+          "class": "spar_only",
+          "area_mm2": 3.823008402067561,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 1.3306650068842727,
+          "nearest_spar": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 0.0999999999999192
+        },
+        {
+          "index": 59,
+          "class": "spar_only",
+          "area_mm2": 0.9973986671723452,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.12523975258208636,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 0.09999999999994283
+        },
+        {
+          "index": 60,
+          "class": "spar_only",
+          "area_mm2": 3.828406804754775,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 1.7446995623450618,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 0.0999999999999927
+        },
+        {
+          "index": 61,
+          "class": "spar_only",
+          "area_mm2": 0.9910241176850709,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.741265782073216,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 0.10000000000019957
+        },
+        {
+          "index": 62,
+          "class": "spar_only",
+          "area_mm2": 8.464490927639998,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.11658139206485077,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 0.09999999999996781
+        },
+        {
+          "index": 63,
+          "class": "spar_only",
+          "area_mm2": 0.9976334792692912,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.11658139206485077,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 0.09999999999999043
+        },
+        {
+          "index": 64,
+          "class": "skin_only",
+          "area_mm2": 1.2895411344634649,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.09995886273021394,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 39.79791112351145
+        },
+        {
+          "index": 65,
+          "class": "skin_only",
+          "area_mm2": 0.5616961858721358,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.09995897118285928,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 41.34717523847719
+        },
+        {
+          "index": 66,
+          "class": "skin_only",
+          "area_mm2": 1.2270450992008526,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.09999652205869297,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 11.945690994004238
+        },
+        {
+          "index": 67,
+          "class": "skin_only",
+          "area_mm2": 1.2728281098571008,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.09998887617430535,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 10.41695897517643
+        },
+        {
+          "index": 68,
+          "class": "skin_only",
+          "area_mm2": 1.2768951690465644,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.09998241710843124,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 8.882271371208624
+        },
+        {
+          "index": 69,
+          "class": "skin_only",
+          "area_mm2": 1.2792229121258911,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.09998341047449108,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 7.344226372097939
+        },
+        {
+          "index": 70,
+          "class": "skin_only",
+          "area_mm2": 1.2803661620584739,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.09997924997344437,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 5.804646441552393
+        },
+        {
+          "index": 71,
+          "class": "skin_only",
+          "area_mm2": 1.280599868603714,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.09997629858293026,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 4.264894521520424
+        },
+        {
+          "index": 72,
+          "class": "skin_only",
+          "area_mm2": 1.2810599001903744,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.0999737335720094,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 2.7250369124015688
+        },
+        {
+          "index": 73,
+          "class": "skin_only",
+          "area_mm2": 1.281365452967646,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.09997150841238525,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 1.1875904065731353
+        },
+        {
+          "index": 74,
+          "class": "skin_only",
+          "area_mm2": 1.2810903120332318,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.0999698699937612,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 0.10728952764072325
+        },
+        {
+          "index": 75,
+          "class": "skin_only",
+          "area_mm2": 1.2810628218345856,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.09996799384479124,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 0.10948685463661843
+        },
+        {
+          "index": 76,
+          "class": "skin_only",
+          "area_mm2": 1.2810277317549787,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.09996618513215375,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 0.12686092315975225
+        },
+        {
+          "index": 77,
+          "class": "skin_only",
+          "area_mm2": 1.2809984054522794,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.0999644821744857,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 0.13793042648616358
+        },
+        {
+          "index": 78,
+          "class": "skin_only",
+          "area_mm2": 1.2808294679300325,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.09996278792624103,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 0.1409319056900068
+        },
+        {
+          "index": 79,
+          "class": "skin_only",
+          "area_mm2": 1.2808470329980757,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.09996105432873861,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 0.13212728336140606
+        },
+        {
+          "index": 80,
+          "class": "skin_only",
+          "area_mm2": 1.2807037477992513,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.099959312350629,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 0.11689717189448137
+        },
+        {
+          "index": 81,
+          "class": "skin_only",
+          "area_mm2": 1.280980161049754,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.09995755387373127,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 0.10835798453404828
+        },
+        {
+          "index": 82,
+          "class": "skin_only",
+          "area_mm2": 1.2810640955053572,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.09995584583212186,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 0.984681281726001
+        },
+        {
+          "index": 83,
+          "class": "skin_only",
+          "area_mm2": 1.2808405224011097,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.09995443910457515,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 2.5327032434206567
+        },
+        {
+          "index": 84,
+          "class": "skin_only",
+          "area_mm2": 1.2813524484082064,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.09995265724397656,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 4.083256804567118
+        },
+        {
+          "index": 85,
+          "class": "skin_only",
+          "area_mm2": 1.2813292008404993,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.09995125661884416,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 5.634693497823784
+        },
+        {
+          "index": 86,
+          "class": "skin_only",
+          "area_mm2": 1.2815512155333555,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.09994994357832582,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 7.185920112668242
+        },
+        {
+          "index": 87,
+          "class": "skin_only",
+          "area_mm2": 1.2821431642891699,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.09994849026203483,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 8.737153269089312
+        },
+        {
+          "index": 88,
+          "class": "skin_only",
+          "area_mm2": 1.281343307881703,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.09994756500121232,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 10.288864860149385
+        },
+        {
+          "index": 89,
+          "class": "skin_only",
+          "area_mm2": 2.566022072580965,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.09994630211413412,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 11.83934911028687
+        },
+        {
+          "index": 90,
+          "class": "skin_only",
+          "area_mm2": 2.566722310210428,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.09994558213955176,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 14.943354171862007
+        },
+        {
+          "index": 91,
+          "class": "skin_only",
+          "area_mm2": 2.5683967008358026,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.09994474145981597,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 18.046849123037294
+        },
+        {
+          "index": 92,
+          "class": "skin_only",
+          "area_mm2": 2.5706795915950837,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.09994443540848512,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 21.15081383093363
+        },
+        {
+          "index": 93,
+          "class": "skin_only",
+          "area_mm2": 1.2849094103700671,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.0999451725430501,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 24.25713322680715
+        },
+        {
+          "index": 94,
+          "class": "skin_only",
+          "area_mm2": 1.2860804607658,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.09994506858446756,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 25.81013621804882
+        },
+        {
+          "index": 95,
+          "class": "skin_only",
+          "area_mm2": 1.2867621135498193,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.09994574524507373,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 27.36473910647569
+        },
+        {
+          "index": 96,
+          "class": "skin_only",
+          "area_mm2": 1.2868668027519543,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.09994671285209498,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 28.92036153120236
+        },
+        {
+          "index": 97,
+          "class": "skin_only",
+          "area_mm2": 1.2875210720173964,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.09994865753631711,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 30.476319340795385
+        },
+        {
+          "index": 98,
+          "class": "skin_only",
+          "area_mm2": 1.288126746406134,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.09994846079629505,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 32.03296270286884
+        },
+        {
+          "index": 99,
+          "class": "skin_only",
+          "area_mm2": 1.2883339928407416,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.09995029363976635,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 33.590731632478104
+        },
+        {
+          "index": 100,
+          "class": "skin_only",
+          "area_mm2": 1.2888342196552665,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.09995325056871394,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 35.14888625684306
+        },
+        {
+          "index": 101,
+          "class": "skin_only",
+          "area_mm2": 1.2891677461808084,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.09995306389196246,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 36.70305767218501
+        },
+        {
+          "index": 102,
+          "class": "skin_only",
+          "area_mm2": 1.2897333985791526,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "skin_gap_mm": 0.099954771273501,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 38.24959504331924
+        },
+        {
+          "index": 103,
+          "class": "end",
+          "area_mm2": 267.7580875081969
+        }
+      ]
+    },
+    {
+      "rib": "CANDIDATE_RIB_ZERO_CLEARANCE_3",
+      "face_count": 104,
+      "faces": [
+        {
+          "index": 0,
+          "class": "spar_only",
+          "area_mm2": 0.9907659937707869,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.12348271482482076,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 0.09999999999997318
+        },
+        {
+          "index": 1,
+          "class": "spar_only",
+          "area_mm2": 8.323589021106311,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.12348271482482076,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 0.10000000000000883
+        },
+        {
+          "index": 2,
+          "class": "skin_only",
+          "area_mm2": 1.2584408008521175,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.10000004991788937,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 34.30126173411103
+        },
+        {
+          "index": 3,
+          "class": "skin_only",
+          "area_mm2": 1.2568769746812947,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.09999999999998123,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 31.281281319457932
+        },
+        {
+          "index": 4,
+          "class": "skin_only",
+          "area_mm2": 1.258921153069321,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.10000004991788937,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 35.81202650376979
+        },
+        {
+          "index": 5,
+          "class": "skin_only",
+          "area_mm2": 1.2564464660228323,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.10000000000013053,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 29.771442967840144
+        },
+        {
+          "index": 6,
+          "class": "skin_only",
+          "area_mm2": 1.2599489549010907,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.1000000000000132,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 37.32318308013135
+        },
+        {
+          "index": 7,
+          "class": "skin_only",
+          "area_mm2": 1.2556090165129254,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.09999999999994336,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 28.262062629560223
+        },
+        {
+          "index": 8,
+          "class": "skin_only",
+          "area_mm2": 1.2586553397889793,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.1000000000000132,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 38.835897820811326
+        },
+        {
+          "index": 9,
+          "class": "skin_only",
+          "area_mm2": 1.2545837060830747,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.09999999999993395,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 26.75332704093446
+        },
+        {
+          "index": 10,
+          "class": "skin_only",
+          "area_mm2": 0.42726114437420404,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.09995888463424697,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 40.34754341730122
+        },
+        {
+          "index": 11,
+          "class": "skin_only",
+          "area_mm2": 1.2539733010723744,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.09999999999998099,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 25.24479356811488
+        },
+        {
+          "index": 12,
+          "class": "skin_only",
+          "area_mm2": 1.2524031423766242,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.10000000000002982,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 23.738260485589606
+        },
+        {
+          "index": 13,
+          "class": "skin_only",
+          "area_mm2": 2.5046936005085554,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.09999999999994483,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 20.725330736225143
+        },
+        {
+          "index": 14,
+          "class": "skin_only",
+          "area_mm2": 2.500796314616366,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.10000208864863527,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 17.717229585386058
+        },
+        {
+          "index": 15,
+          "class": "skin_only",
+          "area_mm2": 2.4980477016051896,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.10000208864863527,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 14.71295662260281
+        },
+        {
+          "index": 16,
+          "class": "skin_only",
+          "area_mm2": 2.496946494802896,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.10000252890354991,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 11.711272964157228
+        },
+        {
+          "index": 17,
+          "class": "skin_only",
+          "area_mm2": 1.245507051803689,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.10000000000004151,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 10.21493520702551
+        },
+        {
+          "index": 18,
+          "class": "skin_only",
+          "area_mm2": 1.2464367552669664,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.10000093708787214,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 8.718618372384181
+        },
+        {
+          "index": 19,
+          "class": "skin_only",
+          "area_mm2": 1.2463202927685373,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.10000093708787214,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 7.224329841262673
+        },
+        {
+          "index": 20,
+          "class": "skin_only",
+          "area_mm2": 1.2461146586777372,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.09999999999999382,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 5.733925522630438
+        },
+        {
+          "index": 21,
+          "class": "skin_only",
+          "area_mm2": 1.2458406114503513,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.10000000000004089,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 4.25114729668497
+        },
+        {
+          "index": 22,
+          "class": "skin_only",
+          "area_mm2": 1.2458455169079623,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.09999999999998858,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 2.787546855777307
+        },
+        {
+          "index": 23,
+          "class": "skin_only",
+          "area_mm2": 1.2461886889410436,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.10000000000003564,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 1.403850176787108
+        },
+        {
+          "index": 24,
+          "class": "skin_only",
+          "area_mm2": 1.246452572942587,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.1000000000000765,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 0.7468568986235986
+        },
+        {
+          "index": 25,
+          "class": "skin_only",
+          "area_mm2": 1.2466890802091586,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.10000000000009487,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 0.6917843716970387
+        },
+        {
+          "index": 26,
+          "class": "skin_only",
+          "area_mm2": 1.2472633794273715,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.09999999999999003,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 0.621267898341164
+        },
+        {
+          "index": 27,
+          "class": "skin_only",
+          "area_mm2": 1.2482168466785541,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.10000000000004304,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 0.5345202268853662
+        },
+        {
+          "index": 28,
+          "class": "skin_only",
+          "area_mm2": 1.2490701235780988,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.10000000000005094,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 0.4323665096441046
+        },
+        {
+          "index": 29,
+          "class": "skin_only",
+          "area_mm2": 1.2499853755922372,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.09999999999994114,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 0.3132460013162507
+        },
+        {
+          "index": 30,
+          "class": "skin_only",
+          "area_mm2": 1.2512963732033262,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.10000000000001102,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 0.17714540092076678
+        },
+        {
+          "index": 31,
+          "class": "skin_only",
+          "area_mm2": 1.2526318294228689,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.09999999999998502,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 0.12593752190137547
+        },
+        {
+          "index": 32,
+          "class": "skin_only",
+          "area_mm2": 1.254423856473938,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.0999999999999558,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 0.9968367634120143
+        },
+        {
+          "index": 33,
+          "class": "skin_only",
+          "area_mm2": 1.2558538376208401,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.09999999999995256,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 2.4881411413224894
+        },
+        {
+          "index": 34,
+          "class": "skin_only",
+          "area_mm2": 1.2576983283570684,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.09999999999995167,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 3.9785816774333953
+        },
+        {
+          "index": 35,
+          "class": "skin_only",
+          "area_mm2": 1.2599282723926664,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.09999999999996677,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 5.467902941481021
+        },
+        {
+          "index": 36,
+          "class": "skin_only",
+          "area_mm2": 1.2621732231659133,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.10000000000004525,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 6.95612619203617
+        },
+        {
+          "index": 37,
+          "class": "skin_only",
+          "area_mm2": 1.2639726920585532,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.09999999999998198,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 8.444331147916772
+        },
+        {
+          "index": 38,
+          "class": "skin_only",
+          "area_mm2": 1.2663128005029938,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.1000000000000028,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 9.93714866535369
+        },
+        {
+          "index": 39,
+          "class": "skin_only",
+          "area_mm2": 1.2677126405700154,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.10000000000005527,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 11.432708387507628
+        },
+        {
+          "index": 40,
+          "class": "skin_only",
+          "area_mm2": 1.2699420591648118,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.10000000000005113,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 12.927148204867116
+        },
+        {
+          "index": 41,
+          "class": "skin_only",
+          "area_mm2": 1.2727401101130236,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.09999999999995542,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 14.376082049047348
+        },
+        {
+          "index": 42,
+          "class": "skin_only",
+          "area_mm2": 0.623370039027991,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.10000000000005918,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 15.733739829026415
+        },
+        {
+          "index": 43,
+          "class": "skin_only",
+          "area_mm2": 0.2701734762369785,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.10000000000010778,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 16.359916625496894
+        },
+        {
+          "index": 44,
+          "class": "skin_only",
+          "area_mm2": 0.0793674230999763,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.10000000000011533,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 16.604328534309747
+        },
+        {
+          "index": 45,
+          "class": "skin_only",
+          "area_mm2": 0.054743650863126894,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.09999999999997686,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 16.66164273146909
+        },
+        {
+          "index": 46,
+          "class": "skin_only",
+          "area_mm2": 0.013574601787451417,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.10000000000006509,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 16.674780886948316
+        },
+        {
+          "index": 47,
+          "class": "skin_only",
+          "area_mm2": 0.009397035132681466,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.10000000000001744,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 16.667846240919747
+        },
+        {
+          "index": 48,
+          "class": "skin_only",
+          "area_mm2": 0.1726103313391991,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.09999999999989889,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 16.491900972625984
+        },
+        {
+          "index": 49,
+          "class": "skin_only",
+          "area_mm2": 0.5306305967623398,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.09999999999997981,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 15.893041399871352
+        },
+        {
+          "index": 50,
+          "class": "skin_only",
+          "area_mm2": 1.180519033047307,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.09999999999993041,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 14.502567738034637
+        },
+        {
+          "index": 51,
+          "class": "skin_only",
+          "area_mm2": 1.1364862164713796,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.09999580539978006,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 13.098816035782534
+        },
+        {
+          "index": 52,
+          "class": "skin_only",
+          "area_mm2": 1.2575241991621546,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.09999999999991153,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 32.79116989884079
+        },
+        {
+          "index": 53,
+          "class": "skin_only",
+          "area_mm2": 0.43977311333284264,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.09995823083774417,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 40.30297728297961
+        },
+        {
+          "index": 54,
+          "class": "skin_only",
+          "area_mm2": 1.2041020520649859,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.09998774725833777,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 11.618216914094294
+        },
+        {
+          "index": 55,
+          "class": "spar_only",
+          "area_mm2": 2.2556130727040644,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 1.3654412525553226,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 0.10000000000001438
+        },
+        {
+          "index": 56,
+          "class": "spar_only",
+          "area_mm2": 2.2556130747078535,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 1.3664903164131315,
+          "nearest_spar": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 0.0999999999998693
+        },
+        {
+          "index": 57,
+          "class": "end",
+          "area_mm2": 248.1141947474461
+        },
+        {
+          "index": 58,
+          "class": "spar_only",
+          "area_mm2": 3.7596779442535073,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 1.3365490979294528,
+          "nearest_spar": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 0.0999999999998693
+        },
+        {
+          "index": 59,
+          "class": "spar_only",
+          "area_mm2": 3.76512665742366,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 1.306279479867799,
+          "nearest_spar": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 0.09999999999996541
+        },
+        {
+          "index": 60,
+          "class": "spar_only",
+          "area_mm2": 3.7591271206889667,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 1.3227838314995066,
+          "nearest_spar": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 0.09999999999998366
+        },
+        {
+          "index": 61,
+          "class": "spar_only",
+          "area_mm2": 0.9973939164981606,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.13699354643797773,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 0.10000000000027276
+        },
+        {
+          "index": 62,
+          "class": "spar_only",
+          "area_mm2": 3.764575044621293,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 1.7526370368701538,
+          "nearest_spar": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 0.0999999999998876
+        },
+        {
+          "index": 63,
+          "class": "spar_only",
+          "area_mm2": 0.9910255401938542,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.7583123888858844,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 0.09999999999997247
+        },
+        {
+          "index": 64,
+          "class": "spar_only",
+          "area_mm2": 8.336834913580773,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.11640830425183381,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 0.10000000000008204
+        },
+        {
+          "index": 65,
+          "class": "spar_only",
+          "area_mm2": 0.9976349007012087,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.11640830425183381,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 0.10000000000013712
+        },
+        {
+          "index": 66,
+          "class": "skin_only",
+          "area_mm2": 1.2592325058337888,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.09995409319947503,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 37.27767844327679
+        },
+        {
+          "index": 67,
+          "class": "skin_only",
+          "area_mm2": 1.259040746131392,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.09995923784639868,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 38.78995575441033
+        },
+        {
+          "index": 68,
+          "class": "skin_only",
+          "area_mm2": 1.242094176012344,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.09998863755497703,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 10.126220816785166
+        },
+        {
+          "index": 69,
+          "class": "skin_only",
+          "area_mm2": 1.2462068777606492,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.09997648340126446,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 8.628291341935517
+        },
+        {
+          "index": 70,
+          "class": "skin_only",
+          "area_mm2": 1.2485162795899134,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.09997317772152964,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 7.1271327534332665
+        },
+        {
+          "index": 71,
+          "class": "skin_only",
+          "area_mm2": 1.249631563209162,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.09997052809145032,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 5.624597012827892
+        },
+        {
+          "index": 72,
+          "class": "skin_only",
+          "area_mm2": 1.2498561514886362,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.09996780646521608,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 4.121957518950116
+        },
+        {
+          "index": 73,
+          "class": "skin_only",
+          "area_mm2": 1.250281397742011,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.0999661922682206,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 2.6194029049801646
+        },
+        {
+          "index": 74,
+          "class": "skin_only",
+          "area_mm2": 1.2506052728010417,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.09996435099065662,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 1.1200605992136998
+        },
+        {
+          "index": 75,
+          "class": "skin_only",
+          "area_mm2": 1.250360488817939,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.09996252188021762,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 0.11927625725899947
+        },
+        {
+          "index": 76,
+          "class": "skin_only",
+          "area_mm2": 1.2502959099084472,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.0999607192924688,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 0.12166226597636985
+        },
+        {
+          "index": 77,
+          "class": "skin_only",
+          "area_mm2": 1.25027498581228,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.0999590594364071,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 0.13588114544103747
+        },
+        {
+          "index": 78,
+          "class": "skin_only",
+          "area_mm2": 1.2502851024779005,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.09995747793938783,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 0.14376619285760106
+        },
+        {
+          "index": 79,
+          "class": "skin_only",
+          "area_mm2": 1.2501034024988378,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.09995556868600017,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 0.1407025166949155
+        },
+        {
+          "index": 80,
+          "class": "skin_only",
+          "area_mm2": 1.2501521542532565,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.09995417011059879,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 0.1289475027910501
+        },
+        {
+          "index": 81,
+          "class": "skin_only",
+          "area_mm2": 1.2500273801805568,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.09995206336045134,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 0.11094623867599046
+        },
+        {
+          "index": 82,
+          "class": "skin_and_spar",
+          "area_mm2": 1.2491334183322482,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.09995116792776707,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 0.10056657371814345
+        },
+        {
+          "index": 83,
+          "class": "skin_only",
+          "area_mm2": 1.2503978747740605,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.0999492128830063,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 0.9109552749868689
+        },
+        {
+          "index": 84,
+          "class": "skin_only",
+          "area_mm2": 1.2501738514085048,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.09994776642762464,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 2.42204006909206
+        },
+        {
+          "index": 85,
+          "class": "skin_only",
+          "area_mm2": 1.2507202131366686,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.09994674412205472,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 3.9355323017599253
+        },
+        {
+          "index": 86,
+          "class": "skin_only",
+          "area_mm2": 1.2507011980838911,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.09994513266186134,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 5.44978788177585
+        },
+        {
+          "index": 87,
+          "class": "skin_only",
+          "area_mm2": 1.2509414625951396,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.09994429783045573,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 6.96382854387608
+        },
+        {
+          "index": 88,
+          "class": "skin_only",
+          "area_mm2": 1.251505528625315,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.09994350289829125,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 8.477887151448321
+        },
+        {
+          "index": 89,
+          "class": "skin_only",
+          "area_mm2": 1.2507282562672404,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.09994111265269015,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 9.992383044067063
+        },
+        {
+          "index": 90,
+          "class": "skin_only",
+          "area_mm2": 2.5048368709325177,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.09994017743509281,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 11.505665162512999
+        },
+        {
+          "index": 91,
+          "class": "skin_only",
+          "area_mm2": 2.50554160729092,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.09993977568504399,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 14.535302031618354
+        },
+        {
+          "index": 92,
+          "class": "skin_only",
+          "area_mm2": 2.5072395508870535,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.09994029804503107,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 17.564397263911882
+        },
+        {
+          "index": 93,
+          "class": "skin_only",
+          "area_mm2": 2.509538089343037,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.09994215864948791,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 20.59396273771025
+        },
+        {
+          "index": 94,
+          "class": "skin_only",
+          "area_mm2": 1.254335984152349,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.0999427898282518,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 23.626161125052594
+        },
+        {
+          "index": 95,
+          "class": "skin_only",
+          "area_mm2": 1.255530303653517,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.09994373471750082,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 25.142110064505736
+        },
+        {
+          "index": 96,
+          "class": "skin_only",
+          "area_mm2": 1.2562214545952377,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.09994498113198011,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 26.659688751030977
+        },
+        {
+          "index": 97,
+          "class": "skin_only",
+          "area_mm2": 1.2563227159062265,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.09994591114528537,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 28.178300376740108
+        },
+        {
+          "index": 98,
+          "class": "skin_only",
+          "area_mm2": 1.2569887043108516,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.09994766359714846,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 29.69724447606631
+        },
+        {
+          "index": 99,
+          "class": "skin_only",
+          "area_mm2": 1.2575762369072947,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.09994746385536046,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 31.21688631828914
+        },
+        {
+          "index": 100,
+          "class": "skin_only",
+          "area_mm2": 1.2578977046654618,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.09995082303735789,
+          "nearest_spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 32.73763476914013
+        },
+        {
+          "index": 101,
+          "class": "skin_only",
+          "area_mm2": 1.2583282192362484,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.09995063049821776,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 34.257947826869895
+        },
+        {
+          "index": 102,
+          "class": "skin_only",
+          "area_mm2": 1.258578079506152,
+          "nearest_skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "skin_gap_mm": 0.09995428918964819,
+          "nearest_spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "spar_gap_mm": 35.76722667711232
+        },
+        {
+          "index": 103,
+          "class": "end",
+          "area_mm2": 251.77949946811387
+        }
+      ]
+    }
+  ],
+  "selective_clearance_geometry_created": false,
+  "assembly_clearance_verified": false,
+  "bondline_verified": false,
+  "structural_capacity_verified": false,
+  "print_release": false,
+  "flight_release": false,
+  "study_source_sha256": "48e7ce804a329deb264f97d076b704ba7f855eba6ed473eb816ffa700bda9c2d"
+}
