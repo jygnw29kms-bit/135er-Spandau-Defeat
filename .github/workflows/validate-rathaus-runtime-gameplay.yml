@@ -49,6 +49,13 @@ jobs:
         run: |
           python tools/gameplay/generate_ue_gameplay_tag_snippet.py --out /tmp/SpandauStrikeGameplayTags.ini
 
+      - name: Generate UE DataTable seeds
+        run: |
+          python tools/gameplay/build_ue_datatable_csv.py --out-dir /tmp/SpandauStrikeDataTables
+          test -s /tmp/SpandauStrikeDataTables/DT_SpandauStrike_Classes.csv
+          test -s /tmp/SpandauStrikeDataTables/DT_SpandauStrike_WeaponArchetypes.csv
+          test -s /tmp/SpandauStrikeDataTables/DT_SpandauStrike_Movement.csv
+
       - name: Validate and generate Rathaus handoff
         run: |
           python tools/gameplay/build_runtime_gameplay_handoff.py --out /tmp/runtime_gameplay_handoff_v42.json
@@ -65,6 +72,7 @@ jobs:
           path: |
             /tmp/runtime_gameplay_handoff_v42.json
             /tmp/SpandauStrikeGameplayTags.ini
+            /tmp/SpandauStrikeDataTables/*.csv
             ue5/SpandauStrike/Design/Gameplay/core_gameplay_tuning_v1.json
             ue5/SpandauStrike/Design/Gameplay/weapon_archetypes_v1.json
             ue5/SpandauStrike/Design/Gameplay/class_loadouts_v1.json
