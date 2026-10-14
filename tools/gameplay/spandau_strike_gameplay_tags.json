@@ -1,6 +1,15 @@
 {
   "schema": "SpandauStrike.GameplayTags.v1",
   "tags": [
+    "SpandauStrike.Ability.Sprint",
+    "SpandauStrike.Ability.Prone",
+    "SpandauStrike.Ability.BipodDeploy",
+    "SpandauStrike.Ability.BipodUndeploy",
+    "SpandauStrike.Ability.BoltCycle",
+    "SpandauStrike.Ability.Scope",
+    "SpandauStrike.Ability.Grenade",
+    "SpandauStrike.Ability.RocketReload",
+    "SpandauStrike.Ability.Capture",
     "SpandauStrike.State.Movement.Sprinting",
     "SpandauStrike.State.Movement.Prone",
     "SpandauStrike.State.Movement.ProneTransition",
