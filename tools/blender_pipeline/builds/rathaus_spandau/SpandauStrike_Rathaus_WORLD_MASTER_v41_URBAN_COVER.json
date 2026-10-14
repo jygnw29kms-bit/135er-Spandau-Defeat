@@ -1,0 +1,27 @@
+{
+  "source": "C:\\Users\\dezen\\Desktop\\135er-Spandau-Defeat\\tools\\blender_pipeline\\builds\\rathaus_spandau\\SpandauStrike_Rathaus_WORLD_MASTER_v40_COVER_CHAINS.blend",
+  "output": "C:\\Users\\dezen\\Desktop\\135er-Spandau-Defeat\\tools\\blender_pipeline\\builds\\rathaus_spandau\\SpandauStrike_Rathaus_WORLD_MASTER_v41_URBAN_COVER.blend",
+  "created": [
+    "V41_COVER_NORTH_00",
+    "V41_COVER_NORTH_01",
+    "V41_COVER_NORTH_02",
+    "V41_COVER_NORTH_03",
+    "V41_COVER_MID_00",
+    "V41_COVER_MID_01",
+    "V41_COVER_MID_02",
+    "V41_COVER_MID_03",
+    "V41_COVER_MID_04",
+    "V41_COVER_MID_05",
+    "V41_COVER_SOUTH_00",
+    "V41_COVER_SOUTH_01",
+    "V41_COVER_SOUTH_02",
+    "V41_COVER_SOUTH_03",
+    "V41_COVER_SOUTH_04",
+    "V41_COVER_SOUTH_05",
+    "V41_COVER_SOUTH_06",
+    "V41_COVER_CROSS_00",
+    "V41_COVER_CROSS_01",
+    "V41_COVER_CROSS_02"
+  ],
+  "count": 20
+}
