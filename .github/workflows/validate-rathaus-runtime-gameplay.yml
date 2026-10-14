@@ -49,3 +49,13 @@ jobs:
         shell: bash
         run: |
           ! grep -RniE 'day of defeat|dod:s|dods' tools/gameplay docs/UE5_RUNTIME_GAMEPLAY_HANDOFF.md ue5/SpandauStrike/Design/Gameplay
+
+      - name: Publish validated gameplay handoff
+        uses: actions/upload-artifact@v4
+        with:
+          name: spandau-strike-rathaus-runtime-handoff
+          path: |
+            /tmp/runtime_gameplay_handoff_v42.json
+            /tmp/SpandauStrikeGameplayTags.ini
+          if-no-files-found: error
+          retention-days: 30
