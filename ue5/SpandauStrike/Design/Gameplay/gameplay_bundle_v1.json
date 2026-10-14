@@ -1,0 +1,39 @@
+{
+  "schema": "SpandauStrike.GameplayBundle.v1",
+  "bundle_version": 1,
+  "status": "production_baseline_pending_local_ue_validation",
+  "world_master": {
+    "version": "v42_RUNTIME_OBJECTIVES",
+    "manifest": "tools/blender_pipeline/builds/rathaus_spandau/SpandauStrike_Rathaus_WORLD_MASTER_v42_RUNTIME_OBJECTIVES_EXPORT_MANIFEST.json"
+  },
+  "gameplay_sources": {
+    "tags": "tools/gameplay/spandau_strike_gameplay_tags.json",
+    "core_tuning": "ue5/SpandauStrike/Design/Gameplay/core_gameplay_tuning_v1.json",
+    "weapon_archetypes": "ue5/SpandauStrike/Design/Gameplay/weapon_archetypes_v1.json",
+    "class_loadouts": "ue5/SpandauStrike/Design/Gameplay/class_loadouts_v1.json",
+    "lane_flow": "ue5/SpandauStrike/Design/Gameplay/rathaus_lane_flow_v1.json",
+    "combat_flow": "ue5/SpandauStrike/Design/Gameplay/rathaus_combat_flow_v1.json"
+  },
+  "generators": {
+    "runtime_handoff": "tools/gameplay/build_runtime_gameplay_handoff.py",
+    "ue_tag_snippet": "tools/gameplay/generate_ue_gameplay_tag_snippet.py",
+    "ue_datatable_csv": "tools/gameplay/build_ue_datatable_csv.py"
+  },
+  "validators": {
+    "gameplay": "tools/gameplay/validate_gameplay_config.py",
+    "repo_scope": "tools/repo/validate_spandau_scope.py",
+    "ue_dry_run": "ue5/SpandauStrike/Content/Python/validate_rathaus_runtime_handoff.py"
+  },
+  "required_invariants": {
+    "objective_count": 5,
+    "spawn_count": 8,
+    "primary_lane_count": 3,
+    "crosslink_count": 3,
+    "choke_count": 4,
+    "power_position_groups": 3,
+    "center_objective_sequence": 3,
+    "center_required_players": 2,
+    "backcap_allowed": false,
+    "project_tag_namespace": "SpandauStrike."
+  }
+}
