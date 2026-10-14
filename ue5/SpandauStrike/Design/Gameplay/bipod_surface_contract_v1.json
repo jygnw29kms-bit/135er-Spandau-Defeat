@@ -1,0 +1,72 @@
+{
+  "schema": "SpandauStrike.BipodSurfaceContract.v1",
+  "supported_surface_classes": {
+    "Ground": {
+      "gameplay_tag": "SpandauStrike.Surface.Bipod.Ground",
+      "mode": "prone_or_low_support",
+      "max_surface_angle_from_up_deg": 35.0,
+      "requires_prone": false
+    },
+    "WindowSill": {
+      "gameplay_tag": "SpandauStrike.Surface.Bipod.WindowSill",
+      "mode": "front_support",
+      "min_height_cm": 55.0,
+      "max_height_cm": 145.0,
+      "requires_prone": false
+    },
+    "WallTop": {
+      "gameplay_tag": "SpandauStrike.Surface.Bipod.WallTop",
+      "mode": "front_support",
+      "min_height_cm": 45.0,
+      "max_height_cm": 155.0,
+      "requires_prone": false
+    },
+    "Generic": {
+      "gameplay_tag": "SpandauStrike.Surface.Bipod.Valid",
+      "mode": "explicit_tagged_support",
+      "requires_prone": false
+    }
+  },
+  "trace_contract": {
+    "forward_trace_cm": 115.0,
+    "down_trace_cm": 75.0,
+    "support_probe_radius_cm": 10.0,
+    "left_right_probe_offset_cm": 24.0,
+    "minimum_support_points": 2,
+    "collision_channel": "WorldStatic",
+    "reject_moving_dynamic_support_by_default": true
+  },
+  "deployment": {
+    "ability": "BipodDeploy",
+    "weapon_archetype": "HeavyMG",
+    "movement_speed_max_cm_s": 40.0,
+    "deploy_time_s": 0.55,
+    "undeploy_time_s": 0.3,
+    "yaw_limit_source": "core_gameplay_tuning_v1.bipod.yaw_limit_deg",
+    "pitch_min_source": "core_gameplay_tuning_v1.bipod.pitch_min_deg",
+    "pitch_max_source": "core_gameplay_tuning_v1.bipod.pitch_max_deg",
+    "spread_multiplier_source": "core_gameplay_tuning_v1.bipod.spread_multiplier",
+    "recoil_multiplier_source": "core_gameplay_tuning_v1.bipod.recoil_multiplier",
+    "sway_multiplier_source": "core_gameplay_tuning_v1.bipod.sway_multiplier"
+  },
+  "break_conditions": [
+    "support_lost",
+    "movement_input_exceeds_deadzone",
+    "view_rotation_exceeds_deploy_limits",
+    "weapon_changed",
+    "forced_movement",
+    "character_falls"
+  ],
+  "map_metadata": {
+    "blender_property": "ss_bipod",
+    "surface_type_property": "ss_bipod_type",
+    "accepted_types": ["ground", "window_sill", "wall_top", "generic"],
+    "explicit_tagging_preferred_for_architecture": true
+  },
+  "network_policy": {
+    "client_predicts_deploy_feedback": true,
+    "server_validates_support_trace": true,
+    "server_owns_deployed_state": true,
+    "server_revalidates_support_while_deployed": true
+  }
+}
