@@ -1,0 +1,71 @@
+{
+  "schema": "SpandauStrike.ObjectiveStateMachine.v1",
+  "states": [
+    "Locked",
+    "Active",
+    "CapturingWest",
+    "CapturingEast",
+    "Contested",
+    "OwnedWest",
+    "OwnedEast"
+  ],
+  "initialization": {
+    "west_owned_sequences": [1, 2],
+    "neutral_sequences": [3],
+    "east_owned_sequences": [4, 5],
+    "active_front_sequences": [2, 3, 4]
+  },
+  "capture_rules": {
+    "capture_duration_s": 8.0,
+    "contested_behavior": "pause",
+    "progress_decay": "hold_then_slow",
+    "decay_delay_s": 2.0,
+    "decay_rate_per_s": 0.08,
+    "extra_player_speedup": {
+      "enabled": true,
+      "max_multiplier": 1.2,
+      "players_for_max_multiplier": 3
+    },
+    "backcap_allowed": false,
+    "frontline_mode": "linear_adjacent",
+    "server_authoritative": true
+  },
+  "required_players_by_sequence": {
+    "1": 1,
+    "2": 1,
+    "3": 2,
+    "4": 1,
+    "5": 1
+  },
+  "transitions": [
+    {"from": "Locked", "event": "FrontlineOpened", "to": "Active"},
+    {"from": "Active", "event": "WestThresholdMet", "to": "CapturingWest"},
+    {"from": "Active", "event": "EastThresholdMet", "to": "CapturingEast"},
+    {"from": "CapturingWest", "event": "BothTeamsPresent", "to": "Contested"},
+    {"from": "CapturingEast", "event": "BothTeamsPresent", "to": "Contested"},
+    {"from": "Contested", "event": "OnlyWestThresholdMet", "to": "CapturingWest"},
+    {"from": "Contested", "event": "OnlyEastThresholdMet", "to": "CapturingEast"},
+    {"from": "Contested", "event": "NoTeamThresholdMet", "to": "Active"},
+    {"from": "CapturingWest", "event": "CaptureComplete", "to": "OwnedWest"},
+    {"from": "CapturingEast", "event": "CaptureComplete", "to": "OwnedEast"},
+    {"from": "CapturingWest", "event": "WestThresholdLost", "to": "Active"},
+    {"from": "CapturingEast", "event": "EastThresholdLost", "to": "Active"},
+    {"from": "OwnedWest", "event": "EastAttackOpened", "to": "Active"},
+    {"from": "OwnedEast", "event": "WestAttackOpened", "to": "Active"},
+    {"from": "Active", "event": "FrontlineClosed", "to": "Locked"}
+  ],
+  "frontline_rules": {
+    "west_attackable_sequence": "highest_west_owned_plus_one",
+    "east_attackable_sequence": "lowest_east_owned_minus_one",
+    "neutral_center_can_be_active_for_both": true,
+    "capturing_non_adjacent_objective_forbidden": true,
+    "home_objective_lock_policy": "locked_until_adjacent_front_reaches_it"
+  },
+  "replication_contract": {
+    "replicate_state": true,
+    "replicate_owner": true,
+    "replicate_progress": true,
+    "replicate_contesting_counts": true,
+    "client_prediction": false
+  }
+}
