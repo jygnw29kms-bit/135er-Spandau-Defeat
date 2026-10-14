@@ -1,0 +1,64 @@
+{
+  "schema": "SpandauStrike.RathausLaneFlow.v1",
+  "flow_direction": "west_east",
+  "objectives": [
+    {"sequence": 1, "id": "FLAG_1_WEST_HOME", "position_m": [-275.0, 0.0], "required_players": 1, "initial_side": "west", "zone": "home"},
+    {"sequence": 2, "id": "FLAG_2_WEST_STREET", "position_m": [-145.0, -97.3], "required_players": 1, "initial_side": "west", "zone": "street"},
+    {"sequence": 3, "id": "FLAG_3_RATHAUS", "position_m": [5.0, -68.0], "required_players": 2, "initial_side": "neutral", "zone": "rathaus"},
+    {"sequence": 4, "id": "FLAG_4_EAST_STREET", "position_m": [130.0, 73.7], "required_players": 1, "initial_side": "east", "zone": "street"},
+    {"sequence": 5, "id": "FLAG_5_EAST_HOME", "position_m": [235.0, -10.0], "required_players": 1, "initial_side": "east", "zone": "home"}
+  ],
+  "primary_lanes": {
+    "north": {
+      "source_object": "ROUTE_NORTH_REAR",
+      "points_m": [
+        [-362.66, -21.86],
+        [-156.63, -59.92],
+        [-70.04, 64.18],
+        [46.04, 161.26],
+        [274.21, -8.28]
+      ]
+    },
+    "mid": {
+      "source_object": "ROUTE_CENTER_RATHAUS",
+      "points_m": [
+        [-362.66, -21.86],
+        [-66.33, -101.99],
+        [35.39, -32.43],
+        [95.82, 74.96],
+        [274.21, -8.28]
+      ]
+    },
+    "south": {
+      "source_object": "ROUTE_SOUTH_PLAZA",
+      "points_m": [
+        [-362.66, -21.86],
+        [-12.87, -191.66],
+        [114.28, -104.72],
+        [189.81, 29.52],
+        [274.21, -8.28]
+      ]
+    }
+  },
+  "crosslinks": {
+    "west": {
+      "source_object": "CROSSLINK_WEST",
+      "points_m": [[-156.63, -59.92], [-66.33, -101.99], [-12.87, -191.66]]
+    },
+    "mid": {
+      "source_object": "CROSSLINK_MID",
+      "points_m": [[-70.04, 64.18], [35.39, -32.43], [114.28, -104.72]]
+    },
+    "east": {
+      "source_object": "CROSSLINK_EAST",
+      "points_m": [[46.04, 161.26], [95.82, 74.96], [189.81, 29.52]]
+    }
+  },
+  "rules": {
+    "primary_lane_count": 3,
+    "crosslink_count": 3,
+    "lane_tunnels_forbidden": true,
+    "backcap_allowed": false,
+    "center_objective_required_players": 2
+  }
+}
