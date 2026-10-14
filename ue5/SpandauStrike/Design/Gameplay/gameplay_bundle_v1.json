@@ -13,6 +13,7 @@
     "class_loadouts": "ue5/SpandauStrike/Design/Gameplay/class_loadouts_v1.json",
     "ability_contracts": "ue5/SpandauStrike/Design/Gameplay/ability_contracts_v1.json",
     "attribute_contracts": "ue5/SpandauStrike/Design/Gameplay/attribute_contracts_v1.json",
+    "movement_contract": "ue5/SpandauStrike/Design/Gameplay/movement_contract_v1.json",
     "objective_state_machine": "ue5/SpandauStrike/Design/Gameplay/objective_state_machine_v1.json",
     "lane_flow": "ue5/SpandauStrike/Design/Gameplay/rathaus_lane_flow_v1.json",
     "combat_flow": "ue5/SpandauStrike/Design/Gameplay/rathaus_combat_flow_v1.json"
@@ -27,6 +28,7 @@
     "gameplay": "tools/gameplay/validate_gameplay_config.py",
     "ability_contracts": "tools/gameplay/validate_ability_contracts.py",
     "attribute_contracts": "tools/gameplay/validate_attribute_contracts.py",
+    "movement_contract": "tools/gameplay/validate_movement_contract.py",
     "objective_state_machine": "tools/gameplay/validate_objective_state_machine.py",
     "frontline_flow": "tools/gameplay/validate_frontline_flow.py",
     "bundle": "tools/gameplay/validate_gameplay_bundle.py",
