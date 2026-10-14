@@ -1,0 +1,65 @@
+{
+  "schema": "SpandauStrike.MovementContract.v1",
+  "axes": {
+    "stance": ["Standing", "Crouched", "ProneTransitionDown", "Prone", "ProneTransitionUp"],
+    "gait": ["Walk", "Run", "Sprint"],
+    "locomotion": ["Grounded", "Airborne", "LandingRecovery"]
+  },
+  "sprint": {
+    "ability_tag": "SpandauStrike.Ability.Sprint",
+    "state_tag": "SpandauStrike.State.Movement.Sprinting",
+    "allowed_stances": ["Standing"],
+    "allowed_locomotion": ["Grounded"],
+    "minimum_stamina": 1.0,
+    "blocked_state_tags": [
+      "SpandauStrike.State.Exhausted",
+      "SpandauStrike.State.Weapon.Deployed",
+      "SpandauStrike.State.Movement.Prone",
+      "SpandauStrike.State.Movement.ProneTransition"
+    ],
+    "drain_source": "core_gameplay_tuning_v1.stamina.sprint_drain_per_s",
+    "class_drain_multiplier_source": "core_gameplay_tuning_v1.classes.<Class>.stamina_drain_multiplier"
+  },
+  "jump": {
+    "stamina_cost_source": "core_gameplay_tuning_v1.stamina.jump_cost",
+    "allowed_locomotion": ["Grounded"],
+    "blocked_stances": ["Prone", "ProneTransitionDown", "ProneTransitionUp"],
+    "ends_sprint": true,
+    "air_control_source": "core_gameplay_tuning_v1.movement.air_control"
+  },
+  "prone": {
+    "ability_tag": "SpandauStrike.Ability.Prone",
+    "state_tag": "SpandauStrike.State.Movement.Prone",
+    "transition_state_tag": "SpandauStrike.State.Movement.ProneTransition",
+    "enter_duration_source": "core_gameplay_tuning_v1.movement.prone_enter_s",
+    "exit_duration_source": "core_gameplay_tuning_v1.movement.prone_exit_s",
+    "requires_clearance_sweep": true,
+    "blocked_state_tags": ["SpandauStrike.State.Weapon.Deployed"],
+    "movement_speed_source": "core_gameplay_tuning_v1.movement.prone_speed_cm_s",
+    "view_yaw_limit_source": "core_gameplay_tuning_v1.movement.prone_view_yaw_deg",
+    "view_pitch_min_source": "core_gameplay_tuning_v1.movement.prone_view_pitch_min_deg",
+    "view_pitch_max_source": "core_gameplay_tuning_v1.movement.prone_view_pitch_max_deg"
+  },
+  "direction_reversal": {
+    "velocity_input_dot_threshold": -0.25,
+    "acceleration_multiplier_source": "core_gameplay_tuning_v1.movement.direction_reversal_acceleration_multiplier",
+    "applies_only_grounded": true
+  },
+  "landing": {
+    "recovery_duration_source": "core_gameplay_tuning_v1.movement.landing_recovery_s",
+    "state": "LandingRecovery",
+    "weapon_handling_penalty": true,
+    "sprint_blocked_during_recovery": true
+  },
+  "prone_view": {
+    "body_follow_when_limit_exceeded": true,
+    "body_follow_rate_multiplier": 0.6,
+    "free_camera_360_forbidden": true
+  },
+  "network_prediction": {
+    "must_use_character_movement_prediction": true,
+    "saved_move_flags": ["WantsSprint", "WantsProne"],
+    "server_reconciles_stamina_costs": true,
+    "direct_blueprint_velocity_writes_forbidden": true
+  }
+}
