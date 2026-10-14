@@ -1,0 +1,41 @@
+{
+  "schema": "SpandauStrike.ClassLoadouts.v1",
+  "classes": {
+    "Rifleman": {
+      "gameplay_tag": "SpandauStrike.Class.Rifleman",
+      "primary_archetype": "BoltRifle",
+      "role": "precision_midrange",
+      "ability_focus": ["Sprint", "Prone", "Grenade"]
+    },
+    "Assault": {
+      "gameplay_tag": "SpandauStrike.Class.Assault",
+      "primary_archetype": "AssaultSMG",
+      "role": "mobile_frontline",
+      "ability_focus": ["Sprint", "Prone", "Grenade"]
+    },
+    "Support": {
+      "gameplay_tag": "SpandauStrike.Class.Support",
+      "primary_archetype": "SupportAutomatic",
+      "role": "midrange_pressure",
+      "ability_focus": ["Sprint", "Prone", "Grenade"]
+    },
+    "Sniper": {
+      "gameplay_tag": "SpandauStrike.Class.Sniper",
+      "primary_archetype": "ScopedRifle",
+      "role": "longrange_precision",
+      "ability_focus": ["Sprint", "Prone", "Scope"]
+    },
+    "MG": {
+      "gameplay_tag": "SpandauStrike.Class.MG",
+      "primary_archetype": "HeavyMG",
+      "role": "lane_control",
+      "ability_focus": ["Sprint", "Prone", "BipodDeploy", "BipodUndeploy"]
+    },
+    "Rocket": {
+      "gameplay_tag": "SpandauStrike.Class.Rocket",
+      "primary_archetype": "RocketLauncher",
+      "role": "anti_position_area_denial",
+      "ability_focus": ["Sprint", "Prone", "RocketReload"]
+    }
+  }
+}
