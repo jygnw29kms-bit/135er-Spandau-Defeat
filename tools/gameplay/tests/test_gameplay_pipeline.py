@@ -26,6 +26,9 @@ class GameplayPipelineTests(unittest.TestCase):
     def test_core_validators(self):
         self.run_python("validate_gameplay_config.py")
         self.run_python("validate_gameplay_bundle.py")
+        self.run_python("validate_ability_contracts.py")
+        self.run_python("validate_objective_state_machine.py")
+        self.run_python("validate_frontline_flow.py")
 
     def test_runtime_handoff_generation(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -53,11 +56,25 @@ class GameplayPipelineTests(unittest.TestCase):
                 weapons = list(csv.DictReader(handle))
             with (out_dir / "DT_SpandauStrike_Movement.csv").open(encoding="utf-8", newline="") as handle:
                 movement = list(csv.DictReader(handle))
+            with (out_dir / "DT_SpandauStrike_Objectives.csv").open(encoding="utf-8", newline="") as handle:
+                objectives = list(csv.DictReader(handle))
+            with (out_dir / "DT_SpandauStrike_CombatAnchors.csv").open(encoding="utf-8", newline="") as handle:
+                combat = list(csv.DictReader(handle))
 
             self.assertEqual(len(classes), 6)
             self.assertEqual({row["Name"] for row in classes}, {"Rifleman", "Assault", "Support", "Sniper", "MG", "Rocket"})
             self.assertEqual(len(weapons), 6)
             self.assertEqual(len(movement), 1)
+            self.assertEqual(len(objectives), 5)
+            self.assertEqual([int(row["Sequence"]) for row in objectives], [1, 2, 3, 4, 5])
+            self.assertEqual(int(objectives[2]["RequiredPlayers"]), 2)
+            self.assertEqual(objectives[2]["Zone"], "rathaus")
+            self.assertEqual(len(combat), 18)
+            anchor_types = {row["AnchorType"] for row in combat}
+            self.assertEqual(anchor_types, {"Choke", "Smoke", "Flank", "MG", "Sniper"})
+            self.assertEqual(sum(1 for row in combat if row["AnchorType"] == "MG"), 3)
+            self.assertEqual(sum(1 for row in combat if row["AnchorType"] == "Sniper"), 3)
+            self.assertTrue(all(row["RequiresBipod"] == "true" for row in combat if row["AnchorType"] == "MG"))
             self.assertLess(float(next(row for row in classes if row["Name"] == "MG")["SpeedMultiplier"]),
                             float(next(row for row in classes if row["Name"] == "Assault")["SpeedMultiplier"]))
 
