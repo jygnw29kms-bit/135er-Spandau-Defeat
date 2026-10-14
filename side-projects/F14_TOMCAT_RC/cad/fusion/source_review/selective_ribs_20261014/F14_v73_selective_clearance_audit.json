@@ -1,0 +1,167 @@
+{
+  "status": "V73_SELECTIVE_RIB_CLEARANCE_CANDIDATE",
+  "source": {
+    "path": "C:\\Users\\dezen\\Desktop\\F14-RC-Model\\workspace\\RC-F14-Tomcat\\Fusion\\Exports\\Current\\source_shell_v53\\F14_RIB_OFFSET_CLEARANCE_REVIEW_v71.f3d",
+    "sha256": "1e1ef185a634612e5bcc218a938713e380740ddab91a5b5732f3a70c53c5f966"
+  },
+  "source_revision": "v71_offset_clearance",
+  "skin_target_mm": 0.15,
+  "spar_bondline_target_mm": 0.1,
+  "selection_records": [
+    {
+      "rib": "CANDIDATE_RIB_ZERO_CLEARANCE_-3",
+      "classification_counts_before_offset": {
+        "skin_only": 90,
+        "spar_only": 12,
+        "skin_and_spar": 0,
+        "free": 0,
+        "end": 2
+      },
+      "faces_given_extra_skin_offset": 90,
+      "additional_skin_offset_mm": -0.04999999999999999,
+      "before_cm3": 0.21271013465132757,
+      "after_cm3": 0.145492876052509
+    },
+    {
+      "rib": "CANDIDATE_RIB_ZERO_CLEARANCE_3",
+      "classification_counts_before_offset": {
+        "skin_only": 89,
+        "spar_only": 12,
+        "skin_and_spar": 1,
+        "free": 0,
+        "end": 2
+      },
+      "faces_given_extra_skin_offset": 90,
+      "additional_skin_offset_mm": -0.04999999999999999,
+      "before_cm3": 0.1999567107249179,
+      "after_cm3": 0.13707594175257856
+    }
+  ],
+  "verification": [
+    {
+      "rib": "CANDIDATE_RIB_ZERO_CLEARANCE_-3",
+      "skin_gaps": [
+        {
+          "skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "gap_mm": 0.14992269104598585
+        },
+        {
+          "skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "gap_mm": 2.2000000000000597
+        }
+      ],
+      "spar_gaps": [
+        {
+          "spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.10000000000001183
+        },
+        {
+          "spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.09999999999999808
+        },
+        {
+          "spar": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.09999999999999326
+        }
+      ],
+      "collision_checks": [
+        {
+          "blocker": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "removed_cm3": 0.0,
+          "pass": true
+        },
+        {
+          "blocker": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "removed_cm3": 0.0,
+          "pass": true
+        },
+        {
+          "blocker": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "removed_cm3": 0.0,
+          "pass": true
+        },
+        {
+          "blocker": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "removed_cm3": 0.0,
+          "pass": true
+        },
+        {
+          "blocker": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "removed_cm3": 0.0,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "rib": "CANDIDATE_RIB_ZERO_CLEARANCE_3",
+      "skin_gaps": [
+        {
+          "skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "gap_mm": 3.000469246695656
+        },
+        {
+          "skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "gap_mm": 0.14992149569920257
+        }
+      ],
+      "spar_gaps": [
+        {
+          "spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.10000000000001112
+        },
+        {
+          "spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.10000000000001438
+        },
+        {
+          "spar": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.10000000000008008
+        }
+      ],
+      "collision_checks": [
+        {
+          "blocker": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "removed_cm3": 0.0,
+          "pass": true
+        },
+        {
+          "blocker": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "removed_cm3": 0.0,
+          "pass": true
+        },
+        {
+          "blocker": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "removed_cm3": 0.0,
+          "pass": true
+        },
+        {
+          "blocker": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "removed_cm3": 0.0,
+          "pass": true
+        },
+        {
+          "blocker": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "removed_cm3": 0.0,
+          "pass": true
+        }
+      ]
+    }
+  ],
+  "own_skin_gaps_mm": [
+    0.14992269104598585,
+    0.14992149569920257
+  ],
+  "minimum_spar_gap_mm": 0.09999999999999326,
+  "all_collision_screens_pass": true,
+  "skin_target_screen_pass": true,
+  "spar_bondline_screen_pass": true,
+  "geometry_candidate_pass": true,
+  "fit_coupon_verified": false,
+  "adhesive_system_selected": false,
+  "bondline_verified": false,
+  "joint_designed": false,
+  "structural_capacity_verified": false,
+  "print_release": false,
+  "flight_release": false,
+  "study_source_sha256": "f95c007b938dc09069703712177eaa95f23ba6ed86906507c5194d12823b9a2f"
+}
