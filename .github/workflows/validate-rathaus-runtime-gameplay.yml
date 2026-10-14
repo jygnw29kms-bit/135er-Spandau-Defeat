@@ -58,6 +58,10 @@ jobs:
         run: |
           python tools/gameplay/validate_ability_contracts.py
 
+      - name: Validate territorial objective state machine
+        run: |
+          python tools/gameplay/validate_objective_state_machine.py
+
       - name: Generate UE gameplay tag snippet
         run: |
           python tools/gameplay/generate_ue_gameplay_tag_snippet.py --out /tmp/SpandauStrikeGameplayTags.ini
@@ -115,6 +119,7 @@ jobs:
             ue5/SpandauStrike/Design/Gameplay/weapon_archetypes_v1.json
             ue5/SpandauStrike/Design/Gameplay/class_loadouts_v1.json
             ue5/SpandauStrike/Design/Gameplay/ability_contracts_v1.json
+            ue5/SpandauStrike/Design/Gameplay/objective_state_machine_v1.json
             ue5/SpandauStrike/Design/Gameplay/rathaus_lane_flow_v1.json
             ue5/SpandauStrike/Design/Gameplay/rathaus_combat_flow_v1.json
           if-no-files-found: error
