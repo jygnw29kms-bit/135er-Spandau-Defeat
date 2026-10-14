@@ -1,0 +1,86 @@
+{
+  "schema": "SpandauStrike.WeaponArchetypes.v1",
+  "status": "production_baseline_pending_playtest_calibration",
+  "archetypes": {
+    "BoltRifle": {
+      "role": "precision_mid_long",
+      "fire_mode": "single_bolt",
+      "base_damage": 78.0,
+      "hit_zone_multipliers": {
+        "head": 2.5,
+        "upper_torso": 1.35,
+        "lower_torso": 1.0,
+        "arm": 0.75,
+        "leg": 0.65
+      },
+      "bolt_cycle_s": 1.3,
+      "hip_spread_deg": 2.1,
+      "precision_spread_deg": 0.18,
+      "movement_spread_multiplier": 1.65,
+      "recoil_vertical": 1.0,
+      "recoil_horizontal": 0.18
+    },
+    "AssaultSMG": {
+      "role": "close_frontline",
+      "fire_mode": "automatic",
+      "base_damage": 29.0,
+      "rate_rpm": 650.0,
+      "hip_spread_deg": 2.4,
+      "movement_spread_multiplier": 1.35,
+      "shot_bloom_deg": 0.16,
+      "recoil_vertical": 0.42,
+      "recoil_horizontal": 0.38
+    },
+    "SupportAutomatic": {
+      "role": "midrange_pressure",
+      "fire_mode": "automatic",
+      "base_damage": 34.0,
+      "rate_rpm": 520.0,
+      "hip_spread_deg": 2.0,
+      "movement_spread_multiplier": 1.5,
+      "shot_bloom_deg": 0.13,
+      "recoil_vertical": 0.5,
+      "recoil_horizontal": 0.32
+    },
+    "ScopedRifle": {
+      "role": "longrange_precision",
+      "fire_mode": "single_bolt",
+      "base_damage": 80.0,
+      "hit_zone_multipliers": {
+        "head": 2.5,
+        "upper_torso": 1.35,
+        "lower_torso": 1.0,
+        "arm": 0.72,
+        "leg": 0.62
+      },
+      "bolt_cycle_s": 1.4,
+      "scope_spread_deg": 0.08,
+      "scope_move_speed_multiplier": 0.55,
+      "recoil_vertical": 1.05,
+      "recoil_horizontal": 0.12
+    },
+    "HeavyMG": {
+      "role": "lane_control",
+      "fire_mode": "automatic",
+      "requires_bipod_for_precision": true,
+      "base_damage": 38.0,
+      "rate_rpm": 850.0,
+      "undeployed_spread_deg": 4.8,
+      "deployed_spread_deg": 0.42,
+      "undeployed_recoil_multiplier": 1.7,
+      "deployed_recoil_multiplier": 0.28,
+      "deployed_yaw_limit_deg": 32.0,
+      "deployed_pitch_min_deg": -15.0,
+      "deployed_pitch_max_deg": 20.0
+    },
+    "RocketLauncher": {
+      "role": "anti_position_area_denial",
+      "fire_mode": "single_reload",
+      "direct_damage": 150.0,
+      "splash_damage": 110.0,
+      "splash_radius_m": 4.5,
+      "reload_s": 4.2,
+      "move_speed_multiplier_while_aiming": 0.6
+    }
+  }
+}
