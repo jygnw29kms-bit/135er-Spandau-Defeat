@@ -1,0 +1,1250 @@
+{
+  "status": "NATIVE_SPAN_CUT_SECTION_SCAN",
+  "source": {
+    "path": "C:\\Users\\dezen\\Documents\\Codex\\2026-10-04\\referenced-chatgpt-conversation-this-is-an\\outputs\\F14_TRIMMED_WEB_CLEARANCE_20261014\\F14_NATIVE_SPAR_SKIN_CLEARANCE_v62.f3d",
+    "sha256": "3188b4cc163a3438c18fd5533159574868db27df6222ccd3b91bd82980d12e83"
+  },
+  "sections": [
+    {
+      "y_mm": 150.0,
+      "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+      "curve_count": 4,
+      "profiles": [
+        {
+          "area_mm2": 15.968825358713106,
+          "centroid_mm": [
+            632.9606468058716,
+            150.0,
+            194.96765296992282
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 150.0,
+      "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+      "curve_count": 4,
+      "profiles": [
+        {
+          "area_mm2": 15.968825358713035,
+          "centroid_mm": [
+            632.9606463152896,
+            150.0,
+            184.0944244470717
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 150.0,
+      "body": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+      "curve_count": 193,
+      "profiles": [
+        {
+          "area_mm2": 234.7282069456063,
+          "centroid_mm": [
+            660.8104805315972,
+            150.0,
+            188.44943213966405
+          ],
+          "loop_count": 2
+        },
+        {
+          "area_mm2": 1195.987042029849,
+          "centroid_mm": [
+            648.8957464240049,
+            150.0,
+            188.90827530871888
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 150.0,
+      "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+      "curve_count": 4,
+      "profiles": [
+        {
+          "area_mm2": 7.898582818279987,
+          "centroid_mm": [
+            632.9606466269981,
+            150.0,
+            189.53103870849725
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 165.9375,
+      "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+      "curve_count": 4,
+      "profiles": [
+        {
+          "area_mm2": 15.545481511531445,
+          "centroid_mm": [
+            637.1942894867582,
+            165.9375,
+            194.31288408645517
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 165.9375,
+      "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+      "curve_count": 4,
+      "profiles": [
+        {
+          "area_mm2": 15.545481511531445,
+          "centroid_mm": [
+            637.1942858866823,
+            165.9375,
+            184.1808845694192
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 165.9375,
+      "body": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+      "curve_count": 193,
+      "profiles": [
+        {
+          "area_mm2": 225.83650663867815,
+          "centroid_mm": [
+            663.8934549025712,
+            165.9375,
+            188.1226509584678
+          ],
+          "loop_count": 2
+        },
+        {
+          "area_mm2": 1089.2295210769032,
+          "centroid_mm": [
+            652.6662754994366,
+            165.9375,
+            188.58917242586617
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 165.9375,
+      "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+      "curve_count": 4,
+      "profiles": [
+        {
+          "area_mm2": 7.305599613613165,
+          "centroid_mm": [
+            637.1942881740364,
+            165.9375,
+            189.24688432793369
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 181.875,
+      "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+      "curve_count": 4,
+      "profiles": [
+        {
+          "area_mm2": 15.122137664349712,
+          "centroid_mm": [
+            641.4397066254335,
+            181.875,
+            193.60471477111656
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 181.875,
+      "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+      "curve_count": 4,
+      "profiles": [
+        {
+          "area_mm2": 15.122137664350321,
+          "centroid_mm": [
+            641.4397045653875,
+            181.875,
+            184.15070499592758
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 181.875,
+      "body": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+      "curve_count": 193,
+      "profiles": [
+        {
+          "area_mm2": 217.04954809622828,
+          "centroid_mm": [
+            667.0108959295634,
+            181.875,
+            187.74558114681196
+          ],
+          "loop_count": 2
+        },
+        {
+          "area_mm2": 992.4972577271061,
+          "centroid_mm": [
+            656.4548513172509,
+            181.875,
+            188.20820866997298
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 181.875,
+      "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+      "curve_count": 4,
+      "profiles": [
+        {
+          "area_mm2": 6.763207818848832,
+          "centroid_mm": [
+            641.4397058742968,
+            181.875,
+            188.87770988323945
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 197.8125,
+      "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+      "curve_count": 4,
+      "profiles": [
+        {
+          "area_mm2": 14.698793817168124,
+          "centroid_mm": [
+            645.6975903443313,
+            197.8125,
+            192.84184349083074
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 197.8125,
+      "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+      "curve_count": 4,
+      "profiles": [
+        {
+          "area_mm2": 14.698793817169308,
+          "centroid_mm": [
+            645.6975915422255,
+            197.8125,
+            184.00082207294818
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 197.8125,
+      "body": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+      "curve_count": 193,
+      "profiles": [
+        {
+          "area_mm2": 208.39792255397174,
+          "centroid_mm": [
+            670.1729463618732,
+            197.8125,
+            187.31612995273844
+          ],
+          "loop_count": 2
+        },
+        {
+          "area_mm2": 905.3023736401204,
+          "centroid_mm": [
+            660.2586481585,
+            197.8125,
+            187.76395052435112
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 197.8125,
+      "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+      "curve_count": 4,
+      "profiles": [
+        {
+          "area_mm2": 6.272817134339631,
+          "centroid_mm": [
+            645.6975907837007,
+            197.8125,
+            188.42133278187947
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 213.75,
+      "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+      "curve_count": 4,
+      "profiles": [
+        {
+          "area_mm2": 14.275449969986099,
+          "centroid_mm": [
+            649.9711537276324,
+            213.75,
+            192.01834105221624
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 213.75,
+      "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+      "curve_count": 4,
+      "profiles": [
+        {
+          "area_mm2": 14.275449969987111,
+          "centroid_mm": [
+            649.9711556066659,
+            213.75,
+            183.71714866457964
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 213.75,
+      "body": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+      "curve_count": 193,
+      "profiles": [
+        {
+          "area_mm2": 199.9102336611728,
+          "centroid_mm": [
+            673.394436752959,
+            213.75,
+            186.82750814800147
+          ],
+          "loop_count": 2
+        },
+        {
+          "area_mm2": 827.5984151774702,
+          "centroid_mm": [
+            664.0754510667962,
+            213.75,
+            187.24948114811895
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 213.75,
+      "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+      "curve_count": 4,
+      "profiles": [
+        {
+          "area_mm2": 5.84095391053953,
+          "centroid_mm": [
+            649.9711544093607,
+            213.75,
+            187.86774485848383
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 229.6875,
+      "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+      "curve_count": 4,
+      "profiles": [
+        {
+          "area_mm2": 13.852106122805367,
+          "centroid_mm": [
+            654.250573058046,
+            229.6875,
+            191.15220060823106
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 229.6875,
+      "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+      "curve_count": 4,
+      "profiles": [
+        {
+          "area_mm2": 13.85210612280473,
+          "centroid_mm": [
+            654.2505732546826,
+            229.6875,
+            183.34260321013096
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 229.6875,
+      "body": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+      "curve_count": 191,
+      "profiles": [
+        {
+          "area_mm2": 191.54392591756152,
+          "centroid_mm": [
+            676.6562516414588,
+            229.6875,
+            186.2978133248361
+          ],
+          "loop_count": 2
+        },
+        {
+          "area_mm2": 757.0075632552704,
+          "centroid_mm": [
+            667.8968458784502,
+            229.6875,
+            186.68686620135355
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 229.6875,
+      "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+      "curve_count": 4,
+      "profiles": [
+        {
+          "area_mm2": 5.447677926962234,
+          "centroid_mm": [
+            654.2505731280453,
+            229.6875,
+            187.24740191001496
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 245.625,
+      "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+      "curve_count": 4,
+      "profiles": [
+        {
+          "area_mm2": 13.428762275623281,
+          "centroid_mm": [
+            658.5265713726608,
+            245.625,
+            190.25579698720338
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 245.625,
+      "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+      "curve_count": 4,
+      "profiles": [
+        {
+          "area_mm2": 13.428762275623619,
+          "centroid_mm": [
+            658.5265713767523,
+            245.625,
+            182.90624138984458
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 245.625,
+      "body": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+      "curve_count": 191,
+      "profiles": [
+        {
+          "area_mm2": 183.29156229352063,
+          "centroid_mm": [
+            679.9396434584648,
+            245.625,
+            185.73957871513068
+          ],
+          "loop_count": 2
+        },
+        {
+          "area_mm2": 692.0596775338487,
+          "centroid_mm": [
+            671.7182724750978,
+            245.625,
+            186.0909085213659
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 245.625,
+      "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+      "curve_count": 4,
+      "profiles": [
+        {
+          "area_mm2": 5.079644478164855,
+          "centroid_mm": [
+            658.5265713701659,
+            245.625,
+            186.58101918857147
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 261.5625,
+      "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+      "curve_count": 4,
+      "profiles": [
+        {
+          "area_mm2": 13.00541842844187,
+          "centroid_mm": [
+            662.8026344694779,
+            261.5625,
+            189.32214600546922
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 261.5625,
+      "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+      "curve_count": 4,
+      "profiles": [
+        {
+          "area_mm2": 13.005418428442015,
+          "centroid_mm": [
+            662.8026344751743,
+            261.5625,
+            182.39137090732467
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 261.5625,
+      "body": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+      "curve_count": 191,
+      "profiles": [
+        {
+          "area_mm2": 808.2000402961139,
+          "centroid_mm": [
+            677.2112113003014,
+            261.5625,
+            185.38671543548122
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 261.5625,
+      "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+      "curve_count": 4,
+      "profiles": [
+        {
+          "area_mm2": 4.74462012528342,
+          "centroid_mm": [
+            662.8026344730414,
+            261.5625,
+            185.8567584656422
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 277.5,
+      "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+      "curve_count": 4,
+      "profiles": [
+        {
+          "area_mm2": 12.582074581260713,
+          "centroid_mm": [
+            667.0787684270471,
+            277.5,
+            188.37986076473283
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 277.5,
+      "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+      "curve_count": 4,
+      "profiles": [
+        {
+          "area_mm2": 12.582074581260267,
+          "centroid_mm": [
+            667.0787684270565,
+            277.5,
+            181.86885165969306
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 277.5,
+      "body": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+      "curve_count": 191,
+      "profiles": [
+        {
+          "area_mm2": 167.03233308415227,
+          "centroid_mm": [
+            686.5749958056972,
+            277.5,
+            184.54675050854362
+          ],
+          "loop_count": 2
+        },
+        {
+          "area_mm2": 576.4667580116471,
+          "centroid_mm": [
+            679.3504817722417,
+            277.5,
+            184.81117163384658
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 277.5,
+      "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+      "curve_count": 4,
+      "profiles": [
+        {
+          "area_mm2": 4.4088072842066826,
+          "centroid_mm": [
+            667.0787684270675,
+            277.5,
+            185.12435621216804
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 293.4375,
+      "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+      "curve_count": 4,
+      "profiles": [
+        {
+          "area_mm2": 12.158730734078805,
+          "centroid_mm": [
+            671.3547450195944,
+            293.4375,
+            187.4421183080732
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 293.4375,
+      "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+      "curve_count": 4,
+      "profiles": [
+        {
+          "area_mm2": 12.15873073407852,
+          "centroid_mm": [
+            671.3547450199782,
+            293.4375,
+            181.37084944857475
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 293.4375,
+      "body": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+      "curve_count": 191,
+      "profiles": [
+        {
+          "area_mm2": 158.87285706687868,
+          "centroid_mm": [
+            689.8860172256841,
+            293.4375,
+            183.95676893400437
+          ],
+          "loop_count": 2
+        },
+        {
+          "area_mm2": 521.1277275374821,
+          "centroid_mm": [
+            683.1544068171264,
+            293.4375,
+            184.18057345525196
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 293.4375,
+      "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+      "curve_count": 4,
+      "profiles": [
+        {
+          "area_mm2": 4.057015087348501,
+          "centroid_mm": [
+            671.3547450198274,
+            293.4375,
+            184.40648387826784
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 309.375,
+      "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+      "curve_count": 4,
+      "profiles": [
+        {
+          "area_mm2": 11.735386886896915,
+          "centroid_mm": [
+            675.6307218665067,
+            309.375,
+            186.4996676297519
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 309.375,
+      "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+      "curve_count": 4,
+      "profiles": [
+        {
+          "area_mm2": 11.735386886896773,
+          "centroid_mm": [
+            675.6307218669465,
+            309.375,
+            180.87502322819375
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 309.375,
+      "body": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+      "curve_count": 191,
+      "profiles": [
+        {
+          "area_mm2": 150.71306454062088,
+          "centroid_mm": [
+            693.1968236213548,
+            309.375,
+            183.36607167282213
+          ],
+          "loop_count": 2
+        },
+        {
+          "area_mm2": 468.0046592678747,
+          "centroid_mm": [
+            686.9491950780573,
+            309.375,
+            183.5502625057063
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 309.375,
+      "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+      "curve_count": 4,
+      "profiles": [
+        {
+          "area_mm2": 3.699715520971726,
+          "centroid_mm": [
+            675.6307218667756,
+            309.375,
+            183.6873454289105
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 325.3125,
+      "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+      "curve_count": 4,
+      "profiles": [
+        {
+          "area_mm2": 11.312043039714908,
+          "centroid_mm": [
+            679.9066881214077,
+            325.3125,
+            185.5522653799295
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 325.3125,
+      "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+      "curve_count": 4,
+      "profiles": [
+        {
+          "area_mm2": 11.312043039715167,
+          "centroid_mm": [
+            679.9066881214337,
+            325.3125,
+            180.38121797569266
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 325.3125,
+      "body": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+      "curve_count": 191,
+      "profiles": [
+        {
+          "area_mm2": 142.5488791068693,
+          "centroid_mm": [
+            696.5066049828738,
+            325.3125,
+            182.77518807541273
+          ],
+          "loop_count": 2
+        },
+        {
+          "area_mm2": 416.9105714495764,
+          "centroid_mm": [
+            690.7246082467923,
+            325.3125,
+            182.92083816374645
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 325.3125,
+      "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+      "curve_count": 4,
+      "profiles": [
+        {
+          "area_mm2": 3.336837923503449,
+          "centroid_mm": [
+            679.9066881215476,
+            325.3125,
+            182.9667416777025
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 341.25,
+      "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+      "curve_count": 4,
+      "profiles": [
+        {
+          "area_mm2": 10.88869919253279,
+          "centroid_mm": [
+            684.1826459288831,
+            341.25,
+            184.60027075086487
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 341.25,
+      "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+      "curve_count": 4,
+      "profiles": [
+        {
+          "area_mm2": 10.888699192533705,
+          "centroid_mm": [
+            684.1826459307736,
+            341.25,
+            179.88028028199122
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 341.25,
+      "body": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+      "curve_count": 191,
+      "profiles": [
+        {
+          "area_mm2": 134.3841413346605,
+          "centroid_mm": [
+            699.8164690226828,
+            341.25,
+            182.18381836626725
+          ],
+          "loop_count": 2
+        },
+        {
+          "area_mm2": 368.16124802205763,
+          "centroid_mm": [
+            694.484320282723,
+            341.25,
+            182.2918491693856
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 341.25,
+      "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+      "curve_count": 4,
+      "profiles": [
+        {
+          "area_mm2": 2.975992375001925,
+          "centroid_mm": [
+            684.1826459300264,
+            341.25,
+            182.24027551640333
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 357.1875,
+      "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+      "curve_count": 4,
+      "profiles": [
+        {
+          "area_mm2": 10.46535534535196,
+          "centroid_mm": [
+            688.4585912156144,
+            357.1875,
+            183.64285465584274
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 357.1875,
+      "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+      "curve_count": 4,
+      "profiles": [
+        {
+          "area_mm2": 10.46535534535196,
+          "centroid_mm": [
+            688.4585912171742,
+            357.1875,
+            179.39387056018086
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 357.1875,
+      "body": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+      "curve_count": 191,
+      "profiles": [
+        {
+          "area_mm2": 126.21248437985261,
+          "centroid_mm": [
+            703.1242162559805,
+            357.1875,
+            181.5923395814548
+          ],
+          "loop_count": 2
+        },
+        {
+          "area_mm2": 321.49888020646864,
+          "centroid_mm": [
+            698.2228494766605,
+            357.1875,
+            181.66391682936973
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 357.1875,
+      "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+      "curve_count": 4,
+      "profiles": [
+        {
+          "area_mm2": 2.5991872765037045,
+          "centroid_mm": [
+            688.4585912165335,
+            357.1875,
+            181.51836260799783
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 373.125,
+      "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+      "curve_count": 4,
+      "profiles": [
+        {
+          "area_mm2": 10.042011498169854,
+          "centroid_mm": [
+            692.7345168256911,
+            373.125,
+            182.67898759971956
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 373.125,
+      "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+      "curve_count": 4,
+      "profiles": [
+        {
+          "area_mm2": 10.042011498169998,
+          "centroid_mm": [
+            692.7345168232259,
+            373.125,
+            178.94754794433
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 373.125,
+      "body": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+      "curve_count": 189,
+      "profiles": [
+        {
+          "area_mm2": 118.02797135741787,
+          "centroid_mm": [
+            706.4275314408895,
+            373.125,
+            181.00111782095354
+          ],
+          "loop_count": 2
+        },
+        {
+          "area_mm2": 276.77133550798436,
+          "centroid_mm": [
+            701.9320604433095,
+            373.125,
+            181.0375040524956
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 373.125,
+      "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+      "curve_count": 4,
+      "profiles": [
+        {
+          "area_mm2": 2.1851517243094,
+          "centroid_mm": [
+            692.7345168242839,
+            373.125,
+            180.81326777202065
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 389.0625,
+      "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+      "curve_count": 4,
+      "profiles": [
+        {
+          "area_mm2": 9.61866765098875,
+          "centroid_mm": [
+            697.0104247276089,
+            389.0625,
+            181.70895248588545
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 389.0625,
+      "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+      "curve_count": 4,
+      "profiles": [
+        {
+          "area_mm2": 9.618667650988408,
+          "centroid_mm": [
+            697.0104247229392,
+            389.0625,
+            178.53426945817634
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 389.0625,
+      "body": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+      "curve_count": 189,
+      "profiles": [
+        {
+          "area_mm2": 109.83639438486847,
+          "centroid_mm": [
+            709.7278808100378,
+            389.0625,
+            180.40968645510844
+          ],
+          "loop_count": 2
+        },
+        {
+          "area_mm2": 234.45547229914342,
+          "centroid_mm": [
+            705.6153486203697,
+            389.0625,
+            180.4117172512795
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 389.0625,
+      "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+      "curve_count": 4,
+      "profiles": [
+        {
+          "area_mm2": 1.7397464221671517,
+          "centroid_mm": [
+            697.0104247249274,
+            389.0625,
+            180.12161097203057
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 405.0,
+      "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+      "curve_count": 4,
+      "profiles": [
+        {
+          "area_mm2": 9.195323803806676,
+          "centroid_mm": [
+            701.2863155191808,
+            405.0,
+            180.7328350712771
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 405.0,
+      "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+      "curve_count": 4,
+      "profiles": [
+        {
+          "area_mm2": 9.195323803806819,
+          "centroid_mm": [
+            701.2863155181316,
+            405.0,
+            178.15189090798214
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 405.0,
+      "body": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+      "curve_count": 188,
+      "profiles": [
+        {
+          "area_mm2": 101.60862530800662,
+          "centroid_mm": [
+            713.0177811198677,
+            405.0,
+            179.81829530125398
+          ],
+          "loop_count": 2
+        },
+        {
+          "area_mm2": 193.95995716460828,
+          "centroid_mm": [
+            709.2695202083628,
+            405.0,
+            179.7876373426788
+          ],
+          "loop_count": 1
+        }
+      ]
+    },
+    {
+      "y_mm": 405.0,
+      "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+      "curve_count": 4,
+      "profiles": [
+        {
+          "area_mm2": 1.2647553306359514,
+          "centroid_mm": [
+            701.286315518578,
+            405.0,
+            179.44236298962954
+          ],
+          "loop_count": 1
+        }
+      ]
+    }
+  ],
+  "sampled_span_mm": [
+    150,
+    405
+  ],
+  "sampling_proves_continuous_capacity": false,
+  "joint_designed": false,
+  "structural_capacity_verified": false,
+  "print_release": false,
+  "study_source_sha256": "b12fbcb3ee545c6421caadb43f0cbd2be6466b24d45c0a2401258bf38fe38db1"
+}
