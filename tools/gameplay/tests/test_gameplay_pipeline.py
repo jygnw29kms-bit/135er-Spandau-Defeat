@@ -1,0 +1,72 @@
+#!/usr/bin/env python3
+import csv
+import json
+import subprocess
+import sys
+import tempfile
+import unittest
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[3]
+TOOLS = ROOT / "tools" / "gameplay"
+
+
+class GameplayPipelineTests(unittest.TestCase):
+    def run_python(self, script, *args):
+        result = subprocess.run(
+            [sys.executable, str(TOOLS / script), *map(str, args)],
+            cwd=ROOT,
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+        self.assertEqual(result.returncode, 0, msg=result.stdout + "\n" + result.stderr)
+        return result
+
+    def test_core_validators(self):
+        self.run_python("validate_gameplay_config.py")
+        self.run_python("validate_gameplay_bundle.py")
+
+    def test_runtime_handoff_generation(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            out = Path(tmp) / "handoff.json"
+            self.run_python("build_runtime_gameplay_handoff.py", "--out", out)
+            data = json.loads(out.read_text(encoding="utf-8"))
+            self.assertEqual(data["schema"], "SpandauStrike.RuntimeGameplayHandoff.v1")
+            self.assertEqual(data["summary"]["objectives"], 5)
+            self.assertEqual(data["summary"]["spawns"], 8)
+            self.assertGreaterEqual(data["summary"]["cover_objects"], 20)
+            self.assertFalse(Path(data["source_manifest"]).is_absolute())
+            self.assertEqual([int(o["metadata"]["ss_sequence"]) for o in data["objectives"]], [1, 2, 3, 4, 5])
+            center = data["objectives"][2]
+            self.assertEqual(center["metadata"]["ss_zone"], "rathaus")
+            self.assertEqual(int(center["metadata"]["ss_capture_players"]), 2)
+
+    def test_datatable_generation(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            out_dir = Path(tmp) / "tables"
+            self.run_python("build_ue_datatable_csv.py", "--out-dir", out_dir)
+
+            with (out_dir / "DT_SpandauStrike_Classes.csv").open(encoding="utf-8", newline="") as handle:
+                classes = list(csv.DictReader(handle))
+            with (out_dir / "DT_SpandauStrike_WeaponArchetypes.csv").open(encoding="utf-8", newline="") as handle:
+                weapons = list(csv.DictReader(handle))
+            with (out_dir / "DT_SpandauStrike_Movement.csv").open(encoding="utf-8", newline="") as handle:
+                movement = list(csv.DictReader(handle))
+
+            self.assertEqual(len(classes), 6)
+            self.assertEqual({row["Name"] for row in classes}, {"Rifleman", "Assault", "Support", "Sniper", "MG", "Rocket"})
+            self.assertEqual(len(weapons), 6)
+            self.assertEqual(len(movement), 1)
+            self.assertLess(float(next(row for row in classes if row["Name"] == "MG")["SpeedMultiplier"]),
+                            float(next(row for row in classes if row["Name"] == "Assault")["SpeedMultiplier"]))
+
+    def test_gameplay_tag_snippet(self):
+        result = self.run_python("generate_ue_gameplay_tag_snippet.py")
+        lines = [line for line in result.stdout.splitlines() if line.startswith("+GameplayTagList=")]
+        self.assertGreaterEqual(len(lines), 20)
+        self.assertTrue(all('Tag="SpandauStrike.' in line for line in lines))
+
+
+if __name__ == "__main__":
+    unittest.main()
