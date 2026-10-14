@@ -8,6 +8,7 @@ TUNING = ROOT / "ue5" / "SpandauStrike" / "Design" / "Gameplay" / "core_gameplay
 WEAPONS = ROOT / "ue5" / "SpandauStrike" / "Design" / "Gameplay" / "weapon_archetypes_v1.json"
 LOADOUTS = ROOT / "ue5" / "SpandauStrike" / "Design" / "Gameplay" / "class_loadouts_v1.json"
 COMBAT_FLOW = ROOT / "ue5" / "SpandauStrike" / "Design" / "Gameplay" / "rathaus_combat_flow_v1.json"
+LANE_FLOW = ROOT / "ue5" / "SpandauStrike" / "Design" / "Gameplay" / "rathaus_lane_flow_v1.json"
 
 
 def load(path):
@@ -24,6 +25,7 @@ def main():
     weapons = load(WEAPONS)
     loadouts = load(LOADOUTS)
     combat_flow = load(COMBAT_FLOW)
+    lane_flow = load(LANE_FLOW)
 
     values = tags.get("tags", [])
     if not values:
@@ -125,6 +127,36 @@ def main():
         if not (20.0 <= float(position.get("mg_arc_deg", 0.0)) <= 90.0):
             fail(f"power position {position.get('id')} MG arc outside tactical baseline")
 
+    lane_objectives = lane_flow.get("objectives", [])
+    if len(lane_objectives) != 5:
+        fail(f"lane flow must contain 5 objectives, got {len(lane_objectives)}")
+    sequences = [int(item.get("sequence", -1)) for item in lane_objectives]
+    if sequences != [1, 2, 3, 4, 5]:
+        fail(f"lane-flow objective sequence mismatch: {sequences}")
+    center = lane_objectives[2]
+    if center.get("zone") != "rathaus" or int(center.get("required_players", 0)) != 2:
+        fail("lane-flow center objective must be the 2-player Rathaus capture")
+
+    primary_lanes = lane_flow.get("primary_lanes", {})
+    if set(primary_lanes) != lanes:
+        fail(f"lane-flow primary lanes mismatch: {sorted(primary_lanes)}")
+    for lane_name, lane in primary_lanes.items():
+        if len(lane.get("points_m", [])) < 5:
+            fail(f"primary lane {lane_name} must preserve at least 5 route points")
+
+    crosslinks = lane_flow.get("crosslinks", {})
+    if len(crosslinks) != 3:
+        fail(f"expected 3 crosslinks, got {len(crosslinks)}")
+    for crosslink_name, crosslink in crosslinks.items():
+        if len(crosslink.get("points_m", [])) < 3:
+            fail(f"crosslink {crosslink_name} must preserve at least 3 route points")
+
+    lane_rules = lane_flow.get("rules", {})
+    if lane_rules.get("lane_tunnels_forbidden") is not True:
+        fail("lane tunnels must remain forbidden")
+    if lane_rules.get("backcap_allowed") is not False:
+        fail("lane flow must keep back-capping disabled")
+
     print(json.dumps({
         "tags": len(values),
         "classes": len(classes),
@@ -132,6 +164,8 @@ def main():
         "objective_count": territorial["objective_count"],
         "chokes": len(chokes),
         "power_positions": len(positions),
+        "primary_lanes": len(primary_lanes),
+        "crosslinks": len(crosslinks),
         "status": "ok"
     }, sort_keys=True))
 
