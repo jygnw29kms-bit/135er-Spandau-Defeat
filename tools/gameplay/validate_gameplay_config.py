@@ -7,6 +7,7 @@ TAGS = ROOT / "tools" / "gameplay" / "spandau_strike_gameplay_tags.json"
 TUNING = ROOT / "ue5" / "SpandauStrike" / "Design" / "Gameplay" / "core_gameplay_tuning_v1.json"
 WEAPONS = ROOT / "ue5" / "SpandauStrike" / "Design" / "Gameplay" / "weapon_archetypes_v1.json"
 LOADOUTS = ROOT / "ue5" / "SpandauStrike" / "Design" / "Gameplay" / "class_loadouts_v1.json"
+COMBAT_FLOW = ROOT / "ue5" / "SpandauStrike" / "Design" / "Gameplay" / "rathaus_combat_flow_v1.json"
 
 
 def load(path):
@@ -22,6 +23,7 @@ def main():
     tuning = load(TUNING)
     weapons = load(WEAPONS)
     loadouts = load(LOADOUTS)
+    combat_flow = load(COMBAT_FLOW)
 
     values = tags.get("tags", [])
     if not values:
@@ -94,11 +96,42 @@ def main():
     if territorial["backcap_allowed"] is not False:
         fail("back-capping must remain disabled")
 
+    lanes = set(combat_flow.get("lanes", []))
+    if lanes != {"north", "mid", "south"}:
+        fail(f"Rathaus lane set mismatch: {sorted(lanes)}")
+
+    chokes = combat_flow.get("chokes", [])
+    if len(chokes) != 4:
+        fail(f"expected 4 Rathaus chokes, got {len(chokes)}")
+    for choke in chokes:
+        if choke.get("lane") not in lanes:
+            fail(f"choke {choke.get('id')} has invalid lane")
+        if not choke.get("smoke_anchor_m") or not choke.get("flank_anchor_m"):
+            fail(f"choke {choke.get('id')} must provide smoke and flank counterplay")
+
+    positions = combat_flow.get("power_positions", [])
+    if len(positions) != 3:
+        fail(f"expected 3 MG/sniper power-position groups, got {len(positions)}")
+    for position in positions:
+        if position.get("lane") not in lanes:
+            fail(f"power position {position.get('id')} has invalid lane")
+        counterplay = set(position.get("counterplay", []))
+        if "smoke" not in counterplay:
+            fail(f"power position {position.get('id')} must allow smoke counterplay")
+        if not ({"flank", "alternate_lane"} & counterplay):
+            fail(f"power position {position.get('id')} must allow flank or alternate-lane counterplay")
+        if position.get("mg_requires_bipod") is not True:
+            fail(f"power position {position.get('id')} MG must require bipod")
+        if not (20.0 <= float(position.get("mg_arc_deg", 0.0)) <= 90.0):
+            fail(f"power position {position.get('id')} MG arc outside tactical baseline")
+
     print(json.dumps({
         "tags": len(values),
         "classes": len(classes),
         "weapon_archetypes": len(archetypes),
         "objective_count": territorial["objective_count"],
+        "chokes": len(chokes),
+        "power_positions": len(positions),
         "status": "ok"
     }, sort_keys=True))
 
