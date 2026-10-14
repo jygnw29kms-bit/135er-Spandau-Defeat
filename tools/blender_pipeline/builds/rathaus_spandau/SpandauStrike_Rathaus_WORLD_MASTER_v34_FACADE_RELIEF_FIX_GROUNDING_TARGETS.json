@@ -1,0 +1,365 @@
+{
+  "file": "C:\\Users\\dezen\\Desktop\\135er-Spandau-Defeat\\tools\\blender_pipeline\\builds\\rathaus_spandau\\SpandauStrike_Rathaus_WORLD_MASTER_v34_FACADE_RELIEF_FIX.blend",
+  "targets": [
+    {
+      "name": "SM_SPAWN_WEST_1",
+      "xy": [
+        -364.7425231933594,
+        304.720458984375
+      ],
+      "bottom_z": 2.286959409713745,
+      "terrain_z": 2.266959467969931,
+      "delta": 0.01999994174381392,
+      "role": "gameplay",
+      "tag": "spawn",
+      "export": true
+    },
+    {
+      "name": "SM_SPAWN_WEST_2",
+      "xy": [
+        -360.3298034667969,
+        -362.7577209472656
+      ],
+      "bottom_z": 1.8672382831573486,
+      "terrain_z": 1.847238193301026,
+      "delta": 0.020000089856322623,
+      "role": "gameplay",
+      "tag": "spawn",
+      "export": true
+    },
+    {
+      "name": "SM_SPAWN_WEST_3",
+      "xy": [
+        -495.0,
+        -64.53517150878906
+      ],
+      "bottom_z": 1.490151047706604,
+      "terrain_z": 1.4701510105522724,
+      "delta": 0.02000003715433163,
+      "role": "gameplay",
+      "tag": "spawn",
+      "export": true
+    },
+    {
+      "name": "SM_SPAWN_WEST_4",
+      "xy": [
+        -221.47381591796875,
+        35.1152229309082
+      ],
+      "bottom_z": 2.3618738651275635,
+      "terrain_z": 2.341873883111609,
+      "delta": 0.019999982015954654,
+      "role": "gameplay",
+      "tag": "spawn",
+      "export": true
+    },
+    {
+      "name": "SM_SPAWN_EAST_1",
+      "xy": [
+        404.8863525390625,
+        47.80582046508789
+      ],
+      "bottom_z": 0.683952808380127,
+      "terrain_z": 0.6639528582149195,
+      "delta": 0.019999950165207503,
+      "role": "gameplay",
+      "tag": "spawn",
+      "export": true
+    },
+    {
+      "name": "SM_SPAWN_EAST_2",
+      "xy": [
+        155.17279052734375,
+        -451.09857177734375
+      ],
+      "bottom_z": 4.516271114349365,
+      "terrain_z": 4.496271213912374,
+      "delta": 0.01999990043699107,
+      "role": "gameplay",
+      "tag": "spawn",
+      "export": true
+    },
+    {
+      "name": "SM_SPAWN_EAST_3",
+      "xy": [
+        380.6711120605469,
+        495.0
+      ],
+      "bottom_z": 3.5065364837646484,
+      "terrain_z": 3.4865361965282267,
+      "delta": 0.020000287236421777,
+      "role": "gameplay",
+      "tag": "spawn",
+      "export": true
+    },
+    {
+      "name": "SM_SPAWN_EAST_4",
+      "xy": [
+        156.0939178466797,
+        -129.47250366210938
+      ],
+      "bottom_z": 0.6484910249710083,
+      "terrain_z": 0.6284910627024007,
+      "delta": 0.019999962268607563,
+      "role": "gameplay",
+      "tag": "spawn",
+      "export": true
+    },
+    {
+      "name": "SM_OBJECTIVE_A",
+      "xy": [
+        -18.0,
+        -68.0
+      ],
+      "bottom_z": 1.4616819620132446,
+      "terrain_z": 1.4416819117355342,
+      "delta": 0.020000050277710457,
+      "role": "gameplay",
+      "tag": "objective",
+      "export": true
+    },
+    {
+      "name": "SM_OBJECTIVE_B",
+      "xy": [
+        32.0,
+        -66.0
+      ],
+      "bottom_z": 1.8387210369110107,
+      "terrain_z": 1.8187209831466669,
+      "delta": 0.020000053764343884,
+      "role": "gameplay",
+      "tag": "objective",
+      "export": true
+    },
+    {
+      "name": "SM_COVER_PALLET_0",
+      "xy": [
+        -18.0,
+        -84.0
+      ],
+      "bottom_z": 1.5886216163635254,
+      "terrain_z": 1.5686215945358273,
+      "delta": 0.02000002182769811,
+      "role": "gameplay",
+      "tag": "cover",
+      "export": true
+    },
+    {
+      "name": "SM_COVER_PALLET_1",
+      "xy": [
+        -10.0,
+        -84.0
+      ],
+      "bottom_z": 1.5773128271102905,
+      "terrain_z": 1.5573128045272828,
+      "delta": 0.020000022583007704,
+      "role": "gameplay",
+      "tag": "cover",
+      "export": true
+    },
+    {
+      "name": "SM_COVER_PALLET_2",
+      "xy": [
+        21.0,
+        -83.0
+      ],
+      "bottom_z": 1.4424827098846436,
+      "terrain_z": 1.4224827269897458,
+      "delta": 0.019999982894897794,
+      "role": "gameplay",
+      "tag": "cover",
+      "export": true
+    },
+    {
+      "name": "SM_COVER_PALLET_3",
+      "xy": [
+        30.0,
+        -83.0
+      ],
+      "bottom_z": 1.5384055376052856,
+      "terrain_z": 1.5184055935668948,
+      "delta": 0.019999944038390893,
+      "role": "gameplay",
+      "tag": "cover",
+      "export": true
+    },
+    {
+      "name": "SM_COVER_PALLET_4",
+      "xy": [
+        39.0,
+        -83.0
+      ],
+      "bottom_z": 1.694299340248108,
+      "terrain_z": 1.6742993706817626,
+      "delta": 0.01999996956634531,
+      "role": "gameplay",
+      "tag": "cover",
+      "export": true
+    },
+    {
+      "name": "SM_COVER_BARRIER_0",
+      "xy": [
+        -2.0,
+        -78.0
+      ],
+      "bottom_z": 1.4098870754241943,
+      "terrain_z": 1.3898870333404536,
+      "delta": 0.020000042083740732,
+      "role": "gameplay",
+      "tag": "cover",
+      "export": true
+    },
+    {
+      "name": "SM_COVER_BARRIER_1",
+      "xy": [
+        48.0,
+        -79.0
+      ],
+      "bottom_z": 1.8466367721557617,
+      "terrain_z": 1.8266368080978381,
+      "delta": 0.01999996405792359,
+      "role": "gameplay",
+      "tag": "cover",
+      "export": true
+    },
+    {
+      "name": "P_CrateShell_COVER_CASE_0",
+      "xy": [
+        -18.0,
+        -84.0
+      ],
+      "bottom_z": 1.5886216163635254,
+      "terrain_z": 1.5686215945358273,
+      "delta": 0.02000002182769811,
+      "role": "gameplay",
+      "tag": "cover",
+      "export": true
+    },
+    {
+      "name": "P_CrateShell_COVER_CASE_1",
+      "xy": [
+        -10.0,
+        -84.0
+      ],
+      "bottom_z": 1.5773128271102905,
+      "terrain_z": 1.5573128045272828,
+      "delta": 0.020000022583007704,
+      "role": "gameplay",
+      "tag": "cover",
+      "export": true
+    },
+    {
+      "name": "P_CrateShell_COVER_CASE_2",
+      "xy": [
+        21.0,
+        -83.0
+      ],
+      "bottom_z": 1.4424827098846436,
+      "terrain_z": 1.4224827269897458,
+      "delta": 0.019999982894897794,
+      "role": "gameplay",
+      "tag": "cover",
+      "export": true
+    },
+    {
+      "name": "P_CrateShell_COVER_CASE_3",
+      "xy": [
+        30.0,
+        -83.0
+      ],
+      "bottom_z": 1.5384055376052856,
+      "terrain_z": 1.5184055935668948,
+      "delta": 0.019999944038390893,
+      "role": "gameplay",
+      "tag": "cover",
+      "export": true
+    },
+    {
+      "name": "P_CrateShell_COVER_CASE_4",
+      "xy": [
+        39.0,
+        -83.0
+      ],
+      "bottom_z": 1.694299340248108,
+      "terrain_z": 1.6742993706817626,
+      "delta": 0.01999996956634531,
+      "role": "gameplay",
+      "tag": "cover",
+      "export": true
+    },
+    {
+      "name": "SM_COVER_CASE_0",
+      "xy": [
+        0.0,
+        0.0
+      ],
+      "bottom_z": -0.2750000059604645,
+      "terrain_z": 2.7249999046325684,
+      "delta": -2.999999910593033,
+      "role": "reference",
+      "tag": "cover_template",
+      "export": false
+    },
+    {
+      "name": "SM_COVER_CASE_1",
+      "xy": [
+        0.0,
+        0.0
+      ],
+      "bottom_z": -0.2750000059604645,
+      "terrain_z": 2.7249999046325684,
+      "delta": -2.999999910593033,
+      "role": "reference",
+      "tag": "cover_template",
+      "export": false
+    },
+    {
+      "name": "SM_COVER_CASE_2",
+      "xy": [
+        0.0,
+        0.0
+      ],
+      "bottom_z": -0.2750000059604645,
+      "terrain_z": 2.7249999046325684,
+      "delta": -2.999999910593033,
+      "role": "reference",
+      "tag": "cover_template",
+      "export": false
+    },
+    {
+      "name": "SM_COVER_CASE_3",
+      "xy": [
+        0.0,
+        0.0
+      ],
+      "bottom_z": -0.2750000059604645,
+      "terrain_z": 2.7249999046325684,
+      "delta": -2.999999910593033,
+      "role": "reference",
+      "tag": "cover_template",
+      "export": false
+    },
+    {
+      "name": "SM_COVER_CASE_4",
+      "xy": [
+        0.0,
+        0.0
+      ],
+      "bottom_z": -0.2750000059604645,
+      "terrain_z": 2.7249999046325684,
+      "delta": -2.999999910593033,
+      "role": "reference",
+      "tag": "cover_template",
+      "export": false
+    }
+  ],
+  "buildings": {
+    "inside": 1643,
+    "outside": 73,
+    "min": -3.930386016648413e-07,
+    "max": 4.1161209107798413e-07,
+    "median": -2.903480122995461e-09,
+    "abs_max": 4.1161209107798413e-07,
+    ">0.05m": 0
+  }
+}

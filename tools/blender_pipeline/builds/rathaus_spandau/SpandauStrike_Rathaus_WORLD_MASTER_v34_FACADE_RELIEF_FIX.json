@@ -1,0 +1,25 @@
+{
+  "source": "C:\\Users\\dezen\\Desktop\\135er-Spandau-Defeat\\tools\\blender_pipeline\\builds\\rathaus_spandau\\SpandauStrike_Rathaus_WORLD_MASTER_v33_HISTORIC_FACADE.blend",
+  "output": "C:\\Users\\dezen\\Desktop\\135er-Spandau-Defeat\\tools\\blender_pipeline\\builds\\rathaus_spandau\\SpandauStrike_Rathaus_WORLD_MASTER_v34_FACADE_RELIEF_FIX.blend",
+  "created_count": 46,
+  "retired": [
+    "V33_FacadeBay_-18",
+    "V33_FacadeBay_-23",
+    "V33_FacadeBay_-28",
+    "V33_FacadeBay_-33",
+    "V33_FacadeBay_-38",
+    "V33_FacadeBay_-43",
+    "V33_FacadeBay_-48",
+    "V33_FacadeBay_18",
+    "V33_FacadeBay_23",
+    "V33_FacadeBay_28",
+    "V33_FacadeBay_33",
+    "V33_FacadeBay_38",
+    "V33_FacadeBay_43",
+    "V33_FacadeBay_48",
+    "V33_PedimentInscriptionL",
+    "V33_PedimentInscriptionR",
+    "V33_PedimentMedallion",
+    "V33_PedimentShield"
+  ]
+}

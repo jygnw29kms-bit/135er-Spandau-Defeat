@@ -23,6 +23,19 @@ for o in scene.objects:
         'scale_xyz': [scl.x, scl.y, scl.z],
         'collections': [c.name for c in o.users_collection],
     }
+    metadata = {}
+    for k in o.keys():
+        if str(k).startswith('ss_') and k not in ('ss_role','ss_tag','ss_export'):
+            v = o.get(k)
+            if isinstance(v, (str, int, float, bool)) or v is None:
+                metadata[str(k)] = v
+            elif hasattr(v, '__iter__'):
+                try: metadata[str(k)] = list(v)
+                except Exception: metadata[str(k)] = str(v)
+            else:
+                metadata[str(k)] = str(v)
+    if metadata:
+        row['metadata'] = metadata
     if o.type == 'MESH' and o.data:
         row['mesh_data'] = o.data.name
         row['vertices'] = len(o.data.vertices)
@@ -54,4 +67,5 @@ with open(out, 'w', encoding='utf-8') as f:
     json.dump(manifest, f, indent=2, ensure_ascii=False)
 print('MANIFEST=' + out)
 print('ROLES=' + json.dumps(roles, sort_keys=True))
+
 
