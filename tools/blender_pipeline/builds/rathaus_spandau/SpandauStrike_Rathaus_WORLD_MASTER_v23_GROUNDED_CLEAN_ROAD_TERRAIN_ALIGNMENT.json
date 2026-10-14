@@ -1,0 +1,23 @@
+{
+  "file": "C:\\Users\\dezen\\Desktop\\135er-Spandau-Defeat\\tools\\blender_pipeline\\builds\\rathaus_spandau\\SpandauStrike_Rathaus_WORLD_MASTER_v23_GROUNDED_CLEAN.blend",
+  "terrain_object": "SM_Rathaus_DGM1_1000m_v21",
+  "road_object": "SM_Rathaus_ROADS_DGM_v21",
+  "sampling": "bilinear 513x513 DGM",
+  "road_vertices": 17688,
+  "inside_terrain": 15381,
+  "outside_terrain": 2307,
+  "delta_z_m": {
+    "min": 0.02999976303064411,
+    "max": 0.03000023838612975,
+    "mean": 0.02999999925877273,
+    "median": 0.029999998676068396,
+    "abs_median": 0.029999998676068396,
+    "abs_p95": 0.030000106623448985,
+    "abs_p99": 0.030000148096978572
+  },
+  "threshold_counts": {
+    ">0.05m": 0,
+    ">0.10m": 0,
+    ">0.25m": 0
+  }
+}

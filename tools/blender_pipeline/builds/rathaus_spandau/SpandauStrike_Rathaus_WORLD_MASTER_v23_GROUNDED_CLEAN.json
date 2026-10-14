@@ -1,0 +1,250 @@
+{
+  "source": "C:\\Users\\dezen\\Desktop\\135er-Spandau-Defeat\\tools\\blender_pipeline\\builds\\rathaus_spandau\\SpandauStrike_Rathaus_WORLD_MASTER_v21_GEOFRAME.blend",
+  "output": "C:\\Users\\dezen\\Desktop\\135er-Spandau-Defeat\\tools\\blender_pipeline\\builds\\rathaus_spandau\\SpandauStrike_Rathaus_WORLD_MASTER_v23_GROUNDED_CLEAN.blend",
+  "objectives": [
+    {
+      "name": "SM_OBJECTIVE_A",
+      "xy": [
+        -18.0,
+        -68.0
+      ],
+      "terrain_z": 1.4416819117355342,
+      "mesh_z_shift": 1.5016819108414645
+    },
+    {
+      "name": "SM_OBJECTIVE_B",
+      "xy": [
+        32.0,
+        -66.0
+      ],
+      "terrain_z": 1.8187209831466669,
+      "mesh_z_shift": 1.8787209822525972
+    }
+  ],
+  "legacy_case_templates": [
+    "SM_COVER_CASE_0",
+    "SM_COVER_CASE_1",
+    "SM_COVER_CASE_2",
+    "SM_COVER_CASE_3",
+    "SM_COVER_CASE_4"
+  ],
+  "simple_cover": [
+    {
+      "name": "SM_COVER_PALLET_0",
+      "xy": [
+        -18.0,
+        -84.0
+      ],
+      "dz": 2.1386216064567565
+    },
+    {
+      "name": "SM_COVER_PALLET_1",
+      "xy": [
+        -10.0,
+        -84.0
+      ],
+      "dz": 2.127312816448212
+    },
+    {
+      "name": "SM_COVER_PALLET_2",
+      "xy": [
+        21.0,
+        -83.0
+      ],
+      "dz": 1.9924827389106747
+    },
+    {
+      "name": "SM_COVER_PALLET_3",
+      "xy": [
+        30.0,
+        -83.0
+      ],
+      "dz": 2.0884056054878237
+    },
+    {
+      "name": "SM_COVER_PALLET_4",
+      "xy": [
+        39.0,
+        -83.0
+      ],
+      "dz": 2.2442993826026916
+    },
+    {
+      "name": "SM_COVER_BARRIER_0",
+      "xy": [
+        -2.0,
+        -78.0
+      ],
+      "dz": 2.1598870333404534
+    },
+    {
+      "name": "SM_COVER_BARRIER_1",
+      "xy": [
+        48.0,
+        -79.0
+      ],
+      "dz": 2.596636808097838
+    }
+  ],
+  "crate_groups": [
+    {
+      "group": "COVER_CASE_0",
+      "objects": 9,
+      "xy": [
+        -18.0,
+        -84.0
+      ],
+      "terrain_z": 1.5686215945358273,
+      "dz": 0.5136215468521115
+    },
+    {
+      "group": "COVER_CASE_1",
+      "objects": 9,
+      "xy": [
+        -10.0,
+        -84.0
+      ],
+      "terrain_z": 1.5573128045272828,
+      "dz": 0.502312756843567
+    },
+    {
+      "group": "COVER_CASE_2",
+      "objects": 9,
+      "xy": [
+        21.0,
+        -83.0
+      ],
+      "terrain_z": 1.4224827269897458,
+      "dz": 0.36748267930602996
+    },
+    {
+      "group": "COVER_CASE_3",
+      "objects": 9,
+      "xy": [
+        30.0,
+        -83.0
+      ],
+      "terrain_z": 1.5184055935668948,
+      "dz": 0.46340554588317895
+    },
+    {
+      "group": "COVER_CASE_4",
+      "objects": 9,
+      "xy": [
+        39.0,
+        -83.0
+      ],
+      "terrain_z": 1.6742993706817626,
+      "dz": 0.6192993229980468
+    }
+  ],
+  "spawns": [
+    {
+      "name": "SM_SPAWN_WEST_1",
+      "xy": [
+        -364.7425231933594,
+        304.720458984375
+      ],
+      "dz": -1.1591221703662504
+    },
+    {
+      "name": "SM_SPAWN_WEST_2",
+      "xy": [
+        -360.3298034667969,
+        -362.7577209472656
+      ],
+      "dz": -1.1778424684726556
+    },
+    {
+      "name": "SM_SPAWN_WEST_3",
+      "xy": [
+        -495.0,
+        -64.53517150878906
+      ],
+      "dz": -1.4080790652839092
+    },
+    {
+      "name": "SM_SPAWN_WEST_4",
+      "xy": [
+        -221.47381591796875,
+        35.1152229309082
+      ],
+      "dz": -0.6384680091308228
+    },
+    {
+      "name": "SM_SPAWN_EAST_1",
+      "xy": [
+        404.8863525390625,
+        47.80582046508789
+      ],
+      "dz": -2.8903026082462624
+    },
+    {
+      "name": "SM_SPAWN_EAST_2",
+      "xy": [
+        155.17279052734375,
+        -451.09857177734375
+      ],
+      "dz": 2.315856079482442
+    },
+    {
+      "name": "SM_SPAWN_EAST_3",
+      "xy": [
+        380.6711120605469,
+        495.0
+      ],
+      "dz": -0.6984560977832968
+    },
+    {
+      "name": "SM_SPAWN_EAST_4",
+      "xy": [
+        156.0939178466797,
+        -129.47250366210938
+      ],
+      "dz": -0.6117385248525309
+    },
+    {
+      "name": "SM_SPAWN_RING_WEST_1",
+      "xy": [
+        -364.7425231933594,
+        304.720458984375
+      ],
+      "dz": -1.4041220559253325
+    },
+    {
+      "name": "SM_SPAWN_RING_WEST_2",
+      "xy": [
+        -360.3298034667969,
+        -362.7577209472656
+      ],
+      "dz": -1.4228423540317376
+    },
+    {
+      "name": "SM_SPAWN_RING_EAST_1",
+      "xy": [
+        404.8863525390625,
+        47.80582046508789
+      ],
+      "dz": -3.1353024938053444
+    },
+    {
+      "name": "SM_SPAWN_RING_EAST_2",
+      "xy": [
+        155.17279052734375,
+        -451.09857177734375
+      ],
+      "dz": 2.07085619392336
+    }
+  ],
+  "buildings": {
+    "components": 1716,
+    "inside": 1643,
+    "outside": 73,
+    "shift_min": -3.3750805243775424,
+    "shift_max": 5.056994259141691,
+    "shift_median": 0.1268209713914792,
+    "gt_0_5": 654,
+    "gt_1": 231,
+    "gt_2": 67
+  }
+}
