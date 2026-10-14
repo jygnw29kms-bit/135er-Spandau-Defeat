@@ -1,0 +1,22 @@
+name: Validate Spandau Strike repository scope
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  validate-scope:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Validate repository scope
+        run: |
+          python tools/repo/validate_spandau_scope.py
