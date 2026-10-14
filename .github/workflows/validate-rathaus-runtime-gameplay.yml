@@ -37,6 +37,10 @@ jobs:
         run: |
           python tools/gameplay/validate_gameplay_config.py
 
+      - name: Generate UE gameplay tag snippet
+        run: |
+          python tools/gameplay/generate_ue_gameplay_tag_snippet.py --out /tmp/SpandauStrikeGameplayTags.ini
+
       - name: Validate and generate Rathaus handoff
         run: |
           python tools/gameplay/build_runtime_gameplay_handoff.py --out /tmp/runtime_gameplay_handoff_v42.json
