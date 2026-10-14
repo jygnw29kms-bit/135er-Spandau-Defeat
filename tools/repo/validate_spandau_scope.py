@@ -2,6 +2,7 @@
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
+SELF = Path(__file__).resolve()
 SCAN_ROOTS = [ROOT / "docs", ROOT / "tools", ROOT / "ue5", ROOT / "web"]
 TEXT_SUFFIXES = {
     ".md", ".txt", ".py", ".json", ".ini", ".yml", ".yaml", ".cpp", ".h", ".cs",
@@ -31,6 +32,8 @@ EXCLUDED_PARTS = {".git", "__pycache__", "node_modules", "Binaries", "Intermedia
 
 
 def should_scan(path: Path) -> bool:
+    if path.resolve() == SELF:
+        return False
     if any(part in EXCLUDED_PARTS for part in path.parts):
         return False
     return path.suffix.lower() in TEXT_SUFFIXES
