@@ -74,6 +74,10 @@ jobs:
         run: |
           python tools/gameplay/validate_frontline_flow.py
 
+      - name: Validate spawn policy
+        run: |
+          python tools/gameplay/validate_spawn_policy.py
+
       - name: Generate UE gameplay tag snippet
         run: |
           python tools/gameplay/generate_ue_gameplay_tag_snippet.py --out /tmp/SpandauStrikeGameplayTags.ini
@@ -95,6 +99,11 @@ jobs:
         run: |
           python tools/gameplay/build_ue_import_plan.py --out /tmp/runtime_import_plan_v1.json
           test -s /tmp/runtime_import_plan_v1.json
+
+      - name: Generate coordinate invariants
+        run: |
+          python tools/gameplay/build_coordinate_invariants.py --out /tmp/rathaus_coordinate_invariants_v1.json
+          test -s /tmp/rathaus_coordinate_invariants_v1.json
 
       - name: Generate Rathaus map flow report
         run: |
@@ -123,6 +132,7 @@ jobs:
           path: |
             /tmp/runtime_gameplay_handoff_v42.json
             /tmp/runtime_import_plan_v1.json
+            /tmp/rathaus_coordinate_invariants_v1.json
             /tmp/rathaus_map_flow_report_v1.json
             /tmp/rathaus_spawn_safety_report_v1.json
             /tmp/gameplay_balance_report_v1.json
@@ -136,6 +146,7 @@ jobs:
             ue5/SpandauStrike/Design/Gameplay/attribute_contracts_v1.json
             ue5/SpandauStrike/Design/Gameplay/movement_contract_v1.json
             ue5/SpandauStrike/Design/Gameplay/objective_state_machine_v1.json
+            ue5/SpandauStrike/Design/Gameplay/spawn_policy_v1.json
             ue5/SpandauStrike/Design/Gameplay/rathaus_lane_flow_v1.json
             ue5/SpandauStrike/Design/Gameplay/rathaus_combat_flow_v1.json
           if-no-files-found: error
