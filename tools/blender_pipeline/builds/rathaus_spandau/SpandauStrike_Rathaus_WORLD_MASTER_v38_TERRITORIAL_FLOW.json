@@ -1,0 +1,106 @@
+{
+  "source": "C:\\Users\\dezen\\Desktop\\135er-Spandau-Defeat\\tools\\blender_pipeline\\builds\\rathaus_spandau\\SpandauStrike_Rathaus_WORLD_MASTER_v37_TOWER_TRANSITION.blend",
+  "output": "C:\\Users\\dezen\\Desktop\\135er-Spandau-Defeat\\tools\\blender_pipeline\\builds\\rathaus_spandau\\SpandauStrike_Rathaus_WORLD_MASTER_v38_TERRITORIAL_FLOW.blend",
+  "flags": [
+    {
+      "name": "FLAG_1_WEST_HOME",
+      "x": -275.0,
+      "y": 0.0,
+      "z": 3.139007568359375,
+      "required_players": 1,
+      "side": "west",
+      "zone": "home"
+    },
+    {
+      "name": "FLAG_2_WEST_STREET",
+      "x": -145.0,
+      "y": -97.3,
+      "z": 1.3743438720703125,
+      "required_players": 1,
+      "side": "west",
+      "zone": "street"
+    },
+    {
+      "name": "FLAG_3_RATHAUS",
+      "x": 5.0,
+      "y": -68.0,
+      "z": 1.8333587646484375,
+      "required_players": 2,
+      "side": "neutral",
+      "zone": "rathaus"
+    },
+    {
+      "name": "FLAG_4_EAST_STREET",
+      "x": 130.0,
+      "y": 73.7,
+      "z": 3.6955718994140625,
+      "required_players": 1,
+      "side": "east",
+      "zone": "street"
+    },
+    {
+      "name": "FLAG_5_EAST_HOME",
+      "x": 235.0,
+      "y": -10.0,
+      "z": 2.2316970825195312,
+      "required_players": 1,
+      "side": "east",
+      "zone": "home"
+    }
+  ],
+  "crosslinks": {
+    "CROSSLINK_WEST": [
+      [
+        -156.63,
+        -59.92
+      ],
+      [
+        -66.33,
+        -101.99
+      ],
+      [
+        -12.87,
+        -191.66
+      ]
+    ],
+    "CROSSLINK_MID": [
+      [
+        -70.04,
+        64.18
+      ],
+      [
+        35.39,
+        -32.43
+      ],
+      [
+        114.28,
+        -104.72
+      ]
+    ],
+    "CROSSLINK_EAST": [
+      [
+        46.04,
+        161.26
+      ],
+      [
+        95.82,
+        74.96
+      ],
+      [
+        189.81,
+        29.52
+      ]
+    ]
+  },
+  "created": [
+    "FLAG_1_WEST_HOME",
+    "FLAG_2_WEST_STREET",
+    "FLAG_3_RATHAUS",
+    "FLAG_4_EAST_STREET",
+    "FLAG_5_EAST_HOME",
+    "CROSSLINK_WEST",
+    "CROSSLINK_MID",
+    "CROSSLINK_EAST"
+  ],
+  "design": "5-flag linear frontline, 3 primary lanes, 3 crosslinks, central 2-player Rathaus capture"
+}

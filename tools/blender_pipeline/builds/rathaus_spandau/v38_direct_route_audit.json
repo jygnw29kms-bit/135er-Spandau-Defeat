@@ -1,0 +1,210 @@
+[
+  {
+    "spawn": "SM_SPAWN_EAST_1",
+    "target": "SM_OBJECTIVE_A",
+    "distance_m": 407.7,
+    "blocked": true,
+    "blocker": "UCX_COL_Rathaus_Main",
+    "hit_distance_m": 351.31,
+    "hit": [
+      56.0,
+      6.61,
+      1.57
+    ]
+  },
+  {
+    "spawn": "SM_SPAWN_EAST_1",
+    "target": "SM_OBJECTIVE_B",
+    "distance_m": 407.7,
+    "blocked": true,
+    "blocker": "UCX_COL_Rathaus_Main",
+    "hit_distance_m": 351.31,
+    "hit": [
+      56.0,
+      6.61,
+      1.57
+    ]
+  },
+  {
+    "spawn": "SM_SPAWN_EAST_2",
+    "target": "SM_OBJECTIVE_A",
+    "distance_m": 477.06,
+    "blocked": true,
+    "blocker": "UCX_COL_FULLMAP_SurroundingBuildings",
+    "hit_distance_m": 113.31,
+    "hit": [
+      118.32,
+      -343.96,
+      5.03
+    ]
+  },
+  {
+    "spawn": "SM_SPAWN_EAST_2",
+    "target": "SM_OBJECTIVE_B",
+    "distance_m": 477.06,
+    "blocked": true,
+    "blocker": "UCX_COL_FULLMAP_SurroundingBuildings",
+    "hit_distance_m": 113.31,
+    "hit": [
+      118.32,
+      -343.96,
+      5.03
+    ]
+  },
+  {
+    "spawn": "SM_SPAWN_EAST_3",
+    "target": "SM_OBJECTIVE_A",
+    "distance_m": 624.46,
+    "blocked": true,
+    "blocker": "UCX_COL_FULLMAP_SurroundingBuildings",
+    "hit_distance_m": 22.75,
+    "hit": [
+      366.81,
+      476.97,
+      5.0
+    ]
+  },
+  {
+    "spawn": "SM_SPAWN_EAST_3",
+    "target": "SM_OBJECTIVE_B",
+    "distance_m": 624.46,
+    "blocked": true,
+    "blocker": "UCX_COL_FULLMAP_SurroundingBuildings",
+    "hit_distance_m": 22.75,
+    "hit": [
+      366.81,
+      476.97,
+      5.0
+    ]
+  },
+  {
+    "spawn": "SM_SPAWN_EAST_4",
+    "target": "SM_OBJECTIVE_A",
+    "distance_m": 202.8,
+    "blocked": true,
+    "blocker": "UCX_COL_Rathaus_Main",
+    "hit_distance_m": 160.51,
+    "hit": [
+      32.55,
+      -27.0,
+      1.62
+    ]
+  },
+  {
+    "spawn": "SM_SPAWN_EAST_4",
+    "target": "SM_OBJECTIVE_B",
+    "distance_m": 202.8,
+    "blocked": true,
+    "blocker": "UCX_COL_Rathaus_Main",
+    "hit_distance_m": 160.51,
+    "hit": [
+      32.55,
+      -27.0,
+      1.62
+    ]
+  },
+  {
+    "spawn": "SM_SPAWN_WEST_1",
+    "target": "SM_OBJECTIVE_A",
+    "distance_m": 475.29,
+    "blocked": true,
+    "blocker": "UCX_COL_FULLMAP_SurroundingBuildings",
+    "hit_distance_m": 21.34,
+    "hit": [
+      -348.37,
+      291.04,
+      3.8
+    ]
+  },
+  {
+    "spawn": "SM_SPAWN_WEST_1",
+    "target": "SM_OBJECTIVE_B",
+    "distance_m": 475.29,
+    "blocked": true,
+    "blocker": "UCX_COL_FULLMAP_SurroundingBuildings",
+    "hit_distance_m": 21.34,
+    "hit": [
+      -348.37,
+      291.04,
+      3.8
+    ]
+  },
+  {
+    "spawn": "SM_SPAWN_WEST_2",
+    "target": "SM_OBJECTIVE_A",
+    "distance_m": 511.31,
+    "blocked": true,
+    "blocker": "UCX_COL_FULLMAP_SurroundingBuildings",
+    "hit_distance_m": 18.13,
+    "hit": [
+      -347.55,
+      -349.89,
+      3.42
+    ]
+  },
+  {
+    "spawn": "SM_SPAWN_WEST_2",
+    "target": "SM_OBJECTIVE_B",
+    "distance_m": 511.31,
+    "blocked": true,
+    "blocker": "UCX_COL_FULLMAP_SurroundingBuildings",
+    "hit_distance_m": 18.13,
+    "hit": [
+      -347.55,
+      -349.89,
+      3.42
+    ]
+  },
+  {
+    "spawn": "SM_SPAWN_WEST_3",
+    "target": "SM_OBJECTIVE_A",
+    "distance_m": 499.19,
+    "blocked": true,
+    "blocker": "UCX_COL_FULLMAP_SurroundingBuildings",
+    "hit_distance_m": 13.09,
+    "hit": [
+      -482.02,
+      -62.84,
+      3.07
+    ]
+  },
+  {
+    "spawn": "SM_SPAWN_WEST_3",
+    "target": "SM_OBJECTIVE_B",
+    "distance_m": 499.19,
+    "blocked": true,
+    "blocker": "UCX_COL_FULLMAP_SurroundingBuildings",
+    "hit_distance_m": 13.09,
+    "hit": [
+      -482.02,
+      -62.84,
+      3.07
+    ]
+  },
+  {
+    "spawn": "SM_SPAWN_WEST_4",
+    "target": "SM_OBJECTIVE_A",
+    "distance_m": 224.25,
+    "blocked": true,
+    "blocker": "UCX_COL_FULLMAP_SurroundingBuildings",
+    "hit_distance_m": 158.39,
+    "hit": [
+      -65.05,
+      10.31,
+      2.2
+    ]
+  },
+  {
+    "spawn": "SM_SPAWN_WEST_4",
+    "target": "SM_OBJECTIVE_B",
+    "distance_m": 224.25,
+    "blocked": true,
+    "blocker": "UCX_COL_FULLMAP_SurroundingBuildings",
+    "hit_distance_m": 158.39,
+    "hit": [
+      -65.05,
+      10.31,
+      2.2
+    ]
+  }
+]

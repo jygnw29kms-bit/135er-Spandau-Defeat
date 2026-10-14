@@ -1,0 +1,31 @@
+{
+  "source": "C:\\Users\\dezen\\Desktop\\135er-Spandau-Defeat\\tools\\blender_pipeline\\builds\\rathaus_spandau\\SpandauStrike_Rathaus_WORLD_MASTER_v38_TERRITORIAL_FLOW.blend",
+  "output": "C:\\Users\\dezen\\Desktop\\135er-Spandau-Defeat\\tools\\blender_pipeline\\builds\\rathaus_spandau\\SpandauStrike_Rathaus_WORLD_MASTER_v39_DODS_COMBAT_FLOW.blend",
+  "retired": [
+    "SM_OBJECTIVE_A",
+    "SM_OBJECTIVE_B"
+  ],
+  "created": [
+    "SMOKE_FRONT",
+    "FLANK_FRONT",
+    "SMOKE_WEST",
+    "FLANK_WEST",
+    "SMOKE_EAST",
+    "FLANK_EAST",
+    "SMOKE_REAR",
+    "FLANK_REAR",
+    "MG_NEST_00",
+    "SNIPER_POS_00",
+    "MG_NEST_01",
+    "SNIPER_POS_01",
+    "MG_NEST_02",
+    "SNIPER_POS_02"
+  ],
+  "rules": {
+    "flags": 5,
+    "center_players": 2,
+    "contested": "stop",
+    "backcap": false,
+    "mg_counterplay": "smoke+flank"
+  }
+}
