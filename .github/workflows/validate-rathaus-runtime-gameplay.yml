@@ -1,0 +1,35 @@
+name: Validate Rathaus runtime gameplay
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'tools/gameplay/**'
+      - 'tools/blender_pipeline/builds/rathaus_spandau/SpandauStrike_Rathaus_WORLD_MASTER_v42_RUNTIME_OBJECTIVES_EXPORT_MANIFEST.json'
+      - '.github/workflows/validate-rathaus-runtime-gameplay.yml'
+  pull_request:
+    paths:
+      - 'tools/gameplay/**'
+      - 'tools/blender_pipeline/builds/rathaus_spandau/SpandauStrike_Rathaus_WORLD_MASTER_v42_RUNTIME_OBJECTIVES_EXPORT_MANIFEST.json'
+      - '.github/workflows/validate-rathaus-runtime-gameplay.yml'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Validate and generate handoff
+        run: |
+          python tools/gameplay/build_runtime_gameplay_handoff.py --out /tmp/runtime_gameplay_handoff_v42.json
+
+      - name: Verify project-owned naming
+        shell: bash
+        run: |
+          ! grep -RniE 'day of defeat|dod:s|dods' tools/gameplay docs/UE5_RUNTIME_GAMEPLAY_HANDOFF.md
