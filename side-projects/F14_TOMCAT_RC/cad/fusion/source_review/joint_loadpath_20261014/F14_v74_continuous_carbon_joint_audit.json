@@ -1,0 +1,74 @@
+{
+  "status": "V74_CONTINUOUS_CARBON_JOINT_GATE",
+  "source": {
+    "path": "C:\\Users\\dezen\\Desktop\\F14-RC-Model\\workspace\\RC-F14-Tomcat\\Fusion\\Exports\\Current\\source_shell_v53\\F14_SELECTIVE_RIB_CLEARANCE_REVIEW_v73.f3d",
+    "sha256": "cc750963e204bf82e222723f84d5cf73ce2cf23434c095d2836417d40bc759c6",
+    "joint_y_mm": 363.9687853,
+    "required_continuity_each_side_mm": 12
+  },
+  "carbon_bodies": [
+    {
+      "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+      "y_min_mm": 148.8263775443693,
+      "y_max_mm": 406.99710774591983,
+      "span_mm": 258.17073020155055,
+      "crosses_joint": true,
+      "covers_required_joint_zone": true
+    },
+    {
+      "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+      "y_min_mm": 148.8263775443693,
+      "y_max_mm": 406.99710774591983,
+      "span_mm": 258.17073020155055,
+      "crosses_joint": true,
+      "covers_required_joint_zone": true
+    },
+    {
+      "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+      "y_min_mm": 148.8263775443693,
+      "y_max_mm": 406.99710774591983,
+      "span_mm": 258.17073020155055,
+      "crosses_joint": true,
+      "covers_required_joint_zone": true
+    }
+  ],
+  "rib_end_faces": [
+    {
+      "rib": "CANDIDATE_RIB_ZERO_CLEARANCE_-3",
+      "end_faces": [
+        {
+          "y_mm": 361.7687853,
+          "area_mm2": 180.60305211721828
+        },
+        {
+          "y_mm": 360.9687853,
+          "area_mm2": 183.13113469068884
+        }
+      ],
+      "total_end_face_area_mm2": 363.7341868079071
+    },
+    {
+      "rib": "CANDIDATE_RIB_ZERO_CLEARANCE_3",
+      "end_faces": [
+        {
+          "y_mm": 366.9687853,
+          "area_mm2": 172.5856297805344
+        },
+        {
+          "y_mm": 367.76878529999914,
+          "area_mm2": 170.10650831447217
+        }
+      ],
+      "total_end_face_area_mm2": 342.69213809500656
+    }
+  ],
+  "carbon_continuity_pass": true,
+  "required_continuity_each_side_mm": 12.0,
+  "printed_joint_primary_bending_member": false,
+  "joint_geometry_designed": false,
+  "torsion_transfer_verified": false,
+  "structural_capacity_verified": false,
+  "print_release": false,
+  "flight_release": false,
+  "study_source_sha256": "054bd1235e099176ace75e49b5c54b59307be1bfddaafbe0ecea575779d6fe61"
+}
