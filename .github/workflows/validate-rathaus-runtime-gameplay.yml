@@ -69,6 +69,11 @@ jobs:
         run: |
           python tools/gameplay/build_runtime_gameplay_handoff.py --out /tmp/runtime_gameplay_handoff_v42.json
 
+      - name: Generate fingerprinted UE import plan
+        run: |
+          python tools/gameplay/build_ue_import_plan.py --out /tmp/runtime_import_plan_v1.json
+          test -s /tmp/runtime_import_plan_v1.json
+
       - name: Verify project-owned naming
         shell: bash
         run: |
@@ -80,6 +85,7 @@ jobs:
           name: spandau-strike-rathaus-runtime-handoff
           path: |
             /tmp/runtime_gameplay_handoff_v42.json
+            /tmp/runtime_import_plan_v1.json
             /tmp/SpandauStrikeGameplayTags.ini
             /tmp/SpandauStrikeDataTables/*.csv
             ue5/SpandauStrike/Design/Gameplay/gameplay_bundle_v1.json
