@@ -86,6 +86,10 @@ jobs:
         run: |
           python tools/gameplay/validate_bipod_surface_contract.py
 
+      - name: Validate hit zone and damage contract
+        run: |
+          python tools/gameplay/validate_damage_contract.py
+
       - name: Generate UE gameplay tag snippet
         run: |
           python tools/gameplay/generate_ue_gameplay_tag_snippet.py --out /tmp/SpandauStrikeGameplayTags.ini
@@ -157,6 +161,7 @@ jobs:
             ue5/SpandauStrike/Design/Gameplay/spawn_policy_v1.json
             ue5/SpandauStrike/Design/Gameplay/ue_asset_mapping_v1.json
             ue5/SpandauStrike/Design/Gameplay/bipod_surface_contract_v1.json
+            ue5/SpandauStrike/Design/Gameplay/damage_contract_v1.json
             ue5/SpandauStrike/Design/Gameplay/rathaus_lane_flow_v1.json
             ue5/SpandauStrike/Design/Gameplay/rathaus_combat_flow_v1.json
           if-no-files-found: error
