@@ -1,0 +1,99 @@
+{
+  "schema": "SpandauStrike.CoreGameplayTuning.v1",
+  "status": "production_baseline_pending_playtest_calibration",
+  "movement": {
+    "walk_speed_cm_s": 260.0,
+    "run_speed_cm_s": 325.0,
+    "crouch_speed_cm_s": 210.0,
+    "prone_speed_cm_s": 115.0,
+    "sprint_speed_light_cm_s": 430.0,
+    "sprint_speed_heavy_cm_s": 370.0,
+    "air_control": 0.2,
+    "direction_reversal_acceleration_multiplier": 0.72,
+    "landing_recovery_s": 0.25,
+    "prone_enter_s": 0.75,
+    "prone_exit_s": 0.95,
+    "prone_view_yaw_deg": 80.0,
+    "prone_view_pitch_min_deg": -35.0,
+    "prone_view_pitch_max_deg": 45.0
+  },
+  "stamina": {
+    "max": 100.0,
+    "sprint_drain_per_s": 17.0,
+    "jump_cost": 22.0,
+    "regen_delay_s": 1.2,
+    "regen_per_s": 22.0,
+    "low_threshold_percent": 40.0,
+    "critical_threshold_percent": 20.0,
+    "sway_multiplier_low": 1.15,
+    "sway_multiplier_critical": 1.35,
+    "sway_multiplier_exhausted": 1.6
+  },
+  "stance_weapon_multipliers": {
+    "standing": {
+      "spread": 1.0,
+      "recoil": 1.0,
+      "sway": 1.0
+    },
+    "crouched": {
+      "spread": 0.8,
+      "recoil": 0.82,
+      "sway": 0.8
+    },
+    "prone": {
+      "spread": 0.55,
+      "recoil": 0.65,
+      "sway": 0.6
+    }
+  },
+  "bipod": {
+    "yaw_limit_deg": 32.0,
+    "pitch_min_deg": -15.0,
+    "pitch_max_deg": 20.0,
+    "spread_multiplier": 0.22,
+    "recoil_multiplier": 0.28,
+    "sway_multiplier": 0.1
+  },
+  "classes": {
+    "Rifleman": {
+      "speed_multiplier": 0.96,
+      "acceleration_multiplier": 0.96,
+      "stamina_drain_multiplier": 1.0
+    },
+    "Assault": {
+      "speed_multiplier": 1.0,
+      "acceleration_multiplier": 1.0,
+      "stamina_drain_multiplier": 0.95
+    },
+    "Support": {
+      "speed_multiplier": 0.93,
+      "acceleration_multiplier": 0.92,
+      "stamina_drain_multiplier": 1.05
+    },
+    "Sniper": {
+      "speed_multiplier": 0.9,
+      "acceleration_multiplier": 0.9,
+      "stamina_drain_multiplier": 1.08
+    },
+    "MG": {
+      "speed_multiplier": 0.82,
+      "acceleration_multiplier": 0.82,
+      "stamina_drain_multiplier": 1.2
+    },
+    "Rocket": {
+      "speed_multiplier": 0.86,
+      "acceleration_multiplier": 0.86,
+      "stamina_drain_multiplier": 1.15
+    }
+  },
+  "territorial_control": {
+    "objective_count": 5,
+    "capture_duration_s": 8.0,
+    "center_objective_sequence": 3,
+    "center_required_players": 2,
+    "contested_behavior": "pause",
+    "backcap_allowed": false,
+    "frontline_mode": "linear_adjacent",
+    "progress_decay": "hold_then_slow"
+  }
+}
