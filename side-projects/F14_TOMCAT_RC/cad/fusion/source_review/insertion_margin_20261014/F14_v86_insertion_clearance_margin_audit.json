@@ -1,0 +1,1044 @@
+{
+  "status": "V86_INSERTION_CLEARANCE_MARGIN_SCAN",
+  "source": {
+    "sha256": "75d4801b4a1148a0faa836aa846e9aee25e622c769ac118838fecf1023051a42",
+    "insertion_mm": 5,
+    "path": "C:\\Users\\dezen\\Desktop\\F14-RC-Model\\workspace\\RC-F14-Tomcat\\Fusion\\Exports\\Current\\source_shell_v53\\F14_OUTER_INSERT_SWEEP_CLEARED_v83.f3d",
+    "skin_target_clearance_mm": 0.15,
+    "carbon_target_clearance_mm": 0.1,
+    "step_mm": 0.1
+  },
+  "samples": [
+    {
+      "outboard_translation_mm": 5.0,
+      "skin_gap_mm": 3.0200031257552484,
+      "inner_rib_gap_mm": 5.220000000000056,
+      "carbon_gaps": [
+        {
+          "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 7.944109290391274e-14
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 3.552713678800501e-14
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 7.105427357601002e-14
+        }
+      ],
+      "minimum_carbon_gap_mm": 3.552713678800501e-14
+    },
+    {
+      "outboard_translation_mm": 4.9,
+      "skin_gap_mm": 2.9200032328010463,
+      "inner_rib_gap_mm": 5.120000000000076,
+      "carbon_gaps": [
+        {
+          "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.02591286934446674
+        }
+      ],
+      "minimum_carbon_gap_mm": 0.0
+    },
+    {
+      "outboard_translation_mm": 4.800000000000001,
+      "skin_gap_mm": 2.8200033474386594,
+      "inner_rib_gap_mm": 5.020000000000024,
+      "carbon_gaps": [
+        {
+          "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.051825739255039804
+        }
+      ],
+      "minimum_carbon_gap_mm": 0.0
+    },
+    {
+      "outboard_translation_mm": 4.7,
+      "skin_gap_mm": 2.7200034705055676,
+      "inner_rib_gap_mm": 4.920000000000044,
+      "carbon_gaps": [
+        {
+          "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.07773860973151832
+        }
+      ],
+      "minimum_carbon_gap_mm": 0.0
+    },
+    {
+      "outboard_translation_mm": 4.6000000000000005,
+      "skin_gap_mm": 2.620003602966876,
+      "inner_rib_gap_mm": 4.820000000000064,
+      "carbon_gaps": [
+        {
+          "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.10365148077427724
+        }
+      ],
+      "minimum_carbon_gap_mm": 0.0
+    },
+    {
+      "outboard_translation_mm": 4.5,
+      "skin_gap_mm": 2.520003745940963,
+      "inner_rib_gap_mm": 4.720000000000084,
+      "carbon_gaps": [
+        {
+          "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 1.5888218580782548e-13
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.1295643523830789
+        }
+      ],
+      "minimum_carbon_gap_mm": 0.0
+    },
+    {
+      "outboard_translation_mm": 4.4,
+      "skin_gap_mm": 2.4200039007309897,
+      "inner_rib_gap_mm": 4.620000000000033,
+      "carbon_gaps": [
+        {
+          "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.15547722455784962
+        }
+      ],
+      "minimum_carbon_gap_mm": 0.0
+    },
+    {
+      "outboard_translation_mm": 4.3,
+      "skin_gap_mm": 2.3200040688650256,
+      "inner_rib_gap_mm": 4.520000000000053,
+      "carbon_gaps": [
+        {
+          "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.18139009729909322
+        }
+      ],
+      "minimum_carbon_gap_mm": 0.0
+    },
+    {
+      "outboard_translation_mm": 4.2,
+      "skin_gap_mm": 2.2200042521462295,
+      "inner_rib_gap_mm": 4.420000000000073,
+      "carbon_gaps": [
+        {
+          "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.20730297060604985
+        }
+      ],
+      "minimum_carbon_gap_mm": 0.0
+    },
+    {
+      "outboard_translation_mm": 4.1000000000000005,
+      "skin_gap_mm": 2.1200044527179873,
+      "inner_rib_gap_mm": 4.320000000000022,
+      "carbon_gaps": [
+        {
+          "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.2332158444793237
+        }
+      ],
+      "minimum_carbon_gap_mm": 0.0
+    },
+    {
+      "outboard_translation_mm": 4.0,
+      "skin_gap_mm": 2.020004673148345,
+      "inner_rib_gap_mm": 4.2200000000000415,
+      "carbon_gaps": [
+        {
+          "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 3.552713678800501e-14
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.25912871891846617
+        }
+      ],
+      "minimum_carbon_gap_mm": 0.0
+    },
+    {
+      "outboard_translation_mm": 3.9000000000000004,
+      "skin_gap_mm": 1.9200049165401132,
+      "inner_rib_gap_mm": 4.120000000000061,
+      "carbon_gaps": [
+        {
+          "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.2850415939239896
+        }
+      ],
+      "minimum_carbon_gap_mm": 0.0
+    },
+    {
+      "outboard_translation_mm": 3.8000000000000003,
+      "skin_gap_mm": 1.8200051866781894,
+      "inner_rib_gap_mm": 4.020000000000081,
+      "carbon_gaps": [
+        {
+          "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.3109544694954736
+        }
+      ],
+      "minimum_carbon_gap_mm": 0.0
+    },
+    {
+      "outboard_translation_mm": 3.7,
+      "skin_gap_mm": 1.7200054882273035,
+      "inner_rib_gap_mm": 3.92000000000003,
+      "carbon_gaps": [
+        {
+          "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.33686734563320136
+        }
+      ],
+      "minimum_carbon_gap_mm": 0.0
+    },
+    {
+      "outboard_translation_mm": 3.6,
+      "skin_gap_mm": 1.6200058270046709,
+      "inner_rib_gap_mm": 3.82000000000005,
+      "carbon_gaps": [
+        {
+          "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.36278022233683455
+        }
+      ],
+      "minimum_carbon_gap_mm": 0.0
+    },
+    {
+      "outboard_translation_mm": 3.5,
+      "skin_gap_mm": 1.5200062103577483,
+      "inner_rib_gap_mm": 3.72000000000007,
+      "carbon_gaps": [
+        {
+          "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 1.6280579355608323e-13
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.38869309960659243
+        }
+      ],
+      "minimum_carbon_gap_mm": 0.0
+    },
+    {
+      "outboard_translation_mm": 3.4000000000000004,
+      "skin_gap_mm": 1.4200066477038589,
+      "inner_rib_gap_mm": 3.62000000000009,
+      "carbon_gaps": [
+        {
+          "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.4146059774423932
+        }
+      ],
+      "minimum_carbon_gap_mm": 0.0
+    },
+    {
+      "outboard_translation_mm": 3.3000000000000003,
+      "skin_gap_mm": 1.3200071513139553,
+      "inner_rib_gap_mm": 3.5200000000000387,
+      "carbon_gaps": [
+        {
+          "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.44051885584433703
+        }
+      ],
+      "minimum_carbon_gap_mm": 0.0
+    },
+    {
+      "outboard_translation_mm": 3.2,
+      "skin_gap_mm": 1.2200077374824345,
+      "inner_rib_gap_mm": 3.4200000000000585,
+      "carbon_gaps": [
+        {
+          "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.46643173481256134
+        }
+      ],
+      "minimum_carbon_gap_mm": 0.0
+    },
+    {
+      "outboard_translation_mm": 3.1,
+      "skin_gap_mm": 1.1200084283227634,
+      "inner_rib_gap_mm": 3.3200000000000784,
+      "carbon_gaps": [
+        {
+          "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.4923446143466543
+        }
+      ],
+      "minimum_carbon_gap_mm": 0.0
+    },
+    {
+      "outboard_translation_mm": 3.0,
+      "skin_gap_mm": 1.0200092546202175,
+      "inner_rib_gap_mm": 3.2200000000000273,
+      "carbon_gaps": [
+        {
+          "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 1.6280579355608323e-13
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 1.4210854715202004e-13
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.5182574944470646
+        }
+      ],
+      "minimum_carbon_gap_mm": 1.4210854715202004e-13
+    },
+    {
+      "outboard_translation_mm": 2.9000000000000004,
+      "skin_gap_mm": 0.9199999999999875,
+      "inner_rib_gap_mm": 3.120000000000047,
+      "carbon_gaps": [
+        {
+          "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.5441703751134809
+        }
+      ],
+      "minimum_carbon_gap_mm": 0.0
+    },
+    {
+      "outboard_translation_mm": 2.8000000000000003,
+      "skin_gap_mm": 0.8200000000000074,
+      "inner_rib_gap_mm": 3.020000000000067,
+      "carbon_gaps": [
+        {
+          "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.570083256345903
+        }
+      ],
+      "minimum_carbon_gap_mm": 0.0
+    },
+    {
+      "outboard_translation_mm": 2.7,
+      "skin_gap_mm": 0.7200000000000273,
+      "inner_rib_gap_mm": 2.920000000000087,
+      "carbon_gaps": [
+        {
+          "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.5959961381446424
+        }
+      ],
+      "minimum_carbon_gap_mm": 0.0
+    },
+    {
+      "outboard_translation_mm": 2.6,
+      "skin_gap_mm": 0.6199999999999761,
+      "inner_rib_gap_mm": 2.820000000000036,
+      "carbon_gaps": [
+        {
+          "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.6219090205093878
+        }
+      ],
+      "minimum_carbon_gap_mm": 0.0
+    },
+    {
+      "outboard_translation_mm": 2.5,
+      "skin_gap_mm": 0.519999999999996,
+      "inner_rib_gap_mm": 2.7200000000000557,
+      "carbon_gaps": [
+        {
+          "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 2.0097183471152322e-13
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 7.944109290391274e-14
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.6478219034402948
+        }
+      ],
+      "minimum_carbon_gap_mm": 7.944109290391274e-14
+    },
+    {
+      "outboard_translation_mm": 2.4000000000000004,
+      "skin_gap_mm": 0.4200000000000159,
+      "inner_rib_gap_mm": 2.6200000000000756,
+      "carbon_gaps": [
+        {
+          "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.6737347869370705
+        }
+      ],
+      "minimum_carbon_gap_mm": 0.0
+    },
+    {
+      "outboard_translation_mm": 2.3000000000000003,
+      "skin_gap_mm": 0.31999999999996476,
+      "inner_rib_gap_mm": 2.5200000000000244,
+      "carbon_gaps": [
+        {
+          "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.6996476710000077
+        }
+      ],
+      "minimum_carbon_gap_mm": 0.0
+    },
+    {
+      "outboard_translation_mm": 2.2,
+      "skin_gap_mm": 0.21999999999998465,
+      "inner_rib_gap_mm": 2.4200000000000443,
+      "carbon_gaps": [
+        {
+          "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.7255605556292256
+        }
+      ],
+      "minimum_carbon_gap_mm": 0.0
+    },
+    {
+      "outboard_translation_mm": 2.1,
+      "skin_gap_mm": 0.12000000000000455,
+      "inner_rib_gap_mm": 2.3200000000000642,
+      "carbon_gaps": [
+        {
+          "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.7514734408243673
+        }
+      ],
+      "minimum_carbon_gap_mm": 0.0
+    },
+    {
+      "outboard_translation_mm": 2.0,
+      "skin_gap_mm": 0.020000000000024443,
+      "inner_rib_gap_mm": 2.220000000000084,
+      "carbon_gaps": [
+        {
+          "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 1.4210854715202004e-13
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.7773863265860271
+        }
+      ],
+      "minimum_carbon_gap_mm": 0.0
+    },
+    {
+      "outboard_translation_mm": 1.9000000000000001,
+      "skin_gap_mm": 0.0,
+      "inner_rib_gap_mm": 2.120000000000033,
+      "carbon_gaps": [
+        {
+          "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.8032992129132998
+        }
+      ],
+      "minimum_carbon_gap_mm": 0.0
+    },
+    {
+      "outboard_translation_mm": 1.8,
+      "skin_gap_mm": 0.0,
+      "inner_rib_gap_mm": 2.020000000000053,
+      "carbon_gaps": [
+        {
+          "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.829212099806871
+        }
+      ],
+      "minimum_carbon_gap_mm": 0.0
+    },
+    {
+      "outboard_translation_mm": 1.7000000000000002,
+      "skin_gap_mm": 0.0,
+      "inner_rib_gap_mm": 1.9200000000000728,
+      "carbon_gaps": [
+        {
+          "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.8551249872665856
+        }
+      ],
+      "minimum_carbon_gap_mm": 0.0
+    },
+    {
+      "outboard_translation_mm": 1.6,
+      "skin_gap_mm": 0.0,
+      "inner_rib_gap_mm": 1.8200000000000216,
+      "carbon_gaps": [
+        {
+          "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.8810378752922059
+        }
+      ],
+      "minimum_carbon_gap_mm": 0.0
+    },
+    {
+      "outboard_translation_mm": 1.5,
+      "skin_gap_mm": 0.00012148210249998017,
+      "inner_rib_gap_mm": 1.7200000000000415,
+      "carbon_gaps": [
+        {
+          "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 7.944109290391274e-14
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 1.6280579355608323e-13
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.9069507638842438
+        }
+      ],
+      "minimum_carbon_gap_mm": 7.944109290391274e-14
+    },
+    {
+      "outboard_translation_mm": 1.4000000000000001,
+      "skin_gap_mm": 0.008852376663451426,
+      "inner_rib_gap_mm": 1.6200000000000614,
+      "carbon_gaps": [
+        {
+          "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.9328636530422876
+        }
+      ],
+      "minimum_carbon_gap_mm": 0.0
+    },
+    {
+      "outboard_translation_mm": 1.3,
+      "skin_gap_mm": 0.017581163126640605,
+      "inner_rib_gap_mm": 1.5200000000000813,
+      "carbon_gaps": [
+        {
+          "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.9587765427663559
+        }
+      ],
+      "minimum_carbon_gap_mm": 0.0
+    },
+    {
+      "outboard_translation_mm": 1.2000000000000002,
+      "skin_gap_mm": 0.026307842679628657,
+      "inner_rib_gap_mm": 1.4200000000000301,
+      "carbon_gaps": [
+        {
+          "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.9846894330564671
+        }
+      ],
+      "minimum_carbon_gap_mm": 0.0
+    },
+    {
+      "outboard_translation_mm": 1.1,
+      "skin_gap_mm": 0.03503241650742327,
+      "inner_rib_gap_mm": 1.32000000000005,
+      "carbon_gaps": [
+        {
+          "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 1.0106023239128588
+        }
+      ],
+      "minimum_carbon_gap_mm": 0.0
+    },
+    {
+      "outboard_translation_mm": 1.0,
+      "skin_gap_mm": 0.04375488579212648,
+      "inner_rib_gap_mm": 1.22000000000007,
+      "carbon_gaps": [
+        {
+          "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 7.105427357601002e-14
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 1.464821375527116e-13
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 1.0365152153352746
+        }
+      ],
+      "minimum_carbon_gap_mm": 7.105427357601002e-14
+    },
+    {
+      "outboard_translation_mm": 0.9,
+      "skin_gap_mm": 0.052475251713439613,
+      "inner_rib_gap_mm": 1.1200000000000898,
+      "carbon_gaps": [
+        {
+          "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 1.062428107323678
+        }
+      ],
+      "minimum_carbon_gap_mm": 0.0
+    },
+    {
+      "outboard_translation_mm": 0.8,
+      "skin_gap_mm": 0.06119351544822845,
+      "inner_rib_gap_mm": 1.0200000000000387,
+      "carbon_gaps": [
+        {
+          "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 1.0883409998783438
+        }
+      ],
+      "minimum_carbon_gap_mm": 0.0
+    },
+    {
+      "outboard_translation_mm": 0.7000000000000001,
+      "skin_gap_mm": 0.06990967817065614,
+      "inner_rib_gap_mm": 0.9200000000000585,
+      "carbon_gaps": [
+        {
+          "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 1.1142538929991075
+        }
+      ],
+      "minimum_carbon_gap_mm": 0.0
+    },
+    {
+      "outboard_translation_mm": 0.6000000000000001,
+      "skin_gap_mm": 0.07862374105240624,
+      "inner_rib_gap_mm": 0.8200000000000784,
+      "carbon_gaps": [
+        {
+          "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 1.134426351347448
+        }
+      ],
+      "minimum_carbon_gap_mm": 0.0
+    },
+    {
+      "outboard_translation_mm": 0.5,
+      "skin_gap_mm": 0.0873357052624266,
+      "inner_rib_gap_mm": 0.7200000000000273,
+      "carbon_gaps": [
+        {
+          "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 1.5888218580782548e-13
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 1.5888218580782548e-13
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 1.1283919590828944
+        }
+      ],
+      "minimum_carbon_gap_mm": 1.5888218580782548e-13
+    },
+    {
+      "outboard_translation_mm": 0.4,
+      "skin_gap_mm": 0.09604557196706061,
+      "inner_rib_gap_mm": 0.6200000000000472,
+      "carbon_gaps": [
+        {
+          "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 1.1223475275130232
+        }
+      ],
+      "minimum_carbon_gap_mm": 0.0
+    },
+    {
+      "outboard_translation_mm": 0.30000000000000004,
+      "skin_gap_mm": 0.1047533423299134,
+      "inner_rib_gap_mm": 0.5200000000000671,
+      "carbon_gaps": [
+        {
+          "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 1.1163033331928656
+        }
+      ],
+      "minimum_carbon_gap_mm": 0.0
+    },
+    {
+      "outboard_translation_mm": 0.2,
+      "skin_gap_mm": 0.11345901751205077,
+      "inner_rib_gap_mm": 0.42000000000008697,
+      "carbon_gaps": [
+        {
+          "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 1.1102593761225923
+        }
+      ],
+      "minimum_carbon_gap_mm": 0.0
+    },
+    {
+      "outboard_translation_mm": 0.1,
+      "skin_gap_mm": 0.12216259867201323,
+      "inner_rib_gap_mm": 0.3200000000000358,
+      "carbon_gaps": [
+        {
+          "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.020926708108116754
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.020926708181783143
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 1.104215656302215
+        }
+      ],
+      "minimum_carbon_gap_mm": 0.020926708108116754
+    },
+    {
+      "outboard_translation_mm": 0.0,
+      "skin_gap_mm": 0.13086408696543614,
+      "inner_rib_gap_mm": 0.2200000000000557,
+      "carbon_gaps": [
+        {
+          "body": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.04563711094150891
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.04563711099196865
+        },
+        {
+          "body": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 1.098172173731976
+        }
+      ],
+      "minimum_carbon_gap_mm": 0.04563711094150891
+    }
+  ],
+  "minimum_carbon_gap_mm": 0.0,
+  "minimum_skin_gap_mm": 0.0,
+  "minimum_inner_rib_gap_mm": 0.2200000000000557,
+  "carbon_clearance_target_pass": false,
+  "skin_clearance_target_pass": false,
+  "manufacturing_clearance_candidate_pass": false,
+  "fit_coupon_verified": false,
+  "structural_capacity_verified": false,
+  "print_release": false,
+  "flight_release": false,
+  "study_source_sha256": "1388124f7ec26667273cbfe2755c61e6e618a3031a72a7529f2f69d19b9d2b40"
+}

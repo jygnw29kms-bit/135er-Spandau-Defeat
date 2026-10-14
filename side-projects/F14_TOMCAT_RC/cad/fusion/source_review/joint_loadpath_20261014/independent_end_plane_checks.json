@@ -1,0 +1,12 @@
+[
+  {
+    "rib": "CANDIDATE_RIB_ZERO_CLEARANCE_-3",
+    "end_plane_separation_mm": 0.8000000000000114,
+    "trapezoid_end_area_volume_estimate_cm3": 0.14549367472316493
+  },
+  {
+    "rib": "CANDIDATE_RIB_ZERO_CLEARANCE_3",
+    "end_plane_separation_mm": 0.7999999999991587,
+    "trapezoid_end_area_volume_estimate_cm3": 0.13707685523785848
+  }
+]
