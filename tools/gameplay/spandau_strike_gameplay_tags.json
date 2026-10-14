@@ -40,6 +40,11 @@
     "SpandauStrike.Surface.Bipod.Valid",
     "SpandauStrike.Surface.Bipod.WindowSill",
     "SpandauStrike.Surface.Bipod.WallTop",
-    "SpandauStrike.Surface.Bipod.Ground"
+    "SpandauStrike.Surface.Bipod.Ground",
+    "SpandauStrike.HitZone.Head",
+    "SpandauStrike.HitZone.UpperTorso",
+    "SpandauStrike.HitZone.LowerTorso",
+    "SpandauStrike.HitZone.Arm",
+    "SpandauStrike.HitZone.Leg"
   ]
 }
