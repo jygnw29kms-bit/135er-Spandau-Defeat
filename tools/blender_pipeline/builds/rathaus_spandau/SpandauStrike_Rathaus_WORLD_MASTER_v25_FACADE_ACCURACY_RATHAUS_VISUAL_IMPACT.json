@@ -1,0 +1,7757 @@
+{
+  "file": "C:\\Users\\dezen\\Desktop\\135er-Spandau-Defeat\\tools\\blender_pipeline\\builds\\rathaus_spandau\\SpandauStrike_Rathaus_WORLD_MASTER_v25_FACADE_ACCURACY.blend",
+  "objects": 1528,
+  "primitive_count": 1412,
+  "top": [
+    {
+      "name": "SM_Rathaus_ROADS_DGM_v21",
+      "category": "other",
+      "primitive": false,
+      "score": 3204526.208140563,
+      "area_proxy": 6409052.416281126,
+      "volume_proxy": 32969445.998917643,
+      "dimensions": [
+        1854.865,
+        1707.642,
+        10.409
+      ],
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 17688,
+      "polygons": 8844,
+      "collections": [
+        "WORLD_ROADS_V21"
+      ],
+      "materials": [
+        "M_City_Road_Wet"
+      ]
+    },
+    {
+      "name": "SM_Rathaus_DGM1_1000m_v21",
+      "category": "other",
+      "primitive": false,
+      "score": 1022869.9989318848,
+      "area_proxy": 2045739.9978637695,
+      "volume_proxy": 11434999.465942383,
+      "dimensions": [
+        1000.0,
+        1000.0,
+        11.435
+      ],
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 263169,
+      "polygons": 524288,
+      "collections": [
+        "WORLD_TERRAIN_V21"
+      ],
+      "materials": [
+        "M_REAL_Ground"
+      ]
+    },
+    {
+      "name": "UCX_Rathaus_DGM1_1000m_v21",
+      "category": "other",
+      "primitive": false,
+      "score": 1020444.9996948242,
+      "area_proxy": 2040889.9993896484,
+      "volume_proxy": 10222499.84741211,
+      "dimensions": [
+        1000.0,
+        1000.0,
+        10.222
+      ],
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 16641,
+      "polygons": 32768,
+      "collections": [
+        "WORLD_TERRAIN_V21"
+      ],
+      "materials": [
+        "M_REAL_Ground"
+      ]
+    },
+    {
+      "name": "SM_MainBody",
+      "category": "massing",
+      "primitive": true,
+      "score": 110594.4,
+      "area_proxy": 19068.0,
+      "volume_proxy": 127008.0,
+      "dimensions": [
+        112.0,
+        54.0,
+        21.0
+      ],
+      "location": [
+        0.0,
+        0.0,
+        10.5
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Architecture"
+      ],
+      "materials": [
+        "M_Stone"
+      ]
+    },
+    {
+      "name": "SM_MainRoof",
+      "category": "roof",
+      "primitive": false,
+      "score": 110194.98645229475,
+      "area_proxy": 31484.281843512785,
+      "volume_proxy": 116862.97105880629,
+      "dimensions": [
+        115.479,
+        119.057,
+        8.5
+      ],
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 10,
+      "polygons": 9,
+      "collections": [
+        "REAL_Rebuilt_Architecture"
+      ],
+      "materials": [
+        "M_RedTile"
+      ]
+    },
+    {
+      "name": "SM_RearWing",
+      "category": "massing",
+      "primitive": true,
+      "score": 49300.0,
+      "area_proxy": 8500.0,
+      "volume_proxy": 43928.0,
+      "dimensions": [
+        68.0,
+        34.0,
+        19.0
+      ],
+      "location": [
+        -20.832,
+        39.434,
+        9.5
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Architecture"
+      ],
+      "materials": [
+        "M_Stone"
+      ]
+    },
+    {
+      "name": "SM_RearRoof",
+      "category": "roof",
+      "primitive": false,
+      "score": 43398.529738457,
+      "area_proxy": 12399.579925273429,
+      "volume_proxy": 36337.01783660153,
+      "dimensions": [
+        71.008,
+        73.105,
+        7.0
+      ],
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 10,
+      "polygons": 9,
+      "collections": [
+        "REAL_Rebuilt_Architecture"
+      ],
+      "materials": [
+        "M_RedTile"
+      ]
+    },
+    {
+      "name": "SM_WestWing",
+      "category": "massing",
+      "primitive": true,
+      "score": 31830.399999999998,
+      "area_proxy": 5488.0,
+      "volume_proxy": 24700.0,
+      "dimensions": [
+        26.0,
+        50.0,
+        19.0
+      ],
+      "location": [
+        -42.321,
+        -19.542,
+        9.5
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Architecture"
+      ],
+      "materials": [
+        "M_Stone"
+      ]
+    },
+    {
+      "name": "SM_EastWing",
+      "category": "massing",
+      "primitive": true,
+      "score": 31830.399999999998,
+      "area_proxy": 5488.0,
+      "volume_proxy": 24700.0,
+      "dimensions": [
+        26.0,
+        50.0,
+        19.0
+      ],
+      "location": [
+        15.779,
+        43.864,
+        9.5
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Architecture"
+      ],
+      "materials": [
+        "M_Stone"
+      ]
+    },
+    {
+      "name": "UCX_COL_Rathaus_Tower",
+      "category": "tower",
+      "primitive": true,
+      "score": 27250.212499999998,
+      "area_proxy": 5369.5,
+      "volume_proxy": 18429.5,
+      "dimensions": [
+        14.5,
+        15.5,
+        82.0
+      ],
+      "location": [
+        0.0,
+        5.0,
+        41.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "FULLMAP_Collision"
+      ],
+      "materials": [
+        "M_FullMap_Boundary"
+      ]
+    },
+    {
+      "name": "SM_WestRoof",
+      "category": "roof",
+      "primitive": false,
+      "score": 25435.22067067318,
+      "area_proxy": 7267.205905906623,
+      "volume_proxy": 20173.70174214535,
+      "dimensions": [
+        54.429,
+        52.949,
+        7.0
+      ],
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 10,
+      "polygons": 9,
+      "collections": [
+        "REAL_Rebuilt_Architecture"
+      ],
+      "materials": [
+        "M_RedTile"
+      ]
+    },
+    {
+      "name": "SM_EastRoof",
+      "category": "roof",
+      "primitive": false,
+      "score": 25435.219069869578,
+      "area_proxy": 7267.205448534165,
+      "volume_proxy": 20173.70032826191,
+      "dimensions": [
+        54.429,
+        52.949,
+        7.0
+      ],
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 10,
+      "polygons": 9,
+      "collections": [
+        "REAL_Rebuilt_Architecture"
+      ],
+      "materials": [
+        "M_RedTile"
+      ]
+    },
+    {
+      "name": "UCX_COL_Rathaus_Main",
+      "category": "other",
+      "primitive": true,
+      "score": 16909.899999999998,
+      "area_proxy": 23324.0,
+      "volume_proxy": 164640.0,
+      "dimensions": [
+        112.0,
+        70.0,
+        21.0
+      ],
+      "location": [
+        0.0,
+        8.0,
+        10.5
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "FULLMAP_Collision"
+      ],
+      "materials": [
+        "M_FullMap_Boundary"
+      ]
+    },
+    {
+      "name": "SM_TowerShaft",
+      "category": "tower",
+      "primitive": true,
+      "score": 15917.635764974595,
+      "area_proxy": 3136.4799536895753,
+      "volume_proxy": 9928.639742050173,
+      "dimensions": [
+        14.2,
+        15.2,
+        46.0
+      ],
+      "location": [
+        -3.686,
+        3.378,
+        44.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Architecture"
+      ],
+      "materials": [
+        "M_Stone"
+      ]
+    },
+    {
+      "name": "SM_CentralRisalit",
+      "category": "massing",
+      "primitive": true,
+      "score": 11263.6,
+      "area_proxy": 1942.0,
+      "volume_proxy": 4347.0,
+      "dimensions": [
+        27.0,
+        7.0,
+        23.0
+      ],
+      "location": [
+        21.455,
+        -19.66,
+        11.5
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Architecture"
+      ],
+      "materials": [
+        "M_StoneTrim"
+      ]
+    },
+    {
+      "name": "V16_TowerCornice_699",
+      "category": "tower",
+      "primitive": true,
+      "score": 5529.314091280457,
+      "area_proxy": 1089.520017986297,
+      "volume_proxy": 285.82401072692863,
+      "dimensions": [
+        23.2,
+        22.4,
+        0.55
+      ],
+      "location": [
+        -2.384,
+        1.099,
+        69.9
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_StoneTrim"
+      ]
+    },
+    {
+      "name": "V16_TowerCornice_752",
+      "category": "tower",
+      "primitive": true,
+      "score": 4408.449584480405,
+      "area_proxy": 868.6600166463852,
+      "volume_proxy": 226.6000091075898,
+      "dimensions": [
+        20.0,
+        20.6,
+        0.55
+      ],
+      "location": [
+        -2.384,
+        1.099,
+        75.2
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_StoneTrim"
+      ]
+    },
+    {
+      "name": "SM_V6_CentralEntranceStone",
+      "category": "entrance",
+      "primitive": true,
+      "score": 3358.200004148483,
+      "area_proxy": 772.0000009536743,
+      "volume_proxy": 200.20000433921814,
+      "dimensions": [
+        26.0,
+        0.55,
+        14.0
+      ],
+      "location": [
+        0.0,
+        -33.1,
+        7.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_V6_RathausStone"
+      ]
+    },
+    {
+      "name": "V16_TowerCornice_550",
+      "category": "tower",
+      "primitive": true,
+      "score": 3301.28750423491,
+      "area_proxy": 650.500000834465,
+      "volume_proxy": 168.30000364780426,
+      "dimensions": [
+        17.0,
+        18.0,
+        0.55
+      ],
+      "location": [
+        -2.384,
+        1.099,
+        55.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_StoneTrim"
+      ]
+    },
+    {
+      "name": "SM_TowerTopCornice",
+      "category": "tower",
+      "primitive": true,
+      "score": 3025.1059043636305,
+      "area_proxy": 596.0799811553952,
+      "volume_proxy": 265.4399911499022,
+      "dimensions": [
+        15.8,
+        16.8,
+        1.0
+      ],
+      "location": [
+        -3.686,
+        3.378,
+        67.4
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Architecture"
+      ],
+      "materials": [
+        "M_StoneTrim"
+      ]
+    },
+    {
+      "name": "SM_V6_TowerBand_31",
+      "category": "tower",
+      "primitive": true,
+      "score": 2666.7702720863595,
+      "area_proxy": 525.4719747953418,
+      "volume_proxy": 80.81919431171431,
+      "dimensions": [
+        15.4,
+        16.4,
+        0.32
+      ],
+      "location": [
+        0.0,
+        5.0,
+        31.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_V6_RathausTrim"
+      ]
+    },
+    {
+      "name": "SM_V6_TowerBand_38",
+      "category": "tower",
+      "primitive": true,
+      "score": 2666.7702720863595,
+      "area_proxy": 525.4719747953418,
+      "volume_proxy": 80.81919431171431,
+      "dimensions": [
+        15.4,
+        16.4,
+        0.32
+      ],
+      "location": [
+        0.0,
+        5.0,
+        38.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_V6_RathausTrim"
+      ]
+    },
+    {
+      "name": "SM_V6_TowerBand_45",
+      "category": "tower",
+      "primitive": true,
+      "score": 2666.7702720863595,
+      "area_proxy": 525.4719747953418,
+      "volume_proxy": 80.81919431171431,
+      "dimensions": [
+        15.4,
+        16.4,
+        0.32
+      ],
+      "location": [
+        0.0,
+        5.0,
+        45.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_V6_RathausTrim"
+      ]
+    },
+    {
+      "name": "SM_V6_TowerBand_52",
+      "category": "tower",
+      "primitive": true,
+      "score": 2666.7702720863595,
+      "area_proxy": 525.4719747953418,
+      "volume_proxy": 80.81919431171431,
+      "dimensions": [
+        15.4,
+        16.4,
+        0.32
+      ],
+      "location": [
+        0.0,
+        5.0,
+        52.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_V6_RathausTrim"
+      ]
+    },
+    {
+      "name": "SM_V6_TowerBand_58",
+      "category": "tower",
+      "primitive": true,
+      "score": 2666.7702720863595,
+      "area_proxy": 525.4719747953418,
+      "volume_proxy": 80.81919431171431,
+      "dimensions": [
+        15.4,
+        16.4,
+        0.32
+      ],
+      "location": [
+        0.0,
+        5.0,
+        58.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_V6_RathausTrim"
+      ]
+    },
+    {
+      "name": "SM_V6_RathausPlinth",
+      "category": "facade_detail",
+      "primitive": true,
+      "score": 1662.8600078821182,
+      "area_proxy": 573.4000027179718,
+      "volume_proxy": 123.20000267028809,
+      "dimensions": [
+        112.0,
+        0.55,
+        2.0
+      ],
+      "location": [
+        0.0,
+        -27.85,
+        1.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_V6_RathausTrim"
+      ]
+    },
+    {
+      "name": "V16_RearRoofCornice",
+      "category": "roof",
+      "primitive": true,
+      "score": 1307.0408664878298,
+      "area_proxy": 257.54499832272506,
+      "volume_proxy": 34.163998734474156,
+      "dimensions": [
+        116.8,
+        0.65,
+        0.45
+      ],
+      "location": [
+        -17.953,
+        16.451,
+        16.6
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_StoneTrim"
+      ]
+    },
+    {
+      "name": "SM_V6_TowerCornerFront__6_7",
+      "category": "tower",
+      "primitive": true,
+      "score": 516.3670512072658,
+      "area_proxy": 101.74720220832825,
+      "volume_proxy": 12.585600342178338,
+      "dimensions": [
+        0.72,
+        0.38,
+        46.0
+      ],
+      "location": [
+        -6.7,
+        -2.72,
+        44.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_V6_RathausTrim"
+      ]
+    },
+    {
+      "name": "SM_V6_TowerCornerFront_6_7",
+      "category": "tower",
+      "primitive": true,
+      "score": 516.3670512072658,
+      "area_proxy": 101.74720220832825,
+      "volume_proxy": 12.585600342178338,
+      "dimensions": [
+        0.72,
+        0.38,
+        46.0
+      ],
+      "location": [
+        6.7,
+        -2.72,
+        44.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_V6_RathausTrim"
+      ]
+    },
+    {
+      "name": "SM_V6_RathausBand_6_7",
+      "category": "facade_detail",
+      "primitive": true,
+      "score": 507.5000007778406,
+      "area_proxy": 175.0000002682209,
+      "volume_proxy": 15.680000066757202,
+      "dimensions": [
+        112.0,
+        0.5,
+        0.28
+      ],
+      "location": [
+        0.0,
+        -27.82,
+        6.7
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_V6_RathausTrim"
+      ]
+    },
+    {
+      "name": "SM_V6_RathausBand_10_8",
+      "category": "facade_detail",
+      "primitive": true,
+      "score": 507.5000007778406,
+      "area_proxy": 175.0000002682209,
+      "volume_proxy": 15.680000066757202,
+      "dimensions": [
+        112.0,
+        0.5,
+        0.28
+      ],
+      "location": [
+        0.0,
+        -27.82,
+        10.8
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_V6_RathausTrim"
+      ]
+    },
+    {
+      "name": "SM_V6_RathausBand_14_9",
+      "category": "facade_detail",
+      "primitive": true,
+      "score": 507.5000007778406,
+      "area_proxy": 175.0000002682209,
+      "volume_proxy": 15.680000066757202,
+      "dimensions": [
+        112.0,
+        0.5,
+        0.28
+      ],
+      "location": [
+        0.0,
+        -27.82,
+        14.9
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_V6_RathausTrim"
+      ]
+    },
+    {
+      "name": "SM_V6_RathausBand_19_0",
+      "category": "facade_detail",
+      "primitive": true,
+      "score": 507.5000007778406,
+      "area_proxy": 175.0000002682209,
+      "volume_proxy": 15.680000066757202,
+      "dimensions": [
+        112.0,
+        0.5,
+        0.28
+      ],
+      "location": [
+        0.0,
+        -27.82,
+        19.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_V6_RathausTrim"
+      ]
+    },
+    {
+      "name": "SM_Cornice_2_6",
+      "category": "facade_detail",
+      "primitive": true,
+      "score": 474.93879301429985,
+      "area_proxy": 163.77199759113788,
+      "volume_proxy": 14.111999686241148,
+      "dimensions": [
+        112.0,
+        0.45,
+        0.28
+      ],
+      "location": [
+        20.238,
+        -18.545,
+        2.6
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_StoneTrim"
+      ]
+    },
+    {
+      "name": "SM_Cornice_6_7",
+      "category": "facade_detail",
+      "primitive": true,
+      "score": 474.93879301429985,
+      "area_proxy": 163.77199759113788,
+      "volume_proxy": 14.111999686241148,
+      "dimensions": [
+        112.0,
+        0.45,
+        0.28
+      ],
+      "location": [
+        20.238,
+        -18.545,
+        6.7
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_StoneTrim"
+      ]
+    },
+    {
+      "name": "SM_Cornice_10_8",
+      "category": "facade_detail",
+      "primitive": true,
+      "score": 474.93879301429985,
+      "area_proxy": 163.77199759113788,
+      "volume_proxy": 14.111999686241148,
+      "dimensions": [
+        112.0,
+        0.45,
+        0.28
+      ],
+      "location": [
+        20.238,
+        -18.545,
+        10.8
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_StoneTrim"
+      ]
+    },
+    {
+      "name": "SM_Cornice_14_9",
+      "category": "facade_detail",
+      "primitive": true,
+      "score": 474.93879301429985,
+      "area_proxy": 163.77199759113788,
+      "volume_proxy": 14.111999686241148,
+      "dimensions": [
+        112.0,
+        0.45,
+        0.28
+      ],
+      "location": [
+        20.238,
+        -18.545,
+        14.9
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_StoneTrim"
+      ]
+    },
+    {
+      "name": "SM_Cornice_19_0",
+      "category": "facade_detail",
+      "primitive": true,
+      "score": 474.93879301429985,
+      "area_proxy": 163.77199759113788,
+      "volume_proxy": 14.111999686241148,
+      "dimensions": [
+        112.0,
+        0.45,
+        0.28
+      ],
+      "location": [
+        20.238,
+        -18.545,
+        19.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_StoneTrim"
+      ]
+    },
+    {
+      "name": "SM_TowerCorner__6_5",
+      "category": "tower",
+      "primitive": true,
+      "score": 459.05911126376685,
+      "area_proxy": 90.45499729335307,
+      "volume_proxy": 10.237499450147158,
+      "dimensions": [
+        0.65,
+        0.35,
+        45.0
+      ],
+      "location": [
+        -2.401,
+        -6.616,
+        44.5
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_StoneTrim"
+      ]
+    },
+    {
+      "name": "SM_TowerCorner_6_5",
+      "category": "tower",
+      "primitive": true,
+      "score": 459.05911126376685,
+      "area_proxy": 90.45499729335307,
+      "volume_proxy": 10.237499450147158,
+      "dimensions": [
+        0.65,
+        0.35,
+        45.0
+      ],
+      "location": [
+        6.382,
+        2.968,
+        44.5
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_StoneTrim"
+      ]
+    },
+    {
+      "name": "V16_DormerFrontGable_1",
+      "category": "roof",
+      "primitive": true,
+      "score": 419.5473587926448,
+      "area_proxy": 82.66943030396942,
+      "volume_proxy": 44.80457739869598,
+      "dimensions": [
+        4.736,
+        4.73,
+        2.0
+      ],
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 6,
+      "polygons": 5,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_RedTile"
+      ]
+    },
+    {
+      "name": "V16_DormerFrontGable_2",
+      "category": "roof",
+      "primitive": true,
+      "score": 419.5473587926448,
+      "area_proxy": 82.66943030396942,
+      "volume_proxy": 44.80457739869598,
+      "dimensions": [
+        4.736,
+        4.73,
+        2.0
+      ],
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 6,
+      "polygons": 5,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_RedTile"
+      ]
+    },
+    {
+      "name": "V16_DormerFrontGable_4",
+      "category": "roof",
+      "primitive": true,
+      "score": 419.5473587926448,
+      "area_proxy": 82.66943030396942,
+      "volume_proxy": 44.80457739869598,
+      "dimensions": [
+        4.736,
+        4.73,
+        2.0
+      ],
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 6,
+      "polygons": 5,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_RedTile"
+      ]
+    },
+    {
+      "name": "V16_DormerFrontGable_9",
+      "category": "roof",
+      "primitive": true,
+      "score": 419.5473587926448,
+      "area_proxy": 82.66943030396942,
+      "volume_proxy": 44.80457739869598,
+      "dimensions": [
+        4.736,
+        4.73,
+        2.0
+      ],
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 6,
+      "polygons": 5,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_RedTile"
+      ]
+    },
+    {
+      "name": "V16_DormerFrontGable_3",
+      "category": "roof",
+      "primitive": true,
+      "score": 419.54732622002837,
+      "area_proxy": 82.66942388571988,
+      "volume_proxy": 44.804572887795075,
+      "dimensions": [
+        4.736,
+        4.73,
+        2.0
+      ],
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 6,
+      "polygons": 5,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_RedTile"
+      ]
+    },
+    {
+      "name": "V16_DormerFrontGable_5",
+      "category": "roof",
+      "primitive": true,
+      "score": 419.54732619017415,
+      "area_proxy": 82.66942387983727,
+      "volume_proxy": 44.80457288191246,
+      "dimensions": [
+        4.736,
+        4.73,
+        2.0
+      ],
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 6,
+      "polygons": 5,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_RedTile"
+      ]
+    },
+    {
+      "name": "V16_DormerFrontGable_6",
+      "category": "roof",
+      "primitive": true,
+      "score": 419.54732619017415,
+      "area_proxy": 82.66942387983727,
+      "volume_proxy": 44.80457288191246,
+      "dimensions": [
+        4.736,
+        4.73,
+        2.0
+      ],
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 6,
+      "polygons": 5,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_RedTile"
+      ]
+    },
+    {
+      "name": "V16_DormerFrontGable_7",
+      "category": "roof",
+      "primitive": true,
+      "score": 419.54732619017415,
+      "area_proxy": 82.66942387983727,
+      "volume_proxy": 44.80457288191246,
+      "dimensions": [
+        4.736,
+        4.73,
+        2.0
+      ],
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 6,
+      "polygons": 5,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_RedTile"
+      ]
+    },
+    {
+      "name": "V16_DormerFrontGable_8",
+      "category": "roof",
+      "primitive": true,
+      "score": 419.54732619017415,
+      "area_proxy": 82.66942387983727,
+      "volume_proxy": 44.80457288191246,
+      "dimensions": [
+        4.736,
+        4.73,
+        2.0
+      ],
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 6,
+      "polygons": 5,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_RedTile"
+      ]
+    },
+    {
+      "name": "V16_DormerFrontGable_0",
+      "category": "roof",
+      "primitive": true,
+      "score": 419.5470979728794,
+      "area_proxy": 82.6693789109122,
+      "volume_proxy": 44.804541264427826,
+      "dimensions": [
+        4.736,
+        4.73,
+        2.0
+      ],
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 6,
+      "polygons": 5,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_RedTile"
+      ]
+    },
+    {
+      "name": "SM_FrontStep_7",
+      "category": "entrance",
+      "primitive": true,
+      "score": 389.064000313729,
+      "area_proxy": 89.44000007212162,
+      "volume_proxy": 10.150000043213367,
+      "dimensions": [
+        29.0,
+        1.25,
+        0.28
+      ],
+      "location": [
+        28.643,
+        -26.247,
+        1.13
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_StoneTrim"
+      ]
+    },
+    {
+      "name": "SM_FrontStep_6",
+      "category": "entrance",
+      "primitive": true,
+      "score": 362.4420002929866,
+      "area_proxy": 83.32000006735325,
+      "volume_proxy": 9.450000040233135,
+      "dimensions": [
+        27.0,
+        1.25,
+        0.28
+      ],
+      "location": [
+        28.164,
+        -25.808,
+        0.99
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_StoneTrim"
+      ]
+    },
+    {
+      "name": "V16_DormerRearGable_8",
+      "category": "roof",
+      "primitive": true,
+      "score": 354.7528311760827,
+      "area_proxy": 69.90203569972073,
+      "volume_proxy": 34.53014597534113,
+      "dimensions": [
+        4.386,
+        4.374,
+        1.8
+      ],
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 6,
+      "polygons": 5,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_RedTile"
+      ]
+    },
+    {
+      "name": "V16_DormerRearGable_7",
+      "category": "roof",
+      "primitive": true,
+      "score": 354.7527714157118,
+      "area_proxy": 69.90202392427818,
+      "volume_proxy": 34.53013846734481,
+      "dimensions": [
+        4.386,
+        4.374,
+        1.8
+      ],
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 6,
+      "polygons": 5,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_RedTile"
+      ]
+    },
+    {
+      "name": "V16_DormerRearGable_1",
+      "category": "roof",
+      "primitive": true,
+      "score": 354.7527712962947,
+      "area_proxy": 69.90202390074774,
+      "volume_proxy": 34.5301384461674,
+      "dimensions": [
+        4.386,
+        4.374,
+        1.8
+      ],
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 6,
+      "polygons": 5,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_RedTile"
+      ]
+    },
+    {
+      "name": "V16_DormerRearGable_0",
+      "category": "roof",
+      "primitive": true,
+      "score": 354.7527114165068,
+      "area_proxy": 69.90201210177474,
+      "volume_proxy": 34.53013091699367,
+      "dimensions": [
+        4.386,
+        4.374,
+        1.8
+      ],
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 6,
+      "polygons": 5,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_RedTile"
+      ]
+    },
+    {
+      "name": "V16_DormerRearGable_4",
+      "category": "roof",
+      "primitive": true,
+      "score": 354.7527114165068,
+      "area_proxy": 69.90201210177474,
+      "volume_proxy": 34.53013091699367,
+      "dimensions": [
+        4.386,
+        4.374,
+        1.8
+      ],
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 6,
+      "polygons": 5,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_RedTile"
+      ]
+    },
+    {
+      "name": "V16_DormerRearGable_5",
+      "category": "roof",
+      "primitive": true,
+      "score": 354.75265165615434,
+      "area_proxy": 69.90200032633584,
+      "volume_proxy": 34.53012340900063,
+      "dimensions": [
+        4.386,
+        4.374,
+        1.8
+      ],
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 6,
+      "polygons": 5,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_RedTile"
+      ]
+    },
+    {
+      "name": "V16_DormerRearGable_6",
+      "category": "roof",
+      "primitive": true,
+      "score": 354.75265165615434,
+      "area_proxy": 69.90200032633584,
+      "volume_proxy": 34.53012340900063,
+      "dimensions": [
+        4.386,
+        4.374,
+        1.8
+      ],
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 6,
+      "polygons": 5,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_RedTile"
+      ]
+    },
+    {
+      "name": "V16_DormerRearGable_2",
+      "category": "roof",
+      "primitive": true,
+      "score": 354.7526218356866,
+      "area_proxy": 69.90199445038161,
+      "volume_proxy": 34.530119665592814,
+      "dimensions": [
+        4.386,
+        4.374,
+        1.8
+      ],
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 6,
+      "polygons": 5,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_RedTile"
+      ]
+    },
+    {
+      "name": "V16_DormerRearGable_3",
+      "category": "roof",
+      "primitive": true,
+      "score": 354.7526218356866,
+      "area_proxy": 69.90199445038161,
+      "volume_proxy": 34.530119665592814,
+      "dimensions": [
+        4.386,
+        4.374,
+        1.8
+      ],
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 6,
+      "polygons": 5,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_RedTile"
+      ]
+    },
+    {
+      "name": "SM_FrontStep_5",
+      "category": "entrance",
+      "primitive": true,
+      "score": 335.8200002722442,
+      "area_proxy": 77.20000006258488,
+      "volume_proxy": 8.750000037252903,
+      "dimensions": [
+        25.0,
+        1.25,
+        0.28
+      ],
+      "location": [
+        27.685,
+        -25.368,
+        0.85
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_StoneTrim"
+      ]
+    },
+    {
+      "name": "SM_DormerRoof_0",
+      "category": "roof",
+      "primitive": true,
+      "score": 332.91999225616456,
+      "area_proxy": 65.5999984741211,
+      "volume_proxy": 33.599998474121094,
+      "dimensions": [
+        4.0,
+        4.0,
+        2.1
+      ],
+      "location": [
+        -18.641,
+        -48.023,
+        26.7
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        92.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_RedTile"
+      ]
+    },
+    {
+      "name": "SM_DormerRoof_1",
+      "category": "roof",
+      "primitive": true,
+      "score": 332.91999225616456,
+      "area_proxy": 65.5999984741211,
+      "volume_proxy": 33.599998474121094,
+      "dimensions": [
+        4.0,
+        4.0,
+        2.1
+      ],
+      "location": [
+        -13.237,
+        -42.125,
+        26.7
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        92.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_RedTile"
+      ]
+    },
+    {
+      "name": "SM_DormerRoof_2",
+      "category": "roof",
+      "primitive": true,
+      "score": 332.91999225616456,
+      "area_proxy": 65.5999984741211,
+      "volume_proxy": 33.599998474121094,
+      "dimensions": [
+        4.0,
+        4.0,
+        2.1
+      ],
+      "location": [
+        -7.832,
+        -36.226,
+        26.7
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        92.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_RedTile"
+      ]
+    },
+    {
+      "name": "SM_DormerRoof_3",
+      "category": "roof",
+      "primitive": true,
+      "score": 332.91999225616456,
+      "area_proxy": 65.5999984741211,
+      "volume_proxy": 33.599998474121094,
+      "dimensions": [
+        4.0,
+        4.0,
+        2.1
+      ],
+      "location": [
+        -2.427,
+        -30.328,
+        26.7
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        92.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_RedTile"
+      ]
+    },
+    {
+      "name": "SM_DormerRoof_4",
+      "category": "roof",
+      "primitive": true,
+      "score": 332.91999225616456,
+      "area_proxy": 65.5999984741211,
+      "volume_proxy": 33.599998474121094,
+      "dimensions": [
+        4.0,
+        4.0,
+        2.1
+      ],
+      "location": [
+        2.978,
+        -24.43,
+        26.7
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        92.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_RedTile"
+      ]
+    },
+    {
+      "name": "SM_DormerRoof_8",
+      "category": "roof",
+      "primitive": true,
+      "score": 332.91999225616456,
+      "area_proxy": 65.5999984741211,
+      "volume_proxy": 33.599998474121094,
+      "dimensions": [
+        4.0,
+        4.0,
+        2.1
+      ],
+      "location": [
+        24.597,
+        -0.837,
+        26.7
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        92.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_RedTile"
+      ]
+    },
+    {
+      "name": "SM_DormerRoof_9",
+      "category": "roof",
+      "primitive": true,
+      "score": 332.91999225616456,
+      "area_proxy": 65.5999984741211,
+      "volume_proxy": 33.599998474121094,
+      "dimensions": [
+        4.0,
+        4.0,
+        2.1
+      ],
+      "location": [
+        30.001,
+        5.061,
+        26.7
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        92.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_RedTile"
+      ]
+    },
+    {
+      "name": "SM_DormerRoof_10",
+      "category": "roof",
+      "primitive": true,
+      "score": 332.91999225616456,
+      "area_proxy": 65.5999984741211,
+      "volume_proxy": 33.599998474121094,
+      "dimensions": [
+        4.0,
+        4.0,
+        2.1
+      ],
+      "location": [
+        35.406,
+        10.959,
+        26.7
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        92.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_RedTile"
+      ]
+    },
+    {
+      "name": "SM_DormerRoof_11",
+      "category": "roof",
+      "primitive": true,
+      "score": 332.91999225616456,
+      "area_proxy": 65.5999984741211,
+      "volume_proxy": 33.599998474121094,
+      "dimensions": [
+        4.0,
+        4.0,
+        2.1
+      ],
+      "location": [
+        40.811,
+        16.858,
+        26.7
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        92.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_RedTile"
+      ]
+    },
+    {
+      "name": "SM_DormerRoof_12",
+      "category": "roof",
+      "primitive": true,
+      "score": 332.91999225616456,
+      "area_proxy": 65.5999984741211,
+      "volume_proxy": 33.599998474121094,
+      "dimensions": [
+        4.0,
+        4.0,
+        2.1
+      ],
+      "location": [
+        46.215,
+        22.756,
+        26.7
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        92.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_RedTile"
+      ]
+    },
+    {
+      "name": "A10_ClockOuterBezel",
+      "category": "tower",
+      "primitive": false,
+      "score": 315.86871271353596,
+      "area_proxy": 90.24820363243884,
+      "volume_proxy": 12.543719834569517,
+      "dimensions": [
+        6.42,
+        6.42,
+        0.304
+      ],
+      "location": [
+        0.0,
+        -3.24,
+        60.5
+      ],
+      "rotation_deg": [
+        90.0,
+        -0.0,
+        0.0
+      ],
+      "vertices": 480,
+      "polygons": 480,
+      "collections": [
+        "ARCH_MICRODETAIL"
+      ],
+      "materials": [
+        "A10_Brass"
+      ]
+    },
+    {
+      "name": "SM_FrontStep_4",
+      "category": "entrance",
+      "primitive": true,
+      "score": 309.1980002515018,
+      "area_proxy": 71.0800000578165,
+      "volume_proxy": 8.05000003427267,
+      "dimensions": [
+        23.0,
+        1.25,
+        0.28
+      ],
+      "location": [
+        27.206,
+        -24.929,
+        0.71
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_StoneTrim"
+      ]
+    },
+    {
+      "name": "SM_FrontStep_3",
+      "category": "entrance",
+      "primitive": true,
+      "score": 282.57600023075935,
+      "area_proxy": 64.96000005304813,
+      "volume_proxy": 7.3500000312924385,
+      "dimensions": [
+        21.0,
+        1.25,
+        0.28
+      ],
+      "location": [
+        26.726,
+        -24.49,
+        0.57
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_StoneTrim"
+      ]
+    },
+    {
+      "name": "SM_V6_ClockFace",
+      "category": "tower",
+      "primitive": false,
+      "score": 272.1599995493889,
+      "area_proxy": 77.75999987125397,
+      "volume_proxy": 8.639999806880951,
+      "dimensions": [
+        6.0,
+        6.0,
+        0.24
+      ],
+      "location": [
+        0.0,
+        -3.05,
+        60.5
+      ],
+      "rotation_deg": [
+        90.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 192,
+      "polygons": 98,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_V6_Clock"
+      ]
+    },
+    {
+      "name": "SM_Dormer_0",
+      "category": "roof",
+      "primitive": true,
+      "score": 261.8699970960617,
+      "area_proxy": 51.59999942779541,
+      "volume_proxy": 25.199999570846558,
+      "dimensions": [
+        2.8,
+        3.0,
+        3.0
+      ],
+      "location": [
+        -18.641,
+        -48.023,
+        24.2
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_StoneTrim"
+      ]
+    },
+    {
+      "name": "SM_Dormer_1",
+      "category": "roof",
+      "primitive": true,
+      "score": 261.8699970960617,
+      "area_proxy": 51.59999942779541,
+      "volume_proxy": 25.199999570846558,
+      "dimensions": [
+        2.8,
+        3.0,
+        3.0
+      ],
+      "location": [
+        -13.237,
+        -42.125,
+        24.2
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_StoneTrim"
+      ]
+    },
+    {
+      "name": "SM_Dormer_2",
+      "category": "roof",
+      "primitive": true,
+      "score": 261.8699970960617,
+      "area_proxy": 51.59999942779541,
+      "volume_proxy": 25.199999570846558,
+      "dimensions": [
+        2.8,
+        3.0,
+        3.0
+      ],
+      "location": [
+        -7.832,
+        -36.226,
+        24.2
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_StoneTrim"
+      ]
+    },
+    {
+      "name": "SM_Dormer_3",
+      "category": "roof",
+      "primitive": true,
+      "score": 261.8699970960617,
+      "area_proxy": 51.59999942779541,
+      "volume_proxy": 25.199999570846558,
+      "dimensions": [
+        2.8,
+        3.0,
+        3.0
+      ],
+      "location": [
+        -2.427,
+        -30.328,
+        24.2
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_StoneTrim"
+      ]
+    },
+    {
+      "name": "SM_Dormer_4",
+      "category": "roof",
+      "primitive": true,
+      "score": 261.8699970960617,
+      "area_proxy": 51.59999942779541,
+      "volume_proxy": 25.199999570846558,
+      "dimensions": [
+        2.8,
+        3.0,
+        3.0
+      ],
+      "location": [
+        2.978,
+        -24.43,
+        24.2
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_StoneTrim"
+      ]
+    },
+    {
+      "name": "SM_Dormer_8",
+      "category": "roof",
+      "primitive": true,
+      "score": 261.8699970960617,
+      "area_proxy": 51.59999942779541,
+      "volume_proxy": 25.199999570846558,
+      "dimensions": [
+        2.8,
+        3.0,
+        3.0
+      ],
+      "location": [
+        24.597,
+        -0.837,
+        24.2
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_StoneTrim"
+      ]
+    },
+    {
+      "name": "SM_Dormer_9",
+      "category": "roof",
+      "primitive": true,
+      "score": 261.8699970960617,
+      "area_proxy": 51.59999942779541,
+      "volume_proxy": 25.199999570846558,
+      "dimensions": [
+        2.8,
+        3.0,
+        3.0
+      ],
+      "location": [
+        30.001,
+        5.061,
+        24.2
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_StoneTrim"
+      ]
+    },
+    {
+      "name": "SM_Dormer_10",
+      "category": "roof",
+      "primitive": true,
+      "score": 261.8699970960617,
+      "area_proxy": 51.59999942779541,
+      "volume_proxy": 25.199999570846558,
+      "dimensions": [
+        2.8,
+        3.0,
+        3.0
+      ],
+      "location": [
+        35.406,
+        10.959,
+        24.2
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_StoneTrim"
+      ]
+    },
+    {
+      "name": "SM_Dormer_11",
+      "category": "roof",
+      "primitive": true,
+      "score": 261.8699970960617,
+      "area_proxy": 51.59999942779541,
+      "volume_proxy": 25.199999570846558,
+      "dimensions": [
+        2.8,
+        3.0,
+        3.0
+      ],
+      "location": [
+        40.811,
+        16.858,
+        24.2
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_StoneTrim"
+      ]
+    },
+    {
+      "name": "SM_Dormer_12",
+      "category": "roof",
+      "primitive": true,
+      "score": 261.8699970960617,
+      "area_proxy": 51.59999942779541,
+      "volume_proxy": 25.199999570846558,
+      "dimensions": [
+        2.8,
+        3.0,
+        3.0
+      ],
+      "location": [
+        46.215,
+        22.756,
+        24.2
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_StoneTrim"
+      ]
+    },
+    {
+      "name": "SM_FrontStep_2",
+      "category": "entrance",
+      "primitive": true,
+      "score": 255.95400021001697,
+      "area_proxy": 58.84000004827976,
+      "volume_proxy": 6.650000028312206,
+      "dimensions": [
+        19.0,
+        1.25,
+        0.28
+      ],
+      "location": [
+        26.247,
+        -24.051,
+        0.43
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_StoneTrim"
+      ]
+    },
+    {
+      "name": "SM_V6_ClockRim",
+      "category": "tower",
+      "primitive": false,
+      "score": 253.2096185211185,
+      "area_proxy": 72.34560529174814,
+      "volume_proxy": 8.626176369140614,
+      "dimensions": [
+        5.76,
+        5.76,
+        0.26
+      ],
+      "location": [
+        0.0,
+        -3.18,
+        60.5
+      ],
+      "rotation_deg": [
+        90.0,
+        -0.0,
+        0.0
+      ],
+      "vertices": 768,
+      "polygons": 768,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_V6_Gold"
+      ]
+    },
+    {
+      "name": "SM_Door__5_2",
+      "category": "entrance",
+      "primitive": true,
+      "score": 233.76900060153002,
+      "area_proxy": 53.74000013828277,
+      "volume_proxy": 6.080000014305114,
+      "dimensions": [
+        3.8,
+        0.25,
+        6.4
+      ],
+      "location": [
+        20.965,
+        -26.263,
+        3.2
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_Dark"
+      ]
+    },
+    {
+      "name": "SM_Door_0",
+      "category": "entrance",
+      "primitive": true,
+      "score": 233.76900060153002,
+      "area_proxy": 53.74000013828277,
+      "volume_proxy": 6.080000014305114,
+      "dimensions": [
+        3.8,
+        0.25,
+        6.4
+      ],
+      "location": [
+        24.478,
+        -22.43,
+        3.2
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_Dark"
+      ]
+    },
+    {
+      "name": "SM_Door_5_2",
+      "category": "entrance",
+      "primitive": true,
+      "score": 233.76900060153002,
+      "area_proxy": 53.74000013828277,
+      "volume_proxy": 6.080000014305114,
+      "dimensions": [
+        3.8,
+        0.25,
+        6.4
+      ],
+      "location": [
+        27.991,
+        -18.596,
+        3.2
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_Dark"
+      ]
+    },
+    {
+      "name": "V16_DormerFrontBody_0",
+      "category": "roof",
+      "primitive": true,
+      "score": 232.43499733805655,
+      "area_proxy": 45.799999475479126,
+      "volume_proxy": 20.99999964237213,
+      "dimensions": [
+        2.8,
+        3.0,
+        2.5
+      ],
+      "location": [
+        -11.071,
+        -57.672,
+        23.1
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_StoneTrim"
+      ]
+    },
+    {
+      "name": "V16_DormerFrontBody_1",
+      "category": "roof",
+      "primitive": true,
+      "score": 232.43499733805655,
+      "area_proxy": 45.799999475479126,
+      "volume_proxy": 20.99999964237213,
+      "dimensions": [
+        2.8,
+        3.0,
+        2.5
+      ],
+      "location": [
+        -5.667,
+        -51.774,
+        23.1
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_StoneTrim"
+      ]
+    },
+    {
+      "name": "V16_DormerFrontBody_2",
+      "category": "roof",
+      "primitive": true,
+      "score": 232.43499733805655,
+      "area_proxy": 45.799999475479126,
+      "volume_proxy": 20.99999964237213,
+      "dimensions": [
+        2.8,
+        3.0,
+        2.5
+      ],
+      "location": [
+        -0.262,
+        -45.876,
+        23.1
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_StoneTrim"
+      ]
+    },
+    {
+      "name": "V16_DormerFrontBody_3",
+      "category": "roof",
+      "primitive": true,
+      "score": 232.43499733805655,
+      "area_proxy": 45.799999475479126,
+      "volume_proxy": 20.99999964237213,
+      "dimensions": [
+        2.8,
+        3.0,
+        2.5
+      ],
+      "location": [
+        5.143,
+        -39.977,
+        23.1
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_StoneTrim"
+      ]
+    },
+    {
+      "name": "V16_DormerFrontBody_4",
+      "category": "roof",
+      "primitive": true,
+      "score": 232.43499733805655,
+      "area_proxy": 45.799999475479126,
+      "volume_proxy": 20.99999964237213,
+      "dimensions": [
+        2.8,
+        3.0,
+        2.5
+      ],
+      "location": [
+        10.548,
+        -34.079,
+        23.1
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_StoneTrim"
+      ]
+    },
+    {
+      "name": "V16_DormerFrontBody_5",
+      "category": "roof",
+      "primitive": true,
+      "score": 232.43499733805655,
+      "area_proxy": 45.799999475479126,
+      "volume_proxy": 20.99999964237213,
+      "dimensions": [
+        2.8,
+        3.0,
+        2.5
+      ],
+      "location": [
+        34.869,
+        -7.537,
+        23.1
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_StoneTrim"
+      ]
+    },
+    {
+      "name": "V16_DormerFrontBody_6",
+      "category": "roof",
+      "primitive": true,
+      "score": 232.43499733805655,
+      "area_proxy": 45.799999475479126,
+      "volume_proxy": 20.99999964237213,
+      "dimensions": [
+        2.8,
+        3.0,
+        2.5
+      ],
+      "location": [
+        40.273,
+        -1.639,
+        23.1
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_StoneTrim"
+      ]
+    },
+    {
+      "name": "V16_DormerFrontBody_7",
+      "category": "roof",
+      "primitive": true,
+      "score": 232.43499733805655,
+      "area_proxy": 45.799999475479126,
+      "volume_proxy": 20.99999964237213,
+      "dimensions": [
+        2.8,
+        3.0,
+        2.5
+      ],
+      "location": [
+        45.678,
+        4.259,
+        23.1
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_StoneTrim"
+      ]
+    },
+    {
+      "name": "V16_DormerFrontBody_8",
+      "category": "roof",
+      "primitive": true,
+      "score": 232.43499733805655,
+      "area_proxy": 45.799999475479126,
+      "volume_proxy": 20.99999964237213,
+      "dimensions": [
+        2.8,
+        3.0,
+        2.5
+      ],
+      "location": [
+        51.083,
+        10.157,
+        23.1
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_StoneTrim"
+      ]
+    },
+    {
+      "name": "V16_DormerFrontBody_9",
+      "category": "roof",
+      "primitive": true,
+      "score": 232.43499733805655,
+      "area_proxy": 45.799999475479126,
+      "volume_proxy": 20.99999964237213,
+      "dimensions": [
+        2.8,
+        3.0,
+        2.5
+      ],
+      "location": [
+        56.488,
+        16.056,
+        23.1
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_StoneTrim"
+      ]
+    },
+    {
+      "name": "SM_FrontStep_1",
+      "category": "entrance",
+      "primitive": true,
+      "score": 229.33200018927454,
+      "area_proxy": 52.72000004351139,
+      "volume_proxy": 5.950000025331974,
+      "dimensions": [
+        17.0,
+        1.25,
+        0.28
+      ],
+      "location": [
+        25.768,
+        -23.612,
+        0.29
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_StoneTrim"
+      ]
+    },
+    {
+      "name": "A10_ClockInnerBezel",
+      "category": "tower",
+      "primitive": false,
+      "score": 223.74619518484536,
+      "area_proxy": 63.92748433852725,
+      "volume_proxy": 3.222441255340314,
+      "dimensions": [
+        5.55,
+        5.55,
+        0.105
+      ],
+      "location": [
+        0.0,
+        -3.26,
+        60.5
+      ],
+      "rotation_deg": [
+        90.0,
+        -0.0,
+        0.0
+      ],
+      "vertices": 480,
+      "polygons": 480,
+      "collections": [
+        "ARCH_MICRODETAIL"
+      ],
+      "materials": [
+        "A10_Stone"
+      ]
+    },
+    {
+      "name": "SM_CentralColumn__10",
+      "category": "facade_detail",
+      "primitive": true,
+      "score": 206.08849117064477,
+      "area_proxy": 71.06499695539475,
+      "volume_proxy": 13.991248851418518,
+      "dimensions": [
+        1.05,
+        0.65,
+        20.5
+      ],
+      "location": [
+        17.464,
+        -29.566,
+        12.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_StoneTrim"
+      ]
+    },
+    {
+      "name": "SM_CentralColumn__5",
+      "category": "facade_detail",
+      "primitive": true,
+      "score": 206.08849117064477,
+      "area_proxy": 71.06499695539475,
+      "volume_proxy": 13.991248851418518,
+      "dimensions": [
+        1.05,
+        0.65,
+        20.5
+      ],
+      "location": [
+        20.842,
+        -25.88,
+        12.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_StoneTrim"
+      ]
+    },
+    {
+      "name": "SM_CentralColumn_5",
+      "category": "facade_detail",
+      "primitive": true,
+      "score": 206.08849117064477,
+      "area_proxy": 71.06499695539475,
+      "volume_proxy": 13.991248851418518,
+      "dimensions": [
+        1.05,
+        0.65,
+        20.5
+      ],
+      "location": [
+        27.598,
+        -18.507,
+        12.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_StoneTrim"
+      ]
+    },
+    {
+      "name": "SM_CentralColumn_10",
+      "category": "facade_detail",
+      "primitive": true,
+      "score": 206.08849117064477,
+      "area_proxy": 71.06499695539475,
+      "volume_proxy": 13.991248851418518,
+      "dimensions": [
+        1.05,
+        0.65,
+        20.5
+      ],
+      "location": [
+        30.975,
+        -14.82,
+        12.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_StoneTrim"
+      ]
+    },
+    {
+      "name": "SM_FrontStep_0",
+      "category": "entrance",
+      "primitive": true,
+      "score": 202.71000016853213,
+      "area_proxy": 46.60000003874302,
+      "volume_proxy": 5.250000022351742,
+      "dimensions": [
+        15.0,
+        1.25,
+        0.28
+      ],
+      "location": [
+        25.289,
+        -23.173,
+        0.15
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_StoneTrim"
+      ]
+    },
+    {
+      "name": "V16_DormerRearBody_0",
+      "category": "roof",
+      "primitive": true,
+      "score": 194.47399545049663,
+      "area_proxy": 38.31999910354614,
+      "volume_proxy": 16.01599948692321,
+      "dimensions": [
+        2.6,
+        2.8,
+        2.2
+      ],
+      "location": [
+        -45.699,
+        -23.229,
+        19.3
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_StoneTrim"
+      ]
+    },
+    {
+      "name": "V16_DormerRearBody_1",
+      "category": "roof",
+      "primitive": true,
+      "score": 194.47399545049663,
+      "area_proxy": 38.31999910354614,
+      "volume_proxy": 16.01599948692321,
+      "dimensions": [
+        2.6,
+        2.8,
+        2.2
+      ],
+      "location": [
+        -37.592,
+        -14.381,
+        19.3
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_StoneTrim"
+      ]
+    },
+    {
+      "name": "V16_DormerRearBody_2",
+      "category": "roof",
+      "primitive": true,
+      "score": 194.47399545049663,
+      "area_proxy": 38.31999910354614,
+      "volume_proxy": 16.01599948692321,
+      "dimensions": [
+        2.6,
+        2.8,
+        2.2
+      ],
+      "location": [
+        -29.485,
+        -5.534,
+        19.3
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_StoneTrim"
+      ]
+    },
+    {
+      "name": "V16_DormerRearBody_3",
+      "category": "roof",
+      "primitive": true,
+      "score": 194.47399545049663,
+      "area_proxy": 38.31999910354614,
+      "volume_proxy": 16.01599948692321,
+      "dimensions": [
+        2.6,
+        2.8,
+        2.2
+      ],
+      "location": [
+        -21.378,
+        3.313,
+        19.3
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_StoneTrim"
+      ]
+    },
+    {
+      "name": "V16_DormerRearBody_4",
+      "category": "roof",
+      "primitive": true,
+      "score": 194.47399545049663,
+      "area_proxy": 38.31999910354614,
+      "volume_proxy": 16.01599948692321,
+      "dimensions": [
+        2.6,
+        2.8,
+        2.2
+      ],
+      "location": [
+        -13.271,
+        12.161,
+        19.3
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_StoneTrim"
+      ]
+    },
+    {
+      "name": "V16_DormerRearBody_5",
+      "category": "roof",
+      "primitive": true,
+      "score": 194.47399545049663,
+      "area_proxy": 38.31999910354614,
+      "volume_proxy": 16.01599948692321,
+      "dimensions": [
+        2.6,
+        2.8,
+        2.2
+      ],
+      "location": [
+        -5.164,
+        21.008,
+        19.3
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_StoneTrim"
+      ]
+    },
+    {
+      "name": "V16_DormerRearBody_6",
+      "category": "roof",
+      "primitive": true,
+      "score": 194.47399545049663,
+      "area_proxy": 38.31999910354614,
+      "volume_proxy": 16.01599948692321,
+      "dimensions": [
+        2.6,
+        2.8,
+        2.2
+      ],
+      "location": [
+        2.943,
+        29.855,
+        19.3
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_StoneTrim"
+      ]
+    },
+    {
+      "name": "V16_DormerRearBody_7",
+      "category": "roof",
+      "primitive": true,
+      "score": 194.47399545049663,
+      "area_proxy": 38.31999910354614,
+      "volume_proxy": 16.01599948692321,
+      "dimensions": [
+        2.6,
+        2.8,
+        2.2
+      ],
+      "location": [
+        11.05,
+        38.703,
+        19.3
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_StoneTrim"
+      ]
+    },
+    {
+      "name": "V16_DormerRearBody_8",
+      "category": "roof",
+      "primitive": true,
+      "score": 194.47399545049663,
+      "area_proxy": 38.31999910354614,
+      "volume_proxy": 16.01599948692321,
+      "dimensions": [
+        2.6,
+        2.8,
+        2.2
+      ],
+      "location": [
+        19.157,
+        47.55,
+        19.3
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_StoneTrim"
+      ]
+    },
+    {
+      "name": "A10_Ridge_WestRoof",
+      "category": "roof",
+      "primitive": true,
+      "score": 193.50421228751858,
+      "area_proxy": 38.128908825126814,
+      "volume_proxy": 1.8026957314295182,
+      "dimensions": [
+        50.075,
+        0.2,
+        0.18
+      ],
+      "location": [
+        0.0,
+        0.0,
+        3.71
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "ARCH_MICRODETAIL"
+      ],
+      "materials": [
+        "A10_Copper"
+      ]
+    },
+    {
+      "name": "A10_Ridge_EastRoof",
+      "category": "roof",
+      "primitive": true,
+      "score": 193.50419757423083,
+      "area_proxy": 38.128905925956815,
+      "volume_proxy": 1.802695594100409,
+      "dimensions": [
+        50.075,
+        0.2,
+        0.18
+      ],
+      "location": [
+        0.0,
+        0.0,
+        3.71
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "ARCH_MICRODETAIL"
+      ],
+      "materials": [
+        "A10_Copper"
+      ]
+    },
+    {
+      "name": "SM_V6_CentralPilaster__7_5",
+      "category": "facade_detail",
+      "primitive": true,
+      "score": 183.19299425435065,
+      "area_proxy": 63.16999801874161,
+      "volume_proxy": 11.699999260902416,
+      "dimensions": [
+        0.9,
+        0.65,
+        20.0
+      ],
+      "location": [
+        -7.5,
+        -33.45,
+        12.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_V6_RathausTrim"
+      ]
+    },
+    {
+      "name": "SM_V6_CentralPilaster__2_5",
+      "category": "facade_detail",
+      "primitive": true,
+      "score": 183.19299425435065,
+      "area_proxy": 63.16999801874161,
+      "volume_proxy": 11.699999260902416,
+      "dimensions": [
+        0.9,
+        0.65,
+        20.0
+      ],
+      "location": [
+        -2.5,
+        -33.45,
+        12.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_V6_RathausTrim"
+      ]
+    },
+    {
+      "name": "SM_V6_CentralPilaster_2_5",
+      "category": "facade_detail",
+      "primitive": true,
+      "score": 183.19299425435065,
+      "area_proxy": 63.16999801874161,
+      "volume_proxy": 11.699999260902416,
+      "dimensions": [
+        0.9,
+        0.65,
+        20.0
+      ],
+      "location": [
+        2.5,
+        -33.45,
+        12.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_V6_RathausTrim"
+      ]
+    },
+    {
+      "name": "SM_V6_CentralPilaster_7_5",
+      "category": "facade_detail",
+      "primitive": true,
+      "score": 183.19299425435065,
+      "area_proxy": 63.16999801874161,
+      "volume_proxy": 11.699999260902416,
+      "dimensions": [
+        0.9,
+        0.65,
+        20.0
+      ],
+      "location": [
+        7.5,
+        -33.45,
+        12.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_V6_RathausTrim"
+      ]
+    },
+    {
+      "name": "V16_PortalArch_0",
+      "category": "entrance",
+      "primitive": false,
+      "score": 182.5869704772267,
+      "area_proxy": 60.862323492408905,
+      "volume_proxy": 30.918732817815,
+      "dimensions": [
+        3.593,
+        3.824,
+        2.25
+      ],
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 76,
+      "polygons": 72,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_StoneTrim"
+      ]
+    },
+    {
+      "name": "V16_PortalArch_1",
+      "category": "entrance",
+      "primitive": false,
+      "score": 182.5869704772267,
+      "area_proxy": 60.862323492408905,
+      "volume_proxy": 30.918732817815,
+      "dimensions": [
+        3.593,
+        3.824,
+        2.25
+      ],
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 76,
+      "polygons": 72,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_StoneTrim"
+      ]
+    },
+    {
+      "name": "V16_PortalArch_2",
+      "category": "entrance",
+      "primitive": false,
+      "score": 182.58690360808396,
+      "area_proxy": 60.86230120269465,
+      "volume_proxy": 30.91871739783892,
+      "dimensions": [
+        3.593,
+        3.824,
+        2.25
+      ],
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 76,
+      "polygons": 72,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_StoneTrim"
+      ]
+    },
+    {
+      "name": "SM_Clock_0",
+      "category": "tower",
+      "primitive": false,
+      "score": 179.7320068918467,
+      "area_proxy": 51.352001969099064,
+      "volume_proxy": 4.08170020181537,
+      "dimensions": [
+        4.9,
+        4.9,
+        0.17
+      ],
+      "location": [
+        2.079,
+        -1.905,
+        60.5
+      ],
+      "rotation_deg": [
+        90.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 128,
+      "polygons": 66,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_Dark"
+      ]
+    },
+    {
+      "name": "SM_Clock_1",
+      "category": "tower",
+      "primitive": false,
+      "score": 179.7320068918467,
+      "area_proxy": 51.352001969099064,
+      "volume_proxy": 4.08170020181537,
+      "dimensions": [
+        4.9,
+        4.9,
+        0.17
+      ],
+      "location": [
+        1.164,
+        8.672,
+        60.5
+      ],
+      "rotation_deg": [
+        90.0,
+        0.0,
+        137.5
+      ],
+      "vertices": 128,
+      "polygons": 66,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_Dark"
+      ]
+    },
+    {
+      "name": "SM_Clock_2",
+      "category": "tower",
+      "primitive": false,
+      "score": 179.7320068918467,
+      "area_proxy": 51.352001969099064,
+      "volume_proxy": 4.08170020181537,
+      "dimensions": [
+        4.9,
+        4.9,
+        0.17
+      ],
+      "location": [
+        -8.537,
+        -1.916,
+        60.5
+      ],
+      "rotation_deg": [
+        90.0,
+        0.0,
+        137.5
+      ],
+      "vertices": 128,
+      "polygons": 66,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_Dark"
+      ]
+    },
+    {
+      "name": "SM_Clock_3",
+      "category": "tower",
+      "primitive": false,
+      "score": 179.7320068918467,
+      "area_proxy": 51.352001969099064,
+      "volume_proxy": 4.08170020181537,
+      "dimensions": [
+        4.9,
+        4.9,
+        0.17
+      ],
+      "location": [
+        -9.452,
+        8.661,
+        60.5
+      ],
+      "rotation_deg": [
+        90.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 128,
+      "polygons": 66,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_Dark"
+      ]
+    },
+    {
+      "name": "SM_PedimentBand",
+      "category": "roof",
+      "primitive": true,
+      "score": 171.7633720537126,
+      "area_proxy": 33.84499941945076,
+      "volume_proxy": 2.9399998998641976,
+      "dimensions": [
+        24.0,
+        0.35,
+        0.35
+      ],
+      "location": [
+        24.33,
+        -22.294,
+        23.2
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_StoneTrim"
+      ]
+    },
+    {
+      "name": "SM_V6_DoorGlow__5_2",
+      "category": "entrance",
+      "primitive": true,
+      "score": 167.736007742107,
+      "area_proxy": 38.56000177979471,
+      "volume_proxy": 1.4848000377655022,
+      "dimensions": [
+        3.2,
+        0.08,
+        5.8
+      ],
+      "location": [
+        -5.2,
+        -33.5,
+        3.1
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_V6_WarmLight"
+      ]
+    },
+    {
+      "name": "SM_V6_DoorGlow_0",
+      "category": "entrance",
+      "primitive": true,
+      "score": 167.736007742107,
+      "area_proxy": 38.56000177979471,
+      "volume_proxy": 1.4848000377655022,
+      "dimensions": [
+        3.2,
+        0.08,
+        5.8
+      ],
+      "location": [
+        0.0,
+        -33.5,
+        3.1
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_V6_WarmLight"
+      ]
+    },
+    {
+      "name": "SM_V6_DoorGlow_5_2",
+      "category": "entrance",
+      "primitive": true,
+      "score": 167.736007742107,
+      "area_proxy": 38.56000177979471,
+      "volume_proxy": 1.4848000377655022,
+      "dimensions": [
+        3.2,
+        0.08,
+        5.8
+      ],
+      "location": [
+        5.2,
+        -33.5,
+        3.1
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_V6_WarmLight"
+      ]
+    },
+    {
+      "name": "SM_FacadePilaster__49",
+      "category": "facade_detail",
+      "primitive": true,
+      "score": 163.91959453299043,
+      "area_proxy": 56.52399811482429,
+      "volume_proxy": 9.15529977449178,
+      "dimensions": [
+        0.82,
+        0.55,
+        20.3
+      ],
+      "location": [
+        -12.718,
+        -54.807,
+        10.6
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_StoneTrim"
+      ]
+    },
+    {
+      "name": "SM_FacadePilaster__41",
+      "category": "facade_detail",
+      "primitive": true,
+      "score": 163.91959453299043,
+      "area_proxy": 56.52399811482429,
+      "volume_proxy": 9.15529977449178,
+      "dimensions": [
+        0.82,
+        0.55,
+        20.3
+      ],
+      "location": [
+        -7.313,
+        -48.908,
+        10.6
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_StoneTrim"
+      ]
+    },
+    {
+      "name": "SM_FacadePilaster__33",
+      "category": "facade_detail",
+      "primitive": true,
+      "score": 163.91959453299043,
+      "area_proxy": 56.52399811482429,
+      "volume_proxy": 9.15529977449178,
+      "dimensions": [
+        0.82,
+        0.55,
+        20.3
+      ],
+      "location": [
+        -1.909,
+        -43.01,
+        10.6
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_StoneTrim"
+      ]
+    },
+    {
+      "name": "SM_FacadePilaster__25",
+      "category": "facade_detail",
+      "primitive": true,
+      "score": 163.91959453299043,
+      "area_proxy": 56.52399811482429,
+      "volume_proxy": 9.15529977449178,
+      "dimensions": [
+        0.82,
+        0.55,
+        20.3
+      ],
+      "location": [
+        3.496,
+        -37.112,
+        10.6
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_StoneTrim"
+      ]
+    },
+    {
+      "name": "SM_FacadePilaster__17",
+      "category": "facade_detail",
+      "primitive": true,
+      "score": 163.91959453299043,
+      "area_proxy": 56.52399811482429,
+      "volume_proxy": 9.15529977449178,
+      "dimensions": [
+        0.82,
+        0.55,
+        20.3
+      ],
+      "location": [
+        8.901,
+        -31.214,
+        10.6
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_StoneTrim"
+      ]
+    },
+    {
+      "name": "SM_FacadePilaster__13",
+      "category": "facade_detail",
+      "primitive": true,
+      "score": 163.91959453299043,
+      "area_proxy": 56.52399811482429,
+      "volume_proxy": 9.15529977449178,
+      "dimensions": [
+        0.82,
+        0.55,
+        20.3
+      ],
+      "location": [
+        11.603,
+        -28.265,
+        10.6
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_StoneTrim"
+      ]
+    },
+    {
+      "name": "SM_FacadePilaster_13",
+      "category": "facade_detail",
+      "primitive": true,
+      "score": 163.91959453299043,
+      "area_proxy": 56.52399811482429,
+      "volume_proxy": 9.15529977449178,
+      "dimensions": [
+        0.82,
+        0.55,
+        20.3
+      ],
+      "location": [
+        29.168,
+        -9.095,
+        10.6
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_StoneTrim"
+      ]
+    },
+    {
+      "name": "SM_FacadePilaster_17",
+      "category": "facade_detail",
+      "primitive": true,
+      "score": 163.91959453299043,
+      "area_proxy": 56.52399811482429,
+      "volume_proxy": 9.15529977449178,
+      "dimensions": [
+        0.82,
+        0.55,
+        20.3
+      ],
+      "location": [
+        31.871,
+        -6.146,
+        10.6
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_StoneTrim"
+      ]
+    },
+    {
+      "name": "SM_FacadePilaster_25",
+      "category": "facade_detail",
+      "primitive": true,
+      "score": 163.91959453299043,
+      "area_proxy": 56.52399811482429,
+      "volume_proxy": 9.15529977449178,
+      "dimensions": [
+        0.82,
+        0.55,
+        20.3
+      ],
+      "location": [
+        37.275,
+        -0.248,
+        10.6
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_StoneTrim"
+      ]
+    },
+    {
+      "name": "SM_FacadePilaster_33",
+      "category": "facade_detail",
+      "primitive": true,
+      "score": 163.91959453299043,
+      "area_proxy": 56.52399811482429,
+      "volume_proxy": 9.15529977449178,
+      "dimensions": [
+        0.82,
+        0.55,
+        20.3
+      ],
+      "location": [
+        42.68,
+        5.65,
+        10.6
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_StoneTrim"
+      ]
+    },
+    {
+      "name": "SM_FacadePilaster_41",
+      "category": "facade_detail",
+      "primitive": true,
+      "score": 163.91959453299043,
+      "area_proxy": 56.52399811482429,
+      "volume_proxy": 9.15529977449178,
+      "dimensions": [
+        0.82,
+        0.55,
+        20.3
+      ],
+      "location": [
+        48.085,
+        11.548,
+        10.6
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_StoneTrim"
+      ]
+    },
+    {
+      "name": "SM_FacadePilaster_49",
+      "category": "facade_detail",
+      "primitive": true,
+      "score": 163.91959453299043,
+      "area_proxy": 56.52399811482429,
+      "volume_proxy": 9.15529977449178,
+      "dimensions": [
+        0.82,
+        0.55,
+        20.3
+      ],
+      "location": [
+        53.49,
+        17.447,
+        10.6
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_StoneTrim"
+      ]
+    },
+    {
+      "name": "SM_CentralPilaster__10_0",
+      "category": "facade_detail",
+      "primitive": true,
+      "score": 151.59749846160412,
+      "area_proxy": 52.27499946951866,
+      "volume_proxy": 7.256249807775021,
+      "dimensions": [
+        0.75,
+        0.45,
+        21.5
+      ],
+      "location": [
+        17.464,
+        -29.566,
+        12.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_StoneTrim"
+      ]
+    },
+    {
+      "name": "SM_CentralPilaster__5_0",
+      "category": "facade_detail",
+      "primitive": true,
+      "score": 151.59749846160412,
+      "area_proxy": 52.27499946951866,
+      "volume_proxy": 7.256249807775021,
+      "dimensions": [
+        0.75,
+        0.45,
+        21.5
+      ],
+      "location": [
+        20.842,
+        -25.88,
+        12.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_StoneTrim"
+      ]
+    },
+    {
+      "name": "SM_CentralPilaster_0",
+      "category": "facade_detail",
+      "primitive": true,
+      "score": 151.59749846160412,
+      "area_proxy": 52.27499946951866,
+      "volume_proxy": 7.256249807775021,
+      "dimensions": [
+        0.75,
+        0.45,
+        21.5
+      ],
+      "location": [
+        24.22,
+        -22.193,
+        12.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_StoneTrim"
+      ]
+    },
+    {
+      "name": "SM_CentralPilaster_5_0",
+      "category": "facade_detail",
+      "primitive": true,
+      "score": 151.59749846160412,
+      "area_proxy": 52.27499946951866,
+      "volume_proxy": 7.256249807775021,
+      "dimensions": [
+        0.75,
+        0.45,
+        21.5
+      ],
+      "location": [
+        27.598,
+        -18.507,
+        12.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_StoneTrim"
+      ]
+    },
+    {
+      "name": "SM_CentralPilaster_10_0",
+      "category": "facade_detail",
+      "primitive": true,
+      "score": 151.59749846160412,
+      "area_proxy": 52.27499946951866,
+      "volume_proxy": 7.256249807775021,
+      "dimensions": [
+        0.75,
+        0.45,
+        21.5
+      ],
+      "location": [
+        30.975,
+        -14.82,
+        12.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_StoneTrim"
+      ]
+    },
+    {
+      "name": "V16_PortalGlass_0",
+      "category": "entrance",
+      "primitive": true,
+      "score": 145.34219480298756,
+      "area_proxy": 33.4119988052845,
+      "volume_proxy": 2.7494999976754144,
+      "dimensions": [
+        3.25,
+        0.18,
+        4.7
+      ],
+      "location": [
+        26.435,
+        -31.276,
+        2.8
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_Glass"
+      ]
+    },
+    {
+      "name": "V16_PortalGlass_1",
+      "category": "entrance",
+      "primitive": true,
+      "score": 145.34219480298756,
+      "area_proxy": 33.4119988052845,
+      "volume_proxy": 2.7494999976754144,
+      "dimensions": [
+        3.25,
+        0.18,
+        4.7
+      ],
+      "location": [
+        29.948,
+        -27.442,
+        2.8
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_Glass"
+      ]
+    },
+    {
+      "name": "V16_PortalGlass_2",
+      "category": "entrance",
+      "primitive": true,
+      "score": 145.34219480298756,
+      "area_proxy": 33.4119988052845,
+      "volume_proxy": 2.7494999976754144,
+      "dimensions": [
+        3.25,
+        0.18,
+        4.7
+      ],
+      "location": [
+        33.461,
+        -23.609,
+        2.8
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_Glass"
+      ]
+    },
+    {
+      "name": "SM_DoorArch__5_2",
+      "category": "entrance",
+      "primitive": false,
+      "score": 135.92880862827315,
+      "area_proxy": 45.30960287609105,
+      "volume_proxy": 8.28766453785611,
+      "dimensions": [
+        4.34,
+        4.34,
+        0.44
+      ],
+      "location": [
+        21.024,
+        -26.317,
+        6.25
+      ],
+      "rotation_deg": [
+        90.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 576,
+      "polygons": 576,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_StoneTrim"
+      ]
+    },
+    {
+      "name": "SM_DoorArch_0",
+      "category": "entrance",
+      "primitive": false,
+      "score": 135.92880862827315,
+      "area_proxy": 45.30960287609105,
+      "volume_proxy": 8.28766453785611,
+      "dimensions": [
+        4.34,
+        4.34,
+        0.44
+      ],
+      "location": [
+        24.537,
+        -22.484,
+        6.25
+      ],
+      "rotation_deg": [
+        90.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 576,
+      "polygons": 576,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_StoneTrim"
+      ]
+    },
+    {
+      "name": "SM_DoorArch_5_2",
+      "category": "entrance",
+      "primitive": false,
+      "score": 135.92880862827315,
+      "area_proxy": 45.30960287609105,
+      "volume_proxy": 8.28766453785611,
+      "dimensions": [
+        4.34,
+        4.34,
+        0.44
+      ],
+      "location": [
+        28.05,
+        -18.65,
+        6.25
+      ],
+      "rotation_deg": [
+        90.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 576,
+      "polygons": 576,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_StoneTrim"
+      ]
+    },
+    {
+      "name": "A10_DoorArchRib_-5.2",
+      "category": "entrance",
+      "primitive": false,
+      "score": 128.31606608230547,
+      "area_proxy": 42.772022027435156,
+      "volume_proxy": 4.087647795062639,
+      "dimensions": [
+        4.42,
+        4.42,
+        0.209
+      ],
+      "location": [
+        -5.2,
+        -33.62,
+        6.35
+      ],
+      "rotation_deg": [
+        90.0,
+        -0.0,
+        0.0
+      ],
+      "vertices": 480,
+      "polygons": 480,
+      "collections": [
+        "ARCH_MICRODETAIL"
+      ],
+      "materials": [
+        "A10_Trim"
+      ]
+    },
+    {
+      "name": "A10_DoorArchRib_0",
+      "category": "entrance",
+      "primitive": false,
+      "score": 128.31606608230547,
+      "area_proxy": 42.772022027435156,
+      "volume_proxy": 4.087647795062639,
+      "dimensions": [
+        4.42,
+        4.42,
+        0.209
+      ],
+      "location": [
+        0.0,
+        -33.62,
+        6.35
+      ],
+      "rotation_deg": [
+        90.0,
+        -0.0,
+        0.0
+      ],
+      "vertices": 480,
+      "polygons": 480,
+      "collections": [
+        "ARCH_MICRODETAIL"
+      ],
+      "materials": [
+        "A10_Trim"
+      ]
+    },
+    {
+      "name": "A10_DoorArchRib_5.2",
+      "category": "entrance",
+      "primitive": false,
+      "score": 128.31606608230547,
+      "area_proxy": 42.772022027435156,
+      "volume_proxy": 4.087647795062639,
+      "dimensions": [
+        4.42,
+        4.42,
+        0.209
+      ],
+      "location": [
+        5.2,
+        -33.62,
+        6.35
+      ],
+      "rotation_deg": [
+        90.0,
+        -0.0,
+        0.0
+      ],
+      "vertices": 480,
+      "polygons": 480,
+      "collections": [
+        "ARCH_MICRODETAIL"
+      ],
+      "materials": [
+        "A10_Trim"
+      ]
+    },
+    {
+      "name": "SM_V6_LanternRailFront_68_2",
+      "category": "tower",
+      "primitive": true,
+      "score": 101.56495944655775,
+      "area_proxy": 20.012799890947342,
+      "volume_proxy": 1.5959999867677688,
+      "dimensions": [
+        15.0,
+        0.28,
+        0.38
+      ],
+      "location": [
+        0.0,
+        -2.7,
+        68.2
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_V6_RathausTrim"
+      ]
+    },
+    {
+      "name": "SM_V6_LanternRailBack_68_2",
+      "category": "tower",
+      "primitive": true,
+      "score": 101.56495944655775,
+      "area_proxy": 20.012799890947342,
+      "volume_proxy": 1.5959999867677688,
+      "dimensions": [
+        15.0,
+        0.28,
+        0.38
+      ],
+      "location": [
+        0.0,
+        12.7,
+        68.2
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_V6_RathausTrim"
+      ]
+    },
+    {
+      "name": "SM_V6_LanternRailFront_75_2",
+      "category": "tower",
+      "primitive": true,
+      "score": 101.56495944655775,
+      "area_proxy": 20.012799890947342,
+      "volume_proxy": 1.5959999867677688,
+      "dimensions": [
+        15.0,
+        0.28,
+        0.38
+      ],
+      "location": [
+        0.0,
+        -2.7,
+        75.2
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_V6_RathausTrim"
+      ]
+    },
+    {
+      "name": "SM_V6_LanternRailBack_75_2",
+      "category": "tower",
+      "primitive": true,
+      "score": 101.56495944655775,
+      "area_proxy": 20.012799890947342,
+      "volume_proxy": 1.5959999867677688,
+      "dimensions": [
+        15.0,
+        0.28,
+        0.38
+      ],
+      "location": [
+        0.0,
+        12.7,
+        75.2
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_V6_RathausTrim"
+      ]
+    },
+    {
+      "name": "SM_PedimentCrestBack",
+      "category": "roof",
+      "primitive": true,
+      "score": 95.04459849479193,
+      "area_proxy": 18.727999703407278,
+      "volume_proxy": 1.4976000268936136,
+      "dimensions": [
+        2.6,
+        0.18,
+        3.2
+      ],
+      "location": [
+        24.537,
+        -22.484,
+        25.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_StoneTrim"
+      ]
+    },
+    {
+      "name": "V16_TowerRailV_-88",
+      "category": "tower",
+      "primitive": true,
+      "score": 93.50687112808227,
+      "area_proxy": 18.424999237060547,
+      "volume_proxy": 1.1437499523162842,
+      "dimensions": [
+        18.3,
+        0.25,
+        0.25
+      ],
+      "location": [
+        4.104,
+        -4.846,
+        74.55
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_DarkMetal"
+      ]
+    },
+    {
+      "name": "V16_TowerRailV_88",
+      "category": "tower",
+      "primitive": true,
+      "score": 93.50687112808227,
+      "area_proxy": 18.424999237060547,
+      "volume_proxy": 1.1437499523162842,
+      "dimensions": [
+        18.3,
+        0.25,
+        0.25
+      ],
+      "location": [
+        -8.872,
+        7.044,
+        74.55
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_DarkMetal"
+      ]
+    },
+    {
+      "name": "A10_DoorArchInner_-5.2",
+      "category": "entrance",
+      "primitive": false,
+      "score": 92.7115537090828,
+      "area_proxy": 30.903851236360936,
+      "volume_proxy": 1.922656016836003,
+      "dimensions": [
+        3.8,
+        3.8,
+        0.133
+      ],
+      "location": [
+        -5.2,
+        -33.69,
+        6.35
+      ],
+      "rotation_deg": [
+        90.0,
+        -0.0,
+        0.0
+      ],
+      "vertices": 480,
+      "polygons": 480,
+      "collections": [
+        "ARCH_MICRODETAIL"
+      ],
+      "materials": [
+        "A10_Stone"
+      ]
+    },
+    {
+      "name": "A10_DoorArchInner_0",
+      "category": "entrance",
+      "primitive": false,
+      "score": 92.7115537090828,
+      "area_proxy": 30.903851236360936,
+      "volume_proxy": 1.922656016836003,
+      "dimensions": [
+        3.8,
+        3.8,
+        0.133
+      ],
+      "location": [
+        0.0,
+        -33.69,
+        6.35
+      ],
+      "rotation_deg": [
+        90.0,
+        -0.0,
+        0.0
+      ],
+      "vertices": 480,
+      "polygons": 480,
+      "collections": [
+        "ARCH_MICRODETAIL"
+      ],
+      "materials": [
+        "A10_Stone"
+      ]
+    },
+    {
+      "name": "A10_DoorArchInner_5.2",
+      "category": "entrance",
+      "primitive": false,
+      "score": 92.7115537090828,
+      "area_proxy": 30.903851236360936,
+      "volume_proxy": 1.922656016836003,
+      "dimensions": [
+        3.8,
+        3.8,
+        0.133
+      ],
+      "location": [
+        5.2,
+        -33.69,
+        6.35
+      ],
+      "rotation_deg": [
+        90.0,
+        -0.0,
+        0.0
+      ],
+      "vertices": 480,
+      "polygons": 480,
+      "collections": [
+        "ARCH_MICRODETAIL"
+      ],
+      "materials": [
+        "A10_Stone"
+      ]
+    },
+    {
+      "name": "V16_TowerRailU_-90",
+      "category": "tower",
+      "primitive": true,
+      "score": 91.47687306404113,
+      "area_proxy": 18.024999618530273,
+      "volume_proxy": 1.118749976158142,
+      "dimensions": [
+        0.25,
+        17.9,
+        0.25
+      ],
+      "location": [
+        -8.464,
+        -5.536,
+        74.55
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_DarkMetal"
+      ]
+    },
+    {
+      "name": "V16_TowerRailU_90",
+      "category": "tower",
+      "primitive": true,
+      "score": 91.47687306404113,
+      "area_proxy": 18.024999618530273,
+      "volume_proxy": 1.118749976158142,
+      "dimensions": [
+        0.25,
+        17.9,
+        0.25
+      ],
+      "location": [
+        3.697,
+        7.735,
+        74.55
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_DarkMetal"
+      ]
+    },
+    {
+      "name": "A10_FrontGutter",
+      "category": "other",
+      "primitive": true,
+      "score": 77.68751826168179,
+      "area_proxy": 107.15519760231972,
+      "volume_proxy": 6.42239971289635,
+      "dimensions": [
+        111.5,
+        0.24,
+        0.24
+      ],
+      "location": [
+        0.0,
+        -28.72,
+        21.15
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "ARCH_MICRODETAIL"
+      ],
+      "materials": [
+        "A10_Copper"
+      ]
+    },
+    {
+      "name": "V16_PortalPierL_0",
+      "category": "entrance",
+      "primitive": true,
+      "score": 73.60199853765963,
+      "area_proxy": 16.9199996638298,
+      "volume_proxy": 2.4799999606609333,
+      "dimensions": [
+        0.5,
+        0.8,
+        6.2
+      ],
+      "location": [
+        25.032,
+        -32.704,
+        3.1
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_StoneTrim"
+      ]
+    },
+    {
+      "name": "V16_PortalPierR_0",
+      "category": "entrance",
+      "primitive": true,
+      "score": 73.60199853765963,
+      "area_proxy": 16.9199996638298,
+      "volume_proxy": 2.4799999606609333,
+      "dimensions": [
+        0.5,
+        0.8,
+        6.2
+      ],
+      "location": [
+        27.735,
+        -29.754,
+        3.1
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_StoneTrim"
+      ]
+    },
+    {
+      "name": "V16_PortalPierL_1",
+      "category": "entrance",
+      "primitive": true,
+      "score": 73.60199853765963,
+      "area_proxy": 16.9199996638298,
+      "volume_proxy": 2.4799999606609333,
+      "dimensions": [
+        0.5,
+        0.8,
+        6.2
+      ],
+      "location": [
+        28.545,
+        -28.87,
+        3.1
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_StoneTrim"
+      ]
+    },
+    {
+      "name": "V16_PortalPierR_1",
+      "category": "entrance",
+      "primitive": true,
+      "score": 73.60199853765963,
+      "area_proxy": 16.9199996638298,
+      "volume_proxy": 2.4799999606609333,
+      "dimensions": [
+        0.5,
+        0.8,
+        6.2
+      ],
+      "location": [
+        31.248,
+        -25.921,
+        3.1
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_StoneTrim"
+      ]
+    },
+    {
+      "name": "V16_PortalPierL_2",
+      "category": "entrance",
+      "primitive": true,
+      "score": 73.60199853765963,
+      "area_proxy": 16.9199996638298,
+      "volume_proxy": 2.4799999606609333,
+      "dimensions": [
+        0.5,
+        0.8,
+        6.2
+      ],
+      "location": [
+        32.058,
+        -25.036,
+        3.1
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_StoneTrim"
+      ]
+    },
+    {
+      "name": "V16_PortalPierR_2",
+      "category": "entrance",
+      "primitive": true,
+      "score": 73.60199853765963,
+      "area_proxy": 16.9199996638298,
+      "volume_proxy": 2.4799999606609333,
+      "dimensions": [
+        0.5,
+        0.8,
+        6.2
+      ],
+      "location": [
+        34.761,
+        -22.087,
+        3.1
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_StoneTrim"
+      ]
+    },
+    {
+      "name": "SM_PedimentMedallion",
+      "category": "roof",
+      "primitive": false,
+      "score": 49.349999874830246,
+      "area_proxy": 14.099999964237213,
+      "volume_proxy": 0.9999999776482582,
+      "dimensions": [
+        2.5,
+        2.5,
+        0.16
+      ],
+      "location": [
+        24.514,
+        -22.463,
+        25.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 96,
+      "polygons": 50,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_StoneTrim"
+      ]
+    },
+    {
+      "name": "SM_V8_Banner__6",
+      "category": "other",
+      "primitive": true,
+      "score": 39.570499966293575,
+      "area_proxy": 54.57999995350838,
+      "volume_proxy": 2.0999999530613422,
+      "dimensions": [
+        2.5,
+        0.08,
+        10.5
+      ],
+      "location": [
+        11.061,
+        -18.273,
+        15.5
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_MarkerRed"
+      ]
+    },
+    {
+      "name": "SM_V8_Banner_0",
+      "category": "other",
+      "primitive": true,
+      "score": 39.570499966293575,
+      "area_proxy": 54.57999995350838,
+      "volume_proxy": 2.0999999530613422,
+      "dimensions": [
+        2.5,
+        0.08,
+        10.5
+      ],
+      "location": [
+        15.114,
+        -13.85,
+        15.5
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_WhiteBanner"
+      ]
+    },
+    {
+      "name": "SM_V8_Banner_6",
+      "category": "other",
+      "primitive": true,
+      "score": 39.570499966293575,
+      "area_proxy": 54.57999995350838,
+      "volume_proxy": 2.0999999530613422,
+      "dimensions": [
+        2.5,
+        0.08,
+        10.5
+      ],
+      "location": [
+        19.168,
+        -9.426,
+        15.5
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_MarkerRed"
+      ]
+    },
+    {
+      "name": "A10_DoorThreshold_-5.2",
+      "category": "entrance",
+      "primitive": true,
+      "score": 34.95659796413185,
+      "area_proxy": 8.035999531984334,
+      "volume_proxy": 0.6467999561071404,
+      "dimensions": [
+        4.2,
+        0.7,
+        0.22
+      ],
+      "location": [
+        -5.2,
+        -33.62,
+        0.35
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "ARCH_MICRODETAIL"
+      ],
+      "materials": [
+        "A10_Stone"
+      ]
+    },
+    {
+      "name": "A10_DoorThreshold_0",
+      "category": "entrance",
+      "primitive": true,
+      "score": 34.95659796413185,
+      "area_proxy": 8.035999531984334,
+      "volume_proxy": 0.6467999561071404,
+      "dimensions": [
+        4.2,
+        0.7,
+        0.22
+      ],
+      "location": [
+        0.0,
+        -33.62,
+        0.35
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "ARCH_MICRODETAIL"
+      ],
+      "materials": [
+        "A10_Stone"
+      ]
+    },
+    {
+      "name": "A10_DoorThreshold_5.2",
+      "category": "entrance",
+      "primitive": true,
+      "score": 34.95659796413185,
+      "area_proxy": 8.035999531984334,
+      "volume_proxy": 0.6467999561071404,
+      "dimensions": [
+        4.2,
+        0.7,
+        0.22
+      ],
+      "location": [
+        5.2,
+        -33.62,
+        0.35
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "ARCH_MICRODETAIL"
+      ],
+      "materials": [
+        "A10_Stone"
+      ]
+    },
+    {
+      "name": "SM_V6_TowerWindow_31_5",
+      "category": "tower",
+      "primitive": true,
+      "score": 33.72337687697264,
+      "area_proxy": 6.645000369846825,
+      "volume_proxy": 0.3483000138156114,
+      "dimensions": [
+        1.35,
+        0.12,
+        2.15
+      ],
+      "location": [
+        0.0,
+        -2.93,
+        31.5
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_Glass"
+      ]
+    },
+    {
+      "name": "SM_V6_TowerWindow_37_0",
+      "category": "tower",
+      "primitive": true,
+      "score": 33.72337687697264,
+      "area_proxy": 6.645000369846825,
+      "volume_proxy": 0.3483000138156114,
+      "dimensions": [
+        1.35,
+        0.12,
+        2.15
+      ],
+      "location": [
+        0.0,
+        -2.93,
+        37.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_Glass"
+      ]
+    },
+    {
+      "name": "SM_V6_TowerWindow_42_5",
+      "category": "tower",
+      "primitive": true,
+      "score": 33.72337687697264,
+      "area_proxy": 6.645000369846825,
+      "volume_proxy": 0.3483000138156114,
+      "dimensions": [
+        1.35,
+        0.12,
+        2.15
+      ],
+      "location": [
+        0.0,
+        -2.93,
+        42.5
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_Glass"
+      ]
+    },
+    {
+      "name": "SM_V6_TowerWindow_48_0",
+      "category": "tower",
+      "primitive": true,
+      "score": 33.72337687697264,
+      "area_proxy": 6.645000369846825,
+      "volume_proxy": 0.3483000138156114,
+      "dimensions": [
+        1.35,
+        0.12,
+        2.15
+      ],
+      "location": [
+        0.0,
+        -2.93,
+        48.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_Glass"
+      ]
+    },
+    {
+      "name": "SM_V6_TowerWindow_53_5",
+      "category": "tower",
+      "primitive": true,
+      "score": 33.72337687697264,
+      "area_proxy": 6.645000369846825,
+      "volume_proxy": 0.3483000138156114,
+      "dimensions": [
+        1.35,
+        0.12,
+        2.15
+      ],
+      "location": [
+        0.0,
+        -2.93,
+        53.5
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_Glass"
+      ]
+    },
+    {
+      "name": "SM_LanternPost__5_3_0_2",
+      "category": "other",
+      "primitive": true,
+      "score": 32.48362616848946,
+      "area_proxy": 44.8050016117096,
+      "volume_proxy": 14.717500967979447,
+      "dimensions": [
+        1.45,
+        1.45,
+        7.0
+      ],
+      "location": [
+        -3.728,
+        -3.772,
+        71.5
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Architecture"
+      ],
+      "materials": [
+        "M_StoneTrim"
+      ]
+    },
+    {
+      "name": "SM_LanternPost__5_3_9_8",
+      "category": "other",
+      "primitive": true,
+      "score": 32.48362616848946,
+      "area_proxy": 44.8050016117096,
+      "volume_proxy": 14.717500967979447,
+      "dimensions": [
+        1.45,
+        1.45,
+        7.0
+      ],
+      "location": [
+        -10.806,
+        2.713,
+        71.5
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Architecture"
+      ],
+      "materials": [
+        "M_StoneTrim"
+      ]
+    },
+    {
+      "name": "SM_LanternPost_5_3_0_2",
+      "category": "other",
+      "primitive": true,
+      "score": 32.48362616848946,
+      "area_proxy": 44.8050016117096,
+      "volume_proxy": 14.717500967979447,
+      "dimensions": [
+        1.45,
+        1.45,
+        7.0
+      ],
+      "location": [
+        3.433,
+        4.043,
+        71.5
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Architecture"
+      ],
+      "materials": [
+        "M_StoneTrim"
+      ]
+    },
+    {
+      "name": "SM_LanternPost_5_3_9_8",
+      "category": "other",
+      "primitive": true,
+      "score": 32.48362616848946,
+      "area_proxy": 44.8050016117096,
+      "volume_proxy": 14.717500967979447,
+      "dimensions": [
+        1.45,
+        1.45,
+        7.0
+      ],
+      "location": [
+        -3.645,
+        10.528,
+        71.5
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Architecture"
+      ],
+      "materials": [
+        "M_StoneTrim"
+      ]
+    },
+    {
+      "name": "SM_V6_LanternPost__5_2_0_3",
+      "category": "other",
+      "primitive": true,
+      "score": 31.613625978350647,
+      "area_proxy": 43.60500134944917,
+      "volume_proxy": 13.486500650167475,
+      "dimensions": [
+        1.35,
+        1.35,
+        7.4
+      ],
+      "location": [
+        -5.2,
+        0.3,
+        71.7
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_V6_RathausTrim"
+      ]
+    },
+    {
+      "name": "SM_V6_LanternPost__5_2_9_7",
+      "category": "other",
+      "primitive": true,
+      "score": 31.613625978350647,
+      "area_proxy": 43.60500134944917,
+      "volume_proxy": 13.486500650167475,
+      "dimensions": [
+        1.35,
+        1.35,
+        7.4
+      ],
+      "location": [
+        -5.2,
+        9.7,
+        71.7
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_V6_RathausTrim"
+      ]
+    },
+    {
+      "name": "SM_V6_LanternPost_5_2_0_3",
+      "category": "other",
+      "primitive": true,
+      "score": 31.613625978350647,
+      "area_proxy": 43.60500134944917,
+      "volume_proxy": 13.486500650167475,
+      "dimensions": [
+        1.35,
+        1.35,
+        7.4
+      ],
+      "location": [
+        5.2,
+        0.3,
+        71.7
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_V6_RathausTrim"
+      ]
+    },
+    {
+      "name": "SM_V6_LanternPost_5_2_9_7",
+      "category": "other",
+      "primitive": true,
+      "score": 31.613625978350647,
+      "area_proxy": 43.60500134944917,
+      "volume_proxy": 13.486500650167475,
+      "dimensions": [
+        1.35,
+        1.35,
+        7.4
+      ],
+      "location": [
+        5.2,
+        9.7,
+        71.7
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_V6_RathausTrim"
+      ]
+    },
+    {
+      "name": "SM_TowerWindow_30_5",
+      "category": "tower",
+      "primitive": true,
+      "score": 28.472778879926803,
+      "area_proxy": 5.610399779295921,
+      "volume_proxy": 0.3303999867200851,
+      "dimensions": [
+        1.18,
+        0.14,
+        2.0
+      ],
+      "location": [
+        2.05,
+        -1.878,
+        30.5
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_Glass"
+      ]
+    },
+    {
+      "name": "SM_TowerWindow_36_0",
+      "category": "tower",
+      "primitive": true,
+      "score": 28.472778879926803,
+      "area_proxy": 5.610399779295921,
+      "volume_proxy": 0.3303999867200851,
+      "dimensions": [
+        1.18,
+        0.14,
+        2.0
+      ],
+      "location": [
+        2.05,
+        -1.878,
+        36.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_Glass"
+      ]
+    },
+    {
+      "name": "SM_TowerWindow_41_5",
+      "category": "tower",
+      "primitive": true,
+      "score": 28.472778879926803,
+      "area_proxy": 5.610399779295921,
+      "volume_proxy": 0.3303999867200851,
+      "dimensions": [
+        1.18,
+        0.14,
+        2.0
+      ],
+      "location": [
+        2.05,
+        -1.878,
+        41.5
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_Glass"
+      ]
+    },
+    {
+      "name": "SM_TowerWindow_47_0",
+      "category": "tower",
+      "primitive": true,
+      "score": 28.472778879926803,
+      "area_proxy": 5.610399779295921,
+      "volume_proxy": 0.3303999867200851,
+      "dimensions": [
+        1.18,
+        0.14,
+        2.0
+      ],
+      "location": [
+        2.05,
+        -1.878,
+        47.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_Glass"
+      ]
+    },
+    {
+      "name": "SM_TowerWindow_52_5",
+      "category": "tower",
+      "primitive": true,
+      "score": 28.472778879926803,
+      "area_proxy": 5.610399779295921,
+      "volume_proxy": 0.3303999867200851,
+      "dimensions": [
+        1.18,
+        0.14,
+        2.0
+      ],
+      "location": [
+        2.05,
+        -1.878,
+        52.5
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_Glass"
+      ]
+    },
+    {
+      "name": "SM_PedimentCrestInset",
+      "category": "roof",
+      "primitive": true,
+      "score": 27.22229970567374,
+      "area_proxy": 5.3639999420046784,
+      "volume_proxy": 0.19439999393820756,
+      "dimensions": [
+        1.35,
+        0.08,
+        1.8
+      ],
+      "location": [
+        24.618,
+        -22.558,
+        25.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "REAL_Rebuilt_Detail"
+      ],
+      "materials": [
+        "M_Dark"
+      ]
+    },
+    {
+      "name": "A10_RoofVent_WestRoof_-0.32",
+      "category": "roof",
+      "primitive": true,
+      "score": 26.694500266194332,
+      "area_proxy": 5.260000052452085,
+      "volume_proxy": 0.7800000023841847,
+      "dimensions": [
+        1.2,
+        1.0,
+        0.65
+      ],
+      "location": [
+        -17.417,
+        0.0,
+        2.38
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "ARCH_MICRODETAIL"
+      ],
+      "materials": [
+        "A10_DarkMetal"
+      ]
+    },
+    {
+      "name": "A10_RoofVent_WestRoof_0",
+      "category": "roof",
+      "primitive": true,
+      "score": 26.694500266194332,
+      "area_proxy": 5.260000052452085,
+      "volume_proxy": 0.7800000023841847,
+      "dimensions": [
+        1.2,
+        1.0,
+        0.65
+      ],
+      "location": [
+        0.0,
+        0.0,
+        2.38
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "ARCH_MICRODETAIL"
+      ],
+      "materials": [
+        "A10_DarkMetal"
+      ]
+    },
+    {
+      "name": "A10_RoofVent_WestRoof_0.32",
+      "category": "roof",
+      "primitive": true,
+      "score": 26.694500266194332,
+      "area_proxy": 5.260000052452085,
+      "volume_proxy": 0.7800000023841847,
+      "dimensions": [
+        1.2,
+        1.0,
+        0.65
+      ],
+      "location": [
+        17.417,
+        0.0,
+        2.38
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "ARCH_MICRODETAIL"
+      ],
+      "materials": [
+        "A10_DarkMetal"
+      ]
+    },
+    {
+      "name": "A10_RoofVent_EastRoof_-0.32",
+      "category": "roof",
+      "primitive": true,
+      "score": 26.694500266194332,
+      "area_proxy": 5.260000052452085,
+      "volume_proxy": 0.7800000023841847,
+      "dimensions": [
+        1.2,
+        1.0,
+        0.65
+      ],
+      "location": [
+        -17.417,
+        0.0,
+        2.38
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "ARCH_MICRODETAIL"
+      ],
+      "materials": [
+        "A10_DarkMetal"
+      ]
+    },
+    {
+      "name": "A10_RoofVent_EastRoof_0",
+      "category": "roof",
+      "primitive": true,
+      "score": 26.694500266194332,
+      "area_proxy": 5.260000052452085,
+      "volume_proxy": 0.7800000023841847,
+      "dimensions": [
+        1.2,
+        1.0,
+        0.65
+      ],
+      "location": [
+        0.0,
+        0.0,
+        2.38
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "ARCH_MICRODETAIL"
+      ],
+      "materials": [
+        "A10_DarkMetal"
+      ]
+    },
+    {
+      "name": "A10_RoofVent_EastRoof_0.32",
+      "category": "roof",
+      "primitive": true,
+      "score": 26.694500266194332,
+      "area_proxy": 5.260000052452085,
+      "volume_proxy": 0.7800000023841847,
+      "dimensions": [
+        1.2,
+        1.0,
+        0.65
+      ],
+      "location": [
+        17.417,
+        0.0,
+        2.38
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "ARCH_MICRODETAIL"
+      ],
+      "materials": [
+        "A10_DarkMetal"
+      ]
+    },
+    {
+      "name": "A10_RoofVentCap_WestRoof_-0.32",
+      "category": "roof",
+      "primitive": true,
+      "score": 22.233575689080357,
+      "area_proxy": 4.381000135779381,
+      "volume_proxy": 0.2537500094249845,
+      "dimensions": [
+        1.45,
+        1.25,
+        0.14
+      ],
+      "location": [
+        -17.417,
+        0.0,
+        4.9
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "ARCH_MICRODETAIL"
+      ],
+      "materials": [
+        "A10_Copper"
+      ]
+    },
+    {
+      "name": "A10_RoofVentCap_WestRoof_0",
+      "category": "roof",
+      "primitive": true,
+      "score": 22.233575689080357,
+      "area_proxy": 4.381000135779381,
+      "volume_proxy": 0.2537500094249845,
+      "dimensions": [
+        1.45,
+        1.25,
+        0.14
+      ],
+      "location": [
+        0.0,
+        0.0,
+        4.9
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "ARCH_MICRODETAIL"
+      ],
+      "materials": [
+        "A10_Copper"
+      ]
+    },
+    {
+      "name": "A10_RoofVentCap_WestRoof_0.32",
+      "category": "roof",
+      "primitive": true,
+      "score": 22.233575689080357,
+      "area_proxy": 4.381000135779381,
+      "volume_proxy": 0.2537500094249845,
+      "dimensions": [
+        1.45,
+        1.25,
+        0.14
+      ],
+      "location": [
+        17.417,
+        0.0,
+        4.9
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "ARCH_MICRODETAIL"
+      ],
+      "materials": [
+        "A10_Copper"
+      ]
+    },
+    {
+      "name": "A10_RoofVentCap_EastRoof_-0.32",
+      "category": "roof",
+      "primitive": true,
+      "score": 22.233575689080357,
+      "area_proxy": 4.381000135779381,
+      "volume_proxy": 0.2537500094249845,
+      "dimensions": [
+        1.45,
+        1.25,
+        0.14
+      ],
+      "location": [
+        -17.417,
+        0.0,
+        4.9
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "ARCH_MICRODETAIL"
+      ],
+      "materials": [
+        "A10_Copper"
+      ]
+    },
+    {
+      "name": "A10_RoofVentCap_EastRoof_0",
+      "category": "roof",
+      "primitive": true,
+      "score": 22.233575689080357,
+      "area_proxy": 4.381000135779381,
+      "volume_proxy": 0.2537500094249845,
+      "dimensions": [
+        1.45,
+        1.25,
+        0.14
+      ],
+      "location": [
+        0.0,
+        0.0,
+        4.9
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "ARCH_MICRODETAIL"
+      ],
+      "materials": [
+        "A10_Copper"
+      ]
+    },
+    {
+      "name": "A10_RoofVentCap_EastRoof_0.32",
+      "category": "roof",
+      "primitive": true,
+      "score": 22.233575689080357,
+      "area_proxy": 4.381000135779381,
+      "volume_proxy": 0.2537500094249845,
+      "dimensions": [
+        1.45,
+        1.25,
+        0.14
+      ],
+      "location": [
+        17.417,
+        0.0,
+        4.9
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "ARCH_MICRODETAIL"
+      ],
+      "materials": [
+        "A10_Copper"
+      ]
+    },
+    {
+      "name": "A10_TowerQuoin_-6.8_28",
+      "category": "tower",
+      "primitive": true,
+      "score": 22.08132381664516,
+      "area_proxy": 4.350999766826632,
+      "volume_proxy": 0.5312999619781978,
+      "dimensions": [
+        1.15,
+        0.44,
+        1.05
+      ],
+      "location": [
+        -6.8,
+        -2.95,
+        28.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "ARCH_MICRODETAIL"
+      ],
+      "materials": [
+        "A10_Trim"
+      ]
+    },
+    {
+      "name": "A10_TowerQuoin_-6.8_32",
+      "category": "tower",
+      "primitive": true,
+      "score": 22.08132381664516,
+      "area_proxy": 4.350999766826632,
+      "volume_proxy": 0.5312999619781978,
+      "dimensions": [
+        1.15,
+        0.44,
+        1.05
+      ],
+      "location": [
+        -6.8,
+        -2.95,
+        32.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "ARCH_MICRODETAIL"
+      ],
+      "materials": [
+        "A10_Trim"
+      ]
+    },
+    {
+      "name": "A10_TowerQuoin_-6.8_36",
+      "category": "tower",
+      "primitive": true,
+      "score": 22.08132381664516,
+      "area_proxy": 4.350999766826632,
+      "volume_proxy": 0.5312999619781978,
+      "dimensions": [
+        1.15,
+        0.44,
+        1.05
+      ],
+      "location": [
+        -6.8,
+        -2.95,
+        36.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "ARCH_MICRODETAIL"
+      ],
+      "materials": [
+        "A10_Trim"
+      ]
+    },
+    {
+      "name": "A10_TowerQuoin_-6.8_40",
+      "category": "tower",
+      "primitive": true,
+      "score": 22.08132381664516,
+      "area_proxy": 4.350999766826632,
+      "volume_proxy": 0.5312999619781978,
+      "dimensions": [
+        1.15,
+        0.44,
+        1.05
+      ],
+      "location": [
+        -6.8,
+        -2.95,
+        40.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "ARCH_MICRODETAIL"
+      ],
+      "materials": [
+        "A10_Trim"
+      ]
+    },
+    {
+      "name": "A10_TowerQuoin_-6.8_44",
+      "category": "tower",
+      "primitive": true,
+      "score": 22.08132381664516,
+      "area_proxy": 4.350999766826632,
+      "volume_proxy": 0.5312999619781978,
+      "dimensions": [
+        1.15,
+        0.44,
+        1.05
+      ],
+      "location": [
+        -6.8,
+        -2.95,
+        44.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "ARCH_MICRODETAIL"
+      ],
+      "materials": [
+        "A10_Trim"
+      ]
+    },
+    {
+      "name": "A10_TowerQuoin_-6.8_48",
+      "category": "tower",
+      "primitive": true,
+      "score": 22.08132381664516,
+      "area_proxy": 4.350999766826632,
+      "volume_proxy": 0.5312999619781978,
+      "dimensions": [
+        1.15,
+        0.44,
+        1.05
+      ],
+      "location": [
+        -6.8,
+        -2.95,
+        48.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "ARCH_MICRODETAIL"
+      ],
+      "materials": [
+        "A10_Trim"
+      ]
+    },
+    {
+      "name": "A10_TowerQuoin_-6.8_52",
+      "category": "tower",
+      "primitive": true,
+      "score": 22.08132381664516,
+      "area_proxy": 4.350999766826632,
+      "volume_proxy": 0.5312999619781978,
+      "dimensions": [
+        1.15,
+        0.44,
+        1.05
+      ],
+      "location": [
+        -6.8,
+        -2.95,
+        52.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "ARCH_MICRODETAIL"
+      ],
+      "materials": [
+        "A10_Trim"
+      ]
+    },
+    {
+      "name": "A10_TowerQuoin_-6.8_56",
+      "category": "tower",
+      "primitive": true,
+      "score": 22.08132381664516,
+      "area_proxy": 4.350999766826632,
+      "volume_proxy": 0.5312999619781978,
+      "dimensions": [
+        1.15,
+        0.44,
+        1.05
+      ],
+      "location": [
+        -6.8,
+        -2.95,
+        56.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "ARCH_MICRODETAIL"
+      ],
+      "materials": [
+        "A10_Trim"
+      ]
+    },
+    {
+      "name": "A10_TowerQuoin_6.8_28",
+      "category": "tower",
+      "primitive": true,
+      "score": 22.08132381664516,
+      "area_proxy": 4.350999766826632,
+      "volume_proxy": 0.5312999619781978,
+      "dimensions": [
+        1.15,
+        0.44,
+        1.05
+      ],
+      "location": [
+        6.8,
+        -2.95,
+        28.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "ARCH_MICRODETAIL"
+      ],
+      "materials": [
+        "A10_Trim"
+      ]
+    },
+    {
+      "name": "A10_TowerQuoin_6.8_32",
+      "category": "tower",
+      "primitive": true,
+      "score": 22.08132381664516,
+      "area_proxy": 4.350999766826632,
+      "volume_proxy": 0.5312999619781978,
+      "dimensions": [
+        1.15,
+        0.44,
+        1.05
+      ],
+      "location": [
+        6.8,
+        -2.95,
+        32.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "ARCH_MICRODETAIL"
+      ],
+      "materials": [
+        "A10_Trim"
+      ]
+    },
+    {
+      "name": "A10_TowerQuoin_6.8_36",
+      "category": "tower",
+      "primitive": true,
+      "score": 22.08132381664516,
+      "area_proxy": 4.350999766826632,
+      "volume_proxy": 0.5312999619781978,
+      "dimensions": [
+        1.15,
+        0.44,
+        1.05
+      ],
+      "location": [
+        6.8,
+        -2.95,
+        36.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "ARCH_MICRODETAIL"
+      ],
+      "materials": [
+        "A10_Trim"
+      ]
+    },
+    {
+      "name": "A10_TowerQuoin_6.8_40",
+      "category": "tower",
+      "primitive": true,
+      "score": 22.08132381664516,
+      "area_proxy": 4.350999766826632,
+      "volume_proxy": 0.5312999619781978,
+      "dimensions": [
+        1.15,
+        0.44,
+        1.05
+      ],
+      "location": [
+        6.8,
+        -2.95,
+        40.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "ARCH_MICRODETAIL"
+      ],
+      "materials": [
+        "A10_Trim"
+      ]
+    },
+    {
+      "name": "A10_TowerQuoin_6.8_44",
+      "category": "tower",
+      "primitive": true,
+      "score": 22.08132381664516,
+      "area_proxy": 4.350999766826632,
+      "volume_proxy": 0.5312999619781978,
+      "dimensions": [
+        1.15,
+        0.44,
+        1.05
+      ],
+      "location": [
+        6.8,
+        -2.95,
+        44.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "ARCH_MICRODETAIL"
+      ],
+      "materials": [
+        "A10_Trim"
+      ]
+    },
+    {
+      "name": "A10_TowerQuoin_6.8_48",
+      "category": "tower",
+      "primitive": true,
+      "score": 22.08132381664516,
+      "area_proxy": 4.350999766826632,
+      "volume_proxy": 0.5312999619781978,
+      "dimensions": [
+        1.15,
+        0.44,
+        1.05
+      ],
+      "location": [
+        6.8,
+        -2.95,
+        48.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "ARCH_MICRODETAIL"
+      ],
+      "materials": [
+        "A10_Trim"
+      ]
+    },
+    {
+      "name": "A10_TowerQuoin_6.8_52",
+      "category": "tower",
+      "primitive": true,
+      "score": 22.08132381664516,
+      "area_proxy": 4.350999766826632,
+      "volume_proxy": 0.5312999619781978,
+      "dimensions": [
+        1.15,
+        0.44,
+        1.05
+      ],
+      "location": [
+        6.8,
+        -2.95,
+        52.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "ARCH_MICRODETAIL"
+      ],
+      "materials": [
+        "A10_Trim"
+      ]
+    },
+    {
+      "name": "A10_TowerQuoin_6.8_56",
+      "category": "tower",
+      "primitive": true,
+      "score": 22.08132381664516,
+      "area_proxy": 4.350999766826632,
+      "volume_proxy": 0.5312999619781978,
+      "dimensions": [
+        1.15,
+        0.44,
+        1.05
+      ],
+      "location": [
+        6.8,
+        -2.95,
+        56.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "ARCH_MICRODETAIL"
+      ],
+      "materials": [
+        "A10_Trim"
+      ]
+    },
+    {
+      "name": "V16_DormerFrontWindow_0",
+      "category": "roof",
+      "primitive": true,
+      "score": 21.92907398301662,
+      "area_proxy": 4.3209997996091865,
+      "volume_proxy": 0.24954998821169147,
+      "dimensions": [
+        1.15,
+        0.14,
+        1.55
+      ],
+      "location": [
+        -9.796,
+        -58.841,
+        23.35
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_Glass"
+      ]
+    },
+    {
+      "name": "V16_DormerFrontWindow_1",
+      "category": "roof",
+      "primitive": true,
+      "score": 21.92907398301662,
+      "area_proxy": 4.3209997996091865,
+      "volume_proxy": 0.24954998821169147,
+      "dimensions": [
+        1.15,
+        0.14,
+        1.55
+      ],
+      "location": [
+        -4.391,
+        -52.943,
+        23.35
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_Glass"
+      ]
+    },
+    {
+      "name": "V16_DormerFrontWindow_2",
+      "category": "roof",
+      "primitive": true,
+      "score": 21.92907398301662,
+      "area_proxy": 4.3209997996091865,
+      "volume_proxy": 0.24954998821169147,
+      "dimensions": [
+        1.15,
+        0.14,
+        1.55
+      ],
+      "location": [
+        1.014,
+        -47.044,
+        23.35
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_Glass"
+      ]
+    },
+    {
+      "name": "V16_DormerFrontWindow_3",
+      "category": "roof",
+      "primitive": true,
+      "score": 21.92907398301662,
+      "area_proxy": 4.3209997996091865,
+      "volume_proxy": 0.24954998821169147,
+      "dimensions": [
+        1.15,
+        0.14,
+        1.55
+      ],
+      "location": [
+        6.418,
+        -41.146,
+        23.35
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_Glass"
+      ]
+    },
+    {
+      "name": "V16_DormerFrontWindow_4",
+      "category": "roof",
+      "primitive": true,
+      "score": 21.92907398301662,
+      "area_proxy": 4.3209997996091865,
+      "volume_proxy": 0.24954998821169147,
+      "dimensions": [
+        1.15,
+        0.14,
+        1.55
+      ],
+      "location": [
+        11.823,
+        -35.248,
+        23.35
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_Glass"
+      ]
+    },
+    {
+      "name": "V16_DormerFrontWindow_5",
+      "category": "roof",
+      "primitive": true,
+      "score": 21.92907398301662,
+      "area_proxy": 4.3209997996091865,
+      "volume_proxy": 0.24954998821169147,
+      "dimensions": [
+        1.15,
+        0.14,
+        1.55
+      ],
+      "location": [
+        36.144,
+        -8.706,
+        23.35
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_Glass"
+      ]
+    },
+    {
+      "name": "V16_DormerFrontWindow_6",
+      "category": "roof",
+      "primitive": true,
+      "score": 21.92907398301662,
+      "area_proxy": 4.3209997996091865,
+      "volume_proxy": 0.24954998821169147,
+      "dimensions": [
+        1.15,
+        0.14,
+        1.55
+      ],
+      "location": [
+        41.549,
+        -2.808,
+        23.35
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_Glass"
+      ]
+    },
+    {
+      "name": "V16_DormerFrontWindow_7",
+      "category": "roof",
+      "primitive": true,
+      "score": 21.92907398301662,
+      "area_proxy": 4.3209997996091865,
+      "volume_proxy": 0.24954998821169147,
+      "dimensions": [
+        1.15,
+        0.14,
+        1.55
+      ],
+      "location": [
+        46.954,
+        3.09,
+        23.35
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_Glass"
+      ]
+    },
+    {
+      "name": "V16_DormerFrontWindow_8",
+      "category": "roof",
+      "primitive": true,
+      "score": 21.92907398301662,
+      "area_proxy": 4.3209997996091865,
+      "volume_proxy": 0.24954998821169147,
+      "dimensions": [
+        1.15,
+        0.14,
+        1.55
+      ],
+      "location": [
+        52.358,
+        8.989,
+        23.35
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_Glass"
+      ]
+    },
+    {
+      "name": "V16_DormerFrontWindow_9",
+      "category": "roof",
+      "primitive": true,
+      "score": 21.92907398301662,
+      "area_proxy": 4.3209997996091865,
+      "volume_proxy": 0.24954998821169147,
+      "dimensions": [
+        1.15,
+        0.14,
+        1.55
+      ],
+      "location": [
+        57.763,
+        14.887,
+        23.35
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        47.5
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "PRODUCTION_RATHAUS_V16_DETAIL"
+      ],
+      "materials": [
+        "M_V16_Glass"
+      ]
+    },
+    {
+      "name": "A10_FacadeCourse_1.3",
+      "category": "other",
+      "primitive": true,
+      "score": 21.83250466254249,
+      "area_proxy": 30.113799534541368,
+      "volume_proxy": 0.4905999863758684,
+      "dimensions": [
+        111.5,
+        0.08,
+        0.055
+      ],
+      "location": [
+        0.0,
+        -28.15,
+        1.3
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "ARCH_MICRODETAIL"
+      ],
+      "materials": [
+        "A10_Trim"
+      ]
+    },
+    {
+      "name": "A10_FacadeCourse_3.4",
+      "category": "other",
+      "primitive": true,
+      "score": 21.83250466254249,
+      "area_proxy": 30.113799534541368,
+      "volume_proxy": 0.4905999863758684,
+      "dimensions": [
+        111.5,
+        0.08,
+        0.055
+      ],
+      "location": [
+        0.0,
+        -28.15,
+        3.4
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "ARCH_MICRODETAIL"
+      ],
+      "materials": [
+        "A10_Trim"
+      ]
+    },
+    {
+      "name": "A10_FacadeCourse_5.5",
+      "category": "other",
+      "primitive": true,
+      "score": 21.83250466254249,
+      "area_proxy": 30.113799534541368,
+      "volume_proxy": 0.4905999863758684,
+      "dimensions": [
+        111.5,
+        0.08,
+        0.055
+      ],
+      "location": [
+        0.0,
+        -28.15,
+        5.5
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "ARCH_MICRODETAIL"
+      ],
+      "materials": [
+        "A10_Trim"
+      ]
+    },
+    {
+      "name": "A10_FacadeCourse_7.6",
+      "category": "other",
+      "primitive": true,
+      "score": 21.83250466254249,
+      "area_proxy": 30.113799534541368,
+      "volume_proxy": 0.4905999863758684,
+      "dimensions": [
+        111.5,
+        0.08,
+        0.055
+      ],
+      "location": [
+        0.0,
+        -28.15,
+        7.6
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "ARCH_MICRODETAIL"
+      ],
+      "materials": [
+        "A10_Trim"
+      ]
+    },
+    {
+      "name": "A10_FacadeCourse_9.7",
+      "category": "other",
+      "primitive": true,
+      "score": 21.83250466254249,
+      "area_proxy": 30.113799534541368,
+      "volume_proxy": 0.4905999863758684,
+      "dimensions": [
+        111.5,
+        0.08,
+        0.055
+      ],
+      "location": [
+        0.0,
+        -28.15,
+        9.7
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "ARCH_MICRODETAIL"
+      ],
+      "materials": [
+        "A10_Trim"
+      ]
+    },
+    {
+      "name": "A10_FacadeCourse_11.8",
+      "category": "other",
+      "primitive": true,
+      "score": 21.83250466254249,
+      "area_proxy": 30.113799534541368,
+      "volume_proxy": 0.4905999863758684,
+      "dimensions": [
+        111.5,
+        0.08,
+        0.055
+      ],
+      "location": [
+        0.0,
+        -28.15,
+        11.8
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "ARCH_MICRODETAIL"
+      ],
+      "materials": [
+        "A10_Trim"
+      ]
+    },
+    {
+      "name": "A10_FacadeCourse_13.9",
+      "category": "other",
+      "primitive": true,
+      "score": 21.83250466254249,
+      "area_proxy": 30.113799534541368,
+      "volume_proxy": 0.4905999863758684,
+      "dimensions": [
+        111.5,
+        0.08,
+        0.055
+      ],
+      "location": [
+        0.0,
+        -28.15,
+        13.9
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertices": 8,
+      "polygons": 6,
+      "collections": [
+        "ARCH_MICRODETAIL"
+      ],
+      "materials": [
+        "A10_Trim"
+      ]
+    }
+  ]
+}

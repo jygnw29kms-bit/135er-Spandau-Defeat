@@ -1,0 +1,42 @@
+{
+  "source": "C:\\Users\\dezen\\Desktop\\135er-Spandau-Defeat\\tools\\blender_pipeline\\builds\\rathaus_spandau\\SpandauStrike_Rathaus_WORLD_MASTER_v30_PRODUCTION_CLEAN.blend",
+  "output": "C:\\Users\\dezen\\Desktop\\135er-Spandau-Defeat\\tools\\blender_pipeline\\builds\\rathaus_spandau\\SpandauStrike_Rathaus_WORLD_MASTER_v31_FENESTRATION.blend",
+  "created_count": 89,
+  "window_instances": 76,
+  "shared_window_mesh": "MESH_V31_Window_Module",
+  "side_u": [
+    -48,
+    -43,
+    -38,
+    -33,
+    -28,
+    -23,
+    -18,
+    18,
+    23,
+    28,
+    33,
+    38,
+    43,
+    48
+  ],
+  "levels": [
+    4.2,
+    8.4,
+    12.6,
+    16.8
+  ],
+  "central_u": [
+    -8,
+    -4,
+    0,
+    4,
+    8
+  ],
+  "central_levels": [
+    5.0,
+    9.2,
+    13.4,
+    17.6
+  ]
+}

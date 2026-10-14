@@ -1,0 +1,19 @@
+{
+  "file": "C:\\Users\\dezen\\Desktop\\135er-Spandau-Defeat\\tools\\blender_pipeline\\builds\\rathaus_spandau\\SpandauStrike_Rathaus_WORLD_MASTER_v25_FACADE_ACCURACY.blend",
+  "export_mesh_count": 7831,
+  "bounds_min": [
+    -1255.1239013671875,
+    -3227.75537109375,
+    -23.0
+  ],
+  "bounds_max": [
+    599.7411499023438,
+    973.3992919921875,
+    87.19999694824219
+  ],
+  "bounds_size": [
+    1854.8650512695312,
+    4201.1546630859375,
+    110.19999694824219
+  ]
+}

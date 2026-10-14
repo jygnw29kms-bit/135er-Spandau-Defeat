@@ -1,0 +1,29 @@
+{
+  "source": "C:\\Users\\dezen\\Desktop\\135er-Spandau-Defeat\\tools\\blender_pipeline\\builds\\rathaus_spandau\\SpandauStrike_Rathaus_WORLD_MASTER_v28_CENTRAL_CLEAN.blend",
+  "output": "C:\\Users\\dezen\\Desktop\\135er-Spandau-Defeat\\tools\\blender_pipeline\\builds\\rathaus_spandau\\SpandauStrike_Rathaus_WORLD_MASTER_v29_GEOFRAME_CLEAN.blend",
+  "retired_count": 22,
+  "retired": [
+    "P_WestWing",
+    "P_WestWing_CourseF_2.3",
+    "P_WestWing_CourseB_2.3",
+    "P_WestWing_CourseF_6.1",
+    "P_WestWing_CourseB_6.1",
+    "P_WestWing_CourseF_9.9",
+    "P_WestWing_CourseB_9.9",
+    "P_WestWing_CourseF_13.7",
+    "P_WestWing_CourseB_13.7",
+    "P_WestWing_CourseF_17.1",
+    "P_WestWing_CourseB_17.1",
+    "P_EastWing",
+    "P_EastWing_CourseF_2.3",
+    "P_EastWing_CourseB_2.3",
+    "P_EastWing_CourseF_6.1",
+    "P_EastWing_CourseB_6.1",
+    "P_EastWing_CourseF_9.9",
+    "P_EastWing_CourseB_9.9",
+    "P_EastWing_CourseF_13.7",
+    "P_EastWing_CourseB_13.7",
+    "P_EastWing_CourseF_17.1",
+    "P_EastWing_CourseB_17.1"
+  ]
+}

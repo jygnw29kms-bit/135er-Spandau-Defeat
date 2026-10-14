@@ -1,0 +1,8 @@
+{
+  "source": "C:\\Users\\dezen\\Desktop\\135er-Spandau-Defeat\\tools\\blender_pipeline\\builds\\rathaus_spandau\\SpandauStrike_Rathaus_WORLD_MASTER_v26_CLEAN_SILHOUETTE.blend",
+  "output": "C:\\Users\\dezen\\Desktop\\135er-Spandau-Defeat\\tools\\blender_pipeline\\builds\\rathaus_spandau\\SpandauStrike_Rathaus_WORLD_MASTER_v27_RISALIT_CLEAN.blend",
+  "changed": [
+    "P_CentralRisalit",
+    "SM_CentralRisalit"
+  ]
+}
