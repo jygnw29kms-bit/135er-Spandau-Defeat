@@ -74,6 +74,11 @@ jobs:
           python tools/gameplay/build_ue_import_plan.py --out /tmp/runtime_import_plan_v1.json
           test -s /tmp/runtime_import_plan_v1.json
 
+      - name: Generate Rathaus map flow report
+        run: |
+          python tools/gameplay/build_map_flow_report.py --out /tmp/rathaus_map_flow_report_v1.json
+          test -s /tmp/rathaus_map_flow_report_v1.json
+
       - name: Verify project-owned naming
         shell: bash
         run: |
@@ -86,6 +91,7 @@ jobs:
           path: |
             /tmp/runtime_gameplay_handoff_v42.json
             /tmp/runtime_import_plan_v1.json
+            /tmp/rathaus_map_flow_report_v1.json
             /tmp/SpandauStrikeGameplayTags.ini
             /tmp/SpandauStrikeDataTables/*.csv
             ue5/SpandauStrike/Design/Gameplay/gameplay_bundle_v1.json
