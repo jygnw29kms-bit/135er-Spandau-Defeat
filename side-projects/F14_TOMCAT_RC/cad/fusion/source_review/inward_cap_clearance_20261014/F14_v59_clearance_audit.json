@@ -1,0 +1,97 @@
+{
+  "status": "NATIVE_SPAR_TO_SHELL_MINIMUM_DISTANCE",
+  "inputs": {
+    "spars": {
+      "path": "C:\\Users\\dezen\\Documents\\Codex\\2026-10-04\\referenced-chatgpt-conversation-this-is-an\\outputs\\F14_SOURCE_SPAR_20261013\\F14_v10_SOURCE_SPAR_PACKAGING_REVIEW.f3d",
+      "sha256": "2ba6aa8bac316130c30d4f560796f2644ba30ceedc84a492b4102e94dfddb298"
+    },
+    "shells": {
+      "path": "C:\\Users\\dezen\\Documents\\Codex\\2026-10-04\\referenced-chatgpt-conversation-this-is-an\\outputs\\F14_HOLLOW_WING_SEGMENTS_20261013\\F14_HOLLOW_WING_SEGMENTS_CHECKPOINT_v57.f3d",
+      "sha256": "ef5ae8ef3e265db459177458cc86c53671bb28d03e589f4f16a94550990aaef1"
+    }
+  },
+  "cap_inward_vertical_shift_mm": 0.03,
+  "cap_centroid_separation_reduction_mm": 0.06,
+  "web_interfaces_updated": false,
+  "measurements": [
+    {
+      "spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+      "shell": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+      "minimum_distance_mm": 0.22592537500955057,
+      "nominal_0p2mm_gap_pass": true
+    },
+    {
+      "spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+      "shell": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+      "minimum_distance_mm": 0.22537089004213695,
+      "nominal_0p2mm_gap_pass": true
+    },
+    {
+      "spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+      "shell": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+      "minimum_distance_mm": 0.2189584167067994,
+      "nominal_0p2mm_gap_pass": true
+    },
+    {
+      "spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+      "shell": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+      "minimum_distance_mm": 0.21922663291173625,
+      "nominal_0p2mm_gap_pass": true
+    },
+    {
+      "spar": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+      "shell": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+      "minimum_distance_mm": 1.233903354821604,
+      "nominal_0p2mm_gap_pass": true
+    },
+    {
+      "spar": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+      "shell": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+      "minimum_distance_mm": 1.23458785994653,
+      "nominal_0p2mm_gap_pass": true
+    },
+    {
+      "spar": "CANDIDATE_CARBON_L_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+      "shell": "CANDIDATE_HOLLOW_WING_L_OUTER_NO_JOINTS",
+      "minimum_distance_mm": 0.22537089004213695,
+      "nominal_0p2mm_gap_pass": true
+    },
+    {
+      "spar": "CANDIDATE_CARBON_L_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+      "shell": "CANDIDATE_HOLLOW_WING_L_INNER_NO_JOINTS",
+      "minimum_distance_mm": 0.22592537500955057,
+      "nominal_0p2mm_gap_pass": true
+    },
+    {
+      "spar": "CANDIDATE_CARBON_L_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+      "shell": "CANDIDATE_HOLLOW_WING_L_OUTER_NO_JOINTS",
+      "minimum_distance_mm": 0.21922663291173625,
+      "nominal_0p2mm_gap_pass": true
+    },
+    {
+      "spar": "CANDIDATE_CARBON_L_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+      "shell": "CANDIDATE_HOLLOW_WING_L_INNER_NO_JOINTS",
+      "minimum_distance_mm": 0.2189584167067994,
+      "nominal_0p2mm_gap_pass": true
+    },
+    {
+      "spar": "CANDIDATE_CARBON_L_WEB_NOT_STRENGTH_VERIFIED",
+      "shell": "CANDIDATE_HOLLOW_WING_L_OUTER_NO_JOINTS",
+      "minimum_distance_mm": 1.23458785994653,
+      "nominal_0p2mm_gap_pass": true
+    },
+    {
+      "spar": "CANDIDATE_CARBON_L_WEB_NOT_STRENGTH_VERIFIED",
+      "shell": "CANDIDATE_HOLLOW_WING_L_INNER_NO_JOINTS",
+      "minimum_distance_mm": 1.233903354821604,
+      "nominal_0p2mm_gap_pass": true
+    }
+  ],
+  "minimum_gap_mm": 0.2189584167067994,
+  "all_nominal_0p2mm_gaps_pass": true,
+  "source_outer_containment_previously_checked": true,
+  "bond_design_verified": false,
+  "structural_capacity_verified": false,
+  "print_release": false,
+  "study_source_sha256": "6919c7756879ccb98f56aee1665d467244eedd33ed6e3fb113fd633b2b7427d9"
+}
