@@ -1,0 +1,59 @@
+{
+  "schema": "SpandauStrike.SpawnPolicy.v1",
+  "selection": {
+    "authority": "server",
+    "candidate_source": "LyraPlayerStart",
+    "hard_reject": [
+      "wrong_team",
+      "outside_active_front_spawn_band",
+      "inside_enemy_capture_radius",
+      "blocked_spawn_capsule",
+      "direct_enemy_line_of_sight_under_min_distance"
+    ],
+    "score_terms": {
+      "enemy_distance": {
+        "weight": 1.0,
+        "preferred_min_m": 35.0,
+        "preferred_max_m": 140.0,
+        "reject_under_m": 18.0
+      },
+      "enemy_line_of_sight": {
+        "weight": -2.0,
+        "penalty_under_m": 90.0,
+        "hard_reject_under_m": 45.0
+      },
+      "frontline_distance": {
+        "weight": 0.8,
+        "preferred_min_m": 80.0,
+        "preferred_max_m": 220.0
+      },
+      "friendly_density": {
+        "weight": 0.25,
+        "preferred_radius_m": 35.0,
+        "max_friendlies_before_penalty": 5
+      },
+      "recent_death_heat": {
+        "weight": -1.2,
+        "radius_m": 25.0,
+        "memory_s": 12.0
+      }
+    }
+  },
+  "frontline": {
+    "use_current_objective_ownership": true,
+    "spawn_band_follows_team_front": true,
+    "never_spawn_beyond_enemy_owned_front": true,
+    "home_spawns_remain_fallback": true
+  },
+  "protection": {
+    "duration_s": 1.25,
+    "ends_on_fire": true,
+    "ends_on_offensive_ability": true,
+    "does_not_block_objective_capture": true
+  },
+  "review_flags": {
+    "source_spawn_under_80m_from_objective_requires_ue_review": true,
+    "source_spawn_under_180m_from_enemy_spawn_requires_ue_review": true,
+    "w4_objective_distance_warning_acknowledged": true
+  }
+}
