@@ -1,0 +1,6 @@
+{
+  "request_id": "startup-bridge-only",
+  "status": "completed",
+  "bridge_revision": "v24_restartable_event_bridge",
+  "loaded_source_sha256": "fdcd213fa95a4e71dfc4618dd3da08f0e4484cafc0fd95cb64b919c1b3b335e8"
+}

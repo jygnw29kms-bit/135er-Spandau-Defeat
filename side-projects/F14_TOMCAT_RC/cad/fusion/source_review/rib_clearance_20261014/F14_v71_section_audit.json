@@ -1,0 +1,89 @@
+{
+  "status": "V71_MANUFACTURING_CLEARANCE_CANDIDATE",
+  "source": {
+    "path": "C:\\Users\\dezen\\Desktop\\F14-RC-Model\\workspace\\RC-F14-Tomcat\\Fusion\\Exports\\Current\\source_shell_v53\\F14_CONFORMAL_RIB_REVIEW_v70.f3d",
+    "sha256": "ed43f95ccde1f005e1c4877b604a00678f731230fb4ea6671406d3fbc2aa7fbd"
+  },
+  "source_revision": "v70_conformal_ribs",
+  "offset_records": [
+    {
+      "rib": "CANDIDATE_RIB_ZERO_CLEARANCE_-3",
+      "side_faces": 102,
+      "end_faces_preserved": 2,
+      "offset_mm": -0.1,
+      "before_cm3": 0.22843422650280024,
+      "after_cm3": 0.21271013465132757,
+      "skin_gaps": [
+        {
+          "skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "gap_mm": 0.09994865753631711
+        },
+        {
+          "skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "gap_mm": 2.2000000000000597
+        }
+      ],
+      "spar_gaps": [
+        {
+          "spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.09999999999996781
+        },
+        {
+          "spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.09999999999999605
+        },
+        {
+          "spar": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0999999999999384
+        }
+      ]
+    },
+    {
+      "rib": "CANDIDATE_RIB_ZERO_CLEARANCE_3",
+      "side_faces": 102,
+      "end_faces_preserved": 2,
+      "offset_mm": -0.1,
+      "before_cm3": 0.21529228643298326,
+      "after_cm3": 0.1999567107249179,
+      "skin_gaps": [
+        {
+          "skin": "CANDIDATE_HOLLOW_WING_R_INNER_NO_JOINTS",
+          "gap_mm": 3.0000015637890303
+        },
+        {
+          "skin": "CANDIDATE_HOLLOW_WING_R_OUTER_NO_JOINTS",
+          "gap_mm": 0.09995823083774417
+        }
+      ],
+      "spar_gaps": [
+        {
+          "spar": "CANDIDATE_CARBON_R_UPPER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.10000000000008204
+        },
+        {
+          "spar": "CANDIDATE_CARBON_R_LOWER_CAP_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.10000000000001438
+        },
+        {
+          "spar": "CANDIDATE_CARBON_R_WEB_NOT_STRENGTH_VERIFIED",
+          "gap_mm": 0.0999999999998693
+        }
+      ]
+    }
+  ],
+  "manufacturing_offset_candidate_mm": 0.1,
+  "own_skin_minimum_gaps_mm": [
+    0.09994865753631711,
+    0.09995823083774417
+  ],
+  "all_skin_interference_screens_pass": true,
+  "manufacturing_clearance_candidate_pass": true,
+  "manufacturing_clearance_verified": false,
+  "assembly_clearance_verified": false,
+  "engagement_selected_for_production": false,
+  "joint_designed": false,
+  "structural_capacity_verified": false,
+  "print_release": false,
+  "flight_release": false,
+  "study_source_sha256": "ee0e460c805881511dca0c0e59797c82dbf23d58e7f095c90fefc5817c62c561"
+}
