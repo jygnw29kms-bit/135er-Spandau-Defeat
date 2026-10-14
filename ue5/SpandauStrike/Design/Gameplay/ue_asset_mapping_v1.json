@@ -1,0 +1,50 @@
+{
+  "schema": "SpandauStrike.UEAssetMapping.v1",
+  "policy": {
+    "production_map_overwrite_allowed": false,
+    "first_import_uses_separate_test_map": true,
+    "generated_assets_are_rebuildable": true,
+    "blender_world_master_is_spatial_authority": true
+  },
+  "maps": {
+    "current_production_reference": "/Game/SpandauStrike/Maps/Rathaus/LV_RathausSpandau_REAL_FINAL",
+    "runtime_validation_target": "/Game/SpandauStrike/Maps/Rathaus/Validation/LV_RathausSpandau_RUNTIME_v42_TEST",
+    "promotion_target": "/Game/SpandauStrike/Maps/Rathaus/LV_RathausSpandau_RUNTIME"
+  },
+  "data_assets": {
+    "classes_table": "/Game/SpandauStrike/Data/Gameplay/DT_SpandauStrike_Classes",
+    "weapon_archetypes_table": "/Game/SpandauStrike/Data/Gameplay/DT_SpandauStrike_WeaponArchetypes",
+    "movement_table": "/Game/SpandauStrike/Data/Gameplay/DT_SpandauStrike_Movement",
+    "objectives_table": "/Game/SpandauStrike/Data/Gameplay/DT_SpandauStrike_Objectives",
+    "combat_anchors_table": "/Game/SpandauStrike/Data/Gameplay/DT_SpandauStrike_CombatAnchors"
+  },
+  "runtime_actor_classes": {
+    "objective": "/Script/LyraGame.SpandauStrikeCapturePoint",
+    "spawn": "/Script/LyraGame.LyraPlayerStart",
+    "cover": "/Script/Engine.StaticMeshActor"
+  },
+  "runtime_folders": {
+    "generated": "/Game/SpandauStrike/Generated",
+    "rathaus_runtime": "/Game/SpandauStrike/Generated/RathausRuntime",
+    "gameplay_data": "/Game/SpandauStrike/Data/Gameplay"
+  },
+  "generated_labels": {
+    "runtime_objective_prefix": "SS_OBJ_",
+    "runtime_spawn_prefix": "SS_SPAWN_",
+    "runtime_cover_prefix": "SS_COVER_",
+    "generated_actor_tag": "SpandauStrike.Generated.Runtime"
+  },
+  "import_order": [
+    "gameplay_tags",
+    "datatable_seeds",
+    "runtime_handoff",
+    "coordinate_validation",
+    "runtime_test_map",
+    "objectives",
+    "spawns",
+    "cover",
+    "navigation_validation",
+    "combat_flow_validation",
+    "promotion_review"
+  ]
+}
