@@ -34,12 +34,17 @@ jobs:
       - name: Compile Python tools
         run: |
           python -m py_compile tools/gameplay/*.py
+          python -m py_compile tools/gameplay/tests/*.py
           python -m py_compile tools/repo/validate_spandau_scope.py
           python -m py_compile ue5/SpandauStrike/Content/Python/validate_rathaus_runtime_handoff.py
 
       - name: Validate repository scope
         run: |
           python tools/repo/validate_spandau_scope.py
+
+      - name: Run gameplay regression tests
+        run: |
+          python -m unittest discover -s tools/gameplay/tests -p 'test_*.py' -v
 
       - name: Validate gameplay bundle
         run: |
