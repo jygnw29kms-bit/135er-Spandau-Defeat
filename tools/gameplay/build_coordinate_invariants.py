@@ -83,8 +83,8 @@ def main():
             "distance_absolute_tolerance_m": 0.25,
             "uniform_scale_expected": 1.0,
             "ue_centimeters_per_source_meter": 100.0,
-            "rotation_translation_reflection_invariant": true,
-            "axis_mapping_must_be_verified_separately": true,
+            "rotation_translation_reflection_invariant": True,
+            "axis_mapping_must_be_verified_separately": True,
         },
         "note": "Pairwise distances detect scale/frame corruption without assuming an Unreal axis mapping. Reflection can preserve distances and therefore requires a separate orientation check in UE."
     }
