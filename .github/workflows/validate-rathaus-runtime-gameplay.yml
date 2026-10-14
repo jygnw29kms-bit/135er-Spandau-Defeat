@@ -79,6 +79,11 @@ jobs:
           python tools/gameplay/build_map_flow_report.py --out /tmp/rathaus_map_flow_report_v1.json
           test -s /tmp/rathaus_map_flow_report_v1.json
 
+      - name: Generate Rathaus spawn safety report
+        run: |
+          python tools/gameplay/build_spawn_safety_report.py --out /tmp/rathaus_spawn_safety_report_v1.json
+          test -s /tmp/rathaus_spawn_safety_report_v1.json
+
       - name: Generate derived balance report
         run: |
           python tools/gameplay/build_balance_report.py --out /tmp/gameplay_balance_report_v1.json
@@ -97,6 +102,7 @@ jobs:
             /tmp/runtime_gameplay_handoff_v42.json
             /tmp/runtime_import_plan_v1.json
             /tmp/rathaus_map_flow_report_v1.json
+            /tmp/rathaus_spawn_safety_report_v1.json
             /tmp/gameplay_balance_report_v1.json
             /tmp/SpandauStrikeGameplayTags.ini
             /tmp/SpandauStrikeDataTables/*.csv
