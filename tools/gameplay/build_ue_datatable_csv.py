@@ -29,6 +29,8 @@ def main():
     tuning = load(GAMEPLAY_DIR / "core_gameplay_tuning_v1.json")
     weapons = load(GAMEPLAY_DIR / "weapon_archetypes_v1.json")["archetypes"]
     loadouts = load(GAMEPLAY_DIR / "class_loadouts_v1.json")["classes"]
+    lane_flow = load(GAMEPLAY_DIR / "rathaus_lane_flow_v1.json")
+    combat_flow = load(GAMEPLAY_DIR / "rathaus_combat_flow_v1.json")
 
     class_rows = []
     for class_name, values in tuning["classes"].items():
@@ -102,10 +104,78 @@ def main():
         movement_rows,
     )
 
+    objective_rows = []
+    capture_duration = tuning["territorial_control"]["capture_duration_s"]
+    for item in lane_flow["objectives"]:
+        x_m, y_m = item["position_m"]
+        objective_rows.append({
+            "Name": item["id"],
+            "Sequence": item["sequence"],
+            "PositionXM": x_m,
+            "PositionYM": y_m,
+            "RequiredPlayers": item["required_players"],
+            "InitialSide": item["initial_side"],
+            "Zone": item["zone"],
+            "CaptureDurationSeconds": capture_duration,
+            "BackcapAllowed": str(bool(tuning["territorial_control"]["backcap_allowed"])).lower(),
+        })
+    write_csv(
+        args.out_dir / "DT_SpandauStrike_Objectives.csv",
+        ["Name", "Sequence", "PositionXM", "PositionYM", "RequiredPlayers", "InitialSide", "Zone", "CaptureDurationSeconds", "BackcapAllowed"],
+        objective_rows,
+    )
+
+    combat_rows = []
+    for choke in combat_flow["chokes"]:
+        choke_id = str(choke["id"])
+        x_m, y_m = choke["position_m"]
+        combat_rows.append({
+            "Name": f"Choke_{choke_id}", "AnchorType": "Choke", "Lane": choke["lane"],
+            "PositionXM": x_m, "PositionYM": y_m, "ArcDeg": 0.0,
+            "RequiresBipod": "false", "Counterplay": "smoke;flank"
+        })
+        sx, sy = choke["smoke_anchor_m"]
+        combat_rows.append({
+            "Name": f"Smoke_{choke_id}", "AnchorType": "Smoke", "Lane": choke["lane"],
+            "PositionXM": sx, "PositionYM": sy, "ArcDeg": 0.0,
+            "RequiresBipod": "false", "Counterplay": ""
+        })
+        fx, fy = choke["flank_anchor_m"]
+        combat_rows.append({
+            "Name": f"Flank_{choke_id}", "AnchorType": "Flank", "Lane": choke["lane"],
+            "PositionXM": fx, "PositionYM": fy, "ArcDeg": 0.0,
+            "RequiresBipod": "false", "Counterplay": ""
+        })
+
+    for power in combat_flow["power_positions"]:
+        group_id = str(power["id"])
+        counterplay = ";".join(power.get("counterplay", []))
+        mx, my = power["mg_position_m"]
+        combat_rows.append({
+            "Name": f"MG_{group_id}", "AnchorType": "MG", "Lane": power["lane"],
+            "PositionXM": mx, "PositionYM": my, "ArcDeg": power.get("mg_arc_deg", 0.0),
+            "RequiresBipod": str(bool(power.get("mg_requires_bipod", False))).lower(),
+            "Counterplay": counterplay
+        })
+        sx, sy = power["sniper_position_m"]
+        combat_rows.append({
+            "Name": f"Sniper_{group_id}", "AnchorType": "Sniper", "Lane": power["lane"],
+            "PositionXM": sx, "PositionYM": sy, "ArcDeg": 0.0,
+            "RequiresBipod": "false", "Counterplay": counterplay
+        })
+
+    write_csv(
+        args.out_dir / "DT_SpandauStrike_CombatAnchors.csv",
+        ["Name", "AnchorType", "Lane", "PositionXM", "PositionYM", "ArcDeg", "RequiresBipod", "Counterplay"],
+        combat_rows,
+    )
+
     summary = {
         "classes": len(class_rows),
         "weapon_archetypes": len(weapon_rows),
         "movement_profiles": len(movement_rows),
+        "objectives": len(objective_rows),
+        "combat_anchors": len(combat_rows),
         "out_dir": args.out_dir.as_posix(),
     }
     print(json.dumps(summary, sort_keys=True))
