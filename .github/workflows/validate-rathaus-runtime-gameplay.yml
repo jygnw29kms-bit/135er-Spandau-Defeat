@@ -41,6 +41,10 @@ jobs:
         run: |
           python tools/repo/validate_spandau_scope.py
 
+      - name: Validate gameplay bundle
+        run: |
+          python tools/gameplay/validate_gameplay_bundle.py
+
       - name: Validate core gameplay configuration
         run: |
           python tools/gameplay/validate_gameplay_config.py
@@ -73,6 +77,7 @@ jobs:
             /tmp/runtime_gameplay_handoff_v42.json
             /tmp/SpandauStrikeGameplayTags.ini
             /tmp/SpandauStrikeDataTables/*.csv
+            ue5/SpandauStrike/Design/Gameplay/gameplay_bundle_v1.json
             ue5/SpandauStrike/Design/Gameplay/core_gameplay_tuning_v1.json
             ue5/SpandauStrike/Design/Gameplay/weapon_archetypes_v1.json
             ue5/SpandauStrike/Design/Gameplay/class_loadouts_v1.json
