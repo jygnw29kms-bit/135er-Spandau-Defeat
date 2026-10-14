@@ -67,6 +67,25 @@ class GameplayPipelineTests(unittest.TestCase):
         self.assertGreaterEqual(len(lines), 20)
         self.assertTrue(all('Tag="SpandauStrike.' in line for line in lines))
 
+    def test_import_plan_generation(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            out = Path(tmp) / "import_plan.json"
+            self.run_python("build_ue_import_plan.py", "--out", out)
+            data = json.loads(out.read_text(encoding="utf-8"))
+            self.assertEqual(data["schema"], "SpandauStrike.UEImportPlan.v1")
+            self.assertEqual(data["world_master_version"], "v42_RUNTIME_OBJECTIVES")
+            self.assertFalse(data["safety"]["overwrite_current_final_map"])
+            self.assertTrue(data["safety"]["use_separate_test_map_first"])
+            self.assertGreaterEqual(len(data["sources"]), 7)
+            for source in data["sources"]:
+                self.assertFalse(Path(source["path"]).is_absolute())
+                self.assertEqual(len(source["sha256"]), 64)
+                int(source["sha256"], 16)
+                self.assertGreater(source["size_bytes"], 0)
+            orders = [step["order"] for step in data["ordered_steps"]]
+            self.assertEqual(orders, list(range(1, len(orders) + 1)))
+            self.assertFalse(any(step["mutates_map"] for step in data["ordered_steps"][:5]))
+
 
 if __name__ == "__main__":
     unittest.main()
