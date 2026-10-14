@@ -1,0 +1,60 @@
+{
+  "source": "C:\\Users\\dezen\\Desktop\\135er-Spandau-Defeat\\tools\\blender_pipeline\\builds\\rathaus_spandau\\SpandauStrike_Rathaus_WORLD_MASTER_v14.blend",
+  "output": "C:\\Users\\dezen\\Desktop\\135er-Spandau-Defeat\\tools\\blender_pipeline\\builds\\rathaus_spandau\\SpandauStrike_Rathaus_WORLD_MASTER_v15_OPTIMIZED.blend",
+  "objects": 10118,
+  "mesh_objects": 10100,
+  "unique_mesh_datablocks": 1410,
+  "dedup_reassigned": 8690,
+  "signature_groups": 1410,
+  "role_counts": {
+    "setdressing": 2325,
+    "landmark": 245,
+    "production": 4964,
+    "world": 60,
+    "collision": 12,
+    "gameplay": 71,
+    "reference": 2,
+    "blockout": 2439
+  },
+  "image_repairs": [
+    [
+      "Mesh_3775_58218_-002-0.jpg",
+      "C:\\Users\\dezen\\Documents\\Unreal Projects\\SpandauStrike\\Saved\\GIS\\RathausSpandau_v1\\Berlin3D_2025_3775_58218_-002\\Mesh_3775_58218_-002-0.jpg",
+      "packed"
+    ],
+    [
+      "Mesh_3775_58218_-002-1.jpg",
+      "C:\\Users\\dezen\\Documents\\Unreal Projects\\SpandauStrike\\Saved\\GIS\\RathausSpandau_v1\\Berlin3D_2025_3775_58218_-002\\Mesh_3775_58218_-002-1.jpg",
+      "packed"
+    ],
+    [
+      "Mesh_3779_58218_-002-0.jpg",
+      "C:\\Users\\dezen\\Documents\\Unreal Projects\\SpandauStrike\\Saved\\GIS\\RathausSpandau_v1\\Berlin3D_2025_3779_58218_-002\\Mesh_3779_58218_-002-0.jpg",
+      "packed"
+    ],
+    [
+      "Mesh_3779_58218_-002-1.jpg",
+      "C:\\Users\\dezen\\Documents\\Unreal Projects\\SpandauStrike\\Saved\\GIS\\RathausSpandau_v1\\Berlin3D_2025_3779_58218_-002\\Mesh_3779_58218_-002-1.jpg",
+      "packed"
+    ],
+    [
+      "Mesh_3779_58218_-002-2.jpg",
+      "C:\\Users\\dezen\\Documents\\Unreal Projects\\SpandauStrike\\Saved\\GIS\\RathausSpandau_v1\\Berlin3D_2025_3779_58218_-002\\Mesh_3779_58218_-002-2.jpg",
+      "packed"
+    ],
+    [
+      "Mesh_3779_58218_-002-3.jpg",
+      "C:\\Users\\dezen\\Documents\\Unreal Projects\\SpandauStrike\\Saved\\GIS\\RathausSpandau_v1\\Berlin3D_2025_3779_58218_-002\\Mesh_3779_58218_-002-3.jpg",
+      "packed"
+    ],
+    [
+      "Mesh_3779_58218_-002-4.jpg",
+      "C:\\Users\\dezen\\Documents\\Unreal Projects\\SpandauStrike\\Saved\\GIS\\RathausSpandau_v1\\Berlin3D_2025_3779_58218_-002\\Mesh_3779_58218_-002-4.jpg",
+      "packed"
+    ]
+  ],
+  "hidden_nonproduction": [
+    "PHOTO_REAL_Background",
+    "ZERO_BLOCKOUT_MODELS"
+  ]
+}

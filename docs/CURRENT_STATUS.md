@@ -1,109 +1,89 @@
-# Current Status — UE5 only
+# Current Status - UE5 only
 
-**135er Spandau Strike uses Unreal Engine 5 / Lyra as its sole engine target.**
+Updated: **2026-10-14**
 
-2026-10-03 - Rathaus-first UE5 geometry policy
+**135er Spandau Strike uses Unreal Engine 5 / Lyra as its sole engine target. Source/Source2 are no longer part of active production.**
 
-- **Rathaus Spandau is the active Unreal Engine 5 focus.**
-- Real Berlin3D 2025 / LoD2 geometry, DGM1 terrain, roads and water are the authoritative spatial basis.
-- Clean game geometry must be derived from measured/known 3D data before gameplay or visual styling.
-- Gameplay is layered after geometry: spawns, objectives, cover, sightlines, collision and navigation.
-- Master/reference images are used only for materials, lighting, atmosphere and set dressing.
-- Other maps remain deferred until Rathaus passes the geometry/gameplay/visual milestone.
-- Raw third-party Berlin3D/LoD2 source datasets and generated Blender working artefacts stay local; reproducible scripts are versioned.
-# 135er Spandau Strike â€” current status
+## Rathaus Spandau - active production focus
 
-Updated: **2026-10-01**
+The Rathaus map is being reset onto the recovered large Blender world master rather than continuing the broken isolated UE test chain.
 
-## Active architecture
+Authoritative spatial inputs:
+- Berlin3D / LoD2 reference data
+- Berlin DGM1 elevation data
+- aerial/reference imagery
+- OSM/verified road and environment data
+- manually rebuilt landmark geometry
 
-The project now uses a shared-data, dual-engine workflow:
+## Recovered full-map baseline
 
-```text
-Berlin Open Data / OSM / DGM1
-            |
-            v
-       Blender Master
-        /          \
-       v            v
- UE 5.8 / Lyra
-```
+`SpandauStrike_Rathaus_FULLMAP_v13_UE5_READY.blend` was recovered and audited.
 
-The goal is to create one geographically coherent base, then perform engine-specific gameplay, materials, lighting, collision and optimization passes.
+Verified baseline:
+- approximately **1.855 km x 4.201 km** scene extent
+- approximately **110.2 m** vertical range
+- **10,118** total objects
+- **10,100** mesh objects
+- **364,197** vertices
+- **463,378** polygons
+- gameplay, collision, environment, urban-detail, street/tram and rebuilt-architecture collections already exist
 
-## Unreal Engine 5.8 / Lyra
+This is materially more complete than the later isolated Rathaus/GIS UE test levels.
 
-**Status: first playable GIS milestone reached.**
+## Rejected as production baseline
 
-Verified on DESKTOP-BNDD1US:
-- Lyra Starter Game launches with required game-feature plugins
-- production GIS import works end to end
-- full Falkenhagener Feld 1.8 km Ã— 1.8 km import succeeds
-- 4,610 WFS features received; 4,560 usable buildings created
-- playable ShooterMaps level exists at `/ShooterMaps/Maps/SpandauStrikeGIS/falkenhagener_feld`
-- A/B/C control points, player starts, navmesh, HUD, pawn and weapon work
-- standalone game reaches `ShooterGame.GamePhase.Playing`
-- `?NumBots=7` validated
-- OSM pass processed 1,096 elements, 4,805 road/path segments and 230 water segments
-- genuine in-engine screenshot is present in the repository
+The following chain remains available as reference/test data but is not the production world master:
+- `REAL_v70` Berlin3D Rathaus mesh
+- `LV_RathausSpandau_VISUAL_v77_TEST`
+- DOP/DGM v82/v83 test levels
+- former `LV_RathausSpandau_REAL_FINAL`
 
-### UE5 known production gaps
+The v83 DGM test surface is only about **358 m x 358 m** and was intentionally built as a local Rathaus test crop. It must not be confused with the full production map.
 
-The current map is not yet visually final:
-- proxy building geometry does not yet reproduce individual landmarks such as Rathaus Spandau
-- DGM1 terrain elevation is not yet fully integrated into the final gameplay surface
-- collision must be validated on imported buildings and terrain to prevent fall-through / â€œwalking over a flat 3D pictureâ€ behavior
-- roads, water, vegetation and final materials need production passes
-- landmark replacement meshes are still required
-- large-area building rendering should move from thousands of individual actors toward HISM/combined geometry where appropriate
+## Current master workflow
 
-## Blender master pipeline
+1. Blender world master is the authoritative map/model source.
+2. Terrain, roads, buildings, Rathaus, props and gameplay planning stay spatially coherent in Blender.
+3. Objects receive semantic roles such as spawn, objective, cover, nav, collision, terrain, road and landmark.
+4. Obsolete blockout/reference layers are retained for traceability but excluded from production export.
+5. Unreal Engine receives controlled modular export packages.
+6. UE5 handles gameplay systems, lighting, final runtime materials, navigation, AI, Nanite/LOD policy, effects and runtime optimization.
 
-A shared Blender work area now exists at `tools/blender_pipeline/`.
+Current tracked files:
+- `tools/blender_pipeline/builds/rathaus_spandau/SpandauStrike_Rathaus_WORLD_MASTER_v15_OPTIMIZED.blend` - production-cleaned world master
+- `tools/blender_pipeline/builds/rathaus_spandau/SpandauStrike_Rathaus_WORLD_MASTER_v15_OPTIMIZED_AUDIT.json`
+- `tools/blender_pipeline/builds/rathaus_spandau/SpandauStrike_Rathaus_WORLD_MASTER_v15_OPTIMIZED_EXPORT_MANIFEST.json`
+- `docs/RATHAUS_WORLD_MASTER.md`
 
-Current Falkenhagener Feld terrain source:
-- DGM1 tile `374_5822`
-- DGM1 tile `376_5822`
-- DGM1 tile `374_5824`
-- DGM1 tile `376_5824`
+The v14 recovery checkpoint is archived locally outside Git at `Documents/SpandauStrike/Blender/archive/Rathaus_WORLD_MASTER_recovery_2026-10-14/`.
 
-These four 2 km tiles cover the 1.8 km Ã— 1.8 km map extent that crosses DGM tile boundaries.
+## v15 verified cleanup
 
-Current tooling includes terrain generation/import scripts and engine export targets for UE5
+- 8,690 mesh objects safely reassigned to identical shared mesh datablocks
+- unique mesh datablocks reduced from 10,100 to 1,410
+- all seven Berlin3D image references repaired and packed
+- zero missing image references after validation
+- all 10,118 scene objects carry semantic/export metadata
+- 2,439 blockout objects and two photo-reference objects remain preserved but excluded from production export
+- geometry bounds, vertex count and polygon count remain unchanged
 
-## Map roster
+## Gameplay metadata already present
 
-The active roster contains **20 maps**:
-- 12 core Spandau maps
-- 8 historical/special maps
-
-The three school maps â€” Martin-Buber-Schule, Askanier-Schule and B.-Traven-Schule â€” are part of the active core roster in both engine definitions.
-
-## Media policy
-
-Only screenshots generated by the actual target engine may be presented as gameplay:
-- UE/Lyra media must come from UE/Lyra
-- AI imagery may remain only when clearly labeled as optical/reference material
-- old Unreal images must never be presented as
+Recovered data already contains:
+- 12 spawn markers
+- Objective A/B
+- cover objects/markers
+- nav blockers
+- terrain and roads
+- Rathaus collision
+- surrounding-building collision
+- water, vegetation and street/tram detail layers
 
 ## Immediate production priority
 
-1. finish DGM1 terrain integration in Blender
-2. export optimized terrain/geometry to UE5
-3. fix UE collision/elevation and replace generic proxy landmarks
-4. continue
-5. validate navigation and gameplay in both engines
-6. capture genuine engine screenshots map by map
-7. keep README/status documentation synchronized with verified milestones
-
-## Character direction
-
-Modern:
-- CT = German / Bundeswehr-inspired
-- T = United States armed-forces-inspired
-
-Historical:
-- CT = period-correct German soldiers
-- T = period-correct US soldiers
-
-All character work uses the UE-compatible shared humanoid rig.
+- complete Rathaus landmark geometry to production quality
+- classify routes, choke points, cover heights and playable interiors in the Blender master
+- keep terrain/roads/buildings aligned to verified spatial data
+- build tagged modular UE5 export/import packages
+- validate scale, terrain, collision and navigation in UE5
+- only then designate a new Rathaus UE level as FINAL

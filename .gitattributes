@@ -1,2 +1,3 @@
 ue5/SpandauStrike/Content/**/*.uasset filter=lfs diff=lfs merge=lfs -text
 ue5/SpandauStrike/Content/**/*.umap filter=lfs diff=lfs merge=lfs -text
+tools/blender_pipeline/builds/rathaus_spandau/SpandauStrike_Rathaus_WORLD_MASTER_v15_OPTIMIZED.blend filter=lfs diff=lfs merge=lfs -text
