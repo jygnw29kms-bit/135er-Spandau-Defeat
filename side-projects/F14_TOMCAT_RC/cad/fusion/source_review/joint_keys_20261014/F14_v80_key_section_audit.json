@@ -1,0 +1,377 @@
+{
+  "status": "V80_KEY_MINIMUM_SECTION_SLAB_SCREEN",
+  "source": {
+    "y_step_mm": 0.25,
+    "path": "C:\\Users\\dezen\\Desktop\\F14-RC-Model\\workspace\\RC-F14-Tomcat\\Fusion\\Exports\\Current\\source_shell_v53\\F14_WING_JOINT_CARBON_SWEEP_KEYS_v79.f3d",
+    "sha256": "c7331ba430e1c6da9299f144dcde63d9f21322916cd076a94d9ed27858e6ee3b",
+    "y_start_mm": 362,
+    "y_end_mm": 366.9
+  },
+  "slice_thickness_mm": 0.1,
+  "sections": [
+    {
+      "y_mm": 362.0,
+      "intersection_ok": true,
+      "slice_volume_cm3": 0.014089507383221506,
+      "area_mm2": 140.89507383221505,
+      "centroid_x_mm": 709.5473614088637,
+      "centroid_z_mm": 181.74659587694094,
+      "bbox_x_mm": [
+        684.7584933138128,
+        737.7647667636842
+      ],
+      "bbox_z_mm": [
+        178.72038586829302,
+        184.61732722106
+      ]
+    },
+    {
+      "y_mm": 362.25,
+      "intersection_ok": true,
+      "slice_volume_cm3": 0.017311875884656765,
+      "area_mm2": 173.11875884656763,
+      "centroid_x_mm": 709.5959828625182,
+      "centroid_z_mm": 181.73701061596475,
+      "bbox_x_mm": [
+        684.8259889296015,
+        737.7830127469741
+      ],
+      "bbox_z_mm": [
+        178.71229872501587,
+        184.60388154208874
+      ]
+    },
+    {
+      "y_mm": 362.5,
+      "intersection_ok": true,
+      "slice_volume_cm3": 0.017273897197849483,
+      "area_mm2": 172.73897197849482,
+      "centroid_x_mm": 709.6465072430368,
+      "centroid_z_mm": 181.7270508619845,
+      "bbox_x_mm": [
+        684.8989683030895,
+        737.8012587302641
+      ],
+      "bbox_z_mm": [
+        178.70420985771892,
+        184.58934345371108
+      ]
+    },
+    {
+      "y_mm": 362.75,
+      "intersection_ok": true,
+      "slice_volume_cm3": 0.017235962851670925,
+      "area_mm2": 172.35962851670925,
+      "centroid_x_mm": 709.6970360429128,
+      "centroid_z_mm": 181.71709088857935,
+      "bbox_x_mm": [
+        684.9719476765773,
+        737.8195047135541
+      ],
+      "bbox_z_mm": [
+        178.69611926017456,
+        184.57480536533342
+      ]
+    },
+    {
+      "y_mm": 363.0,
+      "intersection_ok": true,
+      "slice_volume_cm3": 0.017198072889621004,
+      "area_mm2": 171.98072889621002,
+      "centroid_x_mm": 709.7475692438466,
+      "centroid_z_mm": 181.7071306904694,
+      "bbox_x_mm": [
+        685.0449270500651,
+        737.8377506968441
+      ],
+      "bbox_z_mm": [
+        178.6880269261252,
+        184.56026727695576
+      ]
+    },
+    {
+      "y_mm": 363.25,
+      "intersection_ok": true,
+      "slice_volume_cm3": 0.017160227372404777,
+      "area_mm2": 171.60227372404776,
+      "centroid_x_mm": 709.7981068128,
+      "centroid_z_mm": 181.69717026021917,
+      "bbox_x_mm": [
+        685.1179064235531,
+        737.8559966801342
+      ],
+      "bbox_z_mm": [
+        178.67993284928363,
+        184.5457291885781
+      ]
+    },
+    {
+      "y_mm": 363.5,
+      "intersection_ok": true,
+      "slice_volume_cm3": 0.01712242635938694,
+      "area_mm2": 171.22426359386938,
+      "centroid_x_mm": 709.8486487175898,
+      "centroid_z_mm": 181.68720959151022,
+      "bbox_x_mm": [
+        685.1908857970409,
+        737.8742426634242
+      ],
+      "bbox_z_mm": [
+        178.67183702333296,
+        184.53119110020043
+      ]
+    },
+    {
+      "y_mm": 363.75,
+      "intersection_ok": true,
+      "slice_volume_cm3": 0.01708466987152068,
+      "area_mm2": 170.84669871520677,
+      "centroid_x_mm": 709.8991949581773,
+      "centroid_z_mm": 181.67724868114834,
+      "bbox_x_mm": [
+        685.2638651705288,
+        737.8924886467141
+      ],
+      "bbox_z_mm": [
+        178.66373944192554,
+        184.51665301182283
+      ]
+    },
+    {
+      "y_mm": 364.0,
+      "intersection_ok": true,
+      "slice_volume_cm3": 0.01704695793844124,
+      "area_mm2": 170.46957938441238,
+      "centroid_x_mm": 709.9497455271404,
+      "centroid_z_mm": 181.6672875260336,
+      "bbox_x_mm": [
+        685.3368445440167,
+        737.9107346300042
+      ],
+      "bbox_z_mm": [
+        178.6556400986833,
+        184.50211492344516
+      ]
+    },
+    {
+      "y_mm": 364.25,
+      "intersection_ok": true,
+      "slice_volume_cm3": 0.017009290568217258,
+      "area_mm2": 170.09290568217256,
+      "centroid_x_mm": 710.0003004353799,
+      "centroid_z_mm": 181.6573261254253,
+      "bbox_x_mm": [
+        685.4098239175046,
+        737.9289806132941
+      ],
+      "bbox_z_mm": [
+        178.64753898719738,
+        184.4875768350675
+      ]
+    },
+    {
+      "y_mm": 364.5,
+      "intersection_ok": true,
+      "slice_volume_cm3": 0.016971667769291942,
+      "area_mm2": 169.7166776929194,
+      "centroid_x_mm": 710.0508596934699,
+      "centroid_z_mm": 181.64736447855682,
+      "bbox_x_mm": [
+        685.4828032909925,
+        737.9472265965842
+      ],
+      "bbox_z_mm": [
+        178.63943610102766,
+        184.47303874668984
+      ]
+    },
+    {
+      "y_mm": 364.75,
+      "intersection_ok": true,
+      "slice_volume_cm3": 0.01693408955011135,
+      "area_mm2": 169.34089550111352,
+      "centroid_x_mm": 710.1014233120434,
+      "centroid_z_mm": 181.63740258465373,
+      "bbox_x_mm": [
+        685.5557826644804,
+        737.9654725798741
+      ],
+      "bbox_z_mm": [
+        178.63133143370254,
+        184.45850065831218
+      ]
+    },
+    {
+      "y_mm": 365.0,
+      "intersection_ok": true,
+      "slice_volume_cm3": 0.016896555919093472,
+      "area_mm2": 168.96555919093473,
+      "centroid_x_mm": 710.1519913018387,
+      "centroid_z_mm": 181.62744044294354,
+      "bbox_x_mm": [
+        685.6287620379682,
+        737.9837185631641
+      ],
+      "bbox_z_mm": [
+        178.62322497871895,
+        184.4439625699345
+      ]
+    },
+    {
+      "y_mm": 365.25,
+      "intersection_ok": true,
+      "slice_volume_cm3": 0.016859066884699993,
+      "area_mm2": 168.5906688469999,
+      "centroid_x_mm": 710.2025636735907,
+      "centroid_z_mm": 181.61747805265708,
+      "bbox_x_mm": [
+        685.7017414114562,
+        738.0019645464541
+      ],
+      "bbox_z_mm": [
+        178.6151167295415,
+        184.42942448155688
+      ]
+    },
+    {
+      "y_mm": 365.5,
+      "intersection_ok": true,
+      "slice_volume_cm3": 0.01682162245535833,
+      "area_mm2": 168.2162245535833,
+      "centroid_x_mm": 710.2531404381274,
+      "centroid_z_mm": 181.6075154130246,
+      "bbox_x_mm": [
+        685.774720784944,
+        738.0202105297441
+      ],
+      "bbox_z_mm": [
+        178.60700667960273,
+        184.41488639317922
+      ]
+    },
+    {
+      "y_mm": 365.75,
+      "intersection_ok": true,
+      "slice_volume_cm3": 0.016784222639606553,
+      "area_mm2": 167.84222639606554,
+      "centroid_x_mm": 710.303721606242,
+      "centroid_z_mm": 181.59755252326715,
+      "bbox_x_mm": [
+        685.847700158432,
+        738.0384565130341
+      ],
+      "bbox_z_mm": [
+        178.59889482230233,
+        184.40034830480155
+      ]
+    },
+    {
+      "y_mm": 366.0,
+      "intersection_ok": true,
+      "slice_volume_cm3": 0.016746867446009495,
+      "area_mm2": 167.46867446009495,
+      "centroid_x_mm": 710.354307188761,
+      "centroid_z_mm": 181.5875893826114,
+      "bbox_x_mm": [
+        685.9206795319197,
+        738.0567024963241
+      ],
+      "bbox_z_mm": [
+        178.5907811510074,
+        184.3858102164239
+      ]
+    },
+    {
+      "y_mm": 366.25,
+      "intersection_ok": true,
+      "slice_volume_cm3": 0.016709556878872454,
+      "area_mm2": 167.09556878872453,
+      "centroid_x_mm": 710.4048972002095,
+      "centroid_z_mm": 181.57762599050966,
+      "bbox_x_mm": [
+        685.9936589054075,
+        738.074948479614
+      ],
+      "bbox_z_mm": [
+        178.58266565905157,
+        184.37127212804623
+      ]
+    },
+    {
+      "y_mm": 366.5,
+      "intersection_ok": true,
+      "slice_volume_cm3": 0.0166722909574478,
+      "area_mm2": 166.722909574478,
+      "centroid_x_mm": 710.4554916423951,
+      "centroid_z_mm": 181.56766234560106,
+      "bbox_x_mm": [
+        686.0666382788954,
+        738.0931944629042
+      ],
+      "bbox_z_mm": [
+        178.57454833973517,
+        184.35673403966857
+      ]
+    },
+    {
+      "y_mm": 366.75,
+      "intersection_ok": true,
+      "slice_volume_cm3": 0.016635069682684748,
+      "area_mm2": 166.35069682684747,
+      "centroid_x_mm": 710.5060905328248,
+      "centroid_z_mm": 181.55769844752567,
+      "bbox_x_mm": [
+        686.1396176523833,
+        738.1114404461941
+      ],
+      "bbox_z_mm": [
+        178.5664291863246,
+        184.34219595129093
+      ]
+    }
+  ],
+  "minimum_section": {
+    "y_mm": 362.0,
+    "intersection_ok": true,
+    "slice_volume_cm3": 0.014089507383221506,
+    "area_mm2": 140.89507383221505,
+    "centroid_x_mm": 709.5473614088637,
+    "centroid_z_mm": 181.74659587694094,
+    "bbox_x_mm": [
+      684.7584933138128,
+      737.7647667636842
+    ],
+    "bbox_z_mm": [
+      178.72038586829302,
+      184.61732722106
+    ]
+  },
+  "maximum_section": {
+    "y_mm": 362.25,
+    "intersection_ok": true,
+    "slice_volume_cm3": 0.017311875884656765,
+    "area_mm2": 173.11875884656763,
+    "centroid_x_mm": 709.5959828625182,
+    "centroid_z_mm": 181.73701061596475,
+    "bbox_x_mm": [
+      684.8259889296015,
+      737.7830127469741
+    ],
+    "bbox_z_mm": [
+      178.71229872501587,
+      184.60388154208874
+    ]
+  },
+  "average_area_mm2": 168.28194925008336,
+  "valid_section_count": 20,
+  "requested_section_count": 20,
+  "all_sections_present": true,
+  "minimum_key_section_verified_geometrically": true,
+  "material_allowable_verified": false,
+  "torsion_load_verified": false,
+  "fit_coupon_verified": false,
+  "structural_capacity_verified": false,
+  "print_release": false,
+  "flight_release": false,
+  "study_source_sha256": "3543098e9c3a215d97e925e3aefd80fc280a2b6679e5b3686596378ae6487b83"
+}
