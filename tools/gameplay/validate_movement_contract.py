@@ -8,6 +8,18 @@ CONTRACT = GAMEPLAY / "movement_contract_v1.json"
 TUNING = GAMEPLAY / "core_gameplay_tuning_v1.json"
 TAGS = ROOT / "tools" / "gameplay" / "spandau_strike_gameplay_tags.json"
 
+TAG_PREFIXES = (
+    "SpandauStrike.Ability.",
+    "SpandauStrike.State.",
+    "SpandauStrike.Objective.",
+    "SpandauStrike.Surface.",
+    "SpandauStrike.Class.",
+    "SpandauStrike.Spawn.",
+    "SpandauStrike.Lane.",
+    "SpandauStrike.Cover.",
+    "SpandauStrike.Gameplay.",
+)
+
 
 def load(path):
     return json.loads(path.read_text(encoding="utf-8-sig"))
@@ -38,7 +50,7 @@ def collect_tags(value, out):
     elif isinstance(value, list):
         for child in value:
             collect_tags(child, out)
-    elif isinstance(value, str) and value.startswith("SpandauStrike."):
+    elif isinstance(value, str) and value.startswith(TAG_PREFIXES):
         out.add(value)
 
 
