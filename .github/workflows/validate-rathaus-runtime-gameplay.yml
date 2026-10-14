@@ -76,6 +76,8 @@ jobs:
           test -s /tmp/SpandauStrikeDataTables/DT_SpandauStrike_Classes.csv
           test -s /tmp/SpandauStrikeDataTables/DT_SpandauStrike_WeaponArchetypes.csv
           test -s /tmp/SpandauStrikeDataTables/DT_SpandauStrike_Movement.csv
+          test -s /tmp/SpandauStrikeDataTables/DT_SpandauStrike_Objectives.csv
+          test -s /tmp/SpandauStrikeDataTables/DT_SpandauStrike_CombatAnchors.csv
 
       - name: Validate and generate Rathaus handoff
         run: |
