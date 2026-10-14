@@ -23,7 +23,11 @@
     "runtime_handoff": "tools/gameplay/build_runtime_gameplay_handoff.py",
     "ue_tag_snippet": "tools/gameplay/generate_ue_gameplay_tag_snippet.py",
     "ue_datatable_csv": "tools/gameplay/build_ue_datatable_csv.py",
-    "ue_import_plan": "tools/gameplay/build_ue_import_plan.py"
+    "ue_import_plan": "tools/gameplay/build_ue_import_plan.py",
+    "coordinate_invariants": "tools/gameplay/build_coordinate_invariants.py",
+    "map_flow_report": "tools/gameplay/build_map_flow_report.py",
+    "spawn_safety_report": "tools/gameplay/build_spawn_safety_report.py",
+    "balance_report": "tools/gameplay/build_balance_report.py"
   },
   "validators": {
     "gameplay": "tools/gameplay/validate_gameplay_config.py",
