@@ -86,6 +86,21 @@ class GameplayPipelineTests(unittest.TestCase):
             self.assertEqual(orders, list(range(1, len(orders) + 1)))
             self.assertFalse(any(step["mutates_map"] for step in data["ordered_steps"][:5]))
 
+    def test_map_flow_report(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            out = Path(tmp) / "map_flow_report.json"
+            self.run_python("build_map_flow_report.py", "--out", out)
+            data = json.loads(out.read_text(encoding="utf-8"))
+            self.assertEqual(data["schema"], "SpandauStrike.RathausMapFlowReport.v1")
+            self.assertEqual(data["summary"]["objective_count"], 5)
+            self.assertEqual(data["summary"]["primary_lane_count"], 3)
+            self.assertEqual(data["summary"]["crosslink_count"], 3)
+            self.assertEqual(set(data["chokes_by_lane"]), {"north", "mid", "south"})
+            self.assertEqual(set(data["power_positions_by_lane"]), {"north", "mid", "south"})
+            self.assertTrue(all(count >= 1 for count in data["chokes_by_lane"].values()))
+            self.assertTrue(all(count >= 1 for count in data["power_positions_by_lane"].values()))
+            self.assertLessEqual(data["summary"]["lane_length_ratio"], 1.45)
+
 
 if __name__ == "__main__":
     unittest.main()
