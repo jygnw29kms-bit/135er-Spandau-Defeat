@@ -1,0 +1,39 @@
+{
+  "source": "C:\\Users\\dezen\\Desktop\\135er-Spandau-Defeat\\tools\\blender_pipeline\\builds\\rathaus_spandau\\SpandauStrike_Rathaus_WORLD_MASTER_v36_GAMEPLAY_CLEAN.blend",
+  "output": "C:\\Users\\dezen\\Desktop\\135er-Spandau-Defeat\\tools\\blender_pipeline\\builds\\rathaus_spandau\\SpandauStrike_Rathaus_WORLD_MASTER_v37_TOWER_TRANSITION.blend",
+  "created_count": 15,
+  "retired": [
+    "V24_TowerProfile_699",
+    "V24_TowerProfile_749",
+    "V25_TowerUpperCornice",
+    "V33_CrownEave",
+    "V33_CrownInnerVoid",
+    "V33_CrownPier_0",
+    "V33_CrownPier_1",
+    "V33_CrownPier_2",
+    "V33_CrownPier_3",
+    "V33_CrownPier_4",
+    "V33_CrownPier_5",
+    "V33_CrownPier_6",
+    "V33_CrownPier_7",
+    "V33_TowerCrownBase",
+    "V33_TowerFinial"
+  ],
+  "created": [
+    "V37_TowerTransitionCore",
+    "V37_TowerTransitionLowerBand",
+    "V37_TowerTransitionUpperBand",
+    "V37_CrownCorner_0_0",
+    "V37_CrownCorner_0_1",
+    "V37_CrownCorner_1_0",
+    "V37_CrownCorner_1_1",
+    "V37_CrownOpeningFront",
+    "V37_CrownOpeningRear",
+    "V37_CrownOpeningWest",
+    "V37_CrownOpeningEast",
+    "V37_CrownBase",
+    "V37_CrownTopBand",
+    "V37_CopperOctagonalRoof",
+    "V37_TowerFinial"
+  ]
+}
