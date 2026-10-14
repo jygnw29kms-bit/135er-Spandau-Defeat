@@ -1,0 +1,70 @@
+{
+  "schema": "SpandauStrike.RathausCombatFlow.v1",
+  "lanes": ["north", "mid", "south"],
+  "chokes": [
+    {
+      "id": "front",
+      "lane": "mid",
+      "position_m": [48.66, -44.59],
+      "smoke_anchor_m": [48.66, -44.59],
+      "flank_anchor_m": [75.0, -90.0]
+    },
+    {
+      "id": "west",
+      "lane": "south",
+      "position_m": [-20.14, -73.78],
+      "smoke_anchor_m": [-20.14, -73.78],
+      "flank_anchor_m": [-65.0, -110.0]
+    },
+    {
+      "id": "east",
+      "lane": "mid",
+      "position_m": [71.74, 26.49],
+      "smoke_anchor_m": [71.74, 26.49],
+      "flank_anchor_m": [110.0, 65.0]
+    },
+    {
+      "id": "rear",
+      "lane": "north",
+      "position_m": [-42.76, 39.18],
+      "smoke_anchor_m": [-42.76, 39.18],
+      "flank_anchor_m": [-80.0, 95.0]
+    }
+  ],
+  "power_positions": [
+    {
+      "id": "00",
+      "lane": "south",
+      "mg_position_m": [21.22, -161.86],
+      "sniper_position_m": [3.22, -147.86],
+      "mg_arc_deg": 70.0,
+      "mg_requires_bipod": true,
+      "counterplay": ["smoke", "flank"]
+    },
+    {
+      "id": "01",
+      "lane": "mid",
+      "mg_position_m": [163.10, -7.03],
+      "sniper_position_m": [145.10, 6.97],
+      "mg_arc_deg": 70.0,
+      "mg_requires_bipod": true,
+      "counterplay": ["smoke", "flank"]
+    },
+    {
+      "id": "02",
+      "lane": "north",
+      "mg_position_m": [-84.79, 77.69],
+      "sniper_position_m": [-66.79, 91.69],
+      "mg_arc_deg": 70.0,
+      "mg_requires_bipod": true,
+      "counterplay": ["smoke", "alternate_lane"]
+    }
+  ],
+  "rules": {
+    "every_choke_requires_smoke": true,
+    "every_choke_requires_flank": true,
+    "every_mg_position_requires_counterplay": true,
+    "every_sniper_position_requires_counterplay": true,
+    "hard_safe_power_positions_forbidden": true
+  }
+}
