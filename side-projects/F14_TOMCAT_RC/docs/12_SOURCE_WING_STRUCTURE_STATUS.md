@@ -17,3 +17,8 @@ The root-only bending screen uses an assumed 250 mm resultant arm and gives 89.7
 Next geometry work is the segment connection and alignment system while retaining continuous cap load paths across the shell split. A registered original fuselage and fixed glove are still required before integrating the pivot mechanism. The v42 analytic fuselage remains excluded from original-exterior release; see the provenance gate.
 
 No final STL/3MF, slicer, structural or flight release exists.
+
+
+Native span-load sensitivity v66 uses the 17 executed v65 cap sections, Y150..405 mm. A uniform load over the full root-to-tip panel (Y148.8263775..450 mm) gives sampled peak stress screens at Y150: 29.0272 MPa (1050 g, 6g, 50% side share), 54.1842 MPa (1050 g, 8g, 70%), and 33.1740 / 61.9248 MPa at 1200 g. Only the cap centroid parallel-axis contribution is credited; local profile inertia, web and skin stiffness are excluded. The 1 mm cap thickness and uniform cap modulus remain assumptions. Checks cover an independent parallel-axis identity, native cap X alignment and the uniform-load moment identity.
+
+These values differ from v63 because uniform loading places the resultant about 150.6 mm from the root; v63 assumed 250 mm. Neither loading is validated by aerodynamics. Seventeen samples do not prove continuous capacity. Sweep/torsion coupling, shear, root attachment, the unsupported outer-tip load path, bonding, buckling and material allowables remain unverified. This is a load sensitivity calculation, not Fusion Simulation or a strength/print release.

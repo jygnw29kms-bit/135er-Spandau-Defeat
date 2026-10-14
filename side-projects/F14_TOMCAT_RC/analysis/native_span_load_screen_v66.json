@@ -1,0 +1,548 @@
+{
+  "status": "SAMPLED_NATIVE_GEOMETRY_UNIFORM_LOAD_SENSITIVITY",
+  "source_sha256": "24f7943b2b70a98e95becdff5406ef6a3ef9cc625c602e781b6a9c51395d7dde",
+  "stations": [
+    {
+      "y_mm": 150.0,
+      "neutral_z_mm": 189.53103870849725,
+      "I_parallel_axis_only_mm4": 943.9739443879214,
+      "assumed_cap_thickness_mm": 1,
+      "outer_fiber_distance_mm": 5.936614261425575,
+      "W_screen_mm3": 159.00880583089165
+    },
+    {
+      "y_mm": 165.9375,
+      "neutral_z_mm": 189.2468843279372,
+      "I_parallel_axis_only_mm4": 797.9294673365976,
+      "assumed_cap_thickness_mm": 1,
+      "outer_fiber_distance_mm": 5.565999758518018,
+      "W_screen_mm3": 143.3577976922247
+    },
+    {
+      "y_mm": 181.875,
+      "neutral_z_mm": 188.87770988352196,
+      "I_parallel_axis_only_mm4": 675.7954846737018,
+      "assumed_cap_thickness_mm": 1,
+      "outer_fiber_distance_mm": 5.227004887594603,
+      "W_screen_mm3": 129.28923909705654
+    },
+    {
+      "y_mm": 197.8125,
+      "neutral_z_mm": 188.42133278188928,
+      "I_parallel_axis_only_mm4": 574.45575904703,
+      "assumed_cap_thickness_mm": 1,
+      "outer_fiber_distance_mm": 4.920510708941464,
+      "W_screen_mm3": 116.74718195473882
+    },
+    {
+      "y_mm": 213.75,
+      "neutral_z_mm": 187.8677448583978,
+      "I_parallel_axis_only_mm4": 491.85916588594705,
+      "assumed_cap_thickness_mm": 1,
+      "outer_fiber_distance_mm": 4.650596193818444,
+      "W_screen_mm3": 105.76260448923183
+    },
+    {
+      "y_mm": 229.6875,
+      "neutral_z_mm": 187.24740190918112,
+      "I_parallel_axis_only_mm4": 422.41867079531096,
+      "assumed_cap_thickness_mm": 1,
+      "outer_fiber_distance_mm": 4.404798699050161,
+      "W_screen_mm3": 95.8996539129927
+    },
+    {
+      "y_mm": 245.625,
+      "neutral_z_mm": 186.58101918852392,
+      "I_parallel_axis_only_mm4": 362.6837931794206,
+      "assumed_cap_thickness_mm": 1,
+      "outer_fiber_distance_mm": 4.174777798679457,
+      "W_screen_mm3": 86.87499327368818
+    },
+    {
+      "y_mm": 261.5625,
+      "neutral_z_mm": 185.8567584563969,
+      "I_parallel_axis_only_mm4": 312.3618213452721,
+      "assumed_cap_thickness_mm": 1,
+      "outer_fiber_distance_mm": 3.965387549072318,
+      "W_screen_mm3": 78.77207901617273
+    },
+    {
+      "y_mm": 277.5,
+      "neutral_z_mm": 185.124356212213,
+      "I_parallel_axis_only_mm4": 266.69745097976556,
+      "assumed_cap_thickness_mm": 1,
+      "outer_fiber_distance_mm": 3.7555045525199375,
+      "W_screen_mm3": 71.01507859997453
+    },
+    {
+      "y_mm": 293.4375,
+      "neutral_z_mm": 184.406483878324,
+      "I_parallel_axis_only_mm4": 224.08726506618711,
+      "assumed_cap_thickness_mm": 1,
+      "outer_fiber_distance_mm": 3.5356344297492512,
+      "W_screen_mm3": 63.379647845006275
+    },
+    {
+      "y_mm": 309.375,
+      "neutral_z_mm": 183.68734542897286,
+      "I_parallel_axis_only_mm4": 185.63401499631743,
+      "assumed_cap_thickness_mm": 1,
+      "outer_fiber_distance_mm": 3.312322200779107,
+      "W_screen_mm3": 56.04346550364381
+    },
+    {
+      "y_mm": 325.3125,
+      "neutral_z_mm": 182.96674167781103,
+      "I_parallel_axis_only_mm4": 151.24049542403296,
+      "assumed_cap_thickness_mm": 1,
+      "outer_fiber_distance_mm": 3.085523702118479,
+      "W_screen_mm3": 49.01615091149463
+    },
+    {
+      "y_mm": 341.25,
+      "neutral_z_mm": 182.24027551642794,
+      "I_parallel_axis_only_mm4": 121.29090819696079,
+      "assumed_cap_thickness_mm": 1,
+      "outer_fiber_distance_mm": 2.859995234436923,
+      "W_screen_mm3": 42.40947912657644
+    },
+    {
+      "y_mm": 357.1875,
+      "neutral_z_mm": 181.5183626080118,
+      "I_parallel_axis_only_mm4": 94.47006071360073,
+      "assumed_cap_thickness_mm": 1,
+      "outer_fiber_distance_mm": 2.6244920478309552,
+      "W_screen_mm3": 35.995559899553406
+    },
+    {
+      "y_mm": 373.125,
+      "neutral_z_mm": 180.81326777202474,
+      "I_parallel_axis_only_mm4": 69.91068603720682,
+      "assumed_cap_thickness_mm": 1,
+      "outer_fiber_distance_mm": 2.365719827694818,
+      "W_screen_mm3": 29.551549265801487
+    },
+    {
+      "y_mm": 389.0625,
+      "neutral_z_mm": 180.1216109720309,
+      "I_parallel_axis_only_mm4": 48.471411175515925,
+      "assumed_cap_thickness_mm": 1,
+      "outer_fiber_distance_mm": 2.087341513854568,
+      "W_screen_mm3": 23.2216007077858
+    },
+    {
+      "y_mm": 405.0,
+      "neutral_z_mm": 179.4423629896296,
+      "I_parallel_axis_only_mm4": 30.626280051418938,
+      "assumed_cap_thickness_mm": 1,
+      "outer_fiber_distance_mm": 1.7904720816474935,
+      "W_screen_mm3": 17.105142473508064
+    }
+  ],
+  "cases": [
+    {
+      "mass_kg": 1.05,
+      "load_factor": 6,
+      "assigned_side_fraction": 0.5,
+      "uniform_load_N_per_mm": 0.10256856906517438,
+      "stations": [
+        {
+          "y_mm": 150.0,
+          "moment_Nmm": 4615.585607932847,
+          "stress_screen_MPa": 29.027232698304736
+        },
+        {
+          "y_mm": 165.9375,
+          "moment_Nmm": 4138.206045690496,
+          "stress_screen_MPa": 28.866278028174115
+        },
+        {
+          "y_mm": 181.875,
+          "moment_Nmm": 3686.8793006491715,
+          "stress_screen_MPa": 28.516520991213017
+        },
+        {
+          "y_mm": 197.8125,
+          "moment_Nmm": 3261.6053728088746,
+          "stress_screen_MPa": 27.93733705772317
+        },
+        {
+          "y_mm": 213.75,
+          "moment_Nmm": 2862.384262169605,
+          "stress_screen_MPa": 27.064237648015155
+        },
+        {
+          "y_mm": 229.6875,
+          "moment_Nmm": 2489.215968731362,
+          "stress_screen_MPa": 25.956464566491174
+        },
+        {
+          "y_mm": 245.625,
+          "moment_Nmm": 2142.1004924941467,
+          "stress_screen_MPa": 24.657273765141397
+        },
+        {
+          "y_mm": 261.5625,
+          "moment_Nmm": 1821.0378334579584,
+          "stress_screen_MPa": 23.11780844433572
+        },
+        {
+          "y_mm": 277.5,
+          "moment_Nmm": 1526.0279916227976,
+          "stress_screen_MPa": 21.488788320841834
+        },
+        {
+          "y_mm": 293.4375,
+          "moment_Nmm": 1257.0709669886637,
+          "stress_screen_MPa": 19.8339847211333
+        },
+        {
+          "y_mm": 309.375,
+          "moment_Nmm": 1014.1667595555572,
+          "stress_screen_MPa": 18.096075081038993
+        },
+        {
+          "y_mm": 325.3125,
+          "moment_Nmm": 797.3153693234779,
+          "stress_screen_MPa": 16.266380662225803
+        },
+        {
+          "y_mm": 341.25,
+          "moment_Nmm": 606.5167962924256,
+          "stress_screen_MPa": 14.301444129558858
+        },
+        {
+          "y_mm": 357.1875,
+          "moment_Nmm": 441.7710404624007,
+          "stress_screen_MPa": 12.27293148641596
+        },
+        {
+          "y_mm": 373.125,
+          "moment_Nmm": 303.07810183340297,
+          "stress_screen_MPa": 10.255912443282286
+        },
+        {
+          "y_mm": 389.0625,
+          "moment_Nmm": 190.4379804054324,
+          "stress_screen_MPa": 8.200898069080218
+        },
+        {
+          "y_mm": 405.0,
+          "moment_Nmm": 103.85067617848905,
+          "stress_screen_MPa": 6.071313135177324
+        }
+      ],
+      "peak_sample": {
+        "y_mm": 150.0,
+        "moment_Nmm": 4615.585607932847,
+        "stress_screen_MPa": 29.027232698304736
+      }
+    },
+    {
+      "mass_kg": 1.05,
+      "load_factor": 8,
+      "assigned_side_fraction": 0.7,
+      "uniform_load_N_per_mm": 0.19146132892165882,
+      "stations": [
+        {
+          "y_mm": 150.0,
+          "moment_Nmm": 8615.759801474647,
+          "stress_screen_MPa": 54.184167703502176
+        },
+        {
+          "y_mm": 165.9375,
+          "moment_Nmm": 7724.651285288925,
+          "stress_screen_MPa": 53.883718985925015
+        },
+        {
+          "y_mm": 181.875,
+          "moment_Nmm": 6882.17469454512,
+          "stress_screen_MPa": 53.23083918359763
+        },
+        {
+          "y_mm": 197.8125,
+          "moment_Nmm": 6088.330029243231,
+          "stress_screen_MPa": 52.14969584108324
+        },
+        {
+          "y_mm": 213.75,
+          "moment_Nmm": 5343.117289383262,
+          "stress_screen_MPa": 50.51991027629495
+        },
+        {
+          "y_mm": 229.6875,
+          "moment_Nmm": 4646.536474965209,
+          "stress_screen_MPa": 48.45206719078353
+        },
+        {
+          "y_mm": 245.625,
+          "moment_Nmm": 3998.5875859890734,
+          "stress_screen_MPa": 46.02691102826393
+        },
+        {
+          "y_mm": 261.5625,
+          "moment_Nmm": 3399.2706224548556,
+          "stress_screen_MPa": 43.153242429426676
+        },
+        {
+          "y_mm": 277.5,
+          "moment_Nmm": 2848.585584362555,
+          "stress_screen_MPa": 40.11240486557142
+        },
+        {
+          "y_mm": 293.4375,
+          "moment_Nmm": 2346.532471712172,
+          "stress_screen_MPa": 37.023438146115495
+        },
+        {
+          "y_mm": 309.375,
+          "moment_Nmm": 1893.1112845037067,
+          "stress_screen_MPa": 33.779340151272784
+        },
+        {
+          "y_mm": 325.3125,
+          "moment_Nmm": 1488.3220227371585,
+          "stress_screen_MPa": 30.363910569488162
+        },
+        {
+          "y_mm": 341.25,
+          "moment_Nmm": 1132.1646864125278,
+          "stress_screen_MPa": 26.6960290418432
+        },
+        {
+          "y_mm": 357.1875,
+          "moment_Nmm": 824.6392755298145,
+          "stress_screen_MPa": 22.909472107976455
+        },
+        {
+          "y_mm": 373.125,
+          "moment_Nmm": 565.7457900890188,
+          "stress_screen_MPa": 19.144369894126932
+        },
+        {
+          "y_mm": 389.0625,
+          "moment_Nmm": 355.48423009014044,
+          "stress_screen_MPa": 15.308343062283072
+        },
+        {
+          "y_mm": 405.0,
+          "moment_Nmm": 193.85459553317955,
+          "stress_screen_MPa": 11.333117852331004
+        }
+      ],
+      "peak_sample": {
+        "y_mm": 150.0,
+        "moment_Nmm": 8615.759801474647,
+        "stress_screen_MPa": 54.184167703502176
+      }
+    },
+    {
+      "mass_kg": 1.2,
+      "load_factor": 6,
+      "assigned_side_fraction": 0.5,
+      "uniform_load_N_per_mm": 0.1172212217887707,
+      "stations": [
+        {
+          "y_mm": 150.0,
+          "moment_Nmm": 5274.954980494682,
+          "stress_screen_MPa": 33.17398022663399
+        },
+        {
+          "y_mm": 165.9375,
+          "moment_Nmm": 4729.378337931995,
+          "stress_screen_MPa": 32.99003203219899
+        },
+        {
+          "y_mm": 181.875,
+          "moment_Nmm": 4213.576343599052,
+          "stress_screen_MPa": 32.59030970424344
+        },
+        {
+          "y_mm": 197.8125,
+          "moment_Nmm": 3727.548997495856,
+          "stress_screen_MPa": 31.928385208826473
+        },
+        {
+          "y_mm": 213.75,
+          "moment_Nmm": 3271.296299622405,
+          "stress_screen_MPa": 30.930557312017317
+        },
+        {
+          "y_mm": 229.6875,
+          "moment_Nmm": 2844.818249978699,
+          "stress_screen_MPa": 29.664530933132767
+        },
+        {
+          "y_mm": 245.625,
+          "moment_Nmm": 2448.1148485647386,
+          "stress_screen_MPa": 28.179741445875877
+        },
+        {
+          "y_mm": 261.5625,
+          "moment_Nmm": 2081.186095380524,
+          "stress_screen_MPa": 26.420352507812254
+        },
+        {
+          "y_mm": 277.5,
+          "moment_Nmm": 1744.031990426054,
+          "stress_screen_MPa": 24.558615223819235
+        },
+        {
+          "y_mm": 293.4375,
+          "moment_Nmm": 1436.6525337013297,
+          "stress_screen_MPa": 22.667411109866627
+        },
+        {
+          "y_mm": 309.375,
+          "moment_Nmm": 1159.0477252063508,
+          "stress_screen_MPa": 20.68122866404456
+        },
+        {
+          "y_mm": 325.3125,
+          "moment_Nmm": 911.2175649411174,
+          "stress_screen_MPa": 18.590149328258057
+        },
+        {
+          "y_mm": 341.25,
+          "moment_Nmm": 693.1620529056293,
+          "stress_screen_MPa": 16.344507576638694
+        },
+        {
+          "y_mm": 357.1875,
+          "moment_Nmm": 504.88118909988646,
+          "stress_screen_MPa": 14.02620741304681
+        },
+        {
+          "y_mm": 373.125,
+          "moment_Nmm": 346.374973523889,
+          "stress_screen_MPa": 11.72104279232261
+        },
+        {
+          "y_mm": 389.0625,
+          "moment_Nmm": 217.64340617763702,
+          "stress_screen_MPa": 9.372454936091678
+        },
+        {
+          "y_mm": 405.0,
+          "moment_Nmm": 118.68648706113034,
+          "stress_screen_MPa": 6.938643583059799
+        }
+      ],
+      "peak_sample": {
+        "y_mm": 150.0,
+        "moment_Nmm": 5274.954980494682,
+        "stress_screen_MPa": 33.17398022663399
+      }
+    },
+    {
+      "mass_kg": 1.2,
+      "load_factor": 8,
+      "assigned_side_fraction": 0.7,
+      "uniform_load_N_per_mm": 0.2188129473390386,
+      "stations": [
+        {
+          "y_mm": 150.0,
+          "moment_Nmm": 9846.582630256737,
+          "stress_screen_MPa": 61.92476308971675
+        },
+        {
+          "y_mm": 165.9375,
+          "moment_Nmm": 8828.172897473054,
+          "stress_screen_MPa": 61.581393126771424
+        },
+        {
+          "y_mm": 181.875,
+          "moment_Nmm": 7865.3425080515635,
+          "stress_screen_MPa": 60.83524478125442
+        },
+        {
+          "y_mm": 197.8125,
+          "moment_Nmm": 6958.091461992263,
+          "stress_screen_MPa": 59.59965238980941
+        },
+        {
+          "y_mm": 213.75,
+          "moment_Nmm": 6106.419759295155,
+          "stress_screen_MPa": 57.73704031576565
+        },
+        {
+          "y_mm": 229.6875,
+          "moment_Nmm": 5310.327399960238,
+          "stress_screen_MPa": 55.37379107518117
+        },
+        {
+          "y_mm": 245.625,
+          "moment_Nmm": 4569.814383987512,
+          "stress_screen_MPa": 52.602184032301636
+        },
+        {
+          "y_mm": 261.5625,
+          "moment_Nmm": 3884.880711376977,
+          "stress_screen_MPa": 49.31799134791619
+        },
+        {
+          "y_mm": 277.5,
+          "moment_Nmm": 3255.526382128634,
+          "stress_screen_MPa": 45.8427484177959
+        },
+        {
+          "y_mm": 293.4375,
+          "moment_Nmm": 2681.751396242482,
+          "stress_screen_MPa": 42.312500738417704
+        },
+        {
+          "y_mm": 309.375,
+          "moment_Nmm": 2163.5557537185214,
+          "stress_screen_MPa": 38.604960172883175
+        },
+        {
+          "y_mm": 325.3125,
+          "moment_Nmm": 1700.9394545567523,
+          "stress_screen_MPa": 34.701612079415035
+        },
+        {
+          "y_mm": 341.25,
+          "moment_Nmm": 1293.9024987571745,
+          "stress_screen_MPa": 30.509747476392228
+        },
+        {
+          "y_mm": 357.1875,
+          "moment_Nmm": 942.4448863197879,
+          "stress_screen_MPa": 26.182253837687373
+        },
+        {
+          "y_mm": 373.125,
+          "moment_Nmm": 646.5666172445927,
+          "stress_screen_MPa": 21.8792798790022
+        },
+        {
+          "y_mm": 389.0625,
+          "moment_Nmm": 406.26769153158904,
+          "stress_screen_MPa": 17.495249214037795
+        },
+        {
+          "y_mm": 405.0,
+          "moment_Nmm": 221.5481091807766,
+          "stress_screen_MPa": 12.952134688378289
+        }
+      ],
+      "peak_sample": {
+        "y_mm": 150.0,
+        "moment_Nmm": 9846.582630256737,
+        "stress_screen_MPa": 61.92476308971675
+      }
+    }
+  ],
+  "checks": "PASS: parallel-axis identity, cap X alignment, uniform-load moment identity",
+  "load_distribution_measured": false,
+  "local_profile_inertia_credited": false,
+  "web_or_skin_stiffness_credited": false,
+  "cap_material_modulus_uniform_assumed": true,
+  "cap_thickness_source_assumption_mm": 1,
+  "sweep_torsion_shear_coupling_included": false,
+  "continuous_capacity_verified": false,
+  "tip_load_transfer_verified": false,
+  "bond_buckling_material_allowables_verified": false,
+  "structural_capacity_verified": false,
+  "print_release": false
+}
