@@ -1,0 +1,47 @@
+{
+  "schema": "SpandauStrike.WorldMasterV47CrownGuardrails.v1",
+  "source_master": "SpandauStrike_Rathaus_WORLD_MASTER_v46_RETIRE_LEGACY_TOWER_ROOF.blend",
+  "source_master_version": "v46_RETIRE_LEGACY_TOWER_ROOF",
+  "output_master": "SpandauStrike_Rathaus_WORLD_MASTER_v47_CROWN_GUARDRAILS.blend",
+  "output_master_version": "v47_CROWN_GUARDRAILS",
+  "reference": "media/theme/rathaus-spandau-photo.jpg",
+  "created_objects": [
+    "V47_CrownGuardrail_Front",
+    "V47_CrownGuardrail_Rear",
+    "V47_CrownGuardrail_East",
+    "V47_CrownGuardrail_West"
+  ],
+  "created_count": 4,
+  "per_guardrail_topology": [
+    {
+      "name": "V47_CrownGuardrail_Front",
+      "vertices": 56,
+      "polygons": 42
+    },
+    {
+      "name": "V47_CrownGuardrail_Rear",
+      "vertices": 56,
+      "polygons": 42
+    },
+    {
+      "name": "V47_CrownGuardrail_East",
+      "vertices": 56,
+      "polygons": 42
+    },
+    {
+      "name": "V47_CrownGuardrail_West",
+      "vertices": 56,
+      "polygons": 42
+    }
+  ],
+  "design": {
+    "opening_clear_width_m": 8.8,
+    "rail_span_m": 8.0,
+    "horizontal_bars": 2,
+    "vertical_posts": 5,
+    "guardrail_height_m": 1.35,
+    "lower_bar_z_offset_from_opening_center_m": -2.65,
+    "upper_bar_z_offset_from_opening_center_m": -2.05
+  },
+  "policy": "Additive landmark detail only. No existing mesh, transform, collision, gameplay, route, spawn, objective or cover change."
+}

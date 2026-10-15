@@ -2,7 +2,7 @@
 
 ## Current decision
 
-`SpandauStrike_Rathaus_WORLD_MASTER_v46_RETIRE_LEGACY_TOWER_ROOF.blend` is the current production world master. The recovered `RathausSpandau_REAL_Integrated_Master_v4.blend` remains reference/recovery material only and must not be wholesale-merged.
+`SpandauStrike_Rathaus_WORLD_MASTER_v47_CROWN_GUARDRAILS.blend` is the current production world master. The recovered `RathausSpandau_REAL_Integrated_Master_v4.blend` remains reference/recovery material only and must not be wholesale-merged.
 
 The original audit showed that the production chain contains substantially richer Rathaus geometry than v4. The later v42-v46 inspection confirmed that several elements initially suspected to be missing were already present in newer `V37_*` / `SM_MASTER_*` geometry.
 
@@ -55,6 +55,13 @@ The surrounding superseded V33 crown geometry was already correctly marked `refe
 
 The v46 role counts therefore change by exactly one object: landmark 414 -> 413 and reference 5176 -> 5177. All total object/mesh/vertex/polygon counts and world bounds remain unchanged. The runtime handoff remains exactly 5 objectives / 8 spawns / 67 cover objects, with gameplay transforms identical to v45.
 
+## v47 crown guardrails
+
+The current reference photograph shows a low metal safety rail across the open lantern stage directly below the copper roof. v46 had the four recessed opening/backplate surfaces and stone corner piers but no visible rail, so the upper stage read as an unprotected blank opening in tower QA.
+
+v47 adds one joined guardrail mesh per lantern face. Each rail uses two horizontal bars and five vertical posts across an 8.0 m span inside the existing 8.8 m opening. The change is additive landmark detail only: no pre-existing meshes or transforms are modified, and collision, gameplay, routes, objectives, spawns and cover remain unchanged. The source reference is `media/theme/rathaus-spandau-photo.jpg`.
+
+The v47 world bounds remain unchanged. The build adds 4 mesh objects, 224 vertices and 168 polygons, bringing the full master to 10,792 objects / 10,753 mesh objects / 720,101 vertices / 1,085,881 polygons.
 ## Remaining Rathaus review work
 
 The central facade now has a correctly oriented main-roof silhouette. Further work should focus on reference-driven proportion/material/fenestration QA and later UE5 presentation quality rather than importing old v4 geometry merely because object names differ. Any new recovery or architecture change requires a proven spatial/reference match and must preserve the current gameplay/runtime invariants.
