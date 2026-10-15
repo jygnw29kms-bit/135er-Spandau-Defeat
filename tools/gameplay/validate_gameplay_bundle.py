@@ -35,8 +35,8 @@ def main():
     if missing:
         fail("bundle references missing files: " + ", ".join(missing))
 
-    if world.get("version") != "v49_CROWN_PROPORTIONS":
-        fail("bundle must currently point at v49_CROWN_PROPORTIONS")
+    if world.get("version") != "v50_CLOCK_SCALE":
+        fail("bundle must currently point at v50_CLOCK_SCALE")
 
     inv = bundle.get("required_invariants", {})
     expected = {

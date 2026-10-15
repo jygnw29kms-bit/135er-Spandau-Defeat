@@ -14,11 +14,11 @@ Authoritative spatial inputs include Berlin3D / LoD2, Berlin DGM1, aerial/refere
 
 Current authoritative master:
 
-`tools/blender_pipeline/builds/rathaus_spandau/SpandauStrike_Rathaus_WORLD_MASTER_v49_CROWN_PROPORTIONS.blend`
+`tools/blender_pipeline/builds/rathaus_spandau/SpandauStrike_Rathaus_WORLD_MASTER_v50_CLOCK_SCALE.blend`
 
-v49 keeps the validated v48 dormer alignment and applies a reference-driven width correction to five existing tower-crown meshes: the lower/upper transition bands, crown base, crown top band and copper roof. The lantern openings, stone piers, guardrails, object locations, topology, world bounds and all gameplay/collision geometry remain unchanged.
+v50 keeps the validated v49 crown proportions and scales only the existing open radial V33 clock details on all four tower faces by 1.45 around their face centers. No circular dial/ring is added. The tower shaft, crown, facade, topology, world bounds and all gameplay/collision geometry remain unchanged.
 
-Verified v49 full-master metrics:
+Verified v50 full-master metrics:
 - **10,792** total objects
 - **10,753** mesh objects
 - **720,101** vertices
@@ -28,10 +28,10 @@ Verified v49 full-master metrics:
 - gameplay core unchanged from v46
 
 Tracked QA / handoff files:
-- `SpandauStrike_Rathaus_WORLD_MASTER_v49_CROWN_PROPORTIONS_AUDIT.json`
-- `SpandauStrike_Rathaus_WORLD_MASTER_v49_CROWN_PROPORTIONS_EXPORT_MANIFEST.json`
-- `SpandauStrike_Rathaus_WORLD_MASTER_v49_CROWN_PROPORTIONS_REPORT.json`
-- `ue5/SpandauStrike/Design/RathausSpandau/runtime_gameplay_handoff_v49.json`
+- `SpandauStrike_Rathaus_WORLD_MASTER_v50_CLOCK_SCALE_AUDIT.json`
+- `SpandauStrike_Rathaus_WORLD_MASTER_v50_CLOCK_SCALE_EXPORT_MANIFEST.json`
+- `SpandauStrike_Rathaus_WORLD_MASTER_v50_CLOCK_SCALE_REPORT.json`
+- `ue5/SpandauStrike/Design/RathausSpandau/runtime_gameplay_handoff_v50.json`
 
 ## Current gameplay contract
 
@@ -52,9 +52,9 @@ All current gameplay tags use the `SpandauStrike.*` namespace.
 
 Current architecture/runtime validation map:
 
-`/Game/SpandauStrike/Maps/Rathaus/LV_RathausSpandau_REAL_v69_MATREF`
+`/Game/SpandauStrike/Maps/Rathaus/LV_RathausSpandau_REAL_v70_CLOCK_QA`
 
-v65 remains the known-good spawn/runtime fallback. v66 is the validated v48 architecture handoff, v67 is the validated reference-facing lighting checkpoint, v68 carries the v49 tower-crown proportion correction into UE while preserving the v67 lighting and runtime setup, and v69 adds a separate reference-facing material palette without changing geometry or gameplay.
+v65 remains the known-good spawn/runtime fallback. v67 is the validated lighting checkpoint, v68 the v49 geometry checkpoint, v69 the reference-facing material checkpoint, and v70 carries the v50 open-clock scale correction while preserving the validated v69 materials, lighting and runtime setup.
 
 v65 was created from v64 specifically to replace the two temporary generic PlayerStarts with the **8 LyraPlayerStart locations from the v47 runtime handoff** (v65 remains the known-good playable checkpoint; v48 gameplay transforms are machine-verified identical).
 
@@ -65,10 +65,6 @@ Runtime validation on the Lucas workstation (UE 5.8.3):
 - previous `B_AI_Controller_LyraShooter` / `Accessed None` pawn errors no longer occur
 - 45-second unattended runtime test completed without fatal errors or spawn failures
 - only engine-start automation-test diagnostics remain; these are not the previous Rathaus AI failure path
-
-Git checkpoint:
-
-`b118ae3 Add Rathaus playable v65 with runtime spawn layout`
 
 
 ### v66 architecture handoff
@@ -140,6 +136,26 @@ Reproducible scripts:
 - `ue5/SpandauStrike/Content/Python/build_rathaus_v49_reference_materials.py`
 - `ue5/SpandauStrike/Content/Python/build_rathaus_v69_reference_materials.py`
 - `ue5/SpandauStrike/Content/Python/qa_v69_front_screenshot.py`
+
+### v70 v50 clock-scale handoff
+
+v70 duplicates v69 and replaces only the Rathaus building mesh with the v50 handoff. v50 scales the existing open radial V33 clock boss, 12 markers and two hands on each of the four tower faces by 1.45 around the existing face center. The real Rathaus reference uses an open radial clock, so no circular face or ring is promoted. Geometry outside those 60 clock-detail meshes is unchanged.
+
+Lucas UE 5.8.3 validation:
+- 8/8 PlayerStarts preserved by the build gate
+- fixed-camera GPU QA confirms a substantially more reference-faithful clock-to-tower proportion
+- real Development runtime reaches play state
+- `REAL_BAD_COUNT=0`
+- v69 remains the material fallback; v70 is the current visual/runtime validation map
+
+Reproducible sources/scripts:
+- `tools/blender_pipeline/build_world_master_v50_clock_scale.py`
+- `tools/blender_pipeline/export_rathaus_building_v50_ue5.py`
+- `ue5/SpandauStrike/SourceArt/Rathaus/v50/RathausSpandau_BUILDING_v50.fbx`
+- `ue5/SpandauStrike/Content/Python/import_rathaus_v50_validation.py`
+- `ue5/SpandauStrike/Content/Python/apply_rathaus_v50_reference_materials.py`
+- `ue5/SpandauStrike/Content/Python/build_rathaus_v70_clock_qa.py`
+- `ue5/SpandauStrike/Content/Python/qa_v70_front_screenshot.py`
 ## UE workstation prerequisites recovered
 
 The Lucas workstation now has the required local UE 5.8 / Lyra runtime prerequisites restored:
@@ -173,8 +189,8 @@ The v83 DGM surface is only a local Rathaus crop and must not be confused with t
 ## Immediate production priority
 
 - continue reference-driven Rathaus facade/window/material QA without speculative geometry changes
-- continue reference-driven Rathaus architecture/material QA from the validated v49 / UE v68 baseline
-- keep v65 as the known-good spawn/runtime fallback; v67 remains the lighting checkpoint, v68 remains the geometry checkpoint, and v69 is the current visual/runtime validation map
+- continue reference-driven Rathaus architecture/material QA from the validated v50 / UE v70 baseline
+- keep v65 as the known-good spawn/runtime fallback; v67 remains the lighting checkpoint, v68 the v49 geometry checkpoint, v69 the material fallback, and v70 is the current visual/runtime validation map
 - preserve the 5 objectives / 8 spawns / 67 cover gameplay contract
 - compare editor and runtime presentation for material, lighting, LOD/Nanite and streaming differences
 - promote a new FINAL level only after editor and runtime views match the validated Rathaus reference closely enough

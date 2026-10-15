@@ -2,7 +2,7 @@
 
 ## Current decision
 
-`SpandauStrike_Rathaus_WORLD_MASTER_v49_CROWN_PROPORTIONS.blend` is the current production world master. The recovered `RathausSpandau_REAL_Integrated_Master_v4.blend` remains reference/recovery material only and must not be wholesale-merged.
+`SpandauStrike_Rathaus_WORLD_MASTER_v50_CLOCK_SCALE.blend` is the current production world master. The recovered `RathausSpandau_REAL_Integrated_Master_v4.blend` remains reference/recovery material only and must not be wholesale-merged.
 
 The original audit showed that the production chain contains substantially richer Rathaus geometry than v4. The later v42-v46 inspection confirmed that several elements initially suspected to be missing were already present in newer `V37_*` / `SM_MASTER_*` geometry.
 
@@ -77,6 +77,14 @@ The fixed-camera UE v67 QA and the current Rathaus reference photograph showed t
 v49 narrows only five existing crown meshes in XY while keeping their locations, heights, topology and materials unchanged. The applied XY factors are 0.96 (`V37_TowerTransitionLowerBand`), 0.90 (`V37_TowerTransitionUpperBand` and `V37_CrownBase`) and 0.86 (`V37_CrownTopBand` and `V37_CopperOctagonalRoof`). The lantern openings, stone corner piers, v47 guardrails and finial are unchanged.
 
 The v48 and v49 audits are topology-identical at 10,792 objects / 10,753 mesh objects / 720,101 vertices / 1,085,881 polygons / 155 materials. World min/max bounds are bit-identical. The export manifest sections `gameplay` (80 objects), `gameplay_planning` (69), `collision` (12) and `world` (60) are exactly equal between v48 and v49.
+## v50 open-clock scale correction
+
+Reference comparison showed that the production V33 clock was structurally correct as an open radial clock but underscaled on the 14.2 m tower shaft. The previous production markers described a circle of roughly 4.1 m diameter, while multiple retained measurement/reference families and the current Rathaus photographs support a visibly larger clock.
+
+v50 scales only the existing exported V33 clock boss, 12 markers and two hands on each of the four tower faces by 1.45 around the existing face center. Exactly 60 existing meshes are transformed. No circular dial/ring is added, no vertices or polygons are created or removed, and the tower shaft, cornices, crown, facade, collision and gameplay geometry remain unchanged.
+
+The v49 and v50 audits are topology-identical at 10,792 objects / 10,753 mesh objects / 720,101 vertices / 1,085,881 polygons / 155 materials with identical world bounds. Runtime gameplay remains exactly 5 objectives / 8 spawns / 67 cover objects. UE v70 fixed-camera GPU QA and a Development runtime pass both succeeded, with `REAL_BAD_COUNT=0`.
+
 ## Remaining Rathaus review work
 
 The central facade now has a correctly oriented main-roof silhouette. Further work should focus on reference-driven proportion/material/fenestration QA and later UE5 presentation quality rather than importing old v4 geometry merely because object names differ. Any new recovery or architecture change requires a proven spatial/reference match and must preserve the current gameplay/runtime invariants.
