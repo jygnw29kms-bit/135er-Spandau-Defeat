@@ -1,0 +1,3083 @@
+{
+  "schema": "SpandauStrike.RuntimeGameplayHandoff.v1",
+  "source_manifest": "tools/blender_pipeline/builds/rathaus_spandau/SpandauStrike_Rathaus_WORLD_MASTER_v44_CROWN_OPENING_DEPTH_EXPORT_MANIFEST.json",
+  "source_master_version": "v44_CROWN_OPENING_DEPTH",
+  "coordinate_policy": "Blender world coordinates are authoritative; location_cm is meters*100. Axis/handedness conversion remains importer-owned.",
+  "rules": {
+    "mode": "linear_territorial",
+    "objective_count": 5,
+    "center_capture_players": 2,
+    "contested_behavior": "pause",
+    "backcap_allowed": false
+  },
+  "objectives": [
+    {
+      "source_name": "OBJ_RUNTIME_1_1_WEST_HOME",
+      "actor_type": "SpandauStrikeCapturePoint",
+      "gameplay_tags": [
+        "SpandauStrike.Objective.Territorial"
+      ],
+      "transform": {
+        "location_m": [
+          -275.0,
+          0.0,
+          3.119008
+        ],
+        "location_cm": [
+          -27500.0,
+          0.0,
+          311.9008
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          4.0,
+          4.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_runtime": true,
+        "ss_gameplay_class": "territorial_capture",
+        "ss_objective_id": 1,
+        "ss_capture_players": 1,
+        "ss_sequence": 1,
+        "ss_linear": true,
+        "ss_zone": "home",
+        "ss_initial_side": "west",
+        "ss_frontline": true,
+        "ss_capture_rule": "contested_stops_progress",
+        "ss_capture_decay": "hold_then_slow_decay",
+        "ss_frontline_mode": "linear_adjacent",
+        "ss_backcap_allowed": false,
+        "ss_capture_radius_m": 4.0,
+        "ss_capture_duration_s": 8.0,
+        "ss_contested_behavior": "pause",
+        "ss_progress_decay": "hold_then_slow"
+      }
+    },
+    {
+      "source_name": "OBJ_RUNTIME_2_2_WEST_STREET",
+      "actor_type": "SpandauStrikeCapturePoint",
+      "gameplay_tags": [
+        "SpandauStrike.Objective.Territorial"
+      ],
+      "transform": {
+        "location_m": [
+          -145.0,
+          -97.300003,
+          1.354344
+        ],
+        "location_cm": [
+          -14500.0,
+          -9730.0003,
+          135.4344
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          4.0,
+          4.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_runtime": true,
+        "ss_gameplay_class": "territorial_capture",
+        "ss_objective_id": 2,
+        "ss_capture_players": 1,
+        "ss_sequence": 2,
+        "ss_linear": true,
+        "ss_zone": "street",
+        "ss_initial_side": "west",
+        "ss_frontline": true,
+        "ss_capture_rule": "contested_stops_progress",
+        "ss_capture_decay": "hold_then_slow_decay",
+        "ss_frontline_mode": "linear_adjacent",
+        "ss_backcap_allowed": false,
+        "ss_capture_radius_m": 4.0,
+        "ss_capture_duration_s": 8.0,
+        "ss_contested_behavior": "pause",
+        "ss_progress_decay": "hold_then_slow"
+      }
+    },
+    {
+      "source_name": "OBJ_RUNTIME_3_3_RATHAUS",
+      "actor_type": "SpandauStrikeCapturePoint",
+      "gameplay_tags": [
+        "SpandauStrike.Objective.Territorial"
+      ],
+      "transform": {
+        "location_m": [
+          5.0,
+          -68.0,
+          1.813359
+        ],
+        "location_cm": [
+          500.0,
+          -6800.0,
+          181.3359
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          5.5,
+          5.5,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_runtime": true,
+        "ss_gameplay_class": "territorial_capture",
+        "ss_objective_id": 3,
+        "ss_capture_players": 2,
+        "ss_sequence": 3,
+        "ss_linear": true,
+        "ss_zone": "rathaus",
+        "ss_initial_side": "neutral",
+        "ss_frontline": true,
+        "ss_capture_rule": "contested_stops_progress",
+        "ss_capture_decay": "hold_then_slow_decay",
+        "ss_frontline_mode": "linear_adjacent",
+        "ss_backcap_allowed": false,
+        "ss_capture_radius_m": 5.5,
+        "ss_capture_duration_s": 10.0,
+        "ss_contested_behavior": "pause",
+        "ss_progress_decay": "hold_then_slow"
+      }
+    },
+    {
+      "source_name": "OBJ_RUNTIME_4_4_EAST_STREET",
+      "actor_type": "SpandauStrikeCapturePoint",
+      "gameplay_tags": [
+        "SpandauStrike.Objective.Territorial"
+      ],
+      "transform": {
+        "location_m": [
+          130.0,
+          73.699997,
+          3.675572
+        ],
+        "location_cm": [
+          13000.0,
+          7369.9997,
+          367.5572
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          4.0,
+          4.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_runtime": true,
+        "ss_gameplay_class": "territorial_capture",
+        "ss_objective_id": 4,
+        "ss_capture_players": 1,
+        "ss_sequence": 4,
+        "ss_linear": true,
+        "ss_zone": "street",
+        "ss_initial_side": "east",
+        "ss_frontline": true,
+        "ss_capture_rule": "contested_stops_progress",
+        "ss_capture_decay": "hold_then_slow_decay",
+        "ss_frontline_mode": "linear_adjacent",
+        "ss_backcap_allowed": false,
+        "ss_capture_radius_m": 4.0,
+        "ss_capture_duration_s": 8.0,
+        "ss_contested_behavior": "pause",
+        "ss_progress_decay": "hold_then_slow"
+      }
+    },
+    {
+      "source_name": "OBJ_RUNTIME_5_5_EAST_HOME",
+      "actor_type": "SpandauStrikeCapturePoint",
+      "gameplay_tags": [
+        "SpandauStrike.Objective.Territorial"
+      ],
+      "transform": {
+        "location_m": [
+          235.0,
+          -10.0,
+          2.211697
+        ],
+        "location_cm": [
+          23500.0,
+          -1000.0,
+          221.1697
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          4.0,
+          4.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_runtime": true,
+        "ss_gameplay_class": "territorial_capture",
+        "ss_objective_id": 5,
+        "ss_capture_players": 1,
+        "ss_sequence": 5,
+        "ss_linear": true,
+        "ss_zone": "home",
+        "ss_initial_side": "east",
+        "ss_frontline": true,
+        "ss_capture_rule": "contested_stops_progress",
+        "ss_capture_decay": "hold_then_slow_decay",
+        "ss_frontline_mode": "linear_adjacent",
+        "ss_backcap_allowed": false,
+        "ss_capture_radius_m": 4.0,
+        "ss_capture_duration_s": 8.0,
+        "ss_contested_behavior": "pause",
+        "ss_progress_decay": "hold_then_slow"
+      }
+    }
+  ],
+  "spawns": [
+    {
+      "source_name": "SM_SPAWN_WEST_1",
+      "actor_type": "LyraPlayerStart",
+      "gameplay_tags": [
+        "SpandauStrike.Spawn.Team.West",
+        "SpandauStrike.Lane.North"
+      ],
+      "transform": {
+        "location_m": [
+          -364.742523,
+          304.720459,
+          2.461959
+        ],
+        "location_cm": [
+          -36474.2523,
+          30472.0459,
+          246.1959
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_team": "west",
+        "ss_lane": "north",
+        "ss_phase": "spawn",
+        "ss_spawn_role": "team_anchor",
+        "ss_frontline_side": "west",
+        "ss_spawn_safety": "los_distance_check"
+      }
+    },
+    {
+      "source_name": "SM_SPAWN_WEST_2",
+      "actor_type": "LyraPlayerStart",
+      "gameplay_tags": [
+        "SpandauStrike.Spawn.Team.West",
+        "SpandauStrike.Lane.South"
+      ],
+      "transform": {
+        "location_m": [
+          -360.329803,
+          -362.757721,
+          2.042238
+        ],
+        "location_cm": [
+          -36032.9803,
+          -36275.7721,
+          204.2238
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_team": "west",
+        "ss_lane": "south",
+        "ss_phase": "spawn",
+        "ss_spawn_role": "team_anchor",
+        "ss_frontline_side": "west",
+        "ss_spawn_safety": "los_distance_check"
+      }
+    },
+    {
+      "source_name": "SM_SPAWN_WEST_3",
+      "actor_type": "LyraPlayerStart",
+      "gameplay_tags": [
+        "SpandauStrike.Spawn.Team.West",
+        "SpandauStrike.Lane.Mid"
+      ],
+      "transform": {
+        "location_m": [
+          -495.0,
+          -64.535172,
+          1.665151
+        ],
+        "location_cm": [
+          -49500.0,
+          -6453.5172,
+          166.5151
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_team": "west",
+        "ss_lane": "mid",
+        "ss_phase": "spawn",
+        "ss_spawn_role": "team_anchor",
+        "ss_frontline_side": "west",
+        "ss_spawn_safety": "los_distance_check"
+      }
+    },
+    {
+      "source_name": "SM_SPAWN_WEST_4",
+      "actor_type": "LyraPlayerStart",
+      "gameplay_tags": [
+        "SpandauStrike.Spawn.Team.West",
+        "SpandauStrike.Lane.Mid"
+      ],
+      "transform": {
+        "location_m": [
+          -221.473816,
+          35.115223,
+          2.536874
+        ],
+        "location_cm": [
+          -22147.3816,
+          3511.5223,
+          253.6874
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_team": "west",
+        "ss_lane": "mid",
+        "ss_phase": "spawn",
+        "ss_spawn_role": "team_anchor",
+        "ss_frontline_side": "west",
+        "ss_spawn_safety": "los_distance_check"
+      }
+    },
+    {
+      "source_name": "SM_SPAWN_EAST_1",
+      "actor_type": "LyraPlayerStart",
+      "gameplay_tags": [
+        "SpandauStrike.Spawn.Team.East",
+        "SpandauStrike.Lane.Mid"
+      ],
+      "transform": {
+        "location_m": [
+          404.886353,
+          47.80582,
+          0.858953
+        ],
+        "location_cm": [
+          40488.6353,
+          4780.582,
+          85.8953
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_team": "east",
+        "ss_lane": "mid",
+        "ss_phase": "spawn",
+        "ss_spawn_role": "team_anchor",
+        "ss_frontline_side": "east",
+        "ss_spawn_safety": "los_distance_check"
+      }
+    },
+    {
+      "source_name": "SM_SPAWN_EAST_2",
+      "actor_type": "LyraPlayerStart",
+      "gameplay_tags": [
+        "SpandauStrike.Spawn.Team.East",
+        "SpandauStrike.Lane.South"
+      ],
+      "transform": {
+        "location_m": [
+          155.172791,
+          -451.098572,
+          4.691271
+        ],
+        "location_cm": [
+          15517.2791,
+          -45109.8572,
+          469.1271
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_team": "east",
+        "ss_lane": "south",
+        "ss_phase": "spawn",
+        "ss_spawn_role": "team_anchor",
+        "ss_frontline_side": "east",
+        "ss_spawn_safety": "los_distance_check"
+      }
+    },
+    {
+      "source_name": "SM_SPAWN_EAST_3",
+      "actor_type": "LyraPlayerStart",
+      "gameplay_tags": [
+        "SpandauStrike.Spawn.Team.East",
+        "SpandauStrike.Lane.North"
+      ],
+      "transform": {
+        "location_m": [
+          380.671112,
+          495.0,
+          3.681536
+        ],
+        "location_cm": [
+          38067.1112,
+          49500.0,
+          368.1536
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_team": "east",
+        "ss_lane": "north",
+        "ss_phase": "spawn",
+        "ss_spawn_role": "team_anchor",
+        "ss_frontline_side": "east",
+        "ss_spawn_safety": "los_distance_check"
+      }
+    },
+    {
+      "source_name": "SM_SPAWN_EAST_4",
+      "actor_type": "LyraPlayerStart",
+      "gameplay_tags": [
+        "SpandauStrike.Spawn.Team.East",
+        "SpandauStrike.Lane.Mid"
+      ],
+      "transform": {
+        "location_m": [
+          156.093918,
+          -129.472504,
+          0.823491
+        ],
+        "location_cm": [
+          15609.3918,
+          -12947.2504,
+          82.3491
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_team": "east",
+        "ss_lane": "mid",
+        "ss_phase": "spawn",
+        "ss_spawn_role": "team_anchor",
+        "ss_frontline_side": "east",
+        "ss_spawn_safety": "los_distance_check"
+      }
+    }
+  ],
+  "cover": [
+    {
+      "source_name": "SM_COVER_BARRIER_0",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.Medium"
+      ],
+      "transform": {
+        "location_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "location_cm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_cover_class": "medium",
+        "ss_cover_height_m": 1.5,
+        "ss_phase": "combat"
+      }
+    },
+    {
+      "source_name": "SM_COVER_BARRIER_1",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.Medium"
+      ],
+      "transform": {
+        "location_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "location_cm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_cover_class": "medium",
+        "ss_cover_height_m": 1.5,
+        "ss_phase": "combat"
+      }
+    },
+    {
+      "source_name": "P_CrateShell_COVER_CASE_0",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.Low"
+      ],
+      "transform": {
+        "location_m": [
+          -18.0,
+          -84.0,
+          1.863622
+        ],
+        "location_cm": [
+          -1800.0,
+          -8400.0,
+          186.3622
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_cover_class": "low",
+        "ss_cover_height_m": 0.55,
+        "ss_phase": "combat",
+        "ss_runtime": true,
+        "ss_cover_group": "CASE_0"
+      }
+    },
+    {
+      "source_name": "P_CrateRailT_COVER_CASE_0-1",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.Low"
+      ],
+      "transform": {
+        "location_m": [
+          -18.0,
+          -84.504997,
+          2.072622
+        ],
+        "location_cm": [
+          -1800.0,
+          -8450.4997,
+          207.2622
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_cover_class": "low",
+        "ss_cover_height_m": 0.12,
+        "ss_phase": "combat",
+        "ss_runtime": true,
+        "ss_cover_group": "CASE_0"
+      }
+    },
+    {
+      "source_name": "P_CrateRailB_COVER_CASE_0-1",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.Low"
+      ],
+      "transform": {
+        "location_m": [
+          -18.0,
+          -84.504997,
+          1.654622
+        ],
+        "location_cm": [
+          -1800.0,
+          -8450.4997,
+          165.4622
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_cover_class": "low",
+        "ss_cover_height_m": 0.12,
+        "ss_phase": "combat",
+        "ss_runtime": true,
+        "ss_cover_group": "CASE_0"
+      }
+    },
+    {
+      "source_name": "P_CrateRailV_COVER_CASE_0-1_-0.42",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.Low"
+      ],
+      "transform": {
+        "location_m": [
+          -19.049999,
+          -84.504997,
+          1.863622
+        ],
+        "location_cm": [
+          -1904.9999,
+          -8450.4997,
+          186.3622
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_cover_class": "low",
+        "ss_cover_height_m": 0.451,
+        "ss_phase": "combat",
+        "ss_runtime": true,
+        "ss_cover_group": "CASE_0"
+      }
+    },
+    {
+      "source_name": "P_CrateRailV_COVER_CASE_0-1_0.42",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.Low"
+      ],
+      "transform": {
+        "location_m": [
+          -16.950001,
+          -84.504997,
+          1.863622
+        ],
+        "location_cm": [
+          -1695.0001,
+          -8450.4997,
+          186.3622
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_cover_class": "low",
+        "ss_cover_height_m": 0.451,
+        "ss_phase": "combat",
+        "ss_runtime": true,
+        "ss_cover_group": "CASE_0"
+      }
+    },
+    {
+      "source_name": "P_CrateRailT_COVER_CASE_01",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.Low"
+      ],
+      "transform": {
+        "location_m": [
+          -18.0,
+          -83.495003,
+          2.072622
+        ],
+        "location_cm": [
+          -1800.0,
+          -8349.5003,
+          207.2622
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_cover_class": "low",
+        "ss_cover_height_m": 0.12,
+        "ss_phase": "combat",
+        "ss_runtime": true,
+        "ss_cover_group": "CASE_01"
+      }
+    },
+    {
+      "source_name": "P_CrateRailB_COVER_CASE_01",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.Low"
+      ],
+      "transform": {
+        "location_m": [
+          -18.0,
+          -83.495003,
+          1.654622
+        ],
+        "location_cm": [
+          -1800.0,
+          -8349.5003,
+          165.4622
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_cover_class": "low",
+        "ss_cover_height_m": 0.12,
+        "ss_phase": "combat",
+        "ss_runtime": true,
+        "ss_cover_group": "CASE_01"
+      }
+    },
+    {
+      "source_name": "P_CrateRailV_COVER_CASE_01_-0.42",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.Low"
+      ],
+      "transform": {
+        "location_m": [
+          -19.049999,
+          -83.495003,
+          1.863622
+        ],
+        "location_cm": [
+          -1904.9999,
+          -8349.5003,
+          186.3622
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_cover_class": "low",
+        "ss_cover_height_m": 0.451,
+        "ss_phase": "combat",
+        "ss_runtime": true,
+        "ss_cover_group": "CASE_01"
+      }
+    },
+    {
+      "source_name": "P_CrateRailV_COVER_CASE_01_0.42",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.Low"
+      ],
+      "transform": {
+        "location_m": [
+          -16.950001,
+          -83.495003,
+          1.863622
+        ],
+        "location_cm": [
+          -1695.0001,
+          -8349.5003,
+          186.3622
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_cover_class": "low",
+        "ss_cover_height_m": 0.451,
+        "ss_phase": "combat",
+        "ss_runtime": true,
+        "ss_cover_group": "CASE_01"
+      }
+    },
+    {
+      "source_name": "P_CrateShell_COVER_CASE_1",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.Low"
+      ],
+      "transform": {
+        "location_m": [
+          -10.0,
+          -84.0,
+          1.852313
+        ],
+        "location_cm": [
+          -1000.0,
+          -8400.0,
+          185.2313
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_cover_class": "low",
+        "ss_cover_height_m": 0.55,
+        "ss_phase": "combat",
+        "ss_runtime": true,
+        "ss_cover_group": "CASE_1"
+      }
+    },
+    {
+      "source_name": "P_CrateRailT_COVER_CASE_1-1",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.Low"
+      ],
+      "transform": {
+        "location_m": [
+          -10.0,
+          -84.504997,
+          2.061313
+        ],
+        "location_cm": [
+          -1000.0,
+          -8450.4997,
+          206.1313
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_cover_class": "low",
+        "ss_cover_height_m": 0.12,
+        "ss_phase": "combat",
+        "ss_runtime": true,
+        "ss_cover_group": "CASE_1"
+      }
+    },
+    {
+      "source_name": "P_CrateRailB_COVER_CASE_1-1",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.Low"
+      ],
+      "transform": {
+        "location_m": [
+          -10.0,
+          -84.504997,
+          1.643313
+        ],
+        "location_cm": [
+          -1000.0,
+          -8450.4997,
+          164.3313
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_cover_class": "low",
+        "ss_cover_height_m": 0.12,
+        "ss_phase": "combat",
+        "ss_runtime": true,
+        "ss_cover_group": "CASE_1"
+      }
+    },
+    {
+      "source_name": "P_CrateRailV_COVER_CASE_1-1_-0.42",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.Low"
+      ],
+      "transform": {
+        "location_m": [
+          -11.05,
+          -84.504997,
+          1.852313
+        ],
+        "location_cm": [
+          -1105.0,
+          -8450.4997,
+          185.2313
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_cover_class": "low",
+        "ss_cover_height_m": 0.451,
+        "ss_phase": "combat",
+        "ss_runtime": true,
+        "ss_cover_group": "CASE_1"
+      }
+    },
+    {
+      "source_name": "P_CrateRailV_COVER_CASE_1-1_0.42",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.Low"
+      ],
+      "transform": {
+        "location_m": [
+          -8.95,
+          -84.504997,
+          1.852313
+        ],
+        "location_cm": [
+          -895.0,
+          -8450.4997,
+          185.2313
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_cover_class": "low",
+        "ss_cover_height_m": 0.451,
+        "ss_phase": "combat",
+        "ss_runtime": true,
+        "ss_cover_group": "CASE_1"
+      }
+    },
+    {
+      "source_name": "P_CrateRailT_COVER_CASE_11",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.Low"
+      ],
+      "transform": {
+        "location_m": [
+          -10.0,
+          -83.495003,
+          2.061313
+        ],
+        "location_cm": [
+          -1000.0,
+          -8349.5003,
+          206.1313
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_cover_class": "low",
+        "ss_cover_height_m": 0.12,
+        "ss_phase": "combat",
+        "ss_runtime": true,
+        "ss_cover_group": "CASE_11"
+      }
+    },
+    {
+      "source_name": "P_CrateRailB_COVER_CASE_11",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.Low"
+      ],
+      "transform": {
+        "location_m": [
+          -10.0,
+          -83.495003,
+          1.643313
+        ],
+        "location_cm": [
+          -1000.0,
+          -8349.5003,
+          164.3313
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_cover_class": "low",
+        "ss_cover_height_m": 0.12,
+        "ss_phase": "combat",
+        "ss_runtime": true,
+        "ss_cover_group": "CASE_11"
+      }
+    },
+    {
+      "source_name": "P_CrateRailV_COVER_CASE_11_-0.42",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.Low"
+      ],
+      "transform": {
+        "location_m": [
+          -11.05,
+          -83.495003,
+          1.852313
+        ],
+        "location_cm": [
+          -1105.0,
+          -8349.5003,
+          185.2313
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_cover_class": "low",
+        "ss_cover_height_m": 0.451,
+        "ss_phase": "combat",
+        "ss_runtime": true,
+        "ss_cover_group": "CASE_11"
+      }
+    },
+    {
+      "source_name": "P_CrateRailV_COVER_CASE_11_0.42",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.Low"
+      ],
+      "transform": {
+        "location_m": [
+          -8.95,
+          -83.495003,
+          1.852313
+        ],
+        "location_cm": [
+          -895.0,
+          -8349.5003,
+          185.2313
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_cover_class": "low",
+        "ss_cover_height_m": 0.451,
+        "ss_phase": "combat",
+        "ss_runtime": true,
+        "ss_cover_group": "CASE_11"
+      }
+    },
+    {
+      "source_name": "P_CrateShell_COVER_CASE_2",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.Low"
+      ],
+      "transform": {
+        "location_m": [
+          21.0,
+          -83.0,
+          1.717483
+        ],
+        "location_cm": [
+          2100.0,
+          -8300.0,
+          171.7483
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_cover_class": "low",
+        "ss_cover_height_m": 0.55,
+        "ss_phase": "combat",
+        "ss_runtime": true,
+        "ss_cover_group": "CASE_2"
+      }
+    },
+    {
+      "source_name": "P_CrateRailT_COVER_CASE_2-1",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.Low"
+      ],
+      "transform": {
+        "location_m": [
+          21.0,
+          -83.504997,
+          1.926483
+        ],
+        "location_cm": [
+          2100.0,
+          -8350.4997,
+          192.6483
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_cover_class": "low",
+        "ss_cover_height_m": 0.12,
+        "ss_phase": "combat",
+        "ss_runtime": true,
+        "ss_cover_group": "CASE_2"
+      }
+    },
+    {
+      "source_name": "P_CrateRailB_COVER_CASE_2-1",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.Low"
+      ],
+      "transform": {
+        "location_m": [
+          21.0,
+          -83.504997,
+          1.508483
+        ],
+        "location_cm": [
+          2100.0,
+          -8350.4997,
+          150.8483
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_cover_class": "low",
+        "ss_cover_height_m": 0.12,
+        "ss_phase": "combat",
+        "ss_runtime": true,
+        "ss_cover_group": "CASE_2"
+      }
+    },
+    {
+      "source_name": "P_CrateRailV_COVER_CASE_2-1_-0.42",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.Low"
+      ],
+      "transform": {
+        "location_m": [
+          19.950001,
+          -83.504997,
+          1.717483
+        ],
+        "location_cm": [
+          1995.0001,
+          -8350.4997,
+          171.7483
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_cover_class": "low",
+        "ss_cover_height_m": 0.451,
+        "ss_phase": "combat",
+        "ss_runtime": true,
+        "ss_cover_group": "CASE_2"
+      }
+    },
+    {
+      "source_name": "P_CrateRailV_COVER_CASE_2-1_0.42",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.Low"
+      ],
+      "transform": {
+        "location_m": [
+          22.049999,
+          -83.504997,
+          1.717483
+        ],
+        "location_cm": [
+          2204.9999,
+          -8350.4997,
+          171.7483
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_cover_class": "low",
+        "ss_cover_height_m": 0.451,
+        "ss_phase": "combat",
+        "ss_runtime": true,
+        "ss_cover_group": "CASE_2"
+      }
+    },
+    {
+      "source_name": "P_CrateRailT_COVER_CASE_21",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.Low"
+      ],
+      "transform": {
+        "location_m": [
+          21.0,
+          -82.495003,
+          1.926483
+        ],
+        "location_cm": [
+          2100.0,
+          -8249.5003,
+          192.6483
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_cover_class": "low",
+        "ss_cover_height_m": 0.12,
+        "ss_phase": "combat",
+        "ss_runtime": true,
+        "ss_cover_group": "CASE_21"
+      }
+    },
+    {
+      "source_name": "P_CrateRailB_COVER_CASE_21",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.Low"
+      ],
+      "transform": {
+        "location_m": [
+          21.0,
+          -82.495003,
+          1.508483
+        ],
+        "location_cm": [
+          2100.0,
+          -8249.5003,
+          150.8483
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_cover_class": "low",
+        "ss_cover_height_m": 0.12,
+        "ss_phase": "combat",
+        "ss_runtime": true,
+        "ss_cover_group": "CASE_21"
+      }
+    },
+    {
+      "source_name": "P_CrateRailV_COVER_CASE_21_-0.42",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.Low"
+      ],
+      "transform": {
+        "location_m": [
+          19.950001,
+          -82.495003,
+          1.717483
+        ],
+        "location_cm": [
+          1995.0001,
+          -8249.5003,
+          171.7483
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_cover_class": "low",
+        "ss_cover_height_m": 0.451,
+        "ss_phase": "combat",
+        "ss_runtime": true,
+        "ss_cover_group": "CASE_21"
+      }
+    },
+    {
+      "source_name": "P_CrateRailV_COVER_CASE_21_0.42",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.Low"
+      ],
+      "transform": {
+        "location_m": [
+          22.049999,
+          -82.495003,
+          1.717483
+        ],
+        "location_cm": [
+          2204.9999,
+          -8249.5003,
+          171.7483
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_cover_class": "low",
+        "ss_cover_height_m": 0.451,
+        "ss_phase": "combat",
+        "ss_runtime": true,
+        "ss_cover_group": "CASE_21"
+      }
+    },
+    {
+      "source_name": "P_CrateShell_COVER_CASE_3",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.Low"
+      ],
+      "transform": {
+        "location_m": [
+          30.0,
+          -83.0,
+          1.813406
+        ],
+        "location_cm": [
+          3000.0,
+          -8300.0,
+          181.3406
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_cover_class": "low",
+        "ss_cover_height_m": 0.55,
+        "ss_phase": "combat",
+        "ss_runtime": true,
+        "ss_cover_group": "CASE_3"
+      }
+    },
+    {
+      "source_name": "P_CrateRailT_COVER_CASE_3-1",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.Low"
+      ],
+      "transform": {
+        "location_m": [
+          30.0,
+          -83.504997,
+          2.022406
+        ],
+        "location_cm": [
+          3000.0,
+          -8350.4997,
+          202.2406
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_cover_class": "low",
+        "ss_cover_height_m": 0.12,
+        "ss_phase": "combat",
+        "ss_runtime": true,
+        "ss_cover_group": "CASE_3"
+      }
+    },
+    {
+      "source_name": "P_CrateRailB_COVER_CASE_3-1",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.Low"
+      ],
+      "transform": {
+        "location_m": [
+          30.0,
+          -83.504997,
+          1.604406
+        ],
+        "location_cm": [
+          3000.0,
+          -8350.4997,
+          160.4406
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_cover_class": "low",
+        "ss_cover_height_m": 0.12,
+        "ss_phase": "combat",
+        "ss_runtime": true,
+        "ss_cover_group": "CASE_3"
+      }
+    },
+    {
+      "source_name": "P_CrateRailV_COVER_CASE_3-1_-0.42",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.Low"
+      ],
+      "transform": {
+        "location_m": [
+          28.950001,
+          -83.504997,
+          1.813406
+        ],
+        "location_cm": [
+          2895.0001,
+          -8350.4997,
+          181.3406
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_cover_class": "low",
+        "ss_cover_height_m": 0.451,
+        "ss_phase": "combat",
+        "ss_runtime": true,
+        "ss_cover_group": "CASE_3"
+      }
+    },
+    {
+      "source_name": "P_CrateRailV_COVER_CASE_3-1_0.42",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.Low"
+      ],
+      "transform": {
+        "location_m": [
+          31.049999,
+          -83.504997,
+          1.813406
+        ],
+        "location_cm": [
+          3104.9999,
+          -8350.4997,
+          181.3406
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_cover_class": "low",
+        "ss_cover_height_m": 0.451,
+        "ss_phase": "combat",
+        "ss_runtime": true,
+        "ss_cover_group": "CASE_3"
+      }
+    },
+    {
+      "source_name": "P_CrateRailT_COVER_CASE_31",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.Low"
+      ],
+      "transform": {
+        "location_m": [
+          30.0,
+          -82.495003,
+          2.022406
+        ],
+        "location_cm": [
+          3000.0,
+          -8249.5003,
+          202.2406
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_cover_class": "low",
+        "ss_cover_height_m": 0.12,
+        "ss_phase": "combat",
+        "ss_runtime": true,
+        "ss_cover_group": "CASE_31"
+      }
+    },
+    {
+      "source_name": "P_CrateRailB_COVER_CASE_31",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.Low"
+      ],
+      "transform": {
+        "location_m": [
+          30.0,
+          -82.495003,
+          1.604406
+        ],
+        "location_cm": [
+          3000.0,
+          -8249.5003,
+          160.4406
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_cover_class": "low",
+        "ss_cover_height_m": 0.12,
+        "ss_phase": "combat",
+        "ss_runtime": true,
+        "ss_cover_group": "CASE_31"
+      }
+    },
+    {
+      "source_name": "P_CrateRailV_COVER_CASE_31_-0.42",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.Low"
+      ],
+      "transform": {
+        "location_m": [
+          28.950001,
+          -82.495003,
+          1.813406
+        ],
+        "location_cm": [
+          2895.0001,
+          -8249.5003,
+          181.3406
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_cover_class": "low",
+        "ss_cover_height_m": 0.451,
+        "ss_phase": "combat",
+        "ss_runtime": true,
+        "ss_cover_group": "CASE_31"
+      }
+    },
+    {
+      "source_name": "P_CrateRailV_COVER_CASE_31_0.42",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.Low"
+      ],
+      "transform": {
+        "location_m": [
+          31.049999,
+          -82.495003,
+          1.813406
+        ],
+        "location_cm": [
+          3104.9999,
+          -8249.5003,
+          181.3406
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_cover_class": "low",
+        "ss_cover_height_m": 0.451,
+        "ss_phase": "combat",
+        "ss_runtime": true,
+        "ss_cover_group": "CASE_31"
+      }
+    },
+    {
+      "source_name": "P_CrateShell_COVER_CASE_4",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.Low"
+      ],
+      "transform": {
+        "location_m": [
+          39.0,
+          -83.0,
+          1.969299
+        ],
+        "location_cm": [
+          3900.0,
+          -8300.0,
+          196.9299
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_cover_class": "low",
+        "ss_cover_height_m": 0.55,
+        "ss_phase": "combat",
+        "ss_runtime": true,
+        "ss_cover_group": "CASE_4"
+      }
+    },
+    {
+      "source_name": "P_CrateRailT_COVER_CASE_4-1",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.Low"
+      ],
+      "transform": {
+        "location_m": [
+          39.0,
+          -83.504997,
+          2.178299
+        ],
+        "location_cm": [
+          3900.0,
+          -8350.4997,
+          217.8299
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_cover_class": "low",
+        "ss_cover_height_m": 0.12,
+        "ss_phase": "combat",
+        "ss_runtime": true,
+        "ss_cover_group": "CASE_4"
+      }
+    },
+    {
+      "source_name": "P_CrateRailB_COVER_CASE_4-1",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.Low"
+      ],
+      "transform": {
+        "location_m": [
+          39.0,
+          -83.504997,
+          1.760299
+        ],
+        "location_cm": [
+          3900.0,
+          -8350.4997,
+          176.0299
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_cover_class": "low",
+        "ss_cover_height_m": 0.12,
+        "ss_phase": "combat",
+        "ss_runtime": true,
+        "ss_cover_group": "CASE_4"
+      }
+    },
+    {
+      "source_name": "P_CrateRailV_COVER_CASE_4-1_-0.42",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.Low"
+      ],
+      "transform": {
+        "location_m": [
+          37.950001,
+          -83.504997,
+          1.969299
+        ],
+        "location_cm": [
+          3795.0001,
+          -8350.4997,
+          196.9299
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_cover_class": "low",
+        "ss_cover_height_m": 0.451,
+        "ss_phase": "combat",
+        "ss_runtime": true,
+        "ss_cover_group": "CASE_4"
+      }
+    },
+    {
+      "source_name": "P_CrateRailV_COVER_CASE_4-1_0.42",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.Low"
+      ],
+      "transform": {
+        "location_m": [
+          40.049999,
+          -83.504997,
+          1.969299
+        ],
+        "location_cm": [
+          4004.9999,
+          -8350.4997,
+          196.9299
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_cover_class": "low",
+        "ss_cover_height_m": 0.451,
+        "ss_phase": "combat",
+        "ss_runtime": true,
+        "ss_cover_group": "CASE_4"
+      }
+    },
+    {
+      "source_name": "P_CrateRailT_COVER_CASE_41",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.Low"
+      ],
+      "transform": {
+        "location_m": [
+          39.0,
+          -82.495003,
+          2.178299
+        ],
+        "location_cm": [
+          3900.0,
+          -8249.5003,
+          217.8299
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_cover_class": "low",
+        "ss_cover_height_m": 0.12,
+        "ss_phase": "combat",
+        "ss_runtime": true,
+        "ss_cover_group": "CASE_41"
+      }
+    },
+    {
+      "source_name": "P_CrateRailB_COVER_CASE_41",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.Low"
+      ],
+      "transform": {
+        "location_m": [
+          39.0,
+          -82.495003,
+          1.760299
+        ],
+        "location_cm": [
+          3900.0,
+          -8249.5003,
+          176.0299
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_cover_class": "low",
+        "ss_cover_height_m": 0.12,
+        "ss_phase": "combat",
+        "ss_runtime": true,
+        "ss_cover_group": "CASE_41"
+      }
+    },
+    {
+      "source_name": "P_CrateRailV_COVER_CASE_41_-0.42",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.Low"
+      ],
+      "transform": {
+        "location_m": [
+          37.950001,
+          -82.495003,
+          1.969299
+        ],
+        "location_cm": [
+          3795.0001,
+          -8249.5003,
+          196.9299
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_cover_class": "low",
+        "ss_cover_height_m": 0.451,
+        "ss_phase": "combat",
+        "ss_runtime": true,
+        "ss_cover_group": "CASE_41"
+      }
+    },
+    {
+      "source_name": "P_CrateRailV_COVER_CASE_41_0.42",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.Low"
+      ],
+      "transform": {
+        "location_m": [
+          40.049999,
+          -82.495003,
+          1.969299
+        ],
+        "location_cm": [
+          4004.9999,
+          -8249.5003,
+          196.9299
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_cover_class": "low",
+        "ss_cover_height_m": 0.451,
+        "ss_phase": "combat",
+        "ss_runtime": true,
+        "ss_cover_group": "CASE_41"
+      }
+    },
+    {
+      "source_name": "V41_COVER_NORTH_00",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.Low"
+      ],
+      "transform": {
+        "location_m": [
+          -122.0,
+          -10.3,
+          1.631555
+        ],
+        "location_cm": [
+          -12200.0,
+          -1030.0,
+          163.1555
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          145.0946
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_runtime": true,
+        "ss_cover_class": "low",
+        "ss_lane": "north",
+        "ss_cover_type": "urban_concrete",
+        "ss_source_marker": "V40_COVER_NORTH_00",
+        "ss_route_context": "ROUTE_NORTH_REAR",
+        "ss_replaceable_art": true
+      }
+    },
+    {
+      "source_name": "V41_COVER_NORTH_01",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.High"
+      ],
+      "transform": {
+        "location_m": [
+          -23.6,
+          103.0,
+          2.760675
+        ],
+        "location_cm": [
+          -2360.0,
+          10300.0,
+          276.0675
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          129.9054
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_runtime": true,
+        "ss_cover_class": "high",
+        "ss_lane": "north",
+        "ss_cover_type": "urban_masonry",
+        "ss_source_marker": "V40_COVER_NORTH_01",
+        "ss_route_context": "ROUTE_NORTH_REAR",
+        "ss_replaceable_art": true
+      }
+    },
+    {
+      "source_name": "V41_COVER_NORTH_02",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.Low"
+      ],
+      "transform": {
+        "location_m": [
+          96.699997,
+          123.599998,
+          3.857171
+        ],
+        "location_cm": [
+          9669.9997,
+          12359.9998,
+          385.7171
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          53.3858
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_runtime": true,
+        "ss_cover_class": "low",
+        "ss_lane": "north",
+        "ss_cover_type": "urban_concrete",
+        "ss_source_marker": "V40_COVER_NORTH_02",
+        "ss_route_context": "ROUTE_NORTH_REAR",
+        "ss_replaceable_art": true
+      }
+    },
+    {
+      "source_name": "V41_COVER_NORTH_03",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.High"
+      ],
+      "transform": {
+        "location_m": [
+          198.199997,
+          48.200001,
+          3.211473
+        ],
+        "location_cm": [
+          19819.9997,
+          4820.0001,
+          321.1473
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          53.3858
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_runtime": true,
+        "ss_cover_class": "high",
+        "ss_lane": "north",
+        "ss_cover_type": "urban_masonry",
+        "ss_source_marker": "V40_COVER_NORTH_03",
+        "ss_route_context": "ROUTE_NORTH_REAR",
+        "ss_replaceable_art": true
+      }
+    },
+    {
+      "source_name": "V41_COVER_MID_00",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.Low"
+      ],
+      "transform": {
+        "location_m": [
+          -244.100006,
+          -53.900002,
+          5.650247
+        ],
+        "location_cm": [
+          -24410.0006,
+          -5390.0002,
+          565.0247
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          74.8705
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_runtime": true,
+        "ss_cover_class": "low",
+        "ss_lane": "mid",
+        "ss_cover_type": "urban_concrete",
+        "ss_source_marker": "V40_COVER_MID_00",
+        "ss_route_context": "ROUTE_CENTER_RATHAUS",
+        "ss_replaceable_art": true
+      }
+    },
+    {
+      "source_name": "V41_COVER_MID_01",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.High"
+      ],
+      "transform": {
+        "location_m": [
+          -184.899994,
+          -69.900002,
+          5.740701
+        ],
+        "location_cm": [
+          -18489.9994,
+          -6990.0002,
+          574.0701
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          74.8705
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_runtime": true,
+        "ss_cover_class": "high",
+        "ss_lane": "mid",
+        "ss_cover_type": "urban_masonry",
+        "ss_source_marker": "V40_COVER_MID_01",
+        "ss_route_context": "ROUTE_CENTER_RATHAUS",
+        "ss_replaceable_art": true
+      }
+    },
+    {
+      "source_name": "V41_COVER_MID_02",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.Low"
+      ],
+      "transform": {
+        "location_m": [
+          -40.900002,
+          -84.599998,
+          1.464296
+        ],
+        "location_cm": [
+          -4090.0002,
+          -8459.9998,
+          146.4296
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          124.366
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_runtime": true,
+        "ss_cover_class": "low",
+        "ss_lane": "mid",
+        "ss_cover_type": "urban_concrete",
+        "ss_source_marker": "V40_COVER_MID_02",
+        "ss_route_context": "ROUTE_CENTER_RATHAUS",
+        "ss_replaceable_art": true
+      }
+    },
+    {
+      "source_name": "V41_COVER_MID_03",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.High"
+      ],
+      "transform": {
+        "location_m": [
+          10.0,
+          -49.799999,
+          2.068063
+        ],
+        "location_cm": [
+          1000.0,
+          -4979.9999,
+          206.8063
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          124.366
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_runtime": true,
+        "ss_cover_class": "high",
+        "ss_lane": "mid",
+        "ss_cover_type": "urban_masonry",
+        "ss_source_marker": "V40_COVER_MID_03",
+        "ss_route_context": "ROUTE_CENTER_RATHAUS",
+        "ss_replaceable_art": true
+      }
+    },
+    {
+      "source_name": "V41_COVER_MID_04",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.Low"
+      ],
+      "transform": {
+        "location_m": [
+          80.699997,
+          48.099998,
+          3.35206
+        ],
+        "location_cm": [
+          8069.9997,
+          4809.9998,
+          335.206
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          150.634
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_runtime": true,
+        "ss_cover_class": "low",
+        "ss_lane": "mid",
+        "ss_cover_type": "urban_concrete",
+        "ss_source_marker": "V40_COVER_MID_04",
+        "ss_route_context": "ROUTE_CENTER_RATHAUS",
+        "ss_replaceable_art": true
+      }
+    },
+    {
+      "source_name": "V41_COVER_MID_05",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.High"
+      ],
+      "transform": {
+        "location_m": [
+          172.300003,
+          39.299999,
+          3.312265
+        ],
+        "location_cm": [
+          17230.0003,
+          3929.9999,
+          331.2265
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          64.9861
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_runtime": true,
+        "ss_cover_class": "high",
+        "ss_lane": "mid",
+        "ss_cover_type": "urban_masonry",
+        "ss_source_marker": "V40_COVER_MID_05",
+        "ss_route_context": "ROUTE_CENTER_RATHAUS",
+        "ss_replaceable_art": true
+      }
+    },
+    {
+      "source_name": "V41_COVER_SOUTH_00",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.Low"
+      ],
+      "transform": {
+        "location_m": [
+          -281.899994,
+          -61.0,
+          2.224908
+        ],
+        "location_cm": [
+          -28189.9994,
+          -6100.0,
+          222.4908
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          64.1071
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_runtime": true,
+        "ss_cover_class": "low",
+        "ss_lane": "south",
+        "ss_cover_type": "urban_concrete",
+        "ss_source_marker": "V40_COVER_SOUTH_00",
+        "ss_route_context": "ROUTE_SOUTH_PLAZA",
+        "ss_replaceable_art": true
+      }
+    },
+    {
+      "source_name": "V41_COVER_SOUTH_01",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.High"
+      ],
+      "transform": {
+        "location_m": [
+          -201.199997,
+          -100.199997,
+          1.066659
+        ],
+        "location_cm": [
+          -20119.9997,
+          -10019.9997,
+          106.6659
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          64.1071
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_runtime": true,
+        "ss_cover_class": "high",
+        "ss_lane": "south",
+        "ss_cover_type": "urban_masonry",
+        "ss_source_marker": "V40_COVER_SOUTH_01",
+        "ss_route_context": "ROUTE_SOUTH_PLAZA",
+        "ss_replaceable_art": true
+      }
+    },
+    {
+      "source_name": "V41_COVER_SOUTH_02",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.Low"
+      ],
+      "transform": {
+        "location_m": [
+          -120.5,
+          -139.399994,
+          2.045076
+        ],
+        "location_cm": [
+          -12050.0,
+          -13939.9994,
+          204.5076
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          64.1071
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_runtime": true,
+        "ss_cover_class": "low",
+        "ss_lane": "south",
+        "ss_cover_type": "urban_concrete",
+        "ss_source_marker": "V40_COVER_SOUTH_02",
+        "ss_route_context": "ROUTE_SOUTH_PLAZA",
+        "ss_replaceable_art": true
+      }
+    },
+    {
+      "source_name": "V41_COVER_SOUTH_03",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.High"
+      ],
+      "transform": {
+        "location_m": [
+          -39.799999,
+          -178.600006,
+          2.254617
+        ],
+        "location_cm": [
+          -3979.9999,
+          -17860.0006,
+          225.4617
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          64.1071
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_runtime": true,
+        "ss_cover_class": "high",
+        "ss_lane": "south",
+        "ss_cover_type": "urban_masonry",
+        "ss_source_marker": "V40_COVER_SOUTH_03",
+        "ss_route_context": "ROUTE_SOUTH_PLAZA",
+        "ss_replaceable_art": true
+      }
+    },
+    {
+      "source_name": "V41_COVER_SOUTH_04",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.Low"
+      ],
+      "transform": {
+        "location_m": [
+          38.0,
+          -156.899994,
+          1.960061
+        ],
+        "location_cm": [
+          3800.0,
+          -15689.9994,
+          196.0061
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          124.366
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_runtime": true,
+        "ss_cover_class": "low",
+        "ss_lane": "south",
+        "ss_cover_type": "urban_concrete",
+        "ss_source_marker": "V40_COVER_SOUTH_04",
+        "ss_route_context": "ROUTE_SOUTH_PLAZA",
+        "ss_replaceable_art": true
+      }
+    },
+    {
+      "source_name": "V41_COVER_SOUTH_05",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.High"
+      ],
+      "transform": {
+        "location_m": [
+          129.399994,
+          -77.900002,
+          2.491106
+        ],
+        "location_cm": [
+          12939.9994,
+          -7790.0002,
+          249.1106
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          150.634
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_runtime": true,
+        "ss_cover_class": "high",
+        "ss_lane": "south",
+        "ss_cover_type": "urban_masonry",
+        "ss_source_marker": "V40_COVER_SOUTH_05",
+        "ss_route_context": "ROUTE_SOUTH_PLAZA",
+        "ss_replaceable_art": true
+      }
+    },
+    {
+      "source_name": "V41_COVER_SOUTH_06",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.Low"
+      ],
+      "transform": {
+        "location_m": [
+          174.699997,
+          2.7,
+          2.858285
+        ],
+        "location_cm": [
+          17469.9997,
+          270.0,
+          285.8285
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          150.634
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_runtime": true,
+        "ss_cover_class": "low",
+        "ss_lane": "south",
+        "ss_cover_type": "urban_concrete",
+        "ss_source_marker": "V40_COVER_SOUTH_06",
+        "ss_route_context": "ROUTE_SOUTH_PLAZA",
+        "ss_replaceable_art": true
+      }
+    },
+    {
+      "source_name": "V41_COVER_CROSS_00",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.Low"
+      ],
+      "transform": {
+        "location_m": [
+          -88.900002,
+          -91.5,
+          1.29593
+        ],
+        "location_cm": [
+          -8890.0002,
+          -9150.0,
+          129.593
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          74.8705
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_runtime": true,
+        "ss_cover_class": "low",
+        "ss_lane": "cross",
+        "ss_cover_type": "urban_concrete",
+        "ss_source_marker": "V40_COVER_CROSS_00",
+        "ss_route_context": "ROUTE_CENTER_RATHAUS",
+        "ss_replaceable_art": true
+      }
+    },
+    {
+      "source_name": "V41_COVER_CROSS_01",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.High"
+      ],
+      "transform": {
+        "location_m": [
+          -49.0,
+          44.900002,
+          2.470911
+        ],
+        "location_cm": [
+          -4900.0,
+          4490.0002,
+          247.0911
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          145.0946
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_runtime": true,
+        "ss_cover_class": "high",
+        "ss_lane": "cross",
+        "ss_cover_type": "urban_masonry",
+        "ss_source_marker": "V40_COVER_CROSS_01",
+        "ss_route_context": "ROUTE_NORTH_REAR",
+        "ss_replaceable_art": true
+      }
+    },
+    {
+      "source_name": "V41_COVER_CROSS_02",
+      "actor_type": "StaticMeshActor",
+      "gameplay_tags": [
+        "SpandauStrike.Gameplay.Cover",
+        "SpandauStrike.Cover.Low"
+      ],
+      "transform": {
+        "location_m": [
+          83.400002,
+          96.5,
+          3.544023
+        ],
+        "location_cm": [
+          8340.0002,
+          9650.0,
+          354.4023
+        ],
+        "rotation_deg_xyz": [
+          0.0,
+          -0.0,
+          150.634
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "metadata": {
+        "ss_runtime": true,
+        "ss_cover_class": "low",
+        "ss_lane": "cross",
+        "ss_cover_type": "urban_concrete",
+        "ss_source_marker": "V40_COVER_CROSS_02",
+        "ss_route_context": "ROUTE_CENTER_RATHAUS",
+        "ss_replaceable_art": true
+      }
+    }
+  ],
+  "summary": {
+    "objectives": 5,
+    "spawns": 8,
+    "cover_objects": 67
+  }
+}

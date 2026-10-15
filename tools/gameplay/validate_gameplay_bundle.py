@@ -35,8 +35,8 @@ def main():
     if missing:
         fail("bundle references missing files: " + ", ".join(missing))
 
-    if world.get("version") != "v43_RECOVERED_ENTRANCE_STEPS":
-        fail("bundle must currently point at v43_RECOVERED_ENTRANCE_STEPS")
+    if world.get("version") != "v44_CROWN_OPENING_DEPTH":
+        fail("bundle must currently point at v44_CROWN_OPENING_DEPTH")
 
     inv = bundle.get("required_invariants", {})
     expected = {

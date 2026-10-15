@@ -1,0 +1,117 @@
+{
+  "schema": "SpandauStrike.WorldMasterV44CrownOpeningDepth.v1",
+  "source_master": "SpandauStrike_Rathaus_WORLD_MASTER_v43_RECOVERED_ENTRANCE_STEPS.blend",
+  "source_master_version": "v43_RECOVERED_ENTRANCE_STEPS",
+  "output_master": "SpandauStrike_Rathaus_WORLD_MASTER_v44_CROWN_OPENING_DEPTH.blend",
+  "output_master_version": "v44_CROWN_OPENING_DEPTH",
+  "anchor": "SM_TowerTopCornice",
+  "anchor_xy_m": [
+    -3.6863865852355957,
+    3.377951145172119
+  ],
+  "recess_m": 1.35,
+  "objects_modified": 4,
+  "objects": [
+    {
+      "name": "V37_CrownOpeningFront",
+      "original_location_m": [
+        1.2386258840560913,
+        -1.1349915266036987,
+        74.0
+      ],
+      "target_location_m": [
+        0.24330145120620728,
+        -0.2229447364807129,
+        74.0
+      ],
+      "delta_m": [
+        -0.995324432849884,
+        0.9120467901229858,
+        0.0
+      ],
+      "recess_m": 1.35,
+      "dimensions_m": [
+        8.800000190734863,
+        0.1599999964237213,
+        6.900000095367432
+      ],
+      "material": "M_V37_Opening"
+    },
+    {
+      "name": "V37_CrownOpeningRear",
+      "original_location_m": [
+        -8.61139965057373,
+        7.890893459320068,
+        74.0
+      ],
+      "target_location_m": [
+        -7.616075038909912,
+        6.978846549987793,
+        74.0
+      ],
+      "delta_m": [
+        0.9953244924545288,
+        -0.9120467305183411,
+        0.0
+      ],
+      "recess_m": 1.35,
+      "dimensions_m": [
+        8.800000190734863,
+        0.1599999964237213,
+        6.900000095367432
+      ],
+      "material": "M_V37_Opening"
+    },
+    {
+      "name": "V37_CrownOpeningEast",
+      "original_location_m": [
+        1.164350986480713,
+        8.671602249145508,
+        74.0
+      ],
+      "target_location_m": [
+        0.25230419635772705,
+        7.6762776374816895,
+        74.0
+      ],
+      "delta_m": [
+        -0.9120467901229858,
+        -0.995324432849884,
+        0.0
+      ],
+      "recess_m": 1.35,
+      "dimensions_m": [
+        0.1599999964237213,
+        8.800000190734863,
+        6.900000095367432
+      ],
+      "material": "M_V37_Opening"
+    },
+    {
+      "name": "V37_CrownOpeningWest",
+      "original_location_m": [
+        -8.537124633789062,
+        -1.9157001972198486,
+        74.0
+      ],
+      "target_location_m": [
+        -7.625077724456787,
+        -0.9203757643699646,
+        74.0
+      ],
+      "delta_m": [
+        0.9120467901229858,
+        0.995324432849884,
+        0.0
+      ],
+      "recess_m": 1.35,
+      "dimensions_m": [
+        0.1599999964237213,
+        8.800000190734863,
+        6.900000095367432
+      ],
+      "material": "M_V37_Opening"
+    }
+  ],
+  "policy": "Transform-only refinement. No mesh topology, materials, gameplay objects, collision, roof or tower stone geometry changed."
+}
