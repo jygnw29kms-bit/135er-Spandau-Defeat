@@ -2,9 +2,9 @@
 
 ## Current decision
 
-`SpandauStrike_Rathaus_WORLD_MASTER_v45_MAIN_ROOF_RIDGE_ALIGNMENT.blend` is the current production world master. The recovered `RathausSpandau_REAL_Integrated_Master_v4.blend` remains reference/recovery material only and must not be wholesale-merged.
+`SpandauStrike_Rathaus_WORLD_MASTER_v46_RETIRE_LEGACY_TOWER_ROOF.blend` is the current production world master. The recovered `RathausSpandau_REAL_Integrated_Master_v4.blend` remains reference/recovery material only and must not be wholesale-merged.
 
-The original audit showed that the production chain contains substantially richer Rathaus geometry than v4. The later v42-v45 inspection confirmed that several elements initially suspected to be missing were already present in newer `V37_*` / `SM_MASTER_*` geometry.
+The original audit showed that the production chain contains substantially richer Rathaus geometry than v4. The later v42-v46 inspection confirmed that several elements initially suspected to be missing were already present in newer `V37_*` / `SM_MASTER_*` geometry.
 
 ## What was actually recovered from v4
 
@@ -37,15 +37,23 @@ Reference-driven front-elevation review against the current Rathaus photograph e
 
 v45 moves only those two existing ridge vertices to the midpoints of the short roof-end edges, aligning the ridge with the 112 m longitudinal/facade axis. The ridge height remains 29.5 m. No vertices or polygons are added or removed, and no facade, tower, material, collision or gameplay objects are changed.
 
-The v44 and v45 topology remains identical:
+The v44, v45 and v46 topology remains identical:
 
 - 10,788 total objects
 - 10,749 mesh objects
 - 719,877 vertices
 - 1,085,713 polygons
-- identical world bounds, material count and gameplay-role counts
+- identical world bounds and material count; v46 changes exactly one role assignment from landmark to reference
 
 The v45 handoff remains 5 objectives / 8 spawns / 67 cover objects; objective, spawn and cover transforms are identical to v44.
+
+## v46 legacy tower-roof retirement
+
+A tower-only QA render exposed two copper roof meshes stacked on the same XY center: the authoritative `V37_CopperOctagonalRoof` and the older `V33_CopperOctagonalRoof`. Their XY centers are exactly coincident, both are 2.25 m high, and the V33 roof sits 1.20 m above the V37 roof. This produced a visibly doubled/stepped tower cap.
+
+The surrounding superseded V33 crown geometry was already correctly marked `reference`, `ss_export=False` and hidden with `replaced_v37_tower_transition` tags. v46 applies that same non-destructive retirement policy to `V33_CopperOctagonalRoof`: it remains preserved in the Blend as hidden reference geometry, while `V37_CopperOctagonalRoof` remains the only exported production roof. No mesh topology, transforms, materials, gameplay or collision geometry changed.
+
+The v46 role counts therefore change by exactly one object: landmark 414 -> 413 and reference 5176 -> 5177. All total object/mesh/vertex/polygon counts and world bounds remain unchanged. The runtime handoff remains exactly 5 objectives / 8 spawns / 67 cover objects, with gameplay transforms identical to v45.
 
 ## Remaining Rathaus review work
 

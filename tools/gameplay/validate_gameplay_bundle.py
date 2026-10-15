@@ -35,8 +35,8 @@ def main():
     if missing:
         fail("bundle references missing files: " + ", ".join(missing))
 
-    if world.get("version") != "v45_MAIN_ROOF_RIDGE_ALIGNMENT":
-        fail("bundle must currently point at v45_MAIN_ROOF_RIDGE_ALIGNMENT")
+    if world.get("version") != "v46_RETIRE_LEGACY_TOWER_ROOF":
+        fail("bundle must currently point at v46_RETIRE_LEGACY_TOWER_ROOF")
 
     inv = bundle.get("required_invariants", {})
     expected = {

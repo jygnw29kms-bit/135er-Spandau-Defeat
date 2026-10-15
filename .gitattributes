@@ -16,3 +16,4 @@ tools/blender_pipeline/builds/rathaus_spandau/SpandauStrike_Rathaus_WORLD_MASTER
 tools/blender_pipeline/builds/rathaus_spandau/SpandauStrike_Rathaus_WORLD_MASTER_v43_RECOVERED_ENTRANCE_STEPS.blend filter=lfs diff=lfs merge=lfs -text
 tools/blender_pipeline/builds/rathaus_spandau/SpandauStrike_Rathaus_WORLD_MASTER_v44_CROWN_OPENING_DEPTH.blend filter=lfs diff=lfs merge=lfs -text
 tools/blender_pipeline/builds/rathaus_spandau/SpandauStrike_Rathaus_WORLD_MASTER_v45_MAIN_ROOF_RIDGE_ALIGNMENT.blend filter=lfs diff=lfs merge=lfs -text
+tools/blender_pipeline/builds/rathaus_spandau/SpandauStrike_Rathaus_WORLD_MASTER_v46_RETIRE_LEGACY_TOWER_ROOF.blend filter=lfs diff=lfs merge=lfs -text

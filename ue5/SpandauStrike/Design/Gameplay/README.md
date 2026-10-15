@@ -6,7 +6,7 @@ This directory contains the engine-facing, data-driven baseline for Spandau Stri
 
 `gameplay_bundle_v1.json` is the current compatibility manifest. It pins the authoritative Rathaus world-master version, all gameplay source files, generators, validators and required invariants that belong together.
 
-Current spatial baseline: `v45_MAIN_ROOF_RIDGE_ALIGNMENT`.
+Current spatial baseline: `v46_RETIRE_LEGACY_TOWER_ROOF`.
 
 ## Source of truth
 

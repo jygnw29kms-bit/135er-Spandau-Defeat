@@ -1,0 +1,54 @@
+{
+  "schema": "SpandauStrike.WorldMasterV46RetireLegacyTowerRoof.v1",
+  "source_master": "SpandauStrike_Rathaus_WORLD_MASTER_v45_MAIN_ROOF_RIDGE_ALIGNMENT.blend",
+  "source_master_version": "v45_MAIN_ROOF_RIDGE_ALIGNMENT",
+  "output_master": "SpandauStrike_Rathaus_WORLD_MASTER_v46_RETIRE_LEGACY_TOWER_ROOF.blend",
+  "output_master_version": "v46_RETIRE_LEGACY_TOWER_ROOF",
+  "legacy_object": "V33_CopperOctagonalRoof",
+  "current_object": "V37_CopperOctagonalRoof",
+  "legacy_before": {
+    "role": "landmark",
+    "export": true,
+    "hide_render": false,
+    "hide_viewport": false
+  },
+  "legacy_after": {
+    "role": "reference",
+    "export": false,
+    "hide_render": true,
+    "hide_viewport": true
+  },
+  "legacy_bounds_m": {
+    "min": [
+      -13.619660377502441,
+      -6.555322647094727,
+      79.7249984741211
+    ],
+    "max": [
+      6.24688720703125,
+      13.311224937438965,
+      81.9749984741211
+    ]
+  },
+  "current_bounds_m": {
+    "min": [
+      -14.196431159973145,
+      -7.13209342956543,
+      78.5250015258789
+    ],
+    "max": [
+      6.823657989501953,
+      13.887995719909668,
+      80.7750015258789
+    ]
+  },
+  "xy_center_offset_m": 0.0,
+  "z_center_offset_m": 1.1999969482421875,
+  "topology": {
+    "legacy_vertices": 16,
+    "legacy_polygons": 10,
+    "current_vertices": 16,
+    "current_polygons": 10
+  },
+  "policy": "Metadata/visibility retirement only. No mesh topology, transforms, materials, gameplay or collision changes."
+}
