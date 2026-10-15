@@ -1,0 +1,77 @@
+{
+  "schema": "SpandauStrike.WorldMasterV49CrownProportions.v1",
+  "source_master": "SpandauStrike_Rathaus_WORLD_MASTER_v48_DORMER_ALIGNMENT.blend",
+  "source_master_version": "v48_DORMER_ALIGNMENT",
+  "output_master": "SpandauStrike_Rathaus_WORLD_MASTER_v49_CROWN_PROPORTIONS.blend",
+  "output_master_version": "v49_CROWN_PROPORTIONS",
+  "reference": "media/theme/rathaus-spandau-photo.jpg",
+  "modified_objects": [
+    "V37_TowerTransitionLowerBand",
+    "V37_TowerTransitionUpperBand",
+    "V37_CrownBase",
+    "V37_CrownTopBand",
+    "V37_CopperOctagonalRoof"
+  ],
+  "xy_scale_factors": {
+    "V37_TowerTransitionLowerBand": 0.96,
+    "V37_TowerTransitionUpperBand": 0.9,
+    "V37_CrownBase": 0.9,
+    "V37_CrownTopBand": 0.86,
+    "V37_CopperOctagonalRoof": 0.86
+  },
+  "before_dimensions_m": {
+    "V37_TowerTransitionLowerBand": [
+      16.100000381469727,
+      17.100000381469727,
+      0.41999998688697815
+    ],
+    "V37_TowerTransitionUpperBand": [
+      17.0,
+      18.0,
+      0.5199999809265137
+    ],
+    "V37_CrownBase": [
+      17.100000381469727,
+      18.100000381469727,
+      0.7200000286102295
+    ],
+    "V37_CrownTopBand": [
+      16.399999618530273,
+      17.399999618530273,
+      0.550000011920929
+    ],
+    "V37_CopperOctagonalRoof": [
+      16.399999618530273,
+      16.399999618530273,
+      2.25
+    ]
+  },
+  "after_dimensions_m": {
+    "V37_TowerTransitionLowerBand": [
+      15.456000328063965,
+      16.416000366210938,
+      0.41999998688697815
+    ],
+    "V37_TowerTransitionUpperBand": [
+      15.299999237060547,
+      16.19999885559082,
+      0.5199999809265137
+    ],
+    "V37_CrownBase": [
+      15.390000343322754,
+      16.28999900817871,
+      0.7200000286102295
+    ],
+    "V37_CrownTopBand": [
+      14.104000091552734,
+      14.96399974822998,
+      0.550000011920929
+    ],
+    "V37_CopperOctagonalRoof": [
+      14.104000091552734,
+      14.104000091552734,
+      2.25
+    ]
+  },
+  "policy": "Transform-only proportion correction on existing tower crown meshes. No topology, gameplay, collision, spawn, objective, cover or route changes."
+}

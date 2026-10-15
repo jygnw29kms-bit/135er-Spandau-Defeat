@@ -1,4 +1,4 @@
-﻿# Current Status - UE5 only
+# Current Status - UE5 only
 
 Updated: **2026-10-15**
 
@@ -14,11 +14,11 @@ Authoritative spatial inputs include Berlin3D / LoD2, Berlin DGM1, aerial/refere
 
 Current authoritative master:
 
-`tools/blender_pipeline/builds/rathaus_spandau/SpandauStrike_Rathaus_WORLD_MASTER_v48_DORMER_ALIGNMENT.blend`
+`tools/blender_pipeline/builds/rathaus_spandau/SpandauStrike_Rathaus_WORLD_MASTER_v49_CROWN_PROPORTIONS.blend`
 
-v48 keeps the validated v47 tower crown/guardrails and corrects the ten detailed front dormer groups to the verified 47.5-degree facade axis and reference-backed front-roof positions. The left/right dormer roof pitch signs were also corrected so the roofs form upward gables as in the current Rathaus photograph. The change is transform-only; topology, world bounds and gameplay/collision geometry are unchanged.
+v49 keeps the validated v48 dormer alignment and applies a reference-driven width correction to five existing tower-crown meshes: the lower/upper transition bands, crown base, crown top band and copper roof. The lantern openings, stone piers, guardrails, object locations, topology, world bounds and all gameplay/collision geometry remain unchanged.
 
-Verified v48 full-master metrics:
+Verified v49 full-master metrics:
 - **10,792** total objects
 - **10,753** mesh objects
 - **720,101** vertices
@@ -28,10 +28,10 @@ Verified v48 full-master metrics:
 - gameplay core unchanged from v46
 
 Tracked QA / handoff files:
-- `SpandauStrike_Rathaus_WORLD_MASTER_v48_DORMER_ALIGNMENT_AUDIT.json`
-- `SpandauStrike_Rathaus_WORLD_MASTER_v48_DORMER_ALIGNMENT_EXPORT_MANIFEST.json`
-- `SpandauStrike_Rathaus_WORLD_MASTER_v48_DORMER_ALIGNMENT_REPORT.json`
-- `ue5/SpandauStrike/Design/RathausSpandau/runtime_gameplay_handoff_v48.json`
+- `SpandauStrike_Rathaus_WORLD_MASTER_v49_CROWN_PROPORTIONS_AUDIT.json`
+- `SpandauStrike_Rathaus_WORLD_MASTER_v49_CROWN_PROPORTIONS_EXPORT_MANIFEST.json`
+- `SpandauStrike_Rathaus_WORLD_MASTER_v49_CROWN_PROPORTIONS_REPORT.json`
+- `ue5/SpandauStrike/Design/RathausSpandau/runtime_gameplay_handoff_v49.json`
 
 ## Current gameplay contract
 

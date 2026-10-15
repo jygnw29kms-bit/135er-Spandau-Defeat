@@ -13,7 +13,7 @@ git remote -v
 git fetch origin
 git rev-list --left-right --count origin/main...main
 git diff -- ue5/SpandauStrike/Config/DefaultGameplayTags.ini
-git diff -- ue5/SpandauStrike/Design/RathausSpandau/runtime_gameplay_handoff_v48.json
+git diff -- ue5/SpandauStrike/Design/RathausSpandau/runtime_gameplay_handoff_v49.json
 ```
 
 If there are local changes, save a patch before reconciliation:
@@ -61,7 +61,7 @@ The dry run must pass before runtime actors are created or the current Rathaus F
 
 ## Current authoritative world baseline
 
-- Blender world master: `v48_DORMER_ALIGNMENT`
+- Blender world master: `v49_CROWN_PROPORTIONS`
 - Gameplay bundle: `SpandauStrike.GameplayBundle.v1`
 - Five territorial objectives
 - Eight team spawn anchors

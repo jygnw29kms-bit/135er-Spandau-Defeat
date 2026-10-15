@@ -2,7 +2,7 @@
 
 ## Current decision
 
-`SpandauStrike_Rathaus_WORLD_MASTER_v48_DORMER_ALIGNMENT.blend` is the current production world master. The recovered `RathausSpandau_REAL_Integrated_Master_v4.blend` remains reference/recovery material only and must not be wholesale-merged.
+`SpandauStrike_Rathaus_WORLD_MASTER_v49_CROWN_PROPORTIONS.blend` is the current production world master. The recovered `RathausSpandau_REAL_Integrated_Master_v4.blend` remains reference/recovery material only and must not be wholesale-merged.
 
 The original audit showed that the production chain contains substantially richer Rathaus geometry than v4. The later v42-v46 inspection confirmed that several elements initially suspected to be missing were already present in newer `V37_*` / `SM_MASTER_*` geometry.
 
@@ -70,6 +70,13 @@ v48 keeps the richer production dormer geometry (body, frames, glass, sill and p
 
 The v47 and v48 audits are topology-identical at 10,792 objects / 10,753 mesh objects / 720,101 vertices / 1,085,881 polygons / 155 materials. World min/max bounds are bit-identical. The export manifest sections `gameplay` (80 objects), `gameplay_planning` (69), `collision` (12) and `world` (60) are exactly equal between v47 and v48.
 
+## v49 tower-crown proportions
+
+The fixed-camera UE v67 QA and the current Rathaus reference photograph showed that the lantern itself was broadly plausible but the transition bands, crown base, top band and copper roof overhung the 14.2 m tower shaft too aggressively. In UE this produced a broad "mushroom cap" silhouette that is not present on the current Rathaus tower.
+
+v49 narrows only five existing crown meshes in XY while keeping their locations, heights, topology and materials unchanged. The applied XY factors are 0.96 (`V37_TowerTransitionLowerBand`), 0.90 (`V37_TowerTransitionUpperBand` and `V37_CrownBase`) and 0.86 (`V37_CrownTopBand` and `V37_CopperOctagonalRoof`). The lantern openings, stone corner piers, v47 guardrails and finial are unchanged.
+
+The v48 and v49 audits are topology-identical at 10,792 objects / 10,753 mesh objects / 720,101 vertices / 1,085,881 polygons / 155 materials. World min/max bounds are bit-identical. The export manifest sections `gameplay` (80 objects), `gameplay_planning` (69), `collision` (12) and `world` (60) are exactly equal between v48 and v49.
 ## Remaining Rathaus review work
 
 The central facade now has a correctly oriented main-roof silhouette. Further work should focus on reference-driven proportion/material/fenestration QA and later UE5 presentation quality rather than importing old v4 geometry merely because object names differ. Any new recovery or architecture change requires a proven spatial/reference match and must preserve the current gameplay/runtime invariants.

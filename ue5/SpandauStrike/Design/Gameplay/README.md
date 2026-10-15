@@ -6,28 +6,28 @@ This directory contains the engine-facing, data-driven baseline for Spandau Stri
 
 `gameplay_bundle_v1.json` is the current compatibility manifest. It pins the authoritative Rathaus world-master version, all gameplay source files, generators, validators and required invariants that belong together.
 
-Current spatial baseline: `v48_DORMER_ALIGNMENT`.
+Current spatial baseline: `v49_CROWN_PROPORTIONS`.
 
 ## Source of truth
 
-- `core_gameplay_tuning_v1.json` Ã¢â‚¬â€ movement, stamina, stance, bipod, class-weight and territorial-control baseline values.
-- `weapon_archetypes_v1.json` Ã¢â‚¬â€ neutral weapon-role tuning used to seed future Lyra equipment/data assets.
-- `class_loadouts_v1.json` Ã¢â‚¬â€ six class roles mapped to project gameplay tags and primary weapon archetypes.
-- `rathaus_lane_flow_v1.json` Ã¢â‚¬â€ five objectives, three primary lanes and three crosslinks.
-- `rathaus_combat_flow_v1.json` Ã¢â‚¬â€ choke groups, MG/sniper power positions and mandatory counterplay anchors.
-- `tools/gameplay/spandau_strike_gameplay_tags.json` Ã¢â‚¬â€ canonical project-owned Gameplay Tag namespace.
-- Rathaus Blender world-master metadata Ã¢â‚¬â€ authoritative map-space positions for spawns, objectives and runtime cover.
+- `core_gameplay_tuning_v1.json` ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â movement, stamina, stance, bipod, class-weight and territorial-control baseline values.
+- `weapon_archetypes_v1.json` ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â neutral weapon-role tuning used to seed future Lyra equipment/data assets.
+- `class_loadouts_v1.json` ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â six class roles mapped to project gameplay tags and primary weapon archetypes.
+- `rathaus_lane_flow_v1.json` ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â five objectives, three primary lanes and three crosslinks.
+- `rathaus_combat_flow_v1.json` ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â choke groups, MG/sniper power positions and mandatory counterplay anchors.
+- `tools/gameplay/spandau_strike_gameplay_tags.json` ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â canonical project-owned Gameplay Tag namespace.
+- Rathaus Blender world-master metadata ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â authoritative map-space positions for spawns, objectives and runtime cover.
 
 ## Generated / derived data
 
 Generated files are handoff/build products and must never replace the Blender world master or versioned gameplay JSON as source of truth.
 
-- `build_runtime_gameplay_handoff.py` Ã¢â‚¬â€ validates v42 metadata and produces the UE-facing objective/spawn/cover handoff.
-- `generate_ue_gameplay_tag_snippet.py` Ã¢â‚¬â€ creates Unreal `GameplayTagList` entries from the canonical tag list.
-- `build_ue_datatable_csv.py` Ã¢â‚¬â€ creates CSV seeds for class, weapon-archetype and movement DataTables.
-- `build_ue_import_plan.py` Ã¢â‚¬â€ creates the ordered UE import plan and SHA-256 fingerprints all source files.
-- `build_map_flow_report.py` Ã¢â‚¬â€ derives flag gaps, lane lengths, crosslink lengths and lane distribution of chokes/power positions.
-- `build_balance_report.py` Ã¢â‚¬â€ derives sprint/recovery timing, class traversal metrics and weapon lethality/handling review metrics.
+- `build_runtime_gameplay_handoff.py` ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â validates v42 metadata and produces the UE-facing objective/spawn/cover handoff.
+- `generate_ue_gameplay_tag_snippet.py` ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â creates Unreal `GameplayTagList` entries from the canonical tag list.
+- `build_ue_datatable_csv.py` ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â creates CSV seeds for class, weapon-archetype and movement DataTables.
+- `build_ue_import_plan.py` ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â creates the ordered UE import plan and SHA-256 fingerprints all source files.
+- `build_map_flow_report.py` ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â derives flag gaps, lane lengths, crosslink lengths and lane distribution of chokes/power positions.
+- `build_balance_report.py` ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â derives sprint/recovery timing, class traversal metrics and weapon lethality/handling review metrics.
 
 GitHub Actions publishes these products as the `spandau-strike-rathaus-runtime-handoff` artifact.
 
