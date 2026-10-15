@@ -1,4 +1,4 @@
-# Current Status - UE5 only
+﻿# Current Status - UE5 only
 
 Updated: **2026-10-15**
 
@@ -52,9 +52,9 @@ All current gameplay tags use the `SpandauStrike.*` namespace.
 
 Current architecture/runtime validation map:
 
-`/Game/SpandauStrike/Maps/Rathaus/LV_RathausSpandau_REAL_v66_PLAYABLE`
+`/Game/SpandauStrike/Maps/Rathaus/LV_RathausSpandau_REAL_v67_LIGHTING`
 
-v65 remains the known-good spawn/runtime fallback. v66 duplicates v65, preserves all 8 LyraPlayerStarts plus DGM/DOP/roads, and replaces only the Rathaus building actor with the v48 architecture mesh.
+v65 remains the known-good spawn/runtime fallback. v66 is the validated v48 architecture handoff. v67 duplicates v66 and changes only the technical sun/skylight setup to the fixed reference-facing lighting values validated through the reproducible front-QA camera.
 
 v65 was created from v64 specifically to replace the two temporary generic PlayerStarts with the **8 LyraPlayerStart locations from the v47 runtime handoff** (v65 remains the known-good playable checkpoint; v48 gameplay transforms are machine-verified identical).
 
@@ -93,6 +93,18 @@ v66 runtime validation on Lucas (UE 5.8.3):
 - building transform remains world origin / identity / scale 1
 - no `Accessed None`, AI-controller, spawn, or fatal runtime errors
 - the only recurring error-level startup lines are the same 17 engine automation-test diagnostics already present in v65
+### v67 reference-facing lighting
+
+v67 duplicates v66 without changing the building, DGM/DOP, roads, spawns, objectives or cover. It updates only the technical lighting used by the Rathaus validation map:
+- `TECH_Sun_v64`: rotation pitch `-35`, yaw `-137.5`, intensity `4.0`
+- `TECH_Sky_v64`: intensity `2.3`
+- 8 LyraPlayerStarts preserved
+
+The values were selected through fixed-camera A/B QA against `media/theme/rathaus-spandau-photo.jpg`. They remove the false near-black mansard/facade appearance seen in v66 while preserving readable architectural shadow depth. A 30-second unattended Development runtime test completed with `REAL_BAD_COUNT=0` and the v67 world reached play state successfully.
+
+Reproducible scripts:
+- `ue5/SpandauStrike/Content/Python/build_rathaus_v67_lighting.py`
+- `ue5/SpandauStrike/Content/Python/qa_v67_front_screenshot.py`
 
 ## UE workstation prerequisites recovered
 
@@ -128,7 +140,7 @@ The v83 DGM surface is only a local Rathaus crop and must not be confused with t
 
 - continue reference-driven Rathaus facade/window/material QA without speculative geometry changes
 - carry validated v48 architectural improvements into the next UE handoff
-- keep v65 as the known-good spawn/runtime fallback while v66 is the current architecture/runtime validation map
+- keep v65 as the known-good spawn/runtime fallback; v66 remains the architecture checkpoint and v67 is the current lighting/runtime validation map
 - preserve the 5 objectives / 8 spawns / 67 cover gameplay contract
 - compare editor and runtime presentation for material, lighting, LOD/Nanite and streaming differences
 - promote a new FINAL level only after editor and runtime views match the validated Rathaus reference closely enough
