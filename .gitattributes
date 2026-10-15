@@ -19,3 +19,4 @@ tools/blender_pipeline/builds/rathaus_spandau/SpandauStrike_Rathaus_WORLD_MASTER
 tools/blender_pipeline/builds/rathaus_spandau/SpandauStrike_Rathaus_WORLD_MASTER_v46_RETIRE_LEGACY_TOWER_ROOF.blend filter=lfs diff=lfs merge=lfs -text
 tools/blender_pipeline/builds/rathaus_spandau/SpandauStrike_Rathaus_WORLD_MASTER_v47_CROWN_GUARDRAILS.blend filter=lfs diff=lfs merge=lfs -text
 tools/blender_pipeline/builds/rathaus_spandau/SpandauStrike_Rathaus_WORLD_MASTER_v48_DORMER_ALIGNMENT.blend filter=lfs diff=lfs merge=lfs -text
+ue5/SpandauStrike/SourceArt/Rathaus/v48/RathausSpandau_BUILDING_v48.fbx filter=lfs diff=lfs merge=lfs -text

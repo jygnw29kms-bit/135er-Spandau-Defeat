@@ -50,9 +50,11 @@ All current gameplay tags use the `SpandauStrike.*` namespace.
 
 ## Current UE5 playable baseline
 
-Current validated playable map:
+Current architecture/runtime validation map:
 
-`/Game/SpandauStrike/Maps/Rathaus/LV_RathausSpandau_REAL_v65_PLAYABLE`
+`/Game/SpandauStrike/Maps/Rathaus/LV_RathausSpandau_REAL_v66_PLAYABLE`
+
+v65 remains the known-good spawn/runtime fallback. v66 duplicates v65, preserves all 8 LyraPlayerStarts plus DGM/DOP/roads, and replaces only the Rathaus building actor with the v48 architecture mesh.
 
 v65 was created from v64 specifically to replace the two temporary generic PlayerStarts with the **8 LyraPlayerStart locations from the v47 runtime handoff** (v65 remains the known-good playable checkpoint; v48 gameplay transforms are machine-verified identical).
 
@@ -67,6 +69,30 @@ Runtime validation on the Lucas workstation (UE 5.8.3):
 Git checkpoint:
 
 `b118ae3 Add Rathaus playable v65 with runtime spawn layout`
+
+
+### v66 architecture handoff
+
+The v48 Blender production building is exported reproducibly through `tools/blender_pipeline/export_rathaus_building_v48_ue5.py` to:
+
+`ue5/SpandauStrike/SourceArt/Rathaus/v48/RathausSpandau_BUILDING_v48.fbx`
+
+The export contains 583 selected Rathaus architecture objects joined into one UE handoff mesh: 65,238 vertices / 59,646 polygons / 34 material slots. Plaza benches, lamps, crates and the statue are deliberately excluded from the building mesh.
+
+UE asset:
+
+`/Game/SpandauStrike/Maps/Rathaus/Architecture/REAL_v48/SM_RathausSpandau_BUILDING_v48`
+
+A small reference-driven material set under `/Game/SpandauStrike/Maps/Rathaus/Materials/v48` replaces the old WorldGrid-only appearance with sandstone/trim, red roof tile, dark glass/window frame, gold clock details, copper, dark metal, concrete and dark openings.
+
+v66 runtime validation on Lucas (UE 5.8.3):
+- map reaches play state successfully
+- 8 PlayerStarts preserved
+- DGM/DOP and roads actors unchanged
+- only `Rathaus_BUILDING_v32` is replaced by `Rathaus_BUILDING_v48`
+- building transform remains world origin / identity / scale 1
+- no `Accessed None`, AI-controller, spawn, or fatal runtime errors
+- the only recurring error-level startup lines are the same 17 engine automation-test diagnostics already present in v65
 
 ## UE workstation prerequisites recovered
 
@@ -102,7 +128,7 @@ The v83 DGM surface is only a local Rathaus crop and must not be confused with t
 
 - continue reference-driven Rathaus facade/window/material QA without speculative geometry changes
 - carry validated v48 architectural improvements into the next UE handoff
-- keep v65 as the known-good playable/runtime baseline while testing later revisions
+- keep v65 as the known-good spawn/runtime fallback while v66 is the current architecture/runtime validation map
 - preserve the 5 objectives / 8 spawns / 67 cover gameplay contract
 - compare editor and runtime presentation for material, lighting, LOD/Nanite and streaming differences
 - promote a new FINAL level only after editor and runtime views match the validated Rathaus reference closely enough
