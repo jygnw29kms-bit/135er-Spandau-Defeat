@@ -1,0 +1,123 @@
+{
+  "schema": "SpandauStrike.WorldMasterV51PedimentReadability.v1",
+  "source_master": "SpandauStrike_Rathaus_WORLD_MASTER_v50_CLOCK_SCALE.blend",
+  "source_master_version": "v50_CLOCK_SCALE",
+  "output_master": "SpandauStrike_Rathaus_WORLD_MASTER_v51_PEDIMENT_READABILITY.blend",
+  "output_master_version": "v51_PEDIMENT_READABILITY",
+  "reference": "media/theme/rathaus-spandau-photo.jpg",
+  "inscription_vertical_factor": 1.5,
+  "shield_in_plane_factor": 1.15,
+  "modified_object_count": 3,
+  "modified_objects": [
+    "V34_InscriptionLeft",
+    "V34_InscriptionRight",
+    "V34_PedimentShield"
+  ],
+  "before": {
+    "V34_InscriptionLeft": {
+      "location": [
+        21.69594383239746,
+        -28.425622940063477,
+        24.450000762939453
+      ],
+      "dimensions": [
+        7.12768030166626,
+        0.35201239585876465,
+        0.08000000566244125
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "V34_InscriptionRight": {
+      "location": [
+        30.14082145690918,
+        -19.20965576171875,
+        24.450000762939453
+      ],
+      "dimensions": [
+        4.764639854431152,
+        0.3520137667655945,
+        0.08000000566244125
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "V34_PedimentShield": {
+      "location": [
+        25.98902702331543,
+        -23.81455421447754,
+        24.5
+      ],
+      "dimensions": [
+        1.0800000429153442,
+        0.10000000149011612,
+        1.5800000429153442
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    }
+  },
+  "after": {
+    "V34_InscriptionLeft": {
+      "location": [
+        21.69594383239746,
+        -28.425622940063477,
+        24.450000762939453
+      ],
+      "dimensions": [
+        7.12768030166626,
+        0.528018593788147,
+        0.08000000566244125
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "V34_InscriptionRight": {
+      "location": [
+        30.14082145690918,
+        -19.20965576171875,
+        24.450000762939453
+      ],
+      "dimensions": [
+        4.764639854431152,
+        0.5280206799507141,
+        0.08000000566244125
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "V34_PedimentShield": {
+      "location": [
+        25.98902702331543,
+        -23.81455421447754,
+        24.5
+      ],
+      "dimensions": [
+        1.2419999837875366,
+        0.10000000149011612,
+        1.8170000314712524
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    }
+  },
+  "policy": "Transform-only change on three existing V34 exported pediment detail meshes. No topology, material, pediment body, facade, gameplay or collision change."
+}

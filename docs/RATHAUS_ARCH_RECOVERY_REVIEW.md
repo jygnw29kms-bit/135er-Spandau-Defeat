@@ -2,7 +2,7 @@
 
 ## Current decision
 
-`SpandauStrike_Rathaus_WORLD_MASTER_v50_CLOCK_SCALE.blend` is the current production world master. The recovered `RathausSpandau_REAL_Integrated_Master_v4.blend` remains reference/recovery material only and must not be wholesale-merged.
+`SpandauStrike_Rathaus_WORLD_MASTER_v51_PEDIMENT_READABILITY.blend` is the current production world master. The recovered `RathausSpandau_REAL_Integrated_Master_v4.blend` remains reference/recovery material only and must not be wholesale-merged.
 
 The original audit showed that the production chain contains substantially richer Rathaus geometry than v4. The later v42-v46 inspection confirmed that several elements initially suspected to be missing were already present in newer `V37_*` / `SM_MASTER_*` geometry.
 
@@ -84,6 +84,14 @@ Reference comparison showed that the production V33 clock was structurally corre
 v50 scales only the existing exported V33 clock boss, 12 markers and two hands on each of the four tower faces by 1.45 around the existing face center. Exactly 60 existing meshes are transformed. No circular dial/ring is added, no vertices or polygons are created or removed, and the tower shaft, cornices, crown, facade, collision and gameplay geometry remain unchanged.
 
 The v49 and v50 audits are topology-identical at 10,792 objects / 10,753 mesh objects / 720,101 vertices / 1,085,881 polygons / 155 materials with identical world bounds. Runtime gameplay remains exactly 5 objectives / 8 spawns / 67 cover objects. UE v70 fixed-camera GPU QA and a Development runtime pass both succeeded, with `REAL_BAD_COUNT=0`.
+
+## v51 central-pediment readability correction
+
+The v50 audit confirmed that `V34_PedimentMedallion`, `V34_PedimentShield`, `V34_InscriptionLeft` and `V34_InscriptionRight` already project clearly in front of the pediment, so the previous weak UE appearance was not caused by embedded geometry. The inscription meshes were only about 0.35 m high in world vertical and were visually collapsing at full-building distance.
+
+v51 changes only three existing exported V34 meshes: the two inscription blocks are 1.50x taller and the central shield is enlarged 1.15x in the facade plane. The medallion, round pediment body, object locations, normal depth, materials and all other architecture remain unchanged. This is transform-only: object/vertex/polygon/material counts and world bounds remain identical to v50.
+
+UE v71 fixed-camera A/B QA shows materially better inscription readability while retaining the validated pediment silhouette. A Development runtime pass reaches play state with `REAL_BAD_COUNT=0`. Gameplay/planning/collision/world manifest sections remain identical to v50, and runtime gameplay stays exactly 5 objectives / 8 spawns / 67 cover objects.
 
 ## Remaining Rathaus review work
 

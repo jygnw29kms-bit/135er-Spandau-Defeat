@@ -3,8 +3,8 @@
   "bundle_version": 1,
   "status": "production_baseline_pending_local_ue_validation",
   "world_master": {
-    "version": "v50_CLOCK_SCALE",
-    "manifest": "tools/blender_pipeline/builds/rathaus_spandau/SpandauStrike_Rathaus_WORLD_MASTER_v50_CLOCK_SCALE_EXPORT_MANIFEST.json"
+    "version": "v51_PEDIMENT_READABILITY",
+    "manifest": "tools/blender_pipeline/builds/rathaus_spandau/SpandauStrike_Rathaus_WORLD_MASTER_v51_PEDIMENT_READABILITY_EXPORT_MANIFEST.json"
   },
   "gameplay_sources": {
     "tags": "tools/gameplay/spandau_strike_gameplay_tags.json",

@@ -35,8 +35,8 @@ def main():
     if missing:
         fail("bundle references missing files: " + ", ".join(missing))
 
-    if world.get("version") != "v50_CLOCK_SCALE":
-        fail("bundle must currently point at v50_CLOCK_SCALE")
+    if world.get("version") != "v51_PEDIMENT_READABILITY":
+        fail("bundle must currently point at v51_PEDIMENT_READABILITY")
 
     inv = bundle.get("required_invariants", {})
     expected = {

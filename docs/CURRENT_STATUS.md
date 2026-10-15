@@ -14,11 +14,11 @@ Authoritative spatial inputs include Berlin3D / LoD2, Berlin DGM1, aerial/refere
 
 Current authoritative master:
 
-`tools/blender_pipeline/builds/rathaus_spandau/SpandauStrike_Rathaus_WORLD_MASTER_v50_CLOCK_SCALE.blend`
+`tools/blender_pipeline/builds/rathaus_spandau/SpandauStrike_Rathaus_WORLD_MASTER_v51_PEDIMENT_READABILITY.blend`
 
-v50 keeps the validated v49 crown proportions and scales only the existing open radial V33 clock details on all four tower faces by 1.45 around their face centers. No circular dial/ring is added. The tower shaft, crown, facade, topology, world bounds and all gameplay/collision geometry remain unchanged.
+v51 keeps the validated v50 tower/crown/clock work and improves only existing V34 central-pediment details: the two inscription meshes are 1.50x taller and the shield is 1.15x larger in its facade plane. The round pediment, medallion, facade structure, topology, world bounds and all gameplay/collision geometry remain unchanged.
 
-Verified v50 full-master metrics:
+Verified v51 full-master metrics:
 - **10,792** total objects
 - **10,753** mesh objects
 - **720,101** vertices
@@ -28,10 +28,10 @@ Verified v50 full-master metrics:
 - gameplay core unchanged from v46
 
 Tracked QA / handoff files:
-- `SpandauStrike_Rathaus_WORLD_MASTER_v50_CLOCK_SCALE_AUDIT.json`
-- `SpandauStrike_Rathaus_WORLD_MASTER_v50_CLOCK_SCALE_EXPORT_MANIFEST.json`
-- `SpandauStrike_Rathaus_WORLD_MASTER_v50_CLOCK_SCALE_REPORT.json`
-- `ue5/SpandauStrike/Design/RathausSpandau/runtime_gameplay_handoff_v50.json`
+- `SpandauStrike_Rathaus_WORLD_MASTER_v51_PEDIMENT_READABILITY_AUDIT.json`
+- `SpandauStrike_Rathaus_WORLD_MASTER_v51_PEDIMENT_READABILITY_EXPORT_MANIFEST.json`
+- `SpandauStrike_Rathaus_WORLD_MASTER_v51_PEDIMENT_READABILITY_REPORT.json`
+- `ue5/SpandauStrike/Design/RathausSpandau/runtime_gameplay_handoff_v51.json`
 
 ## Current gameplay contract
 
@@ -52,9 +52,9 @@ All current gameplay tags use the `SpandauStrike.*` namespace.
 
 Current architecture/runtime validation map:
 
-`/Game/SpandauStrike/Maps/Rathaus/LV_RathausSpandau_REAL_v70_CLOCK_QA`
+`/Game/SpandauStrike/Maps/Rathaus/LV_RathausSpandau_REAL_v71_PEDIMENT_QA`
 
-v65 remains the known-good spawn/runtime fallback. v67 is the validated lighting checkpoint, v68 the v49 geometry checkpoint, v69 the reference-facing material checkpoint, and v70 carries the v50 open-clock scale correction while preserving the validated v69 materials, lighting and runtime setup.
+v65 remains the known-good spawn/runtime fallback. v67 is the validated lighting checkpoint, v68 the v49 geometry checkpoint, v69 the reference-facing material checkpoint, v70 the v50 clock-scale checkpoint, and v71 carries the v51 pediment-readability correction while preserving all validated lighting/material/runtime setup.
 
 v65 was created from v64 specifically to replace the two temporary generic PlayerStarts with the **8 LyraPlayerStart locations from the v47 runtime handoff** (v65 remains the known-good playable checkpoint; v48 gameplay transforms are machine-verified identical).
 
@@ -156,6 +156,26 @@ Reproducible sources/scripts:
 - `ue5/SpandauStrike/Content/Python/apply_rathaus_v50_reference_materials.py`
 - `ue5/SpandauStrike/Content/Python/build_rathaus_v70_clock_qa.py`
 - `ue5/SpandauStrike/Content/Python/qa_v70_front_screenshot.py`
+
+### v71 v51 pediment-readability handoff
+
+v71 duplicates v70 and replaces only the Rathaus building mesh with the v51 handoff. v51 changes exactly three existing exported V34 pediment-detail meshes: both inscription blocks are scaled 1.50x in world vertical and the central shield 1.15x in its facade plane. Their positions, depth, materials and the round pediment/medallion remain unchanged. No new geometry is introduced.
+
+Lucas UE 5.8.3 validation:
+- 8/8 PlayerStarts preserved by the build gate
+- fixed-camera A/B GPU QA shows substantially clearer facade inscription and slightly stronger shield presence without changing the pediment silhouette
+- real Development runtime reaches play state
+- `REAL_BAD_COUNT=0`
+- v70 remains the clock-scale fallback; v71 is the current visual/runtime validation map
+
+Reproducible sources/scripts:
+- `tools/blender_pipeline/build_world_master_v51_pediment_readability.py`
+- `tools/blender_pipeline/export_rathaus_building_v51_ue5.py`
+- `ue5/SpandauStrike/SourceArt/Rathaus/v51/RathausSpandau_BUILDING_v51.fbx`
+- `ue5/SpandauStrike/Content/Python/import_rathaus_v51_validation.py`
+- `ue5/SpandauStrike/Content/Python/apply_rathaus_v51_reference_materials.py`
+- `ue5/SpandauStrike/Content/Python/build_rathaus_v71_pediment_qa.py`
+- `ue5/SpandauStrike/Content/Python/qa_v71_front_screenshot.py`
 ## UE workstation prerequisites recovered
 
 The Lucas workstation now has the required local UE 5.8 / Lyra runtime prerequisites restored:
@@ -189,8 +209,8 @@ The v83 DGM surface is only a local Rathaus crop and must not be confused with t
 ## Immediate production priority
 
 - continue reference-driven Rathaus facade/window/material QA without speculative geometry changes
-- continue reference-driven Rathaus architecture/material QA from the validated v50 / UE v70 baseline
-- keep v65 as the known-good spawn/runtime fallback; v67 remains the lighting checkpoint, v68 the v49 geometry checkpoint, v69 the material fallback, and v70 is the current visual/runtime validation map
+- continue reference-driven Rathaus architecture/material QA from the validated v51 / UE v71 baseline
+- keep v65 as the known-good spawn/runtime fallback; v67 remains the lighting checkpoint, v69 the material fallback, v70 the clock-scale checkpoint, and v71 is the current visual/runtime validation map
 - preserve the 5 objectives / 8 spawns / 67 cover gameplay contract
 - compare editor and runtime presentation for material, lighting, LOD/Nanite and streaming differences
 - promote a new FINAL level only after editor and runtime views match the validated Rathaus reference closely enough

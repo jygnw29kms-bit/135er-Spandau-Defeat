@@ -5,8 +5,8 @@ import math
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-DEFAULT_MANIFEST = ROOT / "tools" / "blender_pipeline" / "builds" / "rathaus_spandau" / "SpandauStrike_Rathaus_WORLD_MASTER_v50_CLOCK_SCALE_EXPORT_MANIFEST.json"
-DEFAULT_OUT = ROOT / "ue5" / "SpandauStrike" / "Design" / "RathausSpandau" / "runtime_gameplay_handoff_v50.json"
+DEFAULT_MANIFEST = ROOT / "tools" / "blender_pipeline" / "builds" / "rathaus_spandau" / "SpandauStrike_Rathaus_WORLD_MASTER_v51_PEDIMENT_READABILITY_EXPORT_MANIFEST.json"
+DEFAULT_OUT = ROOT / "ue5" / "SpandauStrike" / "Design" / "RathausSpandau" / "runtime_gameplay_handoff_v51.json"
 
 
 def load_json(path: Path):
