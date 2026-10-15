@@ -90,7 +90,7 @@ class GameplayPipelineTests(unittest.TestCase):
             self.run_python("build_ue_import_plan.py", "--out", out)
             data = json.loads(out.read_text(encoding="utf-8"))
             self.assertEqual(data["schema"], "SpandauStrike.UEImportPlan.v1")
-            self.assertEqual(data["world_master_version"], "v42_RUNTIME_OBJECTIVES")
+            self.assertEqual(data["world_master_version"], "v43_RECOVERED_ENTRANCE_STEPS")
             self.assertFalse(data["safety"]["overwrite_current_final_map"])
             self.assertTrue(data["safety"]["use_separate_test_map_first"])
             self.assertGreaterEqual(len(data["sources"]), 7)

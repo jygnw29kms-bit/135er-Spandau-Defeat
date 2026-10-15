@@ -2,7 +2,7 @@
 
 The Rathaus Blender world master is the authoritative spatial source. `tools/gameplay/build_runtime_gameplay_handoff.py` validates the current gameplay metadata and creates a deterministic UE5-facing package at:
 
-`ue5/SpandauStrike/Design/RathausSpandau/runtime_gameplay_handoff_v42.json`
+`ue5/SpandauStrike/Design/RathausSpandau/runtime_gameplay_handoff_v43.json`
 
 Validated invariants:
 - exactly five linear territorial objectives in sequence 1..5

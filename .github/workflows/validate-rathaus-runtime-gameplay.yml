@@ -8,7 +8,7 @@ on:
       - 'tools/repo/validate_spandau_scope.py'
       - 'ue5/SpandauStrike/Content/Python/validate_rathaus_runtime_handoff.py'
       - 'ue5/SpandauStrike/Design/Gameplay/**'
-      - 'tools/blender_pipeline/builds/rathaus_spandau/SpandauStrike_Rathaus_WORLD_MASTER_v42_RUNTIME_OBJECTIVES_EXPORT_MANIFEST.json'
+      - 'tools/blender_pipeline/builds/rathaus_spandau/SpandauStrike_Rathaus_WORLD_MASTER_v43_RECOVERED_ENTRANCE_STEPS_EXPORT_MANIFEST.json'
       - '.github/workflows/validate-rathaus-runtime-gameplay.yml'
   pull_request:
     paths:
@@ -16,7 +16,7 @@ on:
       - 'tools/repo/validate_spandau_scope.py'
       - 'ue5/SpandauStrike/Content/Python/validate_rathaus_runtime_handoff.py'
       - 'ue5/SpandauStrike/Design/Gameplay/**'
-      - 'tools/blender_pipeline/builds/rathaus_spandau/SpandauStrike_Rathaus_WORLD_MASTER_v42_RUNTIME_OBJECTIVES_EXPORT_MANIFEST.json'
+      - 'tools/blender_pipeline/builds/rathaus_spandau/SpandauStrike_Rathaus_WORLD_MASTER_v43_RECOVERED_ENTRANCE_STEPS_EXPORT_MANIFEST.json'
       - '.github/workflows/validate-rathaus-runtime-gameplay.yml'
 
 jobs:
@@ -105,7 +105,7 @@ jobs:
 
       - name: Validate and generate Rathaus handoff
         run: |
-          python tools/gameplay/build_runtime_gameplay_handoff.py --out /tmp/runtime_gameplay_handoff_v42.json
+          python tools/gameplay/build_runtime_gameplay_handoff.py --out /tmp/runtime_gameplay_handoff_v43.json
 
       - name: Generate fingerprinted UE import plan
         run: |
@@ -142,7 +142,7 @@ jobs:
         with:
           name: spandau-strike-rathaus-runtime-handoff
           path: |
-            /tmp/runtime_gameplay_handoff_v42.json
+            /tmp/runtime_gameplay_handoff_v43.json
             /tmp/runtime_import_plan_v1.json
             /tmp/rathaus_coordinate_invariants_v1.json
             /tmp/rathaus_map_flow_report_v1.json

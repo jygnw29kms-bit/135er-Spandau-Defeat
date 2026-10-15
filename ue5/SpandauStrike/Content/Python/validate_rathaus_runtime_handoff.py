@@ -17,7 +17,7 @@ def project_path(*parts):
 
 
 def main():
-    handoff_path = project_path("Design", "RathausSpandau", "runtime_gameplay_handoff_v42.json")
+    handoff_path = project_path("Design", "RathausSpandau", "runtime_gameplay_handoff_v43.json")
     report_path = os.path.join(unreal.Paths.project_saved_dir(), "Reports", "rathaus_runtime_handoff_validation.json")
     os.makedirs(os.path.dirname(report_path), exist_ok=True)
 

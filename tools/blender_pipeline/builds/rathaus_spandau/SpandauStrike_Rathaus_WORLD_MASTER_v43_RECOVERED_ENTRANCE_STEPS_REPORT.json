@@ -1,0 +1,141 @@
+{
+  "schema": "SpandauStrike.WorldMasterV43RecoveredEntranceSteps.v1",
+  "source_master": "SpandauStrike_Rathaus_WORLD_MASTER_v42_RUNTIME_OBJECTIVES.blend",
+  "source_master_version": "v42_RUNTIME_OBJECTIVES",
+  "recovery_source": "recovered/RathausSpandau_REAL_Integrated_Master_v4.blend",
+  "output_master": "SpandauStrike_Rathaus_WORLD_MASTER_v43_RECOVERED_ENTRANCE_STEPS.blend",
+  "output_master_version": "v43_RECOVERED_ENTRANCE_STEPS",
+  "collection": "RATHAUS_RECOVERED_ENTRANCE_STEPS",
+  "translation_m": [
+    -5.197804927825928,
+    4.762911319732666,
+    0.10000014305114746
+  ],
+  "reference_max_error_m": 1.9073486328125e-06,
+  "alignment_rms_m": 1.2715657552083333e-06,
+  "alignment_max_error_m": 1.4216537331209435e-06,
+  "objects_added": 6,
+  "objects": [
+    {
+      "name": "Step_0",
+      "source_location_m": [
+        30.228370666503906,
+        -27.69919776916504,
+        0.15000000596046448
+      ],
+      "target_location_m": [
+        25.03056526184082,
+        -22.93628692626953,
+        0.25000014901161194
+      ],
+      "dimensions_m": [
+        13.0,
+        1.2000000476837158,
+        0.30000001192092896
+      ],
+      "polygons": 6,
+      "vertices": 8
+    },
+    {
+      "name": "Step_1",
+      "source_location_m": [
+        30.70760154724121,
+        -28.13833236694336,
+        0.30000001192092896
+      ],
+      "target_location_m": [
+        25.509796142578125,
+        -23.37542152404785,
+        0.4000001549720764
+      ],
+      "dimensions_m": [
+        15.0,
+        1.2000000476837158,
+        0.30000001192092896
+      ],
+      "polygons": 6,
+      "vertices": 8
+    },
+    {
+      "name": "Step_2",
+      "source_location_m": [
+        31.186830520629883,
+        -28.577465057373047,
+        0.44999998807907104
+      ],
+      "target_location_m": [
+        25.989025115966797,
+        -23.81455421447754,
+        0.5500001311302185
+      ],
+      "dimensions_m": [
+        17.0,
+        1.2000000476837158,
+        0.30000001192092896
+      ],
+      "polygons": 6,
+      "vertices": 8
+    },
+    {
+      "name": "Step_3",
+      "source_location_m": [
+        31.666061401367188,
+        -29.016599655151367,
+        0.6000000238418579
+      ],
+      "target_location_m": [
+        26.4682559967041,
+        -24.25368881225586,
+        0.7000001668930054
+      ],
+      "dimensions_m": [
+        19.0,
+        1.2000000476837158,
+        0.30000001192092896
+      ],
+      "polygons": 6,
+      "vertices": 8
+    },
+    {
+      "name": "Step_4",
+      "source_location_m": [
+        32.14529037475586,
+        -29.455732345581055,
+        0.75
+      ],
+      "target_location_m": [
+        26.947484970092773,
+        -24.692821502685547,
+        0.8500001430511475
+      ],
+      "dimensions_m": [
+        21.0,
+        1.2000000476837158,
+        0.30000001192092896
+      ],
+      "polygons": 6,
+      "vertices": 8
+    },
+    {
+      "name": "Step_5",
+      "source_location_m": [
+        32.6245231628418,
+        -29.894866943359375,
+        0.8999999761581421
+      ],
+      "target_location_m": [
+        27.42671775817871,
+        -25.131956100463867,
+        1.0000001192092896
+      ],
+      "dimensions_m": [
+        23.0,
+        1.2000000476837158,
+        0.30000001192092896
+      ],
+      "polygons": 6,
+      "vertices": 8
+    }
+  ],
+  "policy": "No existing v42 object geometry or transform modified. Tower/plaza/statue recovery excluded."
+}
