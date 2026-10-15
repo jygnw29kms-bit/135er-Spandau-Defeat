@@ -52,9 +52,9 @@ All current gameplay tags use the `SpandauStrike.*` namespace.
 
 Current architecture/runtime validation map:
 
-`/Game/SpandauStrike/Maps/Rathaus/LV_RathausSpandau_REAL_v67_LIGHTING`
+`/Game/SpandauStrike/Maps/Rathaus/LV_RathausSpandau_REAL_v68_V49_ARCH`
 
-v65 remains the known-good spawn/runtime fallback. v66 is the validated v48 architecture handoff. v67 duplicates v66 and changes only the technical sun/skylight setup to the fixed reference-facing lighting values validated through the reproducible front-QA camera.
+v65 remains the known-good spawn/runtime fallback. v66 is the validated v48 architecture handoff, v67 is the validated reference-facing lighting checkpoint, and v68 carries the v49 tower-crown proportion correction into UE while preserving the v67 lighting and runtime setup.
 
 v65 was created from v64 specifically to replace the two temporary generic PlayerStarts with the **8 LyraPlayerStart locations from the v47 runtime handoff** (v65 remains the known-good playable checkpoint; v48 gameplay transforms are machine-verified identical).
 
@@ -106,6 +106,26 @@ Reproducible scripts:
 - `ue5/SpandauStrike/Content/Python/build_rathaus_v67_lighting.py`
 - `ue5/SpandauStrike/Content/Python/qa_v67_front_screenshot.py`
 
+### v68 v49 architecture handoff
+
+v68 duplicates v67 and replaces only `Rathaus_BUILDING_v48` with the v49 building handoff. The v49 FBX remains 583 selected architecture objects / 65,238 vertices / 59,646 polygons / 34 material slots, with the five crown proportion transforms baked into the exported building. Existing v48 material assignments are copied slot-for-slot onto the v49 mesh.
+
+Lucas UE 5.8.3 validation:
+- 8/8 PlayerStarts preserved
+- building transform remains world origin / identity / scale 1
+- v67 sun/skylight values preserved
+- real Development runtime world reaches play state successfully
+- `REAL_BAD_COUNT=0` for fatal, AI-controller, `Accessed None`, and PlayerStart failure patterns
+- fixed-camera GPU QA confirms the narrower v49 crown/roof silhouette while the main roof, dormers, facade and lighting remain unchanged
+
+Reproducible sources/scripts:
+- `tools/blender_pipeline/export_rathaus_building_v49_ue5.py`
+- `ue5/SpandauStrike/SourceArt/Rathaus/v49/RathausSpandau_BUILDING_v49.fbx`
+- `ue5/SpandauStrike/Content/Python/import_rathaus_v49_validation.py`
+- `ue5/SpandauStrike/Content/Python/apply_rathaus_v49_materials.py`
+- `ue5/SpandauStrike/Content/Python/build_rathaus_v68_v49_architecture.py`
+- `ue5/SpandauStrike/Content/Python/qa_v68_front_screenshot.py`
+
 ## UE workstation prerequisites recovered
 
 The Lucas workstation now has the required local UE 5.8 / Lyra runtime prerequisites restored:
@@ -139,8 +159,8 @@ The v83 DGM surface is only a local Rathaus crop and must not be confused with t
 ## Immediate production priority
 
 - continue reference-driven Rathaus facade/window/material QA without speculative geometry changes
-- carry validated v48 architectural improvements into the next UE handoff
-- keep v65 as the known-good spawn/runtime fallback; v66 remains the architecture checkpoint and v67 is the current lighting/runtime validation map
+- continue reference-driven Rathaus architecture/material QA from the validated v49 / UE v68 baseline
+- keep v65 as the known-good spawn/runtime fallback; v67 remains the lighting checkpoint and v68 is the current architecture/runtime validation map
 - preserve the 5 objectives / 8 spawns / 67 cover gameplay contract
 - compare editor and runtime presentation for material, lighting, LOD/Nanite and streaming differences
 - promote a new FINAL level only after editor and runtime views match the validated Rathaus reference closely enough
