@@ -6,7 +6,7 @@ This directory contains the engine-facing, data-driven baseline for Spandau Stri
 
 `gameplay_bundle_v1.json` is the current compatibility manifest. It pins the authoritative Rathaus world-master version, all gameplay source files, generators, validators and required invariants that belong together.
 
-Current spatial baseline: `v47_CROWN_GUARDRAILS`.
+Current spatial baseline: `v48_DORMER_ALIGNMENT`.
 
 ## Source of truth
 

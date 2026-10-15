@@ -24,7 +24,7 @@ class CoordinateInvariantTests(unittest.TestCase):
             self.assertEqual(result.returncode, 0, msg=result.stdout + "\n" + result.stderr)
             data = json.loads(out.read_text(encoding="utf-8"))
             self.assertEqual(data["schema"], "SpandauStrike.CoordinateInvariants.v1")
-            self.assertEqual(data["world_master_version"], "v47_CROWN_GUARDRAILS")
+            self.assertEqual(data["world_master_version"], "v48_DORMER_ALIGNMENT")
             self.assertEqual(data["anchor_count"], 13)
             self.assertEqual(data["pair_count"], 78)
             self.assertEqual(len(data["anchors_source_m"]), 13)

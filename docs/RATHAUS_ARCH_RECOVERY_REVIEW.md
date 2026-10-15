@@ -2,7 +2,7 @@
 
 ## Current decision
 
-`SpandauStrike_Rathaus_WORLD_MASTER_v47_CROWN_GUARDRAILS.blend` is the current production world master. The recovered `RathausSpandau_REAL_Integrated_Master_v4.blend` remains reference/recovery material only and must not be wholesale-merged.
+`SpandauStrike_Rathaus_WORLD_MASTER_v48_DORMER_ALIGNMENT.blend` is the current production world master. The recovered `RathausSpandau_REAL_Integrated_Master_v4.blend` remains reference/recovery material only and must not be wholesale-merged.
 
 The original audit showed that the production chain contains substantially richer Rathaus geometry than v4. The later v42-v46 inspection confirmed that several elements initially suspected to be missing were already present in newer `V37_*` / `SM_MASTER_*` geometry.
 
@@ -62,6 +62,14 @@ The current reference photograph shows a low metal safety rail across the open l
 v47 adds one joined guardrail mesh per lantern face. Each rail uses two horizontal bars and five vertical posts across an 8.0 m span inside the existing 8.8 m opening. The change is additive landmark detail only: no pre-existing meshes or transforms are modified, and collision, gameplay, routes, objectives, spawns and cover remain unchanged. The source reference is `media/theme/rathaus-spandau-photo.jpg`.
 
 The v47 world bounds remain unchanged. The build adds 4 mesh objects, 224 vertices and 168 polygons, bringing the full master to 10,792 objects / 10,753 mesh objects / 720,101 vertices / 1,085,881 polygons.
+## v48 front-dormer alignment
+
+Direct front-elevation comparison against `media/theme/rathaus-spandau-photo.jpg` showed that the detailed production `P_Dormer*` groups were largely buried in the main roof. Their group anchors sat several metres inward from the older facade-aligned `V16_DormerFront*` anchors, and the production bodies were still world-axis aligned instead of following the verified 47.5-degree Rathaus facade axis. The left/right roof panels also used opposite pitch signs, producing a valley silhouette rather than the small upward gables visible in the photograph.
+
+v48 keeps the richer production dormer geometry (body, frames, glass, sill and paired roof panels) and applies a rigid transform per dormer group to the ten validated V16 front-dormer anchors. Each group is rotated to the 47.5-degree facade axis, and the roof pitch signs are corrected to -29 degrees left / +29 degrees right. Exactly 70 existing production objects are transformed; no mesh vertices or polygons are added or removed.
+
+The v47 and v48 audits are topology-identical at 10,792 objects / 10,753 mesh objects / 720,101 vertices / 1,085,881 polygons / 155 materials. World min/max bounds are bit-identical. The export manifest sections `gameplay` (80 objects), `gameplay_planning` (69), `collision` (12) and `world` (60) are exactly equal between v47 and v48.
+
 ## Remaining Rathaus review work
 
 The central facade now has a correctly oriented main-roof silhouette. Further work should focus on reference-driven proportion/material/fenestration QA and later UE5 presentation quality rather than importing old v4 geometry merely because object names differ. Any new recovery or architecture change requires a proven spatial/reference match and must preserve the current gameplay/runtime invariants.

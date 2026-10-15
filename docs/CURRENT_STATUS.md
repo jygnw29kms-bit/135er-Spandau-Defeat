@@ -14,11 +14,11 @@ Authoritative spatial inputs include Berlin3D / LoD2, Berlin DGM1, aerial/refere
 
 Current authoritative master:
 
-`tools/blender_pipeline/builds/rathaus_spandau/SpandauStrike_Rathaus_WORLD_MASTER_v47_CROWN_GUARDRAILS.blend`
+`tools/blender_pipeline/builds/rathaus_spandau/SpandauStrike_Rathaus_WORLD_MASTER_v48_DORMER_ALIGNMENT.blend`
 
-v47 is an additive architectural refinement of the validated Rathaus tower crown. It adds the low metal guardrail visible in the real Rathaus reference imagery while preserving the previous world and gameplay transforms.
+v48 keeps the validated v47 tower crown/guardrails and corrects the ten detailed front dormer groups to the verified 47.5-degree facade axis and reference-backed front-roof positions. The left/right dormer roof pitch signs were also corrected so the roofs form upward gables as in the current Rathaus photograph. The change is transform-only; topology, world bounds and gameplay/collision geometry are unchanged.
 
-Verified v47 full-master metrics:
+Verified v48 full-master metrics:
 - **10,792** total objects
 - **10,753** mesh objects
 - **720,101** vertices
@@ -28,10 +28,10 @@ Verified v47 full-master metrics:
 - gameplay core unchanged from v46
 
 Tracked QA / handoff files:
-- `SpandauStrike_Rathaus_WORLD_MASTER_v47_CROWN_GUARDRAILS_AUDIT.json`
-- `SpandauStrike_Rathaus_WORLD_MASTER_v47_CROWN_GUARDRAILS_EXPORT_MANIFEST.json`
-- `SpandauStrike_Rathaus_WORLD_MASTER_v47_CROWN_GUARDRAILS_REPORT.json`
-- `ue5/SpandauStrike/Design/RathausSpandau/runtime_gameplay_handoff_v47.json`
+- `SpandauStrike_Rathaus_WORLD_MASTER_v48_DORMER_ALIGNMENT_AUDIT.json`
+- `SpandauStrike_Rathaus_WORLD_MASTER_v48_DORMER_ALIGNMENT_EXPORT_MANIFEST.json`
+- `SpandauStrike_Rathaus_WORLD_MASTER_v48_DORMER_ALIGNMENT_REPORT.json`
+- `ue5/SpandauStrike/Design/RathausSpandau/runtime_gameplay_handoff_v48.json`
 
 ## Current gameplay contract
 
@@ -54,7 +54,7 @@ Current validated playable map:
 
 `/Game/SpandauStrike/Maps/Rathaus/LV_RathausSpandau_REAL_v65_PLAYABLE`
 
-v65 was created from v64 specifically to replace the two temporary generic PlayerStarts with the **8 LyraPlayerStart locations from the v47 runtime handoff**.
+v65 was created from v64 specifically to replace the two temporary generic PlayerStarts with the **8 LyraPlayerStart locations from the v47 runtime handoff** (v65 remains the known-good playable checkpoint; v48 gameplay transforms are machine-verified identical).
 
 Runtime validation on the Lucas workstation (UE 5.8.3):
 - map loads successfully in Development runtime
@@ -101,7 +101,7 @@ The v83 DGM surface is only a local Rathaus crop and must not be confused with t
 ## Immediate production priority
 
 - continue reference-driven Rathaus facade/window/material QA without speculative geometry changes
-- carry validated v47 architectural improvements into the next UE handoff
+- carry validated v48 architectural improvements into the next UE handoff
 - keep v65 as the known-good playable/runtime baseline while testing later revisions
 - preserve the 5 objectives / 8 spawns / 67 cover gameplay contract
 - compare editor and runtime presentation for material, lighting, LOD/Nanite and streaming differences

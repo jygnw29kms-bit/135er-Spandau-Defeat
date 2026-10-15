@@ -1,7 +1,9 @@
 import unreal, json, os
 SRC='/Game/SpandauStrike/Maps/Rathaus/LV_RathausSpandau_REAL_v64_PLAYABLE'
 DST='/Game/SpandauStrike/Maps/Rathaus/LV_RathausSpandau_REAL_v65_PLAYABLE'
-HANDOFF=r'C:\Users\anony\Documents\SpandauStrike\repo\ue5\SpandauStrike\Design\RathausSpandau\runtime_gameplay_handoff_v47.json'; REPORT=r'C:\Users\anony\Documents\SpandauStrike\repo\ue5\SpandauStrike\Saved\Reports\rathaus_v65_spawn_build.txt'
+PROJECT_DIR=os.path.normpath(unreal.Paths.project_dir())
+HANDOFF=os.path.join(PROJECT_DIR,'Design','RathausSpandau','runtime_gameplay_handoff_v47.json')
+REPORT=os.path.join(unreal.Paths.project_saved_dir(),'Reports','rathaus_v65_spawn_build.txt')
 asset=unreal.EditorAssetLibrary
 if asset.does_asset_exist(DST): asset.delete_asset(DST)
 if not asset.duplicate_asset(SRC,DST): raise RuntimeError('duplicate failed')

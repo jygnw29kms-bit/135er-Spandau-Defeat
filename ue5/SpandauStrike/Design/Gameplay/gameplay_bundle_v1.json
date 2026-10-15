@@ -3,8 +3,8 @@
   "bundle_version": 1,
   "status": "production_baseline_pending_local_ue_validation",
   "world_master": {
-    "version": "v47_CROWN_GUARDRAILS",
-    "manifest": "tools/blender_pipeline/builds/rathaus_spandau/SpandauStrike_Rathaus_WORLD_MASTER_v47_CROWN_GUARDRAILS_EXPORT_MANIFEST.json"
+    "version": "v48_DORMER_ALIGNMENT",
+    "manifest": "tools/blender_pipeline/builds/rathaus_spandau/SpandauStrike_Rathaus_WORLD_MASTER_v48_DORMER_ALIGNMENT_EXPORT_MANIFEST.json"
   },
   "gameplay_sources": {
     "tags": "tools/gameplay/spandau_strike_gameplay_tags.json",
