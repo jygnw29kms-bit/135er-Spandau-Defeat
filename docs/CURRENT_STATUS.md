@@ -193,6 +193,8 @@ Reproducible scripts:
 - `ue5/SpandauStrike/Content/Python/build_rathaus_v72_first_play.py`
 - `ue5/SpandauStrike/Content/Python/validate_rathaus_v72_spawn_safety.py`
 - `tools/ue5/launch_rathaus_v72_first_play.ps1`
+- `tools/ue5/run_rathaus_v72_first_play_check.cmd` (preferred automated gate: validates, runs, checks logs, then closes only its own UE process)
+- `tools/ue5/run_rathaus_v72_first_play_check.ps1`
 ## UE workstation prerequisites recovered
 
 The Lucas workstation now has the required local UE 5.8 / Lyra runtime prerequisites restored:
