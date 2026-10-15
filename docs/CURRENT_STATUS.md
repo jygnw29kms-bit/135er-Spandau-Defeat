@@ -195,6 +195,20 @@ Reproducible scripts:
 - `tools/ue5/launch_rathaus_v72_first_play.ps1`
 - `tools/ue5/run_rathaus_v72_first_play_check.cmd` (preferred automated gate: validates, runs, checks logs, then closes only its own UE process)
 - `tools/ue5/run_rathaus_v72_first_play_check.ps1`
+## Playermodel 2030 pipeline
+
+The four production model identities are fixed: `PM_135_Operator`, `PM_135_Scout`, `PM_Opp_Assault`, `PM_Opp_Recon`.
+
+SourceArt target: `ue5/SpandauStrike/SourceArt/Characters/2030/`. The current repository does not yet contain the Blender master or four FBX exports; the validator reports this explicitly instead of allowing ad-hoc imports.
+
+Required core rig bones are tracked in `tools/playermodels/playermodel_contract.json`. Modeling/export/Git work is performed with UE closed; UE is opened only for skeleton import, retarget and runtime validation.
+
+Workflow files:
+- `tools/playermodels/playermodel_contract.json`
+- `tools/playermodels/validate_playermodel_source.py`
+- `tools/playermodels/README.md`
+
+
 ## UE workstation prerequisites recovered
 
 The Lucas workstation now has the required local UE 5.8 / Lyra runtime prerequisites restored:

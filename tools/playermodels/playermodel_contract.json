@@ -1,0 +1,12 @@
+﻿{
+  "version": 1,
+  "source_master": "SpandauStrike_Playermodels_2030_Master.blend",
+  "source_dir": "ue5/SpandauStrike/SourceArt/Characters/2030",
+  "models": [
+    {"name":"PM_135_Operator","team":"135","variant":"operator","fbx":"PM_135_Operator.fbx"},
+    {"name":"PM_135_Scout","team":"135","variant":"scout","fbx":"PM_135_Scout.fbx"},
+    {"name":"PM_Opp_Assault","team":"Opp","variant":"assault","fbx":"PM_Opp_Assault.fbx"},
+    {"name":"PM_Opp_Recon","team":"Opp","variant":"recon","fbx":"PM_Opp_Recon.fbx"}
+  ],
+  "required_bones": ["root","pelvis","spine_01","spine_02","spine_03","head","upperarm_l","lowerarm_l","hand_l","upperarm_r","lowerarm_r","hand_r","thigh_l","calf_l","foot_l","thigh_r","calf_r","foot_r"]
+}

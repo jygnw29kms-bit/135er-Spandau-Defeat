@@ -26,3 +26,5 @@ tools/blender_pipeline/builds/rathaus_spandau/SpandauStrike_Rathaus_WORLD_MASTER
 ue5/SpandauStrike/SourceArt/Rathaus/v50/RathausSpandau_BUILDING_v50.fbx filter=lfs diff=lfs merge=lfs -text
 tools/blender_pipeline/builds/rathaus_spandau/SpandauStrike_Rathaus_WORLD_MASTER_v51_PEDIMENT_READABILITY.blend filter=lfs diff=lfs merge=lfs -text
 ue5/SpandauStrike/SourceArt/Rathaus/v51/RathausSpandau_BUILDING_v51.fbx filter=lfs diff=lfs merge=lfs -text
+ue5/SpandauStrike/SourceArt/Characters/2030/*.blend filter=lfs diff=lfs merge=lfs -text
+ue5/SpandauStrike/SourceArt/Characters/2030/*.fbx filter=lfs diff=lfs merge=lfs -text
