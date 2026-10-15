@@ -1,101 +1,108 @@
 # Current Status - UE5 only
 
-Updated: **2026-10-14**
+Updated: **2026-10-15**
 
-**135er Spandau Strike uses Unreal Engine 5 / Lyra as its sole engine target.**
+**135er Spandau Strike uses Unreal Engine 5.8 / Lyra as its sole engine target.**
 
 ## Rathaus Spandau - active production focus
 
-The Rathaus map is being reset onto the recovered large Blender world master rather than continuing the broken isolated UE test chain.
+The recovered large Blender world master remains the authoritative spatial source. Unreal receives controlled runtime handoffs and playable map revisions; the old isolated GIS/test chain is reference-only.
 
-Authoritative spatial inputs:
-- Berlin3D / LoD2 reference data
-- Berlin DGM1 elevation data
-- aerial/reference imagery
-- OSM/verified road and environment data
-- manually rebuilt landmark geometry
+Authoritative spatial inputs include Berlin3D / LoD2, Berlin DGM1, aerial/reference imagery, verified OSM/road data and manually rebuilt landmark geometry.
 
-## Recovered full-map baseline
+## Current Blender production master
 
-`SpandauStrike_Rathaus_FULLMAP_v13_UE5_READY.blend` was recovered and audited.
+Current authoritative master:
 
-Verified baseline:
-- approximately **1.855 km x 4.201 km** scene extent
-- approximately **110.2 m** vertical range
-- **10,118** total objects
-- **10,100** mesh objects
-- **364,197** vertices
-- **463,378** polygons
-- gameplay, collision, environment, urban-detail, street/tram and rebuilt-architecture collections already exist
+`tools/blender_pipeline/builds/rathaus_spandau/SpandauStrike_Rathaus_WORLD_MASTER_v47_CROWN_GUARDRAILS.blend`
 
-This is materially more complete than the later isolated Rathaus/GIS UE test levels.
+v47 is an additive architectural refinement of the validated Rathaus tower crown. It adds the low metal guardrail visible in the real Rathaus reference imagery while preserving the previous world and gameplay transforms.
+
+Verified v47 full-master metrics:
+- **10,792** total objects
+- **10,753** mesh objects
+- **720,101** vertices
+- **1,085,881** polygons
+- **155** materials
+- world bounds unchanged from v46
+- gameplay core unchanged from v46
+
+Tracked QA / handoff files:
+- `SpandauStrike_Rathaus_WORLD_MASTER_v47_CROWN_GUARDRAILS_AUDIT.json`
+- `SpandauStrike_Rathaus_WORLD_MASTER_v47_CROWN_GUARDRAILS_EXPORT_MANIFEST.json`
+- `SpandauStrike_Rathaus_WORLD_MASTER_v47_CROWN_GUARDRAILS_REPORT.json`
+- `ue5/SpandauStrike/Design/RathausSpandau/runtime_gameplay_handoff_v47.json`
+
+## Current gameplay contract
+
+The current runtime gameplay handoff contains:
+- **5 objectives**
+- **8 team spawn anchors**
+- **67 cover objects**
+- 3 primary lanes
+- 3 crosslinks
+- 4 choke groups
+- 3 power-position groups
+- Rathaus objective requires 2 simultaneous players
+- back-capping disabled
+
+All current gameplay tags use the `SpandauStrike.*` namespace.
+
+## Current UE5 playable baseline
+
+Current validated playable map:
+
+`/Game/SpandauStrike/Maps/Rathaus/LV_RathausSpandau_REAL_v65_PLAYABLE`
+
+v65 was created from v64 specifically to replace the two temporary generic PlayerStarts with the **8 LyraPlayerStart locations from the v47 runtime handoff**.
+
+Runtime validation on the Lucas workstation (UE 5.8.3):
+- map loads successfully in Development runtime
+- world reaches play state successfully
+- 8/8 LyraPlayerStarts are present
+- previous `B_AI_Controller_LyraShooter` / `Accessed None` pawn errors no longer occur
+- 45-second unattended runtime test completed without fatal errors or spawn failures
+- only engine-start automation-test diagnostics remain; these are not the previous Rathaus AI failure path
+
+Git checkpoint:
+
+`b118ae3 Add Rathaus playable v65 with runtime spawn layout`
+
+## UE workstation prerequisites recovered
+
+The Lucas workstation now has the required local UE 5.8 / Lyra runtime prerequisites restored:
+- UE 5.8 installed on C:
+- Visual C++ build tools / Windows SDK / .NET Framework SDK available
+- Lyra project plugins restored locally
+- Lyra base content restored locally, including `DefaultGameData.uasset`
+- LyraGame / LyraEditor and project plugin binaries compile successfully
+
+These large Epic/Lyra base assets are local prerequisites and are intentionally not included in the Spandau project commit created for v65.
 
 ## Rejected as production baseline
 
-The following chain remains available as reference/test data but is not the production world master:
+The following remain reference/test data only:
 - `REAL_v70` Berlin3D Rathaus mesh
 - `LV_RathausSpandau_VISUAL_v77_TEST`
 - DOP/DGM v82/v83 test levels
 - former `LV_RathausSpandau_REAL_FINAL`
 
-The v83 DGM test surface is only about **358 m x 358 m** and was intentionally built as a local Rathaus test crop. It must not be confused with the full production map.
+The v83 DGM surface is only a local Rathaus crop and must not be confused with the full production world.
 
 ## Current master workflow
 
-1. Blender world master is the authoritative map/model source.
-2. Terrain, roads, buildings, Rathaus, props and gameplay planning stay spatially coherent in Blender.
-3. Objects receive semantic roles such as spawn, objective, cover, nav, collision, terrain, road and landmark.
-4. Obsolete blockout/reference layers are retained for traceability but excluded from production export.
-5. Unreal Engine receives controlled modular export packages.
-6. UE5 handles gameplay systems, lighting, final runtime materials, navigation, AI, Nanite/LOD policy, effects and runtime optimization.
-
-Current tracked files:
-- `tools/blender_pipeline/builds/rathaus_spandau/SpandauStrike_Rathaus_WORLD_MASTER_v32_TOWER_ACCURACY.blend` - current production world master
-- `tools/blender_pipeline/builds/rathaus_spandau/SpandauStrike_Rathaus_WORLD_MASTER_v32_TOWER_ACCURACY_AUDIT.json`
-- `tools/blender_pipeline/builds/rathaus_spandau/SpandauStrike_Rathaus_WORLD_MASTER_v32_TOWER_ACCURACY_EXPORT_MANIFEST.json`
-- `docs/RATHAUS_WORLD_MASTER.md`
-
-Intermediate v24-v31 Blender builds are archived locally outside Git under `Documents/SpandauStrike/local_repo_archive_2026-10-14/worldmaster_v24-v31_diagnostics/`.
-
-## v32 verified production cleanup and rebuild
-
-- legacy Rathaus detail generations are preserved as reference but excluded from production export
-- 3,955 obsolete/overlapping Rathaus-detail objects were retired from export in the production-clean pass
-- clean architecture layers now use the verified 47.5-degree geoframe
-- the front facade uses a new instanced 5 m horizontal / 4.2 m vertical window rhythm
-- 76 facade window instances share one window mesh
-- central risalit uses five window axes and a broad round pediment matching Rathaus Spandau reference proportions
-- tower now has four clock faces, four levels of small shaft windows, corner articulation, an open upper stage and a low green copper roof
-- old `P_CopperCap*` geometry is reference-only
-- QA renderer explicitly excludes collision/nav/gameplay helper meshes, avoiding false visual blockers
-
-## v32 technical QA
-
-- 10,538 total scene objects / 10,502 mesh objects
-- 657,077 vertices / 1,028,835 polygons across the full master scene
-- 2,997 meshes currently marked for production export
-- full world bounds remain approximately 1.855 km x 4.201 km
-- road mesh: 15,381 sampled vertices inside DGM; median road offset +0.03 m; zero points above 0.05 m mismatch
-- building grounding: maximum terrain error below 0.000001 m for in-terrain samples
-- zero missing material assignments in the world audit
-
-## Gameplay metadata already present
-
-Recovered data already contains:
-- 12 spawn markers
-- Objective A/B
-- cover objects/markers
-- nav blockers
-- terrain and roads
-- Rathaus collision
-- surrounding-building collision
-- water, vegetation and street/tram detail layers
+1. Blender world master is the authoritative geometry/spatial source.
+2. Terrain, roads, buildings, Rathaus and gameplay planning remain spatially coherent there.
+3. Obsolete/reference layers stay traceable but are excluded from production export.
+4. UE5 receives controlled modular handoffs.
+5. UE5 owns runtime gameplay, lighting, materials, navigation, AI, Nanite/LOD, effects and optimization.
+6. Runtime changes are validated in a new playable revision before any map is promoted as FINAL.
 
 ## Immediate production priority
 
-- continue Rathaus facade sculpt/detail pass: stone reliefs, portal, pediment crest/inscription zone and side elevations
-- complete tower architectural detailing while preserving the verified v32 silhouette
-- classify routes, choke points, cover heights and playable interiors in the Blender world master
-- keep terrain/roads/buildings aligned to verified spatial data
-- produce a tagged modular UE5 handoff only after the Blender landmark and immediate Rathaus environment pass are visually approved
-- only then designate a new Rathaus UE level as FINAL
+- continue reference-driven Rathaus facade/window/material QA without speculative geometry changes
+- carry validated v47 architectural improvements into the next UE handoff
+- keep v65 as the known-good playable/runtime baseline while testing later revisions
+- preserve the 5 objectives / 8 spawns / 67 cover gameplay contract
+- compare editor and runtime presentation for material, lighting, LOD/Nanite and streaming differences
+- promote a new FINAL level only after editor and runtime views match the validated Rathaus reference closely enough
