@@ -52,9 +52,9 @@ All current gameplay tags use the `SpandauStrike.*` namespace.
 
 Current architecture/runtime validation map:
 
-`/Game/SpandauStrike/Maps/Rathaus/LV_RathausSpandau_REAL_v71_PEDIMENT_QA`
+`/Game/SpandauStrike/Maps/Rathaus/LV_RathausSpandau_REAL_v72_FIRST_PLAY`
 
-v65 remains the known-good spawn/runtime fallback. v67 is the validated lighting checkpoint, v68 the v49 geometry checkpoint, v69 the reference-facing material checkpoint, v70 the v50 clock-scale checkpoint, and v71 carries the v51 pediment-readability correction while preserving all validated lighting/material/runtime setup.
+v65 remains the known-good spawn/runtime fallback. v67 is the validated lighting checkpoint, v68 the v49 geometry checkpoint, v69 the reference-facing material checkpoint, v70 the v50 clock-scale checkpoint, v71 carries the v51 pediment-readability correction, and v72 is the first-play checkpoint with Lyra Shooter Elimination plus dedicated spawn-ground safety pads.
 
 v65 was created from v64 specifically to replace the two temporary generic PlayerStarts with the **8 LyraPlayerStart locations from the v47 runtime handoff** (v65 remains the known-good playable checkpoint; v48 gameplay transforms are machine-verified identical).
 
@@ -176,6 +176,23 @@ Reproducible sources/scripts:
 - `ue5/SpandauStrike/Content/Python/apply_rathaus_v51_reference_materials.py`
 - `ue5/SpandauStrike/Content/Python/build_rathaus_v71_pediment_qa.py`
 - `ue5/SpandauStrike/Content/Python/qa_v71_front_screenshot.py`
+### v72 first-play checkpoint
+
+v72 duplicates v71 without changing Rathaus architecture, lighting, materials, objectives, cover, roads or DGM/DOP. It is the first dedicated Lyra gameplay-start revision and is launched with `B_ShooterGame_Elimination`.
+
+Spawn safety is explicit: each of the 8 LyraPlayerStarts has a hidden 6 x 6 m, 20 cm thick `BlockAll` safety pad centered on the same XY location. The pad center is 100 cm below the PlayerStart origin, putting its top surface about 90 cm below the spawn origin for the Lyra character capsule. This prevents a first-play pawn from falling through even where current terrain/DGM collision is incomplete.
+
+Lucas UE 5.8.3 validation:
+- 8/8 PlayerStarts and 8/8 spawn safety pads validated
+- all pads have identical spawn XY, `BlockAll`, scale `6,6,0.2`, and `StartZ - PadZ = 100 cm`
+- `B_ShooterGame_Elimination` is identified and reaches `OnExperienceLoadComplete`
+- 45-second Development runtime reaches play state
+- no `FellOutOfWorld`, KillZ, world-bounds, failed-spawn, `Accessed None` or fatal pawn/controller error found
+
+Reproducible scripts:
+- `ue5/SpandauStrike/Content/Python/build_rathaus_v72_first_play.py`
+- `ue5/SpandauStrike/Content/Python/validate_rathaus_v72_spawn_safety.py`
+- `tools/ue5/launch_rathaus_v72_first_play.ps1`
 ## UE workstation prerequisites recovered
 
 The Lucas workstation now has the required local UE 5.8 / Lyra runtime prerequisites restored:
@@ -209,8 +226,8 @@ The v83 DGM surface is only a local Rathaus crop and must not be confused with t
 ## Immediate production priority
 
 - continue reference-driven Rathaus facade/window/material QA without speculative geometry changes
-- continue reference-driven Rathaus architecture/material QA from the validated v51 / UE v71 baseline
-- keep v65 as the known-good spawn/runtime fallback; v67 remains the lighting checkpoint, v69 the material fallback, v70 the clock-scale checkpoint, and v71 is the current visual/runtime validation map
+- continue reference-driven Rathaus architecture/material QA from the validated v51 geometry while preserving UE v72 as the first-play baseline
+- keep v65 as the known-good spawn/runtime fallback; v67 remains the lighting checkpoint, v69 the material fallback, v70 the clock-scale checkpoint, and v72 is the current first-play validation map
 - preserve the 5 objectives / 8 spawns / 67 cover gameplay contract
 - compare editor and runtime presentation for material, lighting, LOD/Nanite and streaming differences
 - promote a new FINAL level only after editor and runtime views match the validated Rathaus reference closely enough
