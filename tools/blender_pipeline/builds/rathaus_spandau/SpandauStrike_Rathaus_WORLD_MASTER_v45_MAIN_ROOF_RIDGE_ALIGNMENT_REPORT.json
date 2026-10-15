@@ -1,0 +1,57 @@
+{
+  "schema": "SpandauStrike.WorldMasterV45MainRoofRidgeAlignment.v1",
+  "source_master": "SpandauStrike_Rathaus_WORLD_MASTER_v44_CROWN_OPENING_DEPTH.blend",
+  "source_master_version": "v44_CROWN_OPENING_DEPTH",
+  "output_master": "SpandauStrike_Rathaus_WORLD_MASTER_v45_MAIN_ROOF_RIDGE_ALIGNMENT.blend",
+  "output_master_version": "v45_MAIN_ROOF_RIDGE_ALIGNMENT",
+  "object": "SM_MainRoof",
+  "topology": {
+    "vertices": 10,
+    "polygons": 9
+  },
+  "footprint_m": {
+    "long_edge": 112.0,
+    "short_edge": 54.00000113028066
+  },
+  "old_ridge_local_m": [
+    [
+      19.9064884185791,
+      -18.240936279296875,
+      29.5
+    ],
+    [
+      -19.9064884185791,
+      18.240936279296875,
+      29.5
+    ]
+  ],
+  "new_ridge_local_m": [
+    [
+      -37.83305358886719,
+      -41.28752899169922,
+      29.5
+    ],
+    [
+      37.83305358886719,
+      41.28752899169922,
+      29.5
+    ]
+  ],
+  "new_ridge_world_m": [
+    [
+      -37.83305358886719,
+      -41.28752899169922,
+      29.5
+    ],
+    [
+      37.83305358886719,
+      41.28752899169922,
+      29.5
+    ]
+  ],
+  "ridge_length_before_m": 54.00000113028066,
+  "ridge_length_after_m": 112.0,
+  "old_ridge_vs_long_axis_deg": 90.00000250447816,
+  "new_ridge_vs_long_axis_deg": 0.0,
+  "policy": "Two-vertex geometry correction only. No topology, materials, facade, tower, gameplay or collision changes."
+}

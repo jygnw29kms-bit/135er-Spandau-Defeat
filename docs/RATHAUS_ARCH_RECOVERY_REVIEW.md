@@ -2,9 +2,9 @@
 
 ## Current decision
 
-`SpandauStrike_Rathaus_WORLD_MASTER_v44_CROWN_OPENING_DEPTH.blend` is the current production world master. The recovered `RathausSpandau_REAL_Integrated_Master_v4.blend` remains reference/recovery material only and must not be wholesale-merged.
+`SpandauStrike_Rathaus_WORLD_MASTER_v45_MAIN_ROOF_RIDGE_ALIGNMENT.blend` is the current production world master. The recovered `RathausSpandau_REAL_Integrated_Master_v4.blend` remains reference/recovery material only and must not be wholesale-merged.
 
-The original audit already showed that the production chain contains substantially richer Rathaus geometry than v4. The later v42-v44 inspection confirmed that several elements initially suspected to be missing were already present in newer `V37_*` / `SM_MASTER_*` geometry.
+The original audit showed that the production chain contains substantially richer Rathaus geometry than v4. The later v42-v45 inspection confirmed that several elements initially suspected to be missing were already present in newer `V37_*` / `SM_MASTER_*` geometry.
 
 ## What was actually recovered from v4
 
@@ -29,18 +29,24 @@ The following v4 elements are no longer merge candidates:
 
 Visual review showed that the four existing `V37_CrownOpening*` objects were only 0.16 m thick and sat flush in the lantern openings. This made the open lantern read like four flat dark panels.
 
-v44 therefore performs a transform-only refinement: the four shadow/backplates are recessed 1.35 m toward the tower center. No mesh topology, materials, stone piers, copper roof, clock geometry, collision or gameplay objects are changed.
+v44 therefore recessed the four shadow/backplates 1.35 m toward the tower center. No mesh topology, materials, stone piers, copper roof, clock geometry, collision or gameplay objects changed.
 
-The v43 and v44 topology is identical:
+## v45 main-roof ridge correction
+
+Reference-driven front-elevation review against the current Rathaus photograph exposed a separate silhouette error in `SM_MainRoof`: its footprint is approximately 112 x 54 m, but the two existing ridge vertices ran along the 54 m transverse axis. This made the roof rise as a large triangular wedge toward the tower when viewed from the main facade.
+
+v45 moves only those two existing ridge vertices to the midpoints of the short roof-end edges, aligning the ridge with the 112 m longitudinal/facade axis. The ridge height remains 29.5 m. No vertices or polygons are added or removed, and no facade, tower, material, collision or gameplay objects are changed.
+
+The v44 and v45 topology remains identical:
 
 - 10,788 total objects
 - 10,749 mesh objects
 - 719,877 vertices
 - 1,085,713 polygons
-- identical world bounds and material count
+- identical world bounds, material count and gameplay-role counts
 
-The result was visually reviewed in Blender and validated by the real UE5.8 project dry-run with 5 objectives / 8 spawns / 67 cover objects and no map-actor modifications.
+The v45 handoff remains 5 objectives / 8 spawns / 67 cover objects; objective, spawn and cover transforms are identical to v44.
 
 ## Remaining Rathaus review work
 
-The central gable and facade silhouette still need reference-driven visual review, but no additional v4 geometry should be merged merely because its object name appears unique. New recovery/import work requires a proven spatial match and must preserve the current gameplay/runtime invariants.
+The central facade now has a correctly oriented main-roof silhouette. Further work should focus on reference-driven proportion/material/fenestration QA and later UE5 presentation quality rather than importing old v4 geometry merely because object names differ. Any new recovery or architecture change requires a proven spatial/reference match and must preserve the current gameplay/runtime invariants.

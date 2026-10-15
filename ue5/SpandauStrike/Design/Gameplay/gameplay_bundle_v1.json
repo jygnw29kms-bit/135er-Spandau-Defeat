@@ -3,8 +3,8 @@
   "bundle_version": 1,
   "status": "production_baseline_pending_local_ue_validation",
   "world_master": {
-    "version": "v44_CROWN_OPENING_DEPTH",
-    "manifest": "tools/blender_pipeline/builds/rathaus_spandau/SpandauStrike_Rathaus_WORLD_MASTER_v44_CROWN_OPENING_DEPTH_EXPORT_MANIFEST.json"
+    "version": "v45_MAIN_ROOF_RIDGE_ALIGNMENT",
+    "manifest": "tools/blender_pipeline/builds/rathaus_spandau/SpandauStrike_Rathaus_WORLD_MASTER_v45_MAIN_ROOF_RIDGE_ALIGNMENT_EXPORT_MANIFEST.json"
   },
   "gameplay_sources": {
     "tags": "tools/gameplay/spandau_strike_gameplay_tags.json",
