@@ -12,6 +12,9 @@
 #include "EngineUtils.h"
 #include "LyraGameplayTags.h"
 #include "GameFramework/Pawn.h"
+#include "GameFramework/Character.h"
+#include "Equipment/LyraQuickBarComponent.h"
+#include "GameplayTagContainer.h"
 #include "Net/UnrealNetwork.h"
 #include "Engine/GameInstance.h"
 #include "AbilitySystemGlobals.h"
@@ -31,6 +34,31 @@
 
 #include UE_INLINE_GENERATED_CPP_BY_NAME(LyraPlayerController)
 
+namespace SpandauGameplayAudit
+{
+	struct FState
+	{
+		bool bInitialized = false;
+		bool bEquipmentLogged = false;
+		bool bMoveStarted = false;
+		bool bMoveFinished = false;
+		bool bJumpStarted = false;
+		bool bJumpFinished = false;
+		bool bFireDispatched = false;
+		bool bCompleted = false;
+		double StartTime = 0.0;
+		FVector MoveStart = FVector::ZeroVector;
+		float JumpStartZ = 0.0f;
+		float JumpMaxZ = 0.0f;
+	};
+
+	static TMap<TWeakObjectPtr<ALyraPlayerController>, FState> States;
+
+	static bool IsEnabled()
+	{
+		return FParse::Param(FCommandLine::Get(), TEXT("SpandauGameplayAudit"));
+	}
+}
 namespace Lyra
 {
 	namespace Input
@@ -100,6 +128,97 @@ void ALyraPlayerController::ReceivedPlayer()
 void ALyraPlayerController::PlayerTick(float DeltaTime)
 {
 	Super::PlayerTick(DeltaTime);
+
+	if (SpandauGameplayAudit::IsEnabled() && IsLocalPlayerController())
+	{
+		APawn* AuditPawn = GetPawn();
+		if (AuditPawn != nullptr)
+		{
+			SpandauGameplayAudit::FState& Audit = SpandauGameplayAudit::States.FindOrAdd(this);
+			const double Now = FPlatformTime::Seconds();
+			if (!Audit.bInitialized)
+			{
+				Audit.bInitialized = true;
+				Audit.StartTime = Now;
+				UE_LOG(LogLyra, Display, TEXT("SPANDAU_AUDIT READY controller=%s pawn=%s class=%s location=%s"), *GetNameSafe(this), *GetNameSafe(AuditPawn), *GetNameSafe(AuditPawn->GetClass()), *AuditPawn->GetActorLocation().ToCompactString());
+			}
+
+			const double Elapsed = Now - Audit.StartTime;
+			if (!Audit.bEquipmentLogged && Elapsed >= 1.0)
+			{
+				ULyraQuickBarComponent* QuickBar = FindComponentByClass<ULyraQuickBarComponent>();
+				const int32 SlotCount = QuickBar ? QuickBar->GetSlots().Num() : 0;
+				const int32 ActiveSlot = QuickBar ? QuickBar->GetActiveSlotIndex() : INDEX_NONE;
+				UObject* ActiveItem = QuickBar ? QuickBar->GetActiveSlotItem() : nullptr;
+				ULyraAbilitySystemComponent* ASC = GetLyraAbilitySystemComponent();
+				UE_LOG(LogLyra, Display, TEXT("SPANDAU_AUDIT EQUIPMENT quickbar=%s slots=%d active_slot=%d active_item=%s asc=%s"), QuickBar ? TEXT("true") : TEXT("false"), SlotCount, ActiveSlot, *GetNameSafe(ActiveItem), *GetNameSafe(ASC));
+				Audit.bEquipmentLogged = true;
+			}
+
+			if (!Audit.bMoveStarted && Elapsed >= 1.25)
+			{
+				Audit.MoveStart = AuditPawn->GetActorLocation();
+				SetIsAutoRunning(true);
+				Audit.bMoveStarted = true;
+				UE_LOG(LogLyra, Display, TEXT("SPANDAU_AUDIT MOVE_START location=%s"), *Audit.MoveStart.ToCompactString());
+			}
+			if (Audit.bMoveStarted && !Audit.bMoveFinished && Elapsed >= 2.25)
+			{
+				SetIsAutoRunning(false);
+				const FVector End = AuditPawn->GetActorLocation();
+				const float Distance2D = FVector::Dist2D(Audit.MoveStart, End);
+				UE_LOG(LogLyra, Display, TEXT("SPANDAU_AUDIT MOVEMENT distance2d_cm=%.2f start=%s end=%s passed=%s"), Distance2D, *Audit.MoveStart.ToCompactString(), *End.ToCompactString(), Distance2D >= 25.0f ? TEXT("true") : TEXT("false"));
+				Audit.bMoveFinished = true;
+			}
+
+			if (Audit.bMoveFinished && !Audit.bJumpStarted && Elapsed >= 2.50)
+			{
+				if (ACharacter* AuditCharacter = Cast<ACharacter>(AuditPawn))
+				{
+					Audit.JumpStartZ = AuditCharacter->GetActorLocation().Z;
+					Audit.JumpMaxZ = Audit.JumpStartZ;
+					AuditCharacter->Jump();
+					Audit.bJumpStarted = true;
+					UE_LOG(LogLyra, Display, TEXT("SPANDAU_AUDIT JUMP_START z=%.2f"), Audit.JumpStartZ);
+				}
+			}
+			if (Audit.bJumpStarted && !Audit.bJumpFinished)
+			{
+				Audit.JumpMaxZ = FMath::Max(Audit.JumpMaxZ, AuditPawn->GetActorLocation().Z);
+				if (Elapsed >= 3.25)
+				{
+					if (ACharacter* AuditCharacter = Cast<ACharacter>(AuditPawn)) { AuditCharacter->StopJumping(); }
+					const float JumpDelta = Audit.JumpMaxZ - Audit.JumpStartZ;
+					UE_LOG(LogLyra, Display, TEXT("SPANDAU_AUDIT JUMP delta_z_cm=%.2f max_z=%.2f passed=%s"), JumpDelta, Audit.JumpMaxZ, JumpDelta >= 5.0f ? TEXT("true") : TEXT("false"));
+					Audit.bJumpFinished = true;
+				}
+			}
+
+			if (Audit.bJumpFinished && !Audit.bFireDispatched && Elapsed >= 3.50)
+			{
+				ULyraAbilitySystemComponent* ASC = GetLyraAbilitySystemComponent();
+				const FGameplayTag FireTag = FGameplayTag::RequestGameplayTag(FName(TEXT("InputTag.Weapon.Fire")), false);
+				int32 BindingCount = 0;
+				if (ASC && FireTag.IsValid())
+				{
+					for (const FGameplayAbilitySpec& Spec : ASC->GetActivatableAbilities())
+					{
+						if (Spec.Ability && Spec.GetDynamicSpecSourceTags().HasTagExact(FireTag)) { ++BindingCount; }
+					}
+					ASC->AbilityInputTagPressed(FireTag);
+					ASC->ProcessAbilityInput(DeltaTime, false);
+					ASC->AbilityInputTagReleased(FireTag);
+				}
+				UE_LOG(LogLyra, Display, TEXT("SPANDAU_AUDIT FIRE_INPUT tag_valid=%s binding_count=%d dispatched=%s"), FireTag.IsValid() ? TEXT("true") : TEXT("false"), BindingCount, (ASC && FireTag.IsValid() && BindingCount > 0) ? TEXT("true") : TEXT("false"));
+				Audit.bFireDispatched = true;
+			}
+			if (Audit.bFireDispatched && !Audit.bCompleted && Elapsed >= 3.75)
+			{
+				UE_LOG(LogLyra, Display, TEXT("SPANDAU_AUDIT COMPLETE"));
+				Audit.bCompleted = true;
+			}
+		}
+	}
 
 	// If we are auto running then add some player input
 	if (GetIsAutoRunning())
@@ -390,6 +509,12 @@ void ALyraPlayerController::OnCameraPenetratingTarget()
 void ALyraPlayerController::OnPossess(APawn* InPawn)
 {
 	Super::OnPossess(InPawn);
+
+	if (SpandauGameplayAudit::IsEnabled())
+	{
+		SpandauGameplayAudit::States.Remove(this);
+		UE_LOG(LogLyra, Display, TEXT("SPANDAU_AUDIT POSSESSION controller=%s pawn=%s class=%s"), *GetNameSafe(this), *GetNameSafe(InPawn), *GetNameSafe(InPawn ? InPawn->GetClass() : nullptr));
+	}
 
 #if WITH_SERVER_CODE && WITH_EDITOR
 	if (GIsEditor && (InPawn != nullptr) && (GetPawn() == InPawn))

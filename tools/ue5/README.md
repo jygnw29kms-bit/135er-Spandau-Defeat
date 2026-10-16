@@ -21,3 +21,11 @@ Use `run_rathaus_v72_first_play_check.cmd -RuntimeSeconds 60` for a longer gate.
 ## Interactive first play
 
 `launch_rathaus_v72_first_play.ps1` remains the interactive launcher. On machines with restrictive PowerShell execution policy, invoke it through `powershell.exe -NoProfile -ExecutionPolicy Bypass -File ...`; do not change the system policy globally.
+
+## Automated v72 gameplay audit
+
+Run `run_rathaus_v72_gameplay_audit.cmd` from `tools/ue5`.
+
+This stricter gate is separate from the stable first-play gate. It launches v72 with `-SpandauGameplayAudit` and verifies actual local-player readiness: possession, quickbar/equipment state, measured forward movement, measured jump height, and dispatch of `InputTag.Weapon.Fire` against a real bound ability spec. It also rejects the same fatal/fall-through patterns and closes only the UE process it started.
+
+Report: `ue5/SpandauStrike/Saved/Reports/v72_gameplay_audit.json`.

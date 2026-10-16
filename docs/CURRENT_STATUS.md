@@ -247,3 +247,22 @@ The v83 DGM surface is only a local Rathaus crop and must not be confused with t
 - preserve the 5 objectives / 8 spawns / 67 cover gameplay contract
 - compare editor and runtime presentation for material, lighting, LOD/Nanite and streaming differences
 - promote a new FINAL level only after editor and runtime views match the validated Rathaus reference closely enough
+
+## v72 gameplay readiness audit (2026-10-16)
+
+A second, stricter runtime gate now runs independently of the stable v72 first-play lifecycle gate. It is enabled only with `-SpandauGameplayAudit`; normal gameplay code paths are unchanged when the flag is absent.
+
+First Lucas run passed completely:
+- possessed pawn: `B_Hero_ShooterMannequin_C_0`
+- quickbar present: 3 slots, active slot 0, active inventory item present
+- movement proof: 103.59 cm horizontal displacement during controlled autorun; passed
+- jump proof: +127.55 cm measured vertical rise; passed
+- fire input: `InputTag.Weapon.Fire` valid, 1 bound ability spec, input dispatched; passed
+- no `FellOutOfWorld`, KillZ, world-bounds, failed spawn, Accessed None, fatal error or unhandled exception
+- UE process closed automatically after audit
+
+Files:
+- `Source/LyraGame/Player/LyraPlayerController.cpp` command-line-gated runtime instrumentation
+- `tools/ue5/run_rathaus_v72_gameplay_audit.ps1`
+- `tools/ue5/run_rathaus_v72_gameplay_audit.cmd`
+- local report `Saved/Reports/v72_gameplay_audit.json`
