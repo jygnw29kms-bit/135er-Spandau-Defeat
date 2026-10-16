@@ -78,10 +78,20 @@ a{color:inherit}
 .subBody table{width:100%;border-collapse:collapse;background:#10120e}.subBody th,.subBody td{border:1px solid #4c493c;padding:9px}.subBody th{background:#24251e;color:#e7dfc7;text-transform:uppercase}
 .subFooter{position:relative;width:100%;aspect-ratio:941/126;overflow:hidden;background:#090a08}
 .subFooter>img{position:absolute;left:0;bottom:0;width:100%;height:auto;display:block}
+.currentRathaus{width:min(941px,100%);margin:0 auto 28px;padding:18px 19px 20px;background:#10120e;border-top:1px solid #625d49;border-bottom:1px solid #625d49;font-family:Arial,sans-serif;line-height:1.35}
+.currentRathausHead{display:flex;align-items:end;justify-content:space-between;gap:16px;margin:0 0 13px;padding-bottom:9px;border-bottom:1px solid #4d493a}
+.currentRathausHead h2{margin:0;color:#eee8d7;font:900 25px/1 Impact,"Arial Black",sans-serif;letter-spacing:.025em;text-transform:uppercase}
+.currentRathausHead p{margin:0;color:#cdbb35;font:900 10px/1.2 "Arial Narrow",Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;text-align:right}
+.currentRathausGrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.currentRathaus figure{margin:0;background:#090a08;border:1px solid #555142;box-shadow:inset 0 0 0 1px #1c1e18}
+.currentRathaus img{display:block;width:100%;height:auto;background:#090a08}
+.currentRathaus figcaption{padding:10px 11px 11px;color:#c9c3ae;font:12px/1.35 Arial,sans-serif;border-top:1px solid #3d3a30}
+.currentRathaus figcaption strong{display:block;margin-bottom:3px;color:#e2c529;font:900 11px/1 "Arial Narrow",Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase}
 @media(max-width:560px){
  .masterPage{width:100vw}
  .hotspot{min-height:10px}
  .subBody{margin:0 8px 10px;padding:16px}.subTitleBar{margin:-16px -16px 16px;padding:11px 12px}.subTitleBar h1{font-size:23px}
+ .currentRathaus{padding:14px 10px 16px}.currentRathausHead{display:block}.currentRathausHead p{margin-top:6px;text-align:left}.currentRathausGrid{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -165,6 +175,22 @@ a{color:inherit}
   <h2>Fraktionen</h2><p>CT Deutschland, T USA.</p>
  </div>
 </main>
+<section class="currentRathaus" aria-labelledby="rathaus-current-title">
+ <div class="currentRathausHead">
+  <h2 id="rathaus-current-title">Rathaus Spandau // aktueller Stand</h2>
+  <p>16.10.2026 // Produktion</p>
+ </div>
+ <div class="currentRathausGrid">
+  <figure>
+   <img src="https://raw.githubusercontent.com/jygnw29kms-bit/135er-Spandau-Defeat/main/media/maps/rathaus-blender-current-front.png" alt="Aktueller Blender-Produktionsstand des Rathaus Spandau mit gut sichtbarer Frontfassade und Rathausturm" loading="lazy">
+   <figcaption><strong>Blender // WORLD_MASTER v51</strong>Aktueller Modellierungsstand mit Frontfassade, Rathausturm und Umfeld-Geometrie.</figcaption>
+  </figure>
+  <figure>
+   <img src="https://raw.githubusercontent.com/jygnw29kms-bit/135er-Spandau-Defeat/main/media/maps/rathaus-ue5-current-front.png" alt="Aktueller Unreal Engine 5 Stand des Rathaus Spandau mit deutlich sichtbarer Frontfassade und Rathausturm" loading="lazy">
+   <figcaption><strong>Unreal Engine 5.8 // FIRST_PLAY v72</strong>Aktueller In-Editor-Stand. Fassadenstruktur und Turm sind bewusst groß im Bild gerahmt; First-Play-Elemente sind im Level bereits enthalten.</figcaption>
+  </figure>
+ </div>
+</section>
 </f:then><f:else>
 <div class="subWrap">
  <header class="subHeader" aria-label="135er Spandau Strike Navigation">
