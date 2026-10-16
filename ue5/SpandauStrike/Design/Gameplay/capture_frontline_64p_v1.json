@@ -1,0 +1,46 @@
+{
+  "schema": "SpandauStrike.CaptureFrontline64P.v1",
+  "status": "authoritative_design_baseline",
+  "mode": "CaptureFrontline",
+  "max_players": 64,
+  "team_size": 32,
+  "squads_enabled": false,
+  "front": {
+    "type": "sector_by_sector",
+    "only_current_sector_active": true,
+    "backcap_allowed": false,
+    "sector_count_target": [4, 5],
+    "capture_points_per_sector_default": 2,
+    "capture_points_required_to_advance": "all",
+    "transition_delay_s": 20.0,
+    "previous_sector_locks_after_advance": true,
+    "spawn_lines_move_with_front": true
+  },
+  "capture": {
+    "single_attacker_capture_s": 45.0,
+    "extra_attackers_speedup": true,
+    "speedup_cap_players": 4,
+    "contested_behavior": "pause",
+    "attacker_absent_behavior": "hold_then_decay",
+    "decay_delay_s": 3.0,
+    "overtime_if_contested_or_active_capture": true
+  },
+  "tickets": {
+    "attacker_start": 300,
+    "respawn_cost": 1,
+    "sector_capture_refund": 50,
+    "defender_respawns": "unlimited",
+    "attacker_loses_at_zero": true,
+    "defender_loses_on_final_sector_capture": true
+  },
+  "map_design": {
+    "minimum_attack_routes_per_sector": 2,
+    "additional_risky_flank_required": true,
+    "spawn_to_front_direct_los_forbidden": true,
+    "landmarks_used_for_navigation_and_callouts": true,
+    "reality_is_layout_basis_not_constraint": true,
+    "preserve": ["terrain_identity", "major_landmarks", "major_street_axes", "water_and_forest_edges"],
+    "gameplay_flexible": ["minor_routes", "courtyards", "interiors", "cover", "fences", "secondary_buildings", "access_points"]
+  },
+  "target_match_duration_min": [25, 40]
+}

@@ -20,3 +20,7 @@ The project separates **documented history** from **gameplay fiction**. A real h
 Historical maps use period-appropriate architecture, signage, road surfaces, vehicles, lighting fixtures, uniforms and props. Totalitarian symbols, where legally permitted and historically necessary, are contextual historical material only and are never celebratory or propagandistic.
 
 The final production target is photorealistic Unreal Engine 5.8 environment art using original/licensed assets, documented reference material, Nanite/PBR materials, Lumen, Virtual Shadow Maps, World Partition/HLOD and authored collision. The current generated grayboxes are gameplay scaffolding only.
+
+## Design freedom rule
+Historical terrain, major landmarks, major street axes and visually defining structures remain recognizable. Historical photographs, aerial imagery and maps are the reference basis, not a documentary constraint. Secondary routes, interiors, cover, access points, minor buildings and local density may be changed or condensed whenever gameplay benefits. The target is authentic inspiration with clear disclosure, not a 1:1 museum reconstruction.
+

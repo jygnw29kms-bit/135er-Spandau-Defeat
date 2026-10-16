@@ -1,7 +1,7 @@
 ﻿# 135er Spandau Strike – Gameplay Technical Specification
 
 ## Status
-Verbindliche Gameplay-Basis für 135er Spandau Strike. Engine: Unreal Engine 5 / Lyra. World Master: Blender. Die Gameplay-Ausrichtung orientiert sich an klassischen klassenbasierten Territorial-Shootern mit schwerem Movement, hoher Letalität und klaren Rollen.
+Verbindliche Gameplay-Basis für 135er Spandau Strike. Engine: Unreal Engine 5 / Lyra. World Master: Blender. **Für die moderne 2030-Linie haben `modern_2030_rules_v1.json` und `capture_frontline_64p_v1.json` Vorrang vor älteren Klassen-/Capture-Annahmen in diesem Dokument.** Die Gameplay-Ausrichtung bleibt klassisch klassenbasiert, mit schwerem Movement, hoher Letalität und klarer wandernder Front.
 
 ## Core Pillars
 - hohe Letalität, geringe TTK, kein Shield-Gameplay
@@ -9,8 +9,10 @@ Verbindliche Gameplay-Basis für 135er Spandau Strike. Engine: Unreal Engine 5 /
 - Hip-Fire-orientiertes Gunplay; ADS nur wo die Waffenrolle es verlangt
 - Bolt Rifles: Oberkörper-One-Shot, langsamer Bolt Cycle
 - MG: undeployed unpräzise, deployed lane-dominant, immer mit Flank/Smoke-Counterplay
-- 6 Rollen: Rifleman, Assault, Support, Sniper, MG, Rocket
-- teambasierte lineare Front statt freiem Back-Cap
+- moderne 2030-Linie: 4 Kernrollen (Operator/Assault, Scout/Recon, Support/Gunner, Marksman/Designated Marksman)
+- historische Epochen dürfen eigene zeittypische Klassensets nutzen
+- maximal 64 Spieler (32v32), keine Squads
+- teambasierte Sektorfront statt freiem Back-Cap
 
 ## Lyra Architecture
 - `USpandaCharacterMovementComponent`
@@ -100,4 +102,5 @@ Exportmanifest muss diese Metadaten vollständig an UE5-Importtools weitergeben.
 
 ## Current Production Policy
 Blender World Master -> Gameplay/Architecture QA -> tagged modular export -> UE5/Lyra. UE5-FINAL wird erst mit geprüften Masterständen aktualisiert; kaputte ältere Rathaus-v70/v77-Geometrie gilt nicht als Produktionsbasis.
+
 

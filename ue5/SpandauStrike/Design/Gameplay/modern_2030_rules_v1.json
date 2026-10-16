@@ -1,0 +1,80 @@
+{
+  "schema": "SpandauStrike.Modern2030Rules.v1",
+  "status": "authoritative_design_baseline",
+  "player_cap": {
+    "max_players": 64,
+    "teams": 2,
+    "players_per_team": 32,
+    "squads_enabled": false
+  },
+  "factions": {
+    "135er": {
+      "identity": "core_spandau_local_defenders",
+      "language": "de",
+      "voice_style": "direct_berlin_spandau",
+      "visual_palette": ["blue", "graphite", "dark_grey"],
+      "primary_mark": "Spandau_coat_of_arms",
+      "equipment": "high_quality_modern_modular",
+      "playstyle": ["local_knowledge", "mobility", "flexible_routes", "recon"]
+    },
+    "opposition": {
+      "identity": "external_professional_intervention_force",
+      "language": "en",
+      "voice_style": "structured_technical",
+      "visual_palette": ["olive", "black", "dark_grey"],
+      "primary_mark": "distinct_non_spandau_unit_mark",
+      "equipment": "high_quality_standardized",
+      "playstyle": ["coordination", "suppression", "objective_pressure", "standardized_assault"]
+    }
+  },
+  "modern_roles": {
+    "Operator": {
+      "135er_label": "Operator",
+      "opposition_label": "Assault",
+      "primary_family": "AssaultRifle",
+      "role": "frontline_allrounder",
+      "equipment": ["service_pistol", "frag_grenade", "smoke_grenade", "combat_knife"]
+    },
+    "Scout": {
+      "135er_label": "Scout",
+      "opposition_label": "Recon",
+      "primary_family": "PDWCarbine",
+      "role": "mobile_recon_flank",
+      "equipment": ["service_pistol", "smoke_grenade", "recon_sensor", "combat_knife"]
+    },
+    "Support": {
+      "135er_label": "Support",
+      "opposition_label": "Gunner",
+      "primary_family": "LightMachineGun",
+      "role": "suppression_resupply",
+      "equipment": ["service_pistol", "frag_grenade", "ammo_pack", "field_spade"]
+    },
+    "Marksman": {
+      "135er_label": "Marksman",
+      "opposition_label": "Designated Marksman",
+      "primary_family": "DMR",
+      "role": "precision_mid_long",
+      "equipment": ["service_pistol", "smoke_grenade", "rangefinder", "combat_knife"]
+    }
+  },
+  "player_model_direction": {
+    "reference_style": "cyberpunk_inspired_realistic_tactical_2030",
+    "humans_not_team_color_mannequins": true,
+    "variation": ["faces", "age", "body_type", "hair", "beards", "clothing", "plate_carriers", "helmets", "caps", "pouches", "wear"],
+    "no_sci_fi_body_modifications": true,
+    "no_neon_costume_direction": true,
+    "faction_readability": ["silhouette", "equipment_cut", "patches", "coat_of_arms", "material_language"]
+  },
+  "combat": {
+    "damage_model": "DayOfDefeat_inspired_high_lethality",
+    "low_time_to_kill": true,
+    "regenerating_health": false,
+    "movement_model": "DayOfDefeat_inspired_weighted",
+    "movement": ["sprint", "crouch", "prone", "lean", "vault"],
+    "anti_bunnyhop": true,
+    "revive": "not_core_baseline",
+    "healing": "limited_no_arcade_regen"
+  },
+  "grenades": ["fragmentation", "smoke", "flash", "concussion", "limited_incendiary", "limited_emp_disruptor", "recon_sensor"],
+  "melee": ["combat_knife", "field_spade", "crowbar_engineer_context", "rescue_multitool_context"]
+}

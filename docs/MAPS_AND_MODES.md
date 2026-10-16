@@ -45,3 +45,11 @@ UE/Lyra has already reached a first playable Falkenhagener Feld GIS milestone. U
 - breakthrough
 - sabotage / demolition where technically appropriate
 - logistics/objective variants for historical non-battle scenarios
+
+## Current 2030 capture policy (authoritative)
+
+For the modern 2030 mainline, `CaptureFrontline` is the primary mode: maximum 64 players (32v32), no squads, sector-by-sector moving front, no back-cap. Only the current sector is active. A sector normally contains two capture points and both must fall before the front advances. Spawn lines follow the front after a short transition.
+
+Reality supplies terrain identity, major landmarks and recognizable axes; gameplay may alter secondary routes, interiors, cover and local density. Every sector must support at least two viable attack routes plus a riskier flank.
+
+Deathmatch and Last Man Standing remain secondary modes and may use reduced active areas of the same map.
