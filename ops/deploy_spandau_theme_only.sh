@@ -32,15 +32,15 @@ php "$STAGE/vendor/bin/typo3" cache:flush
 
 curl -LfsS --retry 4 --retry-delay 2 "https://www.dezender.de/135erSpandauStrike/" -o /tmp/spandau-theme-live.html
 
-if ! grep -q "Operations Board" /tmp/spandau-theme-live.html; then
+if ! grep -q "Rathaus Spandau // aktueller Stand" /tmp/spandau-theme-live.html; then
   rm -rf "$DST"
   if [ -d "$DST.prev" ]; then mv "$DST.prev" "$DST"; fi
   php "$STAGE/vendor/bin/typo3" cache:flush || true
-  echo "Theme marker missing; rollback completed." >&2
+  echo "Current Rathaus marker missing; rollback completed." >&2
   exit 31
 fi
 
-grep -q "OP-01 // URBAN CORE" /tmp/spandau-theme-live.html
-grep -q "Clan Operations" /tmp/spandau-theme-live.html
+grep -q "WORLD_MASTER v51" /tmp/spandau-theme-live.html
+grep -q "FIRST_PLAY v72" /tmp/spandau-theme-live.html
 
-echo "SPANDAU_GFX_THEME_LIVE=yes"
+echo "SPANDAU_RATHAUS_CURRENT_LIVE=yes"
