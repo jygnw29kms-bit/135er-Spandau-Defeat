@@ -1,0 +1,77 @@
+{
+  "schema": "SpandauStrike.RuntimeCombatSystems2030.v1",
+  "status": "authoritative_design_baseline",
+  "respawn": {
+    "mode": "team_wave_frontline",
+    "base_wave_interval_s": 10.0,
+    "minimum_death_to_respawn_s": 4.0,
+    "spawn_to_action_target_s": [15, 35],
+    "spawn_selection": "server_safe_frontline_band",
+    "squad_spawn": false,
+    "frontline_spawn_shift_delay_s": 20.0,
+    "anti_spawn_farm": ["no_direct_enemy_los", "enemy_distance_scoring", "recent_death_heat", "fallback_home_spawn"]
+  },
+  "hud": {
+    "style": "minimal_contextual",
+    "always_visible": ["current_objective_state", "team_tickets_when_relevant"],
+    "contextual": ["ammo", "stance", "interaction_prompt", "friendly_id", "capture_progress"],
+    "forbidden": ["damage_numbers", "floating_enemy_markers", "persistent_enemy_outline", "killstreak_banner_spam"],
+    "objective_marker_distance_fade": true,
+    "friendly_id_short_range_only": true
+  },
+  "scoring": {
+    "kill": 100,
+    "assist": 50,
+    "capture_tick": 5,
+    "capture_complete": 250,
+    "defense_kill": 150,
+    "smoke_support": 20,
+    "resupply": 15,
+    "recon_assist": 35,
+    "objective_actions_weighted_above_kd": true,
+    "team_damage_score": -100
+  },
+  "ammo_resupply": {
+    "finite_ammo": true,
+    "auto_refill_during_life": false,
+    "support_pack_cooldown_s": 45.0,
+    "grenade_resupply": "limited",
+    "grenade_resupply_cooldown_s": 90.0,
+    "max_resupply_from_same_pack_per_life": 2
+  },
+  "suppression": {
+    "enabled": true,
+    "near_miss_radius_m": 1.5,
+    "accumulation_window_s": 2.5,
+    "recovery_s": 3.0,
+    "effects": ["audio_pressure", "near_miss_crack", "subtle_aim_instability"],
+    "max_aim_instability_multiplier": 1.18,
+    "forced_blindness": false,
+    "input_lock": false
+  },
+  "voice_and_callouts": {
+    "team_voice": true,
+    "proximity_voice": true,
+    "squad_voice": false,
+    "proximity_falloff_m": 35.0,
+    "context_ping_cooldown_s": 2.0,
+    "ping_burst_limit": 3,
+    "135er_language": "de_berlin_spandau",
+    "opposition_language": "en_structured"
+  },
+  "round_flow": {
+    "warmup_s": 30.0,
+    "sector_transition_s": 20.0,
+    "overtime": "while_contested_or_capture_progress_active",
+    "post_round_s": 20.0,
+    "target_match_duration_min": [25, 40]
+  },
+  "principles": [
+    "fast_return_to_meaningful_action",
+    "objective_first_scoring",
+    "audio_as_gameplay_information",
+    "low_ui_clutter",
+    "high_lethality_without_milsim_friction",
+    "no_squad_dependency"
+  ]
+}
