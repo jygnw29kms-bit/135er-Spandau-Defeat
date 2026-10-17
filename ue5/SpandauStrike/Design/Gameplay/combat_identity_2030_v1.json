@@ -1,0 +1,88 @@
+{
+  "schema": "SpandauStrike.CombatIdentity2030.v1",
+  "status": "authoritative_design_baseline",
+  "goal": "tactical_accessible_not_milsim",
+  "inspiration": {
+    "day_of_defeat": ["high_lethality", "clear_classes", "fast_spawn_to_action", "objective_first"],
+    "insurgency_sandstorm": ["weapon_audio_readability", "ammo_matters", "minimal_hud", "cover_and_smoke_matter"],
+    "rising_storm_2": ["64_player_intensity", "faction_asymmetry", "proximity_voice", "strong_faction_identity"],
+    "battlefield_breakthrough": ["sector_frontline", "attacker_tickets", "defender_unlimited_respawns", "sector_transition"],
+    "large_tactical_shooters": ["landmark_navigation", "distance_readability", "frontline_atmosphere"]
+  },
+  "hard_exclusions": [
+    "squads_required",
+    "squad_spawn",
+    "commander_dependency",
+    "fob_logistics_loop",
+    "long_walks_as_gameplay",
+    "arcade_health_regen",
+    "bullet_sponge_damage",
+    "neon_team_color_models"
+  ],
+  "combat_readability": {
+    "hud": "minimal_contextual",
+    "crosshair": "weapon_and_mode_dependent_restrained",
+    "damage_numbers": false,
+    "floating_enemy_markers": false,
+    "objective_markers": "contextual_distance_faded",
+    "friendly_identification": "short_range_contextual_plus_uniform_readability"
+  },
+  "audio": {
+    "priority": "gameplay_critical",
+    "features": [
+      "directional_gunshots",
+      "indoor_outdoor_reverb",
+      "surface_footsteps",
+      "suppression_cracks",
+      "distant_combat_bed",
+      "faction_radio_identity",
+      "proximity_voice_optional_server_setting"
+    ]
+  },
+  "ammo_and_resupply": {
+    "ammo_is_finite": true,
+    "magazines_or_equivalent_resource_visible": true,
+    "support_resupply_role": true,
+    "auto_refill_during_life": false,
+    "resupply_must_not_create_infinite_grenade_spam": true
+  },
+  "suppression": {
+    "enabled": true,
+    "purpose": "pressure_not_loss_of_control",
+    "effects": ["audio_pressure", "near_miss_feedback", "subtle_aim_instability"],
+    "forced_blindness": false,
+    "forced_weapon_drop": false
+  },
+  "communication": {
+    "team_channel": true,
+    "proximity_channel": true,
+    "squad_channel": false,
+    "context_ping": true,
+    "ping_spam_protection": true,
+    "135er_voice_language": "de_berlin_spandau",
+    "opposition_voice_language": "en_structured"
+  },
+  "objective_scoring": {
+    "objective_score_weight": "high",
+    "defense_score": true,
+    "capture_score": true,
+    "smoke_support_score": true,
+    "resupply_score": true,
+    "recon_assist_score": true,
+    "kill_death_is_not_primary_progression_metric": true
+  },
+  "map_pressure": {
+    "spawn_to_action_target_s": [15, 35],
+    "front_width_policy": "avoid_single_chokepoint_meatgrinder",
+    "minimum_viable_routes": 3,
+    "route_pattern": ["main", "covered_alternative", "risky_flank"],
+    "retreat_transition_prevents_spawn_farming": true
+  },
+  "faction_asymmetry": {
+    "allowed": true,
+    "balance_rule": "different_tools_equal_victory_potential",
+    "135er_bias": ["mobility", "local_routes", "recon", "improvised_flexibility"],
+    "opposition_bias": ["suppression", "standardization", "sensors", "organized_push"],
+    "no_strict_mirror_loadouts": true
+  }
+}
