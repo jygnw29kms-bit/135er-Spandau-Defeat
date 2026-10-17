@@ -1,69 +1,53 @@
 # Spandau Strike – Playable Capture Milestone
 
 ## Stand
-Der spielbare Rathaus-Prototyp ist von v73 auf **v74 Capture Round** erweitert. v73 bleibt als technischer Ein-Sektor-Checkpoint erhalten; v74 ist der aktuelle Gameplay-Teststand.
+Der aktuelle Gameplay-Teststand ist **Rathaus v75 Front Spawns**. v73 bleibt der technische Ein-Sektor-Checkpoint, v74 die erste vollständige Vier-Sektor-Runde. v75 koppelt nun auch Respawns an die wandernde Front.
 
 ## Runtime-Klassen
 - `ASpandauCapturePoint`: serverautoritatives Capture, Contest-Pause, 45-s-Baseline, Spieler-Speedup bis 4, verzögerter Fortschrittsabbau, replizierter Zustand und Runtime-Debuganzeige.
-- `ASpandauCaptureDirector`: verwaltet vier Sektoren, jeweils zwei notwendige Punkte, Angreifer-Tickets, 20-s-Sektorwechsel, Siegzustand, 10-s-Team-Respawnwellen und Bot-Objective-Routing.
-- `ALyraHUD`: zeigt im Capture-Test minimal Sektor, Tickets, nächste Respawn-Welle sowie A/B-Capturezustand und Fortschritt. Keine Schadenszahlen oder Feindmarker.
-- `ALyraGameMode`: laufende Capture-Runden leiten Respawn-Anforderungen an den CaptureDirector weiter; Erstspawns bleiben im normalen Lyra-Pfad.
+- `ASpandauCaptureDirector`: vier Sektoren, zwei notwendige Punkte je Sektor, Angreifer-Tickets, 20-s-Sektorwechsel, Siegzustand, 10-s-Team-Respawnwellen und Bot-Objective-Routing.
+- `ULyraPlayerSpawningManagerComponent`: erkennt die aufgelösten Capture-Teams und bevorzugt beim Respawn die zum aktuellen Sektor und zur Rolle Attacker/Defender gehörenden Front-Spawns.
+- `ALyraHUD`: minimales Test-HUD für Sektor, Tickets, Respawn-Welle sowie A/B-Zustand und Capture-Fortschritt.
+- `ALyraGameMode`: Capture-Runden leiten Respawn-Anforderungen an den CaptureDirector weiter; Erstspawns bleiben als sicherer Bootstrap im normalen Lyra-Pfad.
 
-## v74 Capture Round
+## v75 Front-Spawns
 Map:
-`/Game/SpandauStrike/Maps/Rathaus/LV_RathausSpandau_REAL_v74_CAPTURE_ROUND`
+`/Game/SpandauStrike/Maps/Rathaus/LV_RathausSpandau_REAL_v75_FRONTSPAWNS`
 
-Basis ist v73. Architektur, Licht, Materialien, Straßen, DGM/DOP und die acht vorhandenen sicheren LyraPlayerStarts bleiben unangetastet.
+Basis ist v74. Die acht bisherigen sicheren LyraPlayerStarts bleiben als Fallback erhalten. Zusätzlich gibt es **16 Front-Spawns**: pro Sektor je zwei für Angreifer und zwei für Verteidiger. Sie tragen ausschließlich Daten-Tags (`SSSpawn.Attacker`/`SSSpawn.Defender` + `SSSpawn.Sector.N`). Die Spawn-Auswahl wird zur Laufzeit mit den tatsächlich von Lyra vergebenen Team-IDs verknüpft, also nicht mit hart codierten Teamnummern.
 
-Vier Frontsektoren sind angelegt, jeweils mit A/B:
-1. westlicher Anmarsch
-2. westlich/zentraler Rathausbereich
-3. östlich/zentraler Rathausbereich
-4. östlicher Abschluss
+Damit wandern die Respawns mit der Front. Sektor 1 nutzt nur die Sektor-1-Startpunkte, nach der Einnahme und dem 20-s-Übergang wechselt die Auswahl auf Sektor 2 usw. Fehlen passende Front-Spawns oder ist ein Team noch nicht aufgelöst, bleibt der normale Lyra-Fallback aktiv statt den Spieler im Nirwana abzusetzen. Auch Software kann gelegentlich Selbstachtung besitzen.
 
-Ein Sektor gilt erst als genommen, wenn **beide Punkte** erobert wurden. Dann werden 50 Angreifer-Tickets gutgeschrieben und nach 20 Sekunden die nächste Front aktiviert. Nach Sektor 4 gewinnen die Angreifer.
+## Capture Round
+Vier Frontsektoren sind angelegt, jeweils mit A/B. Ein Sektor gilt erst als genommen, wenn beide Punkte erobert wurden. Danach: +50 Angreifer-Tickets, 20 Sekunden Übergang und Aktivierung der nächsten Front. Nach Sektor 4 gewinnen die Angreifer.
 
 ## Respawn und Tickets
 - Team-Respawnwelle: 10 Sekunden.
-- Tote Controller werden serverseitig in eine Welle eingereiht.
-- Erst wenn der Respawn wirklich einen Pawn erzeugt, wird bei Angreifern ein Ticket abgezogen.
+- Tote Controller werden serverseitig in die nächste Welle eingereiht.
+- Erst bei erfolgreichem Angreifer-Respawn wird ein Ticket abgezogen.
 - Verteidiger respawnen ohne Ticketverbrauch.
 - Bei 0 Angreifer-Tickets werden keine weiteren Angreifer-Respawns freigegeben.
+- Ab v75 werden Respawns nach Teamrolle und aktivem Frontsektor auf die markierten Front-Spawns gefiltert.
 
 ## Bots
-Alle zwei Sekunden wird für lebende Bots das aktuelle Objective neu bewertet. Angreifer und Verteidiger werden zu einem noch offenen A/B-Punkt des aktiven Sektors geführt. Der Runtime-Test mit 15 Bots bestätigt das Routing: `routed=15 failed=0`. Falls Recast beim Mapstart noch keine verwendbare Route liefert, fällt die Test-Runtime auf direkte Zielbewegung zurück, bis Navigation verfügbar ist. Damit entsteht erstmals Objective-Druck statt reinem Elimination-Herumirren. Die endgültige Kampf-KI bleibt ein späterer eigener Ausbau.
+Alle zwei Sekunden wird für lebende Bots das aktuelle Objective neu bewertet. Angreifer und Verteidiger laufen zu offenen A/B-Punkten des aktiven Sektors. Der v74-Runtime-Test bestätigte `routed=15 failed=0`; dieses Verhalten bleibt in v75 erhalten. Objective-Routing und Kampf-KI bleiben getrennte Verantwortlichkeiten, damit ein Bot nicht gleichzeitig drei widersprüchliche Lebensziele verfolgt.
 
 ## HUD
-Oben mittig erscheint im Testmodus eine knappe Runtime-Anzeige:
-- Sektor x/4
-- Angreifer-Tickets
-- Zeit bis zur nächsten Respawn-Welle
-- A/B Status: Active, Capturing, Contested, Captured
-- A/B Fortschritt in Prozent
-
-Das ist bewusst funktional und nicht das spätere Final-UI. Es dient dem Gameplay-Test und der Telemetrie.
+Oben mittig zeigt das funktionale Test-HUD Sektor x/4, Angreifer-Tickets, Zeit bis zur nächsten Respawn-Welle sowie A/B-Status und Capture-Prozent. Das ist bewusst kein Final-UI.
 
 ## Start
-`tools/ue5/launch_rathaus_v74_capture_round.ps1`
+`tools/ue5/launch_rathaus_v75_front_spawns.ps1`
 
-Standard: Lyra Shooter Elimination als Waffen-/Pawn-/Bot-Unterbau, 15 Bots. Unsere Capture-, Respawn-, Ticket-, HUD- und Objective-Runtime läuft darüber.
+Standard: Lyra Shooter Elimination als Waffen-/Pawn-/Bot-Unterbau, 15 Bots. Unsere Capture-, Respawn-, Ticket-, HUD-, Objective- und Front-Spawn-Runtime läuft darüber.
 
-## Automatischer Runtime-Gate
-`tools/ue5/run_rathaus_v74_capture_headless_check.ps1`
-
-Der aktuelle v74-Headless-Gate ist grün (`passed=true`, `bad_count=0`) und prüft:
-- 8 LyraPlayerStarts
-- 8 SpandauCapturePoints
-- 1 SpandauCaptureDirector
-- 4 Sektoren
-- Shooter-Erlebnis erfolgreich geladen
-- Capture-Runtime aktiv
-- keine FellOutOfWorld/KillZ/Spawn/Fatal-Fehler im Beobachtungsfenster
+## Automatische Gates
+- `tools/ue5/run_rathaus_v75_front_spawn_headless_check.ps1`
+- statische Map-Prüfung: 24 PlayerStarts gesamt, davon 16 Front-Spawns, 8 CapturePoints, 1 Director, je exakt 2 Attacker- und 2 Defender-Spawns pro Sektor
+- Runtime-Prüfung: Teams aufgelöst, 15 Bots zu Objectives geroutet, keine FellOutOfWorld/KillZ/Spawn/Fatal-Fehler
 
 ## Nächste Gameplay-Schritte
-1. v74 sichtbar mit Spieler + 15 Bots anspielen und reale Laufwege prüfen.
-2. Sektorpositionen anhand echter Laufzeit und Sichtlinien nachschärfen.
-3. Spawn-Auswahl pro Frontsektor anstatt nur der acht statischen Basisstarts.
-4. Bot-Kampfverhalten so koppeln, dass Objective-Routing und Feindkontakt sauber zusammenarbeiten.
-5. Waffen-/Movement-Baseline im echten Gefecht messen und nur anhand der Testergebnisse nachbalancieren.
-6. Danach Capture aus dem Elimination-Unterbau in eine eigene Spandau-Strike-Lyra-Experience überführen.
+1. v75 sichtbar anspielen und Front-Spawn-Laufwege sowie direkte Sichtlinien prüfen.
+2. Spawn-Sicherheit um Gegnerdistanz, direkte Sicht und Recent-Death-Heat ergänzen.
+3. Bot-Kampfverhalten mit Objective-Routing koppeln, ohne den bestehenden Lyra-Kampf zu überschreiben.
+4. echte Capture-/Kill-/Respawn-Telemetrie protokollieren und Waffen/Movement nur anhand gemessener Werte nachbalancieren.
+5. Capture anschließend aus dem Elimination-Unterbau in eine eigene Spandau-Strike-Lyra-Experience überführen.

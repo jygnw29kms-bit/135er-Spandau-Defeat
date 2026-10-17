@@ -33,6 +33,15 @@ public:
     int32 GetAttackerTickets() const { return AttackerTickets; }
 
     UFUNCTION(BlueprintPure, Category="Spandau Strike|Capture")
+    int32 GetAttackerTeamId() const { return ResolvedAttackerTeamId; }
+
+    UFUNCTION(BlueprintPure, Category="Spandau Strike|Capture")
+    int32 GetDefenderTeamId() const { return ResolvedDefenderTeamId; }
+
+    UFUNCTION(BlueprintPure, Category="Spandau Strike|Capture")
+    bool AreTeamsResolved() const { return bTeamsResolved; }
+
+    UFUNCTION(BlueprintPure, Category="Spandau Strike|Capture")
     float GetRespawnWaveRemaining() const { return RespawnWaveRemaining; }
 
     UFUNCTION(BlueprintPure, Category="Spandau Strike|Capture")

@@ -5,6 +5,8 @@
 #include "EngineUtils.h"
 #include "Engine/PlayerStartPIE.h"
 #include "LyraPlayerStart.h"
+#include "Player/LyraPlayerState.h"
+#include "SpandauStrike/SpandauCaptureDirector.h"
 
 #include UE_INLINE_GENERATED_CPP_BY_NAME(LyraPlayerSpawningManagerComponent)
 
@@ -106,11 +108,49 @@ AActor* ULyraPlayerSpawningManagerComponent::ChoosePlayerStart(AController* Play
 			}
 		}
 
-		AActor* PlayerStart = OnChoosePlayerStart(Player, StarterPoints);
+		// Spandau Strike Capture: prefer team/sector-tagged front spawns.
+		TArray<ALyraPlayerStart*> EffectiveStartPoints = StarterPoints;
+		for (TActorIterator<ASpandauCaptureDirector> It(GetWorld()); It; ++It)
+		{
+			ASpandauCaptureDirector* Director = *It;
+			if (!Director || !Director->AreTeamsResolved())
+			{
+				continue;
+			}
+
+			const ALyraPlayerState* LyraPS = Player->GetPlayerState<ALyraPlayerState>();
+			const int32 TeamId = LyraPS ? LyraPS->GetTeamId() : INDEX_NONE;
+			const bool bAttacker = TeamId == Director->GetAttackerTeamId();
+			const bool bDefender = TeamId == Director->GetDefenderTeamId();
+			if (!bAttacker && !bDefender)
+			{
+				break;
+			}
+
+			const FName RoleTag = bAttacker ? FName(TEXT("SSSpawn.Attacker")) : FName(TEXT("SSSpawn.Defender"));
+			const FName SectorTag(*FString::Printf(TEXT("SSSpawn.Sector.%d"), Director->GetActiveSector()));
+			TArray<ALyraPlayerStart*> FrontStarts;
+			for (ALyraPlayerStart* Start : StarterPoints)
+			{
+				if (Start && Start->Tags.Contains(RoleTag) && Start->Tags.Contains(SectorTag))
+				{
+					FrontStarts.Add(Start);
+				}
+			}
+
+			if (!FrontStarts.IsEmpty())
+			{
+				EffectiveStartPoints = MoveTemp(FrontStarts);
+				UE_LOG(LogPlayerSpawning, Verbose, TEXT("Spandau front spawn candidates: team=%d sector=%d count=%d"), TeamId, Director->GetActiveSector(), EffectiveStartPoints.Num());
+			}
+			break;
+		}
+
+		AActor* PlayerStart = OnChoosePlayerStart(Player, EffectiveStartPoints);
 
 		if (!PlayerStart)
 		{
-			PlayerStart = GetFirstRandomUnoccupiedPlayerStart(Player, StarterPoints);
+			PlayerStart = GetFirstRandomUnoccupiedPlayerStart(Player, EffectiveStartPoints);
 		}
 
 		if (ALyraPlayerStart* LyraStart = Cast<ALyraPlayerStart>(PlayerStart))
