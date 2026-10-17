@@ -235,6 +235,73 @@ APlayerStart* ULyraPlayerSpawningManagerComponent::GetFirstRandomUnoccupiedPlaye
 			}
 		}
 
+		ASpandauCaptureDirector* CaptureDirector = nullptr;
+		if (UWorld* World = GetWorld())
+		{
+			for (TActorIterator<ASpandauCaptureDirector> It(World); It; ++It)
+			{
+				CaptureDirector = *It;
+				break;
+			}
+		}
+
+		if (CaptureDirector && CaptureDirector->AreTeamsResolved())
+		{
+			const ALyraPlayerState* PlayerPS = Controller->GetPlayerState<ALyraPlayerState>();
+			const int32 PlayerTeamId = PlayerPS ? PlayerPS->GetTeamId() : INDEX_NONE;
+			const float HardEnemyRadiusSq = FMath::Square(1200.0f);
+
+			auto ChooseSafest = [this, Controller, PlayerTeamId, HardEnemyRadiusSq](const TArray<ALyraPlayerStart*>& Candidates) -> ALyraPlayerStart*
+			{
+				ALyraPlayerStart* BestStart = nullptr;
+				float BestMinEnemyDistSq = -1.0f;
+				UWorld* World = GetWorld();
+				if (!World || PlayerTeamId == INDEX_NONE)
+				{
+					return nullptr;
+				}
+
+				for (ALyraPlayerStart* Start : Candidates)
+				{
+					if (!Start) continue;
+					bool bUnsafe = false;
+					float MinEnemyDistSq = TNumericLimits<float>::Max();
+					for (FConstControllerIterator It = World->GetControllerIterator(); It; ++It)
+					{
+						AController* Other = It->Get();
+						if (!Other || Other == Controller || !Other->GetPawn()) continue;
+						const ALyraPlayerState* OtherPS = Other->GetPlayerState<ALyraPlayerState>();
+						const int32 OtherTeamId = OtherPS ? OtherPS->GetTeamId() : INDEX_NONE;
+						if (OtherTeamId == INDEX_NONE || OtherTeamId == PlayerTeamId) continue;
+
+						const float DistSq = FVector::DistSquared(Start->GetActorLocation(), Other->GetPawn()->GetActorLocation());
+						MinEnemyDistSq = FMath::Min(MinEnemyDistSq, DistSq);
+						if (DistSq < HardEnemyRadiusSq || Other->LineOfSightTo(Start))
+						{
+							bUnsafe = true;
+							break;
+						}
+					}
+
+					if (!bUnsafe && MinEnemyDistSq > BestMinEnemyDistSq)
+					{
+						BestMinEnemyDistSq = MinEnemyDistSq;
+						BestStart = Start;
+					}
+				}
+				return BestStart;
+			};
+
+			if (ALyraPlayerStart* SafeStart = ChooseSafest(UnOccupiedStartPoints))
+			{
+				return SafeStart;
+			}
+			if (ALyraPlayerStart* SafePartial = ChooseSafest(OccupiedStartPoints))
+			{
+				return SafePartial;
+			}
+		}
+
 		if (UnOccupiedStartPoints.Num() > 0)
 		{
 			return UnOccupiedStartPoints[FMath::RandRange(0, UnOccupiedStartPoints.Num() - 1)];

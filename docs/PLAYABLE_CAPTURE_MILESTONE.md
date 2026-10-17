@@ -16,7 +16,7 @@ Map:
 
 Basis ist v74. Die acht bisherigen sicheren LyraPlayerStarts bleiben als Fallback erhalten. Zusätzlich gibt es **16 Front-Spawns**: pro Sektor je zwei für Angreifer und zwei für Verteidiger. Sie tragen ausschließlich Daten-Tags (`SSSpawn.Attacker`/`SSSpawn.Defender` + `SSSpawn.Sector.N`). Die Spawn-Auswahl wird zur Laufzeit mit den tatsächlich von Lyra vergebenen Team-IDs verknüpft, also nicht mit hart codierten Teamnummern.
 
-Damit wandern die Respawns mit der Front. Sektor 1 nutzt nur die Sektor-1-Startpunkte, nach der Einnahme und dem 20-s-Übergang wechselt die Auswahl auf Sektor 2 usw. Fehlen passende Front-Spawns oder ist ein Team noch nicht aufgelöst, bleibt der normale Lyra-Fallback aktiv statt den Spieler im Nirwana abzusetzen. Auch Software kann gelegentlich Selbstachtung besitzen.
+Damit wandern die Respawns mit der Front. Sektor 1 nutzt nur die Sektor-1-Startpunkte, nach der Einnahme und dem 20-s-Übergang wechselt die Auswahl auf Sektor 2 usw. Fehlen passende Front-Spawns oder ist ein Team noch nicht aufgelöst, bleibt der normale Lyra-Fallback aktiv.
 
 ## Capture Round
 Vier Frontsektoren sind angelegt, jeweils mit A/B. Ein Sektor gilt erst als genommen, wenn beide Punkte erobert wurden. Danach: +50 Angreifer-Tickets, 20 Sekunden Übergang und Aktivierung der nächsten Front. Nach Sektor 4 gewinnen die Angreifer.
@@ -29,8 +29,13 @@ Vier Frontsektoren sind angelegt, jeweils mit A/B. Ein Sektor gilt erst als geno
 - Bei 0 Angreifer-Tickets werden keine weiteren Angreifer-Respawns freigegeben.
 - Ab v75 werden Respawns nach Teamrolle und aktivem Frontsektor auf die markierten Front-Spawns gefiltert.
 
+## Spawn-Sicherheit
+Capture-Respawns bewerten zusätzlich Gegnernähe und direkte Sicht. Kandidaten innerhalb von **12 m** zu einem lebenden Gegner oder mit direkter Enemy-Line-of-Sight werden verworfen. Unter den verbleibenden Kandidaten wird der Start mit dem größten Mindestabstand zu Gegnern bevorzugt. Falls kein sicherer Front-Spawn verfügbar ist, bleibt der bestehende Lyra-Fallback erhalten.
+
+Recent-Death-Heat ist der nächste Sicherheitsbaustein. Dadurch können später Startpunkte, an denen in den letzten Sekunden wiederholt Spieler sterben, temporär abgewertet werden statt nur geometrisch „sicher“ zu wirken. Menschen schaffen es schließlich erstaunlich zuverlässig, auch einen mathematisch vernünftigen Spawn in eine Fleischwolfmaschine zu verwandeln.
+
 ## Bots
-Alle zwei Sekunden wird für lebende Bots das aktuelle Objective neu bewertet. Angreifer und Verteidiger laufen zu offenen A/B-Punkten des aktiven Sektors. Der v74-Runtime-Test bestätigte `routed=15 failed=0`; dieses Verhalten bleibt in v75 erhalten. Objective-Routing und Kampf-KI bleiben getrennte Verantwortlichkeiten, damit ein Bot nicht gleichzeitig drei widersprüchliche Lebensziele verfolgt.
+Alle zwei Sekunden wird für lebende Bots das aktuelle Objective neu bewertet. Angreifer und Verteidiger laufen zu offenen A/B-Punkten des aktiven Sektors. Der v74-Runtime-Test bestätigte `routed=15 failed=0`; dieses Verhalten bleibt in v75 erhalten. Objective-Routing und Kampf-KI bleiben getrennte Verantwortlichkeiten.
 
 ## HUD
 Oben mittig zeigt das funktionale Test-HUD Sektor x/4, Angreifer-Tickets, Zeit bis zur nächsten Respawn-Welle sowie A/B-Status und Capture-Prozent. Das ist bewusst kein Final-UI.
@@ -47,7 +52,7 @@ Standard: Lyra Shooter Elimination als Waffen-/Pawn-/Bot-Unterbau, 15 Bots. Unse
 
 ## Nächste Gameplay-Schritte
 1. v75 sichtbar anspielen und Front-Spawn-Laufwege sowie direkte Sichtlinien prüfen.
-2. Spawn-Sicherheit um Gegnerdistanz, direkte Sicht und Recent-Death-Heat ergänzen.
+2. Recent-Death-Heat in die Spawn-Sicherheitswertung integrieren.
 3. Bot-Kampfverhalten mit Objective-Routing koppeln, ohne den bestehenden Lyra-Kampf zu überschreiben.
 4. echte Capture-/Kill-/Respawn-Telemetrie protokollieren und Waffen/Movement nur anhand gemessener Werte nachbalancieren.
 5. Capture anschließend aus dem Elimination-Unterbau in eine eigene Spandau-Strike-Lyra-Experience überführen.
