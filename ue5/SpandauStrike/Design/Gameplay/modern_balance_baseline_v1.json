@@ -1,0 +1,85 @@
+{
+  "schema": "SpandauStrike.ModernBalanceBaseline.v1",
+  "status": "authoritative_pre_playtest_baseline",
+  "health": {
+    "base": 100,
+    "regeneration": false,
+    "revive_core_mode": false
+  },
+  "weapon_families": {
+    "AssaultRifle": {"damage": 34, "rpm": 720, "magazine": 30, "reload_s": 2.45, "head_multiplier": 2.0, "upper_torso_multiplier": 1.0, "limb_multiplier": 0.78, "effective_range_m": 90, "standing_spread_deg": 0.75, "move_spread_multiplier": 1.55},
+    "PDWCarbine": {"damage": 27, "rpm": 850, "magazine": 30, "reload_s": 2.2, "head_multiplier": 2.0, "upper_torso_multiplier": 1.0, "limb_multiplier": 0.75, "effective_range_m": 55, "standing_spread_deg": 0.95, "move_spread_multiplier": 1.35},
+    "LightMachineGun": {"damage": 32, "rpm": 700, "magazine": 75, "reload_s": 4.8, "head_multiplier": 2.0, "upper_torso_multiplier": 1.0, "limb_multiplier": 0.8, "effective_range_m": 110, "standing_spread_deg": 1.2, "move_spread_multiplier": 1.8, "deployed_spread_multiplier": 0.42},
+    "DMR": {"damage": 58, "rpm": 300, "magazine": 20, "reload_s": 2.8, "head_multiplier": 2.0, "upper_torso_multiplier": 1.05, "limb_multiplier": 0.72, "effective_range_m": 180, "standing_spread_deg": 0.32, "move_spread_multiplier": 1.9},
+    "ServicePistol": {"damage": 28, "rpm": 360, "magazine": 17, "reload_s": 1.9, "head_multiplier": 2.0, "upper_torso_multiplier": 1.0, "limb_multiplier": 0.75, "effective_range_m": 30, "standing_spread_deg": 1.15, "move_spread_multiplier": 1.4}
+  },
+  "class_mobility": {
+    "Operator": {"speed_multiplier": 1.0, "acceleration_multiplier": 1.0, "stamina_drain_multiplier": 1.0},
+    "Scout": {"speed_multiplier": 1.06, "acceleration_multiplier": 1.08, "stamina_drain_multiplier": 0.88},
+    "Support": {"speed_multiplier": 0.9, "acceleration_multiplier": 0.9, "stamina_drain_multiplier": 1.15},
+    "Marksman": {"speed_multiplier": 0.95, "acceleration_multiplier": 0.94, "stamina_drain_multiplier": 1.06}
+  },
+  "capture_scaling": {
+    "base_single_attacker_s": 45.0,
+    "attackers": {"1": 1.0, "2": 1.35, "3": 1.6, "4": 1.8},
+    "minimum_capture_time_s": 25.0,
+    "contested_pauses": true,
+    "decay_delay_s": 3.0,
+    "decay_full_reset_s": 30.0
+  },
+  "spawn_balance": {
+    "wave_interval_s": 10.0,
+    "death_floor_s": 4.0,
+    "preferred_enemy_distance_m": [45, 140],
+    "hard_reject_enemy_distance_m": 22,
+    "hard_reject_enemy_los_under_m": 50,
+    "spawn_protection_s": 1.0,
+    "spawn_protection_ends_on_fire": true
+  },
+  "suppression_balance": {
+    "near_miss_radius_m": 1.5,
+    "accumulation_window_s": 2.5,
+    "recovery_s": 3.0,
+    "max_aim_instability_multiplier": 1.18,
+    "max_audio_pressure": 1.0,
+    "forced_blindness": false
+  },
+  "explosives": {
+    "frag_lethal_radius_m": 2.8,
+    "frag_damage_radius_m": 6.0,
+    "smoke_full_bloom_s": 2.5,
+    "smoke_duration_s": 24.0,
+    "flash_strong_radius_m": 5.0,
+    "flash_max_effect_s": 2.2,
+    "grenade_resupply_cooldown_s": 90.0
+  },
+  "match_pacing": {
+    "target_duration_min": [25, 40],
+    "ideal_duration_min": 32,
+    "sector_count_default": 5,
+    "sector_transition_s": 20.0,
+    "attacker_start_tickets": 300,
+    "sector_ticket_refund": 50,
+    "target_attacker_respawns_per_sector": [35, 65]
+  },
+  "score": {
+    "kill": 100,
+    "assist": 50,
+    "defense_kill": 150,
+    "capture_complete": 250,
+    "capture_tick": 5,
+    "smoke_support": 20,
+    "resupply": 15,
+    "recon_assist": 35
+  },
+  "balance_principles": [
+    "three_to_four_body_hits_for_automatic_rifles",
+    "dmr_rewards_precision_without_body_one_shot",
+    "scout_mobility_paid_for_by_range_and_damage",
+    "support_firepower_paid_for_by_mobility_and_reload",
+    "capture_scaling_has_diminishing_returns",
+    "spawn_safety_over_spawn_speed",
+    "suppression_influences_but_never_disables_control",
+    "objective_play_scores_above_raw_kd"
+  ]
+}

@@ -24,7 +24,8 @@
     "modern_2030_rules": "ue5/SpandauStrike/Design/Gameplay/modern_2030_rules_v1.json",
     "capture_frontline_64p": "ue5/SpandauStrike/Design/Gameplay/capture_frontline_64p_v1.json",
     "combat_identity_2030": "ue5/SpandauStrike/Design/Gameplay/combat_identity_2030_v1.json",
-    "runtime_combat_systems_2030": "ue5/SpandauStrike/Design/Gameplay/runtime_combat_systems_2030_v1.json"
+    "runtime_combat_systems_2030": "ue5/SpandauStrike/Design/Gameplay/runtime_combat_systems_2030_v1.json",
+    "modern_balance_baseline": "ue5/SpandauStrike/Design/Gameplay/modern_balance_baseline_v1.json"
   },
   "generators": {
     "runtime_handoff": "tools/gameplay/build_runtime_gameplay_handoff.py",
@@ -52,7 +53,8 @@
     "ue_dry_run": "ue5/SpandauStrike/Content/Python/validate_rathaus_runtime_handoff.py",
     "modern_2030_rules": "tools/gameplay/validate_modern_2030_rules.py",
     "combat_identity_2030": "tools/gameplay/validate_combat_identity_2030.py",
-    "runtime_combat_systems_2030": "tools/gameplay/validate_runtime_combat_systems_2030.py"
+    "runtime_combat_systems_2030": "tools/gameplay/validate_runtime_combat_systems_2030.py",
+    "modern_balance_baseline": "tools/gameplay/validate_modern_balance_baseline.py"
   },
   "required_invariants": {
     "objective_count": 5,
