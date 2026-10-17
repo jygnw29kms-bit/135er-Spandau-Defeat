@@ -251,10 +251,14 @@ APlayerStart* ULyraPlayerSpawningManagerComponent::GetFirstRandomUnoccupiedPlaye
 			const int32 PlayerTeamId = PlayerPS ? PlayerPS->GetTeamId() : INDEX_NONE;
 			const float HardEnemyRadiusSq = FMath::Square(1200.0f);
 
-			auto ChooseSafest = [this, Controller, PlayerTeamId, HardEnemyRadiusSq](const TArray<ALyraPlayerStart*>& Candidates) -> ALyraPlayerStart*
+			auto ChooseSafest = [this, Controller, PlayerTeamId, HardEnemyRadiusSq, CaptureDirector](const TArray<ALyraPlayerStart*>& Candidates) -> ALyraPlayerStart*
 			{
 				ALyraPlayerStart* BestStart = nullptr;
-				float BestMinEnemyDistSq = -1.0f;
+				float BestScore = -TNumericLimits<float>::Max();
+				float BestHeat = 0.0f;
+				float BestEnemyDistance = 0.0f;
+				int32 RejectNear = 0;
+				int32 RejectLos = 0;
 				UWorld* World = GetWorld();
 				if (!World || PlayerTeamId == INDEX_NONE)
 				{
@@ -276,18 +280,37 @@ APlayerStart* ULyraPlayerSpawningManagerComponent::GetFirstRandomUnoccupiedPlaye
 
 						const float DistSq = FVector::DistSquared(Start->GetActorLocation(), Other->GetPawn()->GetActorLocation());
 						MinEnemyDistSq = FMath::Min(MinEnemyDistSq, DistSq);
-						if (DistSq < HardEnemyRadiusSq || Other->LineOfSightTo(Start))
+						if (DistSq < HardEnemyRadiusSq)
 						{
+							++RejectNear;
+							bUnsafe = true;
+							break;
+						}
+						if (Other->LineOfSightTo(Start))
+						{
+							++RejectLos;
 							bUnsafe = true;
 							break;
 						}
 					}
 
-					if (!bUnsafe && MinEnemyDistSq > BestMinEnemyDistSq)
+					if (!bUnsafe)
 					{
-						BestMinEnemyDistSq = MinEnemyDistSq;
-						BestStart = Start;
+						const float DistanceScore = FMath::Min(MinEnemyDistSq, FMath::Square(20000.0f));
+						const float DeathHeat = CaptureDirector ? CaptureDirector->GetRecentDeathHeat(Start->GetActorLocation()) : 0.0f;
+						const float Score = DistanceScore - DeathHeat * FMath::Square(5000.0f);
+						if (Score > BestScore)
+						{
+							BestScore = Score;
+							BestHeat = DeathHeat;
+							BestEnemyDistance = MinEnemyDistSq < TNumericLimits<float>::Max() ? FMath::Sqrt(MinEnemyDistSq) : 99999.0f;
+							BestStart = Start;
+						}
 					}
+				}
+				if (BestStart)
+				{
+					UE_LOG(LogPlayerSpawning, Log, TEXT("Spandau spawn selected: start=%s team=%d sector=%d enemyDist=%.0fcm deathHeat=%.2f rejectNear=%d rejectLOS=%d candidates=%d"), *GetNameSafe(BestStart), PlayerTeamId, CaptureDirector->GetActiveSector(), BestEnemyDistance, BestHeat, RejectNear, RejectLos, Candidates.Num());
 				}
 				return BestStart;
 			};

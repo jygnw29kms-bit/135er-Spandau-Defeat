@@ -117,8 +117,48 @@ bool ASpandauCaptureDirector::QueueRespawn(AController* Controller)
     }
 
     RespawnQueue.AddUnique(Controller);
-    UE_LOG(LogLyra, Verbose, TEXT("Spandau respawn queued: %s team=%d wave=%.2f"), *GetNameSafe(Controller), TeamId, RespawnWaveRemaining);
+    if (GetWorld() && !RespawnQueuedAtSeconds.Contains(Controller))
+    {
+        RespawnQueuedAtSeconds.Add(Controller, GetWorld()->GetTimeSeconds());
+    }
+    UE_LOG(LogLyra, Log, TEXT("Spandau respawn queued: controller=%s team=%d sector=%d wave=%.2f tickets=%d"), *GetNameSafe(Controller), TeamId, ActiveSector, RespawnWaveRemaining, AttackerTickets);
     return true;
+}
+
+void ASpandauCaptureDirector::RecordRecentDeathLocation(const FVector& Location)
+{
+    if (!HasAuthority() || !GetWorld())
+    {
+        return;
+    }
+
+    const float Now = GetWorld()->GetTimeSeconds();
+    RecentDeaths.RemoveAll([Now](const FRecentDeathEntry& Entry)
+    {
+        return (Now - Entry.TimeSeconds) > 15.0f;
+    });
+    RecentDeaths.Add({Location, Now});
+    UE_LOG(LogLyra, Log, TEXT("Spandau death heat event: x=%.0f y=%.0f z=%.0f active=%d"), Location.X, Location.Y, Location.Z, RecentDeaths.Num());
+}
+
+float ASpandauCaptureDirector::GetRecentDeathHeat(const FVector& Location) const
+{
+    if (!GetWorld())
+    {
+        return 0.0f;
+    }
+
+    const float Now = GetWorld()->GetTimeSeconds();
+    float Heat = 0.0f;
+    for (const FRecentDeathEntry& Entry : RecentDeaths)
+    {
+        const float Age = Now - Entry.TimeSeconds;
+        if (Age < 0.0f || Age > 15.0f) continue;
+        const float Dist = FVector::Dist(Location, Entry.Location);
+        if (Dist > 2500.0f) continue;
+        Heat += (1.0f - Age / 15.0f) * (1.0f - Dist / 2500.0f);
+    }
+    return Heat;
 }
 
 void ASpandauCaptureDirector::NotifyAttackerRespawn()
@@ -167,10 +207,14 @@ void ASpandauCaptureDirector::ProcessRespawnWave()
             continue;
         }
 
+        const float QueuedAt = RespawnQueuedAtSeconds.FindRef(Controller);
         GameMode->RestartPlayer(Controller);
         if (Controller->GetPawn())
         {
             ++Spawned;
+            const float WaitSeconds = (GetWorld() && QueuedAt > 0.0f) ? FMath::Max(0.0f, GetWorld()->GetTimeSeconds() - QueuedAt) : 0.0f;
+            UE_LOG(LogLyra, Log, TEXT("Spandau respawn completed: controller=%s team=%d sector=%d wait=%.2fs x=%.0f y=%.0f z=%.0f"), *GetNameSafe(Controller), TeamId, ActiveSector, WaitSeconds, Controller->GetPawn()->GetActorLocation().X, Controller->GetPawn()->GetActorLocation().Y, Controller->GetPawn()->GetActorLocation().Z);
+            RespawnQueuedAtSeconds.Remove(Controller);
             if (TeamId == ResolvedAttackerTeamId)
             {
                 NotifyAttackerRespawn();

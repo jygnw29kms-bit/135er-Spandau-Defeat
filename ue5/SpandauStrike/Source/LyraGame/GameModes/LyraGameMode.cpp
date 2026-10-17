@@ -470,23 +470,28 @@ void ALyraGameMode::GenericPlayerInitialization(AController* NewPlayer)
 
 void ALyraGameMode::RequestPlayerRestartNextFrame(AController* Controller, bool bForceReset)
 {
-	if (bForceReset && (Controller != nullptr))
-	{
-		Controller->Reset();
-	}
-
+	ASpandauCaptureDirector* CaptureDirector = nullptr;
 	if (Controller && GetWorld())
 	{
 		for (TActorIterator<ASpandauCaptureDirector> It(GetWorld()); It; ++It)
 		{
-			if (ASpandauCaptureDirector* Director = *It)
-			{
-				if (Director->QueueRespawn(Controller))
-				{
-					return;
-				}
-			}
+			CaptureDirector = *It;
+			break;
 		}
+	}
+
+	if (bForceReset && Controller)
+	{
+		if (CaptureDirector && Controller->GetPawn())
+		{
+			CaptureDirector->RecordRecentDeathLocation(Controller->GetPawn()->GetActorLocation());
+		}
+		Controller->Reset();
+	}
+
+	if (CaptureDirector && Controller && CaptureDirector->QueueRespawn(Controller))
+	{
+		return;
 	}
 
 	if (APlayerController* PC = Cast<APlayerController>(Controller))
