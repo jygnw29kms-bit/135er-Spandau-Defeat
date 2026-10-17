@@ -2,6 +2,9 @@
 
 #include "Components/TextRenderComponent.h"
 #include "EngineUtils.h"
+#include "GameFramework/GameStateBase.h"
+#include "GameFramework/PlayerState.h"
+#include "Player/LyraPlayerState.h"
 #include "LyraLogChannels.h"
 #include "Net/UnrealNetwork.h"
 #include "SpandauStrike/SpandauCapturePoint.h"
@@ -45,6 +48,11 @@ void ASpandauCaptureDirector::BeginPlay()
 void ASpandauCaptureDirector::Tick(float DeltaSeconds)
 {
     Super::Tick(DeltaSeconds);
+
+    if (HasAuthority() && !bTeamsResolved)
+    {
+        ResolveRuntimeTeams();
+    }
 
     if (HasAuthority() && bInTransition && !bMatchEnded)
     {
@@ -119,6 +127,78 @@ void ASpandauCaptureDirector::DiscoverCapturePoints()
     }
 }
 
+void ASpandauCaptureDirector::ResolveRuntimeTeams()
+{
+    if (!HasAuthority() || bTeamsResolved || !GetWorld())
+    {
+        return;
+    }
+
+    const AGameStateBase* GameState = GetWorld()->GetGameState();
+    if (!GameState)
+    {
+        return;
+    }
+
+    TArray<int32> TeamIds;
+    int32 HumanTeamId = INDEX_NONE;
+
+    for (APlayerState* BasePlayerState : GameState->PlayerArray)
+    {
+        const ALyraPlayerState* LyraPlayerState = Cast<ALyraPlayerState>(BasePlayerState);
+        if (!LyraPlayerState)
+        {
+            continue;
+        }
+
+        const int32 TeamId = LyraPlayerState->GetTeamId();
+        if (TeamId < 0 || TeamId == 255)
+        {
+            continue;
+        }
+
+        TeamIds.AddUnique(TeamId);
+        if (!BasePlayerState->IsABot())
+        {
+            HumanTeamId = TeamId;
+        }
+    }
+
+    if (TeamIds.Num() < 2)
+    {
+        return;
+    }
+
+    TeamIds.Sort();
+    ResolvedAttackerTeamId = TeamIds.Contains(HumanTeamId) ? HumanTeamId : TeamIds[0];
+    ResolvedDefenderTeamId = INDEX_NONE;
+    for (const int32 TeamId : TeamIds)
+    {
+        if (TeamId != ResolvedAttackerTeamId)
+        {
+            ResolvedDefenderTeamId = TeamId;
+            break;
+        }
+    }
+
+    if (ResolvedDefenderTeamId == INDEX_NONE)
+    {
+        return;
+    }
+
+    for (ASpandauCapturePoint* Point : CapturePoints)
+    {
+        if (Point)
+        {
+            Point->SetTeamIds(ResolvedAttackerTeamId, ResolvedDefenderTeamId);
+        }
+    }
+
+    bTeamsResolved = true;
+    UE_LOG(LogLyra, Log, TEXT("SpandauCaptureDirector teams resolved: attacker=%d defender=%d humanTeam=%d"), ResolvedAttackerTeamId, ResolvedDefenderTeamId, HumanTeamId);
+    RefreshSectorActivation();
+}
+
 void ASpandauCaptureDirector::RefreshSectorActivation()
 {
     if (!HasAuthority())
@@ -133,7 +213,7 @@ void ASpandauCaptureDirector::RefreshSectorActivation()
             continue;
         }
 
-        const bool bShouldBeActive = !bMatchEnded && !bInTransition && Point->GetSectorIndex() == ActiveSector && !Point->IsCaptured();
+        const bool bShouldBeActive = bTeamsResolved && !bMatchEnded && !bInTransition && Point->GetSectorIndex() == ActiveSector && !Point->IsCaptured();
         Point->SetCaptureActive(bShouldBeActive);
     }
 }

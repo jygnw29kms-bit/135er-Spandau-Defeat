@@ -38,6 +38,9 @@ public:
     UFUNCTION(BlueprintCallable, Category="Spandau Strike|Capture")
     void ResetCapture();
 
+    UFUNCTION(BlueprintCallable, Category="Spandau Strike|Capture")
+    void SetTeamIds(int32 NewAttackerTeamId, int32 NewDefenderTeamId);
+
     UFUNCTION(BlueprintPure, Category="Spandau Strike|Capture")
     bool IsCaptured() const { return CaptureState == ESpandauCaptureState::Captured; }
 

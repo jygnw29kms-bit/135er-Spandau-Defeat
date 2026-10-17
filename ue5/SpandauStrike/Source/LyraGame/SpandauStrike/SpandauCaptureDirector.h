@@ -75,8 +75,12 @@ private:
     TArray<TObjectPtr<ASpandauCapturePoint>> CapturePoints;
 
     bool bInTransition = false;
+    bool bTeamsResolved = false;
+    int32 ResolvedAttackerTeamId = INDEX_NONE;
+    int32 ResolvedDefenderTeamId = INDEX_NONE;
 
     void DiscoverCapturePoints();
+    void ResolveRuntimeTeams();
     void RefreshSectorActivation();
     void BeginSectorTransition();
     void CompleteSectorTransition();

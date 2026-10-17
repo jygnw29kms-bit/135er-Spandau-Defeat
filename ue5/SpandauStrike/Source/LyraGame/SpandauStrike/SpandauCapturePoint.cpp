@@ -83,6 +83,18 @@ void ASpandauCapturePoint::SetCaptureActive(bool bNewActive)
     UpdateVisuals();
 }
 
+void ASpandauCapturePoint::SetTeamIds(int32 NewAttackerTeamId, int32 NewDefenderTeamId)
+{
+    if (!HasAuthority())
+    {
+        return;
+    }
+
+    AttackerTeamId = NewAttackerTeamId;
+    DefenderTeamId = NewDefenderTeamId;
+    UE_LOG(LogLyra, Log, TEXT("SpandauCapturePoint teams resolved: %s attacker=%d defender=%d"), *GetName(), AttackerTeamId, DefenderTeamId);
+}
+
 void ASpandauCapturePoint::ResetCapture()
 {
     if (!HasAuthority())
