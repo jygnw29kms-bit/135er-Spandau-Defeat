@@ -50,6 +50,12 @@ public:
     UFUNCTION(BlueprintPure, Category="Spandau Strike|Capture")
     int32 GetPointIndex() const { return PointIndex; }
 
+    UFUNCTION(BlueprintPure, Category="Spandau Strike|Capture")
+    float GetCaptureProgress() const { return CaptureProgress; }
+
+    UFUNCTION(BlueprintPure, Category="Spandau Strike|Capture")
+    ESpandauCaptureState GetCaptureState() const { return CaptureState; }
+
     UPROPERTY(BlueprintAssignable, Category="Spandau Strike|Capture")
     FSpandauCapturePointCaptured OnCaptured;
 

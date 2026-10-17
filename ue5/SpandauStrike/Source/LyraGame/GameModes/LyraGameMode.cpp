@@ -1,6 +1,8 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
 #include "LyraGameMode.h"
+#include "SpandauStrike/SpandauCaptureDirector.h"
+#include "EngineUtils.h"
 #include "AssetRegistry/AssetData.h"
 #include "Engine/GameInstance.h"
 #include "Engine/World.h"
@@ -471,6 +473,20 @@ void ALyraGameMode::RequestPlayerRestartNextFrame(AController* Controller, bool 
 	if (bForceReset && (Controller != nullptr))
 	{
 		Controller->Reset();
+	}
+
+	if (Controller && GetWorld())
+	{
+		for (TActorIterator<ASpandauCaptureDirector> It(GetWorld()); It; ++It)
+		{
+			if (ASpandauCaptureDirector* Director = *It)
+			{
+				if (Director->QueueRespawn(Controller))
+				{
+					return;
+				}
+			}
+		}
 	}
 
 	if (APlayerController* PC = Cast<APlayerController>(Controller))

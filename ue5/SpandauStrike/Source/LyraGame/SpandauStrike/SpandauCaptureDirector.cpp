@@ -1,12 +1,17 @@
 #include "SpandauStrike/SpandauCaptureDirector.h"
 
+#include "AIController.h"
 #include "Components/TextRenderComponent.h"
 #include "EngineUtils.h"
+#include "GameFramework/Controller.h"
+#include "GameFramework/GameModeBase.h"
 #include "GameFramework/GameStateBase.h"
+#include "GameFramework/Pawn.h"
 #include "GameFramework/PlayerState.h"
-#include "Player/LyraPlayerState.h"
 #include "LyraLogChannels.h"
 #include "Net/UnrealNetwork.h"
+#include "Navigation/PathFollowingComponent.h"
+#include "Player/LyraPlayerState.h"
 #include "SpandauStrike/SpandauCapturePoint.h"
 
 ASpandauCaptureDirector::ASpandauCaptureDirector()
@@ -32,13 +37,15 @@ void ASpandauCaptureDirector::BeginPlay()
         ActiveSector = FMath::Max(1, StartingSector);
         AttackerTickets = FMath::Max(0, StartingAttackerTickets);
         TransitionRemaining = 0.0f;
+        RespawnWaveRemaining = FMath::Max(1.0f, RespawnWaveSeconds);
+        BotObjectivePulseRemaining = 0.0f;
         bMatchEnded = false;
         bAttackersWon = false;
         bInTransition = false;
 
         DiscoverCapturePoints();
         RefreshSectorActivation();
-        UE_LOG(LogLyra, Log, TEXT("SpandauCaptureDirector runtime ready: points=%d sectors=%d tickets=%d"), CapturePoints.Num(), TotalSectors, AttackerTickets);
+        UE_LOG(LogLyra, Log, TEXT("SpandauCaptureDirector runtime ready: points=%d sectors=%d tickets=%d wave=%.1fs"), CapturePoints.Num(), TotalSectors, AttackerTickets, RespawnWaveSeconds);
         ForceNetUpdate();
     }
 
@@ -54,6 +61,26 @@ void ASpandauCaptureDirector::Tick(float DeltaSeconds)
         ResolveRuntimeTeams();
     }
 
+    if (HasAuthority() && bTeamsResolved && !bMatchEnded)
+    {
+        RespawnWaveRemaining = FMath::Max(0.0f, RespawnWaveRemaining - DeltaSeconds);
+        if (RespawnWaveRemaining <= KINDA_SMALL_NUMBER)
+        {
+            ProcessRespawnWave();
+            RespawnWaveRemaining = FMath::Max(1.0f, RespawnWaveSeconds);
+        }
+
+        if (bRouteBotsToObjectives)
+        {
+            BotObjectivePulseRemaining -= DeltaSeconds;
+            if (BotObjectivePulseRemaining <= 0.0f)
+            {
+                RouteBotsToActiveObjectives();
+                BotObjectivePulseRemaining = FMath::Max(0.25f, BotObjectivePulseSeconds);
+            }
+        }
+    }
+
     if (HasAuthority() && bInTransition && !bMatchEnded)
     {
         TransitionRemaining = FMath::Max(0.0f, TransitionRemaining - DeltaSeconds);
@@ -66,6 +93,34 @@ void ASpandauCaptureDirector::Tick(float DeltaSeconds)
     UpdateStatusText();
 }
 
+bool ASpandauCaptureDirector::QueueRespawn(AController* Controller)
+{
+    if (!HasAuthority() || !bTeamsResolved || bMatchEnded || !IsValid(Controller))
+    {
+        return false;
+    }
+
+    if (Controller->GetPawn())
+    {
+        return false;
+    }
+
+    const int32 TeamId = GetControllerTeamId(Controller);
+    if (TeamId != ResolvedAttackerTeamId && TeamId != ResolvedDefenderTeamId)
+    {
+        return false;
+    }
+
+    if (TeamId == ResolvedAttackerTeamId && AttackerTickets <= 0)
+    {
+        return true;
+    }
+
+    RespawnQueue.AddUnique(Controller);
+    UE_LOG(LogLyra, Verbose, TEXT("Spandau respawn queued: %s team=%d wave=%.2f"), *GetNameSafe(Controller), TeamId, RespawnWaveRemaining);
+    return true;
+}
+
 void ASpandauCaptureDirector::NotifyAttackerRespawn()
 {
     if (!HasAuthority() || bMatchEnded)
@@ -76,13 +131,59 @@ void ASpandauCaptureDirector::NotifyAttackerRespawn()
     AttackerTickets = FMath::Max(0, AttackerTickets - 1);
     if (AttackerTickets <= 0)
     {
-        bMatchEnded = true;
-        bAttackersWon = false;
-        bInTransition = false;
-        TransitionRemaining = 0.0f;
-        RefreshSectorActivation();
+        UE_LOG(LogLyra, Log, TEXT("Spandau attackers exhausted tickets"));
+    }
+    ForceNetUpdate();
+}
+
+void ASpandauCaptureDirector::ProcessRespawnWave()
+{
+    if (!HasAuthority() || bMatchEnded || RespawnQueue.IsEmpty())
+    {
+        return;
     }
 
+    AGameModeBase* GameMode = GetWorld() ? GetWorld()->GetAuthGameMode() : nullptr;
+    if (!GameMode)
+    {
+        return;
+    }
+
+    int32 Spawned = 0;
+    int32 TicketSpawns = 0;
+    TArray<TObjectPtr<AController>> Pending = MoveTemp(RespawnQueue);
+    RespawnQueue.Reset();
+
+    for (AController* Controller : Pending)
+    {
+        if (!IsValid(Controller) || Controller->GetPawn())
+        {
+            continue;
+        }
+
+        const int32 TeamId = GetControllerTeamId(Controller);
+        if (TeamId == ResolvedAttackerTeamId && AttackerTickets <= 0)
+        {
+            continue;
+        }
+
+        GameMode->RestartPlayer(Controller);
+        if (Controller->GetPawn())
+        {
+            ++Spawned;
+            if (TeamId == ResolvedAttackerTeamId)
+            {
+                NotifyAttackerRespawn();
+                ++TicketSpawns;
+            }
+        }
+        else
+        {
+            RespawnQueue.AddUnique(Controller);
+        }
+    }
+
+    UE_LOG(LogLyra, Log, TEXT("Spandau respawn wave: spawned=%d attackerTicketSpawns=%d queued=%d tickets=%d"), Spawned, TicketSpawns, RespawnQueue.Num(), AttackerTickets);
     ForceNetUpdate();
 }
 
@@ -199,6 +300,90 @@ void ASpandauCaptureDirector::ResolveRuntimeTeams()
     RefreshSectorActivation();
 }
 
+int32 ASpandauCaptureDirector::GetControllerTeamId(const AController* Controller) const
+{
+    if (!Controller)
+    {
+        return INDEX_NONE;
+    }
+    const ALyraPlayerState* LyraPlayerState = Controller->GetPlayerState<ALyraPlayerState>();
+    return LyraPlayerState ? LyraPlayerState->GetTeamId() : INDEX_NONE;
+}
+
+ASpandauCapturePoint* ASpandauCaptureDirector::FindObjectiveForTeam(int32 TeamId, const FVector& FromLocation) const
+{
+    ASpandauCapturePoint* Best = nullptr;
+    float BestDistSq = TNumericLimits<float>::Max();
+
+    for (ASpandauCapturePoint* Point : CapturePoints)
+    {
+        if (!Point || Point->GetSectorIndex() != ActiveSector || Point->IsCaptured())
+        {
+            continue;
+        }
+
+        const float DistSq = FVector::DistSquared(FromLocation, Point->GetActorLocation());
+        if (DistSq < BestDistSq)
+        {
+            BestDistSq = DistSq;
+            Best = Point;
+        }
+    }
+    return Best;
+}
+
+void ASpandauCaptureDirector::RouteBotsToActiveObjectives()
+{
+    if (!GetWorld() || bInTransition || bMatchEnded)
+    {
+        return;
+    }
+
+    int32 Routed = 0;
+    int32 Failed = 0;
+    for (FConstControllerIterator It = GetWorld()->GetControllerIterator(); It; ++It)
+    {
+        AAIController* AI = Cast<AAIController>(It->Get());
+        if (!AI || !AI->GetPawn() || !AI->PlayerState || !AI->PlayerState->IsABot())
+        {
+            continue;
+        }
+
+        const int32 TeamId = GetControllerTeamId(AI);
+        if (TeamId != ResolvedAttackerTeamId && TeamId != ResolvedDefenderTeamId)
+        {
+            continue;
+        }
+
+        ASpandauCapturePoint* Objective = FindObjectiveForTeam(TeamId, AI->GetPawn()->GetActorLocation());
+        if (!Objective)
+        {
+            continue;
+        }
+
+        const float Acceptance = TeamId == ResolvedDefenderTeamId ? 350.0f : 180.0f;
+        EPathFollowingRequestResult::Type Result = AI->MoveToLocation(Objective->GetActorLocation(), Acceptance, true, true, true, false, nullptr, true);
+        if (Result == EPathFollowingRequestResult::Failed)
+        {
+            Result = AI->MoveToLocation(Objective->GetActorLocation(), Acceptance, true, false, false, false, nullptr, true);
+        }
+        if (Result == EPathFollowingRequestResult::Failed)
+        {
+            ++Failed;
+        }
+        else
+        {
+            ++Routed;
+        }
+    }
+
+    if (!bBotRouteDiagnosticsLogged || Routed > 0)
+    {
+        UE_LOG(LogLyra, Log, TEXT("Spandau objective routing: sector=%d routed=%d failed=%d"), ActiveSector, Routed, Failed);
+        bBotRouteDiagnosticsLogged = true;
+    }
+}
+
 void ASpandauCaptureDirector::RefreshSectorActivation()
 {
     if (!HasAuthority())
@@ -225,7 +410,7 @@ void ASpandauCaptureDirector::HandlePointCaptured(ASpandauCapturePoint* CaptureP
         return;
     }
 
-    if (CapturePoint->GetSectorIndex() != ActiveSector)
+    if (CapturingTeamId != ResolvedAttackerTeamId || CapturePoint->GetSectorIndex() != ActiveSector)
     {
         return;
     }
@@ -256,7 +441,7 @@ bool ASpandauCaptureDirector::IsCurrentSectorComplete() const
         }
     }
 
-    return PointCount > 0;
+    return PointCount >= 2;
 }
 
 void ASpandauCaptureDirector::BeginSectorTransition()
@@ -295,31 +480,30 @@ void ASpandauCaptureDirector::CompleteSectorTransition()
     bInTransition = false;
     TransitionRemaining = 0.0f;
     RefreshSectorActivation();
+    RouteBotsToActiveObjectives();
+    UE_LOG(LogLyra, Log, TEXT("Spandau sector advanced: sector=%d tickets=%d"), ActiveSector, AttackerTickets);
     ForceNetUpdate();
+}
+
+FString ASpandauCaptureDirector::GetHUDSummary() const
+{
+    if (bMatchEnded)
+    {
+        return bAttackersWon ? TEXT("ANGREIFER SIEG") : TEXT("VERTEIDIGER SIEG");
+    }
+    if (bInTransition)
+    {
+        return FString::Printf(TEXT("SEKTORWECHSEL %.0fs | TICKETS %d"), TransitionRemaining, AttackerTickets);
+    }
+    return FString::Printf(TEXT("SEKTOR %d/%d | TICKETS %d | WELLE %.0fs"), ActiveSector, FMath::Max(1, TotalSectors), AttackerTickets, RespawnWaveRemaining);
 }
 
 void ASpandauCaptureDirector::UpdateStatusText()
 {
-    if (!StatusText)
+    if (StatusText)
     {
-        return;
+        StatusText->SetText(FText::FromString(GetHUDSummary()));
     }
-
-    FString State;
-    if (bMatchEnded)
-    {
-        State = bAttackersWon ? TEXT("ANGREIFER SIEG") : TEXT("VERTEIDIGER SIEG");
-    }
-    else if (bInTransition)
-    {
-        State = FString::Printf(TEXT("SEKTORWECHSEL %.0fs"), TransitionRemaining);
-    }
-    else
-    {
-        State = FString::Printf(TEXT("SEKTOR %d/%d"), ActiveSector, FMath::Max(1, TotalSectors));
-    }
-
-    StatusText->SetText(FText::FromString(FString::Printf(TEXT("%s\nTICKETS %d"), *State, AttackerTickets)));
 }
 
 void ASpandauCaptureDirector::OnRep_RuntimeState()
@@ -334,7 +518,7 @@ void ASpandauCaptureDirector::GetLifetimeReplicatedProps(TArray<FLifetimePropert
     DOREPLIFETIME(ASpandauCaptureDirector, ActiveSector);
     DOREPLIFETIME(ASpandauCaptureDirector, AttackerTickets);
     DOREPLIFETIME(ASpandauCaptureDirector, TransitionRemaining);
+    DOREPLIFETIME(ASpandauCaptureDirector, RespawnWaveRemaining);
     DOREPLIFETIME(ASpandauCaptureDirector, bMatchEnded);
     DOREPLIFETIME(ASpandauCaptureDirector, bAttackersWon);
 }
-
