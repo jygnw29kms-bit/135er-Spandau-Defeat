@@ -1,6 +1,7 @@
 #include "SpandauStrike/SpandauCaptureDirector.h"
 
 #include "AIController.h"
+#include "BehaviorTree/BlackboardComponent.h"
 #include "Components/TextRenderComponent.h"
 #include "EngineUtils.h"
 #include "GameFramework/Controller.h"
@@ -457,13 +458,19 @@ void ASpandauCaptureDirector::RouteBotsToActiveObjectives()
             continue;
         }
 
-        if (AActor* FocusActor = AI->GetFocusActor())
+        AActor* CombatTarget = AI->GetFocusActor();
+        if (!CombatTarget)
         {
-            if (AI->GetTeamAttitudeTowards(*FocusActor) == ETeamAttitude::Hostile)
+            if (const UBlackboardComponent* Blackboard = AI->GetBlackboardComponent())
             {
-                ++CombatHeld;
-                continue;
+                CombatTarget = Cast<AActor>(Blackboard->GetValueAsObject(FName(TEXT("TargetEnemy"))));
             }
+        }
+
+        if (CombatTarget && AI->GetTeamAttitudeTowards(*CombatTarget) == ETeamAttitude::Hostile)
+        {
+            ++CombatHeld;
+            continue;
         }
 
         ASpandauCapturePoint* Objective = FindObjectiveForTeam(TeamId, AI->GetPawn()->GetActorLocation());
