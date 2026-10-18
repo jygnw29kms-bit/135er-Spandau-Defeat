@@ -53,13 +53,14 @@ Standard: Lyra Shooter Elimination als Waffen-/Pawn-/Bot-Unterbau, 15 Bots. Unse
 - Bevorzugt: `tools/ue5/run_rathaus_v75_front_spawn_headless_check.py`; der PowerShell-Einstieg `run_rathaus_v75_front_spawn_headless_check.ps1` delegiert nur noch an denselben Runner.
 - statische Map-Prüfung: 24 PlayerStarts gesamt, davon 16 Front-Spawns, 8 CapturePoints, 1 Director, je exakt 2 Attacker- und 2 Defender-Spawns pro Sektor.
 - Runtime-Prüfung: Teams aufgelöst, 15 Bots zu Objectives geroutet und anschließend ein echter Lyra-Bot-Tod über `DamageSelfDestruct()` ausgelöst.
-- Der Gate verlangt Death-Heat, Respawn-Queue, Wellen-Respawn sowie entweder einen sicheren Frontspawn oder einen protokollierten Sicherheits-Fallback auf Basisspawns.
+- Der Gate verlangt Death-Heat, Respawn-Queue, Wellen-Respawn, **Spawn-to-Action** sowie entweder einen sicheren Frontspawn oder einen protokollierten Sicherheits-Fallback auf Basisspawns.
+- Spawn-to-Action misst pro respawntem Bot die Zeit bis zur ersten erfolgreich angenommenen Objective-Bewegung. Der letzte Probe-Lauf lag bei `0,16 s`.
 - Bekannte visuelle Niagara-Warnungen von `GCNL_Death`/`GCNL_Spawning` unter `-nullrhi` werden separat gezählt; andere FellOutOfWorld/KillZ/Spawn/Fatal/Ensure-/Script-Fehler lassen den Gate scheitern.
-- Letzter bestätigter Lauf: kompletter Death→Heat→Queue→Safety→Respawn-Zyklus bestanden, `unexpected_bad_count=0`.
+- Letzter bestätigter Lauf: kompletter Death→Heat→Queue→Safety→Respawn→Action-Zyklus bestanden, `unexpected_bad_count=0`.
 
 ## Nächste Gameplay-Schritte
 1. v75 sichtbar anspielen und Front-Spawn-Laufwege sowie tatsächliche Sichtlinien prüfen.
-2. Spawn-to-Action-Telemetrie ergänzen; gewählte/abgelehnte Spawnkandidaten und Death-Heat sind bereits im Runtime-Log vorhanden.
+2. Spawn-to-**Combat** ergänzen: erste Schuss-/Treffer-/Schadensaktion nach dem Respawn getrennt von der bereits vorhandenen Spawn-to-Objective-Messung erfassen.
 3. Bot-Kampfverhalten mit Objective-Routing koppeln, ohne den bestehenden Lyra-Kampf zu überschreiben.
 4. echte Capture-/Kill-/Respawn-Telemetrie weiter verdichten und Waffen/Movement nur anhand gemessener Werte nachbalancieren.
 5. Capture anschließend aus dem Elimination-Unterbau in eine eigene Spandau-Strike-Lyra-Experience überführen.

@@ -119,6 +119,7 @@ private:
 
     TArray<FRecentDeathEntry> RecentDeaths;
     TMap<TWeakObjectPtr<AController>, float> RespawnQueuedAtSeconds;
+    TMap<TWeakObjectPtr<AController>, float> RespawnedAtSeconds;
     bool bInTransition = false;
     bool bTeamsResolved = false;
     int32 ResolvedAttackerTeamId = INDEX_NONE;

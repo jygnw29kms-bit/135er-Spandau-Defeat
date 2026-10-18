@@ -238,6 +238,10 @@ void ASpandauCaptureDirector::ProcessRespawnWave()
             const float WaitSeconds = (GetWorld() && QueuedAt > 0.0f) ? FMath::Max(0.0f, GetWorld()->GetTimeSeconds() - QueuedAt) : 0.0f;
             UE_LOG(LogLyra, Log, TEXT("Spandau respawn completed: controller=%s team=%d sector=%d wait=%.2fs x=%.0f y=%.0f z=%.0f"), *GetNameSafe(Controller), TeamId, ActiveSector, WaitSeconds, Controller->GetPawn()->GetActorLocation().X, Controller->GetPawn()->GetActorLocation().Y, Controller->GetPawn()->GetActorLocation().Z);
             RespawnQueuedAtSeconds.Remove(Controller);
+            if (GetWorld())
+            {
+                RespawnedAtSeconds.Add(Controller, GetWorld()->GetTimeSeconds());
+            }
             if (TeamId == ResolvedAttackerTeamId)
             {
                 NotifyAttackerRespawn();
@@ -441,6 +445,13 @@ void ASpandauCaptureDirector::RouteBotsToActiveObjectives()
         else
         {
             ++Routed;
+            const TWeakObjectPtr<AController> ControllerKey(AI);
+            if (const float* RespawnedAt = RespawnedAtSeconds.Find(ControllerKey))
+            {
+                const float SpawnToActionSeconds = FMath::Max(0.0f, GetWorld()->GetTimeSeconds() - *RespawnedAt);
+                UE_LOG(LogLyra, Log, TEXT("Spandau spawn-to-action: controller=%s team=%d sector=%d seconds=%.2f objective=%s result=%d"), *GetNameSafe(AI), TeamId, ActiveSector, SpawnToActionSeconds, *GetNameSafe(Objective), static_cast<int32>(Result));
+                RespawnedAtSeconds.Remove(ControllerKey);
+            }
         }
     }
 

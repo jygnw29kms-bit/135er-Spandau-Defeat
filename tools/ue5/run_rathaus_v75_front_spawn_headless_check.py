@@ -47,6 +47,7 @@ def main() -> int:
         "spawn_selected": False,
         "safety_fallback": False,
         "respawn_completed": False,
+        "spawn_to_action_seen": False,
         "known_nullrhi_spawn_cue_warnings": 0,
         "bad_count": -1,
         "unexpected_bad_count": -1,
@@ -90,12 +91,13 @@ def main() -> int:
         result["spawn_selected"] = "Spandau spawn selected:" in text
         result["safety_fallback"] = "Spandau front spawn safety rejected all candidates; falling back to base starts:" in text
         result["respawn_completed"] = "Spandau respawn completed:" in text
+        result["spawn_to_action_seen"] = "Spandau spawn-to-action:" in text
         result["known_nullrhi_spawn_cue_warnings"] = len(known_nullrhi_spawn_cue.findall(text))
         result["bad_count"] = len(bad.findall(text))
         result["unexpected_bad_count"] = max(0, result["bad_count"] - result["known_nullrhi_spawn_cue_warnings"])
         required = [
             "static_validation", "startup_ready", "front_spawn_seen", "respawn_probe_armed",
-            "respawn_probe_triggered", "death_heat_seen", "respawn_queued", "respawn_completed",
+            "respawn_probe_triggered", "death_heat_seen", "respawn_queued", "respawn_completed", "spawn_to_action_seen",
         ]
         spawn_path_ok = result["spawn_selected"] or result["safety_fallback"]
         result["passed"] = all(result[key] for key in required) and spawn_path_ok and result["unexpected_bad_count"] == 0
