@@ -56,13 +56,15 @@ Standard: Lyra Shooter Elimination als Waffen-/Pawn-/Bot-Unterbau, 15 Bots. Unse
 - Der normale Gate verlangt Death-Heat, Respawn-Queue, Wellen-Respawn, **Spawn-to-Action** sowie entweder einen sicheren Frontspawn oder einen protokollierten Sicherheits-Fallback auf Basisspawns. Im optionalen `--combat-probe`-Modus ersetzt der bestätigte **Spawn-to-Combat**-Pfad die Objective-Action-Pflicht, weil der Bot absichtlich im Kampf gehalten wird.
 - Bei Läufen ab 45 Sekunden muss zusätzlich der Warmup→Playing-Wechsel beobachtet werden und mindestens ein Nicht-Todes-Restart den Capture-Respawn explizit umgehen. Die alte Fehler-Signatur `spawned=16 attackerTicketSpawns=8` lässt den Gate scheitern.
 - Spawn-to-Action misst pro respawntem Bot die Zeit bis zur ersten erfolgreich angenommenen Objective-Bewegung. Bestätigte normale Probeläufe lagen bei etwa `0,16–0,20 s`.
-- Spawn-to-Combat ist im zentralen `ULyraDamageExecution` instrumentiert und misst den ersten tatsächlich verursachten Schaden nach dem Respawn. Der Combat-Probe hat den vollständigen ShooterCore-Pfad über `InputTag.Weapon.Fire` bis zum echten Treffer nachgewiesen; beobachtete Samples enthielten unter anderem `36` Schaden nach `0,01 s` und `9` Schaden nach `4,77 s`.
+- Spawn-to-Combat ist im zentralen `ULyraDamageExecution` instrumentiert und misst den ersten tatsächlich verursachten Schaden nach dem Respawn. Der Combat-Probe hält den respawnten Bot an seinem echten Spawn, setzt ein gegnerisches Testziel kollisionssicher in freie Sichtlinie und nutzt anschließend den echten ShooterCore-Eingang `InputTag.Weapon.Fire` bis zum realen Treffer.
+- Der Runner schreibt `spawn_to_combat_seconds`, `spawn_to_combat_damage` und `spawn_to_combat_target` maschinenlesbar in den JSON-Report. `tools/ue5/collect_spawn_to_combat_baseline.py` führt mehrere vollständige Combat-Gates aus und erzeugt daraus Min/Mean/Median/Max-Baselines.
+- Erste bestätigte 3er-Baseline: **3/3 bestanden**, jeweils `0,01 s` bis Erstschaden und `36` Schaden, bei allen Läufen `unexpected_bad_count=0`. Der Report liegt unter `Saved/Reports/spawn_to_combat_baseline.json`.
 - Bekannte rein visuelle `-nullrhi`-Warnungen von Spawn-/Death-Cues sowie Muzzleflash, Hülsenauswurf, Tracer und Decals werden separat gezählt. Andere FellOutOfWorld/KillZ/Spawn/Fatal/Ensure-/Script-Fehler lassen den Gate weiterhin scheitern.
 - Letzter bestätigter Combat-Gate-Lauf: kompletter Death→Heat→Queue→Safety→Respawn→Combat-Zyklus bestanden, Kampfpriorität mit `combatHeld` bestätigt, echter Schaden erzeugt, Warmup-Reset ohne Capture-Ticketverlust und `unexpected_bad_count=0`.
 
 ## Nächste Gameplay-Schritte
 1. v75 sichtbar anspielen und Front-Spawn-Laufwege sowie tatsächliche Sichtlinien prüfen.
-2. Genügend Spawn-to-Combat-Samples sammeln und daraus echte Zeit-/Distanz-Baselines ableiten.
-3. Bot-Kampfverhalten mit Objective-Routing koppeln, ohne den bestehenden Lyra-Kampf zu überschreiben.
+2. Die reproduzierbare Spawn-to-Combat-Baseline um echte Distanz-, Waffen- und Gegnerkontakt-Samples erweitern.
+3. Bot-Kampfverhalten mit Objective-Routing weiter koppeln, ohne den bestehenden Lyra-Kampf zu überschreiben.
 4. echte Capture-/Kill-/Respawn-Telemetrie weiter verdichten und Waffen/Movement nur anhand gemessener Werte nachbalancieren.
 5. Capture anschließend aus dem Elimination-Unterbau in eine eigene Spandau-Strike-Lyra-Experience überführen.

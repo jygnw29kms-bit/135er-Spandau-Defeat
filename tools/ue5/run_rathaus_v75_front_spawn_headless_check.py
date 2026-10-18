@@ -50,6 +50,9 @@ def main() -> int:
         "respawn_completed": False,
         "spawn_to_action_seen": False,
         "spawn_to_combat_seen": False,
+        "spawn_to_combat_seconds": None,
+        "spawn_to_combat_damage": None,
+        "spawn_to_combat_target": None,
         "combat_probe_triggered": False,
         "combat_hold_seen": False,
         "warmup_to_playing_seen": False,
@@ -99,7 +102,12 @@ def main() -> int:
         result["safety_fallback"] = "Spandau front spawn safety rejected all candidates; falling back to base starts:" in text
         result["respawn_completed"] = "Spandau respawn completed:" in text
         result["spawn_to_action_seen"] = "Spandau spawn-to-action:" in text
-        result["spawn_to_combat_seen"] = "Spandau spawn-to-combat:" in text
+        combat_match = re.search(r"Spandau spawn-to-combat:.*?seconds=([0-9.]+).*?damage=([0-9.]+).*?target=([^\r\n]+)", text)
+        result["spawn_to_combat_seen"] = combat_match is not None
+        if combat_match:
+            result["spawn_to_combat_seconds"] = float(combat_match.group(1))
+            result["spawn_to_combat_damage"] = float(combat_match.group(2))
+            result["spawn_to_combat_target"] = combat_match.group(3).strip()
         result["combat_probe_triggered"] = "Spandau combat probe trigger:" in text
         result["combat_hold_seen"] = re.search(r"combatHeld=[1-9][0-9]*", text) is not None
         result["warmup_to_playing_seen"] = "Warmup Phase Ended" in text and "Playing Phase" in text

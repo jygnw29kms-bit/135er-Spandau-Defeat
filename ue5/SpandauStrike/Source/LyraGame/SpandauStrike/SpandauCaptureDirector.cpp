@@ -329,46 +329,106 @@ void ASpandauCaptureDirector::ProcessRespawnWave()
                 {
                     APawn* ProbePawn = ProbeAI->GetPawn();
                     UBlackboardComponent* Blackboard = ProbeAI->GetBlackboardComponent();
-                    AController* TargetController = nullptr;
-                    for (FConstControllerIterator TargetIt = GetWorld()->GetControllerIterator(); TargetIt; ++TargetIt)
+                    if (ProbePawn && Blackboard)
                     {
-                        AController* CandidateController = TargetIt->Get();
-                        if (!CandidateController || CandidateController == Controller || !CandidateController->GetPawn())
-                        {
-                            continue;
-                        }
-                        const int32 CandidateTeamId = GetControllerTeamId(CandidateController);
-                        if (CandidateTeamId != INDEX_NONE && CandidateTeamId != TeamId)
-                        {
-                            TargetController = CandidateController;
-                            break;
-                        }
-                    }
+                        UNavigationSystemV1* NavSystem = FNavigationSystem::GetCurrent<UNavigationSystemV1>(GetWorld());
+                        const FVector ProbeLocation = ProbePawn->GetActorLocation();
+                        const FVector ProbeRight = ProbePawn->GetActorRightVector();
+                        const FVector ProbeForward = ProbePawn->GetActorForwardVector();
+                        const TArray<FVector> Directions = {
+                            ProbeForward,
+                            -ProbeForward,
+                            ProbeRight,
+                            -ProbeRight,
+                            (ProbeForward + ProbeRight).GetSafeNormal(),
+                            (ProbeForward - ProbeRight).GetSafeNormal(),
+                            (-ProbeForward + ProbeRight).GetSafeNormal(),
+                            (-ProbeForward - ProbeRight).GetSafeNormal()
+                        };
+                        const TArray<float> Distances = {350.0f, 500.0f, 700.0f};
+                        APawn* SelectedTargetPawn = nullptr;
 
-                    if (ProbePawn && Blackboard && TargetController && TargetController->GetPawn())
-                    {
-                        APawn* TargetPawn = TargetController->GetPawn();
-                        FVector ProbeLocation = TargetPawn->GetActorLocation() + TargetPawn->GetActorRightVector() * 800.0f;
-                        if (UNavigationSystemV1* NavSystem = FNavigationSystem::GetCurrent<UNavigationSystemV1>(GetWorld()))
+                        for (FConstControllerIterator TargetIt = GetWorld()->GetControllerIterator(); TargetIt && !SelectedTargetPawn; ++TargetIt)
                         {
-                            FNavLocation ProjectedLocation;
-                            if (NavSystem->ProjectPointToNavigation(ProbeLocation, ProjectedLocation, FVector(800.0f, 800.0f, 1000.0f)))
+                            AController* CandidateController = TargetIt->Get();
+                            if (!CandidateController || CandidateController == Controller || !CandidateController->GetPawn() || !CandidateController->PlayerState)
                             {
-                                ProbeLocation = ProjectedLocation.Location;
+                                continue;
+                            }
+                            const int32 CandidateTeamId = GetControllerTeamId(CandidateController);
+                            if (CandidateTeamId == INDEX_NONE || CandidateTeamId == TeamId)
+                            {
+                                continue;
+                            }
+
+                            APawn* CandidateTargetPawn = CandidateController->GetPawn();
+                            const FVector OriginalTargetLocation = CandidateTargetPawn->GetActorLocation();
+                            const FRotator OriginalTargetRotation = CandidateTargetPawn->GetActorRotation();
+                            bool bTargetPlaced = false;
+
+                            for (const float Distance : Distances)
+                            {
+                                for (const FVector& Direction : Directions)
+                                {
+                                    FVector TargetLocation = ProbeLocation + Direction * Distance;
+                                    if (NavSystem)
+                                    {
+                                        FNavLocation ProjectedLocation;
+                                        if (NavSystem->ProjectPointToNavigation(TargetLocation, ProjectedLocation, FVector(300.0f, 300.0f, 600.0f)))
+                                        {
+                                            TargetLocation = ProjectedLocation.Location;
+                                        }
+                                    }
+
+                                    const FRotator TargetRotation = (ProbeLocation - TargetLocation).Rotation();
+                                    if (!GetWorld()->FindTeleportSpot(CandidateTargetPawn, TargetLocation, TargetRotation))
+                                    {
+                                        continue;
+                                    }
+                                    if (!CandidateTargetPawn->TeleportTo(TargetLocation, TargetRotation, false, true))
+                                    {
+                                        continue;
+                                    }
+                                    const FRotator ProbeRotation = (CandidateTargetPawn->GetActorLocation() - ProbeLocation).Rotation();
+                                    ProbeAI->SetControlRotation(ProbeRotation);
+                                    FCollisionQueryParams SightParams(SCENE_QUERY_STAT(SpandauCombatProbeSight), false, ProbePawn);
+                                    FHitResult SightHit;
+                                    const FVector SightStart = ProbePawn->GetPawnViewLocation();
+                                    const FVector SightEnd = CandidateTargetPawn->GetPawnViewLocation();
+                                    const bool bBlocked = GetWorld()->LineTraceSingleByChannel(SightHit, SightStart, SightEnd, ECC_Visibility, SightParams);
+                                    if (!bBlocked || SightHit.GetActor() == CandidateTargetPawn)
+                                    {
+                                        SelectedTargetPawn = CandidateTargetPawn;
+                                        bTargetPlaced = true;
+                                        break;
+                                    }
+                                }
+                                if (bTargetPlaced)
+                                {
+                                    break;
+                                }
+                            }
+
+                            if (!bTargetPlaced)
+                            {
+                                CandidateTargetPawn->TeleportTo(OriginalTargetLocation, OriginalTargetRotation, false, true);
                             }
                         }
 
-                        const FRotator ProbeRotation = (TargetPawn->GetActorLocation() - ProbeLocation).Rotation();
-                        if (ProbePawn->TeleportTo(ProbeLocation, ProbeRotation, false, true))
+                        if (SelectedTargetPawn)
                         {
-                            Blackboard->SetValueAsObject(FName(TEXT("TargetEnemy")), TargetPawn);
-                            ProbeAI->SetFocus(TargetPawn);
+                            Blackboard->SetValueAsObject(FName(TEXT("TargetEnemy")), SelectedTargetPawn);
+                            ProbeAI->SetFocus(SelectedTargetPawn);
                             bCombatProbeTriggered = true;
                             CombatProbeController = ProbeAI;
-                            CombatProbeTarget = TargetPawn;
-                            CombatProbeKeepAliveUntilSeconds = GetWorld()->GetTimeSeconds() + 8.0f;
+                            CombatProbeTarget = SelectedTargetPawn;
+                            CombatProbeKeepAliveUntilSeconds = GetWorld()->GetTimeSeconds() + 10.0f;
                             CombatProbeNextFireAtSeconds = GetWorld()->GetTimeSeconds();
-                            UE_LOG(LogLyra, Log, TEXT("Spandau combat probe trigger: controller=%s target=%s distance=%.0fcm"), *GetNameSafe(Controller), *GetNameSafe(TargetPawn), FVector::Dist(ProbePawn->GetActorLocation(), TargetPawn->GetActorLocation()));
+                            UE_LOG(LogLyra, Log, TEXT("Spandau combat probe trigger: controller=%s target=%s distance=%.0fcm los=1 targetBot=%d"), *GetNameSafe(Controller), *GetNameSafe(SelectedTargetPawn), FVector::Dist(ProbePawn->GetActorLocation(), SelectedTargetPawn->GetActorLocation()), SelectedTargetPawn->GetController() && SelectedTargetPawn->GetController()->PlayerState && SelectedTargetPawn->GetController()->PlayerState->IsABot() ? 1 : 0);
+                        }
+                        else
+                        {
+                            UE_LOG(LogLyra, Warning, TEXT("Spandau combat probe placement failed: controller=%s no-visible-enemy-bot-placement"), *GetNameSafe(Controller));
                         }
                     }
                 }
