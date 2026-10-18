@@ -53,6 +53,8 @@ def main() -> int:
         "spawn_to_combat_seconds": None,
         "spawn_to_combat_damage": None,
         "spawn_to_combat_target": None,
+        "combat_probe_distance_cm": None,
+        "combat_probe_target_is_bot": None,
         "combat_probe_triggered": False,
         "combat_hold_seen": False,
         "warmup_to_playing_seen": False,
@@ -108,7 +110,11 @@ def main() -> int:
             result["spawn_to_combat_seconds"] = float(combat_match.group(1))
             result["spawn_to_combat_damage"] = float(combat_match.group(2))
             result["spawn_to_combat_target"] = combat_match.group(3).strip()
-        result["combat_probe_triggered"] = "Spandau combat probe trigger:" in text
+        probe_match = re.search(r"Spandau combat probe trigger:.*?distance=([0-9.]+)cm.*?targetBot=([01])", text)
+        result["combat_probe_triggered"] = probe_match is not None
+        if probe_match:
+            result["combat_probe_distance_cm"] = float(probe_match.group(1))
+            result["combat_probe_target_is_bot"] = probe_match.group(2) == "1"
         result["combat_hold_seen"] = re.search(r"combatHeld=[1-9][0-9]*", text) is not None
         result["warmup_to_playing_seen"] = "Warmup Phase Ended" in text and "Playing Phase" in text
         result["non_death_restart_bypass_seen"] = "Spandau non-death restart bypassed:" in text

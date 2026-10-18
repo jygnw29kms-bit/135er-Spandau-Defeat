@@ -39,6 +39,8 @@ def main() -> int:
             "seconds": report.get("spawn_to_combat_seconds"),
             "damage": report.get("spawn_to_combat_damage"),
             "target": report.get("spawn_to_combat_target"),
+            "distance_cm": report.get("combat_probe_distance_cm"),
+            "target_is_bot": report.get("combat_probe_target_is_bot"),
             "unexpected_bad_count": report.get("unexpected_bad_count"),
             "runner_exit_code": completed.returncode,
         }
@@ -49,6 +51,7 @@ def main() -> int:
 
     seconds = [float(s["seconds"]) for s in samples if s["seconds"] is not None]
     damage = [float(s["damage"]) for s in samples if s["damage"] is not None]
+    distance_cm = [float(s["distance_cm"]) for s in samples if s["distance_cm"] is not None]
     summary = {
         "timestamp": datetime.now(timezone.utc).astimezone().isoformat(),
         "runs": len(samples),
@@ -62,6 +65,10 @@ def main() -> int:
         "damage_mean": statistics.fmean(damage),
         "damage_median": statistics.median(damage),
         "damage_max": max(damage),
+        "distance_cm_min": min(distance_cm),
+        "distance_cm_mean": statistics.fmean(distance_cm),
+        "distance_cm_median": statistics.median(distance_cm),
+        "distance_cm_max": max(distance_cm),
         "samples": samples,
     }
     output_path.parent.mkdir(parents=True, exist_ok=True)
