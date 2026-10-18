@@ -8,12 +8,14 @@
 #include "Character/LyraPawnExtensionComponent.h"
 #include "Components/CapsuleComponent.h"
 #include "Components/SkeletalMeshComponent.h"
+#include "EngineUtils.h"
 #include "LyraCharacterMovementComponent.h"
 #include "LyraGameplayTags.h"
 #include "LyraLogChannels.h"
 #include "Net/UnrealNetwork.h"
 #include "Player/LyraPlayerController.h"
 #include "Player/LyraPlayerState.h"
+#include "SpandauStrike/SpandauCaptureDirector.h"
 #include "System/LyraSignificanceManager.h"
 #include "TimerManager.h"
 
@@ -338,6 +340,18 @@ void ALyraCharacter::FellOutOfWorld(const class UDamageType& dmgType)
 
 void ALyraCharacter::OnDeathStarted(AActor*)
 {
+	if (HasAuthority())
+	{
+		for (TActorIterator<ASpandauCaptureDirector> It(GetWorld()); It; ++It)
+		{
+			if (ASpandauCaptureDirector* CaptureDirector = *It)
+			{
+				CaptureDirector->RecordRecentDeathLocation(GetActorLocation());
+				break;
+			}
+		}
+	}
+
 	DisableMovementAndCollision();
 }
 

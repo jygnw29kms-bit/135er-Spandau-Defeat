@@ -125,6 +125,8 @@ private:
     int32 ResolvedDefenderTeamId = INDEX_NONE;
     float BotObjectivePulseRemaining = 0.0f;
     bool bBotRouteDiagnosticsLogged = false;
+    bool bRespawnProbeArmed = false;
+    bool bRespawnProbeTriggered = false;
 
     void DiscoverCapturePoints();
     void ResolveRuntimeTeams();

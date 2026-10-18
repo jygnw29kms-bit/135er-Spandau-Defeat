@@ -6,9 +6,10 @@ Der aktuelle Gameplay-Teststand ist **Rathaus v75 Front Spawns**. v73 bleibt der
 ## Runtime-Klassen
 - `ASpandauCapturePoint`: serverautoritatives Capture, Contest-Pause, 45-s-Baseline, Spieler-Speedup bis 4, verzögerter Fortschrittsabbau, replizierter Zustand und Runtime-Debuganzeige.
 - `ASpandauCaptureDirector`: vier Sektoren, je zwei notwendige Punkte, Angreifer-Tickets, 20-s-Sektorwechsel, Siegzustand, 10-s-Team-Respawnwellen, Bot-Objective-Routing und Recent-Death-Heat.
-- `ULyraPlayerSpawningManagerComponent`: erkennt die aufgelösten Capture-Teams, filtert Respawns nach aktivem Sektor/Attacker/Defender und bewertet Spawn-Sicherheit.
+- `ULyraPlayerSpawningManagerComponent`: erkennt die aufgelösten Capture-Teams, filtert Respawns nach aktivem Sektor/Attacker/Defender und erzwingt die Spawn-Sicherheitswertung vor dem Lyra-Blueprint-Hook; vollständig unsichere Frontsets fallen kontrolliert auf die Basis-Spawns zurück.
+- `ALyraCharacter`: meldet serverseitig den Todesort direkt beim Start der echten Lyra-Death-Sequenz an den CaptureDirector. Dadurch stammt Death-Heat jetzt von realen Toden und nicht nur von erzwungenen Restarts.
 - `ALyraHUD`: minimales Test-HUD für Sektor, Tickets, Respawn-Welle sowie A/B-Zustand und Capture-Fortschritt.
-- `ALyraGameMode`: Capture-Runden leiten Respawn-Anforderungen an den CaptureDirector weiter und melden den letzten Pawn-Ort vor einem erzwungenen Death-Reset als Death-Heat-Ereignis.
+- `ALyraGameMode`: Capture-Runden leiten Respawn-Anforderungen an den CaptureDirector weiter; der eigentliche Todesort wird nicht mehr im Restart-Pfad ermittelt.
 
 ## v75 Front-Spawns
 Map:
@@ -35,7 +36,7 @@ Die Auswahl bewertet jetzt drei Dinge gemeinsam:
 2. **Direkte Feindsicht:** Startpunkte mit Enemy-Line-of-Sight werden verworfen.
 3. **Recent-Death-Heat:** Todesorte werden 15 Sekunden lang gespeichert. Innerhalb eines Radius von 25 m erzeugen sie eine mit Alter und Entfernung abfallende Strafwertung. Mehrere frische Todesfälle addieren sich.
 
-Unter den verbleibenden Kandidaten gewinnt der Start mit der besten Kombination aus Gegnerabstand und niedriger Death-Heat. Damit soll die Front mitwandern, ohne dass ein gerade beschossener Spawn stumpf weiter Menschen ausspuckt. Falls alle Frontkandidaten ungeeignet sind, bleibt der Lyra-Fallback als Sicherheitsnetz bestehen.
+Unter den verbleibenden Kandidaten gewinnt der Start mit der besten Kombination aus Gegnerabstand und niedriger Death-Heat. Die Sicherheitswertung läuft jetzt **vor** dem Lyra-Blueprint-Hook und kann dadurch nicht mehr von dessen eigener Startwahl umgangen werden. Werden sämtliche Frontkandidaten verworfen, wird dies explizit protokolliert und auf die acht Basis-Spawns zurückgefallen. Damit soll die Front mitwandern, ohne dass ein gerade beschossener Spawn stumpf weiter Menschen ausspuckt.
 
 ## Bots
 Alle zwei Sekunden wird für lebende Bots das aktuelle Objective neu bewertet. Angreifer und Verteidiger laufen zu offenen A/B-Punkten des aktiven Sektors. Der Runtime-Gate bestätigt weiterhin `routed=15 failed=0`. Objective-Routing und Kampf-KI bleiben getrennte Verantwortlichkeiten.
@@ -49,13 +50,16 @@ Oben mittig zeigt das funktionale Test-HUD Sektor x/4, Angreifer-Tickets, Zeit b
 Standard: Lyra Shooter Elimination als Waffen-/Pawn-/Bot-Unterbau, 15 Bots. Unsere Capture-, Respawn-, Ticket-, HUD-, Objective- und Front-Spawn-Runtime läuft darüber.
 
 ## Automatische Gates
-- `tools/ue5/run_rathaus_v75_front_spawn_headless_check.ps1`
-- statische Map-Prüfung: 24 PlayerStarts gesamt, davon 16 Front-Spawns, 8 CapturePoints, 1 Director, je exakt 2 Attacker- und 2 Defender-Spawns pro Sektor
-- Runtime-Prüfung: Teams aufgelöst, 15 Bots zu Objectives geroutet, keine FellOutOfWorld/KillZ/Spawn/Fatal-Fehler
+- Bevorzugt: `tools/ue5/run_rathaus_v75_front_spawn_headless_check.py`; der PowerShell-Einstieg `run_rathaus_v75_front_spawn_headless_check.ps1` delegiert nur noch an denselben Runner.
+- statische Map-Prüfung: 24 PlayerStarts gesamt, davon 16 Front-Spawns, 8 CapturePoints, 1 Director, je exakt 2 Attacker- und 2 Defender-Spawns pro Sektor.
+- Runtime-Prüfung: Teams aufgelöst, 15 Bots zu Objectives geroutet und anschließend ein echter Lyra-Bot-Tod über `DamageSelfDestruct()` ausgelöst.
+- Der Gate verlangt Death-Heat, Respawn-Queue, Wellen-Respawn sowie entweder einen sicheren Frontspawn oder einen protokollierten Sicherheits-Fallback auf Basisspawns.
+- Bekannte visuelle Niagara-Warnungen von `GCNL_Death`/`GCNL_Spawning` unter `-nullrhi` werden separat gezählt; andere FellOutOfWorld/KillZ/Spawn/Fatal/Ensure-/Script-Fehler lassen den Gate scheitern.
+- Letzter bestätigter Lauf: kompletter Death→Heat→Queue→Safety→Respawn-Zyklus bestanden, `unexpected_bad_count=0`.
 
 ## Nächste Gameplay-Schritte
 1. v75 sichtbar anspielen und Front-Spawn-Laufwege sowie tatsächliche Sichtlinien prüfen.
-2. Spawn-Telemetrie für gewählte Kandidaten, abgelehnte Gründe, Death-Heat und Spawn-to-Action erfassen.
+2. Spawn-to-Action-Telemetrie ergänzen; gewählte/abgelehnte Spawnkandidaten und Death-Heat sind bereits im Runtime-Log vorhanden.
 3. Bot-Kampfverhalten mit Objective-Routing koppeln, ohne den bestehenden Lyra-Kampf zu überschreiben.
-4. echte Capture-/Kill-/Respawn-Telemetrie protokollieren und Waffen/Movement nur anhand gemessener Werte nachbalancieren.
+4. echte Capture-/Kill-/Respawn-Telemetrie weiter verdichten und Waffen/Movement nur anhand gemessener Werte nachbalancieren.
 5. Capture anschließend aus dem Elimination-Unterbau in eine eigene Spandau-Strike-Lyra-Experience überführen.

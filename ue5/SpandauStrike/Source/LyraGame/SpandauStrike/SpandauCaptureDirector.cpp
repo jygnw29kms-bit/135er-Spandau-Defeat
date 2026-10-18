@@ -12,6 +12,9 @@
 #include "Net/UnrealNetwork.h"
 #include "Navigation/PathFollowingComponent.h"
 #include "Player/LyraPlayerState.h"
+#include "Character/LyraHealthComponent.h"
+#include "Misc/CommandLine.h"
+#include "Misc/Parse.h"
 #include "SpandauStrike/SpandauCapturePoint.h"
 
 ASpandauCaptureDirector::ASpandauCaptureDirector()
@@ -63,6 +66,26 @@ void ASpandauCaptureDirector::Tick(float DeltaSeconds)
 
     if (HasAuthority() && bTeamsResolved && !bMatchEnded)
     {
+        if (bRespawnProbeArmed && !bRespawnProbeTriggered && FParse::Param(FCommandLine::Get(), TEXT("SpandauRespawnProbe")))
+        {
+            for (FConstControllerIterator It = GetWorld()->GetControllerIterator(); It; ++It)
+            {
+                AController* Controller = It->Get();
+                if (!Controller || !Controller->GetPawn() || !Controller->PlayerState || !Controller->PlayerState->IsABot())
+                {
+                    continue;
+                }
+
+                if (ULyraHealthComponent* HealthComponent = ULyraHealthComponent::FindHealthComponent(Controller->GetPawn()))
+                {
+                    bRespawnProbeTriggered = true;
+                    UE_LOG(LogLyra, Log, TEXT("Spandau respawn probe trigger: controller=%s team=%d sector=%d"), *GetNameSafe(Controller), GetControllerTeamId(Controller), ActiveSector);
+                    HealthComponent->DamageSelfDestruct(false);
+                }
+                break;
+            }
+        }
+
         RespawnWaveRemaining = FMath::Max(0.0f, RespawnWaveRemaining - DeltaSeconds);
         if (RespawnWaveRemaining <= KINDA_SMALL_NUMBER)
         {
@@ -425,6 +448,12 @@ void ASpandauCaptureDirector::RouteBotsToActiveObjectives()
     {
         UE_LOG(LogLyra, Log, TEXT("Spandau objective routing: sector=%d routed=%d failed=%d"), ActiveSector, Routed, Failed);
         bBotRouteDiagnosticsLogged = true;
+    }
+
+    if (!bRespawnProbeArmed && FParse::Param(FCommandLine::Get(), TEXT("SpandauRespawnProbe")) && Routed >= 15 && Failed == 0)
+    {
+        bRespawnProbeArmed = true;
+        UE_LOG(LogLyra, Log, TEXT("Spandau respawn probe armed: routed=%d failed=%d sector=%d"), Routed, Failed, ActiveSector);
     }
 }
 

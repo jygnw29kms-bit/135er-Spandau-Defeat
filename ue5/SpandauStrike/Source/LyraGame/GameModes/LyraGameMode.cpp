@@ -482,10 +482,6 @@ void ALyraGameMode::RequestPlayerRestartNextFrame(AController* Controller, bool 
 
 	if (bForceReset && Controller)
 	{
-		if (CaptureDirector && Controller->GetPawn())
-		{
-			CaptureDirector->RecordRecentDeathLocation(Controller->GetPawn()->GetActorLocation());
-		}
 		Controller->Reset();
 	}
 

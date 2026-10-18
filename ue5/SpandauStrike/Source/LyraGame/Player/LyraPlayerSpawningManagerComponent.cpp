@@ -110,6 +110,7 @@ AActor* ULyraPlayerSpawningManagerComponent::ChoosePlayerStart(AController* Play
 
 		// Spandau Strike Capture: prefer team/sector-tagged front spawns.
 		TArray<ALyraPlayerStart*> EffectiveStartPoints = StarterPoints;
+		bool bUsingSpandauFrontStarts = false;
 		for (TActorIterator<ASpandauCaptureDirector> It(GetWorld()); It; ++It)
 		{
 			ASpandauCaptureDirector* Director = *It;
@@ -141,12 +142,28 @@ AActor* ULyraPlayerSpawningManagerComponent::ChoosePlayerStart(AController* Play
 			if (!FrontStarts.IsEmpty())
 			{
 				EffectiveStartPoints = MoveTemp(FrontStarts);
-				UE_LOG(LogPlayerSpawning, Verbose, TEXT("Spandau front spawn candidates: team=%d sector=%d count=%d"), TeamId, Director->GetActiveSector(), EffectiveStartPoints.Num());
+				bUsingSpandauFrontStarts = true;
+				UE_LOG(LogPlayerSpawning, Log, TEXT("Spandau front spawn candidates: team=%d sector=%d count=%d"), TeamId, Director->GetActiveSector(), EffectiveStartPoints.Num());
 			}
 			break;
 		}
 
-		AActor* PlayerStart = OnChoosePlayerStart(Player, EffectiveStartPoints);
+		AActor* PlayerStart = nullptr;
+
+		if (bUsingSpandauFrontStarts)
+		{
+			PlayerStart = GetFirstRandomUnoccupiedPlayerStart(Player, EffectiveStartPoints, true);
+			if (!PlayerStart)
+			{
+				UE_LOG(LogPlayerSpawning, Warning, TEXT("Spandau front spawn safety rejected all candidates; falling back to base starts: candidates=%d"), EffectiveStartPoints.Num());
+				EffectiveStartPoints = StarterPoints;
+			}
+		}
+
+		if (!PlayerStart)
+		{
+			PlayerStart = OnChoosePlayerStart(Player, EffectiveStartPoints);
+		}
 
 		if (!PlayerStart)
 		{
@@ -212,7 +229,7 @@ void ULyraPlayerSpawningManagerComponent::TickComponent(float DeltaTime, enum EL
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 }
 
-APlayerStart* ULyraPlayerSpawningManagerComponent::GetFirstRandomUnoccupiedPlayerStart(AController* Controller, const TArray<ALyraPlayerStart*>& StartPoints) const
+APlayerStart* ULyraPlayerSpawningManagerComponent::GetFirstRandomUnoccupiedPlayerStart(AController* Controller, const TArray<ALyraPlayerStart*>& StartPoints, bool bRequireSpandauSafeStart) const
 {
 	if (Controller)
 	{
@@ -322,6 +339,12 @@ APlayerStart* ULyraPlayerSpawningManagerComponent::GetFirstRandomUnoccupiedPlaye
 			if (ALyraPlayerStart* SafePartial = ChooseSafest(OccupiedStartPoints))
 			{
 				return SafePartial;
+			}
+
+			if (bRequireSpandauSafeStart)
+			{
+				UE_LOG(LogPlayerSpawning, Warning, TEXT("Spandau spawn safety rejected all candidates: team=%d sector=%d candidates=%d"), PlayerTeamId, CaptureDirector->GetActiveSector(), StartPoints.Num());
+				return nullptr;
 			}
 		}
 

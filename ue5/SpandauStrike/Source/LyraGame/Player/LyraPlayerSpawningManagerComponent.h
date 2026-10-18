@@ -33,7 +33,7 @@ public:
 
 protected:
 	// Utility
-	UE_API APlayerStart* GetFirstRandomUnoccupiedPlayerStart(AController* Controller, const TArray<ALyraPlayerStart*>& FoundStartPoints) const;
+	UE_API APlayerStart* GetFirstRandomUnoccupiedPlayerStart(AController* Controller, const TArray<ALyraPlayerStart*>& FoundStartPoints, bool bRequireSpandauSafeStart = false) const;
 	
 	virtual AActor* OnChoosePlayerStart(AController* Player, TArray<ALyraPlayerStart*>& PlayerStarts) { return nullptr; }
 	virtual void OnFinishRestartPlayer(AController* Player, const FRotator& StartRotation) { }
