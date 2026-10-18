@@ -24,8 +24,8 @@ Vier Frontsektoren sind angelegt, jeweils mit A/B. Ein Sektor gilt erst als geno
 
 ## Respawn und Tickets
 - Team-Respawnwelle: 10 Sekunden.
-- Tote Controller werden serverseitig in die nächste Welle eingereiht.
-- Erst bei erfolgreichem Angreifer-Respawn wird ein Ticket abgezogen.
+- Nur **echte Lyra-Tode** werden serverseitig in die nächste Welle eingereiht. Der Character markiert den Controller beim `OnDeathStarted`; reine Lyra-Runden-/Phasenresets umgehen die Capture-Welle.
+- Erst bei erfolgreichem Angreifer-Respawn nach einem echten Tod wird ein Ticket abgezogen. Der Warmup→Playing-Reset darf dadurch keine Tickets mehr verbrauchen.
 - Verteidiger respawnen ohne Ticketverbrauch.
 - Bei 0 Angreifer-Tickets werden keine weiteren Angreifer-Respawns freigegeben.
 - Respawns werden nach Teamrolle und aktivem Frontsektor auf die markierten Front-Spawns gefiltert.
@@ -54,13 +54,15 @@ Standard: Lyra Shooter Elimination als Waffen-/Pawn-/Bot-Unterbau, 15 Bots. Unse
 - statische Map-Prüfung: 24 PlayerStarts gesamt, davon 16 Front-Spawns, 8 CapturePoints, 1 Director, je exakt 2 Attacker- und 2 Defender-Spawns pro Sektor.
 - Runtime-Prüfung: Teams aufgelöst, 15 Bots zu Objectives geroutet und anschließend ein echter Lyra-Bot-Tod über `DamageSelfDestruct()` ausgelöst.
 - Der Gate verlangt Death-Heat, Respawn-Queue, Wellen-Respawn, **Spawn-to-Action** sowie entweder einen sicheren Frontspawn oder einen protokollierten Sicherheits-Fallback auf Basisspawns.
-- Spawn-to-Action misst pro respawntem Bot die Zeit bis zur ersten erfolgreich angenommenen Objective-Bewegung. Der letzte Probe-Lauf lag bei `0,16 s`.
+- Bei Läufen ab 45 Sekunden muss zusätzlich der Warmup→Playing-Wechsel beobachtet werden und mindestens ein Nicht-Todes-Restart den Capture-Respawn explizit umgehen. Die alte Fehler-Signatur `spawned=16 attackerTicketSpawns=8` lässt den Gate scheitern.
+- Spawn-to-Action misst pro respawntem Bot die Zeit bis zur ersten erfolgreich angenommenen Objective-Bewegung. Bestätigte Probeläufe lagen bei etwa `0,16–0,20 s`.
+- Spawn-to-Combat ist zusätzlich im zentralen `ULyraDamageExecution` instrumentiert und misst den ersten tatsächlich verursachten Schaden nach dem Respawn. Im aktuellen Headless-Routinglauf gab es noch keinen belastbaren Combat-Sample; deshalb ist dieser Wert bewusst noch keine Gate-Pflicht.
 - Bekannte visuelle Niagara-Warnungen von `GCNL_Death`/`GCNL_Spawning` unter `-nullrhi` werden separat gezählt; andere FellOutOfWorld/KillZ/Spawn/Fatal/Ensure-/Script-Fehler lassen den Gate scheitern.
-- Letzter bestätigter Lauf: kompletter Death→Heat→Queue→Safety→Respawn→Action-Zyklus bestanden, `unexpected_bad_count=0`.
+- Letzter bestätigter 60-s-Lauf: kompletter Death→Heat→Queue→Safety→Respawn→Action-Zyklus bestanden, Warmup-Reset ohne Capture-Ticketverlust, `unexpected_bad_count=0`.
 
 ## Nächste Gameplay-Schritte
 1. v75 sichtbar anspielen und Front-Spawn-Laufwege sowie tatsächliche Sichtlinien prüfen.
-2. Spawn-to-**Combat** ergänzen: erste Schuss-/Treffer-/Schadensaktion nach dem Respawn getrennt von der bereits vorhandenen Spawn-to-Objective-Messung erfassen.
+2. Genügend Spawn-to-Combat-Samples sammeln und daraus echte Zeit-/Distanz-Baselines ableiten.
 3. Bot-Kampfverhalten mit Objective-Routing koppeln, ohne den bestehenden Lyra-Kampf zu überschreiben.
 4. echte Capture-/Kill-/Respawn-Telemetrie weiter verdichten und Waffen/Movement nur anhand gemessener Werte nachbalancieren.
 5. Capture anschließend aus dem Elimination-Unterbau in eine eigene Spandau-Strike-Lyra-Experience überführen.

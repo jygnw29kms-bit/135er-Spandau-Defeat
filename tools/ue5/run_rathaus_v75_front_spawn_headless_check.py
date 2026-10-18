@@ -48,6 +48,10 @@ def main() -> int:
         "safety_fallback": False,
         "respawn_completed": False,
         "spawn_to_action_seen": False,
+        "spawn_to_combat_seen": False,
+        "warmup_to_playing_seen": False,
+        "non_death_restart_bypass_seen": False,
+        "round_reset_ticket_loss_seen": False,
         "known_nullrhi_spawn_cue_warnings": 0,
         "bad_count": -1,
         "unexpected_bad_count": -1,
@@ -92,6 +96,10 @@ def main() -> int:
         result["safety_fallback"] = "Spandau front spawn safety rejected all candidates; falling back to base starts:" in text
         result["respawn_completed"] = "Spandau respawn completed:" in text
         result["spawn_to_action_seen"] = "Spandau spawn-to-action:" in text
+        result["spawn_to_combat_seen"] = "Spandau spawn-to-combat:" in text
+        result["warmup_to_playing_seen"] = "Warmup Phase Ended" in text and "Playing Phase" in text
+        result["non_death_restart_bypass_seen"] = "Spandau non-death restart bypassed:" in text
+        result["round_reset_ticket_loss_seen"] = "Spandau respawn wave: spawned=16 attackerTicketSpawns=8" in text
         result["known_nullrhi_spawn_cue_warnings"] = len(known_nullrhi_spawn_cue.findall(text))
         result["bad_count"] = len(bad.findall(text))
         result["unexpected_bad_count"] = max(0, result["bad_count"] - result["known_nullrhi_spawn_cue_warnings"])
@@ -100,7 +108,10 @@ def main() -> int:
             "respawn_probe_triggered", "death_heat_seen", "respawn_queued", "respawn_completed", "spawn_to_action_seen",
         ]
         spawn_path_ok = result["spawn_selected"] or result["safety_fallback"]
-        result["passed"] = all(result[key] for key in required) and spawn_path_ok and result["unexpected_bad_count"] == 0
+        round_reset_ok = not result["round_reset_ticket_loss_seen"]
+        if args.runtime_seconds >= 45:
+            round_reset_ok = round_reset_ok and result["warmup_to_playing_seen"] and result["non_death_restart_bypass_seen"]
+        result["passed"] = all(result[key] for key in required) and spawn_path_ok and round_reset_ok and result["unexpected_bad_count"] == 0
         if not result["passed"]:
             raise RuntimeError("v75 runtime gate failed")
         return 0

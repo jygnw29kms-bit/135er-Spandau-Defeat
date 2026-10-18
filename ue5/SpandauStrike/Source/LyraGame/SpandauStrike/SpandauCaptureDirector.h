@@ -26,8 +26,9 @@ public:
     UFUNCTION(BlueprintCallable, Category="Spandau Strike|Capture")
     void NotifyAttackerRespawn();
 
-    void RecordRecentDeathLocation(const FVector& Location);
+    void RecordDeath(AController* Controller, const FVector& Location);
     float GetRecentDeathHeat(const FVector& Location) const;
+    void NotifyCombatDamage(AController* SourceController, float DamageDone, const AActor* TargetActor);
 
     UFUNCTION(BlueprintPure, Category="Spandau Strike|Capture")
     int32 GetActiveSector() const { return ActiveSector; }
@@ -118,8 +119,10 @@ private:
     };
 
     TArray<FRecentDeathEntry> RecentDeaths;
+    TSet<TWeakObjectPtr<AController>> PendingDeathRespawns;
     TMap<TWeakObjectPtr<AController>, float> RespawnQueuedAtSeconds;
     TMap<TWeakObjectPtr<AController>, float> RespawnedAtSeconds;
+    TMap<TWeakObjectPtr<AController>, float> SpawnToActionStartedAtSeconds;
     bool bInTransition = false;
     bool bTeamsResolved = false;
     int32 ResolvedAttackerTeamId = INDEX_NONE;

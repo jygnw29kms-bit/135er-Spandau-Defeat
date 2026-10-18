@@ -6,7 +6,11 @@
 #include "AbilitySystem/LyraGameplayEffectContext.h"
 #include "AbilitySystem/LyraAbilitySourceInterface.h"
 #include "Engine/World.h"
+#include "EngineUtils.h"
+#include "GameFramework/Controller.h"
+#include "GameFramework/Pawn.h"
 #include "LyraLogChannels.h"
+#include "SpandauStrike/SpandauCaptureDirector.h"
 #include "Teams/LyraTeamSubsystem.h"
 
 #include UE_INLINE_GENERATED_CPP_BY_NAME(LyraDamageExecution)
@@ -132,6 +136,50 @@ void ULyraDamageExecution::Execute_Implementation(const FGameplayEffectCustomExe
 
 	if (DamageDone > 0.0f)
 	{
+		AController* SourceController = nullptr;
+		if (EffectCauser)
+		{
+			SourceController = EffectCauser->GetInstigatorController();
+			if (!SourceController)
+			{
+				if (const APawn* SourcePawn = Cast<APawn>(EffectCauser))
+				{
+					SourceController = SourcePawn->GetController();
+				}
+			}
+		}
+
+		if (!SourceController)
+		{
+			if (AActor* ContextInstigator = TypedContext->GetInstigator())
+			{
+				if (const APawn* SourcePawn = Cast<APawn>(ContextInstigator))
+				{
+					SourceController = SourcePawn->GetController();
+				}
+				else if (AController* ContextController = Cast<AController>(ContextInstigator))
+				{
+					SourceController = ContextController;
+				}
+				else
+				{
+					SourceController = ContextInstigator->GetInstigatorController();
+				}
+			}
+		}
+
+		if (SourceController && HitActor && HitActor->GetWorld())
+		{
+			for (TActorIterator<ASpandauCaptureDirector> It(HitActor->GetWorld()); It; ++It)
+			{
+				if (ASpandauCaptureDirector* CaptureDirector = *It)
+				{
+					CaptureDirector->NotifyCombatDamage(SourceController, DamageDone, HitActor);
+					break;
+				}
+			}
+		}
+
 		// Apply a damage modifier, this gets turned into - health on the target
 		OutExecutionOutput.AddOutputModifier(FGameplayModifierEvaluatedData(ULyraHealthSet::GetDamageAttribute(), EGameplayModOp::Additive, DamageDone));
 	}

@@ -128,6 +128,13 @@ bool ASpandauCaptureDirector::QueueRespawn(AController* Controller)
         return false;
     }
 
+    const TWeakObjectPtr<AController> ControllerKey(Controller);
+    if (PendingDeathRespawns.Remove(ControllerKey) == 0)
+    {
+        UE_LOG(LogLyra, Log, TEXT("Spandau non-death restart bypassed: controller=%s sector=%d"), *GetNameSafe(Controller), ActiveSector);
+        return false;
+    }
+
     const int32 TeamId = GetControllerTeamId(Controller);
     if (TeamId != ResolvedAttackerTeamId && TeamId != ResolvedDefenderTeamId)
     {
@@ -148,11 +155,16 @@ bool ASpandauCaptureDirector::QueueRespawn(AController* Controller)
     return true;
 }
 
-void ASpandauCaptureDirector::RecordRecentDeathLocation(const FVector& Location)
+void ASpandauCaptureDirector::RecordDeath(AController* Controller, const FVector& Location)
 {
     if (!HasAuthority() || !GetWorld())
     {
         return;
+    }
+
+    if (IsValid(Controller))
+    {
+        PendingDeathRespawns.Add(Controller);
     }
 
     const float Now = GetWorld()->GetTimeSeconds();
@@ -161,7 +173,7 @@ void ASpandauCaptureDirector::RecordRecentDeathLocation(const FVector& Location)
         return (Now - Entry.TimeSeconds) > 15.0f;
     });
     RecentDeaths.Add({Location, Now});
-    UE_LOG(LogLyra, Log, TEXT("Spandau death heat event: x=%.0f y=%.0f z=%.0f active=%d"), Location.X, Location.Y, Location.Z, RecentDeaths.Num());
+    UE_LOG(LogLyra, Log, TEXT("Spandau death heat event: controller=%s x=%.0f y=%.0f z=%.0f active=%d"), *GetNameSafe(Controller), Location.X, Location.Y, Location.Z, RecentDeaths.Num());
 }
 
 float ASpandauCaptureDirector::GetRecentDeathHeat(const FVector& Location) const
@@ -182,6 +194,22 @@ float ASpandauCaptureDirector::GetRecentDeathHeat(const FVector& Location) const
         Heat += (1.0f - Age / 15.0f) * (1.0f - Dist / 2500.0f);
     }
     return Heat;
+}
+
+void ASpandauCaptureDirector::NotifyCombatDamage(AController* SourceController, float DamageDone, const AActor* TargetActor)
+{
+    if (!HasAuthority() || !GetWorld() || !SourceController || DamageDone <= 0.0f)
+    {
+        return;
+    }
+
+    const TWeakObjectPtr<AController> ControllerKey(SourceController);
+    if (const float* RespawnedAt = RespawnedAtSeconds.Find(ControllerKey))
+    {
+        const float SpawnToCombatSeconds = FMath::Max(0.0f, GetWorld()->GetTimeSeconds() - *RespawnedAt);
+        UE_LOG(LogLyra, Log, TEXT("Spandau spawn-to-combat: controller=%s team=%d sector=%d seconds=%.2f damage=%.1f target=%s"), *GetNameSafe(SourceController), GetControllerTeamId(SourceController), ActiveSector, SpawnToCombatSeconds, DamageDone, *GetNameSafe(TargetActor));
+        RespawnedAtSeconds.Remove(ControllerKey);
+    }
 }
 
 void ASpandauCaptureDirector::NotifyAttackerRespawn()
@@ -240,7 +268,9 @@ void ASpandauCaptureDirector::ProcessRespawnWave()
             RespawnQueuedAtSeconds.Remove(Controller);
             if (GetWorld())
             {
-                RespawnedAtSeconds.Add(Controller, GetWorld()->GetTimeSeconds());
+                const float RespawnedAt = GetWorld()->GetTimeSeconds();
+                RespawnedAtSeconds.Add(Controller, RespawnedAt);
+                SpawnToActionStartedAtSeconds.Add(Controller, RespawnedAt);
             }
             if (TeamId == ResolvedAttackerTeamId)
             {
@@ -446,11 +476,11 @@ void ASpandauCaptureDirector::RouteBotsToActiveObjectives()
         {
             ++Routed;
             const TWeakObjectPtr<AController> ControllerKey(AI);
-            if (const float* RespawnedAt = RespawnedAtSeconds.Find(ControllerKey))
+            if (const float* RespawnedAt = SpawnToActionStartedAtSeconds.Find(ControllerKey))
             {
                 const float SpawnToActionSeconds = FMath::Max(0.0f, GetWorld()->GetTimeSeconds() - *RespawnedAt);
                 UE_LOG(LogLyra, Log, TEXT("Spandau spawn-to-action: controller=%s team=%d sector=%d seconds=%.2f objective=%s result=%d"), *GetNameSafe(AI), TeamId, ActiveSector, SpawnToActionSeconds, *GetNameSafe(Objective), static_cast<int32>(Result));
-                RespawnedAtSeconds.Remove(ControllerKey);
+                SpawnToActionStartedAtSeconds.Remove(ControllerKey);
             }
         }
     }

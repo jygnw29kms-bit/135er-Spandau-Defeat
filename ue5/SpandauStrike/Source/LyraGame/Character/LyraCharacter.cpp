@@ -346,7 +346,7 @@ void ALyraCharacter::OnDeathStarted(AActor*)
 		{
 			if (ASpandauCaptureDirector* CaptureDirector = *It)
 			{
-				CaptureDirector->RecordRecentDeathLocation(GetActorLocation());
+				CaptureDirector->RecordDeath(GetController(), GetActorLocation());
 				break;
 			}
 		}
