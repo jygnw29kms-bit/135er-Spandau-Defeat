@@ -66,6 +66,7 @@ public class LyraGame : ModuleRules
 				"CommonUser",
 				"GameSubtitles",
 				"GameplayMessageRuntime",
+				"NavigationSystem",
 				"AudioMixer",
 				"NetworkReplayStreaming",
 				"UIExtension",

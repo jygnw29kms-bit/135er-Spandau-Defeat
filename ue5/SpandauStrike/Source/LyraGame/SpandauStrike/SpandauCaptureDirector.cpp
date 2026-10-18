@@ -1,6 +1,8 @@
 #include "SpandauStrike/SpandauCaptureDirector.h"
 
 #include "AIController.h"
+#include "AbilitySystemBlueprintLibrary.h"
+#include "AbilitySystem/Phases/LyraGamePhaseSubsystem.h"
 #include "BehaviorTree/BlackboardComponent.h"
 #include "Components/TextRenderComponent.h"
 #include "EngineUtils.h"
@@ -9,9 +11,11 @@
 #include "GameFramework/GameStateBase.h"
 #include "GameFramework/Pawn.h"
 #include "GameFramework/PlayerState.h"
+#include "GameplayTagsManager.h"
 #include "LyraLogChannels.h"
 #include "Net/UnrealNetwork.h"
 #include "Navigation/PathFollowingComponent.h"
+#include "NavigationSystem.h"
 #include "Player/LyraPlayerState.h"
 #include "Character/LyraHealthComponent.h"
 #include "Misc/CommandLine.h"
@@ -67,7 +71,52 @@ void ASpandauCaptureDirector::Tick(float DeltaSeconds)
 
     if (HasAuthority() && bTeamsResolved && !bMatchEnded)
     {
-        if (bRespawnProbeArmed && !bRespawnProbeTriggered && FParse::Param(FCommandLine::Get(), TEXT("SpandauRespawnProbe")))
+        if (bCombatProbeTriggered && FParse::Param(FCommandLine::Get(), TEXT("SpandauCombatProbe")) && GetWorld())
+        {
+            if (AAIController* ProbeAI = CombatProbeController.Get())
+            {
+                if (AActor* ProbeTarget = CombatProbeTarget.Get())
+                {
+                    const float Now = GetWorld()->GetTimeSeconds();
+                    if (Now <= CombatProbeKeepAliveUntilSeconds)
+                    {
+                        if (UBlackboardComponent* Blackboard = ProbeAI->GetBlackboardComponent())
+                        {
+                            Blackboard->SetValueAsObject(FName(TEXT("TargetEnemy")), ProbeTarget);
+                        }
+                        ProbeAI->SetFocus(ProbeTarget);
+                        if (APawn* ProbePawn = ProbeAI->GetPawn())
+                        {
+                            ProbeAI->SetControlRotation((ProbeTarget->GetActorLocation() - ProbePawn->GetActorLocation()).Rotation());
+                            if (Now >= CombatProbeNextFireAtSeconds)
+                            {
+                                const FGameplayTag FireTag = UGameplayTagsManager::Get().RequestGameplayTag(FName(TEXT("InputTag.Weapon.Fire")), false);
+                                if (FireTag.IsValid())
+                                {
+                                    FGameplayEventData Payload;
+                                    Payload.EventTag = FireTag;
+                                    Payload.Instigator = ProbePawn;
+                                    Payload.Target = ProbeTarget;
+                                    UAbilitySystemBlueprintLibrary::SendGameplayEventToActor(ProbePawn, FireTag, Payload);
+                                    UE_LOG(LogLyra, Verbose, TEXT("Spandau combat probe fire: controller=%s target=%s"), *GetNameSafe(ProbeAI), *GetNameSafe(ProbeTarget));
+                                }
+                                CombatProbeNextFireAtSeconds = Now + 0.25f;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        bool bProbePhaseReady = true;
+        if (FParse::Param(FCommandLine::Get(), TEXT("SpandauCombatProbe")))
+        {
+            const FGameplayTag PlayingPhaseTag = UGameplayTagsManager::Get().RequestGameplayTag(FName(TEXT("ShooterGame.GamePhase.Playing")), false);
+            const ULyraGamePhaseSubsystem* PhaseSubsystem = GetWorld()->GetSubsystem<ULyraGamePhaseSubsystem>();
+            bProbePhaseReady = PlayingPhaseTag.IsValid() && PhaseSubsystem && PhaseSubsystem->IsPhaseActive(PlayingPhaseTag);
+        }
+
+        if (bRespawnProbeArmed && bProbePhaseReady && !bRespawnProbeTriggered && FParse::Param(FCommandLine::Get(), TEXT("SpandauRespawnProbe")))
         {
             for (FConstControllerIterator It = GetWorld()->GetControllerIterator(); It; ++It)
             {
@@ -273,6 +322,58 @@ void ASpandauCaptureDirector::ProcessRespawnWave()
                 RespawnedAtSeconds.Add(Controller, RespawnedAt);
                 SpawnToActionStartedAtSeconds.Add(Controller, RespawnedAt);
             }
+
+            if (!bCombatProbeTriggered && FParse::Param(FCommandLine::Get(), TEXT("SpandauCombatProbe")))
+            {
+                if (AAIController* ProbeAI = Cast<AAIController>(Controller))
+                {
+                    APawn* ProbePawn = ProbeAI->GetPawn();
+                    UBlackboardComponent* Blackboard = ProbeAI->GetBlackboardComponent();
+                    AController* TargetController = nullptr;
+                    for (FConstControllerIterator TargetIt = GetWorld()->GetControllerIterator(); TargetIt; ++TargetIt)
+                    {
+                        AController* CandidateController = TargetIt->Get();
+                        if (!CandidateController || CandidateController == Controller || !CandidateController->GetPawn())
+                        {
+                            continue;
+                        }
+                        const int32 CandidateTeamId = GetControllerTeamId(CandidateController);
+                        if (CandidateTeamId != INDEX_NONE && CandidateTeamId != TeamId)
+                        {
+                            TargetController = CandidateController;
+                            break;
+                        }
+                    }
+
+                    if (ProbePawn && Blackboard && TargetController && TargetController->GetPawn())
+                    {
+                        APawn* TargetPawn = TargetController->GetPawn();
+                        FVector ProbeLocation = TargetPawn->GetActorLocation() + TargetPawn->GetActorRightVector() * 800.0f;
+                        if (UNavigationSystemV1* NavSystem = FNavigationSystem::GetCurrent<UNavigationSystemV1>(GetWorld()))
+                        {
+                            FNavLocation ProjectedLocation;
+                            if (NavSystem->ProjectPointToNavigation(ProbeLocation, ProjectedLocation, FVector(800.0f, 800.0f, 1000.0f)))
+                            {
+                                ProbeLocation = ProjectedLocation.Location;
+                            }
+                        }
+
+                        const FRotator ProbeRotation = (TargetPawn->GetActorLocation() - ProbeLocation).Rotation();
+                        if (ProbePawn->TeleportTo(ProbeLocation, ProbeRotation, false, true))
+                        {
+                            Blackboard->SetValueAsObject(FName(TEXT("TargetEnemy")), TargetPawn);
+                            ProbeAI->SetFocus(TargetPawn);
+                            bCombatProbeTriggered = true;
+                            CombatProbeController = ProbeAI;
+                            CombatProbeTarget = TargetPawn;
+                            CombatProbeKeepAliveUntilSeconds = GetWorld()->GetTimeSeconds() + 8.0f;
+                            CombatProbeNextFireAtSeconds = GetWorld()->GetTimeSeconds();
+                            UE_LOG(LogLyra, Log, TEXT("Spandau combat probe trigger: controller=%s target=%s distance=%.0fcm"), *GetNameSafe(Controller), *GetNameSafe(TargetPawn), FVector::Dist(ProbePawn->GetActorLocation(), TargetPawn->GetActorLocation()));
+                        }
+                    }
+                }
+            }
+
             if (TeamId == ResolvedAttackerTeamId)
             {
                 NotifyAttackerRespawn();

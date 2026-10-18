@@ -4,6 +4,7 @@
 #include "GameFramework/Actor.h"
 #include "SpandauCaptureDirector.generated.h"
 
+class AAIController;
 class AController;
 class ASpandauCapturePoint;
 class UTextRenderComponent;
@@ -131,6 +132,11 @@ private:
     bool bBotRouteDiagnosticsLogged = false;
     bool bRespawnProbeArmed = false;
     bool bRespawnProbeTriggered = false;
+    bool bCombatProbeTriggered = false;
+    TWeakObjectPtr<AAIController> CombatProbeController;
+    TWeakObjectPtr<AActor> CombatProbeTarget;
+    float CombatProbeKeepAliveUntilSeconds = 0.0f;
+    float CombatProbeNextFireAtSeconds = 0.0f;
 
     void DiscoverCapturePoints();
     void ResolveRuntimeTeams();

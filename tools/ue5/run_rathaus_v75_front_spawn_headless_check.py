@@ -20,6 +20,7 @@ def main() -> int:
     parser.add_argument("--startup-timeout", type=int, default=120)
     parser.add_argument("--runtime-seconds", type=int, default=45)
     parser.add_argument("--num-bots", type=int, default=15)
+    parser.add_argument("--combat-probe", action="store_true")
     args = parser.parse_args()
 
     repo = Path(__file__).resolve().parents[2]
@@ -33,7 +34,7 @@ def main() -> int:
     log = project_root / "Saved" / "Logs" / "SpandauStrike.log"
     url = f"/Game/SpandauStrike/Maps/Rathaus/LV_RathausSpandau_REAL_v75_FRONTSPAWNS?Experience=B_ShooterGame_Elimination?NumBots={args.num_bots}"
     bad = re.compile(r"FellOutOfWorld|KillZ|WorldBounds|Accessed None|Zugriff auf [„\"]Keine|Failed to spawn|SpawnActor failed|Fatal error|Unhandled Exception|Ensure condition failed|Handled ensure", re.I)
-    known_nullrhi_spawn_cue = re.compile(r"Zugriff auf [„\"]Keine.*CallFunc_SpawnSystemAttached_ReturnValue|Accessed None.*CallFunc_SpawnSystemAttached_ReturnValue", re.I)
+    known_nullrhi_spawn_cue = re.compile(r"Zugriff auf [„\"]Keine.*(?:CallFunc_SpawnSystemAttached_ReturnValue|NS_ShellEject|NS_MuzzleFlash|NS_Tracer|Decal)|Accessed None.*(?:CallFunc_SpawnSystemAttached_ReturnValue|NS_ShellEject|NS_MuzzleFlash|NS_Tracer|Decal)", re.I)
     result = {
         "timestamp": datetime.now(timezone.utc).astimezone().isoformat(),
         "map": url,
@@ -49,6 +50,8 @@ def main() -> int:
         "respawn_completed": False,
         "spawn_to_action_seen": False,
         "spawn_to_combat_seen": False,
+        "combat_probe_triggered": False,
+        "combat_hold_seen": False,
         "warmup_to_playing_seen": False,
         "non_death_restart_bypass_seen": False,
         "round_reset_ticket_loss_seen": False,
@@ -68,10 +71,10 @@ def main() -> int:
             raise RuntimeError(f"v75 validator failed: {validator_run.returncode}")
         result["static_validation"] = True
         log.unlink(missing_ok=True)
-        proc = subprocess.Popen(
-            [str(editor), str(uproject), url, "-game", "-nullrhi", "-nosound", "-unattended", "-nop4", "-log", "-SpandauRespawnProbe"],
-            cwd=project_root,
-        )
+        launch_args = [str(editor), str(uproject), url, "-game", "-nullrhi", "-nosound", "-unattended", "-nop4", "-log", "-SpandauRespawnProbe"]
+        if args.combat_probe:
+            launch_args.append("-SpandauCombatProbe")
+        proc = subprocess.Popen(launch_args, cwd=project_root)
         deadline = time.time() + args.startup_timeout
         while time.time() < deadline:
             if proc.poll() is not None:
@@ -97,6 +100,8 @@ def main() -> int:
         result["respawn_completed"] = "Spandau respawn completed:" in text
         result["spawn_to_action_seen"] = "Spandau spawn-to-action:" in text
         result["spawn_to_combat_seen"] = "Spandau spawn-to-combat:" in text
+        result["combat_probe_triggered"] = "Spandau combat probe trigger:" in text
+        result["combat_hold_seen"] = re.search(r"combatHeld=[1-9][0-9]*", text) is not None
         result["warmup_to_playing_seen"] = "Warmup Phase Ended" in text and "Playing Phase" in text
         result["non_death_restart_bypass_seen"] = "Spandau non-death restart bypassed:" in text
         result["round_reset_ticket_loss_seen"] = "Spandau respawn wave: spawned=16 attackerTicketSpawns=8" in text
@@ -105,13 +110,18 @@ def main() -> int:
         result["unexpected_bad_count"] = max(0, result["bad_count"] - result["known_nullrhi_spawn_cue_warnings"])
         required = [
             "static_validation", "startup_ready", "front_spawn_seen", "respawn_probe_armed",
-            "respawn_probe_triggered", "death_heat_seen", "respawn_queued", "respawn_completed", "spawn_to_action_seen",
+            "respawn_probe_triggered", "death_heat_seen", "respawn_queued", "respawn_completed",
         ]
         spawn_path_ok = result["spawn_selected"] or result["safety_fallback"]
         round_reset_ok = not result["round_reset_ticket_loss_seen"]
         if args.runtime_seconds >= 45:
             round_reset_ok = round_reset_ok and result["warmup_to_playing_seen"] and result["non_death_restart_bypass_seen"]
-        result["passed"] = all(result[key] for key in required) and spawn_path_ok and round_reset_ok and result["unexpected_bad_count"] == 0
+        activity_path_ok = result["spawn_to_action_seen"]
+        combat_probe_ok = True
+        if args.combat_probe:
+            combat_probe_ok = result["combat_probe_triggered"] and result["combat_hold_seen"] and result["spawn_to_combat_seen"]
+            activity_path_ok = result["spawn_to_combat_seen"]
+        result["passed"] = all(result[key] for key in required) and spawn_path_ok and activity_path_ok and round_reset_ok and combat_probe_ok and result["unexpected_bad_count"] == 0
         if not result["passed"]:
             raise RuntimeError("v75 runtime gate failed")
         return 0
