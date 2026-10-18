@@ -442,6 +442,7 @@ void ASpandauCaptureDirector::RouteBotsToActiveObjectives()
 
     int32 Routed = 0;
     int32 Failed = 0;
+    int32 CombatHeld = 0;
     for (FConstControllerIterator It = GetWorld()->GetControllerIterator(); It; ++It)
     {
         AAIController* AI = Cast<AAIController>(It->Get());
@@ -454,6 +455,15 @@ void ASpandauCaptureDirector::RouteBotsToActiveObjectives()
         if (TeamId != ResolvedAttackerTeamId && TeamId != ResolvedDefenderTeamId)
         {
             continue;
+        }
+
+        if (AActor* FocusActor = AI->GetFocusActor())
+        {
+            if (AI->GetTeamAttitudeTowards(*FocusActor) == ETeamAttitude::Hostile)
+            {
+                ++CombatHeld;
+                continue;
+            }
         }
 
         ASpandauCapturePoint* Objective = FindObjectiveForTeam(TeamId, AI->GetPawn()->GetActorLocation());
@@ -485,9 +495,9 @@ void ASpandauCaptureDirector::RouteBotsToActiveObjectives()
         }
     }
 
-    if (!bBotRouteDiagnosticsLogged || Routed > 0)
+    if (!bBotRouteDiagnosticsLogged || Routed > 0 || CombatHeld > 0)
     {
-        UE_LOG(LogLyra, Log, TEXT("Spandau objective routing: sector=%d routed=%d failed=%d"), ActiveSector, Routed, Failed);
+        UE_LOG(LogLyra, Log, TEXT("Spandau objective routing: sector=%d routed=%d failed=%d combatHeld=%d"), ActiveSector, Routed, Failed, CombatHeld);
         bBotRouteDiagnosticsLogged = true;
     }
 
