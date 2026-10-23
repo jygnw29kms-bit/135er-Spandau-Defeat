@@ -32,13 +32,17 @@ def main() -> int:
     cmd = engine_root / "Engine" / "Binaries" / "Win64" / "UnrealEditor-Cmd.exe"
     validator = project_root / "Content" / "Python" / "validate_rathaus_v75_front_spawns.py"
     report = project_root / "Saved" / "Reports" / "v75_front_spawn_headless_workflow.json"
-    log = project_root / "Saved" / "Logs" / "SpandauStrike.log"
+    run_stamp = datetime.now().strftime("%Y%m%d_%H%M%S_%f")
+    log = project_root / "Saved" / "Logs" / f"SpandauStrike_headless_{run_stamp}.log"
+    validator_log = project_root / "Saved" / "Logs" / f"SpandauStrike_validator_{run_stamp}.log"
     url = f"/Game/SpandauStrike/Maps/Rathaus/LV_RathausSpandau_REAL_v75_FRONTSPAWNS?Experience=B_ShooterGame_Elimination?NumBots={args.num_bots}"
     bad = re.compile(r"FellOutOfWorld|KillZ|WorldBounds|Accessed None|Zugriff auf [„\"]Keine|Failed to spawn|SpawnActor failed|Fatal error|Unhandled Exception|Ensure condition failed|Handled ensure", re.I)
     known_nullrhi_spawn_cue = re.compile(r"Zugriff auf [„\"]Keine.*(?:CallFunc_SpawnSystemAttached_ReturnValue|NS_ShellEject|NS_MuzzleFlash|NS_Tracer|Decal)|Accessed None.*(?:CallFunc_SpawnSystemAttached_ReturnValue|NS_ShellEject|NS_MuzzleFlash|NS_Tracer|Decal)", re.I)
     result = {
         "timestamp": datetime.now(timezone.utc).astimezone().isoformat(),
         "map": url,
+        "runtime_log": str(log),
+        "validator_log": str(validator_log),
         "static_validation": False,
         "startup_ready": False,
         "front_spawn_seen": False,
@@ -69,20 +73,22 @@ def main() -> int:
     proc: subprocess.Popen[str] | None = None
     try:
         validator_run = subprocess.run(
-            [str(cmd), str(uproject), "-run=pythonscript", f"-script={validator}", "-unattended", "-nop4", "-nosplash", "-nullrhi"],
+            [str(cmd), str(uproject), "-run=pythonscript", f"-script={validator}", "-unattended", "-nop4", "-nosplash", "-nullrhi", f"-abslog={validator_log}"],
             cwd=project_root,
             check=False,
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
         )
         if validator_run.returncode != 0:
             raise RuntimeError(f"v75 validator failed: {validator_run.returncode}")
         result["static_validation"] = True
-        log.unlink(missing_ok=True)
-        launch_args = [str(editor), str(uproject), url, "-game", "-nullrhi", "-nosound", "-unattended", "-nop4", "-log", "-SpandauRespawnProbe"]
+        log.parent.mkdir(parents=True, exist_ok=True)
+        launch_args = [str(editor), str(uproject), url, "-game", "-nullrhi", "-nosound", "-unattended", "-nop4", f"-abslog={log}", "-SpandauRespawnProbe"]
         if args.combat_probe:
             launch_args.append("-SpandauCombatProbe")
             if args.combat_probe_distance_cm > 0.0:
                 launch_args.append(f"-SpandauCombatProbeDistanceCm={args.combat_probe_distance_cm:.1f}")
-        proc = subprocess.Popen(launch_args, cwd=project_root)
+        proc = subprocess.Popen(launch_args, cwd=project_root, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         deadline = time.time() + args.startup_timeout
         while time.time() < deadline:
             if proc.poll() is not None:
