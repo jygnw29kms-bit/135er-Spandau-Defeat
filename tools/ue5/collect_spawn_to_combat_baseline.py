@@ -13,6 +13,7 @@ def main() -> int:
     parser.add_argument("--runs", type=int, default=3)
     parser.add_argument("--runtime-seconds", type=int, default=45)
     parser.add_argument("--num-bots", type=int, default=15)
+    parser.add_argument("--distance-cm", type=float, default=0.0)
     args = parser.parse_args()
 
     repo = Path(__file__).resolve().parents[2]
@@ -29,6 +30,8 @@ def main() -> int:
             "--num-bots", str(args.num_bots),
             "--combat-probe",
         ]
+        if args.distance_cm > 0.0:
+            command += ["--combat-probe-distance-cm", str(args.distance_cm)]
         completed = subprocess.run(command, cwd=repo, check=False)
         if not report_path.exists():
             raise RuntimeError(f"run {index + 1}: report missing")

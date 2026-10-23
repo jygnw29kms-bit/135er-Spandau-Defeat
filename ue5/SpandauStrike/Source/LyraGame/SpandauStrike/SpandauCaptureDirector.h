@@ -133,6 +133,7 @@ private:
     bool bRespawnProbeArmed = false;
     bool bRespawnProbeTriggered = false;
     bool bCombatProbeTriggered = false;
+    bool bCombatProbeDamageConfirmed = false;
     TWeakObjectPtr<AAIController> CombatProbeController;
     TWeakObjectPtr<AActor> CombatProbeTarget;
     float CombatProbeKeepAliveUntilSeconds = 0.0f;

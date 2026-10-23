@@ -88,7 +88,7 @@ void ASpandauCaptureDirector::Tick(float DeltaSeconds)
                         if (APawn* ProbePawn = ProbeAI->GetPawn())
                         {
                             ProbeAI->SetControlRotation((ProbeTarget->GetActorLocation() - ProbePawn->GetActorLocation()).Rotation());
-                            if (Now >= CombatProbeNextFireAtSeconds)
+                            if (!bCombatProbeDamageConfirmed && Now >= CombatProbeNextFireAtSeconds)
                             {
                                 const FGameplayTag FireTag = UGameplayTagsManager::Get().RequestGameplayTag(FName(TEXT("InputTag.Weapon.Fire")), false);
                                 if (FireTag.IsValid())
@@ -103,6 +103,15 @@ void ASpandauCaptureDirector::Tick(float DeltaSeconds)
                                 CombatProbeNextFireAtSeconds = Now + 0.25f;
                             }
                         }
+                    }
+                    else if (bCombatProbeDamageConfirmed)
+                    {
+                        if (UBlackboardComponent* Blackboard = ProbeAI->GetBlackboardComponent())
+                        {
+                            Blackboard->ClearValue(FName(TEXT("TargetEnemy")));
+                        }
+                        ProbeAI->ClearFocus(EAIFocusPriority::Gameplay);
+                        CombatProbeTarget.Reset();
                     }
                 }
             }
@@ -259,6 +268,12 @@ void ASpandauCaptureDirector::NotifyCombatDamage(AController* SourceController, 
         const float SpawnToCombatSeconds = FMath::Max(0.0f, GetWorld()->GetTimeSeconds() - *RespawnedAt);
         UE_LOG(LogLyra, Log, TEXT("Spandau spawn-to-combat: controller=%s team=%d sector=%d seconds=%.2f damage=%.1f target=%s"), *GetNameSafe(SourceController), GetControllerTeamId(SourceController), ActiveSector, SpawnToCombatSeconds, DamageDone, *GetNameSafe(TargetActor));
         RespawnedAtSeconds.Remove(ControllerKey);
+
+        if (SourceController == CombatProbeController.Get())
+        {
+            bCombatProbeDamageConfirmed = true;
+            CombatProbeKeepAliveUntilSeconds = GetWorld()->GetTimeSeconds() + 3.0f;
+        }
     }
 }
 
@@ -345,7 +360,11 @@ void ASpandauCaptureDirector::ProcessRespawnWave()
                             (-ProbeForward + ProbeRight).GetSafeNormal(),
                             (-ProbeForward - ProbeRight).GetSafeNormal()
                         };
-                        const TArray<float> Distances = {350.0f, 500.0f, 700.0f};
+                        float RequestedProbeDistanceCm = 0.0f;
+                        FParse::Value(FCommandLine::Get(), TEXT("SpandauCombatProbeDistanceCm="), RequestedProbeDistanceCm);
+                        const TArray<float> Distances = RequestedProbeDistanceCm > 0.0f
+                            ? TArray<float>{RequestedProbeDistanceCm}
+                            : TArray<float>{350.0f, 500.0f, 700.0f};
                         APawn* SelectedTargetPawn = nullptr;
 
                         for (FConstControllerIterator TargetIt = GetWorld()->GetControllerIterator(); TargetIt && !SelectedTargetPawn; ++TargetIt)
@@ -420,6 +439,7 @@ void ASpandauCaptureDirector::ProcessRespawnWave()
                             Blackboard->SetValueAsObject(FName(TEXT("TargetEnemy")), SelectedTargetPawn);
                             ProbeAI->SetFocus(SelectedTargetPawn);
                             bCombatProbeTriggered = true;
+                            bCombatProbeDamageConfirmed = false;
                             CombatProbeController = ProbeAI;
                             CombatProbeTarget = SelectedTargetPawn;
                             CombatProbeKeepAliveUntilSeconds = GetWorld()->GetTimeSeconds() + 10.0f;

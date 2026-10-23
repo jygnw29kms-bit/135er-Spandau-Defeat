@@ -21,6 +21,7 @@ def main() -> int:
     parser.add_argument("--runtime-seconds", type=int, default=45)
     parser.add_argument("--num-bots", type=int, default=15)
     parser.add_argument("--combat-probe", action="store_true")
+    parser.add_argument("--combat-probe-distance-cm", type=float, default=0.0)
     args = parser.parse_args()
 
     repo = Path(__file__).resolve().parents[2]
@@ -79,6 +80,8 @@ def main() -> int:
         launch_args = [str(editor), str(uproject), url, "-game", "-nullrhi", "-nosound", "-unattended", "-nop4", "-log", "-SpandauRespawnProbe"]
         if args.combat_probe:
             launch_args.append("-SpandauCombatProbe")
+            if args.combat_probe_distance_cm > 0.0:
+                launch_args.append(f"-SpandauCombatProbeDistanceCm={args.combat_probe_distance_cm:.1f}")
         proc = subprocess.Popen(launch_args, cwd=project_root)
         deadline = time.time() + args.startup_timeout
         while time.time() < deadline:
