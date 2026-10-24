@@ -73,6 +73,21 @@ Der reproduzierbare Builder Content/Python/build_rathaus_v77_gameplay_roads_v85_
 
 Der vollständige 15-Bot-Headless-Gate auf v77 ist grün: Death→Heat→Queue→Safety/Fallback→Respawn→Spawn-to-Action, Warmup→Playing und Non-Death-Restart-Bypass wurden beobachtet. FellOutOfWorld=0, KillZ=0, keine Fatal-/Unhandled-Fehler; unexpected_bad_count=0. Die 69 Script-Warnungen waren ausschließlich die bereits bekannten NullRHI-Spawn-FX-Warnungen.
 
+## Vollständiger Vier-Sektor-Rundengate
+Der neue CLI-Gate `-SpandauRoundProbe` validiert die komplette Capture-Runde auf v77, ohne Capture-Zustände direkt zu setzen. Ein echter Angreifer-Pawn wird nacheinander in die aktive 550-cm-Capture-Zone gestellt; `ASpandauCapturePoint::UpdateAuthority()` verarbeitet weiterhin Overlap, Fortschritt, `OnCaptured`, Sektorwechsel und Siegzustand. Nur für diesen Probe werden Capture- und Übergangszeiten verkürzt und Defender-Contest deaktiviert.
+
+Automatischer Runner: `tools/ue5/run_rathaus_round_probe.py`.
+
+Bestätigter Lauf:
+- Warmup → Playing beobachtet.
+- Capture-Reihenfolge exakt S1-A, S1-B, S2-A, S2-B, S3-A, S3-B, S4-A, S4-B.
+- Sektorwechsel exakt 1→2→3→4.
+- Ticketstand nach den drei Sektor-Refunds: 450.
+- Endzustand: Sektor 4/4, 8 CapturePoints erobert, `attackersWon=1`.
+- Bot-Navigation bei jedem Frontwechsel: Sektor 1–4 jeweils `routed=15 failed=0 combatHeld=0`.
+- `FellOutOfWorld=0`, `KillZ=0`, keine Fatal-/Unhandled-/Ensure-Fehler und keine unerwarteten `Accessed None`.
+
+Zusätzlich prüft `tools/ue5/run_rathaus_mapcheck.py` die v77-Map im Unreal-MapCheck. Bestätigter Stand: **0 Fehler, 0 Warnungen**, keine Fatal-/Unhandled-/Ensure-Treffer. Ein separater normaler 15-Bot-Regressionslauf ohne Round-Probe bleibt ebenfalls grün (`unexpected_bad_count=0`), womit die Testlogik die Produktionsrunde nicht verändert.
 ## Nächste Gameplay-Schritte
 1. v75 sichtbar anspielen und Front-Spawn-Laufwege sowie tatsächliche Sichtlinien prüfen.
 2. Die reproduzierbare Spawn-to-Combat-Baseline um echte Distanz-, Waffen- und Gegnerkontakt-Samples erweitern.

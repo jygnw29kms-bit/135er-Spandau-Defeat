@@ -69,6 +69,11 @@ void ASpandauCaptureDirector::Tick(float DeltaSeconds)
         ResolveRuntimeTeams();
     }
 
+    if (HasAuthority() && bTeamsResolved && FParse::Param(FCommandLine::Get(), TEXT("SpandauRoundProbe")))
+    {
+        RunRoundProbe();
+    }
+
     if (HasAuthority() && bTeamsResolved && !bMatchEnded)
     {
         if (bCombatProbeTriggered && FParse::Param(FCommandLine::Get(), TEXT("SpandauCombatProbe")) && GetWorld())
@@ -693,6 +698,138 @@ void ASpandauCaptureDirector::RouteBotsToActiveObjectives()
     {
         bRespawnProbeArmed = true;
         UE_LOG(LogLyra, Log, TEXT("Spandau respawn probe armed: routed=%d failed=%d sector=%d"), Routed, Failed, ActiveSector);
+    }
+}
+
+void ASpandauCaptureDirector::RunRoundProbe()
+{
+    if (!HasAuthority() || !GetWorld() || !bTeamsResolved)
+    {
+        return;
+    }
+
+    const FGameplayTag PlayingPhaseTag = UGameplayTagsManager::Get().RequestGameplayTag(FName(TEXT("ShooterGame.GamePhase.Playing")), false);
+    const ULyraGamePhaseSubsystem* PhaseSubsystem = GetWorld()->GetSubsystem<ULyraGamePhaseSubsystem>();
+    if (!PlayingPhaseTag.IsValid() || !PhaseSubsystem || !PhaseSubsystem->IsPhaseActive(PlayingPhaseTag))
+    {
+        return;
+    }
+
+    AController* ProbeController = RoundProbeController.Get();
+    if (!ProbeController || !ProbeController->GetPawn() || GetControllerTeamId(ProbeController) != ResolvedAttackerTeamId)
+    {
+        ProbeController = nullptr;
+        AController* HumanFallback = nullptr;
+        for (FConstControllerIterator It = GetWorld()->GetControllerIterator(); It; ++It)
+        {
+            AController* Candidate = It->Get();
+            if (!Candidate || !Candidate->GetPawn() || GetControllerTeamId(Candidate) != ResolvedAttackerTeamId)
+            {
+                continue;
+            }
+            if (Candidate->PlayerState && Candidate->PlayerState->IsABot())
+            {
+                ProbeController = Candidate;
+                break;
+            }
+            HumanFallback = Candidate;
+        }
+        if (!ProbeController)
+        {
+            ProbeController = HumanFallback;
+        }
+        if (!ProbeController)
+        {
+            return;
+        }
+        RoundProbeController = ProbeController;
+    }
+
+    if (!bRoundProbeInitialized)
+    {
+        SectorTransitionSeconds = 1.0f;
+        bRouteBotsToObjectives = false;
+        for (ASpandauCapturePoint* Point : CapturePoints)
+        {
+            if (!Point)
+            {
+                continue;
+            }
+            Point->CaptureDurationSeconds = 1.0f;
+            Point->DecayDelaySeconds = 10.0f;
+            Point->DefenderTeamId = INDEX_NONE;
+            Point->bDrawRuntimeDebug = false;
+        }
+        bRoundProbeInitialized = true;
+        UE_LOG(LogLyra, Log, TEXT("Spandau round probe initialized: controller=%s team=%d sectors=%d points=%d transition=%.1fs capture=1.0s"), *GetNameSafe(ProbeController), ResolvedAttackerTeamId, TotalSectors, CapturePoints.Num(), SectorTransitionSeconds);
+    }
+
+    if (bMatchEnded)
+    {
+        if (!bRoundProbeCompleteLogged)
+        {
+            int32 CapturedPoints = 0;
+            for (const ASpandauCapturePoint* Point : CapturePoints)
+            {
+                if (Point && Point->IsCaptured())
+                {
+                    ++CapturedPoints;
+                }
+            }
+            UE_LOG(LogLyra, Log, TEXT("Spandau round probe complete: activeSector=%d totalSectors=%d captured=%d attackersWon=%d tickets=%d"), ActiveSector, TotalSectors, CapturedPoints, bAttackersWon ? 1 : 0, AttackerTickets);
+            bRoundProbeCompleteLogged = true;
+        }
+        return;
+    }
+
+    if (bInTransition)
+    {
+        if (AAIController* ProbeAI = Cast<AAIController>(ProbeController))
+        {
+            ProbeAI->StopMovement();
+        }
+        return;
+    }
+
+    ASpandauCapturePoint* TargetPoint = nullptr;
+    for (ASpandauCapturePoint* Point : CapturePoints)
+    {
+        if (!Point || Point->GetSectorIndex() != ActiveSector || Point->IsCaptured())
+        {
+            continue;
+        }
+        if (!TargetPoint || Point->GetPointIndex() < TargetPoint->GetPointIndex())
+        {
+            TargetPoint = Point;
+        }
+    }
+    if (!TargetPoint)
+    {
+        return;
+    }
+
+    if (AAIController* ProbeAI = Cast<AAIController>(ProbeController))
+    {
+        ProbeAI->StopMovement();
+        ProbeAI->ClearFocus(EAIFocusPriority::Gameplay);
+        if (UBlackboardComponent* Blackboard = ProbeAI->GetBlackboardComponent())
+        {
+            Blackboard->ClearValue(FName(TEXT("TargetEnemy")));
+        }
+    }
+
+    APawn* ProbePawn = ProbeController->GetPawn();
+    if (!ProbePawn)
+    {
+        return;
+    }
+    ProbePawn->SetActorLocation(TargetPoint->GetActorLocation() + FVector(0.0f, 0.0f, 100.0f), false, nullptr, ETeleportType::TeleportPhysics);
+
+    if (RoundProbeLastSector != ActiveSector || RoundProbeLastPoint != TargetPoint->GetPointIndex())
+    {
+        RoundProbeLastSector = ActiveSector;
+        RoundProbeLastPoint = TargetPoint->GetPointIndex();
+        UE_LOG(LogLyra, Log, TEXT("Spandau round probe occupying: sector=%d point=%d controller=%s"), ActiveSector, TargetPoint->GetPointIndex(), *GetNameSafe(ProbeController));
     }
 }
 

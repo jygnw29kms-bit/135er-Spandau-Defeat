@@ -138,6 +138,11 @@ private:
     TWeakObjectPtr<AActor> CombatProbeTarget;
     float CombatProbeKeepAliveUntilSeconds = 0.0f;
     float CombatProbeNextFireAtSeconds = 0.0f;
+    bool bRoundProbeInitialized = false;
+    bool bRoundProbeCompleteLogged = false;
+    TWeakObjectPtr<AController> RoundProbeController;
+    int32 RoundProbeLastSector = 0;
+    int32 RoundProbeLastPoint = 0;
 
     void DiscoverCapturePoints();
     void ResolveRuntimeTeams();
@@ -147,6 +152,7 @@ private:
     bool IsCurrentSectorComplete() const;
     void ProcessRespawnWave();
     void RouteBotsToActiveObjectives();
+    void RunRoundProbe();
     ASpandauCapturePoint* FindObjectiveForTeam(int32 TeamId, const FVector& FromLocation) const;
     int32 GetControllerTeamId(const AController* Controller) const;
     void UpdateStatusText();
