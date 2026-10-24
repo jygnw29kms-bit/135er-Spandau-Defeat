@@ -1,6 +1,7 @@
 from __future__ import annotations
 import argparse
 import json
+import os
 import re
 import subprocess
 import time
@@ -20,6 +21,7 @@ def main() -> int:
     parser.add_argument("--startup-timeout", type=int, default=120)
     parser.add_argument("--runtime-seconds", type=int, default=45)
     parser.add_argument("--num-bots", type=int, default=15)
+    parser.add_argument("--map-path", default="/Game/SpandauStrike/Maps/Rathaus/LV_RathausSpandau_REAL_v75_FRONTSPAWNS")
     parser.add_argument("--combat-probe", action="store_true")
     parser.add_argument("--combat-probe-distance-cm", type=float, default=0.0)
     args = parser.parse_args()
@@ -35,7 +37,7 @@ def main() -> int:
     run_stamp = datetime.now().strftime("%Y%m%d_%H%M%S_%f")
     log = project_root / "Saved" / "Logs" / f"SpandauStrike_headless_{run_stamp}.log"
     validator_log = project_root / "Saved" / "Logs" / f"SpandauStrike_validator_{run_stamp}.log"
-    url = f"/Game/SpandauStrike/Maps/Rathaus/LV_RathausSpandau_REAL_v75_FRONTSPAWNS?Experience=B_ShooterGame_Elimination?NumBots={args.num_bots}"
+    url = f"{args.map_path}?Experience=B_ShooterGame_Elimination?NumBots={args.num_bots}"
     bad = re.compile(r"FellOutOfWorld|KillZ|WorldBounds|Accessed None|Zugriff auf [„\"]Keine|Failed to spawn|SpawnActor failed|Fatal error|Unhandled Exception|Ensure condition failed|Handled ensure", re.I)
     known_nullrhi_spawn_cue = re.compile(r"Zugriff auf [„\"]Keine.*(?:CallFunc_SpawnSystemAttached_ReturnValue|NS_ShellEject|NS_MuzzleFlash|NS_Tracer|Decal)|Accessed None.*(?:CallFunc_SpawnSystemAttached_ReturnValue|NS_ShellEject|NS_MuzzleFlash|NS_Tracer|Decal)", re.I)
     result = {
@@ -72,12 +74,15 @@ def main() -> int:
     }
     proc: subprocess.Popen[str] | None = None
     try:
+        validator_env = dict(os.environ)
+        validator_env["SPANDAU_VALIDATION_MAP"] = args.map_path
         validator_run = subprocess.run(
             [str(cmd), str(uproject), "-run=pythonscript", f"-script={validator}", "-unattended", "-nop4", "-nosplash", "-nullrhi", f"-abslog={validator_log}"],
             cwd=project_root,
             check=False,
             stdout=subprocess.DEVNULL,
             stderr=subprocess.DEVNULL,
+            env=validator_env,
         )
         if validator_run.returncode != 0:
             raise RuntimeError(f"v75 validator failed: {validator_run.returncode}")

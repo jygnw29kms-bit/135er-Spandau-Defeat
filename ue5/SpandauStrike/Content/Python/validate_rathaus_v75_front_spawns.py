@@ -1,9 +1,10 @@
 import json, os, unreal
-MAP='/Game/SpandauStrike/Maps/Rathaus/LV_RathausSpandau_REAL_v75_FRONTSPAWNS'
+DEFAULT_MAP='/Game/SpandauStrike/Maps/Rathaus/LV_RathausSpandau_REAL_v75_FRONTSPAWNS'
+MAP=os.environ.get('SPANDAU_VALIDATION_MAP',DEFAULT_MAP)
 OUT=os.path.join(unreal.Paths.project_saved_dir(),'Reports','rathaus_v75_front_spawns_validation.json')
 level=unreal.get_editor_subsystem(unreal.LevelEditorSubsystem)
 actorsub=unreal.get_editor_subsystem(unreal.EditorActorSubsystem)
-if not level.load_level(MAP): raise RuntimeError('failed to load v75')
+if not level.load_level(MAP): raise RuntimeError('failed to load validation map '+MAP)
 actors=actorsub.get_all_level_actors()
 starts=[a for a in actors if 'PlayerStart' in a.get_class().get_name()]
 front=[a for a in starts if a.get_actor_label().startswith('SS_FRONTSPAWN_')]
@@ -22,6 +23,6 @@ report={'map':MAP,'player_starts':len(starts),'front_spawns':len(front),'capture
 report['ok']=len(starts)==24 and len(front)==16 and len(points)==8 and len(directors)==1 and coverage==expected
 os.makedirs(os.path.dirname(OUT),exist_ok=True)
 with open(OUT,'w',encoding='utf-8') as f: json.dump(report,f,indent=2,ensure_ascii=False)
-unreal.log('[SS_V75_VALIDATE] '+json.dumps(report,ensure_ascii=False))
-if not report['ok']: raise RuntimeError('v75 front spawn validation failed')
-print('V75_FRONTSPAWN_VALIDATE_OK')
+unreal.log('[SS_V75_COMPAT_VALIDATE] '+json.dumps(report,ensure_ascii=False))
+if not report['ok']: raise RuntimeError('v75-compatible front spawn validation failed')
+print('V75_COMPAT_FRONTSPAWN_VALIDATE_OK')

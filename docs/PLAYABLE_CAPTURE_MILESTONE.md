@@ -1,7 +1,7 @@
 # Spandau Strike – Playable Capture Milestone
 
 ## Stand
-Der aktuelle Gameplay-Teststand ist **Rathaus v75 Front Spawns**. v73 bleibt der technische Ein-Sektor-Checkpoint, v74 die erste vollständige Vier-Sektor-Runde. v75 koppelt Respawns an die wandernde Front und besitzt inzwischen die erste echte Spawn-Sicherheitswertung.
+Der aktuelle Gameplay-Teststand ist **Rathaus v77 Gameplay Roads v85**, aufgebaut auf v75 Front Spawns. v73 bleibt der technische Ein-Sektor-Checkpoint, v74 die erste vollständige Vier-Sektor-Runde. v75 koppelt Respawns an die wandernde Front und besitzt inzwischen die erste echte Spawn-Sicherheitswertung.
 
 ## Runtime-Klassen
 - `ASpandauCapturePoint`: serverautoritatives Capture, Contest-Pause, 45-s-Baseline, Spieler-Speedup bis 4, verzögerter Fortschrittsabbau, replizierter Zustand und Runtime-Debuganzeige.
@@ -62,6 +62,16 @@ Standard: Lyra Shooter Elimination als Waffen-/Pawn-/Bot-Unterbau, 15 Bots. Unse
 - Bestätigte Distanzmatrix: **350 / 700 / 1200 cm jeweils bestanden**, jeweils `0,01 s` bis Erstschaden, `36` Schaden, `combatHeld=true`, `runner_exit_code=0` und `unexpected_bad_count=0`. Der Matrix-Report liegt unter `Saved/Reports/spawn_to_combat_distance_matrix.json`.
 - Bekannte rein visuelle `-nullrhi`-Warnungen von Spawn-/Death-Cues sowie Muzzleflash, Hülsenauswurf, Tracer und Decals werden separat gezählt. Andere FellOutOfWorld/KillZ/Spawn/Fatal/Ensure-/Script-Fehler lassen den Gate weiterhin scheitern.
 - Letzter bestätigter Combat-Gate-Lauf: kompletter Death→Heat→Queue→Safety→Respawn→Combat-Zyklus bestanden, Kampfpriorität mit `combatHeld` bestätigt, echter Schaden erzeugt, Warmup-Reset ohne Capture-Ticketverlust und `unexpected_bad_count=0`.
+
+## v77 Gameplay Roads v85
+Map:
+/Game/SpandauStrike/Maps/Rathaus/Validation/LV_RathausSpandau_REAL_v77_GAMEPLAY_ROADS_V85_QA
+
+v77 ist der aktuelle Gameplay-Nachfolger von v75. Capture-, Respawn- und Frontspawn-Struktur bleiben unverändert, während der Rathaus-Straßenlayer auf SM_RathausSpandau_ROADS_DGM_v85_PROJECTED_V83 mit M_Rathaus_ROADS_Asphalt_v80 aktualisiert wurde. Der Straßenmesh ist ausschließlich Visual-Layer: NoCollision und can_ever_affect_navigation=false. Die begehbare Kollision und Navigation bleiben beim DGM, wodurch die zuvor mögliche doppelte Boden-Kollision entfernt ist.
+
+Der reproduzierbare Builder Content/Python/build_rathaus_v77_gameplay_roads_v85_final.py validiert beim Speichern gleichzeitig **24 PlayerStarts, 16 Frontspawns, 8 CapturePoints, 1 CaptureDirector** und exakt zwei Attacker-/Defender-Frontspawns je Sektor. Ein frischer Reload bestätigte, dass NoCollision und deaktivierter Navigationseinfluss des Roads-Layers persistent bleiben.
+
+Der vollständige 15-Bot-Headless-Gate auf v77 ist grün: Death→Heat→Queue→Safety/Fallback→Respawn→Spawn-to-Action, Warmup→Playing und Non-Death-Restart-Bypass wurden beobachtet. FellOutOfWorld=0, KillZ=0, keine Fatal-/Unhandled-Fehler; unexpected_bad_count=0. Die 69 Script-Warnungen waren ausschließlich die bereits bekannten NullRHI-Spawn-FX-Warnungen.
 
 ## Nächste Gameplay-Schritte
 1. v75 sichtbar anspielen und Front-Spawn-Laufwege sowie tatsächliche Sichtlinien prüfen.
