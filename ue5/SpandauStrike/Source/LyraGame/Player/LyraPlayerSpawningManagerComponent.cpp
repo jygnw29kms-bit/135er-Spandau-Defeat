@@ -267,8 +267,9 @@ APlayerStart* ULyraPlayerSpawningManagerComponent::GetFirstRandomUnoccupiedPlaye
 			const ALyraPlayerState* PlayerPS = Controller->GetPlayerState<ALyraPlayerState>();
 			const int32 PlayerTeamId = PlayerPS ? PlayerPS->GetTeamId() : INDEX_NONE;
 			const float HardEnemyRadiusSq = FMath::Square(1200.0f);
+			const float HardLosRadiusSq = FMath::Square(6000.0f);
 
-			auto ChooseSafest = [this, Controller, PlayerTeamId, HardEnemyRadiusSq, CaptureDirector](const TArray<ALyraPlayerStart*>& Candidates) -> ALyraPlayerStart*
+			auto ChooseSafest = [this, Controller, PlayerTeamId, HardEnemyRadiusSq, HardLosRadiusSq, CaptureDirector](const TArray<ALyraPlayerStart*>& Candidates) -> ALyraPlayerStart*
 			{
 				ALyraPlayerStart* BestStart = nullptr;
 				float BestScore = -TNumericLimits<float>::Max();
@@ -303,7 +304,8 @@ APlayerStart* ULyraPlayerSpawningManagerComponent::GetFirstRandomUnoccupiedPlaye
 							bUnsafe = true;
 							break;
 						}
-						if (Other->LineOfSightTo(Start))
+						// Long sightlines across Rathaus must not invalidate a spawn hundreds of metres away.
+						if (DistSq < HardLosRadiusSq && Other->LineOfSightTo(Start))
 						{
 							++RejectLos;
 							bUnsafe = true;
