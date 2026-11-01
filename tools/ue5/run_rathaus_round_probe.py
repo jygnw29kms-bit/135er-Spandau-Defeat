@@ -8,11 +8,12 @@ import time
 from datetime import datetime
 from pathlib import Path
 
+from rathaus_validation_target import DEFAULT_MAP, source_revision
+
 REPO = Path(__file__).resolve().parents[2]
 PROJECT = REPO / 'ue5' / 'SpandauStrike'
 EDITOR = Path(r'C:\Program Files\Epic Games\UE_5.8\Engine\Binaries\Win64\UnrealEditor.exe')
 UPROJECT = PROJECT / 'SpandauStrike.uproject'
-DEFAULT_MAP = '/Game/SpandauStrike/Maps/Rathaus/Validation/LV_RathausSpandau_REAL_v77_GAMEPLAY_ROADS_V85_QA'
 
 
 def main() -> int:
@@ -87,6 +88,7 @@ def main() -> int:
     payload = {
         'timestamp': datetime.now().astimezone().isoformat(),
         'map': args.map_path,
+        'source_revision': source_revision(REPO),
         'runtime_log': str(log),
         'warmup_to_playing_seen': 'Warmup Phase Ended' in text and 'Playing Phase' in text,
         'probe_initialized': 'Spandau round probe initialized:' in text,
@@ -106,3 +108,4 @@ def main() -> int:
 
 if __name__ == '__main__':
     raise SystemExit(main())
+

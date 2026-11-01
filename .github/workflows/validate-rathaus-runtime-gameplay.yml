@@ -5,6 +5,9 @@ on:
     branches: [ main ]
     paths:
       - 'tools/gameplay/**'
+      - 'tools/ue5/**'
+      - 'ue5/SpandauStrike/Source/LyraGame/SpandauStrike/**'
+      - 'ue5/SpandauStrike/Source/LyraGame/Player/LyraPlayerSpawningManagerComponent.cpp'
       - 'tools/repo/validate_spandau_scope.py'
       - 'ue5/SpandauStrike/Content/Python/validate_rathaus_runtime_handoff.py'
       - 'ue5/SpandauStrike/Design/Gameplay/**'
@@ -13,6 +16,9 @@ on:
   pull_request:
     paths:
       - 'tools/gameplay/**'
+      - 'tools/ue5/**'
+      - 'ue5/SpandauStrike/Source/LyraGame/SpandauStrike/**'
+      - 'ue5/SpandauStrike/Source/LyraGame/Player/LyraPlayerSpawningManagerComponent.cpp'
       - 'tools/repo/validate_spandau_scope.py'
       - 'ue5/SpandauStrike/Content/Python/validate_rathaus_runtime_handoff.py'
       - 'ue5/SpandauStrike/Design/Gameplay/**'
@@ -32,9 +38,11 @@ jobs:
           python-version: '3.12'
 
       - name: Compile Python tools
+        # Node is provided by the hosted runner; the CSV tests execute the real analyzer.
         run: |
           python -m py_compile tools/gameplay/*.py
           python -m py_compile tools/gameplay/tests/*.py
+          python -m py_compile tools/ue5/*.py tools/ue5/tests/*.py
           python -m py_compile tools/repo/validate_spandau_scope.py
           python -m py_compile ue5/SpandauStrike/Content/Python/validate_rathaus_runtime_handoff.py
 
@@ -49,6 +57,11 @@ jobs:
       - name: Validate gameplay bundle
         run: |
           python tools/gameplay/validate_gameplay_bundle.py
+
+      - name: Run Rathaus runner regression tests (no Unreal runtime)
+        run: |
+          node --version
+          python -m unittest discover -s tools/ue5/tests -p 'test_*.py' -v
 
       - name: Validate core gameplay configuration
         run: |
@@ -166,3 +179,4 @@ jobs:
             ue5/SpandauStrike/Design/Gameplay/rathaus_combat_flow_v1.json
           if-no-files-found: error
           retention-days: 30
+

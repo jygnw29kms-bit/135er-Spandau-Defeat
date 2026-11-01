@@ -110,7 +110,6 @@ AActor* ULyraPlayerSpawningManagerComponent::ChoosePlayerStart(AController* Play
 
 		// Spandau Strike Capture: prefer team/sector-tagged front spawns.
 		TArray<ALyraPlayerStart*> EffectiveStartPoints = StarterPoints;
-		bool bUsingSpandauFrontStarts = false;
 		for (TActorIterator<ASpandauCaptureDirector> It(GetWorld()); It; ++It)
 		{
 			ASpandauCaptureDirector* Director = *It;
@@ -131,34 +130,39 @@ AActor* ULyraPlayerSpawningManagerComponent::ChoosePlayerStart(AController* Play
 			const FName RoleTag = bAttacker ? FName(TEXT("SSSpawn.Attacker")) : FName(TEXT("SSSpawn.Defender"));
 			const FName SectorTag(*FString::Printf(TEXT("SSSpawn.Sector.%d"), Director->GetActiveSector()));
 			TArray<ALyraPlayerStart*> FrontStarts;
+			TArray<ALyraPlayerStart*> BaseStarts;
 			for (ALyraPlayerStart* Start : StarterPoints)
 			{
 				if (Start && Start->Tags.Contains(RoleTag) && Start->Tags.Contains(SectorTag))
 				{
 					FrontStarts.Add(Start);
 				}
+				else if (Start && !Start->Tags.Contains(FName(TEXT("SSSpawn.Attacker"))) && !Start->Tags.Contains(FName(TEXT("SSSpawn.Defender"))))
+				{
+					BaseStarts.Add(Start);
+				}
 			}
 
-			if (!FrontStarts.IsEmpty())
+			UE_LOG(LogPlayerSpawning, Log, TEXT("Spandau front spawn candidates: team=%d sector=%d count=%d"), TeamId, Director->GetActiveSector(), FrontStarts.Num());
+			ALyraPlayerStart* SafeStart = Cast<ALyraPlayerStart>(GetFirstRandomUnoccupiedPlayerStart(Player, FrontStarts, true));
+			if (!SafeStart)
 			{
-				EffectiveStartPoints = MoveTemp(FrontStarts);
-				bUsingSpandauFrontStarts = true;
-				UE_LOG(LogPlayerSpawning, Log, TEXT("Spandau front spawn candidates: team=%d sector=%d count=%d"), TeamId, Director->GetActiveSector(), EffectiveStartPoints.Num());
+				UE_LOG(LogPlayerSpawning, Warning, TEXT("Spandau front spawn safety rejected all candidates; falling back to base starts: candidates=%d baseCandidates=%d"), FrontStarts.Num(), BaseStarts.Num());
+				SafeStart = Cast<ALyraPlayerStart>(GetFirstRandomUnoccupiedPlayerStart(Player, BaseStarts, true));
 			}
-			break;
+			if (SafeStart)
+			{
+				SafeStart->TryClaim(Player);
+			}
+			else
+			{
+				UE_LOG(LogPlayerSpawning, Warning, TEXT("Spandau spawn deferred: no safe front or base start team=%d sector=%d"), TeamId, Director->GetActiveSector());
+			}
+			// Never reopen other teams/sectors or bypass safety through the Blueprint hook.
+			return SafeStart;
 		}
 
 		AActor* PlayerStart = nullptr;
-
-		if (bUsingSpandauFrontStarts)
-		{
-			PlayerStart = GetFirstRandomUnoccupiedPlayerStart(Player, EffectiveStartPoints, true);
-			if (!PlayerStart)
-			{
-				UE_LOG(LogPlayerSpawning, Warning, TEXT("Spandau front spawn safety rejected all candidates; falling back to base starts: candidates=%d"), EffectiveStartPoints.Num());
-				EffectiveStartPoints = StarterPoints;
-			}
-		}
 
 		if (!PlayerStart)
 		{
@@ -362,4 +366,5 @@ APlayerStart* ULyraPlayerSpawningManagerComponent::GetFirstRandomUnoccupiedPlaye
 
 	return nullptr;
 }
+
 
