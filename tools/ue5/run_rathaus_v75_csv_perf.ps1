@@ -4,14 +4,16 @@ param(
     [int]$CaptureFrames=12000,
     [int]$WarmupSeconds=20,
     [int]$MeasureSeconds=30,
-    [int]$TimeoutSeconds=180
+    [int]$TimeoutSeconds=900,
+    [string]$MapPath=''
 )
 
 $ErrorActionPreference='Stop'
 $repo=(Resolve-Path (Join-Path $PSScriptRoot '..\..')).Path
 $uproject=Join-Path $repo 'ue5\SpandauStrike\SpandauStrike.uproject'
 $editor=Join-Path $EngineRoot 'Engine\Binaries\Win64\UnrealEditor.exe'
-$url="/Game/SpandauStrike/Maps/Rathaus/LV_RathausSpandau_REAL_v75_FRONTSPAWNS?Experience=B_ShooterGame_Elimination?NumBots=$NumBots"
+if(-not $MapPath){ $MapPath=(Get-Content (Join-Path $PSScriptRoot 'rathaus_validation_target.json') -Raw | ConvertFrom-Json).map_path }
+$url="${MapPath}?Experience=B_ShooterGame_Elimination?NumBots=$NumBots"
 $logPath=Join-Path $repo 'ue5\SpandauStrike\Saved\Logs\SpandauStrike_v75_csvperf_current.log'
 $started=Get-Date
 if(Test-Path $logPath){ Remove-Item $logPath -Force }
@@ -21,7 +23,7 @@ $profileRoots=@(
     (Join-Path $env:LOCALAPPDATA 'UnrealEngine\5.8\Saved\Profiling\CSV')
 )
 
-Write-Host "Starting Rathaus v75 CSV perf capture: bots=$NumBots frames=$CaptureFrames"
+Write-Host "Starting Rathaus CSV perf capture: map=$MapPath bots=$NumBots frames=$CaptureFrames"
 $args=@(
     $uproject,
     $url,
@@ -109,3 +111,4 @@ Set-Location $repo
 & node 'tools\ue5\analyze_rathaus_csv_profile.js' $csv.FullName --warmup $WarmupSeconds --measure $MeasureSeconds --out-dir 'ue5\SpandauStrike\Saved\Profiling\Reports'
 if($LASTEXITCODE -ne 0){ exit $LASTEXITCODE }
 exit 0
+

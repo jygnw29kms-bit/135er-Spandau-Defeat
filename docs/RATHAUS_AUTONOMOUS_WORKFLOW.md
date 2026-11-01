@@ -22,12 +22,21 @@ Der Runner schreibt seinen Zustand nach:
 Phasen:
 - Python-Compile
 - `git diff --check`
+- Repository-Scope-Validator
 - Runtime-Combat-Validator
 - Gameplay-Bundle-Validator
-- Unit-Tests
-- normaler Rathaus-v75 Runtime-Gate
+- Gameplay- und Runner-Unit-Tests
+- Lucas-Aktivitäts-/Lastprüfung
+- LyraEditor Build **vor** allen UE-Laufzeittests
+- MapCheck
+- normaler Rathaus-v77 Runtime-Gate
 - 350/700/1200 Spawn-to-Combat-Matrix
-- LyraEditor Build
+- Vier-Sektor-Rundenprobe
+- Ticket-Ende-Probe (Verteidigersieg, keine weiteren Respawns)
+
+Alle Runner verwenden `tools/ue5/rathaus_validation_target.json` als gemeinsame Zielmap. `--map-path` reicht einen expliziten Prüfkandidaten an sämtliche Gates weiter. Die State-Datei enthält Map und Quellstand; Änderungen am Quellstand während eines Durchlaufs machen dessen Ergebnis ungültig. `--skip-build` oder `--skip-matrix` erzeugen ausschließlich `status=partial` und Exitcode 2.
+
+Der Quellstand vom 01.11.2026 ist vor dem nächsten UE-Build ein ungeprüfter Runtime-Kandidat. Portable Tests ersetzen weder C++-Build noch die interaktive Abnahme. Details: [RATHAUS_ACCEPTANCE_2026-11-01.md](RATHAUS_ACCEPTANCE_2026-11-01.md).
 
 Jede Phase schreibt Exitcode und Ausgabe-Tail in die Zustandsdatei. Ein Fehler markiert `status=blocked` und nennt `next_required=diagnose_last_failed_phase_then_resume`. Nach Behebung wird derselbe Workflow erneut gestartet.
 
@@ -53,3 +62,4 @@ Technisch grün reicht nicht. Final spielbar verlangt zusätzlich:
 5. Commit/Push kleiner, stabiler Blöcke.
 
 Damit ersetzt ein einziger fortsetzbarer Ablauf die bisherige Folge aus Statusprüfungen, Einzelkommandos und vergessenen Zwischenständen.
+

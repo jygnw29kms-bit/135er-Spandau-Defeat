@@ -43,4 +43,5 @@ Teamkanal und Proximity-Voice sind vorgesehen, kein Squadkanal. Proximity-Voice 
 30 Sekunden Warmup, danach laufende Front. Sektorwechsel nutzen 20 Sekunden Übergang. Overtime läuft nur, solange ein relevanter Punkt umkämpft ist oder aktiver Capture-Fortschritt besteht. Nach Matchende folgen 20 Sekunden Ergebnisphase.
 
 ## Inspirationsfilter
-Von Day of Defeat übernehmen wir Direktheit, Klassenlesbarkeit und kurze Rückkehr ins Gefecht. Von Insurgency die Bedeutung von Audio, Munition, Rauch und reduzierter HUD-Abhängigkeit. Von Rising Storm die 64-Spieler-Intensität, asymmetrische Fraktionsidentität und lokale Kommunikation. Von Breakthrough-artigen Modi übernehmen wir nur den Frontfluss. Nicht übernommen werden Squad-Zwang, Commander-Abhängigkeit, FOB-Schleifen oder kilometerlange Anmärsche.
+Von klassischen klassenbasierten Shootern übernehmen wir Direktheit, Klassenlesbarkeit und kurze Rückkehr ins Gefecht. Von Insurgency die Bedeutung von Audio, Munition, Rauch und reduzierter HUD-Abhängigkeit. Von Rising Storm die 64-Spieler-Intensität, asymmetrische Fraktionsidentität und lokale Kommunikation. Von Breakthrough-artigen Modi übernehmen wir nur den Frontfluss. Nicht übernommen werden Squad-Zwang, Commander-Abhängigkeit, FOB-Schleifen oder kilometerlange Anmärsche.
+

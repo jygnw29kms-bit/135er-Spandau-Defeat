@@ -10,6 +10,10 @@ function parseArgs(argv) {
     if (a === '--warmup') out.warmup = Number(argv[++i]);
     else if (a === '--measure') out.measure = Number(argv[++i]);
     else if (a === '--out-dir') out.outDir = argv[++i];
+    else throw new Error(`Unbekanntes Argument: ${a}`);
+  }
+  if (!Number.isFinite(out.warmup) || out.warmup < 0 || !Number.isFinite(out.measure) || out.measure <= 0) {
+    throw new Error('Warmup muss endlich und >= 0 sein; Messdauer muss endlich und > 0 sein.');
   }
   return out;
 }
@@ -147,6 +151,7 @@ function main() {
   for (let i = hi + 1; i < rows.length; i++) {
     if (rows[i].some(cell => String(cell).includes('LoadingScreen/Hide'))) readyRow = i;
   }
+  if (readyRow < 0) throw new Error('LoadingScreen/Hide fehlt: kein belegtes Gameplay-Messfenster.');
 
   const parsed = [];
   const rawFrame = [];
@@ -247,6 +252,10 @@ function main() {
   console.log(JSON.stringify(result, null, 2));
   console.log(`\nREPORT_MD=${mdPath}`);
   console.log(`REPORT_JSON=${jsonPath}`);
+  if (!result.measurement_complete) {
+    throw new Error(`Messfenster unvollständig: ${actualMeasureS.toFixed(2)} s von ${args.measure.toFixed(2)} s; Report gespeichert.`);
+  }
 }
 
 try { main(); } catch (e) { console.error('ERROR:', e && e.stack ? e.stack : e); process.exit(1); }
+

@@ -7,6 +7,8 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
+from rathaus_validation_target import DEFAULT_MAP, source_revision
+
 
 def main() -> int:
     parser = argparse.ArgumentParser()
@@ -14,6 +16,7 @@ def main() -> int:
     parser.add_argument("--runtime-seconds", type=int, default=45)
     parser.add_argument("--num-bots", type=int, default=15)
     parser.add_argument("--distance-cm", type=float, default=0.0)
+    parser.add_argument("--map-path", default=DEFAULT_MAP)
     args = parser.parse_args()
 
     repo = Path(__file__).resolve().parents[2]
@@ -28,10 +31,12 @@ def main() -> int:
             str(runner),
             "--runtime-seconds", str(args.runtime_seconds),
             "--num-bots", str(args.num_bots),
+            "--map-path", args.map_path,
             "--combat-probe",
         ]
         if args.distance_cm > 0.0:
             command += ["--combat-probe-distance-cm", str(args.distance_cm)]
+        report_path.unlink(missing_ok=True)
         completed = subprocess.run(command, cwd=repo, check=False)
         if not report_path.exists():
             raise RuntimeError(f"run {index + 1}: report missing")
@@ -51,12 +56,16 @@ def main() -> int:
         print("COMBAT_BASELINE_SAMPLE=" + json.dumps(sample, separators=(",", ":")))
         if completed.returncode != 0 or not sample["passed"]:
             raise RuntimeError(f"run {index + 1}: combat gate failed")
+        if report.get("map", "").split("?")[0] != args.map_path:
+            raise RuntimeError(f"run {index + 1}: report belongs to a different map")
 
     seconds = [float(s["seconds"]) for s in samples if s["seconds"] is not None]
     damage = [float(s["damage"]) for s in samples if s["damage"] is not None]
     distance_cm = [float(s["distance_cm"]) for s in samples if s["distance_cm"] is not None]
     summary = {
         "timestamp": datetime.now(timezone.utc).astimezone().isoformat(),
+        "map": args.map_path,
+        "source_revision": source_revision(repo),
         "runs": len(samples),
         "runtime_seconds": args.runtime_seconds,
         "num_bots": args.num_bots,
@@ -82,3 +91,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+

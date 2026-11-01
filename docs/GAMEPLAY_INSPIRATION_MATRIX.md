@@ -3,7 +3,7 @@
 ## Ziel
 Spandau Strike übernimmt keine fremden Inhalte, Karten, Assets oder Markenzeichen. Vergleichbare Shooter dienen ausschließlich als Referenz für Spieltempo, Lesbarkeit, Frontfluss, Audio, Rollen und Matchstruktur. Die eigene Identität bleibt Spandau, die 135er, reale lokale Geografie und die 2030-/Historien-Zeitschichten.
 
-## Day of Defeat / Day of Defeat: Source
+## klassischen klassenbasierten Shootern / klassischen klassenbasierten Shootern: Source
 Übernehmen als Leitidee:
 - schnelle Verständlichkeit von Team, Klasse und Objective
 - hohe Letalität und kurze Time-to-Kill
@@ -69,10 +69,11 @@ Nicht übernehmen:
 
 ## Verbindliche Spandau-Strike-Mischung
 Spandau Strike soll sich anfühlen wie:
-- Day of Defeat bei Direktheit, Klassenlesbarkeit und Letalität
+- klassischen klassenbasierten Shootern bei Direktheit, Klassenlesbarkeit und Letalität
 - Insurgency bei Waffenfeedback, Audio und reduzierter HUD-Abhängigkeit
 - Rising Storm 2 bei 64-Spieler-Intensität und glaubwürdiger Fraktionsasymmetrie
 - Battlefield Breakthrough beim wandernden Sektor-Frontverlauf
 - große Taktik-Shooter nur bei Raumgefühl und Schlachtfeldlesbarkeit, ausdrücklich ohne deren Organisations- und Logistikballast
 
 Das Ergebnis muss schneller zugänglich sein als ein Milsim, aber deutlich gefährlicher, gewichtiger und taktischer als ein Arcade-Shooter. Objektivspiel zählt mehr als K/D.
+

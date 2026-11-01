@@ -149,6 +149,7 @@ private:
     void RefreshSectorActivation();
     void BeginSectorTransition();
     void CompleteSectorTransition();
+    void FinishCaptureMatch(bool bInAttackersWon, const TCHAR* Reason);
     bool IsCurrentSectorComplete() const;
     void ProcessRespawnWave();
     void RouteBotsToActiveObjectives();
@@ -157,3 +158,4 @@ private:
     int32 GetControllerTeamId(const AController* Controller) const;
     void UpdateStatusText();
 };
+
