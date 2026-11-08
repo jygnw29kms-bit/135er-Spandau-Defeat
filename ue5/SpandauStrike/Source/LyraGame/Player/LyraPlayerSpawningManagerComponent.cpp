@@ -2,6 +2,15 @@
 
 #include "LyraPlayerSpawningManagerComponent.h"
 #include "GameFramework/PlayerState.h"
+#include "GameFramework/PlayerController.h"
+#include "Camera/PlayerCameraManager.h"
+#include "Components/CapsuleComponent.h"
+#include "Components/PrimitiveComponent.h"
+#include "GameFramework/Character.h"
+#include "GameFramework/CharacterMovementComponent.h"
+#include "Engine/World.h"
+#include "Misc/CommandLine.h"
+#include "Misc/Parse.h"
 #include "EngineUtils.h"
 #include "Engine/PlayerStartPIE.h"
 #include "LyraPlayerStart.h"
@@ -28,6 +37,9 @@ ULyraPlayerSpawningManagerComponent::ULyraPlayerSpawningManagerComponent(const F
 void ULyraPlayerSpawningManagerComponent::InitializeComponent()
 {
 	Super::InitializeComponent();
+
+	// Only enable sampling when explicitly requested. Never alter gameplay physics.
+	SetComponentTickEnabled(FParse::Param(FCommandLine::Get(), TEXT("SpandauGroundProbe")));
 
 	FWorldDelegates::LevelAddedToWorld.AddUObject(this, &ThisClass::OnLevelAdded);
 
@@ -220,6 +232,31 @@ void ULyraPlayerSpawningManagerComponent::FinishRestartPlayer(AController* NewPl
 {
 	OnFinishRestartPlayer(NewPlayer, StartRotation);
 	K2_OnFinishRestartPlayer(NewPlayer, StartRotation);
+
+	if (NewPlayer)
+	{
+		const APawn* Pawn = NewPlayer->GetPawn();
+		const ALyraPlayerState* PlayerPS = NewPlayer->GetPlayerState<ALyraPlayerState>();
+		const FVector Location = Pawn ? Pawn->GetActorLocation() : FVector::ZeroVector;
+		const FRotator ControlRotation = NewPlayer->GetControlRotation();
+		FVector CameraLocation = FVector::ZeroVector;
+		FRotator CameraRotation = FRotator::ZeroRotator;
+		if (const APlayerController* PC = Cast<APlayerController>(NewPlayer))
+		{
+			if (PC->PlayerCameraManager)
+			{
+				CameraLocation = PC->PlayerCameraManager->GetCameraLocation();
+				CameraRotation = PC->PlayerCameraManager->GetCameraRotation();
+			}
+		}
+		UE_LOG(LogPlayerSpawning, Log, TEXT("Spandau restart finished: controller=%s human=%d team=%d pawn=%s loc=(%.0f,%.0f,%.0f) startRot=(%.1f,%.1f,%.1f) controlRot=(%.1f,%.1f,%.1f) camLoc=(%.0f,%.0f,%.0f) camRot=(%.1f,%.1f,%.1f)"),
+			*GetNameSafe(NewPlayer), NewPlayer->IsPlayerController() ? 1 : 0, PlayerPS ? PlayerPS->GetTeamId() : INDEX_NONE,
+			*GetNameSafe(Pawn), Location.X, Location.Y, Location.Z,
+			StartRotation.Pitch, StartRotation.Yaw, StartRotation.Roll,
+			ControlRotation.Pitch, ControlRotation.Yaw, ControlRotation.Roll,
+			CameraLocation.X, CameraLocation.Y, CameraLocation.Z,
+			CameraRotation.Pitch, CameraRotation.Yaw, CameraRotation.Roll);
+	}
 }
 
 //================================================================
@@ -227,6 +264,48 @@ void ULyraPlayerSpawningManagerComponent::FinishRestartPlayer(AController* NewPl
 void ULyraPlayerSpawningManagerComponent::TickComponent(float DeltaTime, enum ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
+	if (!FParse::Param(FCommandLine::Get(), TEXT("SpandauGroundProbe"))) return;
+	UWorld* World = GetWorld();
+	if (!World || !World->IsGameWorld()) return;
+	GroundProbeElapsedSeconds += DeltaTime;
+	if (GroundProbeElapsedSeconds - GroundProbeLastSampleSeconds < 5.0f) return;
+	GroundProbeLastSampleSeconds = GroundProbeElapsedSeconds;
+	int32 Sampled = 0;
+	int32 Failed = 0;
+	for (FConstControllerIterator It = World->GetControllerIterator(); It; ++It)
+	{
+		AController* Controller = It->Get();
+		ACharacter* Character = Controller ? Cast<ACharacter>(Controller->GetPawn()) : nullptr;
+		if (!Character) continue;
+		++Sampled;
+		const FVector Center = Character->GetActorLocation();
+		const UCapsuleComponent* Capsule = Character->GetCapsuleComponent();
+		const float HalfHeight = Capsule ? Capsule->GetScaledCapsuleHalfHeight() : 0.0f;
+		const FVector Feet = Center - FVector(0, 0, HalfHeight);
+		FCollisionQueryParams Params(SCENE_QUERY_STAT(SpandauGroundProbe), false, Character);
+		FHitResult Hit;
+		const bool bHit = World->LineTraceSingleByChannel(Hit, Center + FVector(0, 0, 30.0f), Center - FVector(0, 0, 10000.0f), ECC_Visibility, Params);
+		const float FootGap = bHit ? Feet.Z - Hit.ImpactPoint.Z : 999999.0f;
+		const UCharacterMovementComponent* Movement = Character->GetCharacterMovement();
+		const bool bFalling = Movement && Movement->IsFalling();
+		const bool bFail = !bHit || FootGap < -40.0f || FootGap > 250.0f || (bFalling && GroundProbeElapsedSeconds > 10.0f);
+		Failed += bFail ? 1 : 0;
+		UE_LOG(LogPlayerSpawning, Log, TEXT("Spandau ground probe: t=%.1f pawn=%s human=%d centerZ=%.1f feetZ=%.1f hit=%d groundZ=%.1f gap=%.1f falling=%d hitActor=%s result=%s"),
+			GroundProbeElapsedSeconds, *GetNameSafe(Character), Controller->IsPlayerController() ? 1 : 0,
+			Center.Z, Feet.Z, bHit ? 1 : 0, bHit ? Hit.ImpactPoint.Z : 0.0f, FootGap, bFalling ? 1 : 0,
+			bHit ? *GetNameSafe(Hit.GetActor()) : TEXT("None"), bFail ? TEXT("FAIL") : TEXT("OK"));
+		if (bHit && (bFail || GroundProbeElapsedSeconds < 1.0f))
+		{
+			const UPrimitiveComponent* HitComp = Hit.GetComponent();
+			UE_LOG(LogPlayerSpawning, Warning, TEXT("Spandau ground collision detail: pawn=%s actor=%s comp=%s profile=%s enabled=%d pawnResponse=%d blockingHit=%d"),
+				*GetNameSafe(Character), *GetNameSafe(Hit.GetActor()), *GetNameSafe(HitComp),
+				HitComp ? *HitComp->GetCollisionProfileName().ToString() : TEXT("None"),
+				HitComp ? int32(HitComp->GetCollisionEnabled()) : -1,
+				HitComp ? int32(HitComp->GetCollisionResponseToChannel(ECC_Pawn)) : -1,
+				Hit.bBlockingHit ? 1 : 0);
+		}
+	}
+	UE_LOG(LogPlayerSpawning, Log, TEXT("Spandau ground probe summary: t=%.1f sampled=%d failed=%d"), GroundProbeElapsedSeconds, Sampled, Failed);
 }
 
 APlayerStart* ULyraPlayerSpawningManagerComponent::GetFirstRandomUnoccupiedPlayerStart(AController* Controller, const TArray<ALyraPlayerStart*>& StartPoints, bool bRequireSpandauSafeStart) const

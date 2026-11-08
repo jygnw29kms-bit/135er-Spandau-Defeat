@@ -1,7 +1,7 @@
 ﻿import os, json, time, argparse
 from pathlib import Path
-ap=argparse.ArgumentParser(); ap.add_argument('--extent',type=float,default=1000); ap.add_argument('--grid',type=int,default=513); ap.add_argument('--origin-e',type=float,default=377931.576); ap.add_argument('--origin-n',type=float,default=5822067.058); ap.add_argument('--ground',type=float,default=31.0); ap.add_argument('--label',default='mastercenter'); args=ap.parse_args()
-ROOT=Path(r"C:\Users\dezen\Documents\Unreal Projects\SpandauStrike\SourceData\DGM1")
+ap=argparse.ArgumentParser(); ap.add_argument('--extent',type=float,default=1000); ap.add_argument('--grid',type=int,default=513); ap.add_argument('--origin-e',type=float,default=377956.827); ap.add_argument('--origin-n',type=float,default=5822062.185); ap.add_argument('--ground',type=float,default=31.0); ap.add_argument('--label',default='gameplay1000'); ap.add_argument('--root',default=r'C:\Users\anony\Documents\SpandauStrike\SourceData\DGM1'); args=ap.parse_args()
+ROOT=Path(args.root)
 ORIGIN_E=args.origin_e; ORIGIN_N=args.origin_n; GROUND=args.ground; EXT=float(args.extent); HALF=EXT/2; N=int(args.grid)
 name=f'rathaus_dgm_{args.label}_{int(EXT)}m_{N}'; OUT=ROOT/(name+'.obj'); META=ROOT/(name+'.json')
 MIN_E=ORIGIN_E-HALF;MAX_E=ORIGIN_E+HALF;MIN_N=ORIGIN_N-HALF;MAX_N=ORIGIN_N+HALF;STEP=EXT/(N-1)

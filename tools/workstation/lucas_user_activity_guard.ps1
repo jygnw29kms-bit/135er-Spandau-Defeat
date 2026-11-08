@@ -1,8 +1,15 @@
-﻿param(
+param(
     [int]$MinIdleSeconds = 30,
     [int]$SampleMilliseconds = 1500
 )
 $ErrorActionPreference='Stop'
+# Fail closed: Win32 input state belongs to the calling session.
+$console = Get-CimInstance Win32_Process -Filter "Name = 'explorer.exe'" | Where-Object { $_.SessionId -ne 0 } | Select-Object -First 1
+$session = (Get-Process -Id $PID).SessionId
+if (-not $console -or $console.SessionId -ne $session) {
+  Write-Output ('IDLE_UNKNOWN=SESSION_MISMATCH; DCO_SESSION=' + $session + '; CONSOLE_SESSION=' + $(if($console){$console.SessionId}else{'UNKNOWN'}))
+  exit 12
+}
 Add-Type @"
 using System;
 using System.Runtime.InteropServices;

@@ -53,6 +53,10 @@ private:
 	UPROPERTY(Transient)
 	TArray<TWeakObjectPtr<ALyraPlayerStart>> CachedPlayerStarts;
 
+	// Opt-in runtime diagnostics, enabled only by -SpandauGroundProbe.
+	float GroundProbeElapsedSeconds = 0.0f;
+	float GroundProbeLastSampleSeconds = -5.0f;
+
 private:
 	UE_API void OnLevelAdded(ULevel* InLevel, UWorld* InWorld);
 	UE_API void HandleOnActorSpawned(AActor* SpawnedActor);

@@ -1,0 +1,20 @@
+{
+  "source": "C:/Users/anony/Documents/SpandauStrike/SourceData/DGM1/rathaus_dgm_gameplay1000_1000m_513.obj",
+  "width": 513,
+  "height": 513,
+  "vertices": 263169,
+  "format": "16-bit unsigned little-endian UE Landscape .r16",
+  "row_order": "Y -500m to +500m",
+  "column_order": "X -500m to +500m",
+  "origin_m": [
+    -500,
+    -500
+  ],
+  "xy_scale_cm_per_vertex": 195.3125,
+  "z_scale_unreal": 100,
+  "encoding": "round(32768 + z_m * 128)",
+  "min_elevation_m": -3.255,
+  "max_elevation_m": 8,
+  "bytes": 526338,
+  "notes": "Source vertical datum is unchanged. Import as landscape heightmap, do not rotate or flip without matching mesh alignment. Generated collision is NOT yet integrated or validated."
+}

@@ -27,6 +27,7 @@ public class LyraEditor : ModuleRules
                 "EditorFramework",
                 "UnrealEd",
 				"PhysicsCore",
+                "Landscape",
 				"GameplayTagsEditor",
 				"GameplayTasksEditor",
 				"GameplayAbilities",
