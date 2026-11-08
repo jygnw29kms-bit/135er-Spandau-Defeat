@@ -8,6 +8,40 @@
 
 # 135er - Spandau Strike
 
+## Rathaus Spandau: sichtbarer Entwicklungsstand (08.11.2026)
+
+> **Status: in Entwicklung, noch nicht final spielbar.** Die Rathaus-Map ist in UE5 vorhanden und der Native-Landscape-Aufbau wurde gespeichert. **Der Bodenfehler ist weiterhin reproduzierbar:** Spieler und Bots können durch die Geländeoberfläche fallen.
+
+### Bestehende Bildaufnahmen
+
+Die folgenden Abbildungen sind **bereits vorhandene Entwicklungsaufnahmen vom 16.10.2026**. Sie zeigen den damaligen Rathaus-Aufbau, **nicht** den aktuellen v87-Laufzeitstand und **keinen** abgeschlossenen Spielbarkeitsnachweis.
+
+| UE5-Rathaus-Aufbau (ältere Entwicklungsaufnahme) | Blender-Rathaus-Aufbau (ältere Entwicklungsaufnahme) |
+|:---:|:---:|
+| ![Rathaus Spandau in UE5, Entwicklungsaufnahme vom 16. Oktober 2026, keine finale Gameplay-Abnahme](media/maps/rathaus-ue5-current-front.png) | ![Rathaus Spandau in Blender, Entwicklungsaufnahme vom 16. Oktober 2026](media/maps/rathaus-blender-current-front.png) |
+
+### Neuester technischer Nachweis: v87 Native Landscape
+
+| Prüfpunkt | Ergebnis |
+|---|---|
+| Engine und Ziel | Unreal Engine 5.8 / Lyra, Rathaus Spandau |
+| v87-Testmap | `LV_RathausSpandau_REAL_v87_NATIVE_LANDSCAPE_QA` (lokal auf Lucas-PC) |
+| Native Landscape | 1 Actor, 64 Landscape-Komponenten und 64 Kollisionskomponenten im Importbericht |
+| Testmodus | 15 Bots + 1 Spieler, 65 Sekunden nach Spielstart, NullRHI |
+| Ground-Probe-Messungen | **224** |
+| Fehlgeschlagene Messungen | **104** |
+| Messungen ohne irgendeinen Bodentreffer | **18** |
+| Als Landscape erkannte Bodentreffer | **0** |
+| Spielbarkeitsabnahme | **FAIL: Bodenkollision/Spawn-Stabilität ungeklärt** |
+
+Das ist **kein** fertiger Kollisions-Fix: Landscape-Komponenten sind importiert, aber die Laufzeitmessung findet noch keine Landscape-Treffer. Fehlende Treffer und durchfallende Figuren werden nicht durch einen erfolgreichen UE-Start entschuldigt.
+
+**Nächster überprüfbarer Schritt:** Landscape-Transform, Collision-Channel und Kapselbewegung im Spiel vergleichen, danach mindestens 60 Sekunden mit 15 Bots und Spieler, Bewegung, Respawn und Navigation ohne Ground-Fails bestätigen. Erst nach erfolgreicher QA neue **echte v87-Ingame-Screenshots** hier ersetzen.
+
+**Projektlage:** Die v87-Änderungen und Ground-Probe-Werkzeuge sind auf Lucas-PC lokal in Git committed, aber der PC ist gegenüber GitHub `origin/main` noch voraus; der bisherige direkte Push wurde durch fehlende Git-Anmeldung blockiert. Die aktuelle v87-Map und die Roh-Testlogs sind deshalb nicht automatisch als Download auf GitHub verfügbar.
+
+---
+
 **Unreal Engine 5 / Lyra is the only active and future engine target.**
 
 The project is developed for the active Unreal Engine 5 target from one shared Berlin GIS / Blender data pipeline:
