@@ -52,7 +52,7 @@ Das ist **kein** fertiger Kollisions-Fix: Landscape-Komponenten sind importiert,
 
 **Nächster überprüfbarer Schritt:** Landscape-Transform, Collision-Channel und Kapselbewegung im Spiel vergleichen, danach mindestens 60 Sekunden mit 15 Bots und Spieler, Bewegung, Respawn und Navigation ohne Ground-Fails bestätigen. Erst nach erfolgreicher QA neue **echte v87-Ingame-Screenshots** hier ersetzen.
 
-**Projektlage:** Die v87-Änderungen und Ground-Probe-Werkzeuge sind auf Lucas-PC lokal in Git committed, aber der PC ist gegenüber GitHub `origin/main` noch voraus; der bisherige direkte Push wurde durch fehlende Git-Anmeldung blockiert. Die aktuelle v87-Map und die Roh-Testlogs sind deshalb nicht automatisch als Download auf GitHub verfügbar.
+**Veröffentlichung (08.11.2026):** Die Rathaus-Entwicklungsdateien einschließlich v78-v87-QA-Maps, v86-DGM-Asset, 513x513-R16-Heightfield, C++-/Python-/Build-Werkzeugen sowie **14 Original-UE5-QA-Bildern** sind im öffentlichen Repository vorhanden. Die Bilder stammen vom 31.10.2026 und zeigen **keinen** bestandenen v87-Laufzeitstand. Die lokalen Roh-Testlogs aus `Saved/` sind nicht veröffentlicht; die dokumentierten Prüfergebnisse und die reproduzierbaren Testskripte sind im Repository. Der v87-Grounding-Test ist weiterhin **FAIL**.
 
 ---
 
@@ -94,7 +94,7 @@ See [docs/MAP_BUILD_POLICY.md](docs/MAP_BUILD_POLICY.md).
 
 ### Engine-capture publication status
 
-A genuine UE5/Lyra runtime capture exists for development verification, but the current blockout does **not** yet pass the public presentation quality gate and is therefore not shown in the public README.
+Genuine UE5/Lyra development captures are published above in the clearly labeled **historic QA image gallery**. They do **not** pass the final public presentation/playability gate, and no v87 gameplay screenshot has been verified yet.
 
 The current UE map is a **playable GIS/gameplay blockout**, not final art. Terrain elevation, collision quality, street surfaces, water, vegetation, landmark replacements and final materials remain active production work.
 
