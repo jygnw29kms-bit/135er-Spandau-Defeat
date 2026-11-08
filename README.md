@@ -20,6 +20,20 @@ Die folgenden Abbildungen sind **bereits vorhandene Entwicklungsaufnahmen vom 16
 |:---:|:---:|
 | ![Rathaus Spandau in UE5, Entwicklungsaufnahme vom 16. Oktober 2026, keine finale Gameplay-Abnahme](media/maps/rathaus-ue5-current-front.png) | ![Rathaus Spandau in Blender, Entwicklungsaufnahme vom 16. Oktober 2026](media/maps/rathaus-blender-current-front.png) |
 
+### UE5-Rathaus: letzte vorhandene Laufzeitbilder (31.10.2026)
+
+Die **14 originalen UE5-Visual-QA-Screenshots** der Rathaus-Varianten v75 bis v83 sind im [QA-Bildarchiv](media/maps/qa/) abgelegt. Die Varianten zeigen einen **älteren, teilweise fehlerhaften** Stand; insbesondere v83 blendet das Gelände zur Sichtprüfung aus und ist **keine spielbare Map**. Es gibt bislang **kein verifiziertes v87-Ingame-Bild**.
+
+| v79: Gelände-/Gameplay-Probe | v81: DGM-/Spawn-Probe |
+|:---:|:---:|
+| ![UE5 Rathaus v79, Visual-QA-Screenshot vom 31.10.2026, nicht final](media/maps/qa/LV_RathausSpandau_REAL_v79_VISUAL_PLAYABLE_QA_visualqa_20261031_192724.png) | ![UE5 Rathaus v81, DGM-Spawn-Visual-QA-Screenshot vom 31.10.2026, nicht final](media/maps/qa/LV_RathausSpandau_REAL_v81_DGM_SPAWNS_PROBE_visualqa_20261031_193822.png) |
+
+| v82: ausgeblendetes DGM, nur Sichtprobe | v83: Gebäude allein, **kein** Spielbarkeitsbeleg |
+|:---:|:---:|
+| ![UE5 Rathaus v82, Gelände ausgeblendet, Visual-QA 31.10.2026](media/maps/qa/LV_RathausSpandau_REAL_v82_HIDE_DGM1000_PROBE_visualqa_20261031_194603.png) | ![UE5 Rathaus v83, nur Rathaus-Gebäude ohne spielbares Gelände, Visual-QA 31.10.2026](media/maps/qa/LV_RathausSpandau_REAL_v83_BUILDING_ONLY_VISUAL_PROBE_visualqa_20261031_195552.png) |
+
+**Bildstatus:** historische, echte UE-Aufnahmen; keine neu gerenderte v87-Szene, kein bestätigtes Master-Final und kein Boden-/Bot-PASS.
+
 ### Neuester technischer Nachweis: v87 Native Landscape
 
 | Prüfpunkt | Ergebnis |
@@ -176,4 +190,3 @@ The current Rathaus Spandau Blender build now applies the approved optical maste
 - [Master alignment script](tools/blender_pipeline/masterize_rathaus_v6_final_scene.py)
 
 The real Berlin3D/LoD2/DGM geometry remains authoritative. The master is applied to facade detailing, materials, copper tower crown, wet Rathausplatz, tram/stops, statue, overhead wires, autumn vegetation, A/B cover, lighting and camera composition.
-
