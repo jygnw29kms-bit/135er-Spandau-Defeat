@@ -190,3 +190,4 @@ The current Rathaus Spandau Blender build now applies the approved optical maste
 - [Master alignment script](tools/blender_pipeline/masterize_rathaus_v6_final_scene.py)
 
 The real Berlin3D/LoD2/DGM geometry remains authoritative. The master is applied to facade detailing, materials, copper tower crown, wet Rathausplatz, tram/stops, statue, overhead wires, autumn vegetation, A/B cover, lighting and camera composition.
+
